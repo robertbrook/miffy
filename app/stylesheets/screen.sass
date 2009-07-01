@@ -8,33 +8,61 @@
 @import blueprint/modules/scaffolding.sass
 
 // To generate css equivalent to the blueprint css but with your configuration applied, uncomment:
-// +blueprint
++blueprint
 
-//Recommended Blueprint configuration with scoping and semantic layout:
-body.bp
+// Page layout can be done using mixins applied to your semantic classes and IDs:
+body
   +blueprint-typography
   +blueprint-utilities
   +blueprint-debug
-  +blueprint-interaction
-  // Remove the scaffolding when you're ready to start doing visual design.
-  // Or leave it in if you're happy with how blueprint looks out-of-the-box
-  +blueprint-scaffolding
-form.bp
-  +blueprint-form
 
-// Page layout can be done using mixins applied to your semantic classes and IDs:
-body.three-col
   #container
     +container
+
+    .Head
+      +full_screen
+
+    .HeadConsider .Date
+      +date_heading
+
+    .Stageheader
+      +stage_title
+
+    .CommitteeShorttitle
+      +bill_title
+
+    .ClausesToBeConsidered
+      +considered_clauses
+
+    .MarshalledOrderNote
+      font-weight: bold
+      +right_column
+
+    .Committee
+      +full_screen
+      border-top: 1px solid grey
+
+      .Clause-Committee, .Schedule-Committee
+        +full_screen
+        text-align: left
+        border-bottom: 1px solid grey
+        padding: 1em 0
+
+      ul.Sponsors
+        +full_screen
+        list-style: none
+        margin: 0
+        padding: 0.5em 0
+
+      .Number
+        +indent
+
+      .Amendment-Number
+        float: right
+        font-weight: bold
+
+      .SubSection
+        +right_column
+
   #header, #footer
     +column(!blueprint_grid_columns)
-  #sidebar
-    // One third of the grid columns, rounding down. With 24 cols, this is 8.
-    !sidebar_columns = floor(!blueprint_grid_columns / 3)
-    +column(!sidebar_columns)
-  #content
-    // Two thirds of the grid columns, rounding up.
-    // With 24 cols, this is 16.
-    !content_columns = ceil(2 * !blueprint_grid_columns / 3)
-    // true means it's the last column in the row
-    +column(!content_columns, true)
