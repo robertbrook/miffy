@@ -37,16 +37,25 @@ body
     .MarshalledOrderNote
       font-weight: bold
       +right_column
+  
+    .Heading-text
+      +full_screen
+      +heading_text
+      clear: both
 
     .Committee
       +full_screen
       border-top: 1px solid grey
 
-      .Clause-Committee, .Schedule-Committee
+      .Clause-Committee, .Schedule-Committee, .NewClause-Committee
         +full_screen
         text-align: left
         border-bottom: 1px solid grey
         padding: 1em 0
+
+      .ClauseTitle
+        +right_column
+        +clause_title
 
       ul.Sponsors
         +full_screen
@@ -61,8 +70,11 @@ body
         float: right
         font-weight: bold
 
-      .SubSection
+      .SubSection, .Para, .Para-sch, .SubPara-sch, .TextContinuation, .SubSubPara-sch
         +right_column
+
+      .Move
+        +full_screen
 
   #header, #footer
     +column(!blueprint_grid_columns)
