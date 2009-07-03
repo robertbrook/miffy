@@ -5,7 +5,7 @@
 !blueprint_grid_margin = 5px
 !blueprint_grid_width = 20px
 
-!blueprint_font_family       ||= "Verdana, Arial, Helvetica, sans-serif"
+!blueprint_font_family       ||= "Times, Verdana, Arial, Helvetica, sans-serif"
 !blueprint_fixed_font_family ||= "'andale mono', 'lucida console', monospace"
 !blueprint_font_size         ||= 16px
 
@@ -27,18 +27,21 @@
   padding-left: 35px
 
 = date_heading
-  font-size: 1.5em
+  padding: 2px 0 0 0
+  font-size: 1.6em
   font-weight: bold
 
 = stage_title
-  font-size: 2em
+  font-size: 1.6em
+  padding: 0.4em 0 0 0
+  margin-bottom: 1.7em
   font-weight: bold
   text-transform: uppercase
   border-bottom: 1px solid 
 
 = bill_title
   text-transform: uppercase
-  font-size: 2em
+  font-size: 1.45em
   font-weight: bold
   border-bottom: 1px solid grey
 
@@ -51,6 +54,8 @@
   padding: 2em 0 0 0
 
 = considered_clauses
+  font-size: 1em
   font-weight: bold
+  padding-bottom: 1.8em
   border-bottom: 1px solid grey
   
