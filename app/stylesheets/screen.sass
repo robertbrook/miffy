@@ -4,8 +4,6 @@
 @import partials/base.sass
 // Import all the default blueprint modules so that we can access their mixins.
 @import blueprint
-// Import the non-default scaffolding module.
-@import blueprint/modules/scaffolding.sass
 
 // To generate css equivalent to the blueprint css but with your configuration applied, uncomment:
 +blueprint
@@ -14,13 +12,12 @@
 body
   +blueprint-typography
   +blueprint-utilities
-  +blueprint-debug
 
   #container
     +container
 
     .Head
-      +full_screen
+      +column(30)
 
     .HeadConsider .Date
       +date_heading
@@ -48,16 +45,15 @@ body
         +column(27)
   
     .Heading-text
-      +full_screen
+      +column(30)
       +heading_text
-      clear: both
 
     .Committee
-      +full_screen
+      +column(30)
       border-top: 1px solid grey
 
       .Clause-Committee, .Schedule-Committee, .NewClause-Committee
-        +full_screen
+        +column(30)
         text-align: left
         border-bottom: 1px solid grey
         padding: 1em 0
@@ -66,7 +62,7 @@ body
         +clause_title
 
       ul.Sponsors
-        +full_screen
+        +column(30)
         list-style: none
         margin: 0
         padding: 0.5em 0
@@ -79,9 +75,9 @@ body
 
       .AmendmentWrapper
         +prepend(1)
-        +column(28)
+        +column(29)
 
-      .SubSection, .TextContinuation
+      .SubSection, .TextContinuation, .CrossHeadingTitle
         +prepend(2)
         +column(28)
 
@@ -93,27 +89,34 @@ body
         +prepend(4)
         +column(26)
       
-      .SubSubPara-sch
+      .SubSubPara-sch, .Definition
         +prepend(5)
         +column(25)
 
       .Move
-        +full_screen
+        +column(30)
 
     .OrderDate
       text-transform: uppercase
+      text-align: center
 
     .OrderHeading
       text-transform: uppercase
+      text-align: center
 
-    .OrderPreamble, .OrderAmendmentText, .ResolutionPreamble
-      text-align: left
+    .OrderPara
+      +prepend(1)
+      +column(29)
 
     .Order-House, .Order-Motion, .Order-Committee
       padding: 0.5em 0 0 0
       border-bottom: 1px solid black
-      float: left
-      +full_screen
+      +column(30)
+      text-align: left
+
+    .ResolutionPreamble
+      +indent
+      +column(30)  
 
   #header, #footer
     +column(!blueprint_grid_columns)

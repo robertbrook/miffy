@@ -6,3 +6,4 @@ config/database.yml
 doc
 db/*.sqlite3
 public/stylesheets/*
+app/stylesheets/.sass-cache/*
