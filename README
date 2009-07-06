@@ -1,8 +1,4 @@
-To install:
+Installation
+============
 
-gem uninstall haml
-
-sudo gem install haml-edge
-
-sudo gem install --source http://gems.github.com/ chriseppstein-compass
-
+http://wiki.github.com/robertbrook/miffy/installing-haml-and-compass
