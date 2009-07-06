@@ -64,12 +64,14 @@ class Mif2HtmlParser
       Definition
       CrossHeadingTitle Heading.text
       ClauseTitle ClauseText Move TextContinuation
+      PgfNumString
       OrderDate OrderPreamble OrderText OrderPara
       Order.Motion OrderHeading
       OrderAmendmentText
       ResolutionPreamble
       Day Date.text STText Notehead NoteTxt
       Amendment.Text Amendment.Number Number Page Line ].inject({}){|h,v| h[v]=true; h}
+  SPAN_RE = Regexp.new "(#{SPAN.keys.join("|")})"
 
   UL = %w[Sponsors].inject({}){|h,v| h[v]=true; h}
   UL_RE = Regexp.new "(#{UL.keys.join("|")})"
@@ -99,8 +101,12 @@ class Mif2HtmlParser
 
   def node_to_html(node, xml)
     case node.name
+      when /_PgfTag$/
+        add_html_element 'p', node, xml
       when DIV_RE
         add_html_element 'div', node, xml
+      when SPAN_RE
+        add_html_element 'span', node, xml
       when UL_RE
         add_html_element 'ul', node, xml
       when LI_RE

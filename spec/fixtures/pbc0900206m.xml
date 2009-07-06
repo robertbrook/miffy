@@ -1,4 +1,3 @@
-
 <Document>
   <Amendments.Commons id="1054859" Auto="Yes" AutoRules="Yes">
     <Head id="1054862">
@@ -23,14 +22,16 @@
         <Sponsors id="2494677">
           <Sponsor id="2494680">Mr Jeremy Browne</Sponsor>
         </Sponsors>
-        <Amendment.Number id="2494686">4</Amendment.Number>
+        <Amendment.Number id="2494686">
+          <AmendmentNumber_PgfTag id="7332505">4</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="2494691">Clause 17, </Number>
         <Page id="2494701">page 11, </Page>
         <Line id="2494711">line 4, </Line>
         <Amendment.Text id="2494721">leave out from ‘substitute’ to end of line 29 and insert—
-<SubSectionPgfTag id="7332538"><PgfNumString>\t‘(1)\t</PgfNumString>
+<SubSection_PgfTag id="7332538"><PgfNumString>\t‘(1)\t</PgfNumString>
             <SubSection id="7316809" Number="1" Quote="Single">Aircraft flight duty is chargeable in respect of each freight and passenger aircraft on each flight undertaken by that aircraft from a destination within the UK.’.</SubSection>
-          </SubSectionPgfTag>
+          </SubSection_PgfTag>
         </Amendment.Text>
       </Clause.Committee>
       <Clause.Committee id="7380678" Star="White">
@@ -39,25 +40,29 @@
           <Sponsor id="7380689">Mr Mark Hoban</Sponsor>
           <Sponsor id="7380694">Mr David Gauke</Sponsor>
         </Sponsors>
-        <Amendment.Number id="7380700">40</Amendment.Number>
+        <Amendment.Number id="7380700">
+          <AmendmentNumber_PgfTag id="7380702">40</AmendmentNumber_PgfTag>
+        </Amendment.Number>
 
-        <AmedTextCommitReportPgfTag id="7380736">
+        <AmedTextCommitReport_PgfTag id="7380736">
           <PgfNumString>#\t</PgfNumString>
           <Number id="7380705">Clause 17, </Number>
           <Page id="7380715">page 11, </Page>
           <Line id="7380725">line 33, </Line>
-        </AmedTextCommitReportPgfTag>
+        </AmedTextCommitReport_PgfTag>
         <Amendment.Text id="7380735">at end insert—
-<SubSectionPgfTag id="7380739"><PgfNumString>\t‘(3A)\t</PgfNumString>
+<SubSection_PgfTag id="7380739"><PgfNumString>\t‘(3A)\t</PgfNumString>
             <SubSection id="1490382" Number="3" Letter="A" Quote="Single">The Treasury shall, no later than the date of the Pre-Budget Report 2009, bring forward plans to replace Air Passenger Duty with a per-plane tax on aircraft currently subject to Air Passenger Duty.’.</SubSection>
-          </SubSectionPgfTag>
+          </SubSection_PgfTag>
         </Amendment.Text>
       </Clause.Committee>
       <Clause.Committee id="2494452" Star="No">
         <Sponsors id="2494455">
           <Sponsor id="2494458">Mr Jeremy Browne</Sponsor>
         </Sponsors>
-        <Amendment.Number id="2494464">3</Amendment.Number>
+        <Amendment.Number id="2494464">
+          <AmendmentNumber_PgfTag id="7380755">3</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Page id="2494479">Page 11, </Page>
         <Line id="2494489">line 1, </Line>
         <Amendment.Text id="2494669">leave out Clause 17.</Amendment.Text>
@@ -69,7 +74,9 @@
           <Sponsor id="1487335">Mr David Gauke</Sponsor>
           <Sponsor id="1487340">Mr Greg Hands</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1487346">31</Amendment.Number>
+        <Amendment.Number id="1487346">
+          <AmendmentNumber_PgfTag id="7380803">31</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="1487351">Schedule 6, </Number>
         <Page id="1487361">page 90, </Page>
         <Line id="1487371">line 44, </Line>
@@ -81,7 +88,9 @@
           <Sponsor id="1487497">Mr David Gauke</Sponsor>
           <Sponsor id="1487502">Mr Greg Hands</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1487508">32</Amendment.Number>
+        <Amendment.Number id="1487508">
+          <AmendmentNumber_PgfTag id="7380856">32</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="1487513">Schedule 6, </Number>
         <Page id="1487523">page 90, </Page>
         <Line id="1487533">line 46, </Line>
@@ -93,7 +102,9 @@
           <Sponsor id="1488586">Mr David Gauke</Sponsor>
           <Sponsor id="1488591">Mr Greg Hands</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1488597">37</Amendment.Number>
+        <Amendment.Number id="1488597">
+          <AmendmentNumber_PgfTag id="7380909">37</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="1488602">Schedule 6, </Number>
         <Page id="1488612">page 91, </Page>
         <Line id="1488622">line 27, </Line>
@@ -105,7 +116,9 @@
           <Sponsor id="1487691">Mr David Gauke</Sponsor>
           <Sponsor id="1487696">Mr Greg Hands</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1487702">33</Amendment.Number>
+        <Amendment.Number id="1487702">
+          <AmendmentNumber_PgfTag id="7380962">33</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="1487707">Schedule 6, </Number>
         <Page id="1487717">page 91, </Page>
         <Line id="1487727">line 31, </Line>
@@ -117,7 +130,9 @@
           <Sponsor id="1486811">Mr David Gauke</Sponsor>
           <Sponsor id="1486820">Mr Greg Hands</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1486834">28</Amendment.Number>
+        <Amendment.Number id="1486834">
+          <AmendmentNumber_PgfTag id="7381015">28</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="1486850">Schedule 6, </Number>
         <Page id="1486867">page 91, </Page>
         <Line id="1486877">line 32, </Line>
@@ -129,7 +144,9 @@
           <Sponsor id="1487899">Mr David Gauke</Sponsor>
           <Sponsor id="1487904">Mr Greg Hands</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1487910">34</Amendment.Number>
+        <Amendment.Number id="1487910">
+          <AmendmentNumber_PgfTag id="7381068">34</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="1487915">Schedule 6, </Number>
         <Page id="1487925">page 91, </Page>
         <Line id="1487935">line 33, </Line>
@@ -141,7 +158,9 @@
           <Sponsor id="1486902">Mr David Gauke</Sponsor>
           <Sponsor id="1486907">Mr Greg Hands</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1486913">29</Amendment.Number>
+        <Amendment.Number id="1486913">
+          <AmendmentNumber_PgfTag id="7381121">29</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="1486918">Schedule 6, </Number>
         <Page id="1486928">page 91, </Page>
         <Line id="1486938">line 34, </Line>
@@ -153,14 +172,16 @@
           <Sponsor id="1487026">Mr David Gauke</Sponsor>
           <Sponsor id="1487031">Mr Greg Hands</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1487037">30</Amendment.Number>
+        <Amendment.Number id="1487037">
+          <AmendmentNumber_PgfTag id="7381174">30</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="1487042">Schedule 6, </Number>
         <Page id="1487052">page 91, </Page>
         <Line id="1487062">line 37, </Line>
         <Amendment.Text id="1487072">at end insert—
-<SubSectionPgfTag id="7381207"><PgfNumString>\t‘(3A)\t</PgfNumString>
+<SubSection_PgfTag id="7381207"><PgfNumString>\t‘(3A)\t</PgfNumString>
             <SubSection id="1487238" Number="3" Letter="A" Quote="Single">The limits referred to in subsubparagraphs 3(a) and (b) shall not apply to the accounting period immediately preceding the relevant accounting period in which the trading loss arose.’.</SubSection>
-          </SubSectionPgfTag>
+          </SubSection_PgfTag>
         </Amendment.Text>
       </Schedule.Committee>
       <Schedule.Committee id="1488329" Star="No">
@@ -169,7 +190,9 @@
           <Sponsor id="1488340">Mr David Gauke</Sponsor>
           <Sponsor id="1488345">Mr Greg Hands</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1488351">36</Amendment.Number>
+        <Amendment.Number id="1488351">
+          <AmendmentNumber_PgfTag id="7381231">36</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="1488356">Schedule 6, </Number>
         <Page id="1488366">page 91, </Page>
         <Line id="1488376">line 38, </Line>
@@ -181,7 +204,9 @@
           <Sponsor id="1488112">Mr David Gauke</Sponsor>
           <Sponsor id="1488117">Mr Greg Hands</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1488123">35</Amendment.Number>
+        <Amendment.Number id="1488123">
+          <AmendmentNumber_PgfTag id="7381284">35</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="1488128">Schedule 6, </Number>
         <Page id="1488138">page 91, </Page>
         <Line id="1488148">line 41, </Line>
@@ -194,46 +219,48 @@
           <Sponsor id="1488844">Mr David Gauke</Sponsor>
           <Sponsor id="1488849">Mr Greg Hands</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1488855">38</Amendment.Number>
+        <Amendment.Number id="1488855">
+          <AmendmentNumber_PgfTag id="7381341">38</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="1488860">Clause 25, </Number>
         <Page id="1488870">page 15, </Page>
         <Amendment.Text id="1488890">leave out lines 37 to 38 and insert ‘the Treasury may by regulations make provision for and in connection with the application of all relevant enactments as follows.
-<SubSectionPgfTag id="7381365"><PgfNumString>\t(1A)\t</PgfNumString>
-          </SubSectionPgfTag>
+<SubSection_PgfTag id="7381365"><PgfNumString>\t(1A)\t</PgfNumString>
+          </SubSection_PgfTag>
           <SubSection id="1489118" Number="1" Letter="A" Quote="None">The Treasury may make regulations to—
-<ParagraphPgfTag id="7381369"><PgfNumString>\t(a)\t</PgfNumString>
+<Paragraph_PgfTag id="7381369"><PgfNumString>\t(a)\t</PgfNumString>
               <Para id="1489338">give effect to the agreement referred to in subsection (1), and</Para>
-            </ParagraphPgfTag>
+            </Paragraph_PgfTag>
 
-            <ParagraphPgfTag id="7381374">
+            <Paragraph_PgfTag id="7381374">
               <PgfNumString>\t(b)\t</PgfNumString>
               <Para id="1489345">give effect to subsection (3).</Para>
-            </ParagraphPgfTag>
+            </Paragraph_PgfTag>
           </SubSection>
 
-          <SubSectionPgfTag id="7381377">
+          <SubSection_PgfTag id="7381377">
             <PgfNumString>\t(1B)\t</PgfNumString>
             <SubSection id="1489357" Number="1" Letter="B">Regulations under this section may include provision having effect in relation to any time before they are made even if the provision creates or increases the liability to tax of P or such other person as is referred to in subsection (3).</SubSection>
-          </SubSectionPgfTag>
+          </SubSection_PgfTag>
 
-          <SubSectionPgfTag id="7381381">
+          <SubSection_PgfTag id="7381381">
             <PgfNumString>\t(1C)\t</PgfNumString>
-          </SubSectionPgfTag>
+          </SubSection_PgfTag>
           <SubSection id="1489587" Number="1" Letter="C">Regulations under this section may include—
-<ParagraphPgfTag id="7381385"><PgfNumString>\t(a)\t</PgfNumString>
+<Paragraph_PgfTag id="7381385"><PgfNumString>\t(a)\t</PgfNumString>
               <Para id="1489842">provision amending any relevant enactment, and</Para>
-            </ParagraphPgfTag>
+            </Paragraph_PgfTag>
 
-            <ParagraphPgfTag id="7381390">
+            <Paragraph_PgfTag id="7381390">
               <PgfNumString>\t(b)\t</PgfNumString>
               <Para id="1489853">consequential, supplementary and transitional provisions.</Para>
-            </ParagraphPgfTag>
+            </Paragraph_PgfTag>
           </SubSection>
 
-          <SubSectionPgfTag id="7381393">
+          <SubSection_PgfTag id="7381393">
             <PgfNumString>\t(1D)\t</PgfNumString>
             <SubSection id="1489874" Number="1" Letter="D">Regulations under this section are to be made by statutory instrument subject to annulment in pursuance of a resolution of the House of Commons.’.</SubSection>
-          </SubSectionPgfTag>
+          </SubSection_PgfTag>
         </Amendment.Text>
       </Clause.Committee>
       <Clause.Committee id="1490136" Star="No">
@@ -242,7 +269,9 @@
           <Sponsor id="1490147">Mr David Gauke</Sponsor>
           <Sponsor id="1490152">Mr Greg Hands</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1490158">39</Amendment.Number>
+        <Amendment.Number id="1490158">
+          <AmendmentNumber_PgfTag id="7381417">39</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="1490163">Clause 25, </Number>
         <Page id="1490173">page 16, </Page>
         <Amendment.Text id="1490183">leave out lines 14 to 16.</Amendment.Text>
@@ -252,7 +281,9 @@
         <Sponsors id="1081834">
           <Sponsor id="1081838">Mr Stephen Timms</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1081853">8</Amendment.Number>
+        <Amendment.Number id="1081853">
+          <AmendmentNumber_PgfTag id="7381457">8</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="1082088">Schedule 7, </Number>
         <Page id="1082060">page 96, </Page>
         <Line id="1082074">line 29, </Line>
@@ -262,7 +293,9 @@
         <Sponsors id="1082684">
           <Sponsor id="1082687">Mr Stephen Timms</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1082693">9</Amendment.Number>
+        <Amendment.Number id="1082693">
+          <AmendmentNumber_PgfTag id="7381502">9</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="1082698">Schedule 7, </Number>
         <Page id="1082708">page 98, </Page>
         <Line id="1082718">line 28, </Line>
@@ -273,61 +306,63 @@
         <Sponsors id="1046301">
           <Sponsor id="1046305">Mr Stephen Timms</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1046321">13</Amendment.Number>
+        <Amendment.Number id="1046321">
+          <AmendmentNumber_PgfTag id="7381551">13</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="1046333">Schedule 8, </Number>
         <Page id="1046348">page 101, </Page>
         <Line id="1046358">line 4, </Line>
         <Amendment.Text id="1047173">leave out from beginning to ‘is’ in line 5 and insert—<Para.sch id="1083782" Major_Number_Only="A1" Number="A" Quote="Single" Letter="1">
-<Paragraph.schPgfTag id="7381584"><PgfNumString>\t‘A1\t</PgfNumString>Schedule 5B to TCGA 1992 (enterprise investment scheme: re-investment) is amended as follows.</Paragraph.schPgfTag>
+<Paragraph.sch_PgfTag id="7381584"><PgfNumString>\t‘A1\t</PgfNumString>Schedule 5B to TCGA 1992 (enterprise investment scheme: re-investment) is amended as follows.</Paragraph.sch_PgfTag>
           </Para.sch>
           <Para.sch id="1085999" Major_Number_Only="A2" Number="A" Letter="2">
-            <SubParagraph.schPgfTag id="7381591">
+            <SubParagraph.sch_PgfTag id="7381591">
               <PgfNumString>\tA2\t(1)\t</PgfNumString>
               <SubPara.sch id="1090948" Minor_Number_Only="1" Number="1">Paragraph 1(2) (application of Schedule) is amended as follows.</SubPara.sch>
-            </SubParagraph.schPgfTag>
+            </SubParagraph.sch_PgfTag>
 
-            <SubParagraphCont.schPgfTag id="7381594">
+            <SubParagraphCont.sch_PgfTag id="7381594">
               <PgfNumString>\t\t(2)\t</PgfNumString>
-            </SubParagraphCont.schPgfTag>
+            </SubParagraphCont.sch_PgfTag>
             <SubPara.sch id="1090960" Minor_Number_Only="2">For paragraphs (g) and (h) substitute “and
-<SubSubParagraph.schPgfTag id="7381597"><PgfNumString>\t(g)\t</PgfNumString>
+<SubSubParagraph.sch_PgfTag id="7381597"><PgfNumString>\t(g)\t</PgfNumString>
                 <SubSubPara.sch id="1086218" Number="g">all of the money raised by the issue of the shares (other than any of them which are bonus shares) is, no later than the time mentioned in section 175(3) of ITA 2007, employed wholly for the purpose of that activity,”.</SubSubPara.sch>
-              </SubSubParagraph.schPgfTag>
+              </SubSubParagraph.sch_PgfTag>
             </SubPara.sch>
-            <SubParagraphCont.schPgfTag id="7381602">
+            <SubParagraphCont.sch_PgfTag id="7381602">
               <PgfNumString>\t\t(3)\t</PgfNumString>
               <SubPara.sch id="1090976" Minor_Number_Only="3">In the words following the paragraphs, for “conditions in paragraphs (g) and (h) above do” substitute “condition in paragraph (g) above does”.</SubPara.sch>
-            </SubParagraphCont.schPgfTag>
+            </SubParagraphCont.sch_PgfTag>
           </Para.sch>
           <Para.sch id="1091529" Major_Number_Only="A3" Number="A" Letter="3">
-            <SubParagraph.schPgfTag id="7381610">
+            <SubParagraph.sch_PgfTag id="7381610">
               <PgfNumString>\tA3\t(1)\t</PgfNumString>
               <SubPara.sch id="1091840" Minor_Number_Only="1" Number="1">Paragraph 1A (failure of conditions of application) is amended as follows.</SubPara.sch>
-            </SubParagraph.schPgfTag>
+            </SubParagraph.sch_PgfTag>
 
-            <SubParagraphCont.schPgfTag id="7381613">
+            <SubParagraphCont.sch_PgfTag id="7381613">
               <PgfNumString>\t\t(2)\t</PgfNumString>
-            </SubParagraphCont.schPgfTag>
+            </SubParagraphCont.sch_PgfTag>
             <SubPara.sch id="1091851" Minor_Number_Only="2">In sub-paragraph (4)—
-<SubSubParagraph.schPgfTag id="7381617"><PgfNumString>\t(a)\t</PgfNumString>
+<SubSubParagraph.sch_PgfTag id="7381617"><PgfNumString>\t(a)\t</PgfNumString>
                 <SubSubPara.sch id="1093092">omit “or (h)”, and</SubSubPara.sch>
-              </SubSubParagraph.schPgfTag>
+              </SubSubParagraph.sch_PgfTag>
 
-              <SubSubParagraph.schPgfTag id="7381620">
+              <SubSubParagraph.sch_PgfTag id="7381620">
                 <PgfNumString>\t(b)\t</PgfNumString>
                 <SubSubPara.sch id="1093102">for “sub-paragraph (4A) below” substitute “section 175(3) of ITA 2007”.</SubSubPara.sch>
-              </SubSubParagraph.schPgfTag>
+              </SubSubParagraph.sch_PgfTag>
             </SubPara.sch>
-            <SubParagraphCont.schPgfTag id="7381627">
+            <SubParagraphCont.sch_PgfTag id="7381627">
               <PgfNumString>\t\t(3)\t</PgfNumString>
               <SubPara.sch id="1092790" Minor_Number_Only="3">Omit sub-paragraph (4A).</SubPara.sch>
-            </SubParagraphCont.schPgfTag>
+            </SubParagraphCont.sch_PgfTag>
           </Para.sch>
           <Para.sch id="1084089" Major_Number_Only="1" Number="1">
-            <SubParagraph.schPgfTag id="7381636">
+            <SubParagraph.sch_PgfTag id="7381636">
               <PgfNumString>\t1\t(1)\t</PgfNumString>
               <SubPara.sch id="1085994" Minor_Number_Only="1" Number="1">Paragraph 9 (other reconstructions and amalgamations)’.</SubPara.sch>
-            </SubParagraph.schPgfTag>
+            </SubParagraph.sch_PgfTag>
           </Para.sch>
         </Amendment.Text>
       </Schedule.Committee>
@@ -337,26 +372,30 @@
           <Sponsor id="1489749">Mr David Gauke</Sponsor>
           <Sponsor id="1489754">Mr Greg Hands</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1489760">27</Amendment.Number>
+        <Amendment.Number id="1489760">
+          <AmendmentNumber_PgfTag id="7381657">27</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="1489765">Schedule 8, </Number>
         <Page id="1489775">page 101, </Page>
         <Line id="1489785">line 12, </Line>
         <Amendment.Text id="1489795">at end insert—
-<SubParagraphCont.schPgfTag id="7381690"><PgfNumString>\t\t‘(1B)\t</PgfNumString>
+<SubParagraphCont.sch_PgfTag id="7381690"><PgfNumString>\t\t‘(1B)\t</PgfNumString>
             <SubPara.sch id="1490021" Minor_Number_Only="1B" Number="1" Letter="B" Quote="Single">The individual may elect for section 135 or section 136 not to apply in respect of the shares.’.</SubPara.sch>
-          </SubParagraphCont.schPgfTag>
+          </SubParagraphCont.sch_PgfTag>
         </Amendment.Text>
       </Schedule.Committee>
       <Schedule.Committee id="1093705" Star="No">
         <Sponsors id="1093708">
           <Sponsor id="1093711">Mr Stephen Timms</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1093717">14</Amendment.Number>
+        <Amendment.Number id="1093717">
+          <AmendmentNumber_PgfTag id="7381706">14</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="1093722">Schedule 8, </Number>
         <Page id="1093732">page 101, </Page>
         <Line id="1093742">line 18, </Line>
         <Amendment.Text id="1093752">at end insert—<Para.sch id="1097273" Major_Number_Only="1A" Number="1" Letter="A" Quote="Single">
-<Paragraph.schPgfTag id="7381742"><PgfNumString>\t‘1A\t</PgfNumString>In paragraph 16 (information), omit sub-paragraph (4A).’.</Paragraph.schPgfTag>
+<Paragraph.sch_PgfTag id="7381742"><PgfNumString>\t‘1A\t</PgfNumString>In paragraph 16 (information), omit sub-paragraph (4A).’.</Paragraph.sch_PgfTag>
           </Para.sch>
         </Amendment.Text>
       </Schedule.Committee>
@@ -364,29 +403,31 @@
         <Sponsors id="1089040">
           <Sponsor id="1089043">Mr Stephen Timms</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1089049">15</Amendment.Number>
+        <Amendment.Number id="1089049">
+          <AmendmentNumber_PgfTag id="7381755">15</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="1089054">Schedule 8, </Number>
         <Page id="1089064">page 102, </Page>
         <Line id="1089074">line 19, </Line>
         <Amendment.Text id="1089084">at end insert—<CrossHeadingSch id="1089925"><CrossHeadingTitle id="1089930">‘Consequential repeals</CrossHeadingTitle>
             <Para.sch id="1090180" Major_Number_Only="5A" Number="5" Letter="A">
-              <Paragraph.schPgfTag id="7381794">
-                <PgfNumString>\t5A\t</PgfNumString>In consequence of the amendments made by paragraphs A2, A3 and 1A, omit—</Paragraph.schPgfTag>
+              <Paragraph.sch_PgfTag id="7381794">
+                <PgfNumString>\t5A\t</PgfNumString>In consequence of the amendments made by paragraphs A2, A3 and 1A, omit—</Paragraph.sch_PgfTag>
 
-              <SubSubParagraph.schPgfTag id="7381798">
+              <SubSubParagraph.sch_PgfTag id="7381798">
                 <PgfNumString>\t(a)\t</PgfNumString>
                 <SubSubPara.sch id="1090929">in FA 2001, in Schedule 15, paragraphs 26 to 28,</SubSubPara.sch>
-              </SubSubParagraph.schPgfTag>
+              </SubSubParagraph.sch_PgfTag>
 
-              <SubSubParagraph.schPgfTag id="7381802">
+              <SubSubParagraph.sch_PgfTag id="7381802">
                 <PgfNumString>\t(b)\t</PgfNumString>
                 <SubSubPara.sch id="1097888">in FA 2004, in Schedule 18, paragraph 13(1)(f), and</SubSubPara.sch>
-              </SubSubParagraph.schPgfTag>
+              </SubSubParagraph.sch_PgfTag>
 
-              <SubSubParagraph.schPgfTag id="7381810">
+              <SubSubParagraph.sch_PgfTag id="7381810">
                 <PgfNumString>\t(c)\t</PgfNumString>
                 <SubSubPara.sch id="1090936">in ITA 2007, in Schedule 1, paragraph 345(2)(b), (3)(a) and (13)(b).’.</SubSubPara.sch>
-              </SubSubParagraph.schPgfTag>
+              </SubSubParagraph.sch_PgfTag>
             </Para.sch>
           </CrossHeadingSch>
         </Amendment.Text>
@@ -395,19 +436,23 @@
         <Sponsors id="1089350">
           <Sponsor id="1089353">Mr Stephen Timms</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1089359">16</Amendment.Number>
+        <Amendment.Number id="1089359">
+          <AmendmentNumber_PgfTag id="7381823">16</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="1089364">Schedule 8, </Number>
         <Page id="1089374">page 102, </Page>
         <Line id="1089384">line 20, </Line>
         <Amendment.Text id="1089394">at end insert—
-<Paragraph.schPgfTag id="7381854"><PgfNumString>\t‘5B\t</PgfNumString>The amendments made by paragraphs A2, A3, 1A, 3, 4 and 5A have effect in relation to shares issued on or after 22 April 2009.’.</Paragraph.schPgfTag>
+<Paragraph.sch_PgfTag id="7381854"><PgfNumString>\t‘5B\t</PgfNumString>The amendments made by paragraphs A2, A3, 1A, 3, 4 and 5A have effect in relation to shares issued on or after 22 April 2009.’.</Paragraph.sch_PgfTag>
         </Amendment.Text>
       </Schedule.Committee>
       <Schedule.Committee id="1103009" Star="No">
         <Sponsors id="1103012">
           <Sponsor id="1103015">Mr Stephen Timms</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1103021">17</Amendment.Number>
+        <Amendment.Number id="1103021">
+          <AmendmentNumber_PgfTag id="7381869">17</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="1103026">Schedule 8, </Number>
         <Page id="1103036">page 102, </Page>
         <Line id="1103046">line 32, </Line>
@@ -420,18 +465,20 @@
           <Sponsor id="1488231">Mr David Gauke</Sponsor>
           <Sponsor id="1488236">Mr Greg Hands</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1488242">23</Amendment.Number>
+        <Amendment.Number id="1488242">
+          <AmendmentNumber_PgfTag id="7381926">23</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="1488247">Schedule 9, </Number>
         <Page id="1488257">page 103, </Page>
         <Line id="1488267">line 2, </Line>
         <Amendment.Text id="1488433">at end insert—<Para.sch id="7363555" Major_Number_Only="A1" Number="A" Letter="1" Quote="Single">
-<SubParagraph.schPgfTag id="7381962"><PgfNumString>\t‘A1\t(1)\t</PgfNumString>
+<SubParagraph.sch_PgfTag id="7381962"><PgfNumString>\t‘A1\t(1)\t</PgfNumString>
               <SubPara.sch id="1488437" Minor_Number_Only="1" Number="1" Quote="Single" RunIntoPara="No">Section 832(1) of ICTA is amended as follows.</SubPara.sch>
-            </SubParagraph.schPgfTag>
+            </SubParagraph.sch_PgfTag>
 
-            <SubParagraphCont.schPgfTag id="7381965">
+            <SubParagraphCont.sch_PgfTag id="7381965">
               <PgfNumString>\t\t(2)\t</PgfNumString>
-            </SubParagraphCont.schPgfTag>
+            </SubParagraphCont.sch_PgfTag>
             <SubPara.sch id="7377998" Minor_Number_Only="2">For the definition of “ordinary share capital”, substitute—<Definition id="1488716">“ordinary share capital”, in relation to a company, means all the issued share capital (by whatever name called) of the company, other than relevant preference shares (within the meaning of Schedule 18).’.</Definition>
             </SubPara.sch>
           </Para.sch>
@@ -441,7 +488,9 @@
         <Sponsors id="444488">
           <Sponsor id="1066698">Mr Stephen Timms</Sponsor>
         </Sponsors>
-        <Amendment.Number id="444501">10</Amendment.Number>
+        <Amendment.Number id="444501">
+          <AmendmentNumber_PgfTag id="7381987">10</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="444506">Schedule 9, </Number>
         <Page id="444516">page 103, </Page>
         <Line id="444526">line 28, </Line>
@@ -451,7 +500,9 @@
         <Sponsors id="1080189">
           <Sponsor id="1080192">Mr Stephen Timms</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1080198">11</Amendment.Number>
+        <Amendment.Number id="1080198">
+          <AmendmentNumber_PgfTag id="7382033">11</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="1080203">Schedule 9, </Number>
         <Page id="1080213">page 103, </Page>
         <Line id="1080223">line 39, </Line>
@@ -461,7 +512,9 @@
         <Sponsors id="1080249">
           <Sponsor id="1080252">Mr Stephen Timms</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1080258">12</Amendment.Number>
+        <Amendment.Number id="1080258">
+          <AmendmentNumber_PgfTag id="7382079">12</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="1080263">Schedule 9, </Number>
         <Page id="1080273">page 104, </Page>
         <Line id="1080283">line 14, </Line>
@@ -473,14 +526,16 @@
           <Sponsor id="1487562">Mr David Gauke</Sponsor>
           <Sponsor id="1487567">Mr Greg Hands</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1487573">22</Amendment.Number>
+        <Amendment.Number id="1487573">
+          <AmendmentNumber_PgfTag id="7382132">22</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="1487578">Schedule 9, </Number>
         <Page id="1487588">page 104, </Page>
         <Line id="1487598">line 21, </Line>
         <Amendment.Text id="1487608">at end insert—
-<SubParagraphCont.schPgfTag id="7382165"><PgfNumString>\t\t‘(6A)\t</PgfNumString>
+<SubParagraphCont.sch_PgfTag id="7382165"><PgfNumString>\t\t‘(6A)\t</PgfNumString>
             <SubPara.sch id="1488083" Minor_Number_Only="6A" Number="6" Letter="A" Quote="Single">An order under sub-paragraph (5) must specify that no company may be regarded as being or having been in severe financial difficulties in any accounting period during which it agrees or agreed to contribute to, or increases or increased the value of, the pension arrangements of any director or former director a sum in excess of £1 million.’.</SubPara.sch>
-          </SubParagraphCont.schPgfTag>
+          </SubParagraphCont.sch_PgfTag>
         </Amendment.Text>
       </Schedule.Committee>
       <Schedule.Committee id="1487202" Star="No">
@@ -489,12 +544,14 @@
           <Sponsor id="1487213">Mr David Gauke</Sponsor>
           <Sponsor id="1487218">Mr Greg Hands</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1487224">21</Amendment.Number>
+        <Amendment.Number id="1487224">
+          <AmendmentNumber_PgfTag id="7382189">21</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="1487229">Schedule 9, </Number>
         <Page id="1487239">page 104, </Page>
         <Line id="1487249">line 33, </Line>
         <Amendment.Text id="1487259">at end insert—<Para.sch id="1487453" Major_Number_Only="1B" Number="1" Letter="B" Quote="Single">
-<Paragraph.schPgfTag id="7382222"><PgfNumString>\t‘1B\t</PgfNumString>Notwithstanding anything else in this Schedule, in determining whether two or more companies are members of the same group no account shall be taken of any interest held by UK Financial Investments Limited.”’.</Paragraph.schPgfTag>
+<Paragraph.sch_PgfTag id="7382222"><PgfNumString>\t‘1B\t</PgfNumString>Notwithstanding anything else in this Schedule, in determining whether two or more companies are members of the same group no account shall be taken of any interest held by UK Financial Investments Limited.”’.</Paragraph.sch_PgfTag>
           </Para.sch>
         </Amendment.Text>
       </Schedule.Committee>
@@ -504,7 +561,9 @@
           <Sponsor id="1488748">Mr David Gauke</Sponsor>
           <Sponsor id="1488753">Mr Greg Hands</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1488759">24</Amendment.Number>
+        <Amendment.Number id="1488759">
+          <AmendmentNumber_PgfTag id="7382246">24</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="1488764">Schedule 9, </Number>
         <Page id="1488774">page 104, </Page>
         <Line id="1488784">line 39, </Line>
@@ -516,22 +575,24 @@
           <Sponsor id="1489010">Mr David Gauke</Sponsor>
           <Sponsor id="1489015">Mr Greg Hands</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1489021">25</Amendment.Number>
+        <Amendment.Number id="1489021">
+          <AmendmentNumber_PgfTag id="7382299">25</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="1489026">Schedule 9, </Number>
         <Page id="1489036">page 104, </Page>
         <Line id="1489046">line 43, </Line>
         <Amendment.Text id="1489056">at end insert—<SubPara.sch id="1489236" Minor_Number_Only="6A" Number="6" Letter="A" Quote="Single">
-<SubParagraphCont.schPgfTag id="7382332"><PgfNumString>\t\t‘(6A)\t</PgfNumString>If a company so elects, the amendments made by paragraph (A1) of this Schedule, do not have effect in relation to shares issued by the company—</SubParagraphCont.schPgfTag>
+<SubParagraphCont.sch_PgfTag id="7382332"><PgfNumString>\t\t‘(6A)\t</PgfNumString>If a company so elects, the amendments made by paragraph (A1) of this Schedule, do not have effect in relation to shares issued by the company—</SubParagraphCont.sch_PgfTag>
 
-            <SubSubParagraph.schPgfTag id="7382336">
+            <SubSubParagraph.sch_PgfTag id="7382336">
               <PgfNumString>\t(a)\t</PgfNumString>
               <SubSubPara.sch id="1489418">before the date on which this Act is passed;</SubSubPara.sch>
-            </SubSubParagraph.schPgfTag>
+            </SubSubParagraph.sch_PgfTag>
 
-            <SubSubParagraph.schPgfTag id="7382343">
+            <SubSubParagraph.sch_PgfTag id="7382343">
               <PgfNumString>\t(b)\t</PgfNumString>
               <SubSubPara.sch id="1489425">on or after that date under an agreement entered into before that date.’.</SubSubPara.sch>
-            </SubSubParagraph.schPgfTag>
+            </SubSubParagraph.sch_PgfTag>
           </SubPara.sch>
         </Amendment.Text>
       </Schedule.Committee>
@@ -541,7 +602,9 @@
           <Sponsor id="1489448">Mr David Gauke</Sponsor>
           <Sponsor id="1489453">Mr Greg Hands</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1489459">26</Amendment.Number>
+        <Amendment.Number id="1489459">
+          <AmendmentNumber_PgfTag id="7382364">26</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="1489464">Schedule 9, </Number>
         <Page id="1489474">page 104, </Page>
         <Line id="1489484">line 44, </Line>
@@ -554,12 +617,14 @@
           <Sponsor id="1486954">Mr David Gauke</Sponsor>
           <Sponsor id="1486960">Mr Greg Hands</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1486856">19</Amendment.Number>
+        <Amendment.Number id="1486856">
+          <AmendmentNumber_PgfTag id="7382421">19</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="1486866">Schedule 11, </Number>
         <Page id="1486880">page 108, </Page>
         <Line id="1486890">line 30, </Line>
         <Amendment.Text id="1486900">at end insert—<Para.sch id="1486904" Major_Number_Only="2A" Number="2" Letter="A" Quote="Single">
-<Paragraph.schPgfTag id="7382457"><PgfNumString>\t‘2A\t</PgfNumString>In section 45D(4) for “110” insert “160”’.</Paragraph.schPgfTag>
+<Paragraph.sch_PgfTag id="7382457"><PgfNumString>\t‘2A\t</PgfNumString>In section 45D(4) for “110” insert “160”’.</Paragraph.sch_PgfTag>
           </Para.sch>
         </Amendment.Text>
       </Schedule.Committee>
@@ -569,14 +634,16 @@
           <Sponsor id="1486982">Mr David Gauke</Sponsor>
           <Sponsor id="1486987">Mr Greg Hands</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1486993">20</Amendment.Number>
+        <Amendment.Number id="1486993">
+          <AmendmentNumber_PgfTag id="7382478">20</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="1486998">Schedule 11, </Number>
         <Page id="1487008">page 109, </Page>
         <Line id="7344274">line 32, </Line>
         <Amendment.Text id="1487121">at end insert—
-<SubParagraphCont.schPgfTag id="7382511"><PgfNumString>\t\t‘(5A)\t</PgfNumString>
+<SubParagraphCont.sch_PgfTag id="7382511"><PgfNumString>\t\t‘(5A)\t</PgfNumString>
             <SubPara.sch id="1487125" Minor_Number_Only="5A" Number="5" Letter="A" Quote="Single">An order under subsection (5) may not be made until 2 years after this Act has passed and any subsequent change will be subject to a 2 year notice period.’.</SubPara.sch>
-          </SubParagraphCont.schPgfTag>
+          </SubParagraphCont.sch_PgfTag>
         </Amendment.Text>
       </Schedule.Committee>
       <Separator.thick id="7346662"></Separator.thick>
@@ -584,208 +651,215 @@
         <Sponsors id="7338028">
           <Sponsor id="7338031">Mr Stephen Timms</Sponsor>
         </Sponsors>
-        <Amendment.Number id="7338037">18</Amendment.Number>
+        <Amendment.Number id="7338037">
+          <AmendmentNumber_PgfTag id="7382531">18</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Number id="7338042">Schedule 12, </Number>
         <Page id="7338052">page 128, </Page>
         <Line id="1069960">line 5, </Line>
         <Amendment.Text id="7338071">at end insert—
-<SubSectionPgfTag id="7382564"><PgfNumString>\t‘(1A)\t</PgfNumString>
-          </SubSectionPgfTag>
+<SubSection_PgfTag id="7382564"><PgfNumString>\t‘(1A)\t</PgfNumString>
+          </SubSection_PgfTag>
           <SubSection id="1071759" Number="1" Letter="A" Quote="Single">In determining for the purposes of subsection (1)(c) whether subsection (1) of section 171 would have applied, it is to be assumed that subsection (1A)(b) of that section read—
-<_ParagraphPgfTag id="7382569"><PgfNumString>\t“(b)\t</PgfNumString>
+<_Paragraph_PgfTag id="7382569"><PgfNumString>\t“(b)\t</PgfNumString>
               <Amendment id="1072557">
                 <Para id="1072566" Number="b" Quote="Double">that, at the time of the disposal, company B is resident in the United Kingdom, or carrying on a trade in the United Kingdom through a permanent establishment there.” ’.</Para>
               </Amendment>
-            </_ParagraphPgfTag>
+            </_Paragraph_PgfTag>
           </SubSection>
         </Amendment.Text>
       </Schedule.Committee>
       <Separator.thick id="5167131"></Separator.thick>
       <Heading.text id="5166821">New Clauses</Heading.text>
       <NewClause.Committee id="1151073" Star="No">
-        <New_C_STitlePgfTag id="7382588">
+        <New_C_STitle_PgfTag id="7382588">
           <PgfNumString>\t</PgfNumString>
           <ClauseTitle id="1151081">Taxation: general anti-avoidance principle</ClauseTitle>
-        </New_C_STitlePgfTag>
+        </New_C_STitle_PgfTag>
         <Sponsors id="1151090">
           <Sponsor id="1151094">Mr Michael Meacher</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1151102">NC1</Amendment.Number>
+        <Amendment.Number id="1151102">
+          <AmendmentNumber_PgfTag id="7382599">NC1</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Move id="1151112">To move the following Clause:—</Move>
         <ClauseText id="1151123">
-          <SubSection1PgfTag id="7382611">
+          <SubSection1_PgfTag id="7382611">
             <PgfNumString>\t‘(1)\t</PgfNumString>
             <SubSection id="1151133">If, when determining the liability of a person to taxation, duty or similar charge due under statute in the United Kingdom, it shall be estimated that a step or steps have been included in a transaction giving rise to that liability or to any claim for an allowance, deduction or relief, with such steps having been included for the sole or one of the main purposes of securing a reduction in that liability to taxation, deduction or similar charge with no other material economic purpose for the inclusion of such a step being capable of demonstration by the taxpayer, then, subject to the sole exception that the step or steps in question are specifically permitted under the terms of any legislation promoted for the specific purpose of permitting such use, such step or steps shall be ignored when calculating the resulting liability to taxation, duty or similar charge.</SubSection>
-          </SubSection1PgfTag>
+          </SubSection1_PgfTag>
 
-          <SubSectionPgfTag id="7382615">
+          <SubSection_PgfTag id="7382615">
             <PgfNumString>\t(2)\t</PgfNumString>
             <SubSection id="1151138">In the interpretation of this provision a construction that would promote the purpose or object underlying the provision shall be preferred to a construction that would not promote that purpose or object.’.</SubSection>
-          </SubSectionPgfTag>
+          </SubSection_PgfTag>
         </ClauseText>
       </NewClause.Committee>
       <NewClause.Committee id="5166869" Star="No">
-        <New_C_STitlePgfTag id="7382628">
+        <New_C_STitle_PgfTag id="7382628">
           <PgfNumString>\t</PgfNumString>
           <ClauseTitle id="5166872">Personal allowances for 2009-10 for those aged over 65</ClauseTitle>
-        </New_C_STitlePgfTag>
+        </New_C_STitle_PgfTag>
         <Sponsors id="5166877">
           <Sponsor id="5166880">Mr David Gauke</Sponsor>
           <Sponsor id="1484612">Mr Mark Hoban</Sponsor>
           <Sponsor id="1484621">Mr Greg Hands</Sponsor>
         </Sponsors>
-        <Amendment.Number id="5166894">NC2</Amendment.Number>
+        <Amendment.Number id="5166894">
+          <AmendmentNumber_PgfTag id="7382647">NC2</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Move id="5166899">To move the following Clause:—</Move>
         <ClauseText id="1484678">
           <SubSection id="1484688">
-            <SubSection1PgfTag id="7382659">
-              <PgfNumString>\t‘(1)\t</PgfNumString>For the tax year 2009-10 the amount specified in—</SubSection1PgfTag>
+            <SubSection1_PgfTag id="7382659">
+              <PgfNumString>\t‘(1)\t</PgfNumString>For the tax year 2009-10 the amount specified in—</SubSection1_PgfTag>
 
-            <ParagraphPgfTag id="7382663">
+            <Paragraph_PgfTag id="7382663">
               <PgfNumString>\t(a)\t</PgfNumString>
               <Para id="1484695">section 36 of ITA 2007, and</Para>
-            </ParagraphPgfTag>
+            </Paragraph_PgfTag>
 
-            <ParagraphPgfTag id="7382667">
+            <Paragraph_PgfTag id="7382667">
               <PgfNumString>\t(b)\t</PgfNumString>
               <Para id="1484702">section 257(2) of ICTA,</Para>
-            </ParagraphPgfTag>
+            </Paragraph_PgfTag>
 
-            <SubSection1PgfTag id="7382672">
+            <SubSection1_PgfTag id="7382672">
               <PgfNumString>\t\t</PgfNumString>
               <TextContinuation id="1484714">(personal allowance for those aged 65 to 74) is replaced with “£11,490”.</TextContinuation>
-            </SubSection1PgfTag>
+            </SubSection1_PgfTag>
           </SubSection>
           <SubSection id="1484725">
-            <SubSectionPgfTag id="7382675">
-              <PgfNumString>\t(2)\t</PgfNumString>For the tax year 2009-10 the amount specified in—</SubSectionPgfTag>
+            <SubSection_PgfTag id="7382675">
+              <PgfNumString>\t(2)\t</PgfNumString>For the tax year 2009-10 the amount specified in—</SubSection_PgfTag>
 
-            <ParagraphPgfTag id="7382679">
+            <Paragraph_PgfTag id="7382679">
               <PgfNumString>\t(a)\t</PgfNumString>
               <Para id="1484736">section 37 of ITA 2007, and</Para>
-            </ParagraphPgfTag>
+            </Paragraph_PgfTag>
 
-            <ParagraphPgfTag id="7382683">
+            <Paragraph_PgfTag id="7382683">
               <PgfNumString>\t(b)\t</PgfNumString>
               <Para id="1484743">section 257(3) of ICTA,</Para>
-            </ParagraphPgfTag>
+            </Paragraph_PgfTag>
 
-            <SubSectionPgfTag id="7382689">
+            <SubSection_PgfTag id="7382689">
               <PgfNumString>\t\t</PgfNumString>
               <TextContinuation id="1484755">(personal allowance for those aged 75 and over) is replaced with “£11,640”’.</TextContinuation>
-            </SubSectionPgfTag>
+            </SubSection_PgfTag>
           </SubSection>
         </ClauseText>
       </NewClause.Committee>
       <NewClause.Committee id="1485418" Star="No">
-        <New_C_STitlePgfTag id="7382700">
+        <New_C_STitle_PgfTag id="7382700">
           <PgfNumString>\t</PgfNumString>
           <ClauseTitle id="1485426">Thresholds for residential property</ClauseTitle>
-        </New_C_STitlePgfTag>
+        </New_C_STitle_PgfTag>
         <Sponsors id="1485435">
           <Sponsor id="1485439">Mr David Gauke</Sponsor>
           <Sponsor id="1485445">Mr Mark Hoban</Sponsor>
           <Sponsor id="1485454">Mr Greg Hands</Sponsor>
         </Sponsors>
-        <Amendment.Number id="1485468">NC3</Amendment.Number>
+        <Amendment.Number id="1485468">
+          <AmendmentNumber_PgfTag id="7382719">NC3</AmendmentNumber_PgfTag>
+        </Amendment.Number>
         <Move id="1485484">To move the following Clause:—</Move>
         <ClauseText id="1485495">
           <SubSection id="1485514">
-            <SubSection1PgfTag id="7382731">
-              <PgfNumString>\t‘(1)\t</PgfNumString>A land transaction is exempt from the charge to stamp duty land tax if—</SubSection1PgfTag>
+            <SubSection1_PgfTag id="7382731">
+              <PgfNumString>\t‘(1)\t</PgfNumString>A land transaction is exempt from the charge to stamp duty land tax if—</SubSection1_PgfTag>
 
-            <ParagraphPgfTag id="7382734">
+            <Paragraph_PgfTag id="7382734">
               <PgfNumString>\t(a)\t</PgfNumString>
               <Para id="1485521">it is a relevant acquisition of land which consists entirely of residential property,</Para>
-            </ParagraphPgfTag>
+            </Paragraph_PgfTag>
 
-            <ParagraphPgfTag id="7382738">
+            <Paragraph_PgfTag id="7382738">
               <PgfNumString>\t(b)\t</PgfNumString>
               <Para id="1485528">the relevant chargeable consideration for the transaction is not more than £250,000, and</Para>
-            </ParagraphPgfTag>
+            </Paragraph_PgfTag>
 
-            <ParagraphPgfTag id="7382744">
+            <Paragraph_PgfTag id="7382744">
               <PgfNumString>\t(c)\t</PgfNumString>
               <Para id="1485538">the purchaser is a first time purchaser.</Para>
-            </ParagraphPgfTag>
+            </Paragraph_PgfTag>
           </SubSection>
           <SubSection id="1485552">
-            <SubSectionPgfTag id="7382747">
-              <PgfNumString>\t(2)\t</PgfNumString>In paragraph (1)(a) a “relevant acquisition of land” means an acquisition of a major interest in land other than—</SubSectionPgfTag>
+            <SubSection_PgfTag id="7382747">
+              <PgfNumString>\t(2)\t</PgfNumString>In paragraph (1)(a) a “relevant acquisition of land” means an acquisition of a major interest in land other than—</SubSection_PgfTag>
 
-            <ParagraphPgfTag id="7382751">
+            <Paragraph_PgfTag id="7382751">
               <PgfNumString>\t(a)\t</PgfNumString>
               <Para id="1485566">the grant of a lease for a term of less than 21 years, or</Para>
-            </ParagraphPgfTag>
+            </Paragraph_PgfTag>
 
-            <ParagraphPgfTag id="7382756">
+            <Paragraph_PgfTag id="7382756">
               <PgfNumString>\t(b)\t</PgfNumString>
               <Para id="1485573">the assignment of a lease which has less than 21 years to run.</Para>
-            </ParagraphPgfTag>
+            </Paragraph_PgfTag>
           </SubSection>
           <SubSection id="1485585">
-            <SubSectionPgfTag id="7382759">
-              <PgfNumString>\t(3)\t</PgfNumString>In paragraph (1)(b) the “relevant chargeable consideration for the transaction” means—</SubSectionPgfTag>
+            <SubSection_PgfTag id="7382759">
+              <PgfNumString>\t(3)\t</PgfNumString>In paragraph (1)(b) the “relevant chargeable consideration for the transaction” means—</SubSection_PgfTag>
 
-            <ParagraphPgfTag id="7382763">
+            <Paragraph_PgfTag id="7382763">
               <PgfNumString>\t(a)\t</PgfNumString>
               <Para id="1485602">the chargeable consideration for the transaction, or</Para>
-            </ParagraphPgfTag>
+            </Paragraph_PgfTag>
 
-            <ParagraphPgfTag id="7382766">
+            <Paragraph_PgfTag id="7382766">
               <PgfNumString>\t(b)\t</PgfNumString>
               <Para id="1485609">where the transaction is one of a number of linked transactions, the total of the chargeable consideration for all those transactions.</Para>
-            </ParagraphPgfTag>
+            </Paragraph_PgfTag>
           </SubSection>
 
-          <SubSectionPgfTag id="7382774">
+          <SubSection_PgfTag id="7382774">
             <PgfNumString>\t(4)\t</PgfNumString>
             <SubSection id="1485621">The Treasury shall by regulation define the meaning of “first time purchaser.”’.</SubSection>
-          </SubSectionPgfTag>
+          </SubSection_PgfTag>
         </ClauseText>
       </NewClause.Committee>
     </Committee>
     <Order.House id="7325194">
-      <OrderHeadingPgfTag id="7382791">
+      <OrderHeading_PgfTag id="7382791">
         <PgfNumString></PgfNumString>
         <OrderDate id="7325197">Order of the House [6 MAY 2009]</OrderDate>
-      </OrderHeadingPgfTag>
+      </OrderHeading_PgfTag>
       <OrderPreamble id="7325208">That the following provisions shall apply to the Finance Bill:
 </OrderPreamble>
       <OrderText id="7325213">
-        <OrderHouseParaPgfTag id="7382800">
+        <OrderHousePara_PgfTag id="7382800">
           <PgfNumString>\t1.\t</PgfNumString>
           <OrderPara id="7325216">Clauses 7, 8, 9, 11, 14, 16, 20 and 92 be committed to a Committee of the whole House;</OrderPara>
-        </OrderHouseParaPgfTag>
+        </OrderHousePara_PgfTag>
 
-        <OrderHouseParaPgfTag id="7382805">
+        <OrderHousePara_PgfTag id="7382805">
           <PgfNumString>\t2.\t</PgfNumString>
           <OrderPara id="7325221">the remainder of the Bill be committed to a Public Bill Committee; and</OrderPara>
-        </OrderHouseParaPgfTag>
+        </OrderHousePara_PgfTag>
 
-        <OrderHouseParaPgfTag id="7382808">
+        <OrderHousePara_PgfTag id="7382808">
           <PgfNumString>\t3.\t</PgfNumString>
           <OrderPara id="7325226">when the provisions of the Bill considered by the Committee of the whole House and the Public Bill Committee have been reported to the House, the Bill be proceeded with as if it had been reported as a whole to the House from the Public Bill Committee.</OrderPara>
-        </OrderHouseParaPgfTag>
+        </OrderHousePara_PgfTag>
       </OrderText>
     </Order.House>
     <Order.Motion id="1484767">
-      <OrderHeadingPgfTag id="7382821">
+      <OrderHeading_PgfTag id="7382821">
         <PgfNumString></PgfNumString>
         <OrderHeading id="7329842">Resolution of the Committee [19 May 2009]</OrderHeading>
-      </OrderHeadingPgfTag>
+      </OrderHeading_PgfTag>
       <OrderAmendmentText id="7330294">That the Committee shall meet—
   on Tuesdays at 10.30 a.m. and 4.30 p.m., and
   on Thursdays (other than Thursday 4 June) at 9.00 a.m. and 1.00 p.m.,
  when the House is sitting.</OrderAmendmentText>
     </Order.Motion>
     <Order.Committee id="7323403">
-      <OrderHeadingPgfTag id="7382842">
+      <OrderHeading_PgfTag id="7382842">
         <PgfNumString></PgfNumString>
         <OrderDate id="7323407">Order of the Committee [19 May 2009]</OrderDate>
-      </OrderHeadingPgfTag>
+      </OrderHeading_PgfTag>
       <ResolutionPreamble id="7336802">That the order in which proceedings are taken shall be: Clauses 1 to 5; Schedule 1; Clause 6; Schedules 2 and 3; Clauses 10, 12, and 13; Schedule 4; Clauses 15 and 17; Schedule 5; Clauses 18, 19 and 21 to 23; Schedule 6; Clauses 24 to 26; Schedule 7; Clause 27; Schedule 8; Clause 28; Schedule 9; Clause 29; Schedule 10; Clause 30; Schedule 11; Clause 31; Schedule 12; Clause 32; Schedule 13; Clauses 33 and 34; Schedule 14; Clause 35; Schedule 15; Clause 36; Schedule 16; Clause 37; Schedule 17; Clause 38; Schedule 18; Clauses 39 and 40; Schedule 19; Clause 41; Schedule 20; Clauses 42 and 43; Schedule 21; Clause 44; Schedule 22; Clauses 45 and 46; Schedule 23; Clauses 47 and 48; Schedule 24; Clause 49; Schedule 25; Clause 50; Schedule 26; Clause 51; Schedule 27; Clauses 52 and 53; Schedule 28; Clauses 54 to 58; Schedule 29; Clauses 59 to 61; Schedule 30; Clause 62; Schedule 31; Clause 63; Schedule 32; Clause 64; Schedule 33; Clause 65; Schedule 34; Clauses 66 to 71; Schedule 35; Clauses 72 to 75; Schedule 36; Clauses 76 to 82; Schedule 37; Clause 83; Schedule 38; Clause 84; Schedule 39; Clause 85; Schedule 40; Clause 86; Schedule 41; Clause 87; Schedule 42; Clause 88; Schedule 43; Clause 89; Schedule 44; Clause 90; Schedule 45; Clause 91; Schedule 46; Clauses 93 and 94; Schedule 47; Clause 95; Schedule 48; Clause 96; Schedule 49; Clause 97; Schedule 50; Clause 98; Schedule 51; Clause 99; Schedule 52; Clause 100; Schedule 53; Clause 101; Schedule 54; Clauses 102 to 105; Schedule 55; Clause106; Schedule 56; Clauses 107 and 108; Schedule 57; Clause 109; Schedule 58; Clauses 110 to 117; Schedule 59; Clause 118; Schedule 60; Clauses 119 to 122; Schedule 61; Clauses 123 and 124; new Clauses; new Schedules; Clauses 125 and 126</ResolutionPreamble>
     </Order.Committee>
   </Amendments.Commons>
 </Document>
-

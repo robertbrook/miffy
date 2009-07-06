@@ -15,13 +15,19 @@ describe MifParser do
       @result = @parser.parse_xml(fixture('pbc0900206m.xml'), :html => true)
     end
     it 'should create html' do
-      # puts @result
+      File.open('/Users/x/apps/uk/ex.html','w') {|f| f.write @result }
       @result.should have_tag('html')
 
       @result.should have_tag('div[class="Committee"][id="5166572"]') do
         with_tag('div[class="Clause.Committee"][id="2494674"]') do
           with_tag('ul[class="Sponsors"][id="2494677"]') do
             with_tag('li[class="Sponsor"][id="2494680"]', :text => 'Mr Jeremy Browne')
+          end
+        end
+        with_tag('div[class="Amendment.Text"][id="2494721"]') do
+          with_tag('p[class="SubSection_PgfTag"][id="7332538"]') do
+            with_tag('span[class="PgfNumString"]', :text => '\t‘(1)\t')
+            with_tag('span[class="SubSection"][id="7316809"]', :text => 'Aircraft flight duty is chargeable in respect of each freight and passenger aircraft on each flight undertaken by that aircraft from a destination within the UK.’.')
           end
         end
       end
@@ -37,9 +43,9 @@ describe MifParser do
         <Page id="2494701">page 11, </Page>
         <Line id="2494711">line 4, </Line>
         <Amendment.Text id="2494721">leave out from ‘substitute’ to end of line 29 and insert—
-<SubSectionPgfTag id="7332538"><PgfNumString>\t‘(1)\t</PgfNumString>
+<SubSection_PgfTag id="7332538"><PgfNumString>\t‘(1)\t</PgfNumString>
             <SubSection id="7316809" Number="1" Quote="Single">Aircraft flight duty is chargeable in respect of each freight and passenger aircraft on each flight undertaken by that aircraft from a destination within the UK.’.</SubSection>
-          </SubSectionPgfTag>
+          </SubSection_PgfTag>
         </Amendment.Text>
       </Clause.Committee>
 |
