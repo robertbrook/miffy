@@ -50,28 +50,28 @@ class Mif2HtmlParser
     end
   end
 
-  DIV = %w[Amendments.Commons Head HeadConsider Date
-      Committee Clause.Committee Order.Committee
+  DIV = %w[Amendments_Commons Head HeadConsider Date
+      Committee Clause_Committee Order_Committee
       CrossHeadingSch Amendment
-      NewClause.Committee Order.House].inject({}){|h,v| h[v]=true; h}
-  DIV_RE = Regexp.new "(#{DIV.keys.join("|")})"
+      NewClause_Committee Order_House].inject({}){|h,v| h[v]=true; h}
+  DIV_RE = Regexp.new "(^#{DIV.keys.join("$|")}$)"
 
   # P = %w[].inject({}){|h,v| h[v]=true; h}
 
   SPAN = %w[Stageheader CommitteeShorttitle ClausesToBeConsidered
-      MarshalledOrderNote SubSection Schedule.Committee
-      Para Para.sch SubPara.sch SubSubPara.sch
+      MarshalledOrderNote SubSection Schedule_Committee
+      Para Para_sch SubPara_sch SubSubPara_sch
       Definition
-      CrossHeadingTitle Heading.text
+      CrossHeadingTitle Heading_text
       ClauseTitle ClauseText Move TextContinuation
       PgfNumString
       OrderDate OrderPreamble OrderText OrderPara
-      Order.Motion OrderHeading
+      Order_Motion OrderHeading
       OrderAmendmentText
       ResolutionPreamble
-      Day Date.text STText Notehead NoteTxt
-      Amendment.Text Amendment.Number Number Page Line ].inject({}){|h,v| h[v]=true; h}
-  SPAN_RE = Regexp.new "(#{SPAN.keys.join("|")})"
+      Day Date_text STText Notehead NoteTxt
+      Amendment_Text Amendment_Number Number Page Line ].inject({}){|h,v| h[v]=true; h}
+  SPAN_RE = Regexp.new "(^#{SPAN.keys.join("$|")}$)"
 
   UL = %w[Sponsors].inject({}){|h,v| h[v]=true; h}
   UL_RE = Regexp.new "(#{UL.keys.join("|")})"
@@ -92,7 +92,7 @@ class Mif2HtmlParser
   end
 
   def add_html_element name, node, xml
-    xml << %Q|<#{name} class="#{node.name}"|
+    xml << %Q|<#{name} class="#{node.name.gsub('.','_')}"|
     xml << %Q| id="#{node['id']}"| if node['id']
     xml << ">"
     node_children_to_html(node, xml)
@@ -100,7 +100,7 @@ class Mif2HtmlParser
   end
 
   def node_to_html(node, xml)
-    case node.name
+    case node.name.gsub('.','_')
       when /_PgfTag$/
         add_html_element 'p', node, xml
       when DIV_RE

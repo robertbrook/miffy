@@ -19,12 +19,12 @@ describe MifParser do
       @result.should have_tag('html')
 
       @result.should have_tag('div[class="Committee"][id="5166572"]') do
-        with_tag('div[class="Clause.Committee"][id="2494674"]') do
+        with_tag('div[class="Clause_Committee"][id="2494674"]') do
           with_tag('ul[class="Sponsors"][id="2494677"]') do
             with_tag('li[class="Sponsor"][id="2494680"]', :text => 'Mr Jeremy Browne')
           end
         end
-        with_tag('div[class="Amendment.Text"][id="2494721"]') do
+        with_tag('span[class="Amendment_Text"][id="2494721"]') do
           with_tag('p[class="SubSection_PgfTag"][id="7332538"]') do
             with_tag('span[class="PgfNumString"]', :text => '\t‘(1)\t')
             with_tag('span[class="SubSection"][id="7316809"]', :text => 'Aircraft flight duty is chargeable in respect of each freight and passenger aircraft on each flight undertaken by that aircraft from a destination within the UK.’.')

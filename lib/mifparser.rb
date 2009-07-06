@@ -100,6 +100,7 @@ class MifParser
     tag = clean(element).gsub(' ','_')
     @pgf_tag = "#{tag}_PgfTag"
     @pgf_tag_id = element.at('../Unique/text()').to_s
+
     if tag == 'AmendmentNumber'
       add_pgf_tag
     end
