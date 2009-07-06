@@ -2,6 +2,7 @@ require 'tempfile'
 require 'rubygems'
 require 'hpricot'
 require 'htmlentities'
+require 'rexml/document'
 
 class MifParser
 
@@ -57,7 +58,16 @@ class MifParser
       end
     end
     xml << [options[:html] ? '</body></html>' : '</Document>']
-    xml.join('')
+    xml = xml.join('')
+    doc = REXML::Document.new(xml)
+
+    if options[:indent]
+      indented = ''
+      doc.write(indented,2)
+      indented
+    else
+      xml
+    end
   end
 
   def get_char element
@@ -85,12 +95,29 @@ class MifParser
     end
   end
 
+  def handle_pgf_tag element
+    tag = clean(element).gsub(' ','_')
+    @pgf_tag = "#{tag}_PgfTag"
+    @pgf_tag_id = element.at('../Unique/text()').to_s
+  end
+
   def handle_etag element, xml
     tag = clean(element)
     @stack << tag
     uid = element.at('../Unique/text()').to_s
+
+    attributes = (element/'../Attributes/Attribute')
+    attribute_list = ''
+    if attributes && attributes.size > 0
+      attributes.each do |attribute|
+        name = clean(attribute.at('AttrName/text()'))
+        value = clean(attribute.at('AttrValue/text()'))
+        attribute_list += %Q| #{name}="#{value}"|
+      end
+    end
+
     collapsed = element.at('../Collapsed/text()').to_s == 'Yes'
-    if (collapsed || (tag == 'ClauseText')) && @in_paragraph #
+    if (collapsed || (tag == 'ClauseText') || tag == 'Para.sch' ) && @in_paragraph #
       line = xml.pop
       lines = []
       while !line.include?(@pgf_tag)
@@ -103,14 +130,14 @@ class MifParser
       end
       pgf_start_tag = line
       lines.each {|line| add line}
-      add "<#{tag} id='#{uid}'>"
+      add %Q|<#{tag} id="#{uid}"#{attribute_list}>|
       add pgf_start_tag
       puts uid if pgf_num_string.nil?
       puts tag if pgf_num_string.nil?
       add pgf_num_string
       @opened_in_paragraph.clear
     else
-      add "<#{tag} id='#{uid}'>"
+      add %Q|<#{tag} id="#{uid}"#{attribute_list}>|
       @opened_in_paragraph[tag] = true if @in_paragraph
     end
   end
@@ -170,7 +197,7 @@ class MifParser
     flow.traverse_element do |element|
       case element.name
         when 'PgfTag'
-          @pgf_tag = clean(element).gsub(' ','_')
+          handle_pgf_tag element
         when 'ETag'
           handle_etag element, xml
         when 'Char'
@@ -181,7 +208,12 @@ class MifParser
           handle_para xml
         when 'PgfNumString'
           if @pgf_tag
-            add "\n<#{@pgf_tag}>"
+            if @pgf_tag_id
+              add %Q|\n<#{@pgf_tag} id="#{@pgf_tag_id}">|
+              @pgf_tag_id = nil
+            else
+              add "\n<#{@pgf_tag}>"
+            end
             @in_paragraph = true
           end
           string = clean(element)
