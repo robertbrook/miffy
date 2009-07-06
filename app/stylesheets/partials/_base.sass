@@ -13,15 +13,8 @@
 // Or you can set !blueprint_grid_width to a fixed value and unset !blueprint_container_size -- it will be calculated for you.
 //!blueprint_grid_width   = (!blueprint_container_size + !blueprint_grid_margin) / !blueprint_grid_columns - !blueprint_grid_margin
 
-= full_screen
-  +column(30, true)
-
-= right_column
-  +prepend(2)
-  +column(28)
-
 = indent
-  +prepend(1)
+  text-indent: 20px
 
 = date_heading
   padding: 2px 0 0 0
@@ -44,6 +37,7 @@
 
 = clause_title
   font-style: italic
+  text-indent: -8px
   +prepend(2)
   +column(28)
 
