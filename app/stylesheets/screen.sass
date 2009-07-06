@@ -72,7 +72,7 @@ body
         margin: 0
         padding: 0.5em 0
 
-      .Number
+      .Number	
         +indent
 
       .Amendment-Number
@@ -84,6 +84,21 @@ body
 
       .Move
         +full_screen
+
+    .OrderDate
+      text-transform: uppercase
+
+    .OrderHeading
+      text-transform: uppercase
+
+    .OrderPreamble, .OrderAmendmentText, .ResolutionPreamble
+      text-align: left
+
+    .Order-House, .Order-Motion, .Order-Committee
+      padding: 0.5em 0 0 0
+      border-bottom: 1px solid grey
+      float: left
+      +full_screen
 
   #header, #footer
     +column(!blueprint_grid_columns)
