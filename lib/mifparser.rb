@@ -45,21 +45,26 @@ class MifParser
 
   def parse_xml xml, options={}
     doc = Hpricot.XML xml
-    flows = (doc/'TextFlow')
-
     xml = [options[:html] ? '<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /></head><body>' : '<Document>']
-    flows.each do |flow|
-      unless is_instructions?(flow)
-        if options[:html]
-          handle_flow_to_html(flow, xml)
-        else
+
+    if options[:html]
+      doc_to_html(doc, xml)
+    else
+      flows = (doc/'TextFlow')
+      flows.each do |flow|
+        unless is_instructions?(flow)
           handle_flow(flow, xml)
         end
       end
     end
+
     xml << [options[:html] ? '</body></html>' : '</Document>']
     xml = xml.join('')
-    doc = REXML::Document.new(xml)
+    begin
+      doc = REXML::Document.new(xml)
+    rescue Exception => e
+      puts e.to_s
+    end
 
     if options[:indent]
       indented = ''
@@ -99,9 +104,24 @@ class MifParser
     tag = clean(element).gsub(' ','_')
     @pgf_tag = "#{tag}_PgfTag"
     @pgf_tag_id = element.at('../Unique/text()').to_s
+    if tag == 'AmendmentNumber'
+      add_pgf_tag
+    end
   end
 
-  def handle_etag element, xml
+  def add_pgf_tag
+    if @pgf_tag
+      if @pgf_tag_id
+        add %Q|\n<#{@pgf_tag} id="#{@pgf_tag_id}">|
+        @pgf_tag_id = nil
+      else
+        add "\n<#{@pgf_tag}>"
+      end
+      @in_paragraph = true
+    end
+  end
+
+  def handle_etag element
     tag = clean(element)
     @stack << tag
     uid = element.at('../Unique/text()').to_s
@@ -117,8 +137,11 @@ class MifParser
     end
 
     collapsed = element.at('../Collapsed/text()').to_s == 'Yes'
-    if (collapsed || (tag == 'ClauseText') || tag == 'Para.sch' ) && @in_paragraph #
-      line = xml.pop
+    if @in_paragraph && (collapsed ||
+        tag == 'Amendment.Number' ||
+        tag == 'ClauseText' ||
+        tag == 'Para.sch' )
+      line = @xml.pop
       lines = []
       while !line.include?(@pgf_tag)
         if line[/PgfNumString/]
@@ -126,15 +149,15 @@ class MifParser
         else
           lines << line
         end
-        line = xml.pop
+        line = @xml.pop
       end
       pgf_start_tag = line
       lines.each {|line| add line}
       add %Q|<#{tag} id="#{uid}"#{attribute_list}>|
       add pgf_start_tag
-      puts uid if pgf_num_string.nil?
-      puts tag if pgf_num_string.nil?
-      add pgf_num_string
+      # puts uid if pgf_num_string.nil?
+      # puts tag if pgf_num_string.nil?
+      add pgf_num_string if pgf_num_string
       @opened_in_paragraph.clear
     else
       add %Q|<#{tag} id="#{uid}"#{attribute_list}>|
@@ -142,12 +165,12 @@ class MifParser
     end
   end
 
-  def handle_para xml
+  def handle_para
     if @in_paragraph
       if @opened_in_paragraph.size > 1
         raise "can not handle all elements opened in <#{@pgf_tag}> paragraph: #{@opened_in_paragraph.keys.inspect}"
       elsif @opened_in_paragraph.size == 1
-        last_line = xml.pop
+        last_line = @xml.pop
         if last_line.include?(@opened_in_paragraph.keys.first)
           add "</#{@pgf_tag}>\n"
           add last_line
@@ -155,7 +178,7 @@ class MifParser
           @in_paragraph = false
           @opened_in_paragraph.clear
         else
-          raise "too tricky to close <#{@pgf_tag}> paragraph, opened element: #{@opened_in_paragraph.keys.first} last_line: #{last_line} xml: #{xml.join("\n").reverse[0..1000].reverse}"
+          raise "too tricky to close <#{@pgf_tag}> paragraph, opened element: #{@opened_in_paragraph.keys.first} last_line: #{last_line} xml: #{@xml.join("\n").reverse[0..1000].reverse}"
         end
       else
         add "</#{@pgf_tag}>\n"
@@ -166,7 +189,7 @@ class MifParser
     end
   end
 
-  def handle_element_end element, xml
+  def handle_element_end element
     tag = @stack.pop
     if @in_paragraph && !@opened_in_paragraph[tag]
       # need to close paragraph
@@ -199,31 +222,23 @@ class MifParser
         when 'PgfTag'
           handle_pgf_tag element
         when 'ETag'
-          handle_etag element, xml
+          handle_etag element
         when 'Char'
-          last_line = xml.pop
+          last_line = @xml.pop
           last_line += get_char(element)
           add last_line
         when 'Para'
-          handle_para xml
+          handle_para
         when 'PgfNumString'
-          if @pgf_tag
-            if @pgf_tag_id
-              add %Q|\n<#{@pgf_tag} id="#{@pgf_tag_id}">|
-              @pgf_tag_id = nil
-            else
-              add "\n<#{@pgf_tag}>"
-            end
-            @in_paragraph = true
-          end
+          add_pgf_tag
           string = clean(element)
           add "<PgfNumString>#{string}</PgfNumString>"
         when 'String'
-          last_line = xml.pop
+          last_line = @xml.pop
           last_line += clean(element)
           add last_line
         when 'ElementEnd'
-          handle_element_end element, xml
+          handle_element_end element
       end
     end
   end
@@ -232,6 +247,7 @@ class MifParser
       Committee Clause.Committee Order.Committee
       CrossHeadingSch Amendment
       NewClause.Committee Order.House].inject({}){|h,v| h[v]=true; h}
+  DIV_RE = Regexp.new "(#{DIV.keys.join("|")})"
 
   # P = %w[].inject({}){|h,v| h[v]=true; h}
 
@@ -249,77 +265,45 @@ class MifParser
       Amendment.Text Amendment.Number Number Page Line ].inject({}){|h,v| h[v]=true; h}
 
   UL = %w[Sponsors].inject({}){|h,v| h[v]=true; h}
+  UL_RE = Regexp.new "(#{UL.keys.join("|")})"
   LI = %w[Sponsor].inject({}){|h,v| h[v]=true; h}
+  LI_RE = Regexp.new "(#{LI.keys.join("|")})"
 
   HR = %w[Separator.thick].inject({}){|h,v| h[v]=true; h}
 
-  def handle_flow_to_html(flow, xml)
-    stack = []
-    paras = []
-    flow.traverse_element do |element|
-      case element.name
-        # when 'Para'
-        when 'PgfTag'
-          xml << "</p>\n"
-          tag = clean(element)
-          xml << "<p class='#{tag}'>"
-        when 'ETag'
-          tag = clean(element)
-          stack << tag
-          if DIV[tag]
-            xml << "<div class='#{tag}'>"
-          # elsif P[tag]
-            # xml << "<p class='#{tag}'>"
-          elsif UL[tag]
-            xml << "<ul class='#{tag}'>"
-          elsif LI[tag]
-            xml << "<li class='#{tag}'>"
-          elsif SPAN[tag]
-            xml << "<span class='#{tag}'>"
-          elsif HR[tag]
-            xml << "<!-- page break -->"
-          else
-            xml << '<div>[['
-            xml << tag
-            xml << ']]: '
-          end
-        when 'Char'
-          xml << get_html_for_char(element)
-        when 'PgfNumString'
-          string = clean(element)
-          if string
-            string.gsub!('\t',' ')
-            string = HTMLEntities.new.encode(string)
-            xml << "<span class='PgfNumString'>#{string}</span>"
-          end
-        when 'String'
-          string = clean(element)
-          if string
-            string.gsub!('\t',' ')
-            string = HTMLEntities.new.encode(string)
-            xml << string
-          end
-        when 'ElementEnd'
-          tag = stack.pop
-          if DIV[tag]
-            xml << "</div>"
-          # elsif P[tag]
-            # xml << "</p>"
-          elsif UL[tag]
-            xml << "</ul>"
-          elsif LI[tag]
-            xml << "</li>"
-          elsif SPAN[tag]
-            xml << "</span>"
-          elsif HR[tag]
-            # xml << ""
-          else
-            xml << '</div>'
-          end
-          # xml << name
-          # xml << '>'
-          xml << "\n" unless tag[/(Day|STHouse|STLords|STText)/]
-      end
+  def doc_to_html(doc, xml)
+    node_children_to_html(doc.root, xml)
+    xml
+  end
+
+  def node_children_to_html(node, xml)
+    node.children.each do |child|
+      node_to_html(child, xml)
+    end if node.children
+  end
+
+  def add_html_element name, node, xml
+    xml << %Q|<#{name} class="#{node.name}"|
+    xml << %Q| id="#{node['id']}"| if node['id']
+    xml << ">"
+    node_children_to_html(node, xml)
+    xml << "</#{name}>"
+  end
+
+  def node_to_html(node, xml)
+    case node.name
+      when DIV_RE
+        add_html_element 'div', node, xml
+      when UL_RE
+        add_html_element 'ul', node, xml
+      when LI_RE
+        add_html_element 'li', node, xml
+      else
+        node_children_to_html(node, xml)
+    end if node.elem?
+
+    if node.text?
+      xml << node.to_s
     end
   end
 

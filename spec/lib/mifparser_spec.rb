@@ -10,6 +10,41 @@ describe MifParser do
   before do
     @parser = MifParser.new
   end
+  describe 'when parsing longer MIF XML file to html' do
+    before do
+      @result = @parser.parse_xml(fixture('pbc0900206m.xml'), :html => true)
+    end
+    it 'should create html' do
+      # puts @result
+      @result.should have_tag('html')
+
+      @result.should have_tag('div[class="Committee"][id="5166572"]') do
+        with_tag('div[class="Clause.Committee"][id="2494674"]') do
+          with_tag('ul[class="Sponsors"][id="2494677"]') do
+            with_tag('li[class="Sponsor"][id="2494680"]', :text => 'Mr Jeremy Browne')
+          end
+        end
+      end
+
+    end
+%Q|    <Committee id="5166572">
+      <Clause.Committee id="2494674" Star="No">
+        <Sponsors id="2494677">
+          <Sponsor id="2494680">Mr Jeremy Browne</Sponsor>
+        </Sponsors>
+        <Amendment.Number id="2494686">4</Amendment.Number>
+        <Number id="2494691">Clause 17, </Number>
+        <Page id="2494701">page 11, </Page>
+        <Line id="2494711">line 4, </Line>
+        <Amendment.Text id="2494721">leave out from ‘substitute’ to end of line 29 and insert—
+<SubSectionPgfTag id="7332538"><PgfNumString>\t‘(1)\t</PgfNumString>
+            <SubSection id="7316809" Number="1" Quote="Single">Aircraft flight duty is chargeable in respect of each freight and passenger aircraft on each flight undertaken by that aircraft from a destination within the UK.’.</SubSection>
+          </SubSectionPgfTag>
+        </Amendment.Text>
+      </Clause.Committee>
+|
+end
+
 
   describe 'when creating new parser' do
     it 'should create parser' do
@@ -36,20 +71,17 @@ describe MifParser do
 
   end
 
-  # describe 'when parsing longer MIF XML file to html' do
-    # before do
-      # @result = @parser.parse_xml(fixture('pbc0900206m.xml'), :html => true)
-    # end
-    # it 'should create html' do
-      # @result.should have_tag('html')
-    # end
-  # end
-
   describe 'when parsing longer MIF XML file to xml' do
     before do
       @result = @parser.parse_xml(fixture('pbc0900206m.mif.xml'))
     end
 
+    it 'should move Amendment.Number ETag round AmendmentNumber PgfTag' do
+      puts @result
+      @result.tr('.','-').should have_tag('Amendment-Number[id="2494686"]') do
+        with_tag('AmendmentNumber_PgfTag', :text => '4')
+      end
+    end
     it 'should set id on PgfTag paragraphs' do
       @result.gsub('.','-').should have_tag('SubParagraph-sch_PgfTag[id="7381591"]')
     end
