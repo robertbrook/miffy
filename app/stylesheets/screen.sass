@@ -77,15 +77,11 @@ body
         font-weight: bold
         text-align: right
 
-      .AmendmentWrapper
-        +prepend(1)
-        +column(29)
-
-      .SubSection, .TextContinuation, .CrossHeadingTitle
+      .SubSection_PgfTag, .SubSection1_PgfTag, .TextContinuation, .CrossHeadingTitle
         +prepend(2)
         +column(28)
 
-      .Para, .Para-sch
+      .Paragraph_PgfTag, .Para-sch
         +prepend(3)
         +column(27)
 
@@ -98,13 +94,14 @@ body
         +column(25)
 
       .Move
-        +column(30)
+        +prepend(1)
+        +column(29)
 
     .OrderDate
       text-transform: uppercase
       text-align: center
 
-    .OrderHeading
+    .OrderHeading_PgfTag
       text-transform: uppercase
       text-align: center
 
