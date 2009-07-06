@@ -41,3 +41,4 @@ Rails::Initializer.run do |config|
 end
 
 require 'mifparser'
+require 'mif2htmlparser'

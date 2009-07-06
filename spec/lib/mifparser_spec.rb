@@ -11,14 +11,7 @@ describe MifParser do
     @parser = MifParser.new
   end
 
-  describe 'when creating new parser' do
-    it 'should create parser' do
-      @parser.should_not be_nil
-    end
-  end
-
   describe 'when parsing MIF file' do
-
     it 'should call out to mif2xml' do
       mif_file = 'pbc0930106a.mif'
       tempfile_path = '/var/folders/iZ/iZnGaCLQEnyh56cGeoHraU+++TI/-Tmp-/pbc0930106a.mif.xml.334.0'
@@ -33,23 +26,19 @@ describe MifParser do
 
       @parser.parse(mif_file)
     end
-
   end
-
-  # describe 'when parsing longer MIF XML file to html' do
-    # before do
-      # @result = @parser.parse_xml(fixture('pbc0900206m.xml'), :html => true)
-    # end
-    # it 'should create html' do
-      # @result.should have_tag('html')
-    # end
-  # end
 
   describe 'when parsing longer MIF XML file to xml' do
     before do
       @result = @parser.parse_xml(fixture('pbc0900206m.mif.xml'))
     end
 
+    it 'should move Amendment.Number ETag round AmendmentNumber PgfTag' do
+      puts @result
+      @result.tr('.','-').should have_tag('Amendment-Number[id="2494686"]') do
+        with_tag('AmendmentNumber_PgfTag', :text => '4')
+      end
+    end
     it 'should set id on PgfTag paragraphs' do
       @result.gsub('.','-').should have_tag('SubParagraph-sch_PgfTag[id="7381591"]')
     end
