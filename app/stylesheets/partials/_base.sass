@@ -15,16 +15,13 @@
 
 = full_screen
   +column(30, true)
-  clear: both
 
 = right_column
-  +column(16)
-  float: right
-  text-align: left
-  clear: both
+  +prepend(2)
+  +column(28)
 
 = indent
-  padding-left: 35px
+  +prepend(1)
 
 = date_heading
   padding: 2px 0 0 0
@@ -47,6 +44,8 @@
 
 = clause_title
   font-style: italic
+  +prepend(2)
+  +column(28)
 
 = heading_text
   font-style: italic
