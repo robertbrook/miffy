@@ -36,16 +36,16 @@ body
 
     .MarshalledOrderNote
       font-weight: bold
-      +right_column
+      +prepend(2)
+      +column(28)
+      text-align: left
 
       .Notehead
         text-transform: uppercase
-        clear: both
-        display: block
      
       .NoteTxt
-        clear: both
-        +indent
+        +prepend(1)
+        +column(27)
   
     .Heading-text
       +full_screen
@@ -63,7 +63,6 @@ body
         padding: 1em 0
 
       .ClauseTitle
-        +right_column
         +clause_title
 
       ul.Sponsors
@@ -72,15 +71,31 @@ body
         margin: 0
         padding: 0.5em 0
 
-      .Number	
-        +indent
-
       .Amendment-Number
-        float: right
+        +prepend(28)
+        +column(2)
         font-weight: bold
+        text-align: right
 
-      .SubSection, .Para, .Para-sch, .SubPara-sch, .TextContinuation, .SubSubPara-sch
-        +right_column
+      .AmendmentWrapper
+        +prepend(1)
+        +column(28)
+
+      .SubSection, .TextContinuation
+        +prepend(2)
+        +column(28)
+
+      .Para, .Para-sch
+        +prepend(3)
+        +column(27)
+
+      .SubPara-sch
+        +prepend(4)
+        +column(26)
+      
+      .SubSubPara-sch
+        +prepend(5)
+        +column(25)
 
       .Move
         +full_screen
@@ -96,7 +111,7 @@ body
 
     .Order-House, .Order-Motion, .Order-Committee
       padding: 0.5em 0 0 0
-      border-bottom: 1px solid grey
+      border-bottom: 1px solid black
       float: left
       +full_screen
 
