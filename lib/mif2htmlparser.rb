@@ -53,13 +53,17 @@ class Mif2HtmlParser
   DIV = %w[Amendments_Commons Head HeadConsider Date
       Committee Clause_Committee Order_Committee
       CrossHeadingSch Amendment
-      NewClause_Committee Order_House].inject({}){|h,v| h[v]=true; h}
+      NewClause_Committee Order_House
+      Amendment_Number
+      Stageheader
+      CommitteeShorttitle
+      MarshalledOrderNote
+      ClausesToBeConsidered].inject({}){|h,v| h[v]=true; h}
   DIV_RE = Regexp.new "(^#{DIV.keys.join("$|")}$)"
 
   # P = %w[].inject({}){|h,v| h[v]=true; h}
 
-  SPAN = %w[Stageheader CommitteeShorttitle ClausesToBeConsidered
-      MarshalledOrderNote SubSection Schedule_Committee
+  SPAN = %w[SubSection Schedule_Committee
       Para Para_sch SubPara_sch SubSubPara_sch
       Definition
       CrossHeadingTitle Heading_text
@@ -70,7 +74,7 @@ class Mif2HtmlParser
       OrderAmendmentText
       ResolutionPreamble
       Day Date_text STText Notehead NoteTxt
-      Amendment_Text Amendment_Number Number Page Line ].inject({}){|h,v| h[v]=true; h}
+      Amendment_Text Number Page Line ].inject({}){|h,v| h[v]=true; h}
   SPAN_RE = Regexp.new "(^#{SPAN.keys.join("$|")}$)"
 
   UL = %w[Sponsors].inject({}){|h,v| h[v]=true; h}
