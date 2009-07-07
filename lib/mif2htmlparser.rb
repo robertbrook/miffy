@@ -1,4 +1,5 @@
 require 'mifparser'
+require 'htmlentities'
 
 class Mif2HtmlParser
 
@@ -11,33 +12,28 @@ class Mif2HtmlParser
 
   def parse_xml xml, options={}
     doc = Hpricot.XML xml
-    xml = [options[:html] ? '<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /></head><body>' : '<Document>']
-
     if options[:html]
-      doc_to_html(doc, xml)
-    else
-      flows = (doc/'TextFlow')
-      flows.each do |flow|
-        unless is_instructions?(flow)
-          handle_flow(flow, xml)
-        end
+      result = ['<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /></head><body>']
+      doc_to_html(doc, result)
+      result << ['</body></html>']
+      result = result.join('')
+      begin
+        doc = REXML::Document.new(result)
+      rescue Exception => e
+        puts e.to_s
       end
-    end
+      if options[:indent]
+        indented = ''
+        doc.write(indented,2)
+        indented
+      else
+        result
+      end
 
-    xml << [options[:html] ? '</body></html>' : '</Document>']
-    xml = xml.join('')
-    begin
-      doc = REXML::Document.new(xml)
-    rescue Exception => e
-      puts e.to_s
-    end
-
-    if options[:indent]
-      indented = ''
-      doc.write(indented,2)
-      indented
-    else
-      xml
+    elsif options[:haml]
+      result = ['']
+      doc_to_haml(doc, result)
+      result.join('')
     end
   end
 
