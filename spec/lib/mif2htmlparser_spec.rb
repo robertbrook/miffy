@@ -31,9 +31,12 @@ describe MifParser do
             end
           end
         end
-
       end
 
+      @result.should have_tag('p[class="SubParagraph_sch_PgfTag"][id="7381591"]') do
+        with_tag('span[class="PgfNumString"]', :text =>'\tA2\t(1)\t')
+        with_tag('span[class="SubPara_sch"][id="1090948"]', :text => 'Paragraph 1(2) (application of Schedule) is amended as follows.')
+      end
     end
 %Q|    <Committee id="5166572">
       <Clause.Committee id="2494674" Star="No">

@@ -71,8 +71,8 @@ class Mif2HtmlParser
 
   # P = %w[].inject({}){|h,v| h[v]=true; h}
 
-  SPAN = %w[
-      Para SubPara_sch SubSubPara_sch
+  SPAN = %w[Para SubPara_sch
+      SubSubPara_sch
       Definition
       TextContinuation
       PgfNumString
@@ -89,6 +89,7 @@ class Mif2HtmlParser
   HR = %w[Separator_thick].inject({}){|h,v| h[v]=true; h}
 
   def doc_to_html(doc, xml)
+    @in_paragraph = false
     node_children_to_html(doc.root, xml)
     xml
   end
@@ -110,7 +111,17 @@ class Mif2HtmlParser
   def node_to_html(node, xml)
     case node.name.gsub('.','_')
       when /_PgfTag$/
-        add_html_element 'p', node, xml
+        already_in_paragraph = @in_paragraph
+        tag = (already_in_paragraph ? 'span' : 'p')
+        @in_paragraph = true
+        add_html_element(tag, node, xml)
+        @in_paragraph = false unless already_in_paragraph
+      when /^(SubPara_sch|SubSubPara_sch)$/
+        already_in_paragraph = @in_paragraph
+        tag = (already_in_paragraph ? 'span' : 'p')
+        @in_paragraph = true
+        add_html_element(tag, node, xml)
+        @in_paragraph = false unless already_in_paragraph
       when DIV_RE
         add_html_element 'div', node, xml
       when SPAN_RE
