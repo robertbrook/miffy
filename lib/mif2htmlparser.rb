@@ -112,6 +112,8 @@ class Mif2HtmlParser
     case node.name.gsub('.','_')
       when /_number$/
         add_html_element 'span', node, xml
+      when /^PgfNumString_\d+$/
+        add_html_element 'span', node, xml
       when /_PgfTag$/
         already_in_paragraph = @in_paragraph
         tag = (already_in_paragraph ? 'span' : 'p')

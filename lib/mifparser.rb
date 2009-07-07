@@ -242,6 +242,19 @@ class MifParser
     add last_line
   end
 
+  def handle_pgf_num_string element
+    add_pgf_tag unless @in_paragraph
+    string = clean(element)
+    if string
+      parts = ''
+      string.split('\t').each_with_index do |part, i|
+        parts += "<PgfNumString_#{i}>#{part}</PgfNumString_#{i}> " unless i == 0 && part.blank?
+      end
+      string = parts
+    end
+    add "<PgfNumString>#{string}</PgfNumString>"
+  end
+
   def handle_flow flow, xml
     @xml = xml
     @pgf_tag = nil
@@ -264,9 +277,7 @@ class MifParser
           @prefix_end = false
           handle_para
         when 'PgfNumString'
-          add_pgf_tag unless @in_paragraph
-          string = clean(element)
-          add "<PgfNumString>#{string}</PgfNumString>"
+          handle_pgf_num_string element
         when 'String'
           handle_string element
         when 'ElementEnd'
