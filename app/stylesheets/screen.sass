@@ -16,6 +16,10 @@ body
   #container
     +container
 
+    .Amendments_Commons
+      +column(30)
+      text-align: left
+
     .Head
       +column(30)
 
@@ -67,48 +71,45 @@ body
         margin: 0
         padding: 0.5em 0
 
-      .Amendment-Number
+      .AmendmentNumber_PgfTag
         +prepend(28)
         +column(2)
         font-weight: bold
         text-align: right
 
-      .AmendmentWrapper
-        +prepend(1)
-        +column(29)
-
-      .SubSection, .TextContinuation, .CrossHeadingTitle
+      .SubSection_PgfTag, .SubSection1_PgfTag, .TextContinuation, .CrossHeadingTitle
         +prepend(2)
         +column(28)
 
-      .Para, .Para-sch
+      .Paragraph_PgfTag, .Paragraph_sch_PgfTag
         +prepend(3)
         +column(27)
 
-      .SubPara-sch
+      .SubParagraph_sch_PgfTag, .SubParagraphCont_sch_PgfTag
         +prepend(4)
         +column(26)
       
-      .SubSubPara-sch, .Definition
+      .SubSubParagraph_sch_PgfTag, .Definition
         +prepend(5)
         +column(25)
 
       .Move
-        +column(30)
+        +prepend(1)
+        +column(29)
 
     .OrderDate
       text-transform: uppercase
       text-align: center
 
-    .OrderHeading
+    .OrderHeading_PgfTag
       text-transform: uppercase
       text-align: center
 
-    .OrderPara
+    .OrderHousePara_PgfTag
       +prepend(1)
       +column(29)
 
-    .Order-House, .Order-Motion, .Order-Committee
+    .Order_House, .Order_Motion, .Order_Committee
       padding: 0.5em 0 0 0
       border-bottom: 1px solid black
       +column(30)
