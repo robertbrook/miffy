@@ -101,7 +101,7 @@ class MifParser
     @pgf_tag = "#{tag}_PgfTag"
     @pgf_tag_id = element.at('../Unique/text()').to_s
 
-    if tag == 'AmendmentNumber'
+    if tag == 'AmendmentNumber' || tag == 'AmedTextCommitReport'
       add_pgf_tag
     end
   end
@@ -118,11 +118,7 @@ class MifParser
     end
   end
 
-  def handle_etag element
-    tag = clean(element)
-    @stack << tag
-    uid = element.at('../Unique/text()').to_s
-
+  def get_attributes element
     attributes = (element/'../Attributes/Attribute')
     attribute_list = ''
     if attributes && attributes.size > 0
@@ -132,36 +128,59 @@ class MifParser
         attribute_list += %Q| #{name}="#{value}"|
       end
     end
+    attribute_list
+  end
 
+  def move_etag_outside_paragraph?(element, tag)
     collapsed = element.at('../Collapsed/text()').to_s == 'Yes'
-    if @in_paragraph && (collapsed ||
-        tag == 'Amendment.Number' ||
-        tag == 'SubSection' ||
-        tag == 'ClauseText' ||
-        tag == 'OrderDate' ||
-        tag == 'OrderHeading' ||
-        tag == 'ClauseTitle' ||
-        tag == 'Para.sch' )
-      line = @xml.pop
-      lines = []
-      while !line.include?(@pgf_tag)
-        if line[/PgfNumString/]
-          pgf_num_string = line
-        else
-          lines << line
-        end
-        line = @xml.pop
+    @in_paragraph && (collapsed ||
+            tag == 'Committee' ||
+            tag == 'Amendment.Number' ||
+            tag == 'Amendment.Text' ||
+            tag == 'SubSection' ||
+            tag == 'ClauseText' ||
+            tag == 'OrderDate' ||
+            tag == 'OrderHeading' ||
+            tag == 'ClauseTitle' ||
+            tag == 'Para.sch' )
+  end
+
+  def move_etag_outside_paragraph tag, uid, attributes
+    line = @xml.pop
+    lines = []
+    while !line.include?(@pgf_tag)
+      if line[/PgfNumString/]
+        pgf_num_string = line
+      else
+        lines << line
       end
-      pgf_start_tag = line
-      lines.each {|line| add line}
-      add %Q|<#{tag} id="#{uid}"#{attribute_list}>|
+      line = @xml.pop
+    end
+    pgf_start_tag = line
+
+    # if pgf_num_string
+      add %Q|<#{tag} id="#{uid}"#{attributes}>|
       add pgf_start_tag
-      # puts uid if pgf_num_string.nil?
-      # puts tag if pgf_num_string.nil?
       add pgf_num_string if pgf_num_string
-      @opened_in_paragraph.clear
+      lines.reverse.each {|line| add line}
+    # else
+      # add %Q|<#{tag} id="#{uid}"#{attributes}>|
+      # lines.each {|line| add line}
+      # add pgf_start_tag
+    # end
+    @opened_in_paragraph.clear
+  end
+
+  def handle_etag element
+    tag = clean(element)
+    @stack << tag
+    uid = element.at('../Unique/text()').to_s
+    attributes = get_attributes(element)
+
+    if move_etag_outside_paragraph?(element, tag)
+      move_etag_outside_paragraph tag, uid, attributes
     else
-      add %Q|<#{tag} id="#{uid}"#{attribute_list}>|
+      add %Q|<#{tag} id="#{uid}"#{attributes}>|
       @opened_in_paragraph[tag] = true if @in_paragraph
     end
   end
@@ -231,7 +250,7 @@ class MifParser
         when 'Para'
           handle_para
         when 'PgfNumString'
-          add_pgf_tag
+          add_pgf_tag unless @in_paragraph
           string = clean(element)
           add "<PgfNumString>#{string}</PgfNumString>"
         when 'String'
