@@ -136,7 +136,11 @@ class MifParser
     collapsed = element.at('../Collapsed/text()').to_s == 'Yes'
     if @in_paragraph && (collapsed ||
         tag == 'Amendment.Number' ||
+        tag == 'SubSection' ||
         tag == 'ClauseText' ||
+        tag == 'OrderDate' ||
+        tag == 'OrderHeading' ||
+        tag == 'ClauseTitle' ||
         tag == 'Para.sch' )
       line = @xml.pop
       lines = []

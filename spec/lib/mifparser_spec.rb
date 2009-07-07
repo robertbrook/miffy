@@ -29,16 +29,24 @@ describe MifParser do
   end
 
   describe 'when parsing longer MIF XML file to xml' do
-    before do
+    before(:all) do
+      @parser = MifParser.new
       @result = @parser.parse_xml(fixture('pbc0900206m.mif.xml'))
     end
 
     it 'should move Amendment.Number ETag round AmendmentNumber PgfTag' do
-      File.open('/Users/x/apps/uk/ex.xml','w') {|f| f.write @result }
+      File.open(RAILS_ROOT + '/spec/fixtures/pbc0900206m.xml','w') {|f| f.write @result }
       @result.tr('.','-').should have_tag('Amendment-Number[id="2494686"]') do
         with_tag('AmendmentNumber_PgfTag', :text => '4')
       end
     end
+
+    it 'should move SubSection ETag round SubSection PgfTag' do
+      @result.tr('.','-').should have_tag('SubSection[id="1489118"]') do
+        with_tag('SubSection_PgfTag[id="7381365"]')
+      end
+    end
+
     it 'should set id on PgfTag paragraphs' do
       @result.gsub('.','-').should have_tag('SubParagraph-sch_PgfTag[id="7381591"]')
     end
