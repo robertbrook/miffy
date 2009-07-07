@@ -174,6 +174,7 @@ class MifParser
   def handle_etag element
     tag = clean(element)
     @stack << tag
+    @e_tag = tag
     uid = element.at('../Unique/text()').to_s
     attributes = get_attributes(element)
 
@@ -231,10 +232,22 @@ class MifParser
     end
   end
 
+  def handle_string element
+    text = clean(element)
+    if @prefix_end && text[/^\d+$/] && @e_tag
+      text = %Q|<#{@e_tag}_number>#{text}</#{@e_tag}_number>|
+    end
+    last_line = @xml.pop
+    last_line += text
+    add last_line
+  end
+
   def handle_flow flow, xml
     @xml = xml
     @pgf_tag = nil
+    @e_tag = nil
     @in_paragraph = false
+    @prefix_end = false
     @opened_in_paragraph = {}
     @stack = []
     flow.traverse_element do |element|
@@ -248,17 +261,20 @@ class MifParser
           last_line += get_char(element)
           add last_line
         when 'Para'
+          @prefix_end = false
           handle_para
         when 'PgfNumString'
           add_pgf_tag unless @in_paragraph
           string = clean(element)
           add "<PgfNumString>#{string}</PgfNumString>"
         when 'String'
-          last_line = @xml.pop
-          last_line += clean(element)
-          add last_line
+          handle_string element
         when 'ElementEnd'
           handle_element_end element
+        when 'PrefixEnd'
+          @prefix_end = true
+        when 'SuffixBegin'
+          @prefix_end = false
       end
     end
   end

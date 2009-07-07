@@ -110,6 +110,8 @@ class Mif2HtmlParser
 
   def node_to_html(node, xml)
     case node.name.gsub('.','_')
+      when /_number$/
+        add_html_element 'span', node, xml
       when /_PgfTag$/
         already_in_paragraph = @in_paragraph
         tag = (already_in_paragraph ? 'span' : 'p')
