@@ -86,40 +86,16 @@ body
         .Number_number, .Page_number, .Line_number
           font-weight: bold
 
-      .SubSection_PgfTag, .SubSection1_PgfTag, .TextContinuation, .CrossHeadingTitle
-        .PgfNumString
-          +prepend(2)
-          +column(2)
-        .PgfText
-          +column(26, true)
+      .PgfNumString_1
+        +append(1)
+        +column(1)
 
-      .Paragraph_PgfTag, .Paragraph_sch_PgfTag
-        +prepend(3)
-        +column(27, true)
-        position: relative
+      .PgfNumString_2
+        +append(1)
+        +column(1)
 
-      .SubParagraph_sch_PgfTag, .SubParagraphCont_sch_PgfTag
-        +prepend(4)
-        +column(26, true)
-        position: relative
-      
-      .SubSubParagraph_sch_PgfTag
-        +prepend(5)
-        +column(27, true)
-        position: relative
-
-      .NewClause_Committee
-        .SubSection
-          +prepend(2)
-          +column(26, true)
-
-      .Definition
-        +prepend(1)
-        +column(20, true)
-
-      .Move
-        +prepend(1)
-        +column(29, true)
+      .Para_sch
+        +prepend(2)
 
     .OrderDate
       text-transform: uppercase
