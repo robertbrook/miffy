@@ -10,33 +10,51 @@ class Mif2HtmlParser
     parse_xml(IO.read(xml_file), options)
   end
 
-  def parse_xml xml, options={}
+  def parse_xml xml, options={:format => :html}
     doc = Hpricot.XML xml
-    if options[:html]
-      result = ['<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /></head><body>']
-      doc_to_html(doc, result)
-      result << ['</body></html>']
-      result = result.join('')
-      begin
-        doc = REXML::Document.new(result)
-      rescue Exception => e
-        puts e.to_s
-      end
-      if options[:indent]
-        indented = ''
-        doc.write(indented,2)
-        indented
-      else
-        result
-      end
-
-    elsif options[:haml]
-      result = ['']
-      doc_to_haml(doc, result)
-      result.join('')
+    format = options[:format]
+    if format == :html
+      generate_html doc, options
+    elsif format == :haml
+      html = generate_html doc, options
+      generate_haml html, options
     end
   end
 
+  def generate_haml html, options
+    html_file = Tempfile.new("#{Time.now.to_i.to_s}.html",'.')
+    html_file.write html
+    html_file.close
+    cmd = "html2haml #{html_file.path}"
+    haml = `#{cmd}`
+    html_file.delete
+    haml
+  end
+  
+  def generate_html doc, options
+    if options[:body_only]
+      result = doc_to_html(doc, [])
+    else
+      result = ['<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /></head><body>']
+      doc_to_html(doc, result)
+      result << ['</body></html>'] 
+    end
+
+    result = result.join('')
+    begin
+      doc = REXML::Document.new(result)
+    rescue Exception => e
+      puts e.to_s
+    end
+    if options[:indent]
+      indented = ''
+      doc.write(indented,2)
+      indented
+    else
+      result
+    end
+  end
+  
   def get_html_for_char element
     char = get_char(element)
     if char == "\n"

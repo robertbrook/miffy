@@ -4,6 +4,8 @@ test
 config/database.yml
 .DS_Store
 doc
+app/views/results
 db/*.sqlite3
 public/stylesheets/*
 app/stylesheets/.sass-cache/*
+spec/fixtures/pbc0930106a.xml
