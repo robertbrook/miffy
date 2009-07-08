@@ -83,6 +83,7 @@ describe MifParser do
     before(:all) do
       @parser = MifParser.new
       @result = @parser.parse_xml(fixture('pbc0930106a.mif.xml'))
+      # file referenced below not checked in?
       File.open(RAILS_ROOT + '/spec/fixtures/pbc0930106a.xml','w') {|f| f.write @result }
     end
 
