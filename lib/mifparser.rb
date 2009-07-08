@@ -1,7 +1,6 @@
 require 'tempfile'
 require 'rubygems'
 require 'hpricot'
-require 'htmlentities'
 require 'rexml/document'
 
 module MifParserUtils
@@ -66,20 +65,16 @@ class MifParser
 
   def parse_xml xml, options={}
     doc = Hpricot.XML xml
-    xml = [options[:html] ? '<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /></head><body>' : '<Document>']
+    xml = ['<Document>']
 
-    if options[:html]
-      doc_to_html(doc, xml)
-    else
-      flows = (doc/'TextFlow')
-      flows.each do |flow|
-        unless is_instructions?(flow)
-          handle_flow(flow, xml)
-        end
+    flows = (doc/'TextFlow')
+    flows.each do |flow|
+      unless is_instructions?(flow)
+        handle_flow(flow, xml)
       end
     end
 
-    xml << [options[:html] ? '</body></html>' : '</Document>']
+    xml << ['</Document>']
     xml = xml.join('')
     begin
       doc = REXML::Document.new(xml)
