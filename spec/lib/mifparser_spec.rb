@@ -50,11 +50,8 @@ describe MifParser do
     end
 
     it 'should move Amendment.Number ETag round AmendmentNumber PgfTag' do
-<<<<<<< HEAD:spec/lib/mifparser_spec.rb
       # line below should not be hardcoded
       File.open('/Users/x/apps/uk/ex.xml','w') {|f| f.write @result }
-=======
->>>>>>> 534312726573e66eba24104f240c6ca90bd73780:spec/lib/mifparser_spec.rb
       @result.tr('.','-').should have_tag('Amendment-Number[id="2494686"]') do
         with_tag('AmendmentNumber_PgfTag', :text => '4')
       end
