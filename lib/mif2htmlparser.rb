@@ -67,7 +67,21 @@ class Mif2HtmlParser
   DIV = %w[Amendments_Commons Head HeadConsider Date
       Committee Clause_Committee Resolution Order_Committee Schedule_Committee
       CrossHeadingSch Amendment
+      OrderCrossHeading
       NewClause_Committee Order_House
+      Arrangement
+      Rubric
+      Cover
+      CoverHeading
+      Heading_ar
+      Head_thin
+      HeadNotice
+      NoticeOfAmds
+      Given
+      Schedules_ar
+      SchedulesTitle_ar
+      Clauses_ar
+      Clause_ar
       Amendment_Text Amendment_Number
       ClauseText Heading_text
       CrossHeadingTitle ClauseTitle
@@ -81,6 +95,9 @@ class Mif2HtmlParser
       ClausesToBeConsidered
       Para_sch
       Move
+      Motion
+      Text_motion
+      Table
       SubSection].inject({}){|h,v| h[v]=true; h}
   DIV_RE = Regexp.new "(^#{DIV.keys.join("$|")}$)"
 
@@ -95,7 +112,14 @@ class Mif2HtmlParser
       OrderDate
       ResolutionDate
       OrderPara
+      Proposer_name
       Day Date_text STText Notehead NoteTxt
+      STHouse
+      STLords
+      STCommons
+      Italic
+      Bold
+      WHITESPACE
       Number Page Line ].inject({}){|h,v| h[v]=true; h}
   SPAN_RE = Regexp.new "(^#{SPAN.keys.join("$|")}$)"
 
@@ -104,7 +128,8 @@ class Mif2HtmlParser
   LI = %w[Sponsor].inject({}){|h,v| h[v]=true; h}
   LI_RE = Regexp.new "(#{LI.keys.join("|")})"
 
-  HR = %w[Separator_thick].inject({}){|h,v| h[v]=true; h}
+  HR = %w[Separator_thick Separator_thin].inject({}){|h,v| h[v]=true; h}
+  HR_RE = Regexp.new "(#{HR.keys.join("|")})"
 
   def doc_to_html(doc, xml)
     @in_paragraph = false
@@ -152,7 +177,10 @@ class Mif2HtmlParser
         add_html_element 'ul', node, xml
       when LI_RE
         add_html_element 'li', node, xml
+      when HR_RE
+        add_html_element "hr", node, xml 
       else
+        raise node.name
         node_children_to_html(node, xml)
     end if node.elem?
 

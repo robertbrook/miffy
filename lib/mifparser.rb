@@ -58,7 +58,7 @@ class MifParser
   end
 
   def is_instructions?(flow)
-    instruction_regexp = /(`Header'|REISSUE|Running H\/F|line of text which is to be numbered|Use the following fragment to insert an amendment line number)/
+    instruction_regexp = /(`Header'|StructMasterPageMaps|REISSUE|Running H\/F|line of text which is to be numbered|Use the following fragment to insert an amendment line number)/
     flow.inner_text[instruction_regexp] ||
     (flow.at('PgfTag') && flow.at('PgfTag/text()').to_s[/AmendmentLineNumber/])
   end
@@ -136,6 +136,7 @@ class MifParser
             tag == 'Amendment.Text' ||
             tag == 'SubSection' ||
             tag == 'Clauses.ar' ||
+            tag == 'Clause.ar' ||
             tag == 'ClauseText' ||
             tag == 'ResolutionHead' ||
             tag == 'ResolutionText' ||
