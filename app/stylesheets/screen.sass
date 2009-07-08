@@ -80,15 +80,17 @@ body
 
       .AmedTextCommitReport_PgfTag
         +prepend(1)
-        +column(29, true)
         padding-top: 2px
    
         .Number_number, .Page_number, .Line_number
           font-weight: bold
 
+      .PgfNumString
+        float: left
+
       .PgfNumString_1
         +append(1)
-        +column(1)
+        +column(1, true)
 
       .PgfNumString_2
         +append(1)
@@ -96,6 +98,52 @@ body
 
       .Para_sch
         +prepend(2)
+        float: left
+
+      .Paragraph_PgfTag .PgfNumString, 
+      .SubSubParagraph_sch_PgfTag .PgfNumString, 
+      .SubParagraphCont_sch_PgfTag .PgfNumString, 
+      ._Paragraph_PgfTag .PgfNumString
+        +prepend(2)
+        +append(1)
+        +column(1, true)
+
+      .PgfText
+        +column(25, true)
+
+      .TextContinuation
+        +prepend(2)
+        +column(25, true)
+
+      .Definition
+        display: block
+        +prepend(1)
+
+      .SubSubParagraph_sch_PgfTag
+        display: block
+
+      .SubPara_sch .SubSubParagraph_sch_PgfTag .SubSubPara_sch
+        +column(19, true)
+
+      .CrossHeadingSch .SubSubPara_sch
+        +column(22, true)
+
+      .Schedule_Committee p.SubParagraphCont_sch_PgfTag
+        float: left
+  
+      .SubPara_sch
+        +column(23, true)
+  
+      .Para
+        +column(23, true)
+
+      .Move, .CrossHeadingTitle
+        +prepend(1)
+        float: left
+
+      div.SubSection, div.SubPara_sch, div.Paragraph_sch
+        +prepend(2)
+        float: left
 
     .OrderDate
       text-transform: uppercase
