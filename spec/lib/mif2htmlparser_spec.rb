@@ -10,6 +10,21 @@ describe MifParser do
     @parser = Mif2HtmlParser.new
   end
 
+  describe 'when parsing another MIF XML file to html' do
+    before do
+      @result = @parser.parse_xml(fixture('pbc0850206m.xml'), :format => :html)
+    end
+    it 'should create html' do
+      File.open('/Users/x/apps/uk/ex.html','w') {|f| f.write @result }
+      @result.should have_tag('html')
+      @result.should have_tag('div[class="Resolution"][id="1070180"]') do
+        with_tag('div[class="ResolutionHead"][id="1070184"]') do
+          with_tag('p[class="OrderHeading_PgfTag"][id="7335998"]', :text => 'Resolution of the Programming Sub-Committee')
+        end
+      end
+    end
+  end
+  
   describe 'when parsing longer MIF XML file to html' do
     before do
       @result = @parser.parse_xml(fixture('pbc0900206m.xml'), :format => :html)

@@ -138,7 +138,7 @@ class Mif2HtmlParser
         @in_paragraph = true
         add_html_element(tag, node, xml)
         @in_paragraph = false unless already_in_paragraph
-      when /^(SubPara_sch|SubSubPara_sch)$/
+      when /^(SubPara_sch|SubSubPara_sch|ResolutionPara)$/
         already_in_paragraph = @in_paragraph
         tag = (already_in_paragraph ? 'span' : 'p')
         @in_paragraph = true

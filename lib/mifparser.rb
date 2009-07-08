@@ -80,6 +80,7 @@ class MifParser
       doc = REXML::Document.new(xml)
     rescue Exception => e
       puts e.to_s
+      raise e
     end
 
     if options[:indent]
@@ -135,6 +136,7 @@ class MifParser
             tag == 'Amendment.Text' ||
             tag == 'SubSection' ||
             tag == 'ClauseText' ||
+            tag == 'ResolutionHead' ||
             tag == 'ResolutionText' ||
             tag == 'OrderDate' ||
             tag == 'OrderHeading' ||
