@@ -17,7 +17,7 @@ describe MifParser do
       tempfile_path = '/var/folders/iZ/iZnGaCLQEnyh56cGeoHraU+++TI/-Tmp-/pbc0930106a.mif.xml.334.0'
 
       temp_xml_file = mock(Tempfile, :path => tempfile_path)
-      Tempfile.should_receive(:new).with("#{mif_file}.xml", '.').and_return temp_xml_file
+      Tempfile.should_receive(:new).with("#{mif_file}.xml", RAILS_ROOT+'/tmp').and_return temp_xml_file
       temp_xml_file.should_receive(:close)
       Kernel.should_receive(:system).with("mif2xml < #{mif_file} > #{tempfile_path}")
 
