@@ -1,6 +1,6 @@
 %html{:lang=>"en-GB"}
   %head
-    %title Miffy
+    %title= @title ? @title : 'Miffy'
     = stylesheet_link_tag 'screen', :media => 'screen, projection'
     = stylesheet_link_tag 'partials/_base'
     = stylesheet_link_tag 'print', :media => 'print'
