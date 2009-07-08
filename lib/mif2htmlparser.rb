@@ -51,30 +51,34 @@ class Mif2HtmlParser
   end
 
   DIV = %w[Amendments_Commons Head HeadConsider Date
-      Committee Clause_Committee Order_Committee
+      Committee Clause_Committee Order_Committee Schedule_Committee
       CrossHeadingSch Amendment
       NewClause_Committee Order_House
-      Amendment_Number
+      Amendment_Text Amendment_Number
+      ClauseText Heading_text
+      CrossHeadingTitle ClauseTitle
+      OrderText OrderAmendmentText
+      Order_Motion OrderHeading
+      OrderPreamble ResolutionPreamble
       Stageheader
       CommitteeShorttitle
       MarshalledOrderNote
-      ClausesToBeConsidered].inject({}){|h,v| h[v]=true; h}
+      ClausesToBeConsidered
+      Para_sch
+      Move
+      SubSection].inject({}){|h,v| h[v]=true; h}
   DIV_RE = Regexp.new "(^#{DIV.keys.join("$|")}$)"
 
   # P = %w[].inject({}){|h,v| h[v]=true; h}
 
-  SPAN = %w[SubSection Schedule_Committee
-      Para Para_sch SubPara_sch SubSubPara_sch
+  SPAN = %w[Para SubPara_sch
+      SubSubPara_sch
       Definition
-      CrossHeadingTitle Heading_text
-      ClauseTitle ClauseText Move TextContinuation
+      TextContinuation
       PgfNumString
-      OrderDate OrderPreamble OrderText OrderPara
-      Order_Motion OrderHeading
-      OrderAmendmentText
-      ResolutionPreamble
+      OrderDate OrderPara
       Day Date_text STText Notehead NoteTxt
-      Amendment_Text Number Page Line ].inject({}){|h,v| h[v]=true; h}
+      Number Page Line ].inject({}){|h,v| h[v]=true; h}
   SPAN_RE = Regexp.new "(^#{SPAN.keys.join("$|")}$)"
 
   UL = %w[Sponsors].inject({}){|h,v| h[v]=true; h}
@@ -82,9 +86,10 @@ class Mif2HtmlParser
   LI = %w[Sponsor].inject({}){|h,v| h[v]=true; h}
   LI_RE = Regexp.new "(#{LI.keys.join("|")})"
 
-  HR = %w[Separator.thick].inject({}){|h,v| h[v]=true; h}
+  HR = %w[Separator_thick].inject({}){|h,v| h[v]=true; h}
 
   def doc_to_html(doc, xml)
+    @in_paragraph = false
     node_children_to_html(doc.root, xml)
     xml
   end
@@ -105,8 +110,22 @@ class Mif2HtmlParser
 
   def node_to_html(node, xml)
     case node.name.gsub('.','_')
+      when /_number$/
+        add_html_element 'span', node, xml
+      when /^PgfNumString_\d+$/
+        add_html_element 'span', node, xml
       when /_PgfTag$/
-        add_html_element 'p', node, xml
+        already_in_paragraph = @in_paragraph
+        tag = (already_in_paragraph ? 'span' : 'p')
+        @in_paragraph = true
+        add_html_element(tag, node, xml)
+        @in_paragraph = false unless already_in_paragraph
+      when /^(SubPara_sch|SubSubPara_sch)$/
+        already_in_paragraph = @in_paragraph
+        tag = (already_in_paragraph ? 'span' : 'p')
+        @in_paragraph = true
+        add_html_element(tag, node, xml)
+        @in_paragraph = false unless already_in_paragraph
       when DIV_RE
         add_html_element 'div', node, xml
       when SPAN_RE

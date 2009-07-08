@@ -24,14 +24,35 @@ describe MifParser do
             with_tag('li[class="Sponsor"][id="2494680"]', :text => 'Mr Jeremy Browne')
           end
         end
-        with_tag('span[class="Amendment_Text"][id="2494721"]') do
-          with_tag('p[class="SubSection_PgfTag"][id="7332538"]') do
-            with_tag('span[class="PgfNumString"]', :text => '\t‘(1)\t')
-            with_tag('span[class="SubSection"][id="7316809"]', :text => 'Aircraft flight duty is chargeable in respect of each freight and passenger aircraft on each flight undertaken by that aircraft from a destination within the UK.’.')
+        with_tag('div[class="Amendment_Text"][id="2494721"]') do
+          with_tag('div[class="SubSection"][id="7316809"]') do
+            with_tag('p[class="SubSection_PgfTag"][id="7332538"]', :text => '‘(1) Aircraft flight duty is chargeable in respect of each freight and passenger aircraft on each flight undertaken by that aircraft from a destination within the UK.’.') do
+              with_tag('span[class="PgfNumString"]', :text => '‘(1)')
+            end
           end
         end
       end
 
+      @result.should have_tag('div[class="Para_sch"][id="1085999"]') do
+        with_tag('p[class="SubParagraph_sch_PgfTag"][id="7381591"]') do
+          with_tag('span[class="PgfNumString"]') do
+            with_tag('span[class="PgfNumString_1"]', :text => 'A2')
+            with_tag('span[class="PgfNumString_2"]', :text => '(1)')
+          end
+          with_tag('span[class="SubPara_sch"]', :text => 'Paragraph 1(2) (application of Schedule) is amended as follows.')
+        end
+        with_tag('p[class="SubParagraphCont_sch_PgfTag"][id="7381594"]') do
+          with_tag('span[class="PgfNumString"]') do
+            with_tag('span[class="PgfNumString_1"]', :text => '')
+            with_tag('span[class="PgfNumString_2"]', :text => '(2)')
+          end
+        end
+      end
+
+      @result.should have_tag('p[class="SubParagraph_sch_PgfTag"][id="7381591"]') do
+        with_tag('span[class="PgfNumString"]', :text =>'A2 (1)')
+        with_tag('span[class="SubPara_sch"][id="1090948"]', :text => 'Paragraph 1(2) (application of Schedule) is amended as follows.')
+      end
     end
 %Q|    <Committee id="5166572">
       <Clause.Committee id="2494674" Star="No">

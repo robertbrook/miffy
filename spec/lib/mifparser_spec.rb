@@ -7,11 +7,11 @@ include ActionController::Assertions::SelectorAssertions
 
 describe MifParser do
 
-  before do
-    @parser = MifParser.new
-  end
-
   describe 'when parsing MIF file' do
+    before do
+      @parser = MifParser.new
+    end
+
     it 'should call out to mif2xml' do
       mif_file = 'pbc0930106a.mif'
       tempfile_path = '/var/folders/iZ/iZnGaCLQEnyh56cGeoHraU+++TI/-Tmp-/pbc0930106a.mif.xml.334.0'
@@ -29,17 +29,43 @@ describe MifParser do
   end
 
   describe 'when parsing longer MIF XML file to xml' do
-    before do
+    before(:all) do
+      @parser = MifParser.new
       @result = @parser.parse_xml(fixture('pbc0900206m.mif.xml'))
+      File.open(RAILS_ROOT + '/spec/fixtures/pbc0900206m.xml','w') {|f| f.write @result }
+    end
+
+    it 'should move Amendment.Text ETag round AmedTextCommitReport PdfTag' do
+      @result.tr('.','-').should have_tag('Amendment-Text[id="1047173"]') do
+        with_tag('AmedTextCommitReport_PgfTag[id="7381581"]') do
+          with_tag('Number[id="1046333"]', :text => 'Schedule 8,') do
+            with_tag('Number_number', :text => '8')
+          end
+          with_tag('Page[id="1046348"]', :text => 'page 101,') do
+            with_tag('page_number', :text => '101')
+          end
+        end
+        with_tag('Para-sch[id="1083782"]')
+      end
     end
 
     it 'should move Amendment.Number ETag round AmendmentNumber PgfTag' do
+<<<<<<< HEAD:spec/lib/mifparser_spec.rb
       # line below should not be hardcoded
       File.open('/Users/x/apps/uk/ex.xml','w') {|f| f.write @result }
+=======
+>>>>>>> 534312726573e66eba24104f240c6ca90bd73780:spec/lib/mifparser_spec.rb
       @result.tr('.','-').should have_tag('Amendment-Number[id="2494686"]') do
         with_tag('AmendmentNumber_PgfTag', :text => '4')
       end
     end
+
+    it 'should move SubSection ETag round SubSection PgfTag' do
+      @result.tr('.','-').should have_tag('SubSection[id="1489118"]') do
+        with_tag('SubSection_PgfTag[id="7381365"]')
+      end
+    end
+
     it 'should set id on PgfTag paragraphs' do
       @result.gsub('.','-').should have_tag('SubParagraph-sch_PgfTag[id="7381591"]')
     end
@@ -57,8 +83,10 @@ describe MifParser do
   end
 
   describe 'when parsing MIF XML file' do
-    before do
+    before(:all) do
+      @parser = MifParser.new
       @result = @parser.parse_xml(fixture('pbc0930106a.mif.xml'))
+      File.open(RAILS_ROOT + '/spec/fixtures/pbc0930106a.xml','w') {|f| f.write @result }
     end
 
     it 'should remove instructions text' do

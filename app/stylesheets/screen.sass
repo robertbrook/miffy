@@ -48,16 +48,16 @@ body
         +prepend(1)
         +column(27)
   
-    .Heading-text
+    .Heading_text
       +column(30)
       +heading_text
 
     .Committee
-      +column(30)
+      +column(30, true)
       border-top: 1px solid grey
 
-      .Clause-Committee, .Schedule-Committee, .NewClause-Committee
-        +column(30)
+      .Clause_Committee, .Schedule_Committee, .NewClause_Committee
+        +column(30, true)
         text-align: left
         border-bottom: 1px solid grey
         padding: 1em 0
@@ -66,61 +66,82 @@ body
         +clause_title
 
       ul.Sponsors
-        +column(30)
+        +column(30, true)
         list-style: none
         margin: 0
         padding: 0.5em 0
 
       .AmendmentNumber_PgfTag
         +prepend(28)
-        +column(2)
+        +column(2, true)
         font-weight: bold
         text-align: right
+        margin-bottom: 0
 
-      .AmendmentWrapper
+      .AmedTextCommitReport_PgfTag
         +prepend(1)
-        +column(29)
+        +column(29, true)
+        padding-top: 2px
+   
+        .Number_number, .Page_number, .Line_number
+          font-weight: bold
 
-      .SubSection, .TextContinuation, .CrossHeadingTitle
-        +prepend(2)
-        +column(28)
+      .SubSection_PgfTag, .SubSection1_PgfTag, .TextContinuation, .CrossHeadingTitle
+        .PgfNumString
+          +prepend(2)
+          +column(2)
+        .PgfText
+          +column(26, true)
 
-      .Para, .Para-sch
+      .Paragraph_PgfTag, .Paragraph_sch_PgfTag
         +prepend(3)
-        +column(27)
+        +column(27, true)
+        position: relative
 
-      .SubPara-sch
+      .SubParagraph_sch_PgfTag, .SubParagraphCont_sch_PgfTag
         +prepend(4)
-        +column(26)
+        +column(26, true)
+        position: relative
       
-      .SubSubPara-sch, .Definition
+      .SubSubParagraph_sch_PgfTag
         +prepend(5)
-        +column(25)
+        +column(27, true)
+        position: relative
+
+      .NewClause_Committee
+        .SubSection
+          +prepend(2)
+          +column(26, true)
+
+      .Definition
+        +prepend(1)
+        +column(20, true)
 
       .Move
-        +column(30)
+        +prepend(1)
+        +column(29, true)
 
     .OrderDate
       text-transform: uppercase
       text-align: center
 
-    .OrderHeading
+    .OrderHeading_PgfTag
       text-transform: uppercase
       text-align: center
 
-    .OrderPara
+    .OrderHousePara_PgfTag
       +prepend(1)
-      +column(29)
+      +column(29, true)
 
-    .Order-House, .Order-Motion, .Order-Committee
+    .Order_House, .Order_Motion, .Order_Committee
       padding: 0.5em 0 0 0
       border-bottom: 1px solid black
-      +column(30)
+      +column(30, true)
       text-align: left
 
     .ResolutionPreamble
       +indent
-      +column(30)  
+      +column(30, true)
 
   #header, #footer
     +column(!blueprint_grid_columns)
