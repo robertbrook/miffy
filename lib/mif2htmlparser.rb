@@ -65,7 +65,7 @@ class Mif2HtmlParser
   end
 
   DIV = %w[Amendments_Commons Head HeadConsider Date
-      Committee Clause_Committee Order_Committee Schedule_Committee
+      Committee Clause_Committee Resolution Order_Committee Schedule_Committee
       CrossHeadingSch Amendment
       NewClause_Committee Order_House
       Amendment_Text Amendment_Number
@@ -73,6 +73,7 @@ class Mif2HtmlParser
       CrossHeadingTitle ClauseTitle
       OrderText OrderAmendmentText
       Order_Motion OrderHeading
+      ResolutionHead ResolutionText
       OrderPreamble ResolutionPreamble
       Stageheader
       CommitteeShorttitle
@@ -85,12 +86,15 @@ class Mif2HtmlParser
 
   # P = %w[].inject({}){|h,v| h[v]=true; h}
 
-  SPAN = %w[Para SubPara_sch
+  SPAN = %w[ResolutionPara ResolutionSubPara
+      Para SubPara_sch
       SubSubPara_sch
       Definition
       TextContinuation
       PgfNumString
-      OrderDate OrderPara
+      OrderDate
+      ResolutionDate
+      OrderPara
       Day Date_text STText Notehead NoteTxt
       Number Page Line ].inject({}){|h,v| h[v]=true; h}
   SPAN_RE = Regexp.new "(^#{SPAN.keys.join("$|")}$)"

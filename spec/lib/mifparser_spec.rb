@@ -79,6 +79,18 @@ describe MifParser do
 
   end
 
+  describe 'when parsing another long MIF XML file' do
+    before(:all) do
+      @parser = MifParser.new
+      @result = @parser.parse_xml(fixture('pbc0850206m.mif.xml'))
+      # file referenced below not checked in?
+      File.open(RAILS_ROOT + '/spec/fixtures/pbc0850206m.xml','w') {|f| f.write @result }
+    end
+    it 'should create XML' do
+      @result.gsub('.','-').should have_tag('Amendments-Commons')    
+    end
+  end
+
   describe 'when parsing MIF XML file' do
     before(:all) do
       @parser = MifParser.new

@@ -130,10 +130,12 @@ class MifParser
     collapsed = element.at('../Collapsed/text()').to_s == 'Yes'
     @in_paragraph && (collapsed ||
             tag == 'Committee' ||
+            tag == 'Resolution' ||
             tag == 'Amendment.Number' ||
             tag == 'Amendment.Text' ||
             tag == 'SubSection' ||
             tag == 'ClauseText' ||
+            tag == 'ResolutionText' ||
             tag == 'OrderDate' ||
             tag == 'OrderHeading' ||
             tag == 'ClauseTitle' ||
