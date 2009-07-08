@@ -135,6 +135,7 @@ class MifParser
             tag == 'Amendment.Number' ||
             tag == 'Amendment.Text' ||
             tag == 'SubSection' ||
+            tag == 'Clauses.ar' ||
             tag == 'ClauseText' ||
             tag == 'ResolutionHead' ||
             tag == 'ResolutionText' ||
