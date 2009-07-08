@@ -22,7 +22,7 @@ class Mif2HtmlParser
   end
 
   def generate_haml html, options
-    html_file = Tempfile.new("#{Time.now.to_i.to_s}.html",'.')
+    html_file = Tempfile.new("#{Time.now.to_i.to_s}.html", "#{RAILS_ROOT}/tmp")
     html_file.write html
     html_file.close
     cmd = "html2haml #{html_file.path}"
