@@ -1,11 +1,11 @@
 %html{:lang=>"en-GB"}
   %head
     %title= @title ? @title : 'Miffy'
+    %meta{ :content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type" }
     = stylesheet_link_tag 'screen', :media => 'screen, projection'
     = stylesheet_link_tag 'partials/_base'
     = stylesheet_link_tag 'print', :media => 'print'
     = stylesheet_link_tag 'ie', :media => 'screen, projection'
-    %meta{ :content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type" }
-  %body
+  %body{:class => page_class}
     #container
       = yield
