@@ -70,6 +70,7 @@ body
         list-style: none
         margin: 0
         padding: 0.5em 0
+        clear: both	
 
       .AmendmentNumber_PgfTag
         +prepend(28)
@@ -78,9 +79,13 @@ body
         text-align: right
         margin-bottom: 0
 
+      .AmendmentNumber, .AmendmentText, .SubParagraphCont_sch_PgfTag, .SubParagraph_sch_PgfTag
+        clear: both	
+
       .AmedTextCommitReport_PgfTag
         +prepend(1)
         padding-top: 2px
+        clear: both
    
         .Number_number, .Page_number, .Line_number
           font-weight: bold
@@ -88,25 +93,36 @@ body
       .PgfNumString
         float: left
 
+      .PgfNumString_0
+        +column(1, true)
+
       .PgfNumString_1
         +append(1)
-        +column(1, true)
+        +column(1)
 
       .PgfNumString_2
         +append(1)
-        +column(1)
+        +column(1, true)
 
       .Para_sch
         +prepend(2)
         float: left
 
-      .Paragraph_PgfTag .PgfNumString, 
-      .SubSubParagraph_sch_PgfTag .PgfNumString, 
+      .Paragraph_PgfTag .PgfNumString,  
       .SubParagraphCont_sch_PgfTag .PgfNumString, 
       ._Paragraph_PgfTag .PgfNumString
         +prepend(2)
         +append(1)
         +column(1, true)
+
+      .Para_sch .SubPara_sch .SubSubParagraph_sch_PgfTag .PgfNumString
+        padding-left: 0
+
+      .CrossHeadingSch .Para_sch, .SubSubParagraph_sch_PgfTag .PgfNumString
+        +prepend(2)
+
+      .CrossHeadingSch div.Para_sch
+        +prepend(2)
 
       .PgfText
         +column(25, true)
@@ -123,7 +139,7 @@ body
         display: block
 
       .SubPara_sch .SubSubParagraph_sch_PgfTag .SubSubPara_sch
-        +column(19, true)
+        +column(19)
 
       .CrossHeadingSch .SubSubPara_sch
         +column(22, true)
