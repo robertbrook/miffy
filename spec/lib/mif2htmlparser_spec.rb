@@ -15,7 +15,7 @@ describe MifParser do
       @result = @parser.parse_xml(fixture('pbc0900206m.xml'), :format => :html)
     end
     it 'should create html' do
-      File.open('/Users/x/apps/uk/ex.html','w') {|f| f.write @result }
+      # File.open('/Users/x/apps/uk/ex.html','w') {|f| f.write @result }
       @result.should have_tag('html')
 
       @result.should have_tag('div[class="Committee"][id="5166572"]') do
