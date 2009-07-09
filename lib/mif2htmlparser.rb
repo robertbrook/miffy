@@ -116,6 +116,18 @@ class Mif2HtmlParser
       OrderDate
       ResolutionDate
       OrderPara
+      SubSection_text
+      ResolutionHead_text
+      Number_text
+      ResolutionPara_text
+      ResolutionSubPara_text
+      Page_text
+      Para_text
+      Line_text
+      ClauseTitle_text
+      Amendment_Text_text
+      Para_sch_text
+      TextContinuation_text
       Proposer_name
       Day Date_text STText Notehead NoteTxt
       STHouse
@@ -163,8 +175,16 @@ class Mif2HtmlParser
     end
   end
 
+  def add_link_element node, xml
+    xml << %Q|<a href="" class=#{node.name}>|
+    node_children_to_html(node, xml)    
+    xml << "</a>"
+  end
+  
   def node_to_html(node, xml)
     case node.name.gsub('.','_')
+      when /Citation/
+        add_link_element node, xml
       when /_number$/
         add_html_element 'span', node, xml
       when /^PgfNumString_\d+$/

@@ -6,38 +6,38 @@
 <NoteTxt id="6541043">The Amendments have been arranged in accordance with the Resolution of the Programming Sub-Committee.</NoteTxt>
  </MarshalledOrderNote>
 <Resolution id="1070180"><ResolutionHead id="1070184">
-<OrderHeading_PgfTag id="7335998"><PgfNumString></PgfNumString>Resolution of the Programming Sub-Committee</OrderHeading_PgfTag>
+<OrderHeading_PgfTag id="7335998"><PgfNumString></PgfNumString><ResolutionHead_text>Resolution of the Programming Sub-Committee</ResolutionHead_text></OrderHeading_PgfTag>
 </ResolutionHead>
 <ResolutionDate id="1070197" Auto="No">The Programming Sub-Committee appointed by the Speaker in respect of the Bill agreed the following Resolution at its meeting on Tuesday 19 May (Standing Order No. 83C):</ResolutionDate>
 <ResolutionText id="1070211">That—
 <ResolutionPara_PgfTag id="7336011"><PgfNumString><PgfNumString_1>(1)</PgfNumString_1> </PgfNumString></ResolutionPara_PgfTag>
-<ResolutionPara id="1070215">the Committee shall (in addition to its first meeting at 10.30 a.m. on Tuesday 2 June) meet—
-<ResolutionPara_PgfTag id="7336015"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><ResolutionSubPara id="1070230">at 4.00 p.m. on Tuesday 2 June;</ResolutionSubPara></ResolutionPara_PgfTag>
+<ResolutionPara id="1070215"><ResolutionPara_text>the Committee shall (in addition to its first meeting at 10.30 a.m. on Tuesday 2 June) meet—</ResolutionPara_text>
+<ResolutionPara_PgfTag id="7336015"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><ResolutionSubPara id="1070230"><ResolutionSubPara_text>at 4.00 p.m. on Tuesday 2 June;</ResolutionSubPara_text></ResolutionSubPara></ResolutionPara_PgfTag>
 
-<ResolutionPara_PgfTag id="7336019"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><ResolutionSubPara id="1070247">at 10.30 a.m. and 4.00 p.m. on Tuesday 9 June;</ResolutionSubPara></ResolutionPara_PgfTag>
+<ResolutionPara_PgfTag id="7336019"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><ResolutionSubPara id="1070247"><ResolutionSubPara_text>at 10.30 a.m. and 4.00 p.m. on Tuesday 9 June;</ResolutionSubPara_text></ResolutionSubPara></ResolutionPara_PgfTag>
 
-<ResolutionPara_PgfTag id="7336023"><PgfNumString><PgfNumString_1>(c)</PgfNumString_1> </PgfNumString><ResolutionSubPara id="1070237">at 9.00 a.m. and 1.00 p.m. on Thursday 11 June;</ResolutionSubPara></ResolutionPara_PgfTag>
+<ResolutionPara_PgfTag id="7336023"><PgfNumString><PgfNumString_1>(c)</PgfNumString_1> </PgfNumString><ResolutionSubPara id="1070237"><ResolutionSubPara_text>at 9.00 a.m. and 1.00 p.m. on Thursday 11 June;</ResolutionSubPara_text></ResolutionSubPara></ResolutionPara_PgfTag>
 
-<ResolutionPara_PgfTag id="7336027"><PgfNumString><PgfNumString_1>(d)</PgfNumString_1> </PgfNumString><ResolutionSubPara id="6539944">at 10.30 a.m. and 4.00 p.m. on Tuesday 16 June;</ResolutionSubPara></ResolutionPara_PgfTag>
+<ResolutionPara_PgfTag id="7336027"><PgfNumString><PgfNumString_1>(d)</PgfNumString_1> </PgfNumString><ResolutionSubPara id="6539944"><ResolutionSubPara_text>at 10.30 a.m. and 4.00 p.m. on Tuesday 16 June;</ResolutionSubPara_text></ResolutionSubPara></ResolutionPara_PgfTag>
 
-<ResolutionPara_PgfTag id="7336031"><PgfNumString><PgfNumString_1>(e)</PgfNumString_1> </PgfNumString><ResolutionSubPara id="6540010">at 9.00 a.m. and 1.00 p.m. on Thursday 18 June;</ResolutionSubPara></ResolutionPara_PgfTag>
+<ResolutionPara_PgfTag id="7336031"><PgfNumString><PgfNumString_1>(e)</PgfNumString_1> </PgfNumString><ResolutionSubPara id="6540010"><ResolutionSubPara_text>at 9.00 a.m. and 1.00 p.m. on Thursday 18 June;</ResolutionSubPara_text></ResolutionSubPara></ResolutionPara_PgfTag>
 
-<ResolutionPara_PgfTag id="7336035"><PgfNumString><PgfNumString_1>(f)</PgfNumString_1> </PgfNumString><ResolutionSubPara id="6540079">at 10.30 a.m. and 4.00 p.m. on Tuesday 23 June;</ResolutionSubPara></ResolutionPara_PgfTag>
+<ResolutionPara_PgfTag id="7336035"><PgfNumString><PgfNumString_1>(f)</PgfNumString_1> </PgfNumString><ResolutionSubPara id="6540079"><ResolutionSubPara_text>at 10.30 a.m. and 4.00 p.m. on Tuesday 23 June;</ResolutionSubPara_text></ResolutionSubPara></ResolutionPara_PgfTag>
 
-<ResolutionPara_PgfTag id="7336039"><PgfNumString><PgfNumString_1>(g)</PgfNumString_1> </PgfNumString><ResolutionSubPara id="6540151">at 9.00 a.m. and 1.00 p.m. on Thursday 25 June;</ResolutionSubPara></ResolutionPara_PgfTag>
+<ResolutionPara_PgfTag id="7336039"><PgfNumString><PgfNumString_1>(g)</PgfNumString_1> </PgfNumString><ResolutionSubPara id="6540151"><ResolutionSubPara_text>at 9.00 a.m. and 1.00 p.m. on Thursday 25 June;</ResolutionSubPara_text></ResolutionSubPara></ResolutionPara_PgfTag>
 
-<ResolutionPara_PgfTag id="7336043"><PgfNumString><PgfNumString_1>(h)</PgfNumString_1> </PgfNumString><ResolutionSubPara id="6540226">at 10.30 a.m. and 4.00 p.m. on Tuesday 30 June;</ResolutionSubPara></ResolutionPara_PgfTag>
+<ResolutionPara_PgfTag id="7336043"><PgfNumString><PgfNumString_1>(h)</PgfNumString_1> </PgfNumString><ResolutionSubPara id="6540226"><ResolutionSubPara_text>at 10.30 a.m. and 4.00 p.m. on Tuesday 30 June;</ResolutionSubPara_text></ResolutionSubPara></ResolutionPara_PgfTag>
 
-<ResolutionPara_PgfTag id="7336047"><PgfNumString><PgfNumString_1>(i)</PgfNumString_1> </PgfNumString><ResolutionSubPara id="6540304">at 9.00 a.m. and 1.00 p.m. on Thursday 2 July;</ResolutionSubPara></ResolutionPara_PgfTag>
+<ResolutionPara_PgfTag id="7336047"><PgfNumString><PgfNumString_1>(i)</PgfNumString_1> </PgfNumString><ResolutionSubPara id="6540304"><ResolutionSubPara_text>at 9.00 a.m. and 1.00 p.m. on Thursday 2 July;</ResolutionSubPara_text></ResolutionSubPara></ResolutionPara_PgfTag>
 
-<ResolutionPara_PgfTag id="7336052"><PgfNumString><PgfNumString_1>(j)</PgfNumString_1> </PgfNumString><ResolutionSubPara id="6540383">at 10.30 a.m. and 4.00 p.m. on Tuesday 7 July;</ResolutionSubPara></ResolutionPara_PgfTag>
+<ResolutionPara_PgfTag id="7336052"><PgfNumString><PgfNumString_1>(j)</PgfNumString_1> </PgfNumString><ResolutionSubPara id="6540383"><ResolutionSubPara_text>at 10.30 a.m. and 4.00 p.m. on Tuesday 7 July;</ResolutionSubPara_text></ResolutionSubPara></ResolutionPara_PgfTag>
 </ResolutionPara>
 <ResolutionPara_PgfTag id="7336055"><PgfNumString><PgfNumString_1>(2)</PgfNumString_1> </PgfNumString></ResolutionPara_PgfTag>
-<ResolutionPara id="6540467">the Committee shall hear oral evidence in accordance with the following Table—<Table id="6540480"></Table>
+<ResolutionPara id="6540467"><ResolutionPara_text>the Committee shall hear oral evidence in accordance with the following Table—</ResolutionPara_text><Table id="6540480"></Table>
 </ResolutionPara>
-<ResolutionPara_PgfTag id="7336112"><PgfNumString><PgfNumString_1>(3)</PgfNumString_1> </PgfNumString><ResolutionPara id="1070291">the proceedings on consideration of the Bill in Committee shall be taken in the following order: Clauses 1 to 6; Schedule 1; Clauses 7 to 29; Schedules 2 and 3; Clauses 30 to 35; Schedules 4 and 5; Clauses 36 to 49; Schedule 6; Clauses 50 to 75; Schedule 7; Clauses 76 to 78; Schedules 8 and 9; Clauses 79 to 83; Schedule 10; Clause 84; Schedule 11; Clauses 85 to 89; Schedule 12; Clauses 90 to 93; Schedule 13; Clause 94; Schedule 14; Clauses 95 to 101; Schedules 15 and 16; Clauses 102 to 110; Schedule 17; Clauses 111 to 143; Schedule 18; Clause 144; Schedule 19; Clauses 145 to 179; Schedule 20; Clauses 180 to 182; Schedule 21; Clauses 183 and 184; Schedule 22; Clauses 185 to 189; Schedule 23; Clauses 190 and 191; Schedule 24; Clauses 192 and 193; Schedule 25; Clauses 194 to 198; Schedules 26 and 27; Clauses 199 to 201; Schedule 28; Clauses 202 to 205; new Clauses; new Schedules; remaining proceedings on the Bill;</ResolutionPara></ResolutionPara_PgfTag>
+<ResolutionPara_PgfTag id="7336112"><PgfNumString><PgfNumString_1>(3)</PgfNumString_1> </PgfNumString><ResolutionPara id="1070291"><ResolutionPara_text>the proceedings on consideration of the Bill in Committee shall be taken in the following order: Clauses 1 to 6; Schedule 1; Clauses 7 to 29; Schedules 2 and 3; Clauses 30 to 35; Schedules 4 and 5; Clauses 36 to 49; Schedule 6; Clauses 50 to 75; Schedule 7; Clauses 76 to 78; Schedules 8 and 9; Clauses 79 to 83; Schedule 10; Clause 84; Schedule 11; Clauses 85 to 89; Schedule 12; Clauses 90 to 93; Schedule 13; Clause 94; Schedule 14; Clauses 95 to 101; Schedules 15 and 16; Clauses 102 to 110; Schedule 17; Clauses 111 to 143; Schedule 18; Clause 144; Schedule 19; Clauses 145 to 179; Schedule 20; Clauses 180 to 182; Schedule 21; Clauses 183 and 184; Schedule 22; Clauses 185 to 189; Schedule 23; Clauses 190 and 191; Schedule 24; Clauses 192 and 193; Schedule 25; Clauses 194 to 198; Schedules 26 and 27; Clauses 199 to 201; Schedule 28; Clauses 202 to 205; new Clauses; new Schedules; remaining proceedings on the Bill;</ResolutionPara_text></ResolutionPara></ResolutionPara_PgfTag>
 
-<ResolutionPara_PgfTag id="7336116"><PgfNumString><PgfNumString_1>(4)</PgfNumString_1> </PgfNumString><ResolutionPara id="1070309">the proceedings shall (so far as not previously concluded) be brought to a conclusion at 7.00 p.m. on Tuesday 7 July.</ResolutionPara></ResolutionPara_PgfTag>
+<ResolutionPara_PgfTag id="7336116"><PgfNumString><PgfNumString_1>(4)</PgfNumString_1> </PgfNumString><ResolutionPara id="1070309"><ResolutionPara_text>the proceedings shall (so far as not previously concluded) be brought to a conclusion at 7.00 p.m. on Tuesday 7 July.</ResolutionPara_text></ResolutionPara></ResolutionPara_PgfTag>
 </ResolutionText>
 <Motion id="1070332"><Text.motion id="1070355"><Italic id="6539820">The Solicitor General has given notice of her intention to move a motion in the terms of the Resolution of the Programming Sub-Committee</Italic>
  [<Italic id="6541062">Standing Order No. 83C(9)</Italic>
@@ -83,7 +83,7 @@ leave out subsections (2) to (7).</AmedTextCommitReport_PgfTag>
 <Line id="1484805">line <Line_number>29</Line_number>, </Line>
 leave out subsection (3) and insert—</AmedTextCommitReport_PgfTag>
 <SubSection id="1484894" Number="3" Quote="Single">
-<SubSection_PgfTag id="7336511"><PgfNumString><PgfNumString_1>‘(3)</PgfNumString_1> </PgfNumString>A Minister of the Crown may by regulations list public authorities to which this section applies.’.</SubSection_PgfTag>
+<SubSection_PgfTag id="7336511"><PgfNumString><PgfNumString_1>‘(3)</PgfNumString_1> </PgfNumString><SubSection_text>A Minister of the Crown may by regulations list public authorities to which this section applies.’.</SubSection_text></SubSection_PgfTag>
 </SubSection>
 </Amendment.Text>
 </Clause.Committee>
@@ -259,7 +259,7 @@ leave out ‘by regulations’ and insert ‘not’.</AmedTextCommitReport_PgfTa
 <Line id="1488405">line <Line_number>17</Line_number>, </Line>
 at end insert ‘and</AmedTextCommitReport_PgfTag>
 
-<Paragraph_PgfTag id="7337151"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para id="1489026" Quote="None" Number="b">employees who have a disability and employees who do not have a disability.’.</Para></Paragraph_PgfTag>
+<Paragraph_PgfTag id="7337151"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para id="1489026" Quote="None" Number="b"><Para_text>employees who have a disability and employees who do not have a disability.’.</Para_text></Para></Paragraph_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Clause.Committee id="1487482" Star="No"><Sponsors id="1487485"><Sponsor id="1487488">Mr Mark Harper</Sponsor>
@@ -275,9 +275,9 @@ at end insert ‘and</AmedTextCommitReport_PgfTag>
 <Line id="1487529">line <Line_number>19</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
 
-<Paragraph_PgfTag id="7337209"><PgfNumString><PgfNumString_1>‘( )</PgfNumString_1> </PgfNumString><Para id="1487815" Number="0" Letter="0" Quote="Single">the Armed Forces;</Para></Paragraph_PgfTag>
+<Paragraph_PgfTag id="7337209"><PgfNumString><PgfNumString_1>‘( )</PgfNumString_1> </PgfNumString><Para id="1487815" Number="0" Letter="0" Quote="Single"><Para_text>the Armed Forces;</Para_text></Para></Paragraph_PgfTag>
 
-<Paragraph_PgfTag id="7337212"><PgfNumString><PgfNumString_1>( )</PgfNumString_1> </PgfNumString><Para id="1488086" Number="0" Letter="0">the Security Service, the Secret Intelligence Service or the Government Communications Headquarters;’.</Para></Paragraph_PgfTag>
+<Paragraph_PgfTag id="7337212"><PgfNumString><PgfNumString_1>( )</PgfNumString_1> </PgfNumString><Para id="1488086" Number="0" Letter="0"><Para_text>the Security Service, the Secret Intelligence Service or the Government Communications Headquarters;’.</Para_text></Para></Paragraph_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Clause.Committee id="1487179" Star="No"><Sponsors id="1487182"><Sponsor id="1487185">Mr Mark Harper</Sponsor>
@@ -335,7 +335,7 @@ leave out paragraph (c).</AmedTextCommitReport_PgfTag>
 <Line id="1489769">line <Line_number>29</Line_number>, </Line>
 leave out subsection (3) and insert—</AmedTextCommitReport_PgfTag>
 <SubSection id="1490108" Number="3" Quote="Single">
-<SubSection_PgfTag id="7337423"><PgfNumString><PgfNumString_1>‘(3)</PgfNumString_1> </PgfNumString>In the event that an employment tribunal finds that an employer has contravened a term modified or included by an equality clause, the employer shall be required to undertake an audit, to be known as an equal pay audit, and to make the results of the audit available in a manner prescribed in regulations made by the Secretary of State.’.</SubSection_PgfTag>
+<SubSection_PgfTag id="7337423"><PgfNumString><PgfNumString_1>‘(3)</PgfNumString_1> </PgfNumString><SubSection_text>In the event that an employment tribunal finds that an employer has contravened a term modified or included by an equality clause, the employer shall be required to undertake an audit, to be known as an equal pay audit, and to make the results of the audit available in a manner prescribed in regulations made by the Secretary of State.’.</SubSection_text></SubSection_PgfTag>
 </SubSection>
 </Amendment.Text>
 </Clause.Committee>
@@ -394,7 +394,7 @@ leave out lines 15 and 16 and insert ‘except in relation to matters of employm
 <Line id="1491805">line <Line_number>35</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
 <SubSection id="1492226" Number="5" Quote="Single" Letter="A">
-<SubSection_PgfTag id="7337634"><PgfNumString><PgfNumString_1>‘(5A)</PgfNumString_1> </PgfNumString>A public authority must collect and publish data annually showing, in the exercise of its functions, the extent to which it has succeeded in meeting the requirements under subsection (1).’.</SubSection_PgfTag>
+<SubSection_PgfTag id="7337634"><PgfNumString><PgfNumString_1>‘(5A)</PgfNumString_1> </PgfNumString><SubSection_text>A public authority must collect and publish data annually showing, in the exercise of its functions, the extent to which it has succeeded in meeting the requirements under subsection (1).’.</SubSection_text></SubSection_PgfTag>
 </SubSection>
 </Amendment.Text>
 </Clause.Committee>
@@ -412,11 +412,11 @@ at end insert—</AmedTextCommitReport_PgfTag>
 <Line id="1492678">line <Line_number>27</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
 <SubSection id="1493136" Number="5" Quote="Single">
-<SubSection_PgfTag id="7337695"><PgfNumString><PgfNumString_1>‘(5)</PgfNumString_1> </PgfNumString>Before regulations are made under this section, there must be laid before both Houses of Parliament—</SubSection_PgfTag>
+<SubSection_PgfTag id="7337695"><PgfNumString><PgfNumString_1>‘(5)</PgfNumString_1> </PgfNumString><SubSection_text>Before regulations are made under this section, there must be laid before both Houses of Parliament—</SubSection_text></SubSection_PgfTag>
 
-<Paragraph_PgfTag id="7337699"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para id="1493562">draft regulations, and</Para></Paragraph_PgfTag>
+<Paragraph_PgfTag id="7337699"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para id="1493562"><Para_text>draft regulations, and</Para_text></Para></Paragraph_PgfTag>
 
-<Paragraph_PgfTag id="7337702"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para id="1493569">evidence that the regulations will enable the better performance by public authorities of the duty imposed by subsection (1).’.</Para></Paragraph_PgfTag>
+<Paragraph_PgfTag id="7337702"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para id="1493569"><Para_text>evidence that the regulations will enable the better performance by public authorities of the duty imposed by subsection (1).’.</Para_text></Para></Paragraph_PgfTag>
 </SubSection>
 </Amendment.Text>
 </Clause.Committee>
@@ -476,7 +476,7 @@ leave out Clause 153.</AmedTextCommitReport_PgfTag>
 <Line id="1497865">line <Line_number>23</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
 <SubSection id="1497976" Number="5" Quote="Single">
-<SubSection_PgfTag id="7337918"><PgfNumString><PgfNumString_1>‘(5)</PgfNumString_1> </PgfNumString>An order under subsection (1) may only be made if the Minister can demonstrate that persons of a specified age are being discriminated against for no legitimate reason.’.</SubSection_PgfTag>
+<SubSection_PgfTag id="7337918"><PgfNumString><PgfNumString_1>‘(5)</PgfNumString_1> </PgfNumString><SubSection_text>An order under subsection (1) may only be made if the Minister can demonstrate that persons of a specified age are being discriminated against for no legitimate reason.’.</SubSection_text></SubSection_PgfTag>
 </SubSection>
 </Amendment.Text>
 </Clause.Committee>
@@ -566,7 +566,7 @@ leave out Clause 191.</AmedTextCommitReport_PgfTag>
 <Separator.thick id="5231613"></Separator.thick>
 <Heading.text id="5231630">New Clauses</Heading.text>
 <NewClause.Committee id="1495739" Star="No"><ClauseTitle id="1495747">
-<New_C_STitle_PgfTag id="7338239"><PgfNumString></PgfNumString>Free miners</New_C_STitle_PgfTag>
+<New_C_STitle_PgfTag id="7338239"><PgfNumString></PgfNumString><ClauseTitle_text>Free miners</ClauseTitle_text></New_C_STitle_PgfTag>
 </ClauseTitle><Sponsors id="1495759"><Sponsor id="1495762">Mr Mark Harper</Sponsor>
 <Sponsor id="1495767">John Penrose</Sponsor>
 <Sponsor id="1495772">Mr John Baron</Sponsor>
@@ -576,18 +576,18 @@ leave out Clause 191.</AmedTextCommitReport_PgfTag>
 </Amendment.Number>
 <Move id="1496292">To move the following Clause:—</Move>
 <ClauseText id="1496307"><SubSection id="5237401">
-<SubSection1_PgfTag id="7338271"><PgfNumString><PgfNumString_1>‘(1)</PgfNumString_1> </PgfNumString>The Dean Forest (Mines) Act 1838 is amended as follows.</SubSection1_PgfTag>
+<SubSection1_PgfTag id="7338271"><PgfNumString><PgfNumString_1>‘(1)</PgfNumString_1> </PgfNumString><SubSection_text>The Dean Forest (Mines) Act 1838 is amended as follows.</SubSection_text></SubSection1_PgfTag>
 </SubSection>
 <SubSection id="5237461">
-<SubSection_PgfTag id="7338275"><PgfNumString><PgfNumString_1>(2)</PgfNumString_1> </PgfNumString>In section XIV (Who shall be deemed Free Miners), line 1, leave out “male”.</SubSection_PgfTag>
+<SubSection_PgfTag id="7338275"><PgfNumString><PgfNumString_1>(2)</PgfNumString_1> </PgfNumString><SubSection_text>In section XIV (Who shall be deemed Free Miners), line 1, leave out “male”.</SubSection_text></SubSection_PgfTag>
 </SubSection>
 <SubSection id="5237473">
-<SubSection_PgfTag id="7338278"><PgfNumString><PgfNumString_1>(3)</PgfNumString_1> </PgfNumString>In section XV (Quarrymen to be deemed Free Miners for certain purposes), line 1, leave out “male”.’.</SubSection_PgfTag>
+<SubSection_PgfTag id="7338278"><PgfNumString><PgfNumString_1>(3)</PgfNumString_1> </PgfNumString><SubSection_text>In section XV (Quarrymen to be deemed Free Miners for certain purposes), line 1, leave out “male”.’.</SubSection_text></SubSection_PgfTag>
 </SubSection>
 </ClauseText>
  </NewClause.Committee>
 <NewClause.Committee id="1497627" Star="No"><ClauseTitle id="1497635">
-<New_C_STitle_PgfTag id="7338291"><PgfNumString></PgfNumString>Mental Health Act 1983: Members of Parliament</New_C_STitle_PgfTag>
+<New_C_STitle_PgfTag id="7338291"><PgfNumString></PgfNumString><ClauseTitle_text>Mental Health Act 1983: Members of Parliament</ClauseTitle_text></New_C_STitle_PgfTag>
 </ClauseTitle><Sponsors id="1497644"><Sponsor id="1497648">Mr Mark Harper</Sponsor>
 <Sponsor id="1497654">John Penrose</Sponsor>
 <Sponsor id="1497663">John Baron</Sponsor>
@@ -597,38 +597,38 @@ leave out Clause 191.</AmedTextCommitReport_PgfTag>
 </Amendment.Number>
 <Move id="1497693">To move the following Clause:—</Move>
 <ClauseText id="1497704"><SubSection id="1497714">
-<SubSection1_PgfTag id="7338323"><PgfNumString><PgfNumString_1>‘(1)</PgfNumString_1> </PgfNumString>The Mental Health Act 1983 is amended as follows.</SubSection1_PgfTag>
+<SubSection1_PgfTag id="7338323"><PgfNumString><PgfNumString_1>‘(1)</PgfNumString_1> </PgfNumString><SubSection_text>The Mental Health Act 1983 is amended as follows.</SubSection_text></SubSection1_PgfTag>
 </SubSection>
 <SubSection id="1497719">
-<SubSection_PgfTag id="7338329"><PgfNumString><PgfNumString_1>(2)</PgfNumString_1> </PgfNumString>Subsections (2) to (7) of section 141 of the Mental Health Act 1983 are deleted.’.</SubSection_PgfTag>
+<SubSection_PgfTag id="7338329"><PgfNumString><PgfNumString_1>(2)</PgfNumString_1> </PgfNumString><SubSection_text>Subsections (2) to (7) of section 141 of the Mental Health Act 1983 are deleted.’.</SubSection_text></SubSection_PgfTag>
 </SubSection>
 </ClauseText>
 </NewClause.Committee>
  </Committee>
 <Order.House id="5229327"><OrderDate id="5229330" Auto="No">
-<OrderHeading_PgfTag id="7338337"><PgfNumString></PgfNumString>Order of the House [11 MAY 2009]</OrderHeading_PgfTag>
+<OrderHeading_PgfTag id="7338337"><PgfNumString></PgfNumString><OrderDate_text>Order of the House [11 MAY 2009]</OrderDate_text></OrderHeading_PgfTag>
 </OrderDate>
 <OrderPreamble id="5229335">That the following provisions shall apply to the Equality Bill:</OrderPreamble><OrderText id="5229340"><OrderCrossHeading id="5229343"><CrossHeadingTitle id="5229346">Committal</CrossHeadingTitle>
 
-<OrderHousePara_PgfTag id="7332372"><PgfNumString><PgfNumString_1>1.</PgfNumString_1> </PgfNumString><OrderPara id="5229351">The Bill shall be committed to a Public Bill Committee.</OrderPara></OrderHousePara_PgfTag>
+<OrderHousePara_PgfTag id="7332372"><PgfNumString><PgfNumString_1>1.</PgfNumString_1> </PgfNumString><OrderPara id="5229351"><OrderPara_text>The Bill shall be committed to a Public Bill Committee.</OrderPara_text></OrderPara></OrderHousePara_PgfTag>
 </OrderCrossHeading>
 <OrderCrossHeading id="5229357"><CrossHeadingTitle id="5229360">Proceedings in Public Bill Committee</CrossHeadingTitle>
 
-<OrderHousePara_PgfTag id="7332381"><PgfNumString><PgfNumString_1>2.</PgfNumString_1> </PgfNumString><OrderPara id="5229365">Proceedings in the Public Bill Committee shall (so far as not previously concluded) be brought to a conclusion on 7 July 2009.</OrderPara></OrderHousePara_PgfTag>
+<OrderHousePara_PgfTag id="7332381"><PgfNumString><PgfNumString_1>2.</PgfNumString_1> </PgfNumString><OrderPara id="5229365"><OrderPara_text>Proceedings in the Public Bill Committee shall (so far as not previously concluded) be brought to a conclusion on 7 July 2009.</OrderPara_text></OrderPara></OrderHousePara_PgfTag>
 
-<OrderHousePara_PgfTag id="7332385"><PgfNumString><PgfNumString_1>3.</PgfNumString_1> </PgfNumString><OrderPara id="5229370">The Public Bill Committee shall have leave to sit twice on the first day on which it meets.</OrderPara></OrderHousePara_PgfTag>
+<OrderHousePara_PgfTag id="7332385"><PgfNumString><PgfNumString_1>3.</PgfNumString_1> </PgfNumString><OrderPara id="5229370"><OrderPara_text>The Public Bill Committee shall have leave to sit twice on the first day on which it meets.</OrderPara_text></OrderPara></OrderHousePara_PgfTag>
 </OrderCrossHeading>
 <OrderCrossHeading id="5229376"><CrossHeadingTitle id="5229379">Consideration and Third Reading</CrossHeadingTitle>
 
-<OrderHousePara_PgfTag id="7332396"><PgfNumString><PgfNumString_1>4.</PgfNumString_1> </PgfNumString><OrderPara id="5229384">Proceedings on consideration shall (so far as not previously concluded) be brought to a conclusion one hour before the moment of interruption on the day on which those proceedings are commenced.</OrderPara></OrderHousePara_PgfTag>
+<OrderHousePara_PgfTag id="7332396"><PgfNumString><PgfNumString_1>4.</PgfNumString_1> </PgfNumString><OrderPara id="5229384"><OrderPara_text>Proceedings on consideration shall (so far as not previously concluded) be brought to a conclusion one hour before the moment of interruption on the day on which those proceedings are commenced.</OrderPara_text></OrderPara></OrderHousePara_PgfTag>
 
-<OrderHousePara_PgfTag id="7332400"><PgfNumString><PgfNumString_1>5.</PgfNumString_1> </PgfNumString><OrderPara id="5229389">Proceedings on Third Reading shall (so far as not previously concluded) be brought to a conclusion at the moment of interruption on that day.</OrderPara></OrderHousePara_PgfTag>
+<OrderHousePara_PgfTag id="7332400"><PgfNumString><PgfNumString_1>5.</PgfNumString_1> </PgfNumString><OrderPara id="5229389"><OrderPara_text>Proceedings on Third Reading shall (so far as not previously concluded) be brought to a conclusion at the moment of interruption on that day.</OrderPara_text></OrderPara></OrderHousePara_PgfTag>
 
-<OrderHousePara_PgfTag id="7332404"><PgfNumString><PgfNumString_1>6.</PgfNumString_1> </PgfNumString><OrderPara id="5229394">Standing Order No. 83B (Programming committees) shall not apply to proceedings on consideration and Third Reading.</OrderPara></OrderHousePara_PgfTag>
+<OrderHousePara_PgfTag id="7332404"><PgfNumString><PgfNumString_1>6.</PgfNumString_1> </PgfNumString><OrderPara id="5229394"><OrderPara_text>Standing Order No. 83B (Programming committees) shall not apply to proceedings on consideration and Third Reading.</OrderPara_text></OrderPara></OrderHousePara_PgfTag>
 </OrderCrossHeading>
 <OrderCrossHeading id="5229400"><CrossHeadingTitle id="5229403">Other proceedings</CrossHeadingTitle>
 
-<OrderHousePara_PgfTag id="7332415"><PgfNumString><PgfNumString_1>7.</PgfNumString_1> </PgfNumString><OrderPara id="5229408">Any other proceedings on the Bill (including any proceedings on consideration of Lords Amendments or on any further messages from the Lords) may be programmed.</OrderPara></OrderHousePara_PgfTag>
+<OrderHousePara_PgfTag id="7332415"><PgfNumString><PgfNumString_1>7.</PgfNumString_1> </PgfNumString><OrderPara id="5229408"><OrderPara_text>Any other proceedings on the Bill (including any proceedings on consideration of Lords Amendments or on any further messages from the Lords) may be programmed.</OrderPara_text></OrderPara></OrderHousePara_PgfTag>
 </OrderCrossHeading>
 </OrderText>
  </Order.House>

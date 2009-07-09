@@ -35,6 +35,17 @@ describe MifParser do
       File.open(RAILS_ROOT + '/spec/fixtures/pbc0900206m.xml','w') {|f| f.write @result }
     end
 
+    it 'should add element around text in mixed element/text situation' do
+      @result.should have_tag('SubSection[id="1151133"]') do
+        with_tag('SubSection1_PgfTag[id="7382611"]') do
+          with_tag('PgfNumString') do
+            with_tag('PgfNumString_1', :text => '‘(1)')
+          end
+          with_tag('SubSection_text', :text=> 'If, when determining the liability of a person to taxation, duty or similar charge due under statute in the United Kingdom, it shall be estimated that a step or steps have been included in a transaction giving rise to that liability or to any claim for an allowance, deduction or relief, with such steps having been included for the sole or one of the main purposes of securing a reduction in that liability to taxation, deduction or similar charge with no other material economic purpose for the inclusion of such a step being capable of demonstration by the taxpayer, then, subject to the sole exception that the step or steps in question are specifically permitted under the terms of any legislation promoted for the specific purpose of permitting such use, such step or steps shall be ignored when calculating the resulting liability to taxation, duty or similar charge.')
+        end
+      end
+    end
+    
     it 'should move Amendment.Text ETag round AmedTextCommitReport PdfTag' do
       @result.tr('.','-').should have_tag('Amendment-Text[id="1047173"]') do
         with_tag('AmedTextCommitReport_PgfTag[id="7381581"]') do
@@ -76,7 +87,6 @@ describe MifParser do
       @result.gsub('.','-').should have_tag('Para-sch[Number="A"]')
       @result.gsub('.','-').should have_tag('Para-sch[Letter="2"]')
     end
-
   end
 
   describe 'when parsing Clauses MIF XML file' do

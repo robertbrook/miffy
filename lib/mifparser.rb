@@ -80,7 +80,7 @@ class MifParser
       doc = REXML::Document.new(xml)
     rescue Exception => e
       puts e.to_s
-      # raise e
+      raise e
     end
 
     if options[:indent]
@@ -93,6 +93,7 @@ class MifParser
   end
 
   def handle_pgf_tag element
+    flush_strings
     tag = clean(element).gsub(' ','_')
     @pgf_tag = "#{tag}_PgfTag"
     @pgf_tag_id = element.at('../Unique/text()').to_s
@@ -100,6 +101,7 @@ class MifParser
     if tag == 'AmendmentNumber' || tag == 'AmedTextCommitReport'
       add_pgf_tag
     end
+    @last_was_pdf_num_string = false
   end
 
   def add_pgf_tag
@@ -161,22 +163,17 @@ class MifParser
     end
     pgf_start_tag = line
 
-    # if pgf_num_string
-      add %Q|<#{tag} id="#{uid}"#{attributes}>|
-      add pgf_start_tag
-      add pgf_num_string if pgf_num_string
-      lines.reverse.each {|line| add line}
-    # else
-      # add %Q|<#{tag} id="#{uid}"#{attributes}>|
-      # lines.each {|line| add line}
-      # add pgf_start_tag
-    # end
+    add %Q|<#{tag} id="#{uid}"#{attributes}>|
+    add pgf_start_tag
+    add pgf_num_string if pgf_num_string
+    lines.reverse.each {|line| add line}
     @opened_in_paragraph.clear
   end
 
   def handle_etag element
+    flush_strings
     tag = clean(element)
-    @stack << tag
+    @etags_stack << tag
     @e_tag = tag
     uid = element.at('../Unique/text()').to_s
     attributes = get_attributes(element)
@@ -190,6 +187,7 @@ class MifParser
   end
 
   def handle_para
+    flush_strings
     if @in_paragraph
       if @opened_in_paragraph.size > 1
         raise "can not handle all elements opened in <#{@pgf_tag}> paragraph: #{@opened_in_paragraph.keys.inspect}"
@@ -214,7 +212,9 @@ class MifParser
   end
 
   def handle_element_end element
-    tag = @stack.pop
+    flush_strings
+    tag = @etags_stack.pop
+    
     if @in_paragraph && !@opened_in_paragraph[tag]
       # need to close paragraph
       add "</#{@pgf_tag}>\n"
@@ -235,16 +235,6 @@ class MifParser
     end
   end
 
-  def handle_string element
-    text = clean(element)
-    if @prefix_end && text[/^\d+$/] && @e_tag
-      text = %Q|<#{@e_tag}_number>#{text}</#{@e_tag}_number>|
-    end
-    last_line = @xml.pop
-    last_line += text
-    add last_line
-  end
-
   def handle_pgf_num_string element
     add_pgf_tag unless @in_paragraph
     string = clean(element)
@@ -256,6 +246,42 @@ class MifParser
       string = parts
     end
     add "<PgfNumString>#{string}</PgfNumString>"
+    @last_was_pdf_num_string = true
+  end
+
+  def handle_string element
+    text = clean(element)
+    if @prefix_end && text[/^\d+$/] && @e_tag
+      text = %Q|<#{@e_tag}_number>#{text}</#{@e_tag}_number>|
+    end
+    last_line = @strings.pop || ''
+    last_line += text
+    @strings << last_line 
+  end
+  
+  def handle_char element
+    last_line = @strings.pop || ''
+    last_line += get_char(element)
+    @strings << last_line
+  end
+  
+  def flush_strings
+    if @strings.size > 0
+      if @strings.size == 1
+        last_line = @xml.pop
+        text = @strings.pop
+        
+        if @last_was_pdf_num_string
+          text_tag = @etags_stack.last
+          last_line += "<#{text_tag}_text>#{text}</#{text_tag}_text>"
+        else
+          last_line += text
+        end
+        add last_line
+      else
+        raise 'why is strings size > 1? ' + @strings.inspect
+      end
+    end
   end
 
   def handle_flow flow, xml
@@ -265,25 +291,27 @@ class MifParser
     @in_paragraph = false
     @prefix_end = false
     @opened_in_paragraph = {}
-    @stack = []
+    @etags_stack = []
+    @strings = []
+
     flow.traverse_element do |element|
       case element.name
-        when 'PgfTag'
+        when 'PgfTag'          
           handle_pgf_tag element
-        when 'ETag'
+        when 'ETag'          
           handle_etag element
         when 'Char'
-          last_line = @xml.pop
-          last_line += get_char(element)
-          add last_line
+          handle_char element
         when 'Para'
-          @prefix_end = false
+          @prefix_end = false          
           handle_para
+        # when 'ParaLine'
+          # add "\n"
         when 'PgfNumString'
           handle_pgf_num_string element
         when 'String'
           handle_string element
-        when 'ElementEnd'
+        when 'ElementEnd'          
           handle_element_end element
         when 'PrefixEnd'
           @prefix_end = true
