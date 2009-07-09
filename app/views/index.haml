@@ -3,6 +3,8 @@
 - if @files.length > 0
   %ul.files
   - @files.each do |file|
-    %li.file= link_to file, "convert?file=#{file}"
+    %li.file 
+      =link_to File.basename(file, ".mif"), "convert?file=#{file}"
+      =number_to_human_size(File.size(file))
 - else
   %p No MIF files available to parse
