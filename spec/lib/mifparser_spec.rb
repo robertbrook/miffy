@@ -79,11 +79,23 @@ describe MifParser do
 
   end
 
+  describe 'when parsing Clauses MIF XML file' do
+    before(:all) do
+      @parser = MifParser.new
+      @result = @parser.parse_xml(fixture('Clauses.mif.xml'))
+      File.open(RAILS_ROOT + '/spec/fixtures/Clauses.xml','w') {|f| f.write @result }
+    end
+    it 'should create XML' do
+      @result.gsub('.','-').should have_tag('Clause[id="1093880"]') do
+        with_tag('ClauseTitle_PgfTag[id="1112748"]')
+      end
+    end
+  end
+
   describe 'when parsing another long MIF XML file' do
     before(:all) do
       @parser = MifParser.new
       @result = @parser.parse_xml(fixture('pbc0850206m.mif.xml'))
-      # file referenced below not checked in?
       File.open(RAILS_ROOT + '/spec/fixtures/pbc0850206m.xml','w') {|f| f.write @result }
     end
     it 'should create XML' do

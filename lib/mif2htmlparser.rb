@@ -80,6 +80,10 @@ class Mif2HtmlParser
       Given
       Schedules_ar
       SchedulesTitle_ar
+      Prelim
+      ABillTo Abt1 Abt2 Abt3 Abt4 LongTitle Bpara WordsOfEnactment
+      Clauses  
+      Clause
       Clauses_ar
       Clause_ar
       Amendment_Text Amendment_Number
@@ -117,7 +121,11 @@ class Mif2HtmlParser
       STHouse
       STLords
       STCommons
+      Citation
+      Letter
+      Enact
       Italic
+      SmallCaps
       Bold
       WHITESPACE
       Number Page Line ].inject({}){|h,v| h[v]=true; h}
