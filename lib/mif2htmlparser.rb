@@ -28,6 +28,9 @@ class Mif2HtmlParser
     cmd = "html2haml #{html_file.path}"
     haml = `#{cmd}`
     html_file.delete
+    
+    reg_exp = Regexp.new('(Number|Page|Line)\n(\s+)(\S+)\n(\s+)%span\.(\S+)_number\n(\s+)(\S+)\n(\s+),', Regexp::MULTILINE)
+    haml = haml.gsub(reg_exp, '\1' + "\n" + '\2\3 <span class="\5_number">\7</span>,')
     haml
   end
   
