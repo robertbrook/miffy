@@ -20,8 +20,17 @@ body
       +column(30)
       text-align: left
 
+    hr, .OrderCrossHeading
+      float: left
+
+    .Italic
+      font-style: italic
+
+    .Bold
+      font-weight: bold
+
     .Head
-      +column(30)
+      +column(30, true)
 
     .HeadConsider .Date
       +date_heading
@@ -35,10 +44,67 @@ body
     .ClausesToBeConsidered
       +considered_clauses
 
+    .Resolution
+      float: left
+
+      .ResolutionHead
+        +column(30, true)
+
+      .ResolutionDate
+        +column(30, true)
+        font-style: italic
+
+      .ResolutionText
+        +prepend(1)
+        +column(29, true)
+
+        p.ResolutionPara_PgfTag
+          +prepend(1)
+          float: left
+
+      .ResolutionPara
+        float: left
+        +column(26, true)
+
+      .ResolutionSubPara
+        display: block
+        float: left
+        +column(24, true)
+
+      .Motion .Text_motion
+        +column(30, true)
+        padding-left: 0
+
+    .Motion
+      +column(30, true)
+
+      .Text_motion
+        +column(29, true)
+        margin: 0.5em 0
+        +prepend(1)
+        +indent
+
+      .Proposer_name
+        +column(30, true)
+
+    .PgfNumString
+      float: left
+
+      .PgfNumString_0
+        +column(1, true)
+
+      .PgfNumString_1
+        +append(1)
+        +column(1)
+
+      .PgfNumString_2
+        +append(1)
+        +column(1, true)
+
     .MarshalledOrderNote
       font-weight: bold
       +prepend(2)
-      +column(28)
+      +column(28, true)
       text-align: left
 
       .Notehead
@@ -46,11 +112,15 @@ body
      
       .NoteTxt
         +prepend(1)
-        +column(27)
+        +column(27, true)
   
     .Heading_text
-      +column(30)
+      +column(30, true)
       +heading_text
+
+    .CrossHeadingTitle
+      +prepend(1)
+      font-style: italic
 
     .Committee
       +column(30, true)
@@ -70,7 +140,7 @@ body
         list-style: none
         margin: 0
         padding: 0.5em 0
-        clear: both	
+        clear: both 
 
       .AmendmentNumber_PgfTag
         +prepend(28)
@@ -80,7 +150,7 @@ body
         margin-bottom: 0
 
       .AmendmentNumber, .AmendmentText, .SubParagraphCont_sch_PgfTag, .SubParagraph_sch_PgfTag
-        clear: both	
+        clear: both 
 
       .AmedTextCommitReport_PgfTag
         +prepend(1)
@@ -89,20 +159,6 @@ body
    
         .Number_number, .Page_number, .Line_number
           font-weight: bold
-
-      .PgfNumString
-        float: left
-
-      .PgfNumString_0
-        +column(1, true)
-
-      .PgfNumString_1
-        +append(1)
-        +column(1)
-
-      .PgfNumString_2
-        +append(1)
-        +column(1, true)
 
       .Para_sch
         +prepend(2)
@@ -131,6 +187,9 @@ body
         +prepend(2)
         +column(25, true)
 
+      .ClauseText
+        +column(30, true)
+
       .Definition
         display: block
         +prepend(1)
@@ -153,7 +212,7 @@ body
       .Para
         +column(23, true)
 
-      .Move, .CrossHeadingTitle
+      .Move
         +prepend(1)
         float: left
 
