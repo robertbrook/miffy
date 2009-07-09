@@ -127,6 +127,7 @@ class Mif2HtmlParser
       Page_text
       Para_text
       Line_text
+      Clause_ar_text
       ClauseTitle_text
       Amendment_Text_text
       Para_sch_text
@@ -142,6 +143,7 @@ class Mif2HtmlParser
       Italic
       SmallCaps
       Bold
+      Bold_text
       WHITESPACE
       Number Page Line ].inject({}){|h,v| h[v]=true; h}
   SPAN_RE = Regexp.new "(^#{SPAN.keys.join("$|")}$)"
