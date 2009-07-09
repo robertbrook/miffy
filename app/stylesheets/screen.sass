@@ -35,6 +35,16 @@ body
     .HeadConsider .Date
       +date_heading
 
+    .HeadNotice 
+      .Date
+        +date_heading
+
+      .NoticeOfAmds
+        +amendments_heading
+
+      .Given
+        +given_subheading
+
     .Stageheader
       +stage_title
 
@@ -188,7 +198,11 @@ body
         +column(25, true)
 
       .ClauseText
-        +column(30, true)
+        +column(28, true)
+        +prepend(2)
+
+        .SubSection
+          padding-left: 0
 
       .Definition
         display: block
