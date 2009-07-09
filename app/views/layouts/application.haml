@@ -7,4 +7,5 @@
     = stylesheet_link_tag 'ie', :media => 'screen, projection'
   %body{:class => page_class}
     #container
+      %h1.title= @title
       = yield
