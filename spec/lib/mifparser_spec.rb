@@ -50,7 +50,7 @@ describe MifParser do
       @result.tr('.','-').should have_tag('Amendment-Text[id="1047173"]') do
         with_tag('AmedTextCommitReport_PgfTag[id="7381581"]') do
           with_tag('Number[id="1046333"]', :text => 'Schedule 8,') do
-            with_tag('Number_number', :text => '8')
+            with_tag('Schedule_number', :text => '8')
           end
           with_tag('Page[id="1046348"]', :text => 'page 101,') do
             with_tag('page_number', :text => '101')

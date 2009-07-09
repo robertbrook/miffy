@@ -251,10 +251,18 @@ class MifParser
 
   def handle_string element
     text = clean(element)
-    if @prefix_end && text[/^\d+$/] && @e_tag
-      text = %Q|<#{@e_tag}_number>#{text}</#{@e_tag}_number>|
-    end
     last_line = @strings.pop || ''
+
+    if @prefix_end && text[/^\d+$/] && @e_tag
+      last_line[/(Clause|Schedule)/]
+      type = $1
+      if type
+        text = %Q|<#{type}_number>#{text}</#{type}_number>|
+      else
+        text = %Q|<#{@e_tag}_number>#{text}</#{@e_tag}_number>|
+      end
+    end
+
     last_line += text
     @strings << last_line 
   end

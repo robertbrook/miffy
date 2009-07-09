@@ -14,7 +14,7 @@
 <AmendmentNumber_PgfTag id="7332505">4</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="2494721">
-<AmedTextCommitReport_PgfTag id="7332535"><Number id="2494691">Clause <Number_number>17</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7332535"><Number id="2494691">Clause <Clause_number>17</Clause_number>, </Number>
 <Page id="2494701">page <Page_number>11</Page_number>, </Page>
 <Line id="2494711">line <Line_number>4</Line_number>, </Line>
 leave out from ‘substitute’ to end of line 29 and insert—</AmedTextCommitReport_PgfTag>
@@ -31,7 +31,7 @@ leave out from ‘substitute’ to end of line 29 and insert—</AmedTextCommitR
 <AmendmentNumber_PgfTag id="7380702">40</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="7380735">
-<AmedTextCommitReport_PgfTag id="7380736"><PgfNumString><PgfNumString_0>#</PgfNumString_0> </PgfNumString><Number id="7380705"><Number_text>Clause <Number_number>17</Number_number>, </Number_text></Number>
+<AmedTextCommitReport_PgfTag id="7380736"><PgfNumString><PgfNumString_0>#</PgfNumString_0> </PgfNumString><Number id="7380705"><Number_text>Clause <Clause_number>17</Clause_number>, </Number_text></Number>
 <Page id="7380715"><Page_text>page <Page_number>11</Page_number>, </Page_text></Page>
 <Line id="7380725"><Line_text>line <Line_number>33</Line_number>, </Line_text></Line>
 <Amendment.Text_text>at end insert—</Amendment.Text_text></AmedTextCommitReport_PgfTag>
@@ -60,7 +60,7 @@ leave out Clause 17.</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7380803">31</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1487381">
-<AmedTextCommitReport_PgfTag id="7380835"><Number id="1487351">Schedule <Number_number>6</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7380835"><Number id="1487351">Schedule <Schedule_number>6</Schedule_number>, </Number>
 <Page id="1487361">page <Page_number>90</Page_number>, </Page>
 <Line id="1487371">line <Line_number>44</Line_number>, </Line>
 leave out ‘£50,000’ and insert ‘£100,000’.</AmedTextCommitReport_PgfTag>
@@ -74,7 +74,7 @@ leave out ‘£50,000’ and insert ‘£100,000’.</AmedTextCommitReport_PgfTa
 <AmendmentNumber_PgfTag id="7380856">32</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1487543">
-<AmedTextCommitReport_PgfTag id="7380888"><Number id="1487513">Schedule <Number_number>6</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7380888"><Number id="1487513">Schedule <Schedule_number>6</Schedule_number>, </Number>
 <Page id="1487523">page <Page_number>90</Page_number>, </Page>
 <Line id="1487533">line <Line_number>46</Line_number>, </Line>
 leave out ‘£50,000’ and insert ‘£100,000’.</AmedTextCommitReport_PgfTag>
@@ -88,7 +88,7 @@ leave out ‘£50,000’ and insert ‘£100,000’.</AmedTextCommitReport_PgfTa
 <AmendmentNumber_PgfTag id="7380909">37</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1488632">
-<AmedTextCommitReport_PgfTag id="7380941"><Number id="1488602">Schedule <Number_number>6</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7380941"><Number id="1488602">Schedule <Schedule_number>6</Schedule_number>, </Number>
 <Page id="1488612">page <Page_number>91</Page_number>, </Page>
 <Line id="1488622">line <Line_number>27</Line_number>, </Line>
 leave out ‘24 November’ and insert ‘31 December’.</AmedTextCommitReport_PgfTag>
@@ -102,7 +102,7 @@ leave out ‘24 November’ and insert ‘31 December’.</AmedTextCommitReport_
 <AmendmentNumber_PgfTag id="7380962">33</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1487737">
-<AmedTextCommitReport_PgfTag id="7380994"><Number id="1487707">Schedule <Number_number>6</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7380994"><Number id="1487707">Schedule <Schedule_number>6</Schedule_number>, </Number>
 <Page id="1487717">page <Page_number>91</Page_number>, </Page>
 <Line id="1487727">line <Line_number>31</Line_number>, </Line>
 leave out ‘£50,000’ and insert ‘£100,000’.</AmedTextCommitReport_PgfTag>
@@ -116,7 +116,7 @@ leave out ‘£50,000’ and insert ‘£100,000’.</AmedTextCommitReport_PgfTa
 <AmendmentNumber_PgfTag id="7381015">28</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1486887">
-<AmedTextCommitReport_PgfTag id="7381045"><Number id="1486850">Schedule <Number_number>6</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381045"><Number id="1486850">Schedule <Schedule_number>6</Schedule_number>, </Number>
 <Page id="1486867">page <Page_number>91</Page_number>, </Page>
 <Line id="1486877">line <Line_number>32</Line_number>, </Line>
 leave out ‘24 November 2009’ and insert ‘31 December 2010’.</AmedTextCommitReport_PgfTag>
@@ -130,7 +130,7 @@ leave out ‘24 November 2009’ and insert ‘31 December 2010’.</AmedTextCom
 <AmendmentNumber_PgfTag id="7381068">34</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1487945">
-<AmedTextCommitReport_PgfTag id="7381100"><Number id="1487915">Schedule <Number_number>6</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381100"><Number id="1487915">Schedule <Schedule_number>6</Schedule_number>, </Number>
 <Page id="1487925">page <Page_number>91</Page_number>, </Page>
 <Line id="1487935">line <Line_number>33</Line_number>, </Line>
 leave out ‘£50,000’ and insert ‘£100,000’.</AmedTextCommitReport_PgfTag>
@@ -144,7 +144,7 @@ leave out ‘£50,000’ and insert ‘£100,000’.</AmedTextCommitReport_PgfTa
 <AmendmentNumber_PgfTag id="7381121">29</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1486948">
-<AmedTextCommitReport_PgfTag id="7381153"><Number id="1486918">Schedule <Number_number>6</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381153"><Number id="1486918">Schedule <Schedule_number>6</Schedule_number>, </Number>
 <Page id="1486928">page <Page_number>91</Page_number>, </Page>
 <Line id="1486938">line <Line_number>34</Line_number>, </Line>
 leave out ‘24 November’ and insert ‘31 December’.</AmedTextCommitReport_PgfTag>
@@ -158,7 +158,7 @@ leave out ‘24 November’ and insert ‘31 December’.</AmedTextCommitReport_
 <AmendmentNumber_PgfTag id="7381174">30</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1487072">
-<AmedTextCommitReport_PgfTag id="7381204"><Number id="1487042">Schedule <Number_number>6</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381204"><Number id="1487042">Schedule <Schedule_number>6</Schedule_number>, </Number>
 <Page id="1487052">page <Page_number>91</Page_number>, </Page>
 <Line id="1487062">line <Line_number>37</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
@@ -175,7 +175,7 @@ at end insert—</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7381231">36</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1488386">
-<AmedTextCommitReport_PgfTag id="7381263"><Number id="1488356">Schedule <Number_number>6</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381263"><Number id="1488356">Schedule <Schedule_number>6</Schedule_number>, </Number>
 <Page id="1488366">page <Page_number>91</Page_number>, </Page>
 <Line id="1488376">line <Line_number>38</Line_number>, </Line>
 leave out subsections (4) and (5).</AmedTextCommitReport_PgfTag>
@@ -189,7 +189,7 @@ leave out subsections (4) and (5).</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7381284">35</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1488158">
-<AmedTextCommitReport_PgfTag id="7381316"><Number id="1488128">Schedule <Number_number>6</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381316"><Number id="1488128">Schedule <Schedule_number>6</Schedule_number>, </Number>
 <Page id="1488138">page <Page_number>91</Page_number>, </Page>
 <Line id="1488148">line <Line_number>41</Line_number>, </Line>
 leave out ‘£50,000’ and insert ‘£100,000’.</AmedTextCommitReport_PgfTag>
@@ -204,7 +204,7 @@ leave out ‘£50,000’ and insert ‘£100,000’.</AmedTextCommitReport_PgfTa
 <AmendmentNumber_PgfTag id="7381341">38</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1488890">
-<AmedTextCommitReport_PgfTag id="7381362"><Number id="1488860">Clause <Number_number>25</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381362"><Number id="1488860">Clause <Clause_number>25</Clause_number>, </Number>
 <Page id="1488870">page <Page_number>15</Page_number>, </Page>
 leave out lines 37 to 38 and insert ‘the Treasury may by regulations make provision for and in connection with the application of all relevant enactments as follows.</AmedTextCommitReport_PgfTag>
 <SubSection id="1489118" Number="1" Letter="A" Quote="None">
@@ -237,7 +237,7 @@ leave out lines 37 to 38 and insert ‘the Treasury may by regulations make prov
 <AmendmentNumber_PgfTag id="7381417">39</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1490183">
-<AmedTextCommitReport_PgfTag id="7381440"><Number id="1490163">Clause <Number_number>25</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381440"><Number id="1490163">Clause <Clause_number>25</Clause_number>, </Number>
 <Page id="1490173">page <Page_number>16</Page_number>, </Page>
 leave out lines 14 to 16.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
@@ -249,7 +249,7 @@ leave out lines 14 to 16.</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7381457">8</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1082084">
-<AmedTextCommitReport_PgfTag id="7381487"><Number id="1082088">Schedule <Number_number>7</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381487"><Number id="1082088">Schedule <Schedule_number>7</Schedule_number>, </Number>
 <Page id="1082060">page <Page_number>96</Page_number>, </Page>
 <Line id="1082074">line <Line_number>29</Line_number>, </Line>
 after ‘acquisition’, insert ‘by the company of a major interest in the land’.</AmedTextCommitReport_PgfTag>
@@ -261,7 +261,7 @@ after ‘acquisition’, insert ‘by the company of a major interest in the lan
 <AmendmentNumber_PgfTag id="7381502">9</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1082728">
-<AmedTextCommitReport_PgfTag id="7381532"><Number id="1082698">Schedule <Number_number>7</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381532"><Number id="1082698">Schedule <Schedule_number>7</Schedule_number>, </Number>
 <Page id="1082708">page <Page_number>98</Page_number>, </Page>
 <Line id="1082718">line <Line_number>28</Line_number>, </Line>
 leave out ‘ “sub-contractor payment” substitute “connected sub-contractor payment’ and insert ‘ “sub-contracted land remediation” substitute “connected sub-contracted land remediation” ’.</AmedTextCommitReport_PgfTag>
@@ -274,7 +274,7 @@ leave out ‘ “sub-contractor payment” substitute “connected sub-contracto
 <AmendmentNumber_PgfTag id="7381551">13</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1047173">
-<AmedTextCommitReport_PgfTag id="7381581"><Number id="1046333">Schedule <Number_number>8</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381581"><Number id="1046333">Schedule <Schedule_number>8</Schedule_number>, </Number>
 <Page id="1046348">page <Page_number>101</Page_number>, </Page>
 <Line id="1046358">line <Line_number>4</Line_number>, </Line>
 leave out from beginning to ‘is’ in line 5 and insert—</AmedTextCommitReport_PgfTag>
@@ -310,7 +310,7 @@ leave out from beginning to ‘is’ in line 5 and insert—</AmedTextCommitRepo
 <AmendmentNumber_PgfTag id="7381657">27</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1489795">
-<AmedTextCommitReport_PgfTag id="7381687"><Number id="1489765">Schedule <Number_number>8</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381687"><Number id="1489765">Schedule <Schedule_number>8</Schedule_number>, </Number>
 <Page id="1489775">page <Page_number>101</Page_number>, </Page>
 <Line id="1489785">line <Line_number>12</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
@@ -324,7 +324,7 @@ at end insert—</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7381706">14</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1093752">
-<AmedTextCommitReport_PgfTag id="7381736"><Number id="1093722">Schedule <Number_number>8</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381736"><Number id="1093722">Schedule <Schedule_number>8</Schedule_number>, </Number>
 <Page id="1093732">page <Page_number>101</Page_number>, </Page>
 <Line id="1093742">line <Line_number>18</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
@@ -338,7 +338,7 @@ at end insert—</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7381755">15</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1089084">
-<AmedTextCommitReport_PgfTag id="7381785"><Number id="1089054">Schedule <Number_number>8</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381785"><Number id="1089054">Schedule <Schedule_number>8</Schedule_number>, </Number>
 <Page id="1089064">page <Page_number>102</Page_number>, </Page>
 <Line id="1089074">line <Line_number>19</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
@@ -360,7 +360,7 @@ at end insert—</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7381823">16</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1089394">
-<AmedTextCommitReport_PgfTag id="7381853"><Number id="1089364">Schedule <Number_number>8</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381853"><Number id="1089364">Schedule <Schedule_number>8</Schedule_number>, </Number>
 <Page id="1089374">page <Page_number>102</Page_number>, </Page>
 <Line id="1089384">line <Line_number>20</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
@@ -374,7 +374,7 @@ at end insert—</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7381869">17</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1103056">
-<AmedTextCommitReport_PgfTag id="7381901"><Number id="1103026">Schedule <Number_number>8</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381901"><Number id="1103026">Schedule <Schedule_number>8</Schedule_number>, </Number>
 <Page id="1103036">page <Page_number>102</Page_number>, </Page>
 <Line id="1103046">line <Line_number>32</Line_number>, </Line>
 leave out paragraph 8.</AmedTextCommitReport_PgfTag>
@@ -389,7 +389,7 @@ leave out paragraph 8.</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7381926">23</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1488433">
-<AmedTextCommitReport_PgfTag id="7381956"><Number id="1488247">Schedule <Number_number>9</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381956"><Number id="1488247">Schedule <Schedule_number>9</Schedule_number>, </Number>
 <Page id="1488257">page <Page_number>103</Page_number>, </Page>
 <Line id="1488267">line <Line_number>2</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
@@ -406,7 +406,7 @@ at end insert—</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7381987">10</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="444536">
-<AmedTextCommitReport_PgfTag id="7382017"><Number id="444506">Schedule <Number_number>9</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7382017"><Number id="444506">Schedule <Schedule_number>9</Schedule_number>, </Number>
 <Page id="444516">page <Page_number>103</Page_number>, </Page>
 <Line id="444526">line <Line_number>28</Line_number>, </Line>
 leave out ‘in any circumstances’ and insert ‘by virtue of any term subject to which the shares are issued or held’.</AmedTextCommitReport_PgfTag>
@@ -418,7 +418,7 @@ leave out ‘in any circumstances’ and insert ‘by virtue of any term subject
 <AmendmentNumber_PgfTag id="7382033">11</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1080233">
-<AmedTextCommitReport_PgfTag id="7382063"><Number id="1080203">Schedule <Number_number>9</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7382063"><Number id="1080203">Schedule <Schedule_number>9</Schedule_number>, </Number>
 <Page id="1080213">page <Page_number>103</Page_number>, </Page>
 <Line id="1080223">line <Line_number>39</Line_number>, </Line>
 leave out ‘in any circumstances’ and insert ‘by virtue of any term subject to which the shares are issued or held’.</AmedTextCommitReport_PgfTag>
@@ -430,7 +430,7 @@ leave out ‘in any circumstances’ and insert ‘by virtue of any term subject
 <AmendmentNumber_PgfTag id="7382079">12</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1080293">
-<AmedTextCommitReport_PgfTag id="7382111"><Number id="1080263">Schedule <Number_number>9</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7382111"><Number id="1080263">Schedule <Schedule_number>9</Schedule_number>, </Number>
 <Page id="1080273">page <Page_number>104</Page_number>, </Page>
 <Line id="1080283">line <Line_number>14</Line_number>, </Line>
 leave out sub-paragraph (i).</AmedTextCommitReport_PgfTag>
@@ -444,7 +444,7 @@ leave out sub-paragraph (i).</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7382132">22</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1487608">
-<AmedTextCommitReport_PgfTag id="7382162"><Number id="1487578">Schedule <Number_number>9</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7382162"><Number id="1487578">Schedule <Schedule_number>9</Schedule_number>, </Number>
 <Page id="1487588">page <Page_number>104</Page_number>, </Page>
 <Line id="1487598">line <Line_number>21</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
@@ -460,7 +460,7 @@ at end insert—</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7382189">21</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1487259">
-<AmedTextCommitReport_PgfTag id="7382219"><Number id="1487229">Schedule <Number_number>9</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7382219"><Number id="1487229">Schedule <Schedule_number>9</Schedule_number>, </Number>
 <Page id="1487239">page <Page_number>104</Page_number>, </Page>
 <Line id="1487249">line <Line_number>33</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
@@ -476,7 +476,7 @@ at end insert—</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7382246">24</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1488995">
-<AmedTextCommitReport_PgfTag id="7382278"><Number id="1488764">Schedule <Number_number>9</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7382278"><Number id="1488764">Schedule <Schedule_number>9</Schedule_number>, </Number>
 <Page id="1488774">page <Page_number>104</Page_number>, </Page>
 <Line id="1488784">line <Line_number>39</Line_number>, </Line>
 after ‘by’, insert ‘paragraphs 1 to 4 of’.</AmedTextCommitReport_PgfTag>
@@ -490,7 +490,7 @@ after ‘by’, insert ‘paragraphs 1 to 4 of’.</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7382299">25</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1489056">
-<AmedTextCommitReport_PgfTag id="7382329"><Number id="1489026">Schedule <Number_number>9</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7382329"><Number id="1489026">Schedule <Schedule_number>9</Schedule_number>, </Number>
 <Page id="1489036">page <Page_number>104</Page_number>, </Page>
 <Line id="1489046">line <Line_number>43</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
@@ -510,7 +510,7 @@ at end insert—</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7382364">26</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1489734">
-<AmedTextCommitReport_PgfTag id="7382396"><Number id="1489464">Schedule <Number_number>9</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7382396"><Number id="1489464">Schedule <Schedule_number>9</Schedule_number>, </Number>
 <Page id="1489474">page <Page_number>104</Page_number>, </Page>
 <Line id="1489484">line <Line_number>44</Line_number>, </Line>
 after ‘6’, insert ‘or 6A’.</AmedTextCommitReport_PgfTag>
@@ -525,7 +525,7 @@ after ‘6’, insert ‘or 6A’.</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7382421">19</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1486900">
-<AmedTextCommitReport_PgfTag id="7382451"><Number id="1486866">Schedule <Number_number>11</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7382451"><Number id="1486866">Schedule <Schedule_number>11</Schedule_number>, </Number>
 <Page id="1486880">page <Page_number>108</Page_number>, </Page>
 <Line id="1486890">line <Line_number>30</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
@@ -541,7 +541,7 @@ at end insert—</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7382478">20</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1487121">
-<AmedTextCommitReport_PgfTag id="7382508"><Number id="1486998">Schedule <Number_number>11</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7382508"><Number id="1486998">Schedule <Schedule_number>11</Schedule_number>, </Number>
 <Page id="1487008">page <Page_number>109</Page_number>, </Page>
 <Line id="7344274">line <Line_number>32</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
@@ -556,7 +556,7 @@ at end insert—</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7382531">18</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="7338071">
-<AmedTextCommitReport_PgfTag id="7382561"><Number id="7338042">Schedule <Number_number>12</Number_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7382561"><Number id="7338042">Schedule <Schedule_number>12</Schedule_number>, </Number>
 <Page id="7338052">page <Page_number>128</Page_number>, </Page>
 <Line id="1069960">line <Line_number>5</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
