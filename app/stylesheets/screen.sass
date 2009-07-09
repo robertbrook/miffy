@@ -173,6 +173,8 @@ body
       .Para_sch
         +prepend(2)
         float: left
+        margin-top: 3px
+        margin-bottom: 3px
 
       .Paragraph_PgfTag .PgfNumString,  
       .SubParagraphCont_sch_PgfTag .PgfNumString, 
@@ -223,7 +225,13 @@ body
       .Schedule_Committee p.SubParagraphCont_sch_PgfTag
         float: left
   
-      .SubPara_sch
+      .Amendment_Text .SubPara_sch
+        +column(26, true)
+
+      .SubParagraphCont_sch_PgfTag .SubPara_sch, .SubParagraph_sch_PgfTag .SubPara_sch
+        +column(24, true)
+
+      .Para_sch .SubPara_sch
         +column(23, true)
   
       .Para
@@ -236,6 +244,8 @@ body
       div.SubSection, div.SubPara_sch, div.Paragraph_sch
         +prepend(2)
         float: left
+        margin-top: 3px
+        margin-bottom: 3px
 
     .OrderDate
       text-transform: uppercase
