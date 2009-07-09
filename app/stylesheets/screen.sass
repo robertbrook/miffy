@@ -20,7 +20,7 @@ body
       +column(30)
       text-align: left
 
-    hr, .OrderCrossHeading
+    hr, .OrderCrossHeading, .OrderHousePara_PgfTag
       float: left
 
     .Italic
@@ -190,8 +190,11 @@ body
       .CrossHeadingSch div.Para_sch
         +prepend(2)
 
-      .PgfText
+      .SubSection_text, .Paragraph_sch_PgfTag .Amendment_Text_text, .Para_sch_text
         +column(25, true)
+
+      .Subpara_sch_text	
+        +column(22, true)
 
       .TextContinuation
         +prepend(2)
@@ -245,6 +248,9 @@ body
     .OrderHousePara_PgfTag
       +prepend(1)
       +column(29, true)
+
+    .OrderPara
+      +column(25, true)
 
     .Order_House, .Order_Motion, .Order_Committee
       padding: 0.5em 0 0 0
