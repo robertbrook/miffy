@@ -562,9 +562,9 @@ at end insert—</AmedTextCommitReport_PgfTag>
 at end insert—</AmedTextCommitReport_PgfTag>
 <SubSection id="1071759" Number="1" Letter="A" Quote="Single">
 <SubSection_PgfTag id="7382564"><PgfNumString><PgfNumString_1>‘(1A)</PgfNumString_1> </PgfNumString>In determining for the purposes of subsection (1)(c) whether subsection (1) of section 171 would have applied, it is to be assumed that subsection (1A)(b) of that section read—</SubSection_PgfTag>
-
-<_Paragraph_PgfTag id="7382569"><PgfNumString><PgfNumString_1>“(b)</PgfNumString_1> </PgfNumString><Amendment id="1072557"><Para id="1072566" Number="b" Quote="Double">that, at the time of the disposal, company B is resident in the United Kingdom, or carrying on a trade in the United Kingdom through a permanent establishment there.” ’.</Para></Amendment>
-</_Paragraph_PgfTag>
+<Amendment id="1072557">
+<_Paragraph_PgfTag id="7382569"><PgfNumString><PgfNumString_1>“(b)</PgfNumString_1> </PgfNumString><Para id="1072566" Number="b" Quote="Double">that, at the time of the disposal, company B is resident in the United Kingdom, or carrying on a trade in the United Kingdom through a permanent establishment there.” ’.</Para></_Paragraph_PgfTag>
+</Amendment>
 </SubSection>
 </Amendment.Text>
 </Schedule.Committee>

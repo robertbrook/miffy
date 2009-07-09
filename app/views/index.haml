@@ -1,3 +1,8 @@
-%h1 MIF files
-- @files.each do |file|
-  %p= link_to file, "convert?file=#{file}"
+- @title = "MIF files"
+
+- if @files.length > 0
+  %ul.files
+  - @files.each do |file|
+    %li.file= link_to file, "convert?file=#{file}"
+- else
+  %p No MIF files available to parse

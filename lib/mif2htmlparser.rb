@@ -80,6 +80,10 @@ class Mif2HtmlParser
       Given
       Schedules_ar
       SchedulesTitle_ar
+      Prelim
+      ABillTo Abt1 Abt2 Abt3 Abt4 LongTitle Bpara WordsOfEnactment
+      Clauses  
+      Clause
       Clauses_ar
       Clause_ar
       Amendment_Text Amendment_Number
@@ -117,7 +121,11 @@ class Mif2HtmlParser
       STHouse
       STLords
       STCommons
+      Citation
+      Letter
+      Enact
       Italic
+      SmallCaps
       Bold
       WHITESPACE
       Number Page Line ].inject({}){|h,v| h[v]=true; h}
@@ -146,9 +154,13 @@ class Mif2HtmlParser
   def add_html_element name, node, xml
     xml << %Q|<#{name} class="#{node.name.gsub('.','_')}"|
     xml << %Q| id="#{node['id']}"| if node['id']
-    xml << ">"
-    node_children_to_html(node, xml)
-    xml << "</#{name}>"
+    if name == 'hr'
+      xml << " />"      
+    else
+      xml << ">"
+      node_children_to_html(node, xml)
+      xml << "</#{name}>"
+    end
   end
 
   def node_to_html(node, xml)
@@ -178,7 +190,7 @@ class Mif2HtmlParser
       when LI_RE
         add_html_element 'li', node, xml
       when HR_RE
-        add_html_element "hr", node, xml 
+        add_html_element("hr", node, xml) 
       else
         raise node.name
         node_children_to_html(node, xml)

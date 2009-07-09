@@ -60,7 +60,7 @@ class MifParser
   def is_instructions?(flow)
     instruction_regexp = /(`Header'|StructMasterPageMaps|REISSUE|Running H\/F|line of text which is to be numbered|Use the following fragment to insert an amendment line number)/
     flow.inner_text[instruction_regexp] ||
-    (flow.at('PgfTag') && flow.at('PgfTag/text()').to_s[/AmendmentLineNumber/])
+    (flow.at('PgfTag') && flow.at('PgfTag/text()').to_s[/(AmendmentLineNumber|\.PageNum|Body|\.A|\.Bill|\.To)/])
   end
 
   def parse_xml xml, options={}
@@ -80,7 +80,7 @@ class MifParser
       doc = REXML::Document.new(xml)
     rescue Exception => e
       puts e.to_s
-      raise e
+      # raise e
     end
 
     if options[:indent]
@@ -132,6 +132,7 @@ class MifParser
     @in_paragraph && (collapsed ||
             tag == 'Committee' ||
             tag == 'Resolution' ||
+            tag == 'Amendment' ||
             tag == 'Amendment.Number' ||
             tag == 'Amendment.Text' ||
             tag == 'SubSection' ||
@@ -143,6 +144,7 @@ class MifParser
             tag == 'OrderDate' ||
             tag == 'OrderHeading' ||
             tag == 'ClauseTitle' ||
+            tag == 'Clause' ||
             tag == 'Para.sch' )
   end
 
