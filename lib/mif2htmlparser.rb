@@ -154,9 +154,13 @@ class Mif2HtmlParser
   def add_html_element name, node, xml
     xml << %Q|<#{name} class="#{node.name.gsub('.','_')}"|
     xml << %Q| id="#{node['id']}"| if node['id']
-    xml << ">"
-    node_children_to_html(node, xml)
-    xml << "</#{name}>"
+    if name == 'hr'
+      xml << " />"      
+    else
+      xml << ">"
+      node_children_to_html(node, xml)
+      xml << "</#{name}>"
+    end
   end
 
   def node_to_html(node, xml)
@@ -186,7 +190,7 @@ class Mif2HtmlParser
       when LI_RE
         add_html_element 'li', node, xml
       when HR_RE
-        add_html_element "hr", node, xml 
+        add_html_element("hr", node, xml) 
       else
         raise node.name
         node_children_to_html(node, xml)
