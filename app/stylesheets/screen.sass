@@ -212,8 +212,11 @@ body
         display: block
         +prepend(1)
 
-      .SubSubParagraph_sch_PgfTag
+      .SubSubParagraph_sch_PgfTag, .SubParagraphCont_sch_PgfTag
         display: block
+
+      .Amendment_Text > .SubPara_sch > .SubSubParagraph_sch_PgfTag > .PgfNumString
+        +prepend(4)
 
       .SubPara_sch .SubSubParagraph_sch_PgfTag .SubSubPara_sch
         +column(19)
