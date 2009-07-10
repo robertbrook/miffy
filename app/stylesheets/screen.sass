@@ -150,7 +150,6 @@ body
         list-style: none
         margin: 0
         padding: 0.5em 0
-        clear: both 
 
       .AmendmentNumber_PgfTag
         +prepend(28)
@@ -159,13 +158,10 @@ body
         text-align: right
         margin-bottom: 0
 
-      .AmendmentNumber, .AmendmentText, .SubParagraphCont_sch_PgfTag, .SubParagraph_sch_PgfTag
-        clear: both 
-
       .AmedTextCommitReport_PgfTag
         +prepend(1)
+        +column(29, true)
         padding-top: 2px
-        clear: both
    
         .Number_number, .Schedule_number, .Clause_number, .Page_number, .Line_number
           font-weight: bold
@@ -175,6 +171,9 @@ body
         float: left
         margin-top: 3px
         margin-bottom: 3px
+
+      .Amendment_Text > p.Paragraph_sch_PgfTag > .PgfNumString
+        +prepend(2)
 
       .Paragraph_PgfTag .PgfNumString,  
       .SubParagraphCont_sch_PgfTag .PgfNumString, 
@@ -240,6 +239,7 @@ body
       .Move
         +prepend(1)
         float: left
+        margin-bottom: 1em
 
       div.SubSection, div.SubPara_sch, div.Paragraph_sch
         +prepend(2)
