@@ -122,6 +122,7 @@ class Mif2HtmlParser
       SubSection_text
       ResolutionHead_text
       Number_text
+      ResolutionText_text
       ResolutionPara_text
       ResolutionSubPara_text
       Page_text

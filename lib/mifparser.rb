@@ -278,9 +278,11 @@ class MifParser
       if @strings.size == 1
         last_line = @xml.pop
         text = @strings.pop
+        text_tag = @etags_stack.last
         
         if @last_was_pdf_num_string
-          text_tag = @etags_stack.last
+          last_line += "<#{text_tag}_text>#{text}</#{text_tag}_text>"
+        elsif text_tag == "ResolutionText"
           last_line += "<#{text_tag}_text>#{text}</#{text_tag}_text>"
         else
           last_line += text
