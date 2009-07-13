@@ -108,8 +108,17 @@ describe MifParser do
       @result = @parser.parse_xml(fixture('pbc0850206m.mif.xml'))
       File.open(RAILS_ROOT + '/spec/fixtures/pbc0850206m.xml','w') {|f| f.write @result }
     end
+    
     it 'should create XML' do
       @result.gsub('.','-').should have_tag('Amendments-Commons')    
+    end
+    
+    it 'should add element around text in mixed element/text situation' do
+      @result.should have_tag('Resolution[id="1070180"]') do
+        with_tag('ResolutionText[id="1070211"]') do
+          with_tag('ResolutionText_text', :text=> 'That—')
+        end
+      end
     end
   end
 
