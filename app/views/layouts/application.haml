@@ -4,12 +4,14 @@
     %title= @title ? @title : 'Miffy'
     %meta{ :content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type" }
     -if @external_sheet
-      = stylesheet_link_tag @external_sheet, :media => 'screen, projection'
+      = stylesheet_link_tag @external_sheet, :media => 'screen, projection, print'
     -else
       = stylesheet_link_tag 'screen', :media => 'screen, projection'
+      -if page_class == 'application convert'
+        =stylesheet_link_tag 'converted', :media => 'screen, projection'
     = stylesheet_link_tag 'print', :media => 'print'
     = stylesheet_link_tag 'ie', :media => 'screen, projection'
-  %body{:class => page_class}
+  %body{:class => page_class.gsub(' ', '_')}
     #container
       %h1.title= @title
       = yield
