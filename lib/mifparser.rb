@@ -29,7 +29,7 @@ module MifParserUtils
       when 'EmDash'
         '—'
       when 'HardReturn'
-        "\n"
+        "/n"
       else
         '[[' + char + ']]'
     end
@@ -127,7 +127,9 @@ class MifParser
           @in_row = true
           tables[@current_table_id] << '<Row id="' + row_id + '">'
         when 'Cell'
+          first = ' class="first" '
           if @in_cell
+            first = ""
             if @in_heading
               tables[@current_table_id] << "</CellH>"
             else
@@ -137,9 +139,9 @@ class MifParser
           cell_id = element.at('Element/Unique/text()').to_s
           @in_cell = true
           if @in_heading
-            tables[@current_table_id] << '<CellH id="' + cell_id + '">'
+            tables[@current_table_id] << '<CellH id="' + cell_id + '"' + first + '>'
           else
-            tables[@current_table_id] << '<Cell id="' + cell_id + '">'
+            tables[@current_table_id] << '<Cell id="' + cell_id + '"' + first + '>'
           end
         when 'TblH'
           @in_heading = true
@@ -152,7 +154,7 @@ class MifParser
           text = clean(element.at('text()'))
           tables[@current_table_id] << text
         when 'Char'
-          text = get_char(element.at('text()'))
+          text = get_char(element)
           tables[@current_table_id] << text
       end
     end

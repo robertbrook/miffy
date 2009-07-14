@@ -182,7 +182,11 @@ class Mif2HtmlParser
   end
 
   def add_html_element name, node, xml
-    xml << %Q|<#{name} class="#{node.name.gsub('.','_')}"|
+    unless node['class'].blank?
+      xml << %Q|<#{name} class="#{node.name.gsub('.','_')} #{node['class']}"|
+    else
+      xml << %Q|<#{name} class="#{node.name.gsub('.','_')}"|
+    end
     xml << %Q| id="#{node['id']}"| if node['id']
     if name == 'hr'
       xml << " />"      
@@ -243,7 +247,7 @@ class Mif2HtmlParser
     end if node.elem?
 
     if node.text?
-      xml << node.to_s
+      xml << node.to_s.gsub("/n", "<br />")
     end
   end
 
