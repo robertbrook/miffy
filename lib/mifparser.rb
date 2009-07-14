@@ -67,6 +67,12 @@ class MifParser
     doc = Hpricot.XML xml
     xml = ['<Document>']
 
+    @table_list = {}
+    tables = (doc/'Tbls/Tbl')
+    tables.each do |table|
+      handle_table(table, @table_list)
+    end
+
     flows = (doc/'TextFlow')
     flows.each do |flow|
       unless is_instructions?(flow)
@@ -89,6 +95,70 @@ class MifParser
       indented
     else
       xml
+    end
+  end
+
+  def handle_table table_xml, tables
+    hash_size = tables.size
+    @current_table_id = nil
+    @in_row = false
+    @in_cell= false
+    @in_heading = false
+    
+    table_xml.traverse_element do |element|
+      case element.name
+        when 'TblID'
+          @current_table_id = element.at('text()').to_s
+        when 'TblTag'
+          tag = clean(element.at('text()'))
+          if tag != 'Table'
+            break
+          else
+            table_id = element.at('../Unique/text()').to_s
+            tables.merge!({@current_table_id, '<TableData id="' + table_id + '">'})
+          end
+        when 'Row'
+          if @in_row
+            tables[@current_table_id] << "</Cell></Row>"
+            @in_row = false
+            @in_cell = false
+          end
+          row_id = element.at('Element/Unique/text()').to_s
+          @in_row = true
+          tables[@current_table_id] << '<Row id="' + row_id + '">'
+        when 'Cell'
+          if @in_cell
+            if @in_heading
+              tables[@current_table_id] << "</CellH>"
+            else
+              tables[@current_table_id] << "</Cell>"
+            end
+          end
+          cell_id = element.at('Element/Unique/text()').to_s
+          @in_cell = true
+          if @in_heading
+            tables[@current_table_id] << '<CellH id="' + cell_id + '">'
+          else
+            tables[@current_table_id] << '<Cell id="' + cell_id + '">'
+          end
+        when 'TblH'
+          @in_heading = true
+        when 'TblBody'
+          tables[@current_table_id] << '</CellH></Row>'
+          @in_row = false
+          @in_cell = false
+          @in_heading = false
+        when 'String'
+          text = clean(element.at('text()'))
+          tables[@current_table_id] << text
+        when 'Char'
+          text = get_char(element.at('text()'))
+          tables[@current_table_id] << text
+      end
+    end
+    
+    if tables.size > hash_size
+      tables[@current_table_id] << "</Cell></Row></TableData>"
     end
   end
 
@@ -327,6 +397,9 @@ class MifParser
           @prefix_end = true
         when 'SuffixBegin'
           @prefix_end = false
+        when 'ATbl'
+          table_id = element.at('text()').to_s
+          add @table_list[table_id]
       end
     end
   end

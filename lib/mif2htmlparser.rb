@@ -109,6 +109,18 @@ class Mif2HtmlParser
   DIV_RE = Regexp.new "(^#{DIV.keys.join("$|")}$)"
 
   # P = %w[].inject({}){|h,v| h[v]=true; h}
+  
+  TABLE = %w[TableData].inject({}){|h,v| h[v]=true; h}
+  TABLE_RE = Regexp.new "(^#{TABLE.keys.join("$|")}$)"
+
+  TR = %w[Row].inject({}){|h,v| h[v]=true; h}
+  TR_RE = Regexp.new "(^#{TR.keys.join("$|")}$)"
+  
+  TH = %w[CellH].inject({}){|h,v| h[v]=true; h}
+  TH_RE = Regexp.new "(^#{TH.keys.join("$|")}$)"
+  
+  TD = %w[Cell].inject({}){|h,v| h[v]=true; h}
+  TD_RE = Regexp.new "(^#{TD.keys.join("$|")}$)"
 
   SPAN = %w[ResolutionPara ResolutionSubPara
       Para SubPara_sch
@@ -217,6 +229,14 @@ class Mif2HtmlParser
         add_html_element 'li', node, xml
       when HR_RE
         add_html_element("hr", node, xml) 
+      when TR_RE
+        add_html_element("tr", node, xml)
+      when TH_RE
+        add_html_element("th", node, xml)
+      when TD_RE
+        add_html_element("td", node, xml)
+      when TABLE_RE
+        add_html_element("table", node, xml)
       else
         raise node.name
         node_children_to_html(node, xml)
