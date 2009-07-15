@@ -116,7 +116,24 @@ describe MifParser do
     it 'should add element around text in mixed element/text situation' do
       @result.should have_tag('Resolution[id="1070180"]') do
         with_tag('ResolutionText[id="1070211"]') do
-          with_tag('ResolutionText_text', :text=> 'That—')
+          with_tag('ResolutionText_text', :text => 'That—')
+        end
+      end
+    end
+    
+    it 'should add TableData, Row, CellH and Cell elements inside the Table element' do
+      @result.should have_tag('Table[id="6540480"]') do
+        with_tag('TableData[id="7336058"]') do
+          with_tag('Row[id="6540534"]') do
+            with_tag('CellH[id="6540535"]', :class => 'first', :text => 'Date')
+            with_tag('CellH[id="6540536"]', :class => nil, :text => 'Time')
+            with_tag('CellH[id="6540537"]', :class => nil, :text => 'Witness')
+          end
+          with_tag('Row[id="6540538"]') do
+            with_tag('Cell[id="6540539"]', :class => 'first', :text => 'Tuesday 2 June')
+            with_tag('Cell[id="6540540"]', :class => nil, :text => 'Until no later than 12 noon')
+            with_tag('Cell[id="6540541"]', :class => nil, :text => 'Equality and Diversity Forum/nEquality and Human Rights  Commission/nEmployment Tribunals Service')
+          end
         end
       end
     end

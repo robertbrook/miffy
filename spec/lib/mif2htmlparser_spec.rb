@@ -22,6 +22,19 @@ describe MifParser do
           with_tag('p[class="OrderHeading_PgfTag"][id="7335998"]', :text => 'Resolution of the Programming Sub-Committee')
         end
       end
+      
+      @result.should have_tag('table[class="TableData"][id="7336058"]') do
+        with_tag('tr[class="Row"][id="6540534"]') do
+          with_tag('th[class="CellH first"][id="6540535"]', :text => 'Date')
+          with_tag('th[class="CellH"][id="6540536"]', :text => 'Time')
+          with_tag('th[class="CellH"][id="6540537"]', :text => 'Witness')
+        end
+        with_tag('tr[class="Row"][id="6540538"]') do
+          with_tag('td[class="Cell first"][id="6540539"]', :text => 'Tuesday 2 June')
+          with_tag('td[class="Cell"][id="6540540"]', :text => 'Until no later than 12 noon')
+          with_tag('td[class="Cell"][id="6540541"]', :html => 'Equality and Diversity Forum<br />Equality and Human Rights  Commission<br />Employment Tribunals Service')
+        end
+      end
     end
   end
   

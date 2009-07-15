@@ -660,8 +660,7 @@ at end insert—</AmedTextCommitReport_PgfTag>
 <Order.House id="7325194"><OrderDate id="7325197">
 <OrderHeading_PgfTag id="7382791"><PgfNumString></PgfNumString><OrderDate_text>Order of the House [6 MAY 2009]</OrderDate_text></OrderHeading_PgfTag>
 </OrderDate>
-<OrderPreamble id="7325208">That the following provisions shall apply to the Finance Bill:
-</OrderPreamble><OrderText id="7325213">
+<OrderPreamble id="7325208">That the following provisions shall apply to the Finance Bill:/n</OrderPreamble><OrderText id="7325213">
 <OrderHousePara_PgfTag id="7382800"><PgfNumString><PgfNumString_1>1.</PgfNumString_1> </PgfNumString><OrderPara id="7325216"><OrderPara_text>Clauses 7, 8, 9, 11, 14, 16, 20 and 92 be committed to a Committee of the whole House;</OrderPara_text></OrderPara></OrderHousePara_PgfTag>
 
 <OrderHousePara_PgfTag id="7382805"><PgfNumString><PgfNumString_1>2.</PgfNumString_1> </PgfNumString><OrderPara id="7325221"><OrderPara_text>the remainder of the Bill be committed to a Public Bill Committee; and</OrderPara_text></OrderPara></OrderHousePara_PgfTag>
@@ -672,10 +671,7 @@ at end insert—</AmedTextCommitReport_PgfTag>
 <Order.Motion id="1484767"><OrderHeading id="7329842">
 <OrderHeading_PgfTag id="7382821"><PgfNumString></PgfNumString><OrderHeading_text>Resolution of the Committee [19 May 2009]</OrderHeading_text></OrderHeading_PgfTag>
 </OrderHeading>
-<OrderAmendmentText id="7330294">That the Committee shall meet—
-  on Tuesdays at 10.30 a.m. and 4.30 p.m., and
-  on Thursdays (other than Thursday 4 June) at 9.00 a.m. and 1.00 p.m.,
- when the House is sitting.</OrderAmendmentText>
+<OrderAmendmentText id="7330294">That the Committee shall meet—/n  on Tuesdays at 10.30 a.m. and 4.30 p.m., and/n  on Thursdays (other than Thursday 4 June) at 9.00 a.m. and 1.00 p.m.,/n when the House is sitting.</OrderAmendmentText>
  </Order.Motion>
 <Order.Committee id="7323403"><OrderDate id="7323407">
 <OrderHeading_PgfTag id="7382842"><PgfNumString></PgfNumString><OrderDate_text>Order of the Committee [19 May 2009]</OrderDate_text></OrderHeading_PgfTag>
