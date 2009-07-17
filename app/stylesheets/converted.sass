@@ -308,3 +308,45 @@ body
     .ResolutionPreamble
       +indent
       +column(30, true)
+
+    .Clauses
+      +column(30, true)
+      text-align: left
+
+    .Prelim
+      float: left
+
+      .ABillTo
+        float: left
+        text-transform: uppercase
+        +column(30, true)
+        text-align: center
+
+        .Abt1, .Abt3
+          +column(30, true)
+
+        .Abt2
+          +column(30, true)
+          font-size: 2.5em
+          letter-spacing: 0.3em
+          font-weight: bold
+          padding: 0.4em 0
+
+      .LongTitle
+        +column(30, true)
+
+      .WordsOfEnactment
+        +column(30, true)
+
+        .Dropcap
+          font-size: 2.5em
+          float: left
+          margin-top: -0.25em
+
+        .SmallCaps
+          float: left
+          text-transform: uppercase
+          margin-right: 0.3em
+
+      .Clause
+        +column(30, true)
