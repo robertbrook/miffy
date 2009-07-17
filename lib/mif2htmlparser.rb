@@ -155,9 +155,11 @@ class Mif2HtmlParser
       Enact
       Italic
       SmallCaps
+      Dropcap
       Bold
       Bold_text
       WHITESPACE
+      FrameData
       Number Page Line ].inject({}){|h,v| h[v]=true; h}
   SPAN_RE = Regexp.new "(^#{SPAN.keys.join("$|")}$)"
 

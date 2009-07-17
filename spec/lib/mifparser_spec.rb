@@ -90,14 +90,21 @@ describe MifParser do
   end
 
   describe 'when parsing Clauses MIF XML file' do
-    before(:all) do
+    before(:all) do      
       @parser = MifParser.new
       @result = @parser.parse_xml(fixture('Clauses.mif.xml'))
       File.open(RAILS_ROOT + '/spec/fixtures/Clauses.xml','w') {|f| f.write @result }
     end
+    
     it 'should create XML' do
       @result.gsub('.','-').should have_tag('Clause[id="1093880"]') do
         with_tag('ClauseTitle_PgfTag[id="1112748"]')
+      end
+    end
+    
+    it 'should include a Frame element' do
+      @result.gsub('.','-').should have_tag('FrameData[id="1112726"]') do
+        with_tag('Dropcap[id="1003796"]', :text => 'B')
       end
     end
   end

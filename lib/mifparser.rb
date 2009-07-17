@@ -72,6 +72,12 @@ class MifParser
     tables.each do |table|
       handle_table(table, @table_list)
     end
+    
+    @frame_list = {}
+    frames = (doc/'AFrames'/'Frame')
+    frames.each do |frame|
+      handle_frame(frame, @frame_list)
+    end
 
     flows = (doc/'TextFlow')
     flows.each do |flow|
@@ -97,6 +103,41 @@ class MifParser
       xml
     end
   end
+  
+  def handle_frame frame_xml, frames
+    @frame_id = ''
+    @in_frame = false
+    @e_tag = ''
+    
+    frame_xml.traverse_element do |element|
+      case element.name
+        when 'ID'
+          @frame_id = element.at('text()').to_s
+        when 'Unique'
+          unless @frame_id == '' or @in_frame
+            unique_id = element.at('text()').to_s
+            frames.merge!({@frame_id, %Q|<FrameData id="#{unique_id}">|})
+            @in_frame = true
+          end
+        when 'ETag'
+          tag = clean(element)
+          @e_tag = tag
+          uid = element.at('../Unique/text()').to_s
+          attributes = get_attributes(element)
+          frames[@frame_id] << %Q|<#{tag} id="#{uid}"#{attributes}>|
+        when 'String'
+          text = clean(element.at('text()'))
+          frames[@frame_id] << text
+      end
+    end
+    
+    if frames[@frame_id] 
+      unless @e_tag.empty?
+        frames[@frame_id] << "</#{@e_tag}>"
+      end
+      frames[@frame_id] << "</FrameData>"
+    end
+  end
 
   def handle_table table_xml, tables
     hash_size = tables.size
@@ -104,7 +145,7 @@ class MifParser
     @in_row = false
     @in_cell= false
     @in_heading = false
-    
+
     table_xml.traverse_element do |element|
       case element.name
         when 'TblID'
@@ -115,7 +156,7 @@ class MifParser
             break
           else
             table_id = element.at('../Unique/text()').to_s
-            tables.merge!({@current_table_id, '<TableData id="' + table_id + '">'})
+            tables.merge!({@current_table_id, %Q|<TableData id="#{table_id}">|})
           end
         when 'Row'
           if @in_row
@@ -125,7 +166,7 @@ class MifParser
           end
           row_id = element.at('Element/Unique/text()').to_s
           @in_row = true
-          tables[@current_table_id] << '<Row id="' + row_id + '">'
+          tables[@current_table_id] << %Q|<Row id="#{row_id}">|
         when 'Cell'
           first = ' class="first" '
           if @in_cell
@@ -139,9 +180,9 @@ class MifParser
           cell_id = element.at('Element/Unique/text()').to_s
           @in_cell = true
           if @in_heading
-            tables[@current_table_id] << '<CellH id="' + cell_id + '"' + first + '>'
+            tables[@current_table_id] << %Q|<CellH id="#{cell_id}"#{first}>|
           else
-            tables[@current_table_id] << '<Cell id="' + cell_id + '"' + first + '>'
+            tables[@current_table_id] << %Q|<Cell id="#{cell_id}"#{first}>|
           end
         when 'TblH'
           @in_heading = true
@@ -158,7 +199,7 @@ class MifParser
           tables[@current_table_id] << text
       end
     end
-    
+
     if tables.size > hash_size
       tables[@current_table_id] << "</Cell></Row></TableData>"
     end
@@ -402,6 +443,9 @@ class MifParser
         when 'ATbl'
           table_id = element.at('text()').to_s
           add @table_list[table_id]
+        when 'AFrame'
+          frame_id = element.at('text()').to_s
+          add @frame_list[frame_id]
       end
     end
   end
