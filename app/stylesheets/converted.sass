@@ -5,6 +5,8 @@
 
 body
   #container
+    +showgrid
+
     .Amendments_Commons
       +column(30)
       text-align: left
@@ -224,7 +226,7 @@ body
       .SubSection_text, .Paragraph_sch_PgfTag .Amendment_Text_text, .Para_sch_text
         +column(25, true)
 
-      .Subpara_sch_text	
+      .Subpara_sch_text 
         +column(22, true)
 
       .TextContinuation
@@ -309,10 +311,6 @@ body
       +indent
       +column(30, true)
 
-    .Clauses
-      +column(30, true)
-      text-align: left
-
     .Prelim
       float: left
 
@@ -334,9 +332,12 @@ body
 
       .LongTitle
         +column(30, true)
+        padding: 1.3em 0 2em 0
+        font-size: 1.1em
 
       .WordsOfEnactment
         +column(30, true)
+        padding-bottom: 1.5em
 
         .Dropcap
           font-size: 2.5em
@@ -348,5 +349,63 @@ body
           text-transform: uppercase
           margin-right: 0.3em
 
+    .Clauses
+      +column(30, true)
+      text-align: left
+
       .Clause
         +column(30, true)
+
+        ._ClauseTitle_PgfTag, .ClauseTitle_PgfTag
+          font-weight: bold
+
+        .ClauseText
+          +prepend(2)
+          +column(27, true)
+
+        .Amendment 
+          float:left
+
+          .Clause
+            float: left
+            padding-left: 0
+
+            .ClauseText
+              padding-left: 0
+
+            .SubSection
+              +column(28, true)
+
+              .SubSection_text
+                +column(26, true)
+
+              ._Paragraph_PgfTag
+                +column(27, true)
+                +prepend(1)
+
+                .Para_text
+                  +column(25, true)
+
+              .Bold
+                display: block
+                float: left
+                border: 1px solid orange
+
+                .Bold_text
+                  +column(25, true)
+                  border: 1px solid blue
+
+              p._SubSection_PgfTag
+                margin-left
+                float: left
+
+              p._SubParagraph_PgfTag
+                +column(26, true)
+                +prepend(3)
+ 
+                .SubPara_text
+                  +column(23, true)
+              
+              span.Para
+                float: left
+                display: block
