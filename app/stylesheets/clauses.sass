@@ -78,6 +78,15 @@ body
       .Clause
         +column(30, true)
 
+        .Bold
+          +column(25, true)
+
+        .SubSection
+          +column(28, true)
+
+          .SubSection_text
+            +column(26, true)
+
         ._ClauseTitle_PgfTag, .ClauseTitle_PgfTag
           font-weight: bold
 
@@ -95,27 +104,12 @@ body
             .ClauseText
               padding-left: 0
 
-            .SubSection
-              +column(28, true)
-
-              .SubSection_text
-                +column(26, true)
-
               ._Paragraph_PgfTag
                 +column(27, true)
                 +prepend(1)
 
                 .Para_text
                   +column(25, true)
-
-              .Bold
-                display: block
-                float: left
-                border: 1px solid orange
-
-                .Bold_text
-                  +column(25, true)
-                  border: 1px solid blue
 
               p._SubSection_PgfTag
                 margin-left
