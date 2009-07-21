@@ -1,17 +1,14 @@
-// To configure blueprint, edit the partials/base.sass file.
 @import partials/base.sass
-// Import all the default blueprint modules so that we can access their mixins.
 @import blueprint
 
 body
   #container
-    +showgrid
 
     .Amendments_Commons
       +column(30)
       text-align: left
 
-    hr, .OrderCrossHeading, .OrderHousePara_PgfTag, table
+    hr, table
       float: left
 
     .Italic
@@ -38,50 +35,7 @@ body
 
     .CommitteeShorttitle
       +bill_title
-
-    .ClausesToBeConsidered
-      +considered_clauses
-
-    .Resolution
-      float: left
-
-      .ResolutionHead
-        +column(30, true)
-
-      .ResolutionDate
-        +column(30, true)
-        font-style: italic
-
-      .ResolutionText > p.ResolutionPara > span.ResolutionPara_text
-        column(29, true)
-
-      .Table
-        +prepend(2)
-        +column(26)
-        +append(2)
-      
-      table
-        border-collapse: collapse
-
-      td
-        vertical-align: top
-        border-top: 1px solid black
-        border-left: 1px solid black
-
-      th
-        font-weight: normal
-        font-style: italic
-        text-align: center
-        border-left: 1px solid black
-        border-bottom: 1px solid black
-        border-top: 0
-
-      td.first, th.first
-        border-left: 0
-
-      td.first
-        padding-left: 0.5em
-
+    
     .Committee
       +column(30, true)
       border-top: 1px solid grey
@@ -108,94 +62,22 @@ body
         text-align: right
         margin-bottom: 0
 
-      .AmedTextCommitReport_PgfTag
-        +prepend(1)
-        +column(29, true)
-        padding-top: 2px
-   
-        .Number_number, .Schedule_number, .Clause_number, .Page_number, .Line_number
-          font-weight: bold
-
-      .Para_sch
-        +prepend(2)
-        float: left
-        margin-top: 3px
-        margin-bottom: 3px
-
-      .Amendment_Text > p.Paragraph_sch_PgfTag > .PgfNumString
-        +prepend(2)
-
-      .Paragraph_PgfTag .PgfNumString,  
-      .SubParagraphCont_sch_PgfTag .PgfNumString, 
-      ._Paragraph_PgfTag .PgfNumString
-        +prepend(2)
-        +append(1)
-        +column(1, true)
-
-      .Para_sch .SubPara_sch .SubSubParagraph_sch_PgfTag .PgfNumString
-        padding-left: 0
-
-      .CrossHeadingSch .Para_sch, .SubSubParagraph_sch_PgfTag .PgfNumString
-        +prepend(2)
-
-      .CrossHeadingSch div.Para_sch
-        +prepend(2)
-
-      .SubSection_text, .Paragraph_sch_PgfTag .Amendment_Text_text, .Para_sch_text
-        +column(25, true)
-
-      .Subpara_sch_text 
-        +column(22, true)
-
-      .TextContinuation
-        +prepend(2)
-        +column(25, true)
-
       .ClauseText
         +column(28, true)
         +prepend(2)
 
-        .SubSection
-          padding-left: 0
+        .Paragraph_PgfTag
+          float: left
 
-      .Definition
-        display: block
-        +prepend(1)
+          .PgfNumString
+            +prepend(2)
+            +append(1)
+            +column(1, true)
 
-      .SubSubParagraph_sch_PgfTag, .SubParagraphCont_sch_PgfTag
-        display: block
-
-      .Amendment_Text > .SubPara_sch > .SubSubParagraph_sch_PgfTag > .PgfNumString
-        +prepend(4)
-
-      .SubPara_sch .SubSubParagraph_sch_PgfTag .SubSubPara_sch
-        +column(19)
-
-      .CrossHeadingSch .SubSubPara_sch
-        +column(22, true)
-
-      .Schedule_Committee p.SubParagraphCont_sch_PgfTag
-        float: left
-  
-      .Amendment_Text .SubPara_sch
-        +column(26, true)
-
-      .SubParagraphCont_sch_PgfTag .SubPara_sch, .SubParagraph_sch_PgfTag .SubPara_sch
-        +column(24, true)
-
-      .Para_sch .SubPara_sch
-        +column(23, true)
-  
-      .Para
-        +column(23, true)
+          .Para
+            +column(24, true)
 
       .Move
         +prepend(1)
         float: left
         margin-bottom: 1em
-
-      div.SubSection, div.SubPara_sch, div.Paragraph_sch
-        +prepend(2)
-        float: left
-        margin-top: 3px
-        margin-bottom: 3px
