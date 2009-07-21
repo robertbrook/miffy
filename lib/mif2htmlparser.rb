@@ -37,7 +37,8 @@ class Mif2HtmlParser
   def format_haml haml
     reg_exp = Regexp.new('(Number|Page|Line)\n(\s+)(\S+)\n(\s+)%span\.(\S+)_number\n(\s+)(\S+)\n(\s+),', Regexp::MULTILINE)
     haml.gsub!(reg_exp, '\1' + "\n" + '\2\3 <span class="\5_number">\7</span>,')
-    haml.gsub!(/Letter\n/,"Letter<>\n")
+    haml.gsub!(/(Letter|FrameData|Dropcap)\n/, '\1' + "<>\n")
+    haml.gsub!(/(SmallCaps)\n/, '\1' + "<\n")
     haml
   end
   

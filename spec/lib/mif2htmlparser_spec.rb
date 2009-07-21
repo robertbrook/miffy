@@ -15,8 +15,12 @@ describe MifParser do
     before do
       @result = @parser.parse_xml(fixture('clauses.xml'), :format => :haml)
     end
-    it 'should close whitespace following Letter spans' do
+    it 'should close whitespace following Letter and Dropcap spans' do
       @result.should include("%span#1003816.Letter<>")
+      @result.should include("%span#1112726.FrameData<>")
+      @result.should include("%span#1003796.Dropcap<>")
+      @result.should include("%span#1003802.SmallCaps<")
+      
     end
   end
   describe 'when parsing another MIF XML file to html' do
