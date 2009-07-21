@@ -8,6 +8,7 @@ describe MifParser do
 
   before do
     @parser = Mif2HtmlParser.new
+    @parser.stub!(:find_act_url).and_return nil
   end
 
   describe 'when parsing another MIF XML file to html' do

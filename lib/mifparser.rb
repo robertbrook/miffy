@@ -30,6 +30,8 @@ module MifParserUtils
         '—'
       when 'HardReturn'
         "/n"
+      when 'HardSpace'
+        " "
       else
         '[[' + char + ']]'
     end

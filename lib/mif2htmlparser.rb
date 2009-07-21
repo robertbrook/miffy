@@ -1,5 +1,7 @@
 require 'mifparser'
 require 'htmlentities'
+require 'open-uri'
+require 'hpricot'
 
 class Mif2HtmlParser
 
@@ -199,8 +201,32 @@ class Mif2HtmlParser
     end
   end
 
+  def find_act_url act_name
+    search_url = "http://search.opsi.gov.uk/search?q=#{URI.escape(act_name)}&output=xml_no_dtd&client=opsisearch_semaphore&site=opsi_collection"
+    begin
+      doc = Hpricot.XML open(search_url)
+      url = nil
+      
+      (doc/'R/T').each do |result|
+        term = result.inner_text.gsub(/<[^>]+>/,'')
+        if act_name == term
+          url = result.at('../U/text()').to_s
+        end
+      end
+      
+      url
+    rescue Exception => e
+      puts 'error retrieving: ' + search_url
+      puts e.class.name
+      puts e.to_s
+      nil
+    end
+  end
+  
   def add_link_element node, xml
-    xml << %Q|<a href="" class=#{node.name}>|
+    item = node.inner_text
+    url = item[/Act/] ? find_act_url(item) : ''
+    xml << %Q|<a href="#{url}" class="#{node.name}">|
     node_children_to_html(node, xml)    
     xml << "</a>"
   end
