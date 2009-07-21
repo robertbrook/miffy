@@ -78,6 +78,12 @@ class MifParser
     frames.each do |frame|
       handle_frame(frame, @frame_list)
     end
+    
+    @variable_list = {}
+    variables = (doc/'VariableFormats'/'VariableFormat')
+    variables.each do |variable|
+      handle_variable(variable, @variable_list)
+    end
 
     flows = (doc/'TextFlow')
     flows.each do |flow|
@@ -101,6 +107,20 @@ class MifParser
       indented
     else
       xml
+    end
+  end
+  
+  def handle_variable var_xml, vars
+    @var_id = ''
+    
+    var_xml.traverse_element do |element|
+      case element.name
+        when 'VariableName'
+          @var_id = clean(element.at('text()'))
+        when 'VariableDef'
+          var_value = clean(element.at('text()'))
+          vars.merge!({"#{@var_id}", "#{var_value}"})
+      end
     end
   end
   
@@ -446,6 +466,11 @@ class MifParser
         when 'AFrame'
           frame_id = element.at('text()').to_s
           add @frame_list[frame_id]
+        when 'VariableName'
+          var_id = clean(element.at('text()'))
+          last_line = @strings.pop || ''
+          last_line += @variable_list[var_id]
+          @strings << last_line
       end
     end
   end
