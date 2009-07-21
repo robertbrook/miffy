@@ -31,8 +31,13 @@ class Mif2HtmlParser
     haml = `#{cmd}`
     html_file.delete
     
+    format_haml(haml)
+  end
+
+  def format_haml haml
     reg_exp = Regexp.new('(Number|Page|Line)\n(\s+)(\S+)\n(\s+)%span\.(\S+)_number\n(\s+)(\S+)\n(\s+),', Regexp::MULTILINE)
-    haml = haml.gsub(reg_exp, '\1' + "\n" + '\2\3 <span class="\5_number">\7</span>,')
+    haml.gsub!(reg_exp, '\1' + "\n" + '\2\3 <span class="\5_number">\7</span>,')
+    haml.gsub!(/Letter\n/,"Letter<>\n")
     haml
   end
   

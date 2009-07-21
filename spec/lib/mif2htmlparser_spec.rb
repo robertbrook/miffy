@@ -11,6 +11,14 @@ describe MifParser do
     @parser.stub!(:find_act_url).and_return nil
   end
 
+  describe 'when parsing Clauses MIF XML file to haml' do
+    before do
+      @result = @parser.parse_xml(fixture('clauses.xml'), :format => :haml)
+    end
+    it 'should close whitespace following Letter spans' do
+      @result.should include("%span#1003816.Letter<>")
+    end
+  end
   describe 'when parsing another MIF XML file to html' do
     before do
       @result = @parser.parse_xml(fixture('pbc0850206m.xml'), :format => :html)
