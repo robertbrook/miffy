@@ -5,7 +5,6 @@
 
 body
   #container
-    +showgrid
 
     .PgfNumString
       float: left
@@ -41,6 +40,7 @@ body
         text-transform: uppercase
         +column(30, true)
         text-align: center
+        padding: 2em 0
 
         .Abt1, .Abt3
           +column(30, true)
@@ -54,7 +54,7 @@ body
 
       .LongTitle
         +column(30, true)
-        padding: 1.3em 0 2em 0
+        padding: 0 0 2em 0
         font-size: 1.1em
 
       .WordsOfEnactment
@@ -87,6 +87,9 @@ body
           .SubSection_text
             +column(26, true)
 
+          p.SubSection_PgfTag
+            +column(28, true)
+
         ._ClauseTitle_PgfTag, .ClauseTitle_PgfTag
           font-weight: bold
 
@@ -97,31 +100,31 @@ body
         .Amendment 
           float:left
 
-          .Clause
-            float: left
+        .Clause
+          float: left
+          padding-left: 0
+
+          .ClauseText
             padding-left: 0
 
-            .ClauseText
-              padding-left: 0
+            ._Paragraph_PgfTag
+              +column(27, true)
+              +prepend(1)
 
-              ._Paragraph_PgfTag
-                +column(27, true)
-                +prepend(1)
+              .Para_text
+                +column(25, true)
 
-                .Para_text
-                  +column(25, true)
+            p._SubSection_PgfTag
+              margin-left
+              float: left
 
-              p._SubSection_PgfTag
-                margin-left
-                float: left
+            p._SubParagraph_PgfTag
+              +column(25, true)
+              +prepend(3)
 
-              p._SubParagraph_PgfTag
-                +column(26, true)
-                +prepend(3)
+              .SubPara_text
+                +column(23, true)
 
-                .SubPara_text
-                  +column(23, true)
-
-              span.Para
-                float: left
+            span.Para
+              float: left
                 display: block
