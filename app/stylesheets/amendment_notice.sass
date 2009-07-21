@@ -23,9 +23,6 @@ body
     .Head
       +column(30, true)
 
-    .HeadConsider .Date
-      +date_heading
-
     .HeadNotice 
       .Date
         +date_heading
@@ -58,30 +55,6 @@ body
       .ResolutionText > p.ResolutionPara > span.ResolutionPara_text
         column(29, true)
 
-      .ResolutionText
-        +column(30, true)
-
-        .ResolutionText_text
-          +column(30, true)
-
-        .PgfNumString
-          +prepend(1)
-
-        p.ResolutionPara_PgfTag
-          float: left
-          display: block
-  
-        span.ResolutionPara_PgfTag
-          display: block
-          column(26, true)
-
-          .ResolutionSubPara
-            display: block
-            +column(22, true)
-
-      .ResolutionPara
-        +column(26, true)
-
       .Table
         +prepend(2)
         +column(26)
@@ -108,61 +81,6 @@ body
 
       td.first
         padding-left: 0.5em
-
-      .ResolutionSubPara
-        display: block
-        +column(24, true)
-
-      .Motion .Text_motion
-        +column(30, true)
-        padding-left: 0
-
-    .Motion
-      +column(30, true)
-
-      .Text_motion
-        +column(29, true)
-        margin: 0.5em 0
-        +prepend(1)
-        +indent
-
-      .Proposer_name
-        +column(30, true)
-
-    .PgfNumString
-      float: left
-
-      .PgfNumString_0
-        +column(1, true)
-
-      .PgfNumString_1
-        +append(1)
-        +column(1)
-
-      .PgfNumString_2
-        +append(1)
-        +column(1, true)
-
-    .MarshalledOrderNote
-      font-weight: bold
-      +prepend(2)
-      +column(28, true)
-      text-align: left
-
-      .Notehead
-        text-transform: uppercase
-     
-      .NoteTxt
-        +prepend(1)
-        +column(27, true)
-  
-    .Heading_text
-      +column(30, true)
-      +heading_text
-
-    .CrossHeadingTitle
-      +prepend(1)
-      font-style: italic
 
     .Committee
       +column(30, true)
@@ -281,32 +199,3 @@ body
         float: left
         margin-top: 3px
         margin-bottom: 3px
-
-    .OrderHeading_PgfTag
-      float: left
-      display: block
-
-    .OrderHeading_text, .OrderDate_text
-      text-transform: uppercase
-      text-align: center
-      +column(30, true)
-
-    .OrderAmendmentText, .OrderHeading
-      float: left
-
-    .OrderHousePara_PgfTag
-      +prepend(1)
-      +column(29, true)
-
-    .OrderPara
-      +column(25, true)
-
-    .Order_House, .Order_Motion, .Order_Committee
-      padding: 0.5em 0 0 0
-      border-bottom: 1px solid black
-      +column(30, true)
-      text-align: left
-
-    .ResolutionPreamble
-      +indent
-      +column(30, true)
