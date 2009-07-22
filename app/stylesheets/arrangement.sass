@@ -5,3 +5,30 @@
 
 body
   #container
+    text-align: left
+
+    .BillTitle
+      font-size: 1.8em
+      +column(30, true)
+      text-align: center
+      padding: 0 0 0.2em 0
+      border-bottom: 1px solid black
+
+    .Arrangement
+      +column(30, true)
+      padding: 3.5em 0 0 0
+      border-top: 2px solid black
+      margin-top: 1px
+
+      .Heading_ar
+        +column(30, true)
+        text-transform: uppercase
+        text-align: center
+        font-size: 1.2em
+        padding: 1.25em 0
+
+      .Clause_ar
+        +column(30, true)
+        
+        .PgfNumString
+          +append(1)
