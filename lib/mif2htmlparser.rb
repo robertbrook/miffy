@@ -1,5 +1,7 @@
 require 'mifparser'
 require 'htmlentities'
+require 'open-uri'
+require 'hpricot'
 
 class Mif2HtmlParser
 
@@ -29,8 +31,14 @@ class Mif2HtmlParser
     haml = `#{cmd}`
     html_file.delete
     
+    format_haml(haml)
+  end
+
+  def format_haml haml
     reg_exp = Regexp.new('(Number|Page|Line)\n(\s+)(\S+)\n(\s+)%span\.(\S+)_number\n(\s+)(\S+)\n(\s+),', Regexp::MULTILINE)
-    haml = haml.gsub(reg_exp, '\1' + "\n" + '\2\3 <span class="\5_number">\7</span>,')
+    haml.gsub!(reg_exp, '\1' + "\n" + '\2\3 <span class="\5_number">\7</span>,')
+    haml.gsub!(/(Letter|FrameData|Dropcap|Bold)\n/, '\1' + "<>\n")
+    haml.gsub!(/(SmallCaps)\n/, '\1' + "<\n")
     haml
   end
   
@@ -101,6 +109,7 @@ class Mif2HtmlParser
       MarshalledOrderNote
       ClausesToBeConsidered
       Para_sch
+      BillTitle
       Move
       Motion
       Text_motion
@@ -109,6 +118,18 @@ class Mif2HtmlParser
   DIV_RE = Regexp.new "(^#{DIV.keys.join("$|")}$)"
 
   # P = %w[].inject({}){|h,v| h[v]=true; h}
+  
+  TABLE = %w[TableData].inject({}){|h,v| h[v]=true; h}
+  TABLE_RE = Regexp.new "(^#{TABLE.keys.join("$|")}$)"
+
+  TR = %w[Row].inject({}){|h,v| h[v]=true; h}
+  TR_RE = Regexp.new "(^#{TR.keys.join("$|")}$)"
+  
+  TH = %w[CellH].inject({}){|h,v| h[v]=true; h}
+  TH_RE = Regexp.new "(^#{TH.keys.join("$|")}$)"
+  
+  TD = %w[Cell].inject({}){|h,v| h[v]=true; h}
+  TD_RE = Regexp.new "(^#{TD.keys.join("$|")}$)"
 
   SPAN = %w[ResolutionPara ResolutionSubPara
       Para SubPara_sch
@@ -122,6 +143,7 @@ class Mif2HtmlParser
       SubSection_text
       ResolutionHead_text
       Number_text
+      ResolutionText_text
       ResolutionPara_text
       ResolutionSubPara_text
       Page_text
@@ -142,9 +164,11 @@ class Mif2HtmlParser
       Enact
       Italic
       SmallCaps
+      Dropcap
       Bold
       Bold_text
       WHITESPACE
+      FrameData
       Number Page Line ].inject({}){|h,v| h[v]=true; h}
   SPAN_RE = Regexp.new "(^#{SPAN.keys.join("$|")}$)"
 
@@ -169,7 +193,11 @@ class Mif2HtmlParser
   end
 
   def add_html_element name, node, xml
-    xml << %Q|<#{name} class="#{node.name.gsub('.','_')}"|
+    unless node['class'].blank?
+      xml << %Q|<#{name} class="#{node.name.gsub('.','_')} #{node['class']}"|
+    else
+      xml << %Q|<#{name} class="#{node.name.gsub('.','_')}"|
+    end
     xml << %Q| id="#{node['id']}"| if node['id']
     if name == 'hr'
       xml << " />"      
@@ -180,8 +208,32 @@ class Mif2HtmlParser
     end
   end
 
+  def find_act_url act_name
+    search_url = "http://search.opsi.gov.uk/search?q=#{URI.escape(act_name)}&output=xml_no_dtd&client=opsisearch_semaphore&site=opsi_collection"
+    begin
+      doc = Hpricot.XML open(search_url)
+      url = nil
+      
+      (doc/'R/T').each do |result|
+        term = result.inner_text.gsub(/<[^>]+>/,'')
+        if act_name == term
+          url = result.at('../U/text()').to_s
+        end
+      end
+      
+      url
+    rescue Exception => e
+      puts 'error retrieving: ' + search_url
+      puts e.class.name
+      puts e.to_s
+      nil
+    end
+  end
+  
   def add_link_element node, xml
-    xml << %Q|<a href="" class=#{node.name}>|
+    item = node.inner_text
+    url = item[/Act/] ? find_act_url(item) : ''
+    xml << %Q|<a href="#{url}" class="#{node.name}">|
     node_children_to_html(node, xml)    
     xml << "</a>"
   end
@@ -216,13 +268,21 @@ class Mif2HtmlParser
         add_html_element 'li', node, xml
       when HR_RE
         add_html_element("hr", node, xml) 
+      when TR_RE
+        add_html_element("tr", node, xml)
+      when TH_RE
+        add_html_element("th", node, xml)
+      when TD_RE
+        add_html_element("td", node, xml)
+      when TABLE_RE
+        add_html_element("table", node, xml)
       else
         raise node.name
         node_children_to_html(node, xml)
     end if node.elem?
 
     if node.text?
-      xml << node.to_s
+      xml << node.to_s.gsub("/n", "<br />")
     end
   end
 

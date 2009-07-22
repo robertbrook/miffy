@@ -34,6 +34,10 @@ describe MifParser do
       @result = @parser.parse_xml(fixture('pbc0900206m.mif.xml'))
       File.open(RAILS_ROOT + '/spec/fixtures/pbc0900206m.xml','w') {|f| f.write @result }
     end
+    
+    it 'should not add a BillTitle element' do
+      @result.should_not have_tag('BillTitle', :text => 'Law Commission Bill [HL]')
+    end
 
     it 'should add element around text in mixed element/text situation' do
       @result.should have_tag('SubSection[id="1151133"]') do
@@ -90,15 +94,87 @@ describe MifParser do
   end
 
   describe 'when parsing Clauses MIF XML file' do
-    before(:all) do
+    before(:all) do      
       @parser = MifParser.new
       @result = @parser.parse_xml(fixture('Clauses.mif.xml'))
       File.open(RAILS_ROOT + '/spec/fixtures/Clauses.xml','w') {|f| f.write @result }
     end
+    
     it 'should create XML' do
       @result.gsub('.','-').should have_tag('Clause[id="1093880"]') do
         with_tag('ClauseTitle_PgfTag[id="1112748"]')
       end
+    end
+    
+    it 'should add a BillTitle element' do
+      @result.should have_tag('BillTitle', :text => 'Law Commission Bill [HL]')
+    end
+    
+    it 'should add a Frame element' do
+      @result.gsub('.','-').should have_tag('FrameData[id="1112726"]') do
+        with_tag('Dropcap[id="1003796"]', :text => 'B')
+      end
+    end
+
+    it 'should put SubSection_text element around Bold element' do
+      text = 'Nothing in this Act shall impose any charge on the people or on public funds, or vary the amount or incidence of or otherwise alter any such charge in any manner, or affect the assessment, levying, administration or application of any money raised by any such charge'
+      
+      @result.gsub('.','-').should have_tag('SubSection_PgfTag[id="1113230"]') do
+        with_tag('SubSection_text', :text => "#{text}-") do
+          with_tag('Bold[id="1112372"]', :text => text)
+        end
+      end
+    end
+      
+    it 'should put Para etag around _Paragraph_PgfTag and multiple _SubParagraph_PgfTag elements' do
+      @result.gsub('.','-').gsub('<_','<').gsub('</_','</').should have_tag('Para[id="1111739"]') do
+        with_tag('Paragraph_PgfTag[id="1112779"]') do
+          with_tag('PgfNumString') do
+            with_tag('PgfNumString_1', :text => '(b)')
+          end
+          with_tag('Para_text', :text => 'the Law Commission proposals that have not been implemented (in whole or in part) as at the end of the year, including—')
+        end
+        with_tag('SubParagraph_PgfTag[id="1112784"]') do
+          with_tag('PgfNumString') do
+            with_tag('PgfNumString_1', :text => '(i)')
+          end
+          with_tag('SubPara[id="1112782"]') do
+            with_tag('SubPara_text', :text => 'plans for dealing with any of those proposals;')
+          end
+        end
+        with_tag('SubParagraph_PgfTag[id="1112788"]') do
+          with_tag('PgfNumString') do
+            with_tag('PgfNumString_1', :text => '(ii)')
+          end
+          with_tag('SubPara[id="1112787"]') do
+            with_tag('SubPara_text')
+          end
+        end
+      end
+    end
+    
+    it 'should add in the data from the variable Regnal Title' do
+      @result.should have_tag('WordsOfEnactment[id="1003778"]') do
+        with_tag('Bpara[id="1003785"]', :text => "Be it enacted\n by the Queen’s most Excellent Majesty, by and with the advice and consent of the Lords Spiritual and Temporal, and Commons, in this present Parliament assembled, and by the authority of the same, as follows:—")
+      end
+    end
+  end
+
+  describe 'when parsing Cover MIF XML file' do
+    before(:all) do      
+      @parser = MifParser.new
+      @result = @parser.parse_xml(fixture('Cover.mif.xml'))
+      File.open(RAILS_ROOT + '/spec/fixtures/Cover.xml','w') {|f| f.write @result }
+    end
+    
+    it 'should create XML' do
+      @result.should have_tag('Cover[id="1000723"]') do
+        with_tag('Rubric[id="1002024"]')
+      end
+    end
+    
+    it 'should add a BillTitle element' do
+      @result.should have_tag('BillTitle', :text => 'Law Commission Bill [HL]')
     end
   end
 
@@ -108,9 +184,35 @@ describe MifParser do
       @result = @parser.parse_xml(fixture('pbc0850206m.mif.xml'))
       File.open(RAILS_ROOT + '/spec/fixtures/pbc0850206m.xml','w') {|f| f.write @result }
     end
+    
     it 'should create XML' do
       @result.gsub('.','-').should have_tag('Amendments-Commons')    
     end
+    
+    it 'should add element around text in mixed element/text situation' do
+      @result.should have_tag('Resolution[id="1070180"]') do
+        with_tag('ResolutionText[id="1070211"]') do
+          with_tag('ResolutionText_text', :text => 'That—')
+        end
+      end
+    end
+    
+    it 'should add TableData, Row, CellH and Cell elements inside the Table element' do
+      @result.should have_tag('Table[id="6540480"]') do
+        with_tag('TableData[id="7336058"]') do
+          with_tag('Row[id="6540534"]') do
+            with_tag('CellH[id="6540535"]', :class => 'first', :text => 'Date')
+            with_tag('CellH[id="6540536"]', :class => nil, :text => 'Time')
+            with_tag('CellH[id="6540537"]', :class => nil, :text => 'Witness')
+          end
+          with_tag('Row[id="6540538"]') do
+            with_tag('Cell[id="6540539"]', :class => 'first', :text => 'Tuesday 2 June')
+            with_tag('Cell[id="6540540"]', :class => nil, :text => 'Until no later than 12 noon')
+            with_tag('Cell[id="6540541"]', :class => nil, :text => 'Equality and Diversity Forum/nEquality and Human Rights  Commission/nEmployment Tribunals Service')
+          end
+        end
+      end
+    end    
   end
 
   describe 'when parsing MIF XML file' do

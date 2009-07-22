@@ -29,7 +29,9 @@ module MifParserUtils
       when 'EmDash'
         '—'
       when 'HardReturn'
-        "\n"
+        "/n"
+      when 'HardSpace'
+        " "
       else
         '[[' + char + ']]'
     end
@@ -67,6 +69,30 @@ class MifParser
     doc = Hpricot.XML xml
     xml = ['<Document>']
 
+    bill_attributes = get_bill_attributes(doc)    
+    bill_title = get_bill_attribute(bill_attributes, "ShortTitle")
+    unless bill_title.empty?
+      xml << "<BillTitle>#{bill_title}</BillTitle>"
+    end
+
+    @table_list = {}
+    tables = (doc/'Tbls/Tbl')
+    tables.each do |table|
+      handle_table(table, @table_list)
+    end
+    
+    @frame_list = {}
+    frames = (doc/'AFrames/Frame')
+    frames.each do |frame|
+      handle_frame(frame, @frame_list)
+    end
+    
+    @variable_list = {}
+    variables = (doc/'VariableFormats/VariableFormat')
+    variables.each do |variable|
+      handle_variable(variable, @variable_list)
+    end
+
     flows = (doc/'TextFlow')
     flows.each do |flow|
       unless is_instructions?(flow)
@@ -89,6 +115,146 @@ class MifParser
       indented
     else
       xml
+    end
+  end
+  
+  def get_bill_attributes doc
+    attributes = nil
+    
+    elements = (doc/'Element')
+    elements.each do |element|
+      if clean(element.at('ETag/text()')) == "Bill"
+        attributes = (element/'Attributes/Attribute')
+      end
+    end
+    attributes
+  end
+  
+  def get_bill_attribute bill_attributes, attrib
+    attrib_value = ""
+    
+    unless bill_attributes.nil?
+      bill_attributes.each do |attribute|
+        if clean(attribute.at('AttrName/text()')) == attrib
+          attrib_value =  clean(attribute.at('AttrValue/text()'))
+        end
+      end
+    end
+    attrib_value
+  end
+  
+  def handle_variable var_xml, vars
+    @var_id = ''
+    
+    var_xml.traverse_element do |element|
+      case element.name
+        when 'VariableName'
+          @var_id = clean(element.at('text()'))
+        when 'VariableDef'
+          var_value = clean(element.at('text()'))
+          vars.merge!({"#{@var_id}", "#{var_value}"})
+      end
+    end
+  end
+  
+  def handle_frame frame_xml, frames
+    @frame_id = ''
+    @in_frame = false
+    @e_tag = ''
+    
+    frame_xml.traverse_element do |element|
+      case element.name
+        when 'ID'
+          @frame_id = element.at('text()').to_s
+        when 'Unique'
+          unless @frame_id == '' or @in_frame
+            unique_id = element.at('text()').to_s
+            frames.merge!({@frame_id, %Q|<FrameData id="#{unique_id}">|})
+            @in_frame = true
+          end
+        when 'ETag'
+          tag = clean(element)
+          @e_tag = tag
+          uid = element.at('../Unique/text()').to_s
+          attributes = get_attributes(element)
+          frames[@frame_id] << %Q|<#{tag} id="#{uid}"#{attributes}>|
+        when 'String'
+          text = clean(element.at('text()'))
+          frames[@frame_id] << text
+      end
+    end
+    
+    if frames[@frame_id] 
+      unless @e_tag.empty?
+        frames[@frame_id] << "</#{@e_tag}>"
+      end
+      frames[@frame_id] << "</FrameData>"
+    end
+  end
+
+  def handle_table table_xml, tables
+    hash_size = tables.size
+    @current_table_id = nil
+    @in_row = false
+    @in_cell= false
+    @in_heading = false
+
+    table_xml.traverse_element do |element|
+      case element.name
+        when 'TblID'
+          @current_table_id = element.at('text()').to_s
+        when 'TblTag'
+          tag = clean(element.at('text()'))
+          if tag != 'Table'
+            break
+          else
+            table_id = element.at('../Unique/text()').to_s
+            tables.merge!({@current_table_id, %Q|<TableData id="#{table_id}">|})
+          end
+        when 'Row'
+          if @in_row
+            tables[@current_table_id] << "</Cell></Row>"
+            @in_row = false
+            @in_cell = false
+          end
+          row_id = element.at('Element/Unique/text()').to_s
+          @in_row = true
+          tables[@current_table_id] << %Q|<Row id="#{row_id}">|
+        when 'Cell'
+          first = ' class="first" '
+          if @in_cell
+            first = ""
+            if @in_heading
+              tables[@current_table_id] << "</CellH>"
+            else
+              tables[@current_table_id] << "</Cell>"
+            end
+          end
+          cell_id = element.at('Element/Unique/text()').to_s
+          @in_cell = true
+          if @in_heading
+            tables[@current_table_id] << %Q|<CellH id="#{cell_id}"#{first}>|
+          else
+            tables[@current_table_id] << %Q|<Cell id="#{cell_id}"#{first}>|
+          end
+        when 'TblH'
+          @in_heading = true
+        when 'TblBody'
+          tables[@current_table_id] << '</CellH></Row>'
+          @in_row = false
+          @in_cell = false
+          @in_heading = false
+        when 'String'
+          text = clean(element.at('text()'))
+          tables[@current_table_id] << text
+        when 'Char'
+          text = get_char(element)
+          tables[@current_table_id] << text
+      end
+    end
+
+    if tables.size > hash_size
+      tables[@current_table_id] << "</Cell></Row></TableData>"
     end
   end
 
@@ -147,7 +313,8 @@ class MifParser
             tag == 'OrderHeading' ||
             tag == 'ClauseTitle' ||
             tag == 'Clause' ||
-            tag == 'Para.sch' )
+            tag == 'Para.sch' ||
+            tag == 'Para' )
   end
 
   def move_etag_outside_paragraph tag, uid, attributes
@@ -180,6 +347,12 @@ class MifParser
 
     if move_etag_outside_paragraph?(element, tag)
       move_etag_outside_paragraph tag, uid, attributes
+    elsif @e_tag == 'Bold'
+      last_line = @strings.pop || ''
+      last_line += %Q|<#{tag} id="#{uid}"#{attributes}>|
+      @strings << last_line
+      # add %Q|<#{tag} id="#{uid}"#{attributes}>|
+      @opened_in_paragraph[tag] = true if @in_paragraph
     else
       add %Q|<#{tag} id="#{uid}"#{attributes}>|
       @opened_in_paragraph[tag] = true if @in_paragraph
@@ -212,19 +385,29 @@ class MifParser
   end
 
   def handle_element_end element
-    flush_strings
-    tag = @etags_stack.pop
+    tag = @etags_stack.last
     
-    if @in_paragraph && !@opened_in_paragraph[tag]
-      # need to close paragraph
-      add "</#{@pgf_tag}>\n"
-      @pgf_tag = nil
-      @in_paragraph = false
-      @opened_in_paragraph.clear
+    if tag == 'Bold'
+      last_line = @strings.pop || ''
+      last_line += "</#{tag}>"
+      @strings << last_line
+      @opened_in_paragraph.delete(tag)
+      tag = @etags_stack.pop
+    else
+      flush_strings
+      tag = @etags_stack.pop
+      
+      if @in_paragraph && !@opened_in_paragraph[tag]
+        # need to close paragraph
+        add "</#{@pgf_tag}>\n"
+        @pgf_tag = nil
+        @in_paragraph = false
+        @opened_in_paragraph.clear
+      end
+      @opened_in_paragraph.delete(tag)
+      add "</#{tag}>"
+      add "\n" unless tag[/(Day|STHouse|STLords|STText|ClauseTitle|Para|OrderPreamble)/]
     end
-    @opened_in_paragraph.delete(tag)
-    add "</#{tag}>"
-    add "\n" unless tag[/(Day|STHouse|STLords|STText|ClauseTitle|Para|OrderPreamble)/]
   end
 
   def add text
@@ -253,10 +436,8 @@ class MifParser
     text = clean(element)
     last_line = @strings.pop || ''
 
-    if @prefix_end && text[/^\d+$/] && @e_tag
-      last_line[/(Clause|Schedule)/]
-      type = $1
-      if type
+    if @prefix_end && text[/^\d+$/] && @e_tag      
+      if (type = last_line[/(Clause|Schedule)/, 1])
         text = %Q|<#{type}_number>#{text}</#{type}_number>|
       else
         text = %Q|<#{@e_tag}_number>#{text}</#{@e_tag}_number>|
@@ -274,21 +455,20 @@ class MifParser
   end
   
   def flush_strings
-    if @strings.size > 0
-      if @strings.size == 1
-        last_line = @xml.pop
-        text = @strings.pop
-        
-        if @last_was_pdf_num_string
-          text_tag = @etags_stack.last
-          last_line += "<#{text_tag}_text>#{text}</#{text_tag}_text>"
-        else
-          last_line += text
-        end
-        add last_line
+    if @strings.size == 1
+      last_line = @xml.pop
+      text = @strings.pop
+      text_tag = @etags_stack.last
+      
+      if @last_was_pdf_num_string || text_tag == "ResolutionText"
+        last_line += "<#{text_tag}_text>#{text}</#{text_tag}_text>"
       else
-        raise 'why is strings size > 1? ' + @strings.inspect
+        last_line += text
       end
+      add last_line
+
+    elsif @strings.size > 1
+      raise 'why is strings size > 1? ' + @strings.inspect
     end
   end
 
@@ -325,6 +505,17 @@ class MifParser
           @prefix_end = true
         when 'SuffixBegin'
           @prefix_end = false
+        when 'ATbl'
+          table_id = element.at('text()').to_s
+          add @table_list[table_id]
+        when 'AFrame'
+          frame_id = element.at('text()').to_s
+          add @frame_list[frame_id]
+        when 'VariableName'
+          var_id = clean(element.at('text()'))
+          last_line = @strings.pop || ''
+          last_line += @variable_list[var_id]
+          @strings << last_line
       end
     end
   end

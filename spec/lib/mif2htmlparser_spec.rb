@@ -8,8 +8,21 @@ describe MifParser do
 
   before do
     @parser = Mif2HtmlParser.new
+    @parser.stub!(:find_act_url).and_return nil
   end
 
+  describe 'when parsing Clauses MIF XML file to haml' do
+    before do
+      @result = @parser.parse_xml(fixture('clauses.xml'), :format => :haml)
+    end
+    it 'should close whitespace following Letter and Dropcap spans' do
+      @result.should include("%span#1003816.Letter<>")
+      @result.should include("%span#1112726.FrameData<>")
+      @result.should include("%span#1003796.Dropcap<>")
+      @result.should include("%span#1003802.SmallCaps<")
+      
+    end
+  end
   describe 'when parsing another MIF XML file to html' do
     before do
       @result = @parser.parse_xml(fixture('pbc0850206m.xml'), :format => :html)
@@ -20,6 +33,19 @@ describe MifParser do
       @result.should have_tag('div[class="Resolution"][id="1070180"]') do
         with_tag('div[class="ResolutionHead"][id="1070184"]') do
           with_tag('p[class="OrderHeading_PgfTag"][id="7335998"]', :text => 'Resolution of the Programming Sub-Committee')
+        end
+      end
+      
+      @result.should have_tag('table[class="TableData"][id="7336058"]') do
+        with_tag('tr[class="Row"][id="6540534"]') do
+          with_tag('th[class="CellH first"][id="6540535"]', :text => 'Date')
+          with_tag('th[class="CellH"][id="6540536"]', :text => 'Time')
+          with_tag('th[class="CellH"][id="6540537"]', :text => 'Witness')
+        end
+        with_tag('tr[class="Row"][id="6540538"]') do
+          with_tag('td[class="Cell first"][id="6540539"]', :text => 'Tuesday 2 June')
+          with_tag('td[class="Cell"][id="6540540"]', :text => 'Until no later than 12 noon')
+          with_tag('td[class="Cell"][id="6540541"]', :html => 'Equality and Diversity Forum<br />Equality and Human Rights  Commission<br />Employment Tribunals Service')
         end
       end
     end

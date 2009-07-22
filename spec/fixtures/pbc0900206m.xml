@@ -209,21 +209,21 @@ leave out ‘£50,000’ and insert ‘£100,000’.</AmedTextCommitReport_PgfTa
 leave out lines 37 to 38 and insert ‘the Treasury may by regulations make provision for and in connection with the application of all relevant enactments as follows.</AmedTextCommitReport_PgfTag>
 <SubSection id="1489118" Number="1" Letter="A" Quote="None">
 <SubSection_PgfTag id="7381365"><PgfNumString><PgfNumString_1>(1A)</PgfNumString_1> </PgfNumString><SubSection_text>The Treasury may make regulations to—</SubSection_text></SubSection_PgfTag>
-
-<Paragraph_PgfTag id="7381369"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para id="1489338"><Para_text>give effect to the agreement referred to in subsection (1), and</Para_text></Para></Paragraph_PgfTag>
-
-<Paragraph_PgfTag id="7381374"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para id="1489345"><Para_text>give effect to subsection (3).</Para_text></Para></Paragraph_PgfTag>
-</SubSection>
+<Para id="1489338">
+<Paragraph_PgfTag id="7381369"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para_text>give effect to the agreement referred to in subsection (1), and</Para_text></Paragraph_PgfTag>
+</Para><Para id="1489345">
+<Paragraph_PgfTag id="7381374"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text>give effect to subsection (3).</Para_text></Paragraph_PgfTag>
+</Para></SubSection>
 <SubSection id="1489357" Number="1" Letter="B">
 <SubSection_PgfTag id="7381377"><PgfNumString><PgfNumString_1>(1B)</PgfNumString_1> </PgfNumString><SubSection_text>Regulations under this section may include provision having effect in relation to any time before they are made even if the provision creates or increases the liability to tax of P or such other person as is referred to in subsection (3).</SubSection_text></SubSection_PgfTag>
 </SubSection>
 <SubSection id="1489587" Number="1" Letter="C">
 <SubSection_PgfTag id="7381381"><PgfNumString><PgfNumString_1>(1C)</PgfNumString_1> </PgfNumString><SubSection_text>Regulations under this section may include—</SubSection_text></SubSection_PgfTag>
-
-<Paragraph_PgfTag id="7381385"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para id="1489842"><Para_text>provision amending any relevant enactment, and</Para_text></Para></Paragraph_PgfTag>
-
-<Paragraph_PgfTag id="7381390"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para id="1489853"><Para_text>consequential, supplementary and transitional provisions.</Para_text></Para></Paragraph_PgfTag>
-</SubSection>
+<Para id="1489842">
+<Paragraph_PgfTag id="7381385"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para_text>provision amending any relevant enactment, and</Para_text></Paragraph_PgfTag>
+</Para><Para id="1489853">
+<Paragraph_PgfTag id="7381390"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text>consequential, supplementary and transitional provisions.</Para_text></Paragraph_PgfTag>
+</Para></SubSection>
 <SubSection id="1489874" Number="1" Letter="D">
 <SubSection_PgfTag id="7381393"><PgfNumString><PgfNumString_1>(1D)</PgfNumString_1> </PgfNumString><SubSection_text>Regulations under this section are to be made by statutory instrument subject to annulment in pursuance of a resolution of the House of Commons.’.</SubSection_text></SubSection_PgfTag>
 </SubSection>
@@ -562,9 +562,9 @@ at end insert—</AmedTextCommitReport_PgfTag>
 at end insert—</AmedTextCommitReport_PgfTag>
 <SubSection id="1071759" Number="1" Letter="A" Quote="Single">
 <SubSection_PgfTag id="7382564"><PgfNumString><PgfNumString_1>‘(1A)</PgfNumString_1> </PgfNumString><SubSection_text>In determining for the purposes of subsection (1)(c) whether subsection (1) of section 171 would have applied, it is to be assumed that subsection (1A)(b) of that section read—</SubSection_text></SubSection_PgfTag>
-<Amendment id="1072557">
-<_Paragraph_PgfTag id="7382569"><PgfNumString><PgfNumString_1>“(b)</PgfNumString_1> </PgfNumString><Para id="1072566" Number="b" Quote="Double"><Para_text>that, at the time of the disposal, company B is resident in the United Kingdom, or carrying on a trade in the United Kingdom through a permanent establishment there.” ’.</Para_text></Para></_Paragraph_PgfTag>
-</Amendment>
+<Amendment id="1072557"><Para id="1072566" Number="b" Quote="Double">
+<_Paragraph_PgfTag id="7382569"><PgfNumString><PgfNumString_1>“(b)</PgfNumString_1> </PgfNumString><Para_text>that, at the time of the disposal, company B is resident in the United Kingdom, or carrying on a trade in the United Kingdom through a permanent establishment there.” ’.</Para_text></_Paragraph_PgfTag>
+</Para></Amendment>
 </SubSection>
 </Amendment.Text>
 </Schedule.Committee>
@@ -598,21 +598,21 @@ at end insert—</AmedTextCommitReport_PgfTag>
 <Move id="5166899">To move the following Clause:—</Move>
 <ClauseText id="1484678"><SubSection id="1484688">
 <SubSection1_PgfTag id="7382659"><PgfNumString><PgfNumString_1>‘(1)</PgfNumString_1> </PgfNumString><SubSection_text>For the tax year 2009-10 the amount specified in—</SubSection_text></SubSection1_PgfTag>
-
-<Paragraph_PgfTag id="7382663"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para id="1484695"><Para_text>section 36 of ITA 2007, and</Para_text></Para></Paragraph_PgfTag>
-
-<Paragraph_PgfTag id="7382667"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para id="1484702"><Para_text>section 257(2) of ICTA,</Para_text></Para></Paragraph_PgfTag>
-
+<Para id="1484695">
+<Paragraph_PgfTag id="7382663"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para_text>section 36 of ITA 2007, and</Para_text></Paragraph_PgfTag>
+</Para><Para id="1484702">
+<Paragraph_PgfTag id="7382667"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text>section 257(2) of ICTA,</Para_text></Paragraph_PgfTag>
+</Para>
 <SubSection1_PgfTag id="7382672"><PgfNumString></PgfNumString><TextContinuation id="1484714"><TextContinuation_text>(personal allowance for those aged 65 to 74) is replaced with “£11,490”.</TextContinuation_text></TextContinuation>
 </SubSection1_PgfTag>
 </SubSection>
 <SubSection id="1484725">
 <SubSection_PgfTag id="7382675"><PgfNumString><PgfNumString_1>(2)</PgfNumString_1> </PgfNumString><SubSection_text>For the tax year 2009-10 the amount specified in—</SubSection_text></SubSection_PgfTag>
-
-<Paragraph_PgfTag id="7382679"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para id="1484736"><Para_text>section 37 of ITA 2007, and</Para_text></Para></Paragraph_PgfTag>
-
-<Paragraph_PgfTag id="7382683"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para id="1484743"><Para_text>section 257(3) of ICTA,</Para_text></Para></Paragraph_PgfTag>
-
+<Para id="1484736">
+<Paragraph_PgfTag id="7382679"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para_text>section 37 of ITA 2007, and</Para_text></Paragraph_PgfTag>
+</Para><Para id="1484743">
+<Paragraph_PgfTag id="7382683"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text>section 257(3) of ICTA,</Para_text></Paragraph_PgfTag>
+</Para>
 <SubSection_PgfTag id="7382689"><PgfNumString></PgfNumString><TextContinuation id="1484755"><TextContinuation_text>(personal allowance for those aged 75 and over) is replaced with “£11,640”’.</TextContinuation_text></TextContinuation>
 </SubSection_PgfTag>
 </SubSection>
@@ -630,27 +630,27 @@ at end insert—</AmedTextCommitReport_PgfTag>
 <Move id="1485484">To move the following Clause:—</Move>
 <ClauseText id="1485495"><SubSection id="1485514">
 <SubSection1_PgfTag id="7382731"><PgfNumString><PgfNumString_1>‘(1)</PgfNumString_1> </PgfNumString><SubSection_text>A land transaction is exempt from the charge to stamp duty land tax if—</SubSection_text></SubSection1_PgfTag>
-
-<Paragraph_PgfTag id="7382734"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para id="1485521"><Para_text>it is a relevant acquisition of land which consists entirely of residential property,</Para_text></Para></Paragraph_PgfTag>
-
-<Paragraph_PgfTag id="7382738"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para id="1485528"><Para_text>the relevant chargeable consideration for the transaction is not more than £250,000, and</Para_text></Para></Paragraph_PgfTag>
-
-<Paragraph_PgfTag id="7382744"><PgfNumString><PgfNumString_1>(c)</PgfNumString_1> </PgfNumString><Para id="1485538"><Para_text>the purchaser is a first time purchaser.</Para_text></Para></Paragraph_PgfTag>
-</SubSection>
+<Para id="1485521">
+<Paragraph_PgfTag id="7382734"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para_text>it is a relevant acquisition of land which consists entirely of residential property,</Para_text></Paragraph_PgfTag>
+</Para><Para id="1485528">
+<Paragraph_PgfTag id="7382738"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text>the relevant chargeable consideration for the transaction is not more than £250,000, and</Para_text></Paragraph_PgfTag>
+</Para><Para id="1485538">
+<Paragraph_PgfTag id="7382744"><PgfNumString><PgfNumString_1>(c)</PgfNumString_1> </PgfNumString><Para_text>the purchaser is a first time purchaser.</Para_text></Paragraph_PgfTag>
+</Para></SubSection>
 <SubSection id="1485552">
 <SubSection_PgfTag id="7382747"><PgfNumString><PgfNumString_1>(2)</PgfNumString_1> </PgfNumString><SubSection_text>In paragraph (1)(a) a “relevant acquisition of land” means an acquisition of a major interest in land other than—</SubSection_text></SubSection_PgfTag>
-
-<Paragraph_PgfTag id="7382751"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para id="1485566"><Para_text>the grant of a lease for a term of less than 21 years, or</Para_text></Para></Paragraph_PgfTag>
-
-<Paragraph_PgfTag id="7382756"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para id="1485573"><Para_text>the assignment of a lease which has less than 21 years to run.</Para_text></Para></Paragraph_PgfTag>
-</SubSection>
+<Para id="1485566">
+<Paragraph_PgfTag id="7382751"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para_text>the grant of a lease for a term of less than 21 years, or</Para_text></Paragraph_PgfTag>
+</Para><Para id="1485573">
+<Paragraph_PgfTag id="7382756"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text>the assignment of a lease which has less than 21 years to run.</Para_text></Paragraph_PgfTag>
+</Para></SubSection>
 <SubSection id="1485585">
 <SubSection_PgfTag id="7382759"><PgfNumString><PgfNumString_1>(3)</PgfNumString_1> </PgfNumString><SubSection_text>In paragraph (1)(b) the “relevant chargeable consideration for the transaction” means—</SubSection_text></SubSection_PgfTag>
-
-<Paragraph_PgfTag id="7382763"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para id="1485602"><Para_text>the chargeable consideration for the transaction, or</Para_text></Para></Paragraph_PgfTag>
-
-<Paragraph_PgfTag id="7382766"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para id="1485609"><Para_text>where the transaction is one of a number of linked transactions, the total of the chargeable consideration for all those transactions.</Para_text></Para></Paragraph_PgfTag>
-</SubSection>
+<Para id="1485602">
+<Paragraph_PgfTag id="7382763"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para_text>the chargeable consideration for the transaction, or</Para_text></Paragraph_PgfTag>
+</Para><Para id="1485609">
+<Paragraph_PgfTag id="7382766"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text>where the transaction is one of a number of linked transactions, the total of the chargeable consideration for all those transactions.</Para_text></Paragraph_PgfTag>
+</Para></SubSection>
 <SubSection id="1485621">
 <SubSection_PgfTag id="7382774"><PgfNumString><PgfNumString_1>(4)</PgfNumString_1> </PgfNumString><SubSection_text>The Treasury shall by regulation define the meaning of “first time purchaser.”’.</SubSection_text></SubSection_PgfTag>
 </SubSection>
@@ -660,8 +660,7 @@ at end insert—</AmedTextCommitReport_PgfTag>
 <Order.House id="7325194"><OrderDate id="7325197">
 <OrderHeading_PgfTag id="7382791"><PgfNumString></PgfNumString><OrderDate_text>Order of the House [6 MAY 2009]</OrderDate_text></OrderHeading_PgfTag>
 </OrderDate>
-<OrderPreamble id="7325208">That the following provisions shall apply to the Finance Bill:
-</OrderPreamble><OrderText id="7325213">
+<OrderPreamble id="7325208">That the following provisions shall apply to the Finance Bill:/n</OrderPreamble><OrderText id="7325213">
 <OrderHousePara_PgfTag id="7382800"><PgfNumString><PgfNumString_1>1.</PgfNumString_1> </PgfNumString><OrderPara id="7325216"><OrderPara_text>Clauses 7, 8, 9, 11, 14, 16, 20 and 92 be committed to a Committee of the whole House;</OrderPara_text></OrderPara></OrderHousePara_PgfTag>
 
 <OrderHousePara_PgfTag id="7382805"><PgfNumString><PgfNumString_1>2.</PgfNumString_1> </PgfNumString><OrderPara id="7325221"><OrderPara_text>the remainder of the Bill be committed to a Public Bill Committee; and</OrderPara_text></OrderPara></OrderHousePara_PgfTag>
@@ -672,10 +671,7 @@ at end insert—</AmedTextCommitReport_PgfTag>
 <Order.Motion id="1484767"><OrderHeading id="7329842">
 <OrderHeading_PgfTag id="7382821"><PgfNumString></PgfNumString><OrderHeading_text>Resolution of the Committee [19 May 2009]</OrderHeading_text></OrderHeading_PgfTag>
 </OrderHeading>
-<OrderAmendmentText id="7330294">That the Committee shall meet—
-  on Tuesdays at 10.30 a.m. and 4.30 p.m., and
-  on Thursdays (other than Thursday 4 June) at 9.00 a.m. and 1.00 p.m.,
- when the House is sitting.</OrderAmendmentText>
+<OrderAmendmentText id="7330294">That the Committee shall meet—/n  on Tuesdays at 10.30 a.m. and 4.30 p.m., and/n  on Thursdays (other than Thursday 4 June) at 9.00 a.m. and 1.00 p.m.,/n when the House is sitting.</OrderAmendmentText>
  </Order.Motion>
 <Order.Committee id="7323403"><OrderDate id="7323407">
 <OrderHeading_PgfTag id="7382842"><PgfNumString></PgfNumString><OrderDate_text>Order of the Committee [19 May 2009]</OrderDate_text></OrderHeading_PgfTag>

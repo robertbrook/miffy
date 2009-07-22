@@ -9,7 +9,7 @@
 <OrderHeading_PgfTag id="7335998"><PgfNumString></PgfNumString><ResolutionHead_text>Resolution of the Programming Sub-Committee</ResolutionHead_text></OrderHeading_PgfTag>
 </ResolutionHead>
 <ResolutionDate id="1070197" Auto="No">The Programming Sub-Committee appointed by the Speaker in respect of the Bill agreed the following Resolution at its meeting on Tuesday 19 May (Standing Order No. 83C):</ResolutionDate>
-<ResolutionText id="1070211">That—
+<ResolutionText id="1070211"><ResolutionText_text>That—</ResolutionText_text>
 <ResolutionPara_PgfTag id="7336011"><PgfNumString><PgfNumString_1>(1)</PgfNumString_1> </PgfNumString></ResolutionPara_PgfTag>
 <ResolutionPara id="1070215"><ResolutionPara_text>the Committee shall (in addition to its first meeting at 10.30 a.m. on Tuesday 2 June) meet—</ResolutionPara_text>
 <ResolutionPara_PgfTag id="7336015"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><ResolutionSubPara id="1070230"><ResolutionSubPara_text>at 4.00 p.m. on Tuesday 2 June;</ResolutionSubPara_text></ResolutionSubPara></ResolutionPara_PgfTag>
@@ -33,7 +33,7 @@
 <ResolutionPara_PgfTag id="7336052"><PgfNumString><PgfNumString_1>(j)</PgfNumString_1> </PgfNumString><ResolutionSubPara id="6540383"><ResolutionSubPara_text>at 10.30 a.m. and 4.00 p.m. on Tuesday 7 July;</ResolutionSubPara_text></ResolutionSubPara></ResolutionPara_PgfTag>
 </ResolutionPara>
 <ResolutionPara_PgfTag id="7336055"><PgfNumString><PgfNumString_1>(2)</PgfNumString_1> </PgfNumString></ResolutionPara_PgfTag>
-<ResolutionPara id="6540467"><ResolutionPara_text>the Committee shall hear oral evidence in accordance with the following Table—</ResolutionPara_text><Table id="6540480"></Table>
+<ResolutionPara id="6540467"><ResolutionPara_text>the Committee shall hear oral evidence in accordance with the following Table—</ResolutionPara_text><Table id="6540480"><TableData id="7336058"><Row id="6540534"><CellH id="6540535" class="first" >Date</CellH><CellH id="6540536">Time</CellH><CellH id="6540537">Witness</CellH></Row><Row id="6540538"><Cell id="6540539" class="first" >Tuesday 2 June</Cell><Cell id="6540540">Until no later than 12 noon</Cell><Cell id="6540541">Equality and Diversity Forum/nEquality and Human Rights  Commission/nEmployment Tribunals Service</Cell></Row><Row id="6540542"><Cell id="6540543" class="first" >Tuesday 2 June</Cell><Cell id="6540544">Until no later than 1.00 pm</Cell><Cell id="6540545">Help the Aged and Age Concern/nChildren’s Rights Alliance/nDisability Charities Consortium/nRADAR/nCarers UK</Cell></Row><Row id="6540546"><Cell id="6540547" class="first" >Tuesday 2 June</Cell><Cell id="6540548">Until no later than 5.00 pm</Cell><Cell id="6540549">Stonewall/nGender Identity Research and  Education Society/nRunnymede Trust/nRace on the Agenda</Cell></Row><Row id="6540550"><Cell id="6540551" class="first" >Tuesday 2 June</Cell><Cell id="6540552">Until no later than 6.00 pm</Cell><Cell id="6540553">Fawcett Society/nWomen’s National Commission/nWomen Like Us</Cell></Row><Row id="6540554"><Cell id="6540555" class="first" >Tuesday 9 June</Cell><Cell id="6540556">Until no later than 11.30 am</Cell><Cell id="6540557">British Humanist Association/nGeneral Synod of the Church of  England/nCatholic Bishops Conference/nSufi Muslim Council</Cell></Row><Row id="6540558"><Cell id="6540559" class="first" >Tuesday 9 June</Cell><Cell id="6540560">Until no later than 12.30 pm</Cell><Cell id="6540561">Confederation of British Industry/nAssociation of British Insurers/nFederation of Small Businesses/nChartered Institute of Personnel  and Development/nTrades Union Congress</Cell></Row><Row id="6540562"><Cell id="6540563" class="first" >Tuesday 9 June</Cell><Cell id="6540564">Until no later than 6.00 pm</Cell><Cell id="6540565">Government Equalities Office</Cell></Row></TableData></Table>
 </ResolutionPara>
 <ResolutionPara_PgfTag id="7336112"><PgfNumString><PgfNumString_1>(3)</PgfNumString_1> </PgfNumString><ResolutionPara id="1070291"><ResolutionPara_text>the proceedings on consideration of the Bill in Committee shall be taken in the following order: Clauses 1 to 6; Schedule 1; Clauses 7 to 29; Schedules 2 and 3; Clauses 30 to 35; Schedules 4 and 5; Clauses 36 to 49; Schedule 6; Clauses 50 to 75; Schedule 7; Clauses 76 to 78; Schedules 8 and 9; Clauses 79 to 83; Schedule 10; Clause 84; Schedule 11; Clauses 85 to 89; Schedule 12; Clauses 90 to 93; Schedule 13; Clause 94; Schedule 14; Clauses 95 to 101; Schedules 15 and 16; Clauses 102 to 110; Schedule 17; Clauses 111 to 143; Schedule 18; Clause 144; Schedule 19; Clauses 145 to 179; Schedule 20; Clauses 180 to 182; Schedule 21; Clauses 183 and 184; Schedule 22; Clauses 185 to 189; Schedule 23; Clauses 190 and 191; Schedule 24; Clauses 192 and 193; Schedule 25; Clauses 194 to 198; Schedules 26 and 27; Clauses 199 to 201; Schedule 28; Clauses 202 to 205; new Clauses; new Schedules; remaining proceedings on the Bill;</ResolutionPara_text></ResolutionPara></ResolutionPara_PgfTag>
 
@@ -43,8 +43,7 @@
  [<Italic id="6541062">Standing Order No. 83C(9)</Italic>
 ].</Text.motion>
 <Text.motion id="7339473"><WHITESPACE id="7339486"></WHITESPACE>
-<Bold id="7339501">The Programming Sub-Committee is expected to agree a revised Resolution at its meeting on Tuesday 2 June.</Bold>
-</Text.motion>
+<Bold id="7339501">The Programming Sub-Committee is expected to agree a revised Resolution at its meeting on Tuesday 2 June.</Bold></Text.motion>
 </Motion>
  </Resolution>
 <Motion id="6541538"><Proposer.name id="6541541">The Solicitor General</Proposer.name>
@@ -258,9 +257,9 @@ leave out ‘by regulations’ and insert ‘not’.</AmedTextCommitReport_PgfTa
 <Page id="1488395">page <Page_number>55</Page_number>, </Page>
 <Line id="1488405">line <Line_number>17</Line_number>, </Line>
 at end insert ‘and</AmedTextCommitReport_PgfTag>
-
-<Paragraph_PgfTag id="7337151"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para id="1489026" Quote="None" Number="b"><Para_text>employees who have a disability and employees who do not have a disability.’.</Para_text></Para></Paragraph_PgfTag>
-</Amendment.Text>
+<Para id="1489026" Quote="None" Number="b">
+<Paragraph_PgfTag id="7337151"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text>employees who have a disability and employees who do not have a disability.’.</Para_text></Paragraph_PgfTag>
+</Para></Amendment.Text>
 </Clause.Committee>
 <Clause.Committee id="1487482" Star="No"><Sponsors id="1487485"><Sponsor id="1487488">Mr Mark Harper</Sponsor>
 <Sponsor id="1487493">John Penrose</Sponsor>
@@ -274,11 +273,11 @@ at end insert ‘and</AmedTextCommitReport_PgfTag>
 <Page id="1487519">page <Page_number>55</Page_number>, </Page>
 <Line id="1487529">line <Line_number>19</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
-
-<Paragraph_PgfTag id="7337209"><PgfNumString><PgfNumString_1>‘( )</PgfNumString_1> </PgfNumString><Para id="1487815" Number="0" Letter="0" Quote="Single"><Para_text>the Armed Forces;</Para_text></Para></Paragraph_PgfTag>
-
-<Paragraph_PgfTag id="7337212"><PgfNumString><PgfNumString_1>( )</PgfNumString_1> </PgfNumString><Para id="1488086" Number="0" Letter="0"><Para_text>the Security Service, the Secret Intelligence Service or the Government Communications Headquarters;’.</Para_text></Para></Paragraph_PgfTag>
-</Amendment.Text>
+<Para id="1487815" Number="0" Letter="0" Quote="Single">
+<Paragraph_PgfTag id="7337209"><PgfNumString><PgfNumString_1>‘( )</PgfNumString_1> </PgfNumString><Para_text>the Armed Forces;</Para_text></Paragraph_PgfTag>
+</Para><Para id="1488086" Number="0" Letter="0">
+<Paragraph_PgfTag id="7337212"><PgfNumString><PgfNumString_1>( )</PgfNumString_1> </PgfNumString><Para_text>the Security Service, the Secret Intelligence Service or the Government Communications Headquarters;’.</Para_text></Paragraph_PgfTag>
+</Para></Amendment.Text>
 </Clause.Committee>
 <Clause.Committee id="1487179" Star="No"><Sponsors id="1487182"><Sponsor id="1487185">Mr Mark Harper</Sponsor>
 <Sponsor id="1487190">John Penrose</Sponsor>
@@ -413,11 +412,11 @@ at end insert—</AmedTextCommitReport_PgfTag>
 at end insert—</AmedTextCommitReport_PgfTag>
 <SubSection id="1493136" Number="5" Quote="Single">
 <SubSection_PgfTag id="7337695"><PgfNumString><PgfNumString_1>‘(5)</PgfNumString_1> </PgfNumString><SubSection_text>Before regulations are made under this section, there must be laid before both Houses of Parliament—</SubSection_text></SubSection_PgfTag>
-
-<Paragraph_PgfTag id="7337699"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para id="1493562"><Para_text>draft regulations, and</Para_text></Para></Paragraph_PgfTag>
-
-<Paragraph_PgfTag id="7337702"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para id="1493569"><Para_text>evidence that the regulations will enable the better performance by public authorities of the duty imposed by subsection (1).’.</Para_text></Para></Paragraph_PgfTag>
-</SubSection>
+<Para id="1493562">
+<Paragraph_PgfTag id="7337699"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para_text>draft regulations, and</Para_text></Paragraph_PgfTag>
+</Para><Para id="1493569">
+<Paragraph_PgfTag id="7337702"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text>evidence that the regulations will enable the better performance by public authorities of the duty imposed by subsection (1).’.</Para_text></Paragraph_PgfTag>
+</Para></SubSection>
 </Amendment.Text>
 </Clause.Committee>
 <Separator.thin id="5232894"></Separator.thin>

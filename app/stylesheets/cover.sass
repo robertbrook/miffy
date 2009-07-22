@@ -1,0 +1,28 @@
+// To configure blueprint, edit the partials/base.sass file.
+@import partials/base.sass
+// Import all the default blueprint modules so that we can access their mixins.
+@import blueprint
+
+body
+  #container
+    text-align: left
+
+    .BillTitle
+      font-size: 1.8em
+      +column(30, true)
+      text-align: center
+      padding: 0 0 2.5em 0
+      border-bottom: 1px solid black
+
+    .Cover
+      +column(30, true)
+      border-top: 2px solid black
+      margin-top: 1px
+
+      .CoverHeading
+        +column(30, true)
+        text-align: center
+        padding: 1.5em 0
+
+      .CoverPara
+        +column(30, true)
