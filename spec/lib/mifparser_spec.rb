@@ -34,6 +34,10 @@ describe MifParser do
       @result = @parser.parse_xml(fixture('pbc0900206m.mif.xml'))
       File.open(RAILS_ROOT + '/spec/fixtures/pbc0900206m.xml','w') {|f| f.write @result }
     end
+    
+    it 'should not add a BillTitle element' do
+      @result.should_not have_tag('BillTitle', :text => 'Law Commission Bill [HL]')
+    end
 
     it 'should add element around text in mixed element/text situation' do
       @result.should have_tag('SubSection[id="1151133"]') do
@@ -102,7 +106,11 @@ describe MifParser do
       end
     end
     
-    it 'should include a Frame element' do
+    it 'should add a BillTitle element' do
+      @result.should have_tag('BillTitle', :text => 'Law Commission Bill [HL]')
+    end
+    
+    it 'should add a Frame element' do
       @result.gsub('.','-').should have_tag('FrameData[id="1112726"]') do
         with_tag('Dropcap[id="1003796"]', :text => 'B')
       end
@@ -139,6 +147,24 @@ describe MifParser do
       @result.should have_tag('WordsOfEnactment[id="1003778"]') do
         with_tag('Bpara[id="1003785"]', :text => "Be it enacted\n by the Queen’s most Excellent Majesty, by and with the advice and consent of the Lords Spiritual and Temporal, and Commons, in this present Parliament assembled, and by the authority of the same, as follows:—")
       end
+    end
+  end
+
+  describe 'when parsing Cover MIF XML file' do
+    before(:all) do      
+      @parser = MifParser.new
+      @result = @parser.parse_xml(fixture('Cover.mif.xml'))
+      File.open(RAILS_ROOT + '/spec/fixtures/Cover.xml','w') {|f| f.write @result }
+    end
+    
+    it 'should create XML' do
+      @result.should have_tag('Cover[id="1000723"]') do
+        with_tag('Rubric[id="1002024"]')
+      end
+    end
+    
+    it 'should add a BillTitle element' do
+      @result.should have_tag('BillTitle', :text => 'Law Commission Bill [HL]')
     end
   end
 

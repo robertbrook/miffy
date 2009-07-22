@@ -69,6 +69,12 @@ class MifParser
     doc = Hpricot.XML xml
     xml = ['<Document>']
 
+    bill_attributes = get_bill_attributes(doc)    
+    bill_title = get_bill_attribute(bill_attributes, "ShortTitle")
+    unless bill_title.empty?
+      xml << "<BillTitle>#{bill_title}</BillTitle>"
+    end
+
     @table_list = {}
     tables = (doc/'Tbls/Tbl')
     tables.each do |table|
@@ -110,6 +116,31 @@ class MifParser
     else
       xml
     end
+  end
+  
+  def get_bill_attributes doc
+    attributes = nil
+    
+    elements = (doc/'Element')
+    elements.each do |element|
+      if clean(element.at('ETag/text()')) == "Bill"
+        attributes = (element/'Attributes'/'Attribute')
+      end
+    end
+    attributes
+  end
+  
+  def get_bill_attribute bill_attributes, attrib
+    attrib_value = ""
+    
+    unless bill_attributes.nil?
+      bill_attributes.each do |attribute|
+        if clean(attribute.at('AttrName/text()')) == attrib
+          attrib_value =  clean(attribute.at('AttrValue/text()'))
+        end
+      end
+    end
+    attrib_value
   end
   
   def handle_variable var_xml, vars
