@@ -20,11 +20,11 @@ ake provision in relation to the Law Commission.<Enact id="1004229">[[Tab]]</Ena
 <_ClauseTitle_PgfTag id="1112765"><PgfNumString><PgfNumString_1>“3A</PgfNumString_1> </PgfNumString><ClauseTitle_text>Reports on implementation of Law Commission proposals</ClauseTitle_text></_ClauseTitle_PgfTag>
 </ClauseTitle><ClauseText id="1111640"><SubSection id="1112770">
 <_SubSection_PgfTag id="1112771"><PgfNumString><PgfNumString_1>(1)</PgfNumString_1> </PgfNumString><SubSection_text>As soon as practicable after the end of each reporting year, the Lord Chancellor must prepare a report on—</SubSection_text></_SubSection_PgfTag>
+<Para id="1112774">
+<_Paragraph_PgfTag id="1112775"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para_text>the Law Commission proposals implemented (in whole or in part) during the year;</Para_text></_Paragraph_PgfTag>
+</Para><Para id="1111739">
+<_Paragraph_PgfTag id="1112779"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text>the Law Commission proposals that have not been implemented (in whole or in part) as at the end of the year, including—</Para_text></_Paragraph_PgfTag>
 
-<_Paragraph_PgfTag id="1112775"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para id="1112774"><Para_text>the Law Commission proposals implemented (in whole or in part) during the year;</Para_text></Para></_Paragraph_PgfTag>
-
-<_Paragraph_PgfTag id="1112779"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString></_Paragraph_PgfTag>
-<Para id="1111739"><Para_text>the Law Commission proposals that have not been implemented (in whole or in part) as at the end of the year, including—</Para_text>
 <_SubParagraph_PgfTag id="1112784"><PgfNumString><PgfNumString_1>(i)</PgfNumString_1> </PgfNumString><SubPara id="1112782"><SubPara_text>plans for dealing with any of those proposals;</SubPara_text></SubPara></_SubParagraph_PgfTag>
 
 <_SubParagraph_PgfTag id="1112788"><PgfNumString><PgfNumString_1>(ii)</PgfNumString_1> </PgfNumString><SubPara id="1112787"><SubPara_text>any decision not to implement any of those proposals (in whole or in part) taken during the year and the reasons for the decision.</SubPara_text></SubPara></_SubParagraph_PgfTag>
@@ -43,11 +43,11 @@ ake provision in relation to the Law Commission.<Enact id="1004229">[[Tab]]</Ena
 </SubSection>
 <SubSection id="1112832">
 <_SubSection_PgfTag id="1112833"><PgfNumString><PgfNumString_1>(6)</PgfNumString_1> </PgfNumString><SubSection_text>“Law Commission proposal” means—</SubSection_text></_SubSection_PgfTag>
-
-<_Paragraph_PgfTag id="1112837"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para id="1112836"><Para_text>a proposal formulated by the Law Commission as mentioned in section 3(1)(c);</Para_text></Para></_Paragraph_PgfTag>
-
-<_Paragraph_PgfTag id="1112842"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para id="1112841"><Para_text>a proposal for consolidation or statute law revision for which a draft Bill has been prepared by the Law Commission as mentioned in section 3(1)(d).”</Para_text></Para></_Paragraph_PgfTag>
-</SubSection>
+<Para id="1112836">
+<_Paragraph_PgfTag id="1112837"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para_text>a proposal formulated by the Law Commission as mentioned in section 3(1)(c);</Para_text></_Paragraph_PgfTag>
+</Para><Para id="1112841">
+<_Paragraph_PgfTag id="1112842"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text>a proposal for consolidation or statute law revision for which a draft Bill has been prepared by the Law Commission as mentioned in section 3(1)(d).”</Para_text></_Paragraph_PgfTag>
+</Para></SubSection>
 </ClauseText>
 </Clause>
 </Amendment>
@@ -63,13 +63,13 @@ ake provision in relation to the Law Commission.<Enact id="1004229">[[Tab]]</Ena
 </SubSection>
 <SubSection id="1112913">
 <_SubSection_PgfTag id="1112914"><PgfNumString><PgfNumString_1>(2)</PgfNumString_1> </PgfNumString><SubSection_text>The protocol may include (among other things) provision about—</SubSection_text></_SubSection_PgfTag>
-
-<_Paragraph_PgfTag id="1112917"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para id="1112844"><Para_text>principles and methods to be applied in deciding the work to be carried out by the Law Commission and in the carrying out of that work;</Para_text></Para></_Paragraph_PgfTag>
-
-<_Paragraph_PgfTag id="1112921"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para id="1112895"><Para_text>the assistance and information that Ministers of the Crown and the Law Commission are to give each other;</Para_text></Para></_Paragraph_PgfTag>
-
-<_Paragraph_PgfTag id="1113166"><PgfNumString><PgfNumString_1>(c)</PgfNumString_1> </PgfNumString><Para id="1113165"><Para_text>the way in which Ministers of the Crown are to deal with the Law Commission’s proposals for reform, consolidation or statute law revision.</Para_text></Para></_Paragraph_PgfTag>
-</SubSection>
+<Para id="1112844">
+<_Paragraph_PgfTag id="1112917"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para_text>principles and methods to be applied in deciding the work to be carried out by the Law Commission and in the carrying out of that work;</Para_text></_Paragraph_PgfTag>
+</Para><Para id="1112895">
+<_Paragraph_PgfTag id="1112921"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text>the assistance and information that Ministers of the Crown and the Law Commission are to give each other;</Para_text></_Paragraph_PgfTag>
+</Para><Para id="1113165">
+<_Paragraph_PgfTag id="1113166"><PgfNumString><PgfNumString_1>(c)</PgfNumString_1> </PgfNumString><Para_text>the way in which Ministers of the Crown are to deal with the Law Commission’s proposals for reform, consolidation or statute law revision.</Para_text></_Paragraph_PgfTag>
+</Para></SubSection>
 <SubSection id="1112997">
 <_SubSection_PgfTag id="1113171"><PgfNumString><PgfNumString_1>(3)</PgfNumString_1> </PgfNumString><SubSection_text>The Lord Chancellor and the Law Commission must from time to time review the protocol and may agree to revise it.</SubSection_text></_SubSection_PgfTag>
 </SubSection>

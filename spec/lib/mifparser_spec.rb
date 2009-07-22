@@ -107,6 +107,33 @@ describe MifParser do
         with_tag('Dropcap[id="1003796"]', :text => 'B')
       end
     end
+
+    it 'should put Para etag around _Paragraph_PgfTag and multiple _SubParagraph_PgfTag elements' do
+      @result.gsub('.','-').gsub('<_','<').gsub('</_','</').should have_tag('Para[id="1111739"]') do
+        with_tag('Paragraph_PgfTag[id="1112779"]') do
+          with_tag('PgfNumString') do
+            with_tag('PgfNumString_1', :text => '(b)')
+          end
+          with_tag('Para_text', :text => 'the Law Commission proposals that have not been implemented (in whole or in part) as at the end of the year, including—')
+        end
+        with_tag('SubParagraph_PgfTag[id="1112784"]') do
+          with_tag('PgfNumString') do
+            with_tag('PgfNumString_1', :text => '(i)')
+          end
+          with_tag('SubPara[id="1112782"]') do
+            with_tag('SubPara_text', :text => 'plans for dealing with any of those proposals;')
+          end
+        end
+        with_tag('SubParagraph_PgfTag[id="1112788"]') do
+          with_tag('PgfNumString') do
+            with_tag('PgfNumString_1', :text => '(ii)')
+          end
+          with_tag('SubPara[id="1112787"]') do
+            with_tag('SubPara_text')
+          end
+        end
+      end
+    end
     
     it 'should add in the data from the variable Regnal Title' do
       @result.should have_tag('WordsOfEnactment[id="1003778"]') do
