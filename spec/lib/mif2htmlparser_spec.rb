@@ -19,10 +19,14 @@ describe MifParser do
       @result.should include("%span#1003816.Letter<>")
       @result.should include("%span#1112726.FrameData<>")
       @result.should include("%span#1003796.Dropcap<>")
-      @result.should include("%span#1003802.SmallCaps<")
-      
+      @result.should include("%span#1003802.SmallCaps<")      
+    end
+    it 'should not put Para span before _Paragraph_PgfTag paragraph' do
+      @result.should_not include("%span#1112895.Para")      
+      @result.should include("#1112895.Para")      
     end
   end
+
   describe 'when parsing another MIF XML file to html' do
     before do
       @result = @parser.parse_xml(fixture('pbc0850206m.xml'), :format => :html)
