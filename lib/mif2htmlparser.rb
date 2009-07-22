@@ -109,6 +109,7 @@ class Mif2HtmlParser
       MarshalledOrderNote
       ClausesToBeConsidered
       Para_sch
+      BillTitle
       Move
       Motion
       Text_motion
