@@ -1,5 +1,4 @@
-<Document><BillTitle>Law Commission Bill [HL]</BillTitle><Clauses id="1112573"><Rubric id="1003899" TemplateVersion="4.2.002"><Bold id="1004395">[NOTE: The words marked in bold type were inserted by the Lords to avoid questions of privilege.]</Bold>
-</Rubric>
+<Document><BillTitle>Law Commission Bill [HL]</BillTitle><Clauses id="1112573"><Rubric id="1003899" TemplateVersion="4.2.002"><Bold id="1004395">[NOTE: The words marked in bold type were inserted by the Lords to avoid questions of privilege.]</Bold></Rubric>
 <Prelim id="1112588"><ABillTo id="1003906" TemplateVersion="4.2.002"><Abt1 id="1003909">A</Abt1>
 <Abt2 id="1003917">Bill</Abt2>
 <Abt3 id="1003924"></Abt3>
@@ -93,8 +92,7 @@ ake provision in relation to the Law Commission.<Enact id="1004229">[[Tab]]</Ena
 <SubSection_PgfTag id="1113224"><PgfNumString><PgfNumString_1>(2)</PgfNumString_1> </PgfNumString><SubSection_text>This Act may be cited as the Law Commission Act 2009.</SubSection_text></SubSection_PgfTag>
 </SubSection>
 <SubSection id="1113227">
-<SubSection_PgfTag id="1113230"><PgfNumString><PgfNumString_1>(3)</PgfNumString_1> </PgfNumString><Bold id="1112372"><Bold_text>Nothing in this Act shall impose any charge on the people or on public funds, or vary the amount or incidence of or otherwise alter any such charge in any manner, or affect the assessment, levying, administration or application of any money raised by any such charge</Bold_text></Bold>
-<SubSection_text>.</SubSection_text></SubSection_PgfTag>
+<SubSection_PgfTag id="1113230"><PgfNumString><PgfNumString_1>(3)</PgfNumString_1> </PgfNumString><SubSection_text><Bold id="1112372">Nothing in this Act shall impose any charge on the people or on public funds, or vary the amount or incidence of or otherwise alter any such charge in any manner, or affect the assessment, levying, administration or application of any money raised by any such charge</Bold>.</SubSection_text></SubSection_PgfTag>
 </SubSection>
 </ClauseText>
 </Clause>

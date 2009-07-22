@@ -116,6 +116,16 @@ describe MifParser do
       end
     end
 
+    it 'should put SubSection_text element around Bold element' do
+      text = 'Nothing in this Act shall impose any charge on the people or on public funds, or vary the amount or incidence of or otherwise alter any such charge in any manner, or affect the assessment, levying, administration or application of any money raised by any such charge'
+      
+      @result.gsub('.','-').should have_tag('SubSection_PgfTag[id="1113230"]') do
+        with_tag('SubSection_text', :text => "#{text}-") do
+          with_tag('Bold[id="1112372"]', :text => text)
+        end
+      end
+    end
+      
     it 'should put Para etag around _Paragraph_PgfTag and multiple _SubParagraph_PgfTag elements' do
       @result.gsub('.','-').gsub('<_','<').gsub('</_','</').should have_tag('Para[id="1111739"]') do
         with_tag('Paragraph_PgfTag[id="1112779"]') do

@@ -124,7 +124,7 @@ class MifParser
     elements = (doc/'Element')
     elements.each do |element|
       if clean(element.at('ETag/text()')) == "Bill"
-        attributes = (element/'Attributes'/'Attribute')
+        attributes = (element/'Attributes/Attribute')
       end
     end
     attributes
@@ -347,6 +347,12 @@ class MifParser
 
     if move_etag_outside_paragraph?(element, tag)
       move_etag_outside_paragraph tag, uid, attributes
+    elsif @e_tag == 'Bold'
+      last_line = @strings.pop || ''
+      last_line += %Q|<#{tag} id="#{uid}"#{attributes}>|
+      @strings << last_line
+      # add %Q|<#{tag} id="#{uid}"#{attributes}>|
+      @opened_in_paragraph[tag] = true if @in_paragraph
     else
       add %Q|<#{tag} id="#{uid}"#{attributes}>|
       @opened_in_paragraph[tag] = true if @in_paragraph
@@ -379,19 +385,29 @@ class MifParser
   end
 
   def handle_element_end element
-    flush_strings
-    tag = @etags_stack.pop
+    tag = @etags_stack.last
     
-    if @in_paragraph && !@opened_in_paragraph[tag]
-      # need to close paragraph
-      add "</#{@pgf_tag}>\n"
-      @pgf_tag = nil
-      @in_paragraph = false
-      @opened_in_paragraph.clear
+    if tag == 'Bold'
+      last_line = @strings.pop || ''
+      last_line += "</#{tag}>"
+      @strings << last_line
+      @opened_in_paragraph.delete(tag)
+      tag = @etags_stack.pop
+    else
+      flush_strings
+      tag = @etags_stack.pop
+      
+      if @in_paragraph && !@opened_in_paragraph[tag]
+        # need to close paragraph
+        add "</#{@pgf_tag}>\n"
+        @pgf_tag = nil
+        @in_paragraph = false
+        @opened_in_paragraph.clear
+      end
+      @opened_in_paragraph.delete(tag)
+      add "</#{tag}>"
+      add "\n" unless tag[/(Day|STHouse|STLords|STText|ClauseTitle|Para|OrderPreamble)/]
     end
-    @opened_in_paragraph.delete(tag)
-    add "</#{tag}>"
-    add "\n" unless tag[/(Day|STHouse|STLords|STText|ClauseTitle|Para|OrderPreamble)/]
   end
 
   def add text
@@ -420,10 +436,8 @@ class MifParser
     text = clean(element)
     last_line = @strings.pop || ''
 
-    if @prefix_end && text[/^\d+$/] && @e_tag
-      last_line[/(Clause|Schedule)/]
-      type = $1
-      if type
+    if @prefix_end && text[/^\d+$/] && @e_tag      
+      if (type = last_line[/(Clause|Schedule)/, 1])
         text = %Q|<#{type}_number>#{text}</#{type}_number>|
       else
         text = %Q|<#{@e_tag}_number>#{text}</#{@e_tag}_number>|
@@ -441,23 +455,20 @@ class MifParser
   end
   
   def flush_strings
-    if @strings.size > 0
-      if @strings.size == 1
-        last_line = @xml.pop
-        text = @strings.pop
-        text_tag = @etags_stack.last
-        
-        if @last_was_pdf_num_string
-          last_line += "<#{text_tag}_text>#{text}</#{text_tag}_text>"
-        elsif text_tag == "ResolutionText"
-          last_line += "<#{text_tag}_text>#{text}</#{text_tag}_text>"
-        else
-          last_line += text
-        end
-        add last_line
+    if @strings.size == 1
+      last_line = @xml.pop
+      text = @strings.pop
+      text_tag = @etags_stack.last
+      
+      if @last_was_pdf_num_string || text_tag == "ResolutionText"
+        last_line += "<#{text_tag}_text>#{text}</#{text_tag}_text>"
       else
-        raise 'why is strings size > 1? ' + @strings.inspect
+        last_line += text
       end
+      add last_line
+
+    elsif @strings.size > 1
+      raise 'why is strings size > 1? ' + @strings.inspect
     end
   end
 
