@@ -9,14 +9,7 @@
     -else
       = stylesheet_link_tag 'screen', :media => 'screen, projection'
       -if page_class == 'application convert'
-        -if @file.include?('Clauses.mif')
-          =stylesheet_link_tag 'clauses', :media => 'screen, projection'
-        -elsif (@file =~ /pbc(.)*m.mif/).is_a?(Fixnum)
-          =stylesheet_link_tag 'amendments', :media => 'screen, projection'
-        -elsif (@file =~ /pbc(.)*a.mif/).is_a?(Fixnum)
-          =stylesheet_link_tag 'amendment_notice', :media => 'screen, projection'
-        -else
-          =stylesheet_link_tag 'converted', :media => 'screen, projection'
+        = stylesheet_link_tag file_type(@file), :media => 'screen, projection'
     = stylesheet_link_tag 'print', :media => 'print'
     = stylesheet_link_tag 'ie', :media => 'screen, projection'
   %body{:class => page_class.gsub(' ', '_')}
