@@ -82,13 +82,13 @@ class MifParser
     end
     
     @frame_list = {}
-    frames = (doc/'AFrames'/'Frame')
+    frames = (doc/'AFrames/Frame')
     frames.each do |frame|
       handle_frame(frame, @frame_list)
     end
     
     @variable_list = {}
-    variables = (doc/'VariableFormats'/'VariableFormat')
+    variables = (doc/'VariableFormats/VariableFormat')
     variables.each do |variable|
       handle_variable(variable, @variable_list)
     end
@@ -313,7 +313,8 @@ class MifParser
             tag == 'OrderHeading' ||
             tag == 'ClauseTitle' ||
             tag == 'Clause' ||
-            tag == 'Para.sch' )
+            tag == 'Para.sch' ||
+            tag == 'Para' )
   end
 
   def move_etag_outside_paragraph tag, uid, attributes
