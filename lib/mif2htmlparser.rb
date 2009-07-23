@@ -1,4 +1,4 @@
-require 'mifparser'
+require 'mifparserutils'
 require 'htmlentities'
 require 'open-uri'
 require 'hpricot'
@@ -38,7 +38,7 @@ class Mif2HtmlParser
     reg_exp = Regexp.new('(Number|Page|Line)\n(\s+)(\S+)\n(\s+)%span\.(\S+)_number\n(\s+)(\S+)\n(\s+),', Regexp::MULTILINE)
     haml.gsub!(reg_exp, '\1' + "\n" + '\2\3 <span class="\5_number">\7</span>,')
     haml.gsub!(/(Letter|FrameData|Dropcap|Bold|\w+_number|PgfNumString_\d)\n/, '\1' + "<>\n")
-    haml.gsub!(/(SmallCaps|\}|PgfNumString|\w+_text)\n/, '\1' + "<\n")
+    haml.gsub!(/(SmallCaps|\}|PgfNumString|\w+_text|PageStart)\n/, '\1' + "<\n")
     haml
   end
   
@@ -83,7 +83,9 @@ class Mif2HtmlParser
       Arrangement
       Rubric
       Cover
+      BillData
       CoverHeading
+      CoverPara
       Heading_ar
       Head_thin
       HeadNotice
@@ -114,6 +116,7 @@ class Mif2HtmlParser
       Motion
       Text_motion
       Table
+      Footer
       SubSection].inject({}){|h,v| h[v]=true; h}
   DIV_RE = Regexp.new "(^#{DIV.keys.join("$|")}$)"
 
@@ -201,7 +204,7 @@ class Mif2HtmlParser
     end
     xml << %Q| id="#{node['id']}"| if node['id']
     if name == 'hr'
-      xml << " />"      
+      xml << " />"  
     else
       xml << ">"
       node_children_to_html(node, xml)
@@ -253,17 +256,23 @@ class Mif2HtmlParser
         @in_paragraph = true
         add_html_element(tag, node, xml)
         @in_paragraph = false unless already_in_paragraph
-      when /^(Para)$/
+      when /^(Para|PageStart)$/
         already_in_paragraph = @in_paragraph
         tag = (already_in_paragraph ? 'span' : 'div')
         add_html_element(tag, node, xml)
+        if node.name == 'PageStart' && already_in_paragraph
+          line = xml.pop
+          line += '<br />'
+          xml << line
+        end
         
-      when /^(SubPara_sch|SubSubPara_sch|ResolutionPara)$/
+      when /^(SubPara_sch|SubSubPara_sch|ResolutionPara|)$/
         already_in_paragraph = @in_paragraph
         tag = (already_in_paragraph ? 'span' : 'p')
         @in_paragraph = true
         add_html_element(tag, node, xml)
         @in_paragraph = false unless already_in_paragraph
+
       when DIV_RE
         add_html_element 'div', node, xml
       when SPAN_RE

@@ -1,4 +1,4 @@
-<Document><Amendments.Commons id="1054859" Auto="Yes" AutoRules="Yes"><Head id="1054862"><HeadConsider id="1054865"><Date id="1054868"><Day id="1054871">Tuesday </Day><Date.text id="1054878">2 June 2009</Date.text>
+<Document><BillData><Amendments.Commons id="1054859" Auto="Yes" AutoRules="Yes"><PageStart id="996720" PageType="BodyPage" PageNum="27">Page 27</PageStart><Head id="1054862"><HeadConsider id="1054865"><Date id="1054868"><Day id="1054871">Tuesday </Day><Date.text id="1054878">2 June 2009</Date.text>
 </Date>
 <Stageheader id="5162740" Stage="Committee">Public Bill Committee</Stageheader>
 <CommitteeShorttitle id="1045605"><STText id="1053799">Equality Bill</STText></CommitteeShorttitle>
@@ -34,7 +34,7 @@
 </ResolutionPara>
 <ResolutionPara_PgfTag id="7336055"><PgfNumString><PgfNumString_1>(2)</PgfNumString_1> </PgfNumString></ResolutionPara_PgfTag>
 <ResolutionPara id="6540467"><ResolutionPara_text>the Committee shall hear oral evidence in accordance with the following Table—</ResolutionPara_text><Table id="6540480"><TableData id="7336058"><Row id="6540534"><CellH id="6540535" class="first" >Date</CellH><CellH id="6540536">Time</CellH><CellH id="6540537">Witness</CellH></Row><Row id="6540538"><Cell id="6540539" class="first" >Tuesday 2 June</Cell><Cell id="6540540">Until no later than 12 noon</Cell><Cell id="6540541">Equality and Diversity Forum/nEquality and Human Rights  Commission/nEmployment Tribunals Service</Cell></Row><Row id="6540542"><Cell id="6540543" class="first" >Tuesday 2 June</Cell><Cell id="6540544">Until no later than 1.00 pm</Cell><Cell id="6540545">Help the Aged and Age Concern/nChildren’s Rights Alliance/nDisability Charities Consortium/nRADAR/nCarers UK</Cell></Row><Row id="6540546"><Cell id="6540547" class="first" >Tuesday 2 June</Cell><Cell id="6540548">Until no later than 5.00 pm</Cell><Cell id="6540549">Stonewall/nGender Identity Research and  Education Society/nRunnymede Trust/nRace on the Agenda</Cell></Row><Row id="6540550"><Cell id="6540551" class="first" >Tuesday 2 June</Cell><Cell id="6540552">Until no later than 6.00 pm</Cell><Cell id="6540553">Fawcett Society/nWomen’s National Commission/nWomen Like Us</Cell></Row><Row id="6540554"><Cell id="6540555" class="first" >Tuesday 9 June</Cell><Cell id="6540556">Until no later than 11.30 am</Cell><Cell id="6540557">British Humanist Association/nGeneral Synod of the Church of  England/nCatholic Bishops Conference/nSufi Muslim Council</Cell></Row><Row id="6540558"><Cell id="6540559" class="first" >Tuesday 9 June</Cell><Cell id="6540560">Until no later than 12.30 pm</Cell><Cell id="6540561">Confederation of British Industry/nAssociation of British Insurers/nFederation of Small Businesses/nChartered Institute of Personnel  and Development/nTrades Union Congress</Cell></Row><Row id="6540562"><Cell id="6540563" class="first" >Tuesday 9 June</Cell><Cell id="6540564">Until no later than 6.00 pm</Cell><Cell id="6540565">Government Equalities Office</Cell></Row></TableData></Table>
-</ResolutionPara>
+</ResolutionPara><PageStart id="5184211" PageType="BodyPage" PageNum="28">Page 28</PageStart>
 <ResolutionPara_PgfTag id="7336112"><PgfNumString><PgfNumString_1>(3)</PgfNumString_1> </PgfNumString><ResolutionPara id="1070291"><ResolutionPara_text>the proceedings on consideration of the Bill in Committee shall be taken in the following order: Clauses 1 to 6; Schedule 1; Clauses 7 to 29; Schedules 2 and 3; Clauses 30 to 35; Schedules 4 and 5; Clauses 36 to 49; Schedule 6; Clauses 50 to 75; Schedule 7; Clauses 76 to 78; Schedules 8 and 9; Clauses 79 to 83; Schedule 10; Clause 84; Schedule 11; Clauses 85 to 89; Schedule 12; Clauses 90 to 93; Schedule 13; Clause 94; Schedule 14; Clauses 95 to 101; Schedules 15 and 16; Clauses 102 to 110; Schedule 17; Clauses 111 to 143; Schedule 18; Clause 144; Schedule 19; Clauses 145 to 179; Schedule 20; Clauses 180 to 182; Schedule 21; Clauses 183 and 184; Schedule 22; Clauses 185 to 189; Schedule 23; Clauses 190 and 191; Schedule 24; Clauses 192 and 193; Schedule 25; Clauses 194 to 198; Schedules 26 and 27; Clauses 199 to 201; Schedule 28; Clauses 202 to 205; new Clauses; new Schedules; remaining proceedings on the Bill;</ResolutionPara_text></ResolutionPara></ResolutionPara_PgfTag>
 
 <ResolutionPara_PgfTag id="7336116"><PgfNumString><PgfNumString_1>(4)</PgfNumString_1> </PgfNumString><ResolutionPara id="1070309"><ResolutionPara_text>the proceedings shall (so far as not previously concluded) be brought to a conclusion at 7.00 p.m. on Tuesday 7 July.</ResolutionPara_text></ResolutionPara></ResolutionPara_PgfTag>
@@ -46,7 +46,7 @@
 <Bold id="7339501">The Programming Sub-Committee is expected to agree a revised Resolution at its meeting on Tuesday 2 June.</Bold></Text.motion>
 </Motion>
  </Resolution>
-<Motion id="6541538"><Proposer.name id="6541541">The Solicitor General</Proposer.name>
+<PageStart id="5184234" PageType="BodyPage" PageNum="29">Page 29</PageStart><Motion id="6541538"><Proposer.name id="6541541">The Solicitor General</Proposer.name>
 <Text.motion id="6541546">That, subject to the discretion of the Chairman, any written evidence received by the Committee shall be reported to the House for publication.</Text.motion>
 </Motion>
 <Head.thin id="6547721"></Head.thin>
@@ -128,7 +128,7 @@ leave out Clause 2.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Separator.thin id="5231814"></Separator.thin>
-<Clause.Committee id="1485320" Star="No"><Sponsors id="1485323"><Sponsor id="1485326">Mr Mark Harper</Sponsor>
+<PageStart id="7338358" PageType="BodyPage" PageNum="30">Page 30</PageStart><Clause.Committee id="1485320" Star="No"><Sponsors id="1485323"><Sponsor id="1485326">Mr Mark Harper</Sponsor>
 <Sponsor id="1485331">John Penrose</Sponsor>
 <Sponsor id="1485336">Mr John Baron</Sponsor>
 </Sponsors>
@@ -216,7 +216,7 @@ leave out paragraph (a).</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Separator.thick id="5231900"></Separator.thick>
-<Clause.Committee id="1486624" Star="No"><Sponsors id="1486627"><Sponsor id="1486630">Mr Mark Harper</Sponsor>
+<PageStart id="7338380" PageType="BodyPage" PageNum="31">Page 31</PageStart><Clause.Committee id="1486624" Star="No"><Sponsors id="1486627"><Sponsor id="1486630">Mr Mark Harper</Sponsor>
 <Sponsor id="1486635">John Penrose</Sponsor>
 <Sponsor id="1486640">Mr John Baron</Sponsor>
 </Sponsors>
@@ -321,7 +321,7 @@ leave out Clause 73.</AmedTextCommitReport_PgfTag>
 leave out paragraph (c).</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
-<Clause.Committee id="1489722" Star="No"><Sponsors id="1489725"><Sponsor id="1489728">Mr Mark Harper</Sponsor>
+<PageStart id="7338407" PageType="BodyPage" PageNum="32">Page 32</PageStart><Clause.Committee id="1489722" Star="No"><Sponsors id="1489725"><Sponsor id="1489728">Mr Mark Harper</Sponsor>
 <Sponsor id="1489733">John Penrose</Sponsor>
 <Sponsor id="1489738">Mr John Baron</Sponsor>
 </Sponsors>
@@ -414,7 +414,7 @@ at end insert—</AmedTextCommitReport_PgfTag>
 <SubSection_PgfTag id="7337695"><PgfNumString><PgfNumString_1>‘(5)</PgfNumString_1> </PgfNumString><SubSection_text>Before regulations are made under this section, there must be laid before both Houses of Parliament—</SubSection_text></SubSection_PgfTag>
 <Para id="1493562">
 <Paragraph_PgfTag id="7337699"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para_text>draft regulations, and</Para_text></Paragraph_PgfTag>
-</Para><Para id="1493569">
+</Para><PageStart id="7338433" PageType="BodyPage" PageNum="33">Page 33</PageStart><Para id="1493569">
 <Paragraph_PgfTag id="7337702"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text>evidence that the regulations will enable the better performance by public authorities of the duty imposed by subsection (1).’.</Para_text></Paragraph_PgfTag>
 </Para></SubSection>
 </Amendment.Text>
@@ -507,7 +507,7 @@ leave out Clause 190.</AmedTextCommitReport_PgfTag>
 leave out ‘thinks’ and insert ‘can demonstrate’.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
-<Clause.Committee id="1498284" Star="No"><Sponsors id="1498287"><Sponsor id="1498290">Mr Mark Harper</Sponsor>
+<PageStart id="7338456" PageType="BodyPage" PageNum="34">Page 34</PageStart><Clause.Committee id="1498284" Star="No"><Sponsors id="1498287"><Sponsor id="1498290">Mr Mark Harper</Sponsor>
 <Sponsor id="1498295">John Penrose</Sponsor>
 <Sponsor id="1498300">Mr John Baron</Sponsor>
 </Sponsors>
@@ -585,7 +585,7 @@ leave out Clause 191.</AmedTextCommitReport_PgfTag>
 </SubSection>
 </ClauseText>
  </NewClause.Committee>
-<NewClause.Committee id="1497627" Star="No"><ClauseTitle id="1497635">
+<PageStart id="7338483" PageType="BodyPage" PageNum="35">Page 35</PageStart><NewClause.Committee id="1497627" Star="No"><ClauseTitle id="1497635">
 <New_C_STitle_PgfTag id="7338291"><PgfNumString></PgfNumString><ClauseTitle_text>Mental Health Act 1983: Members of Parliament</ClauseTitle_text></New_C_STitle_PgfTag>
 </ClauseTitle><Sponsors id="1497644"><Sponsor id="1497648">Mr Mark Harper</Sponsor>
 <Sponsor id="1497654">John Penrose</Sponsor>
@@ -632,4 +632,4 @@ leave out Clause 191.</AmedTextCommitReport_PgfTag>
 </OrderText>
  </Order.House>
 </Amendments.Commons>
-</Document>
+<Footer></Footer></BillData></Document>

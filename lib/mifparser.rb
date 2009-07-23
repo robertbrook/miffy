@@ -1,48 +1,14 @@
+require 'mifparserutils'
 require 'tempfile'
 require 'rubygems'
 require 'hpricot'
 require 'rexml/document'
 
-module MifParserUtils
-
-  def clean element
-    element.at('text()').to_s[/`(.+)'/]
-    text = $1
-    if text
-      text.gsub!('\xd4 ', '‘')
-      text.gsub!('\xd5 ','’')
-      text.gsub!('\xd2 ','“')
-      text.gsub!('\xd3 ','”')
-    else
-      ''
-    end
-    text
-  end
-
-  def get_char element
-    char = element.at('text()').to_s
-    case char
-      when 'EmSpace'
-        ' '
-      when 'Pound'
-        '£'
-      when 'EmDash'
-        '—'
-      when 'HardReturn'
-        "/n"
-      when 'HardSpace'
-        " "
-      when 'Tab'
-        ' '
-      else
-        '[[' + char + ']]'
-    end
-  end
+class MifPage
+  attr_accessor :unique_id, :page_type, :page_num
 end
 
 class MifParser
-
-  VERSION = "0.0.0"
 
   include MifParserUtils
 
@@ -69,19 +35,28 @@ class MifParser
 
   def parse_xml xml, options={}
     doc = Hpricot.XML xml
-    xml = ['<Document>']
 
-    set_bill_title doc, xml
-    set_tables doc
-    set_frames doc
-    set_variables doc
+    xml = ['<Document><BillData>']
+    bill_attributes = get_bill_attributes(doc)
+    
+    add_bill_title(bill_attributes, xml)
+    
+    @table_list = set_tables doc
+    @frame_list = set_frames doc
+    @pages = set_pages doc
+    @variable_list = set_variables doc    
 
     flows = (doc/'TextFlow')
     flows.each do |flow|      
       handle_flow(flow, xml) unless is_instructions?(flow)
     end
 
-    xml << ['</Document>']
+    xml << "<Footer>"
+    add_bill_print_number(bill_attributes, xml)
+    add_bill_session_number(bill_attributes, xml)
+    xml << "</Footer>"
+
+    xml << ['</BillData></Document>']
     xml = xml.join('')
     begin
       doc = REXML::Document.new(xml)
@@ -99,33 +74,46 @@ class MifParser
     end
   end
   
-  def set_bill_title doc, xml
-    bill_attributes = get_bill_attributes(doc)
+  def add_bill_title bill_attributes, xml
     bill_title = get_bill_attribute(bill_attributes, "ShortTitle")    
     xml << "<BillTitle>#{bill_title}</BillTitle>" unless bill_title.empty?
   end
   
+  def set_pages doc
+    pages = (doc/'Page')
+    pages.inject({}) do |hash, page|
+      handle_page_definition(page, hash)
+    end
+  end
+
+  def add_bill_session_number bill_attributes, xml
+    bill_session_number = get_bill_attribute(bill_attributes, "SessionNumber")
+    xml << "<BillSessionNumber>#{bill_session_number}</BillSessionNumber>" unless bill_session_number.empty?
+  end
+  
+  def add_bill_print_number bill_attributes, xml
+    print_number = get_bill_attribute(bill_attributes, "PrintNumber")
+    xml << "<BillPrintNumber>#{print_number}</BillPrintNumber>" unless print_number.empty?
+  end
+  
   def set_tables doc
-    @table_list = {}
     tables = (doc/'Tbls/Tbl')
-    tables.each do |table|
-      handle_table(table, @table_list)
+    tables.inject({}) do |hash, table|
+      handle_table(table, hash)
     end
   end
 
   def set_frames doc
-    @frame_list = {}
     frames = (doc/'AFrames/Frame')
-    frames.each do |frame|
-      handle_frame(frame, @frame_list)
+    frames.inject({}) do |hash, frame|
+      handle_frame(frame, hash)
     end
   end
 
   def set_variables doc
-    @variable_list = {}
     variables = (doc/'VariableFormats/VariableFormat')
-    variables.each do |variable|
-      handle_variable(variable, @variable_list)
+    variables.inject({}) do |hash, variable|
+      handle_variable(variable, hash)
     end
   end
 
@@ -154,6 +142,17 @@ class MifParser
     attrib_value
   end
   
+  def handle_page_definition page_xml, pages
+    page = MifPage.new
+    page.unique_id = page_xml.at('Unique/text()').to_s
+    page.page_type = page_xml.at('PageType/text()').to_s
+    page.page_num = clean(page_xml.at('PageNum')) if page_xml.at('PageNum')
+    
+    page_id = page_xml.at('TextRect[1]/ID/text()').to_s
+    pages[page_id] = page    
+    pages
+  end
+
   def handle_variable var_xml, vars
     @var_id = ''
     
@@ -166,6 +165,7 @@ class MifParser
           vars.merge!({"#{@var_id}", "#{var_value}"})
       end
     end
+    vars
   end
   
   def handle_frame frame_xml, frames
@@ -201,6 +201,7 @@ class MifParser
       end
       frames[@frame_id] << "</FrameData>"
     end
+    frames
   end
 
   def handle_table table_xml, tables
@@ -267,8 +268,50 @@ class MifParser
     if tables.size > hash_size
       tables[@current_table_id] << "</Cell></Row></TableData>"
     end
+    
+    tables
   end
 
+  def handle_text_rect text_rect
+    text_rect_id = text_rect.inner_text
+
+    if (page = @pages[text_rect_id])
+      page_start = %Q|<PageStart id="#{page.unique_id}" PageType="#{page.page_type}" PageNum="#{page.page_num}">Page #{page.page_num}</PageStart>|
+
+      if @after_first_page
+        at_beginning_of_paragraph = @strings.empty? && @xml.last && @xml.last.include?('PgfNumString')
+
+        if at_beginning_of_paragraph
+          line = @xml.pop
+          lines = []
+          while !line.include?(@pgf_tag)
+            if line[/PgfNumString/]
+              pgf_num_string = line
+            else
+              lines << line
+            end
+            line = @xml.pop
+          end
+          pgf_start_tag = line
+
+          add page_start
+          add pgf_start_tag
+          add pgf_num_string if pgf_num_string
+          lines.reverse.each {|line| add line}
+        else
+          last_line = @strings.pop || ''
+          last_line += page_start
+          @strings << last_line
+        end
+      else
+        @first_page = page_start
+      end
+      
+      @pages.delete(text_rect_id)
+      @in_page = true
+    end
+  end
+  
   def handle_pgf_tag element
     flush_strings
     tag = clean(element).gsub(' ','_')
@@ -367,6 +410,11 @@ class MifParser
     else
       add %Q|<#{tag} id="#{uid}"#{attributes}>|
       @opened_in_paragraph[tag] = true if @in_paragraph
+    end
+    
+    if !@after_first_page && @first_page
+      add @first_page
+      @after_first_page = true
     end
   end
 
@@ -471,7 +519,7 @@ class MifParser
       text = @strings.pop
       text_tag = @etags_stack.last
       
-      if @last_was_pdf_num_string || text_tag == "ResolutionText"
+      if (@last_was_pdf_num_string || text_tag == "ResolutionText") && !text[/^<PageStart/]
         last_line += "<#{text_tag}_text>#{text}</#{text_tag}_text>"
       else
         last_line += text
@@ -489,6 +537,10 @@ class MifParser
     @e_tag = nil
     @in_paragraph = false
     @prefix_end = false
+    @in_page = false
+    @first_page = nil
+    @after_first_page = false
+    
     @opened_in_paragraph = {}
     @etags_stack = []
     @strings = []
@@ -516,6 +568,8 @@ class MifParser
           @prefix_end = true
         when 'SuffixBegin'
           @prefix_end = false
+        when 'TextRectID'
+          handle_text_rect element
         when 'ATbl'
           table_id = element.at('text()').to_s
           add @table_list[table_id]

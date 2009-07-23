@@ -6,7 +6,7 @@ include ActionController::Assertions::SelectorAssertions
 
 
 describe MifParser do
-
+# =begin
   describe 'when parsing MIF file' do
     before do
       @parser = MifParser.new
@@ -106,10 +106,10 @@ describe MifParser do
       end
     end
     
-    it 'should put page element around page content' do
-      # @result.should have_tag('Clauses[id="1112573"]') do
-        # with_tag('Page[id="996720"][PageType="BodyPage"][PageNum="1"]')
-      # end
+    it 'should put page start inside clauses element around page content' do
+      @result.should have_tag('Clauses[id="1112573"]') do
+        with_tag('PageStart[id="996720"][PageType="BodyPage"][PageNum="1"]')
+      end
     end
     
     it 'should add a BillTitle element' do
@@ -119,6 +119,13 @@ describe MifParser do
     it 'should add a Frame element' do
       @result.gsub('.','-').should have_tag('FrameData[id="1112726"]') do
         with_tag('Dropcap[id="1003796"]', :text => 'B')
+      end
+    end
+    
+    it 'should add a Footer element containing the BillPrintNumber and the BillSessionNumber' do
+      @result.should have_tag('Footer') do
+        with_tag('BillPrintNumber', :text => 'Bill 101')
+        with_tag('BillSessionNumber', :text => '54/4')
       end
     end
 
@@ -183,8 +190,8 @@ describe MifParser do
       @result.should have_tag('BillTitle', :text => 'Law Commission Bill [HL]')
     end
   end
-
-  describe 'when parsing another long MIF XML file' do
+# =end
+  describe 'when parsing Equality Bill Amendment Paper MIF XML file' do
     before(:all) do
       @parser = MifParser.new
       @result = @parser.parse_xml(fixture('pbc0850206m.mif.xml'))
@@ -193,6 +200,22 @@ describe MifParser do
     
     it 'should create XML' do
       @result.gsub('.','-').should have_tag('Amendments-Commons')    
+    end
+    
+    it 'should put PageStart before Motion element' do
+      @result.should have_tag('PageStart[id="5184234"][PageType="BodyPage"][PageNum="29"]', :text => 'Page 29')            
+      @result.gsub("\n",'').should include(%Q|<PageStart id="5184234" PageType="BodyPage" PageNum="29">Page 29</PageStart><Motion id="6541538">|)
+    end
+    
+    it 'should put PageStart outside of Para if at start of Para' do
+      @result.should have_tag('PageStart[id="7338433"][PageType="BodyPage"][PageNum="33"]', :text => 'Page 33')      
+      @result.should have_tag('Para[id="1493569"]') do
+        with_tag('Paragraph_PgfTag[id="7337702"]') do
+          with_tag('PgfNumString') { with_tag('PgfNumString_1', :text =>'(b)') }
+          with_tag('Para_text', :text => 'evidence that the regulations will enable the better performance by public authorities of the duty imposed by subsection (1).’.')
+        end
+      end
+      @result.gsub("\n",'').should include(%Q|<PageStart id="7338433" PageType="BodyPage" PageNum="33">Page 33</PageStart><Para id="1493569">|)
     end
     
     it 'should add element around text in mixed element/text situation' do
@@ -220,6 +243,7 @@ describe MifParser do
       end
     end    
   end
+# =begin
 
   describe 'when parsing MIF XML file' do
     before(:all) do
@@ -254,99 +278,7 @@ describe MifParser do
           end
         end
       end
-
-      "<Document>
-  <Amendments.Commons id='1020493'>
-    <Head id='1033398'>
-      <HeadNotice id='1033750'>
-        <NoticeOfAmds id='1042951'>
-          Notices of Amendments
-        </NoticeOfAmds>
-        <Given id='1045577'>
-          given on
-        </Given>
-        <Date id='1041467'>
-          <Day id='1041470'>
-            Monday
-          </Day>
-          <Date.text id='1041477'>
-            1 June 2009
-          </Date.text>
-        </Date>
-        <Stageheader id='1045600'>
-          Public Bill Committee
-        </Stageheader>
-        <CommitteeShorttitle id='1045605'>
-          <STText id='1053525'>
-            Local Democracy, Economic Development and Construction Bill
-          </STText>
-          <STHouse id='5229516'>
-             [
-            <STLords id='5229520'>
-              Lords
-            </STLords>
-            ]
-          </STHouse>
-        </CommitteeShorttitle>
-      </HeadNotice>
-    </Head>
-    <Committee id='1150928'>
-      <NewClause.Committee id='1497582'>
-        <New_C_STitle>
-          <PgfNumString>
-            \\t
-          </PgfNumString>
-          <ClauseTitle id='1497590'>
-            Award of construction projects
-          </ClauseTitle>
-        </New_C_STitle>
-        <Sponsors id='1497599'>
-          <Sponsor id='1497603'>
-            Ms Sally Keeble
-          </Sponsor>
-          <Sponsor id='1497609'>
-            Ms Dari Taylor
-          </Sponsor>
-          <Sponsor id='1497618'>
-            Joan Walley
-          </Sponsor>
-        </Sponsors>
-        <Amendment.Number id='1497632'>
-          NC1
-        </Amendment.Number>
-        <Move id='1497648'>
-          To move the following Clause:—
-        </Move>
-        <ClauseText id='1497659'>
-          ‘In considering the award of a contract in accordance with the
-          Housing Grant, Construction and Regeneration Act 1996 (c. 53), a local
-          authority may have regard to—
-          <Paragraph>
-            <PgfNumString>
-              \\t(a)\\t
-            </PgfNumString>
-            <Para id='1497669'>
-              their functions under section 66 of the Local Democracy, Economic
-              Development and Construction Act 2009 (local authority economic
-              assessment); and
-            </Para>
-          </Paragraph>
-          <Paragraph>
-            <PgfNumString>
-              \\t(b)\\t
-            </PgfNumString>
-            <Para id='1497676'>
-              the desirability of maintaining a diverse range of contractors in
-              its local authority area.’.
-            </Para>
-          </Paragraph>
-        </ClauseText>
-      </NewClause.Committee>
-    </Committee>
-  </Amendments.Commons>
-</Document>"
-
     end
   end
-
+# =end
 end
