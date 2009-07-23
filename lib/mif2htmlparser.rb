@@ -271,8 +271,10 @@ class Mif2HtmlParser
           end_tag = xml.pop
           line = xml.pop
           page = line[/Page \d+/]
-          anchor = page.sub(' ','').downcase
-          line.sub!(page, %Q|<a href="##{anchor}" name="#{anchor}">#{page}</a>|)
+          if page
+            anchor = page.sub(' ','').downcase
+            line.sub!(page, %Q|<a href="##{anchor}" name="#{anchor}">#{page}</a>|)
+          end
           xml << line
           xml << end_tag          
         end
