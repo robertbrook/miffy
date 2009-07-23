@@ -62,7 +62,7 @@ class MifParser
       doc = REXML::Document.new(xml)
     rescue Exception => e
       puts e.to_s
-      # raise e
+      raise e
     end
 
     if options[:indent]
@@ -276,27 +276,35 @@ class MifParser
     text_rect_id = text_rect.inner_text
 
     if (page = @pages[text_rect_id])
-      if @strings.empty? && @xml.last && @xml.last.include?('PgfNumString')
-        line = @xml.pop
-        lines = []
-        while !line.include?(@pgf_tag)
-          if line[/PgfNumString/]
-            pgf_num_string = line
-          else
-            lines << line
-          end
+      page_start = %Q|<PageStart id="#{page.unique_id}" PageType="#{page.page_type}" PageNum="#{page.page_num}">Page #{page.page_num}</PageStart>|
+
+      if @after_first_page
+        at_beginning_of_paragraph = @strings.empty? && @xml.last && @xml.last.include?('PgfNumString')
+
+        if at_beginning_of_paragraph
           line = @xml.pop
+          lines = []
+          while !line.include?(@pgf_tag)
+            if line[/PgfNumString/]
+              pgf_num_string = line
+            else
+              lines << line
+            end
+            line = @xml.pop
+          end
+          pgf_start_tag = line
+
+          add page_start
+          add pgf_start_tag
+          add pgf_num_string if pgf_num_string
+          lines.reverse.each {|line| add line}
+        else
+          last_line = @strings.pop || ''
+          last_line += page_start
+          @strings << last_line
         end
-        pgf_start_tag = line
-    
-        add %Q|<PageStart id="#{page.unique_id}" PageType="#{page.page_type}" PageNum="#{page.page_num}">Page #{page.page_num}</PageStart>|
-        add pgf_start_tag
-        add pgf_num_string if pgf_num_string
-        lines.reverse.each {|line| add line}
       else
-        last_line = @strings.pop || ''
-        last_line += %Q|<PageStart id="#{page.unique_id}" PageType="#{page.page_type}" PageNum="#{page.page_num}">Page #{page.page_num}</PageStart>|
-        @strings << last_line
+        @first_page = page_start
       end
       
       @pages.delete(text_rect_id)
@@ -402,6 +410,11 @@ class MifParser
     else
       add %Q|<#{tag} id="#{uid}"#{attributes}>|
       @opened_in_paragraph[tag] = true if @in_paragraph
+    end
+    
+    if !@after_first_page && @first_page
+      add @first_page
+      @after_first_page = true
     end
   end
 
@@ -525,6 +538,8 @@ class MifParser
     @in_paragraph = false
     @prefix_end = false
     @in_page = false
+    @first_page = nil
+    @after_first_page = false
     
     @opened_in_paragraph = {}
     @etags_stack = []

@@ -106,10 +106,10 @@ describe MifParser do
       end
     end
     
-    it 'should put page element around page content' do
-      @result.should have_tag('PageStart[id="996720"][PageType="BodyPage"][PageNum="1"]') 
-      # have_tag('Clauses[id="1112573"]') do
-      # end
+    it 'should put page start inside clauses element around page content' do
+      @result.should have_tag('Clauses[id="1112573"]') do
+        with_tag('PageStart[id="996720"][PageType="BodyPage"][PageNum="1"]')
+      end
     end
     
     it 'should add a BillTitle element' do
@@ -200,6 +200,11 @@ describe MifParser do
     
     it 'should create XML' do
       @result.gsub('.','-').should have_tag('Amendments-Commons')    
+    end
+    
+    it 'should put PageStart before Motion element' do
+      @result.should have_tag('PageStart[id="5184234"][PageType="BodyPage"][PageNum="29"]', :text => 'Page 29')            
+      @result.gsub("\n",'').should include(%Q|<PageStart id="5184234" PageType="BodyPage" PageNum="29">Page 29</PageStart><Motion id="6541538">|)
     end
     
     it 'should put PageStart outside of Para if at start of Para' do
