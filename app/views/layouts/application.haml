@@ -1,6 +1,6 @@
 -@external_sheet = params[:style]
 -@file = params[:file]
--@title = page_title(@file)
+-@title = page_title(@file) unless @file.nil?
 %html{:lang=>"en-GB"}
   %head
     %title= @title ? @title : 'Miffy'
