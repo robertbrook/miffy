@@ -173,7 +173,6 @@ class Mif2HtmlParser
       Bold_text
       WHITESPACE
       FrameData
-      PageStart
       Number Page Line ].inject({}){|h,v| h[v]=true; h}
   SPAN_RE = Regexp.new "(^#{SPAN.keys.join("$|")}$)"
 
@@ -257,26 +256,27 @@ class Mif2HtmlParser
         @in_paragraph = true
         add_html_element(tag, node, xml)
         @in_paragraph = false unless already_in_paragraph
-      when /^(Para)$/
+      when /^(Para|PageStart)$/
         already_in_paragraph = @in_paragraph
         tag = (already_in_paragraph ? 'span' : 'div')
         add_html_element(tag, node, xml)
+        if node.name == 'PageStart' && already_in_paragraph
+          line = xml.pop
+          line += '<br />'
+          xml << line
+        end
         
-      when /^(SubPara_sch|SubSubPara_sch|ResolutionPara)$/
+      when /^(SubPara_sch|SubSubPara_sch|ResolutionPara|)$/
         already_in_paragraph = @in_paragraph
         tag = (already_in_paragraph ? 'span' : 'p')
         @in_paragraph = true
         add_html_element(tag, node, xml)
         @in_paragraph = false unless already_in_paragraph
+
       when DIV_RE
         add_html_element 'div', node, xml
       when SPAN_RE
         add_html_element 'span', node, xml
-        if node.name == 'PageStart'
-          line = xml.pop
-          line += '<br />'
-          xml << line
-        end
       when UL_RE
         add_html_element 'ul', node, xml
       when LI_RE

@@ -6,7 +6,7 @@ include ActionController::Assertions::SelectorAssertions
 
 
 describe MifParser do
-
+# =begin
   describe 'when parsing MIF file' do
     before do
       @parser = MifParser.new
@@ -190,8 +190,8 @@ describe MifParser do
       @result.should have_tag('BillTitle', :text => 'Law Commission Bill [HL]')
     end
   end
-
-  describe 'when parsing another long MIF XML file' do
+# =end
+  describe 'when parsing Equality Bill Amendment Paper MIF XML file' do
     before(:all) do
       @parser = MifParser.new
       @result = @parser.parse_xml(fixture('pbc0850206m.mif.xml'))
@@ -200,6 +200,17 @@ describe MifParser do
     
     it 'should create XML' do
       @result.gsub('.','-').should have_tag('Amendments-Commons')    
+    end
+    
+    it 'should put PageStart outside of Para if at start of Para' do
+      @result.should have_tag('PageStart[id="7338433"][PageType="BodyPage"][PageNum="33"]', :text => 'Page 33')      
+      @result.should have_tag('Para[id="1493569"]') do
+        with_tag('Paragraph_PgfTag[id="7337702"]') do
+          with_tag('PgfNumString') { with_tag('PgfNumString_1', :text =>'(b)') }
+          with_tag('Para_text', :text => 'evidence that the regulations will enable the better performance by public authorities of the duty imposed by subsection (1).’.')
+        end
+      end
+      @result.gsub("\n",'').should include(%Q|<PageStart id="7338433" PageType="BodyPage" PageNum="33">Page 33</PageStart><Para id="1493569">|)
     end
     
     it 'should add element around text in mixed element/text situation' do
@@ -227,6 +238,7 @@ describe MifParser do
       end
     end    
   end
+# =begin
 
   describe 'when parsing MIF XML file' do
     before(:all) do
@@ -263,5 +275,5 @@ describe MifParser do
       end
     end
   end
-
+# =end
 end

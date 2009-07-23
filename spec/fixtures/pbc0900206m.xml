@@ -347,8 +347,8 @@ at end insert—</AmedTextCommitReport_PgfTag>
 <Paragraph.sch_PgfTag id="7381794"><PgfNumString><PgfNumString_1>5A</PgfNumString_1> </PgfNumString><Para.sch_text>In consequence of the amendments made by paragraphs A2, A3 and 1A, omit—</Para.sch_text></Paragraph.sch_PgfTag>
 
 <SubSubParagraph.sch_PgfTag id="7381798"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><SubSubPara.sch id="1090929"><SubSubPara.sch_text>in FA 2001, in Schedule 15, paragraphs 26 to 28,</SubSubPara.sch_text></SubSubPara.sch></SubSubParagraph.sch_PgfTag>
-
-<SubSubParagraph.sch_PgfTag id="7381802"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><PageStart id="7382946" PageType="BodyPage" PageNum="33">Page 33</PageStart><SubSubPara.sch id="1097888"><SubSubPara.sch_text>in FA 2004, in Schedule 18, paragraph 13(1)(f), and</SubSubPara.sch_text></SubSubPara.sch></SubSubParagraph.sch_PgfTag>
+<PageStart id="7382946" PageType="BodyPage" PageNum="33">Page 33</PageStart>
+<SubSubParagraph.sch_PgfTag id="7381802"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><SubSubPara.sch id="1097888"><SubSubPara.sch_text>in FA 2004, in Schedule 18, paragraph 13(1)(f), and</SubSubPara.sch_text></SubSubPara.sch></SubSubParagraph.sch_PgfTag>
 
 <SubSubParagraph.sch_PgfTag id="7381810"><PgfNumString><PgfNumString_1>(c)</PgfNumString_1> </PgfNumString><SubSubPara.sch id="1090936"><SubSubPara.sch_text>in ITA 2007, in Schedule 1, paragraph 345(2)(b), (3)(a) and (13)(b).’.</SubSubPara.sch_text></SubSubPara.sch></SubSubParagraph.sch_PgfTag>
 </Para.sch></CrossHeadingSch>
@@ -608,8 +608,8 @@ at end insert—</AmedTextCommitReport_PgfTag>
 </SubSection>
 <SubSection id="1484725">
 <SubSection_PgfTag id="7382675"><PgfNumString><PgfNumString_1>(2)</PgfNumString_1> </PgfNumString><SubSection_text>For the tax year 2009-10 the amount specified in—</SubSection_text></SubSection_PgfTag>
-<Para id="1484736">
-<Paragraph_PgfTag id="7382679"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><PageStart id="7383033" PageType="BodyPage" PageNum="36">Page 36</PageStart><Para_text>section 37 of ITA 2007, and</Para_text></Paragraph_PgfTag>
+<PageStart id="7383033" PageType="BodyPage" PageNum="36">Page 36</PageStart><Para id="1484736">
+<Paragraph_PgfTag id="7382679"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para_text>section 37 of ITA 2007, and</Para_text></Paragraph_PgfTag>
 </Para><Para id="1484743">
 <Paragraph_PgfTag id="7382683"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text>section 257(3) of ICTA,</Para_text></Paragraph_PgfTag>
 </Para>
@@ -668,8 +668,8 @@ at end insert—</AmedTextCommitReport_PgfTag>
 <OrderHousePara_PgfTag id="7382808"><PgfNumString><PgfNumString_1>3.</PgfNumString_1> </PgfNumString><OrderPara id="7325226"><OrderPara_text>when the provisions of the Bill considered by the Committee of the whole House and the Public Bill Committee have been reported to the House, the Bill be proceeded with as if it had been reported as a whole to the House from the Public Bill Committee.</OrderPara_text></OrderPara></OrderHousePara_PgfTag>
 </OrderText>
  </Order.House>
-<Order.Motion id="1484767"><OrderHeading id="7329842">
-<OrderHeading_PgfTag id="7382821"><PgfNumString></PgfNumString><PageStart id="7383052" PageType="BodyPage" PageNum="37">Page 37</PageStart><OrderHeading_text>Resolution of the Committee [19 May 2009]</OrderHeading_text></OrderHeading_PgfTag>
+<PageStart id="7383052" PageType="BodyPage" PageNum="37">Page 37</PageStart><Order.Motion id="1484767"><OrderHeading id="7329842">
+<OrderHeading_PgfTag id="7382821"><PgfNumString></PgfNumString><OrderHeading_text>Resolution of the Committee [19 May 2009]</OrderHeading_text></OrderHeading_PgfTag>
 </OrderHeading>
 <OrderAmendmentText id="7330294">That the Committee shall meet—/n  on Tuesdays at 10.30 a.m. and 4.30 p.m., and/n  on Thursdays (other than Thursday 4 June) at 9.00 a.m. and 1.00 p.m.,/n when the House is sitting.</OrderAmendmentText>
  </Order.Motion>

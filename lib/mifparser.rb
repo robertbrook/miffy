@@ -82,7 +82,7 @@ class MifParser
   def set_pages doc
     pages = (doc/'Page')
     pages.inject({}) do |hash, page|
-      handle_page(page, hash)
+      handle_page_definition(page, hash)
     end
   end
 
@@ -142,7 +142,7 @@ class MifParser
     attrib_value
   end
   
-  def handle_page page_xml, pages
+  def handle_page_definition page_xml, pages
     page = MifPage.new
     page.unique_id = page_xml.at('Unique/text()').to_s
     page.page_type = page_xml.at('PageType/text()').to_s
@@ -274,11 +274,31 @@ class MifParser
 
   def handle_text_rect text_rect
     text_rect_id = text_rect.inner_text
-    if (page = @pages[text_rect_id])
-      last_line = @strings.pop || ''
-      last_line += %Q|<PageStart id="#{page.unique_id}" PageType="#{page.page_type}" PageNum="#{page.page_num}">Page #{page.page_num}</PageStart>|
-      @strings << last_line
 
+    if (page = @pages[text_rect_id])
+      if @strings.empty? && @xml.last && @xml.last.include?('PgfNumString')
+        line = @xml.pop
+        lines = []
+        while !line.include?(@pgf_tag)
+          if line[/PgfNumString/]
+            pgf_num_string = line
+          else
+            lines << line
+          end
+          line = @xml.pop
+        end
+        pgf_start_tag = line
+    
+        add %Q|<PageStart id="#{page.unique_id}" PageType="#{page.page_type}" PageNum="#{page.page_num}">Page #{page.page_num}</PageStart>|
+        add pgf_start_tag
+        add pgf_num_string if pgf_num_string
+        lines.reverse.each {|line| add line}
+      else
+        last_line = @strings.pop || ''
+        last_line += %Q|<PageStart id="#{page.unique_id}" PageType="#{page.page_type}" PageNum="#{page.page_num}">Page #{page.page_num}</PageStart>|
+        @strings << last_line
+      end
+      
       @pages.delete(text_rect_id)
       @in_page = true
     end
