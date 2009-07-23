@@ -277,7 +277,8 @@ class MifParser
 
     if (page = @pages[text_rect_id])
       page_start = %Q|<PageStart id="#{page.unique_id}" PageType="#{page.page_type}" PageNum="#{page.page_num}">Page #{page.page_num}</PageStart>|
-
+      @line_num = 0
+      
       if @after_first_page
         at_beginning_of_paragraph = @strings.empty? && @xml.last && @xml.last.include?('PgfNumString')
 
@@ -494,7 +495,8 @@ class MifParser
   def handle_string element
     if @paraline_start
       last_line = @strings.pop || ''
-      last_line += %Q|<ParaLine></ParaLine>|
+      @line_num += 1
+      last_line += %Q|<ParaLineStart LineNum="#{@line_num}"></ParaLineStart>|
       @strings << last_line
       @paraline_start = false
       @in_paraline = true
@@ -527,7 +529,7 @@ class MifParser
       text = @strings.pop
       text_tag = @etags_stack.last
       
-      if (@last_was_pdf_num_string || text_tag == "ResolutionText") && !text[/^<(PageStart|ParaLine)/]
+      if (@last_was_pdf_num_string || text_tag == "ResolutionText") && !text[/^<(PageStart)/]
         last_line += "<#{text_tag}_text>#{text}</#{text_tag}_text>"
       else
         last_line += text
@@ -540,7 +542,7 @@ class MifParser
   end
   
   def handle_para_line element
-    # @paraline_start = true
+    @paraline_start = true
   end
 
   def handle_flow flow, xml

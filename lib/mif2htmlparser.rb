@@ -210,6 +210,7 @@ class Mif2HtmlParser
       node_children_to_html(node, xml)
       xml << "</#{name}>"
     end
+    @in_para_line = false
   end
 
   def find_act_url act_name
@@ -256,8 +257,12 @@ class Mif2HtmlParser
         @in_paragraph = true
         add_html_element(tag, node, xml)
         @in_paragraph = false unless already_in_paragraph
-      when 'ParaLine'
-        # ignore
+      when 'ParaLineStart'
+        line = node['LineNum'].to_s
+        xml << %Q|<br />| if @in_para_line
+        xml << %Q|<a name="page#{@page_number}-line#{line}"></a>|
+        @in_para_line = true
+
       when /^(Para|PageStart)$/
         already_in_paragraph = @in_paragraph
         tag = (already_in_paragraph ? 'span' : 'div')
@@ -269,13 +274,14 @@ class Mif2HtmlParser
         end
         if node.name == 'PageStart'
           end_tag = xml.pop
-          line = xml.pop
-          page = line[/Page \d+/]
+          text = xml.pop
+          page = text[/Page (.+)/]
           if page
+            @page_number = $1
             anchor = page.sub(' ','').downcase
-            line.sub!(page, %Q|<a href="##{anchor}" name="#{anchor}">#{page}</a>|)
+            text.sub!(page, %Q|<a href="##{anchor}" name="#{anchor}">#{page}</a>|)
           end
-          xml << line
+          xml << text
           xml << end_tag          
         end
         
