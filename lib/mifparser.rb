@@ -32,6 +32,8 @@ module MifParserUtils
         "/n"
       when 'HardSpace'
         " "
+      when 'Tab'
+        ' '
       else
         '[[' + char + ']]'
     end
@@ -69,35 +71,14 @@ class MifParser
     doc = Hpricot.XML xml
     xml = ['<Document>']
 
-    bill_attributes = get_bill_attributes(doc)    
-    bill_title = get_bill_attribute(bill_attributes, "ShortTitle")
-    unless bill_title.empty?
-      xml << "<BillTitle>#{bill_title}</BillTitle>"
-    end
-
-    @table_list = {}
-    tables = (doc/'Tbls/Tbl')
-    tables.each do |table|
-      handle_table(table, @table_list)
-    end
-    
-    @frame_list = {}
-    frames = (doc/'AFrames/Frame')
-    frames.each do |frame|
-      handle_frame(frame, @frame_list)
-    end
-    
-    @variable_list = {}
-    variables = (doc/'VariableFormats/VariableFormat')
-    variables.each do |variable|
-      handle_variable(variable, @variable_list)
-    end
+    set_bill_title doc, xml
+    set_tables doc
+    set_frames doc
+    set_variables doc
 
     flows = (doc/'TextFlow')
-    flows.each do |flow|
-      unless is_instructions?(flow)
-        handle_flow(flow, xml)
-      end
+    flows.each do |flow|      
+      handle_flow(flow, xml) unless is_instructions?(flow)
     end
 
     xml << ['</Document>']
@@ -118,6 +99,36 @@ class MifParser
     end
   end
   
+  def set_bill_title doc, xml
+    bill_attributes = get_bill_attributes(doc)
+    bill_title = get_bill_attribute(bill_attributes, "ShortTitle")    
+    xml << "<BillTitle>#{bill_title}</BillTitle>" unless bill_title.empty?
+  end
+  
+  def set_tables doc
+    @table_list = {}
+    tables = (doc/'Tbls/Tbl')
+    tables.each do |table|
+      handle_table(table, @table_list)
+    end
+  end
+
+  def set_frames doc
+    @frame_list = {}
+    frames = (doc/'AFrames/Frame')
+    frames.each do |frame|
+      handle_frame(frame, @frame_list)
+    end
+  end
+
+  def set_variables doc
+    @variable_list = {}
+    variables = (doc/'VariableFormats/VariableFormat')
+    variables.each do |variable|
+      handle_variable(variable, @variable_list)
+    end
+  end
+
   def get_bill_attributes doc
     attributes = nil
     

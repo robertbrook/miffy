@@ -106,6 +106,12 @@ describe MifParser do
       end
     end
     
+    it 'should put page element around page content' do
+      # @result.should have_tag('Clauses[id="1112573"]') do
+        # with_tag('Page[id="996720"][PageType="BodyPage"][PageNum="1"]')
+      # end
+    end
+    
     it 'should add a BillTitle element' do
       @result.should have_tag('BillTitle', :text => 'Law Commission Bill [HL]')
     end

@@ -37,8 +37,8 @@ class Mif2HtmlParser
   def format_haml haml
     reg_exp = Regexp.new('(Number|Page|Line)\n(\s+)(\S+)\n(\s+)%span\.(\S+)_number\n(\s+)(\S+)\n(\s+),', Regexp::MULTILINE)
     haml.gsub!(reg_exp, '\1' + "\n" + '\2\3 <span class="\5_number">\7</span>,')
-    haml.gsub!(/(Letter|FrameData|Dropcap|Bold)\n/, '\1' + "<>\n")
-    haml.gsub!(/(SmallCaps)\n/, '\1' + "<\n")
+    haml.gsub!(/(Letter|FrameData|Dropcap|Bold|\w+_number|PgfNumString_\d)\n/, '\1' + "<>\n")
+    haml.gsub!(/(SmallCaps|\}|PgfNumString|\w+_text)\n/, '\1' + "<\n")
     haml
   end
   
@@ -132,7 +132,8 @@ class Mif2HtmlParser
   TD_RE = Regexp.new "(^#{TD.keys.join("$|")}$)"
 
   SPAN = %w[ResolutionPara ResolutionSubPara
-      Para SubPara_sch
+      SubPara
+      SubPara_sch
       SubSubPara_sch
       Definition
       TextContinuation
@@ -252,6 +253,11 @@ class Mif2HtmlParser
         @in_paragraph = true
         add_html_element(tag, node, xml)
         @in_paragraph = false unless already_in_paragraph
+      when /^(Para)$/
+        already_in_paragraph = @in_paragraph
+        tag = (already_in_paragraph ? 'span' : 'div')
+        add_html_element(tag, node, xml)
+        
       when /^(SubPara_sch|SubSubPara_sch|ResolutionPara)$/
         already_in_paragraph = @in_paragraph
         tag = (already_in_paragraph ? 'span' : 'p')
