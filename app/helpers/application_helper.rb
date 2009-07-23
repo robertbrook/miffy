@@ -17,4 +17,8 @@ module ApplicationHelper
     end
   end
   
+  
+  def page_title file_name
+    file_type(file_name).sub('_', ' ').gsub(/\b\w/){$&.upcase}
+  end
 end
