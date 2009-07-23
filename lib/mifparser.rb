@@ -35,10 +35,12 @@ class MifParser
 
   def parse_xml xml, options={}
     doc = Hpricot.XML xml
-    xml = ['<Document>']
 
-    set_bill_title doc, xml
-
+    xml = ['<Document><BillData>']
+    bill_attributes = get_bill_attributes(doc)
+    
+    add_bill_title(bill_attributes, xml)
+    
     @table_list = set_tables doc
     @frame_list = set_frames doc
     @pages = set_pages doc
@@ -49,7 +51,12 @@ class MifParser
       handle_flow(flow, xml) unless is_instructions?(flow)
     end
 
-    xml << ['</Document>']
+    xml << "<Footer>"
+    add_bill_print_number(bill_attributes, xml)
+    add_bill_session_number(bill_attributes, xml)
+    xml << "</Footer>"
+
+    xml << ['</BillData></Document>']
     xml = xml.join('')
     begin
       doc = REXML::Document.new(xml)
@@ -67,8 +74,7 @@ class MifParser
     end
   end
   
-  def set_bill_title doc, xml
-    bill_attributes = get_bill_attributes(doc)
+  def add_bill_title bill_attributes, xml
     bill_title = get_bill_attribute(bill_attributes, "ShortTitle")    
     xml << "<BillTitle>#{bill_title}</BillTitle>" unless bill_title.empty?
   end
@@ -80,6 +86,16 @@ class MifParser
     end
   end
 
+  def add_bill_session_number bill_attributes, xml
+    bill_session_number = get_bill_attribute(bill_attributes, "SessionNumber")
+    xml << "<BillSessionNumber>#{bill_session_number}</BillSessionNumber>" unless bill_session_number.empty?
+  end
+  
+  def add_bill_print_number bill_attributes, xml
+    print_number = get_bill_attribute(bill_attributes, "PrintNumber")
+    xml << "<BillPrintNumber>#{print_number}</BillPrintNumber>" unless print_number.empty?
+  end
+  
   def set_tables doc
     tables = (doc/'Tbls/Tbl')
     tables.inject({}) do |hash, table|

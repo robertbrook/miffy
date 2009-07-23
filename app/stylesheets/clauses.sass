@@ -1,6 +1,4 @@
-// To configure blueprint, edit the partials/base.sass file.
 @import partials/base.sass
-// Import all the default blueprint modules so that we can access their mixins.
 @import blueprint
 
 body
@@ -9,7 +7,7 @@ body
       font-size: 1.8em
       +column(30, true)
       text-align: center
-      padding: 0 0 2.5em 0
+      padding: 1.25em 0 2.5em 0
       border-bottom: 1px solid black
       
     .PageStart
@@ -138,3 +136,16 @@ body
             span.Para
               float: left
                 display: block
+
+    .Footer
+      +column(30, true)
+      padding: 4em 0 0 0
+      text-align: left
+
+    .BillPrintNumber
+      +column(10, true)
+
+    .BillSessionNumber
+      +prepend(10)
+      +column(10, true)
+      text-align: right

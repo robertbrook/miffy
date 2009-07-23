@@ -121,6 +121,13 @@ describe MifParser do
         with_tag('Dropcap[id="1003796"]', :text => 'B')
       end
     end
+    
+    it 'should add a Footer element containing the BillPrintNumber and the BillSessionNumber' do
+      @result.should have_tag('Footer') do
+        with_tag('BillPrintNumber', :text => 'Bill 101')
+        with_tag('BillSessionNumber', :text => '54/4')
+      end
+    end
 
     it 'should put SubSection_text element around Bold element' do
       text = 'Nothing in this Act shall impose any charge on the people or on public funds, or vary the amount or incidence of or otherwise alter any such charge in any manner, or affect the assessment, levying, administration or application of any money raised by any such charge'
