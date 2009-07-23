@@ -492,6 +492,14 @@ class MifParser
   end
 
   def handle_string element
+    if @paraline_start
+      last_line = @strings.pop || ''
+      last_line += %Q|<ParaLine></ParaLine>|
+      @strings << last_line
+      @paraline_start = false
+      @in_paraline = true
+    end
+    
     text = clean(element)
     last_line = @strings.pop || ''
 
@@ -519,7 +527,7 @@ class MifParser
       text = @strings.pop
       text_tag = @etags_stack.last
       
-      if (@last_was_pdf_num_string || text_tag == "ResolutionText") && !text[/^<PageStart/]
+      if (@last_was_pdf_num_string || text_tag == "ResolutionText") && !text[/^<(PageStart|ParaLine)/]
         last_line += "<#{text_tag}_text>#{text}</#{text_tag}_text>"
       else
         last_line += text
@@ -529,6 +537,10 @@ class MifParser
     elsif @strings.size > 1
       raise 'why is strings size > 1? ' + @strings.inspect
     end
+  end
+  
+  def handle_para_line element
+    # @paraline_start = true
   end
 
   def handle_flow flow, xml
@@ -540,6 +552,8 @@ class MifParser
     @in_page = false
     @first_page = nil
     @after_first_page = false
+    @paraline_start = false
+    @in_paraline = false
     
     @opened_in_paragraph = {}
     @etags_stack = []
@@ -556,8 +570,8 @@ class MifParser
         when 'Para'
           @prefix_end = false          
           handle_para
-        # when 'ParaLine'
-          # add "\n"
+        when 'ParaLine'
+          handle_para_line element
         when 'PgfNumString'
           handle_pgf_num_string element
         when 'String'

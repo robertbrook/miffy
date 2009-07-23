@@ -204,7 +204,7 @@ class Mif2HtmlParser
     end
     xml << %Q| id="#{node['id']}"| if node['id']
     if name == 'hr'
-      xml << " />"  
+      xml << " />"
     else
       xml << ">"
       node_children_to_html(node, xml)
@@ -256,6 +256,8 @@ class Mif2HtmlParser
         @in_paragraph = true
         add_html_element(tag, node, xml)
         @in_paragraph = false unless already_in_paragraph
+      when 'ParaLine'
+        # ignore
       when /^(Para|PageStart)$/
         already_in_paragraph = @in_paragraph
         tag = (already_in_paragraph ? 'span' : 'div')
@@ -264,6 +266,15 @@ class Mif2HtmlParser
           line = xml.pop
           line += '<br />'
           xml << line
+        end
+        if node.name == 'PageStart'
+          end_tag = xml.pop
+          line = xml.pop
+          page = line[/Page \d+/]
+          anchor = page.sub(' ','').downcase
+          line.sub!(page, %Q|<a href="##{anchor}" name="#{anchor}">#{page}</a>|)
+          xml << line
+          xml << end_tag          
         end
         
       when /^(SubPara_sch|SubSubPara_sch|ResolutionPara|)$/
