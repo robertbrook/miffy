@@ -1,12 +1,12 @@
-<Document><Amendments.Commons id="1054859" Auto="Yes" AutoRules="Yes"><Head id="1054862"><HeadConsider id="1054865"><Date id="1054868"><Day id="1054871">Tuesday </Day><Date.text id="1054878">2 June 2009</Date.text>
+<Document><PageStart id="996720" PageType="BodyPage" PageNum="27">27</PageStart><Amendments.Commons id="1054859" Auto="Yes" AutoRules="Yes"><Head id="1054862"><HeadConsider id="1054865"><Date id="1054868"><Day id="1054871">Tuesday </Day><Date.text id="1054878">2 June 2009</Date.text>
 </Date>
 <Stageheader id="5162740" Stage="Committee">Public Bill Committee</Stageheader>
 <CommitteeShorttitle id="1045605"><STText id="1053799">Equality Bill</STText></CommitteeShorttitle>
 <MarshalledOrderNote id="6540936"><Notehead id="6540940">Note</Notehead>
-<NoteTxt id="6541043">The Amendments have been arranged in accordance with the Resolution of the Programming Sub-Committee.</NoteTxt>
- </MarshalledOrderNote>
+<PageStart id="996720" PageType="BodyPage" PageNum="27">27</PageStart><NoteTxt id="6541043">The Amendments have been arranged in accordance with the Resolution of the Programming Sub-Committee.</NoteTxt>
+<PageStart id="996720" PageType="BodyPage" PageNum="27">27</PageStart> </MarshalledOrderNote>
 <Resolution id="1070180"><ResolutionHead id="1070184">
-<OrderHeading_PgfTag id="7335998"><PgfNumString></PgfNumString><ResolutionHead_text>Resolution of the Programming Sub-Committee</ResolutionHead_text></OrderHeading_PgfTag>
+<OrderHeading_PgfTag id="7335998"><PgfNumString></PgfNumString><PageStart id="996720" PageType="BodyPage" PageNum="27">27</PageStart><ResolutionHead_text>Resolution of the Programming Sub-Committee</ResolutionHead_text></OrderHeading_PgfTag>
 </ResolutionHead>
 <ResolutionDate id="1070197" Auto="No">The Programming Sub-Committee appointed by the Speaker in respect of the Bill agreed the following Resolution at its meeting on Tuesday 19 May (Standing Order No. 83C):</ResolutionDate>
 <ResolutionText id="1070211"><ResolutionText_text>That—</ResolutionText_text>
@@ -35,7 +35,7 @@
 <ResolutionPara_PgfTag id="7336055"><PgfNumString><PgfNumString_1>(2)</PgfNumString_1> </PgfNumString></ResolutionPara_PgfTag>
 <ResolutionPara id="6540467"><ResolutionPara_text>the Committee shall hear oral evidence in accordance with the following Table—</ResolutionPara_text><Table id="6540480"><TableData id="7336058"><Row id="6540534"><CellH id="6540535" class="first" >Date</CellH><CellH id="6540536">Time</CellH><CellH id="6540537">Witness</CellH></Row><Row id="6540538"><Cell id="6540539" class="first" >Tuesday 2 June</Cell><Cell id="6540540">Until no later than 12 noon</Cell><Cell id="6540541">Equality and Diversity Forum/nEquality and Human Rights  Commission/nEmployment Tribunals Service</Cell></Row><Row id="6540542"><Cell id="6540543" class="first" >Tuesday 2 June</Cell><Cell id="6540544">Until no later than 1.00 pm</Cell><Cell id="6540545">Help the Aged and Age Concern/nChildren’s Rights Alliance/nDisability Charities Consortium/nRADAR/nCarers UK</Cell></Row><Row id="6540546"><Cell id="6540547" class="first" >Tuesday 2 June</Cell><Cell id="6540548">Until no later than 5.00 pm</Cell><Cell id="6540549">Stonewall/nGender Identity Research and  Education Society/nRunnymede Trust/nRace on the Agenda</Cell></Row><Row id="6540550"><Cell id="6540551" class="first" >Tuesday 2 June</Cell><Cell id="6540552">Until no later than 6.00 pm</Cell><Cell id="6540553">Fawcett Society/nWomen’s National Commission/nWomen Like Us</Cell></Row><Row id="6540554"><Cell id="6540555" class="first" >Tuesday 9 June</Cell><Cell id="6540556">Until no later than 11.30 am</Cell><Cell id="6540557">British Humanist Association/nGeneral Synod of the Church of  England/nCatholic Bishops Conference/nSufi Muslim Council</Cell></Row><Row id="6540558"><Cell id="6540559" class="first" >Tuesday 9 June</Cell><Cell id="6540560">Until no later than 12.30 pm</Cell><Cell id="6540561">Confederation of British Industry/nAssociation of British Insurers/nFederation of Small Businesses/nChartered Institute of Personnel  and Development/nTrades Union Congress</Cell></Row><Row id="6540562"><Cell id="6540563" class="first" >Tuesday 9 June</Cell><Cell id="6540564">Until no later than 6.00 pm</Cell><Cell id="6540565">Government Equalities Office</Cell></Row></TableData></Table>
 </ResolutionPara>
-<ResolutionPara_PgfTag id="7336112"><PgfNumString><PgfNumString_1>(3)</PgfNumString_1> </PgfNumString><ResolutionPara id="1070291"><ResolutionPara_text>the proceedings on consideration of the Bill in Committee shall be taken in the following order: Clauses 1 to 6; Schedule 1; Clauses 7 to 29; Schedules 2 and 3; Clauses 30 to 35; Schedules 4 and 5; Clauses 36 to 49; Schedule 6; Clauses 50 to 75; Schedule 7; Clauses 76 to 78; Schedules 8 and 9; Clauses 79 to 83; Schedule 10; Clause 84; Schedule 11; Clauses 85 to 89; Schedule 12; Clauses 90 to 93; Schedule 13; Clause 94; Schedule 14; Clauses 95 to 101; Schedules 15 and 16; Clauses 102 to 110; Schedule 17; Clauses 111 to 143; Schedule 18; Clause 144; Schedule 19; Clauses 145 to 179; Schedule 20; Clauses 180 to 182; Schedule 21; Clauses 183 and 184; Schedule 22; Clauses 185 to 189; Schedule 23; Clauses 190 and 191; Schedule 24; Clauses 192 and 193; Schedule 25; Clauses 194 to 198; Schedules 26 and 27; Clauses 199 to 201; Schedule 28; Clauses 202 to 205; new Clauses; new Schedules; remaining proceedings on the Bill;</ResolutionPara_text></ResolutionPara></ResolutionPara_PgfTag>
+<ResolutionPara_PgfTag id="7336112"><PgfNumString><PgfNumString_1>(3)</PgfNumString_1> </PgfNumString><PageStart id="5184211" PageType="BodyPage" PageNum="28">28</PageStart><ResolutionPara id="1070291"><ResolutionPara_text>the proceedings on consideration of the Bill in Committee shall be taken in the following order: Clauses 1 to 6; Schedule 1; Clauses 7 to 29; Schedules 2 and 3; Clauses 30 to 35; Schedules 4 and 5; Clauses 36 to 49; Schedule 6; Clauses 50 to 75; Schedule 7; Clauses 76 to 78; Schedules 8 and 9; Clauses 79 to 83; Schedule 10; Clause 84; Schedule 11; Clauses 85 to 89; Schedule 12; Clauses 90 to 93; Schedule 13; Clause 94; Schedule 14; Clauses 95 to 101; Schedules 15 and 16; Clauses 102 to 110; Schedule 17; Clauses 111 to 143; Schedule 18; Clause 144; Schedule 19; Clauses 145 to 179; Schedule 20; Clauses 180 to 182; Schedule 21; Clauses 183 and 184; Schedule 22; Clauses 185 to 189; Schedule 23; Clauses 190 and 191; Schedule 24; Clauses 192 and 193; Schedule 25; Clauses 194 to 198; Schedules 26 and 27; Clauses 199 to 201; Schedule 28; Clauses 202 to 205; new Clauses; new Schedules; remaining proceedings on the Bill;</ResolutionPara_text></ResolutionPara></ResolutionPara_PgfTag>
 
 <ResolutionPara_PgfTag id="7336116"><PgfNumString><PgfNumString_1>(4)</PgfNumString_1> </PgfNumString><ResolutionPara id="1070309"><ResolutionPara_text>the proceedings shall (so far as not previously concluded) be brought to a conclusion at 7.00 p.m. on Tuesday 7 July.</ResolutionPara_text></ResolutionPara></ResolutionPara_PgfTag>
 </ResolutionText>
@@ -45,14 +45,14 @@
 <Text.motion id="7339473"><WHITESPACE id="7339486"></WHITESPACE>
 <Bold id="7339501">The Programming Sub-Committee is expected to agree a revised Resolution at its meeting on Tuesday 2 June.</Bold></Text.motion>
 </Motion>
- </Resolution>
-<Motion id="6541538"><Proposer.name id="6541541">The Solicitor General</Proposer.name>
-<Text.motion id="6541546">That, subject to the discretion of the Chairman, any written evidence received by the Committee shall be reported to the House for publication.</Text.motion>
+<PageStart id="5184211" PageType="BodyPage" PageNum="28">28</PageStart> </Resolution>
+<PageStart id="5184234" PageType="BodyPage" PageNum="29">29</PageStart><Motion id="6541538"><Proposer.name id="6541541">The Solicitor General</Proposer.name>
+<PageStart id="5184234" PageType="BodyPage" PageNum="29">29</PageStart><Text.motion id="6541546">That, subject to the discretion of the Chairman, any written evidence received by the Committee shall be reported to the House for publication.</Text.motion>
 </Motion>
-<Head.thin id="6547721"></Head.thin>
+<PageStart id="5184234" PageType="BodyPage" PageNum="29">29</PageStart><Head.thin id="6547721"></Head.thin>
 <Motion id="6541484"><Proposer.name id="6541497">The Solicitor General</Proposer.name>
-<Text.motion id="6541505">That, at this and any subsequent meeting at which oral evidence is to be heard, the Committee shall sit in private until the witnesses are admitted.</Text.motion>
- </Motion>
+<PageStart id="5184234" PageType="BodyPage" PageNum="29">29</PageStart><Text.motion id="6541505">That, at this and any subsequent meeting at which oral evidence is to be heard, the Committee shall sit in private until the witnesses are admitted.</Text.motion>
+<PageStart id="5184234" PageType="BodyPage" PageNum="29">29</PageStart> </Motion>
 </HeadConsider>
 </Head>
 <Committee id="1150952"><Clause.Committee id="5244421" Star="No"><Sponsors id="5244424"><Sponsor id="5244427">Mr Mark Harper</Sponsor>
@@ -60,10 +60,10 @@
 <Sponsor id="5244437">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="5244443">
-<AmendmentNumber_PgfTag id="7336425">35</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7336425"><PageStart id="5184234" PageType="BodyPage" PageNum="29">29</PageStart>35</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="5244478">
-<AmedTextCommitReport_PgfTag id="7336457"><Number id="5244448">Clause <Clause_number>1</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7336457"><PageStart id="5184234" PageType="BodyPage" PageNum="29">29</PageStart><Number id="5244448">Clause <Clause_number>1</Clause_number>, </Number>
 <Page id="5244458">page <Page_number>1</Page_number>, </Page>
 <Line id="5244468">line <Line_number>26</Line_number>, </Line>
 leave out subsections (2) to (7).</AmedTextCommitReport_PgfTag>
@@ -74,27 +74,27 @@ leave out subsections (2) to (7).</AmedTextCommitReport_PgfTag>
 <Sponsor id="1484784">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1484790">
-<AmendmentNumber_PgfTag id="7336478">2</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7336478"><PageStart id="5184234" PageType="BodyPage" PageNum="29">29</PageStart>2</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1484815">
-<AmedTextCommitReport_PgfTag id="7336508"><Number id="1484880">Clause <Clause_number>1</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7336508"><PageStart id="5184234" PageType="BodyPage" PageNum="29">29</PageStart><Number id="1484880">Clause <Clause_number>1</Clause_number>, </Number>
 <Page id="1484795">page <Page_number>1</Page_number>, </Page>
 <Line id="1484805">line <Line_number>29</Line_number>, </Line>
 leave out subsection (3) and insert—</AmedTextCommitReport_PgfTag>
 <SubSection id="1484894" Number="3" Quote="Single">
-<SubSection_PgfTag id="7336511"><PgfNumString><PgfNumString_1>‘(3)</PgfNumString_1> </PgfNumString><SubSection_text>A Minister of the Crown may by regulations list public authorities to which this section applies.’.</SubSection_text></SubSection_PgfTag>
+<SubSection_PgfTag id="7336511"><PgfNumString><PgfNumString_1>‘(3)</PgfNumString_1> </PgfNumString><PageStart id="5184234" PageType="BodyPage" PageNum="29">29</PageStart><SubSection_text>A Minister of the Crown may by regulations list public authorities to which this section applies.’.</SubSection_text></SubSection_PgfTag>
 </SubSection>
 </Amendment.Text>
 </Clause.Committee>
-<Clause.Committee id="1485136" Star="No"><Sponsors id="1485139"><Sponsor id="1485142">Mr Mark Harper</Sponsor>
+<PageStart id="5184234" PageType="BodyPage" PageNum="29">29</PageStart><Clause.Committee id="1485136" Star="No"><Sponsors id="1485139"><Sponsor id="1485142">Mr Mark Harper</Sponsor>
 <Sponsor id="1485147">John Penrose</Sponsor>
 <Sponsor id="1485152">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1485158">
-<AmendmentNumber_PgfTag id="7336535">4</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7336535"><PageStart id="5184234" PageType="BodyPage" PageNum="29">29</PageStart>4</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1485316">
-<AmedTextCommitReport_PgfTag id="7336567"><Number id="1485163">Clause <Clause_number>1</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7336567"><PageStart id="5184234" PageType="BodyPage" PageNum="29">29</PageStart><Number id="1485163">Clause <Clause_number>1</Clause_number>, </Number>
 <Page id="1485173">page <Page_number>2</Page_number>, </Page>
 <Line id="1485183">line <Line_number>18</Line_number>, </Line>
 leave out subsection (4).</AmedTextCommitReport_PgfTag>
@@ -105,10 +105,10 @@ leave out subsection (4).</AmedTextCommitReport_PgfTag>
 <Sponsor id="1484661">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1484675">
-<AmendmentNumber_PgfTag id="7336588">1</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7336588"><PageStart id="5184234" PageType="BodyPage" PageNum="29">29</PageStart>1</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1484764">
-<AmedTextCommitReport_PgfTag id="7336611"><Page id="1484740">Page <Page_number>1</Page_number>, </Page>
+<AmedTextCommitReport_PgfTag id="7336611"><PageStart id="5184234" PageType="BodyPage" PageNum="29">29</PageStart><Page id="1484740">Page <Page_number>1</Page_number>, </Page>
 <Line id="1484754">line <Line_number>21</Line_number>, </Line>
 leave out Clause 1.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
@@ -119,24 +119,24 @@ leave out Clause 1.</AmedTextCommitReport_PgfTag>
 <Sponsor id="1484981">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1484987">
-<AmendmentNumber_PgfTag id="7336636">3</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7336636"><PageStart id="5184234" PageType="BodyPage" PageNum="29">29</PageStart>3</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1485132">
-<AmedTextCommitReport_PgfTag id="7336659"><Page id="1485002">Page <Page_number>2</Page_number>, </Page>
+<AmedTextCommitReport_PgfTag id="7336659"><PageStart id="5184234" PageType="BodyPage" PageNum="29">29</PageStart><Page id="1485002">Page <Page_number>2</Page_number>, </Page>
 <Line id="1485012">line <Line_number>39</Line_number>, </Line>
 leave out Clause 2.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Separator.thin id="5231814"></Separator.thin>
-<Clause.Committee id="1485320" Star="No"><Sponsors id="1485323"><Sponsor id="1485326">Mr Mark Harper</Sponsor>
+<PageStart id="7338358" PageType="BodyPage" PageNum="30">30</PageStart><Clause.Committee id="1485320" Star="No"><Sponsors id="1485323"><Sponsor id="1485326">Mr Mark Harper</Sponsor>
 <Sponsor id="1485331">John Penrose</Sponsor>
 <Sponsor id="1485336">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1485342">
-<AmendmentNumber_PgfTag id="7336684">5</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7336684"><PageStart id="7338358" PageType="BodyPage" PageNum="30">30</PageStart>5</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1485367">
-<AmedTextCommitReport_PgfTag id="7336707"><Page id="1485347">Page <Page_number>3</Page_number>, </Page>
+<AmedTextCommitReport_PgfTag id="7336707"><PageStart id="7338358" PageType="BodyPage" PageNum="30">30</PageStart><Page id="1485347">Page <Page_number>3</Page_number>, </Page>
 <Line id="1485357">line <Line_number>37</Line_number>, </Line>
 leave out Clause 3.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
@@ -147,10 +147,10 @@ leave out Clause 3.</AmedTextCommitReport_PgfTag>
 <Sponsor id="1485514">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1485520">
-<AmendmentNumber_PgfTag id="7336732">6</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7336732"><PageStart id="7338358" PageType="BodyPage" PageNum="30">30</PageStart>6</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1485555">
-<AmedTextCommitReport_PgfTag id="7336764"><Number id="1485525">Clause <Clause_number>4</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7336764"><PageStart id="7338358" PageType="BodyPage" PageNum="30">30</PageStart><Number id="1485525">Clause <Clause_number>4</Clause_number>, </Number>
 <Page id="1485535">page <Page_number>4</Page_number>, </Page>
 <Line id="1485545">line <Line_number>11</Line_number>, </Line>
 at end insert ‘or paternity’.</AmedTextCommitReport_PgfTag>
@@ -162,10 +162,10 @@ at end insert ‘or paternity’.</AmedTextCommitReport_PgfTag>
 <Sponsor id="1485710">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1485716">
-<AmendmentNumber_PgfTag id="7336789">7</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7336789"><PageStart id="7338358" PageType="BodyPage" PageNum="30">30</PageStart>7</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1485751">
-<AmedTextCommitReport_PgfTag id="7336821"><Number id="1485721">Clause <Clause_number>13</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7336821"><PageStart id="7338358" PageType="BodyPage" PageNum="30">30</PageStart><Number id="1485721">Clause <Clause_number>13</Clause_number>, </Number>
 <Page id="1485731">page <Page_number>9</Page_number>, </Page>
 <Line id="1485741">line <Line_number>5</Line_number>, </Line>
 leave out ‘because of’ and insert ‘on grounds of’.</AmedTextCommitReport_PgfTag>
@@ -177,10 +177,10 @@ leave out ‘because of’ and insert ‘on grounds of’.</AmedTextCommitReport
 <Sponsor id="1485921">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1485927">
-<AmendmentNumber_PgfTag id="7336846">8</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7336846"><PageStart id="7338358" PageType="BodyPage" PageNum="30">30</PageStart>8</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1485962">
-<AmedTextCommitReport_PgfTag id="7336878"><Number id="1485932">Clause <Clause_number>14</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7336878"><PageStart id="7338358" PageType="BodyPage" PageNum="30">30</PageStart><Number id="1485932">Clause <Clause_number>14</Clause_number>, </Number>
 <Page id="1485942">page <Page_number>10</Page_number>, </Page>
 <Line id="1485952">line <Line_number>5</Line_number>, </Line>
 leave out paragraph (c).</AmedTextCommitReport_PgfTag>
@@ -192,10 +192,10 @@ leave out paragraph (c).</AmedTextCommitReport_PgfTag>
 <Sponsor id="1486145">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1486151">
-<AmendmentNumber_PgfTag id="7336903">9</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7336903"><PageStart id="7338358" PageType="BodyPage" PageNum="30">30</PageStart>9</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1486186">
-<AmedTextCommitReport_PgfTag id="7336926"><Number id="1486156">Clause <Clause_number>18</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7336926"><PageStart id="7338358" PageType="BodyPage" PageNum="30">30</PageStart><Number id="1486156">Clause <Clause_number>18</Clause_number>, </Number>
 <Page id="1486166">page <Page_number>13</Page_number>, </Page>
 leave out line 17.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
@@ -206,25 +206,25 @@ leave out line 17.</AmedTextCommitReport_PgfTag>
 <Sponsor id="1486384">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1486390">
-<AmendmentNumber_PgfTag id="7336951">10</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7336951"><PageStart id="7338358" PageType="BodyPage" PageNum="30">30</PageStart>10</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1486425">
-<AmedTextCommitReport_PgfTag id="7336983"><Number id="1486395">Clause <Clause_number>26</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7336983"><PageStart id="7338358" PageType="BodyPage" PageNum="30">30</PageStart><Number id="1486395">Clause <Clause_number>26</Clause_number>, </Number>
 <Page id="1486405">page <Page_number>19</Page_number>, </Page>
 <Line id="1486415">line <Line_number>3</Line_number>, </Line>
 leave out paragraph (a).</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Separator.thick id="5231900"></Separator.thick>
-<Clause.Committee id="1486624" Star="No"><Sponsors id="1486627"><Sponsor id="1486630">Mr Mark Harper</Sponsor>
+<PageStart id="7338380" PageType="BodyPage" PageNum="31">31</PageStart><Clause.Committee id="1486624" Star="No"><Sponsors id="1486627"><Sponsor id="1486630">Mr Mark Harper</Sponsor>
 <Sponsor id="1486635">John Penrose</Sponsor>
 <Sponsor id="1486640">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1486646">
-<AmendmentNumber_PgfTag id="7337008">11</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7337008"><PageStart id="7338380" PageType="BodyPage" PageNum="31">31</PageStart>11</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1486681">
-<AmedTextCommitReport_PgfTag id="7337040"><Number id="1486651">Clause <Clause_number>30</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7337040"><PageStart id="7338380" PageType="BodyPage" PageNum="31">31</PageStart><Number id="1486651">Clause <Clause_number>30</Clause_number>, </Number>
 <Page id="1486661">page <Page_number>22</Page_number>, </Page>
 <Line id="1486671">line <Line_number>6</Line_number>, </Line>
 leave out paragraph (a).</AmedTextCommitReport_PgfTag>
@@ -236,10 +236,10 @@ leave out paragraph (a).</AmedTextCommitReport_PgfTag>
 <Sponsor id="1497562">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1497568">
-<AmendmentNumber_PgfTag id="7337065">28</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7337065"><PageStart id="7338380" PageType="BodyPage" PageNum="31">31</PageStart>28</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1497603">
-<AmedTextCommitReport_PgfTag id="7337097"><Number id="1497573">Clause <Clause_number>73</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7337097"><PageStart id="7338380" PageType="BodyPage" PageNum="31">31</PageStart><Number id="1497573">Clause <Clause_number>73</Clause_number>, </Number>
 <Page id="1497583">page <Page_number>55</Page_number>, </Page>
 <Line id="1497593">line <Line_number>14</Line_number>, </Line>
 leave out ‘by regulations’ and insert ‘not’.</AmedTextCommitReport_PgfTag>
@@ -250,44 +250,44 @@ leave out ‘by regulations’ and insert ‘not’.</AmedTextCommitReport_PgfTa
 <Sponsor id="1488374">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1488380">
-<AmendmentNumber_PgfTag id="7337118">15</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7337118"><PageStart id="7338380" PageType="BodyPage" PageNum="31">31</PageStart>15</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1488732">
-<AmedTextCommitReport_PgfTag id="7337148"><Number id="1488385">Clause <Clause_number>73</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7337148"><PageStart id="7338380" PageType="BodyPage" PageNum="31">31</PageStart><Number id="1488385">Clause <Clause_number>73</Clause_number>, </Number>
 <Page id="1488395">page <Page_number>55</Page_number>, </Page>
 <Line id="1488405">line <Line_number>17</Line_number>, </Line>
 at end insert ‘and</AmedTextCommitReport_PgfTag>
 <Para id="1489026" Quote="None" Number="b">
-<Paragraph_PgfTag id="7337151"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text>employees who have a disability and employees who do not have a disability.’.</Para_text></Paragraph_PgfTag>
+<Paragraph_PgfTag id="7337151"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><PageStart id="7338380" PageType="BodyPage" PageNum="31">31</PageStart><Para_text>employees who have a disability and employees who do not have a disability.’.</Para_text></Paragraph_PgfTag>
 </Para></Amendment.Text>
 </Clause.Committee>
-<Clause.Committee id="1487482" Star="No"><Sponsors id="1487485"><Sponsor id="1487488">Mr Mark Harper</Sponsor>
+<PageStart id="7338380" PageType="BodyPage" PageNum="31">31</PageStart><Clause.Committee id="1487482" Star="No"><Sponsors id="1487485"><Sponsor id="1487488">Mr Mark Harper</Sponsor>
 <Sponsor id="1487493">John Penrose</Sponsor>
 <Sponsor id="1487498">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1487504">
-<AmendmentNumber_PgfTag id="7337175">14</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7337175"><PageStart id="7338380" PageType="BodyPage" PageNum="31">31</PageStart>14</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1487539">
-<AmedTextCommitReport_PgfTag id="7337205"><Number id="1487509">Clause <Clause_number>73</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7337205"><PageStart id="7338380" PageType="BodyPage" PageNum="31">31</PageStart><Number id="1487509">Clause <Clause_number>73</Clause_number>, </Number>
 <Page id="1487519">page <Page_number>55</Page_number>, </Page>
 <Line id="1487529">line <Line_number>19</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
 <Para id="1487815" Number="0" Letter="0" Quote="Single">
-<Paragraph_PgfTag id="7337209"><PgfNumString><PgfNumString_1>‘( )</PgfNumString_1> </PgfNumString><Para_text>the Armed Forces;</Para_text></Paragraph_PgfTag>
+<Paragraph_PgfTag id="7337209"><PgfNumString><PgfNumString_1>‘( )</PgfNumString_1> </PgfNumString><PageStart id="7338380" PageType="BodyPage" PageNum="31">31</PageStart><Para_text>the Armed Forces;</Para_text></Paragraph_PgfTag>
 </Para><Para id="1488086" Number="0" Letter="0">
 <Paragraph_PgfTag id="7337212"><PgfNumString><PgfNumString_1>( )</PgfNumString_1> </PgfNumString><Para_text>the Security Service, the Secret Intelligence Service or the Government Communications Headquarters;’.</Para_text></Paragraph_PgfTag>
 </Para></Amendment.Text>
 </Clause.Committee>
-<Clause.Committee id="1487179" Star="No"><Sponsors id="1487182"><Sponsor id="1487185">Mr Mark Harper</Sponsor>
+<PageStart id="7338380" PageType="BodyPage" PageNum="31">31</PageStart><Clause.Committee id="1487179" Star="No"><Sponsors id="1487182"><Sponsor id="1487185">Mr Mark Harper</Sponsor>
 <Sponsor id="1487190">John Penrose</Sponsor>
 <Sponsor id="1487195">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1487201">
-<AmendmentNumber_PgfTag id="7337236">13</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7337236"><PageStart id="7338380" PageType="BodyPage" PageNum="31">31</PageStart>13</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1487236">
-<AmedTextCommitReport_PgfTag id="7337268"><Number id="1487206">Clause <Clause_number>73</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7337268"><PageStart id="7338380" PageType="BodyPage" PageNum="31">31</PageStart><Number id="1487206">Clause <Clause_number>73</Clause_number>, </Number>
 <Page id="1487216">page <Page_number>55</Page_number>, </Page>
 <Line id="1487226">line <Line_number>20</Line_number>, </Line>
 leave out paragraph (b).</AmedTextCommitReport_PgfTag>
@@ -298,10 +298,10 @@ leave out paragraph (b).</AmedTextCommitReport_PgfTag>
 <Sponsor id="1486909">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1486915">
-<AmendmentNumber_PgfTag id="7337289">12</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7337289"><PageStart id="7338380" PageType="BodyPage" PageNum="31">31</PageStart>12</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1486950">
-<AmedTextCommitReport_PgfTag id="7337312"><Page id="1486930">Page <Page_number>55</Page_number>, </Page>
+<AmedTextCommitReport_PgfTag id="7337312"><PageStart id="7338380" PageType="BodyPage" PageNum="31">31</PageStart><Page id="1486930">Page <Page_number>55</Page_number>, </Page>
 <Line id="1486940">line <Line_number>13</Line_number>, </Line>
 leave out Clause 73.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
@@ -312,41 +312,41 @@ leave out Clause 73.</AmedTextCommitReport_PgfTag>
 <Sponsor id="1489335">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1489341">
-<AmendmentNumber_PgfTag id="7337337">16</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7337337"><PageStart id="7338380" PageType="BodyPage" PageNum="31">31</PageStart>16</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1489718">
-<AmedTextCommitReport_PgfTag id="7337369"><Number id="1489346">Clause <Clause_number>118</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7337369"><PageStart id="7338380" PageType="BodyPage" PageNum="31">31</PageStart><Number id="1489346">Clause <Clause_number>118</Clause_number>, </Number>
 <Page id="1489356">page <Page_number>85</Page_number>, </Page>
 <Line id="1489366">line <Line_number>28</Line_number>, </Line>
 leave out paragraph (c).</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
-<Clause.Committee id="1489722" Star="No"><Sponsors id="1489725"><Sponsor id="1489728">Mr Mark Harper</Sponsor>
+<PageStart id="7338407" PageType="BodyPage" PageNum="32">32</PageStart><Clause.Committee id="1489722" Star="No"><Sponsors id="1489725"><Sponsor id="1489728">Mr Mark Harper</Sponsor>
 <Sponsor id="1489733">John Penrose</Sponsor>
 <Sponsor id="1489738">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1489744">
-<AmendmentNumber_PgfTag id="7337390">17</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7337390"><PageStart id="7338407" PageType="BodyPage" PageNum="32">32</PageStart>17</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1489779">
-<AmedTextCommitReport_PgfTag id="7337420"><Number id="1489749">Clause <Clause_number>118</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7337420"><PageStart id="7338407" PageType="BodyPage" PageNum="32">32</PageStart><Number id="1489749">Clause <Clause_number>118</Clause_number>, </Number>
 <Page id="1489759">page <Page_number>85</Page_number>, </Page>
 <Line id="1489769">line <Line_number>29</Line_number>, </Line>
 leave out subsection (3) and insert—</AmedTextCommitReport_PgfTag>
 <SubSection id="1490108" Number="3" Quote="Single">
-<SubSection_PgfTag id="7337423"><PgfNumString><PgfNumString_1>‘(3)</PgfNumString_1> </PgfNumString><SubSection_text>In the event that an employment tribunal finds that an employer has contravened a term modified or included by an equality clause, the employer shall be required to undertake an audit, to be known as an equal pay audit, and to make the results of the audit available in a manner prescribed in regulations made by the Secretary of State.’.</SubSection_text></SubSection_PgfTag>
+<SubSection_PgfTag id="7337423"><PgfNumString><PgfNumString_1>‘(3)</PgfNumString_1> </PgfNumString><PageStart id="7338407" PageType="BodyPage" PageNum="32">32</PageStart><SubSection_text>In the event that an employment tribunal finds that an employer has contravened a term modified or included by an equality clause, the employer shall be required to undertake an audit, to be known as an equal pay audit, and to make the results of the audit available in a manner prescribed in regulations made by the Secretary of State.’.</SubSection_text></SubSection_PgfTag>
 </SubSection>
 </Amendment.Text>
 </Clause.Committee>
-<Clause.Committee id="1490439" Star="No"><Sponsors id="1490442"><Sponsor id="1490445">Mr Mark Harper</Sponsor>
+<PageStart id="7338407" PageType="BodyPage" PageNum="32">32</PageStart><Clause.Committee id="1490439" Star="No"><Sponsors id="1490442"><Sponsor id="1490445">Mr Mark Harper</Sponsor>
 <Sponsor id="1490450">John Penrose</Sponsor>
 <Sponsor id="1490455">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1490461">
-<AmendmentNumber_PgfTag id="7337447">18</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7337447"><PageStart id="7338407" PageType="BodyPage" PageNum="32">32</PageStart>18</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1490864">
-<AmedTextCommitReport_PgfTag id="7337479"><Number id="1490466">Clause <Clause_number>118</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7337479"><PageStart id="7338407" PageType="BodyPage" PageNum="32">32</PageStart><Number id="1490466">Clause <Clause_number>118</Clause_number>, </Number>
 <Page id="1490476">page <Page_number>86</Page_number>, </Page>
 <Line id="1490486">line <Line_number>8</Line_number>, </Line>
 leave out subsection (7).</AmedTextCommitReport_PgfTag>
@@ -358,10 +358,10 @@ leave out subsection (7).</AmedTextCommitReport_PgfTag>
 <Sponsor id="1490884">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1490890">
-<AmendmentNumber_PgfTag id="7337504">19</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7337504"><PageStart id="7338407" PageType="BodyPage" PageNum="32">32</PageStart>19</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1490925">
-<AmedTextCommitReport_PgfTag id="7337534"><Number id="1490895">Clause <Clause_number>143</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7337534"><PageStart id="7338407" PageType="BodyPage" PageNum="32">32</PageStart><Number id="1490895">Clause <Clause_number>143</Clause_number>, </Number>
 <Page id="1490905">page <Page_number>105</Page_number>, </Page>
 <Line id="1490915">line <Line_number>14</Line_number>, </Line>
 at beginning insert ‘Subsection (1) will also apply to’.</AmedTextCommitReport_PgfTag>
@@ -372,10 +372,10 @@ at beginning insert ‘Subsection (1) will also apply to’.</AmedTextCommitRepo
 <Sponsor id="1491308">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1491314">
-<AmendmentNumber_PgfTag id="7337557">20</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7337557"><PageStart id="7338407" PageType="BodyPage" PageNum="32">32</PageStart>20</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1491349">
-<AmedTextCommitReport_PgfTag id="7337578"><Number id="1491319">Clause <Clause_number>143</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7337578"><PageStart id="7338407" PageType="BodyPage" PageNum="32">32</PageStart><Number id="1491319">Clause <Clause_number>143</Clause_number>, </Number>
 <Page id="1491329">page <Page_number>105</Page_number>, </Page>
 leave out lines 15 and 16 and insert ‘except in relation to matters of employment’.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
@@ -385,50 +385,50 @@ leave out lines 15 and 16 and insert ‘except in relation to matters of employm
 <Sponsor id="1491774">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1491780">
-<AmendmentNumber_PgfTag id="7337601">21</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7337601"><PageStart id="7338407" PageType="BodyPage" PageNum="32">32</PageStart>21</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1491815">
-<AmedTextCommitReport_PgfTag id="7337631"><Number id="1491785">Clause <Clause_number>143</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7337631"><PageStart id="7338407" PageType="BodyPage" PageNum="32">32</PageStart><Number id="1491785">Clause <Clause_number>143</Clause_number>, </Number>
 <Page id="1491795">page <Page_number>105</Page_number>, </Page>
 <Line id="1491805">line <Line_number>35</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
 <SubSection id="1492226" Number="5" Quote="Single" Letter="A">
-<SubSection_PgfTag id="7337634"><PgfNumString><PgfNumString_1>‘(5A)</PgfNumString_1> </PgfNumString><SubSection_text>A public authority must collect and publish data annually showing, in the exercise of its functions, the extent to which it has succeeded in meeting the requirements under subsection (1).’.</SubSection_text></SubSection_PgfTag>
+<SubSection_PgfTag id="7337634"><PgfNumString><PgfNumString_1>‘(5A)</PgfNumString_1> </PgfNumString><PageStart id="7338407" PageType="BodyPage" PageNum="32">32</PageStart><SubSection_text>A public authority must collect and publish data annually showing, in the exercise of its functions, the extent to which it has succeeded in meeting the requirements under subsection (1).’.</SubSection_text></SubSection_PgfTag>
 </SubSection>
 </Amendment.Text>
 </Clause.Committee>
-<Separator.thick id="5232878"></Separator.thick>
+<PageStart id="7338407" PageType="BodyPage" PageNum="32">32</PageStart><Separator.thick id="5232878"></Separator.thick>
 <Clause.Committee id="1492631" Star="No"><Sponsors id="1492634"><Sponsor id="1492637">Mr Mark Harper</Sponsor>
 <Sponsor id="1492642">John Penrose</Sponsor>
 <Sponsor id="1492647">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1492653">
-<AmendmentNumber_PgfTag id="7337662">22</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7337662"><PageStart id="7338407" PageType="BodyPage" PageNum="32">32</PageStart>22</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1493132">
-<AmedTextCommitReport_PgfTag id="7337692"><Number id="1492658">Clause <Clause_number>147</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7337692"><PageStart id="7338407" PageType="BodyPage" PageNum="32">32</PageStart><Number id="1492658">Clause <Clause_number>147</Clause_number>, </Number>
 <Page id="1492668">page <Page_number>108</Page_number>, </Page>
 <Line id="1492678">line <Line_number>27</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
 <SubSection id="1493136" Number="5" Quote="Single">
-<SubSection_PgfTag id="7337695"><PgfNumString><PgfNumString_1>‘(5)</PgfNumString_1> </PgfNumString><SubSection_text>Before regulations are made under this section, there must be laid before both Houses of Parliament—</SubSection_text></SubSection_PgfTag>
+<SubSection_PgfTag id="7337695"><PgfNumString><PgfNumString_1>‘(5)</PgfNumString_1> </PgfNumString><PageStart id="7338407" PageType="BodyPage" PageNum="32">32</PageStart><SubSection_text>Before regulations are made under this section, there must be laid before both Houses of Parliament—</SubSection_text></SubSection_PgfTag>
 <Para id="1493562">
 <Paragraph_PgfTag id="7337699"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para_text>draft regulations, and</Para_text></Paragraph_PgfTag>
 </Para><Para id="1493569">
-<Paragraph_PgfTag id="7337702"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text>evidence that the regulations will enable the better performance by public authorities of the duty imposed by subsection (1).’.</Para_text></Paragraph_PgfTag>
+<Paragraph_PgfTag id="7337702"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><PageStart id="7338433" PageType="BodyPage" PageNum="33">33</PageStart><Para_text>evidence that the regulations will enable the better performance by public authorities of the duty imposed by subsection (1).’.</Para_text></Paragraph_PgfTag>
 </Para></SubSection>
 </Amendment.Text>
 </Clause.Committee>
-<Separator.thin id="5232894"></Separator.thin>
+<PageStart id="7338433" PageType="BodyPage" PageNum="33">33</PageStart><Separator.thin id="5232894"></Separator.thin>
 <Clause.Committee id="1497675" Star="No"><Sponsors id="1497678"><Sponsor id="1497681">Mr Mark Harper</Sponsor>
 <Sponsor id="1497686">John Penrose</Sponsor>
 <Sponsor id="1497691">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1497697">
-<AmendmentNumber_PgfTag id="7337731">29</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7337731"><PageStart id="7338433" PageType="BodyPage" PageNum="33">33</PageStart>29</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1497732">
-<AmedTextCommitReport_PgfTag id="7337761"><Number id="1497702">Clause <Clause_number>153</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7337761"><PageStart id="7338433" PageType="BodyPage" PageNum="33">33</PageStart><Number id="1497702">Clause <Clause_number>153</Clause_number>, </Number>
 <Page id="1497712">page <Page_number>113</Page_number>, </Page>
 <Line id="1497722">line <Line_number>2</Line_number>, </Line>
 leave out ‘reasonably thinks’ and insert ‘can demonstrate’.</AmedTextCommitReport_PgfTag>
@@ -439,10 +439,10 @@ leave out ‘reasonably thinks’ and insert ‘can demonstrate’.</AmedTextCom
 <Sponsor id="1493597">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1493603">
-<AmendmentNumber_PgfTag id="7337784">23</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7337784"><PageStart id="7338433" PageType="BodyPage" PageNum="33">33</PageStart>23</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1494126">
-<AmedTextCommitReport_PgfTag id="7337814"><Number id="1493608">Clause <Clause_number>153</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7337814"><PageStart id="7338433" PageType="BodyPage" PageNum="33">33</PageStart><Number id="1493608">Clause <Clause_number>153</Clause_number>, </Number>
 <Page id="1493618">page <Page_number>113</Page_number>, </Page>
 <Line id="1493628">line <Line_number>16</Line_number>, </Line>
 leave out ‘as qualified as’ and insert ‘equally qualified to’.</AmedTextCommitReport_PgfTag>
@@ -453,10 +453,10 @@ leave out ‘as qualified as’ and insert ‘equally qualified to’.</AmedText
 <Sponsor id="1494146">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1494152">
-<AmendmentNumber_PgfTag id="7337837">24</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7337837"><PageStart id="7338433" PageType="BodyPage" PageNum="33">33</PageStart>24</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1494187">
-<AmedTextCommitReport_PgfTag id="7337860"><Page id="1494167">Page <Page_number>113</Page_number>, </Page>
+<AmedTextCommitReport_PgfTag id="7337860"><PageStart id="7338433" PageType="BodyPage" PageNum="33">33</PageStart><Page id="1494167">Page <Page_number>113</Page_number>, </Page>
 <Line id="1494177">line <Line_number>1</Line_number>, </Line>
 leave out Clause 153.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
@@ -467,27 +467,27 @@ leave out Clause 153.</AmedTextCommitReport_PgfTag>
 <Sponsor id="1497834">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1497840">
-<AmendmentNumber_PgfTag id="7337885">30</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7337885"><PageStart id="7338433" PageType="BodyPage" PageNum="33">33</PageStart>30</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1497875">
-<AmedTextCommitReport_PgfTag id="7337915"><Number id="1497845">Clause <Clause_number>190</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7337915"><PageStart id="7338433" PageType="BodyPage" PageNum="33">33</PageStart><Number id="1497845">Clause <Clause_number>190</Clause_number>, </Number>
 <Page id="1497855">page <Page_number>135</Page_number>, </Page>
 <Line id="1497865">line <Line_number>23</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
 <SubSection id="1497976" Number="5" Quote="Single">
-<SubSection_PgfTag id="7337918"><PgfNumString><PgfNumString_1>‘(5)</PgfNumString_1> </PgfNumString><SubSection_text>An order under subsection (1) may only be made if the Minister can demonstrate that persons of a specified age are being discriminated against for no legitimate reason.’.</SubSection_text></SubSection_PgfTag>
+<SubSection_PgfTag id="7337918"><PgfNumString><PgfNumString_1>‘(5)</PgfNumString_1> </PgfNumString><PageStart id="7338433" PageType="BodyPage" PageNum="33">33</PageStart><SubSection_text>An order under subsection (1) may only be made if the Minister can demonstrate that persons of a specified age are being discriminated against for no legitimate reason.’.</SubSection_text></SubSection_PgfTag>
 </SubSection>
 </Amendment.Text>
 </Clause.Committee>
-<Clause.Committee id="1494655" Star="No"><Sponsors id="1494658"><Sponsor id="1494661">Mr Mark Harper</Sponsor>
+<PageStart id="7338433" PageType="BodyPage" PageNum="33">33</PageStart><Clause.Committee id="1494655" Star="No"><Sponsors id="1494658"><Sponsor id="1494661">Mr Mark Harper</Sponsor>
 <Sponsor id="1494666">John Penrose</Sponsor>
 <Sponsor id="1494671">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1494677">
-<AmendmentNumber_PgfTag id="7337942">25</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7337942"><PageStart id="7338433" PageType="BodyPage" PageNum="33">33</PageStart>25</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1494702">
-<AmedTextCommitReport_PgfTag id="7337965"><Page id="1494682">Page <Page_number>135</Page_number>, </Page>
+<AmedTextCommitReport_PgfTag id="7337965"><PageStart id="7338433" PageType="BodyPage" PageNum="33">33</PageStart><Page id="1494682">Page <Page_number>135</Page_number>, </Page>
 <Line id="1494692">line <Line_number>9</Line_number>, </Line>
 leave out Clause 190.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
@@ -498,24 +498,24 @@ leave out Clause 190.</AmedTextCommitReport_PgfTag>
 <Sponsor id="1498093">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1498099">
-<AmendmentNumber_PgfTag id="7337990">31</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7337990"><PageStart id="7338433" PageType="BodyPage" PageNum="33">33</PageStart>31</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1498134">
-<AmedTextCommitReport_PgfTag id="7338022"><Number id="1498104">Clause <Clause_number>191</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7338022"><PageStart id="7338433" PageType="BodyPage" PageNum="33">33</PageStart><Number id="1498104">Clause <Clause_number>191</Clause_number>, </Number>
 <Page id="1498114">page <Page_number>136</Page_number>, </Page>
 <Line id="1498124">line <Line_number>4</Line_number>, </Line>
 leave out ‘thinks’ and insert ‘can demonstrate’.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
-<Clause.Committee id="1498284" Star="No"><Sponsors id="1498287"><Sponsor id="1498290">Mr Mark Harper</Sponsor>
+<PageStart id="7338456" PageType="BodyPage" PageNum="34">34</PageStart><Clause.Committee id="1498284" Star="No"><Sponsors id="1498287"><Sponsor id="1498290">Mr Mark Harper</Sponsor>
 <Sponsor id="1498295">John Penrose</Sponsor>
 <Sponsor id="1498300">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1498306">
-<AmendmentNumber_PgfTag id="7338043">32</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7338043"><PageStart id="7338456" PageType="BodyPage" PageNum="34">34</PageStart>32</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1498341">
-<AmedTextCommitReport_PgfTag id="7338075"><Number id="1498311">Clause <Clause_number>191</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7338075"><PageStart id="7338456" PageType="BodyPage" PageNum="34">34</PageStart><Number id="1498311">Clause <Clause_number>191</Clause_number>, </Number>
 <Page id="1498321">page <Page_number>136</Page_number>, </Page>
 <Line id="1498331">line <Line_number>9</Line_number>, </Line>
 leave out ‘thinks’ and insert ‘can demonstrate’.</AmedTextCommitReport_PgfTag>
@@ -526,10 +526,10 @@ leave out ‘thinks’ and insert ‘can demonstrate’.</AmedTextCommitReport_P
 <Sponsor id="1498506">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1498512">
-<AmendmentNumber_PgfTag id="7338096">33</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7338096"><PageStart id="7338456" PageType="BodyPage" PageNum="34">34</PageStart>33</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1498547">
-<AmedTextCommitReport_PgfTag id="7338128"><Number id="1498517">Clause <Clause_number>191</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7338128"><PageStart id="7338456" PageType="BodyPage" PageNum="34">34</PageStart><Number id="1498517">Clause <Clause_number>191</Clause_number>, </Number>
 <Page id="1498527">page <Page_number>136</Page_number>, </Page>
 <Line id="1498537">line <Line_number>16</Line_number>, </Line>
 leave out ‘thinks’ and insert ‘can demonstrate’.</AmedTextCommitReport_PgfTag>
@@ -540,10 +540,10 @@ leave out ‘thinks’ and insert ‘can demonstrate’.</AmedTextCommitReport_P
 <Sponsor id="1498719">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1498725">
-<AmendmentNumber_PgfTag id="7338149">34</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7338149"><PageStart id="7338456" PageType="BodyPage" PageNum="34">34</PageStart>34</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1498760">
-<AmedTextCommitReport_PgfTag id="7338181"><Number id="1498730">Clause <Clause_number>191</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7338181"><PageStart id="7338456" PageType="BodyPage" PageNum="34">34</PageStart><Number id="1498730">Clause <Clause_number>191</Clause_number>, </Number>
 <Page id="1498740">page <Page_number>136</Page_number>, </Page>
 <Line id="1498750">line <Line_number>23</Line_number>, </Line>
 leave out ‘thinks’ and insert ‘can demonstrate’.</AmedTextCommitReport_PgfTag>
@@ -554,10 +554,10 @@ leave out ‘thinks’ and insert ‘can demonstrate’.</AmedTextCommitReport_P
 <Sponsor id="1495201">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1495207">
-<AmendmentNumber_PgfTag id="7338202">26</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7338202"><PageStart id="7338456" PageType="BodyPage" PageNum="34">34</PageStart>26</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1495232">
-<AmedTextCommitReport_PgfTag id="7338225"><Page id="1495212">Page <Page_number>136</Page_number>, </Page>
+<AmedTextCommitReport_PgfTag id="7338225"><PageStart id="7338456" PageType="BodyPage" PageNum="34">34</PageStart><Page id="1495212">Page <Page_number>136</Page_number>, </Page>
 <Line id="1495222">line <Line_number>1</Line_number>, </Line>
 leave out Clause 191.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
@@ -565,17 +565,17 @@ leave out Clause 191.</AmedTextCommitReport_PgfTag>
 <Separator.thick id="5231613"></Separator.thick>
 <Heading.text id="5231630">New Clauses</Heading.text>
 <NewClause.Committee id="1495739" Star="No"><ClauseTitle id="1495747">
-<New_C_STitle_PgfTag id="7338239"><PgfNumString></PgfNumString><ClauseTitle_text>Free miners</ClauseTitle_text></New_C_STitle_PgfTag>
-</ClauseTitle><Sponsors id="1495759"><Sponsor id="1495762">Mr Mark Harper</Sponsor>
+<New_C_STitle_PgfTag id="7338239"><PgfNumString></PgfNumString><PageStart id="7338456" PageType="BodyPage" PageNum="34">34</PageStart><ClauseTitle_text>Free miners</ClauseTitle_text></New_C_STitle_PgfTag>
+</ClauseTitle><PageStart id="7338456" PageType="BodyPage" PageNum="34">34</PageStart><Sponsors id="1495759"><Sponsor id="1495762">Mr Mark Harper</Sponsor>
 <Sponsor id="1495767">John Penrose</Sponsor>
 <Sponsor id="1495772">Mr John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1496278">
-<AmendmentNumber_PgfTag id="7338258">NC1</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7338258"><PageStart id="7338456" PageType="BodyPage" PageNum="34">34</PageStart>NC1</AmendmentNumber_PgfTag>
 </Amendment.Number>
-<Move id="1496292">To move the following Clause:—</Move>
+<PageStart id="7338456" PageType="BodyPage" PageNum="34">34</PageStart><Move id="1496292">To move the following Clause:—</Move>
 <ClauseText id="1496307"><SubSection id="5237401">
-<SubSection1_PgfTag id="7338271"><PgfNumString><PgfNumString_1>‘(1)</PgfNumString_1> </PgfNumString><SubSection_text>The Dean Forest (Mines) Act 1838 is amended as follows.</SubSection_text></SubSection1_PgfTag>
+<SubSection1_PgfTag id="7338271"><PgfNumString><PgfNumString_1>‘(1)</PgfNumString_1> </PgfNumString><PageStart id="7338456" PageType="BodyPage" PageNum="34">34</PageStart><SubSection_text>The Dean Forest (Mines) Act 1838 is amended as follows.</SubSection_text></SubSection1_PgfTag>
 </SubSection>
 <SubSection id="5237461">
 <SubSection_PgfTag id="7338275"><PgfNumString><PgfNumString_1>(2)</PgfNumString_1> </PgfNumString><SubSection_text>In section XIV (Who shall be deemed Free Miners), line 1, leave out “male”.</SubSection_text></SubSection_PgfTag>
@@ -584,28 +584,28 @@ leave out Clause 191.</AmedTextCommitReport_PgfTag>
 <SubSection_PgfTag id="7338278"><PgfNumString><PgfNumString_1>(3)</PgfNumString_1> </PgfNumString><SubSection_text>In section XV (Quarrymen to be deemed Free Miners for certain purposes), line 1, leave out “male”.’.</SubSection_text></SubSection_PgfTag>
 </SubSection>
 </ClauseText>
- </NewClause.Committee>
+<PageStart id="7338456" PageType="BodyPage" PageNum="34">34</PageStart> </NewClause.Committee>
 <NewClause.Committee id="1497627" Star="No"><ClauseTitle id="1497635">
-<New_C_STitle_PgfTag id="7338291"><PgfNumString></PgfNumString><ClauseTitle_text>Mental Health Act 1983: Members of Parliament</ClauseTitle_text></New_C_STitle_PgfTag>
-</ClauseTitle><Sponsors id="1497644"><Sponsor id="1497648">Mr Mark Harper</Sponsor>
+<New_C_STitle_PgfTag id="7338291"><PgfNumString></PgfNumString><PageStart id="7338483" PageType="BodyPage" PageNum="35">35</PageStart><ClauseTitle_text>Mental Health Act 1983: Members of Parliament</ClauseTitle_text></New_C_STitle_PgfTag>
+</ClauseTitle><PageStart id="7338483" PageType="BodyPage" PageNum="35">35</PageStart><Sponsors id="1497644"><Sponsor id="1497648">Mr Mark Harper</Sponsor>
 <Sponsor id="1497654">John Penrose</Sponsor>
 <Sponsor id="1497663">John Baron</Sponsor>
 </Sponsors>
 <Amendment.Number id="1497677">
-<AmendmentNumber_PgfTag id="7338310">NC2</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7338310"><PageStart id="7338483" PageType="BodyPage" PageNum="35">35</PageStart>NC2</AmendmentNumber_PgfTag>
 </Amendment.Number>
-<Move id="1497693">To move the following Clause:—</Move>
+<PageStart id="7338483" PageType="BodyPage" PageNum="35">35</PageStart><Move id="1497693">To move the following Clause:—</Move>
 <ClauseText id="1497704"><SubSection id="1497714">
-<SubSection1_PgfTag id="7338323"><PgfNumString><PgfNumString_1>‘(1)</PgfNumString_1> </PgfNumString><SubSection_text>The Mental Health Act 1983 is amended as follows.</SubSection_text></SubSection1_PgfTag>
+<SubSection1_PgfTag id="7338323"><PgfNumString><PgfNumString_1>‘(1)</PgfNumString_1> </PgfNumString><PageStart id="7338483" PageType="BodyPage" PageNum="35">35</PageStart><SubSection_text>The Mental Health Act 1983 is amended as follows.</SubSection_text></SubSection1_PgfTag>
 </SubSection>
 <SubSection id="1497719">
 <SubSection_PgfTag id="7338329"><PgfNumString><PgfNumString_1>(2)</PgfNumString_1> </PgfNumString><SubSection_text>Subsections (2) to (7) of section 141 of the Mental Health Act 1983 are deleted.’.</SubSection_text></SubSection_PgfTag>
 </SubSection>
 </ClauseText>
 </NewClause.Committee>
- </Committee>
+<PageStart id="7338483" PageType="BodyPage" PageNum="35">35</PageStart> </Committee>
 <Order.House id="5229327"><OrderDate id="5229330" Auto="No">
-<OrderHeading_PgfTag id="7338337"><PgfNumString></PgfNumString><OrderDate_text>Order of the House [11 MAY 2009]</OrderDate_text></OrderHeading_PgfTag>
+<OrderHeading_PgfTag id="7338337"><PgfNumString></PgfNumString><PageStart id="7338483" PageType="BodyPage" PageNum="35">35</PageStart><OrderDate_text>Order of the House [11 MAY 2009]</OrderDate_text></OrderHeading_PgfTag>
 </OrderDate>
 <OrderPreamble id="5229335">That the following provisions shall apply to the Equality Bill:</OrderPreamble><OrderText id="5229340"><OrderCrossHeading id="5229343"><CrossHeadingTitle id="5229346">Committal</CrossHeadingTitle>
 
@@ -630,6 +630,6 @@ leave out Clause 191.</AmedTextCommitReport_PgfTag>
 <OrderHousePara_PgfTag id="7332415"><PgfNumString><PgfNumString_1>7.</PgfNumString_1> </PgfNumString><OrderPara id="5229408"><OrderPara_text>Any other proceedings on the Bill (including any proceedings on consideration of Lords Amendments or on any further messages from the Lords) may be programmed.</OrderPara_text></OrderPara></OrderHousePara_PgfTag>
 </OrderCrossHeading>
 </OrderText>
- </Order.House>
+<PageStart id="7338483" PageType="BodyPage" PageNum="35">35</PageStart> </Order.House>
 </Amendments.Commons>
 </Document>

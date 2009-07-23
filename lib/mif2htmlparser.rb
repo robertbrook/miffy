@@ -1,4 +1,4 @@
-require 'mifparser'
+require 'mifparserutils'
 require 'htmlentities'
 require 'open-uri'
 require 'hpricot'
@@ -38,7 +38,7 @@ class Mif2HtmlParser
     reg_exp = Regexp.new('(Number|Page|Line)\n(\s+)(\S+)\n(\s+)%span\.(\S+)_number\n(\s+)(\S+)\n(\s+),', Regexp::MULTILINE)
     haml.gsub!(reg_exp, '\1' + "\n" + '\2\3 <span class="\5_number">\7</span>,')
     haml.gsub!(/(Letter|FrameData|Dropcap|Bold|\w+_number|PgfNumString_\d)\n/, '\1' + "<>\n")
-    haml.gsub!(/(SmallCaps|\}|PgfNumString|\w+_text)\n/, '\1' + "<\n")
+    haml.gsub!(/(SmallCaps|\}|PgfNumString|\w+_text|PageStart)\n/, '\1' + "<\n")
     haml
   end
   
@@ -170,6 +170,7 @@ class Mif2HtmlParser
       Bold_text
       WHITESPACE
       FrameData
+      PageStart
       Number Page Line ].inject({}){|h,v| h[v]=true; h}
   SPAN_RE = Regexp.new "(^#{SPAN.keys.join("$|")}$)"
 
@@ -201,7 +202,7 @@ class Mif2HtmlParser
     end
     xml << %Q| id="#{node['id']}"| if node['id']
     if name == 'hr'
-      xml << " />"      
+      xml << " />"  
     else
       xml << ">"
       node_children_to_html(node, xml)
@@ -268,6 +269,11 @@ class Mif2HtmlParser
         add_html_element 'div', node, xml
       when SPAN_RE
         add_html_element 'span', node, xml
+        if node.name == 'PageStart'
+          line = xml.pop
+          line += '<br />'
+          xml << line
+        end
       when UL_RE
         add_html_element 'ul', node, xml
       when LI_RE

@@ -1,66 +1,66 @@
-<Document><Amendments.Commons id="1054859" Auto="Yes" AutoRules="Yes"><Head id="1054862"><HeadConsider id="1054865"><Date id="1054868"><Day id="1054871">Tuesday </Day><Date.text id="1054878">2 June 2009</Date.text>
+<Document><PageStart id="996720" PageType="BodyPage" PageNum="29">29</PageStart><Amendments.Commons id="1054859" Auto="Yes" AutoRules="Yes"><Head id="1054862"><HeadConsider id="1054865"><Date id="1054868"><Day id="1054871">Tuesday </Day><Date.text id="1054878">2 June 2009</Date.text>
 </Date>
 <Stageheader id="5162740" Stage="Committee">Public Bill Committee</Stageheader>
 <CommitteeShorttitle id="1045605"><STText id="1053799">Finance Bill</STText></CommitteeShorttitle>
 <ClausesToBeConsidered id="1151029">(Except Clauses 7, 8, 9, 11, 14, 16, 20 and 92)</ClausesToBeConsidered>
 <MarshalledOrderNote id="7313383"><Notehead id="7313387">Note</Notehead>
-<NoteTxt id="7313431">The Amendments have been arranged according to the Order of the Committee [19 May 2009].</NoteTxt>
- </MarshalledOrderNote>
+<PageStart id="996720" PageType="BodyPage" PageNum="29">29</PageStart><NoteTxt id="7313431">The Amendments have been arranged according to the Order of the Committee [19 May 2009].</NoteTxt>
+<PageStart id="996720" PageType="BodyPage" PageNum="29">29</PageStart> </MarshalledOrderNote>
 </HeadConsider>
 </Head>
 <Committee id="5166572"><Clause.Committee id="2494674" Star="No"><Sponsors id="2494677"><Sponsor id="2494680">Mr Jeremy Browne</Sponsor>
 </Sponsors>
 <Amendment.Number id="2494686">
-<AmendmentNumber_PgfTag id="7332505">4</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7332505"><PageStart id="996720" PageType="BodyPage" PageNum="29">29</PageStart>4</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="2494721">
-<AmedTextCommitReport_PgfTag id="7332535"><Number id="2494691">Clause <Clause_number>17</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7332535"><PageStart id="996720" PageType="BodyPage" PageNum="29">29</PageStart><Number id="2494691">Clause <Clause_number>17</Clause_number>, </Number>
 <Page id="2494701">page <Page_number>11</Page_number>, </Page>
 <Line id="2494711">line <Line_number>4</Line_number>, </Line>
 leave out from ‘substitute’ to end of line 29 and insert—</AmedTextCommitReport_PgfTag>
 <SubSection id="7316809" Number="1" Quote="Single">
-<SubSection_PgfTag id="7332538"><PgfNumString><PgfNumString_1>‘(1)</PgfNumString_1> </PgfNumString><SubSection_text>Aircraft flight duty is chargeable in respect of each freight and passenger aircraft on each flight undertaken by that aircraft from a destination within the UK.’.</SubSection_text></SubSection_PgfTag>
+<SubSection_PgfTag id="7332538"><PgfNumString><PgfNumString_1>‘(1)</PgfNumString_1> </PgfNumString><PageStart id="996720" PageType="BodyPage" PageNum="29">29</PageStart><SubSection_text>Aircraft flight duty is chargeable in respect of each freight and passenger aircraft on each flight undertaken by that aircraft from a destination within the UK.’.</SubSection_text></SubSection_PgfTag>
 </SubSection>
 </Amendment.Text>
 </Clause.Committee>
-<Clause.Committee id="7380678" Star="White"><Sponsors id="7380681"><Sponsor id="7380684">Mr Greg Hands</Sponsor>
+<PageStart id="996720" PageType="BodyPage" PageNum="29">29</PageStart><Clause.Committee id="7380678" Star="White"><Sponsors id="7380681"><Sponsor id="7380684">Mr Greg Hands</Sponsor>
 <Sponsor id="7380689">Mr Mark Hoban</Sponsor>
 <Sponsor id="7380694">Mr David Gauke</Sponsor>
 </Sponsors>
 <Amendment.Number id="7380700">
-<AmendmentNumber_PgfTag id="7380702">40</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7380702"><PageStart id="996720" PageType="BodyPage" PageNum="29">29</PageStart>40</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="7380735">
-<AmedTextCommitReport_PgfTag id="7380736"><PgfNumString><PgfNumString_0>#</PgfNumString_0> </PgfNumString><Number id="7380705"><Number_text>Clause <Clause_number>17</Clause_number>, </Number_text></Number>
+<AmedTextCommitReport_PgfTag id="7380736"><PgfNumString><PgfNumString_0>#</PgfNumString_0> </PgfNumString><PageStart id="996720" PageType="BodyPage" PageNum="29">29</PageStart><Number id="7380705"><Number_text>Clause <Clause_number>17</Clause_number>, </Number_text></Number>
 <Page id="7380715"><Page_text>page <Page_number>11</Page_number>, </Page_text></Page>
 <Line id="7380725"><Line_text>line <Line_number>33</Line_number>, </Line_text></Line>
 <Amendment.Text_text>at end insert—</Amendment.Text_text></AmedTextCommitReport_PgfTag>
 <SubSection id="1490382" Number="3" Letter="A" Quote="Single">
-<SubSection_PgfTag id="7380739"><PgfNumString><PgfNumString_1>‘(3A)</PgfNumString_1> </PgfNumString><SubSection_text>The Treasury shall, no later than the date of the Pre-Budget Report 2009, bring forward plans to replace Air Passenger Duty with a per-plane tax on aircraft currently subject to Air Passenger Duty.’.</SubSection_text></SubSection_PgfTag>
+<SubSection_PgfTag id="7380739"><PgfNumString><PgfNumString_1>‘(3A)</PgfNumString_1> </PgfNumString><PageStart id="996720" PageType="BodyPage" PageNum="29">29</PageStart><SubSection_text>The Treasury shall, no later than the date of the Pre-Budget Report 2009, bring forward plans to replace Air Passenger Duty with a per-plane tax on aircraft currently subject to Air Passenger Duty.’.</SubSection_text></SubSection_PgfTag>
 </SubSection>
 </Amendment.Text>
 </Clause.Committee>
-<Clause.Committee id="2494452" Star="No"><Sponsors id="2494455"><Sponsor id="2494458">Mr Jeremy Browne</Sponsor>
+<PageStart id="996720" PageType="BodyPage" PageNum="29">29</PageStart><Clause.Committee id="2494452" Star="No"><Sponsors id="2494455"><Sponsor id="2494458">Mr Jeremy Browne</Sponsor>
 </Sponsors>
 <Amendment.Number id="2494464">
-<AmendmentNumber_PgfTag id="7380755">3</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7380755"><PageStart id="996720" PageType="BodyPage" PageNum="29">29</PageStart>3</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="2494669">
-<AmedTextCommitReport_PgfTag id="7380778"><Page id="2494479">Page <Page_number>11</Page_number>, </Page>
+<AmedTextCommitReport_PgfTag id="7380778"><PageStart id="996720" PageType="BodyPage" PageNum="29">29</PageStart><Page id="2494479">Page <Page_number>11</Page_number>, </Page>
 <Line id="2494489">line <Line_number>1</Line_number>, </Line>
 leave out Clause 17.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Separator.thick id="7336910"></Separator.thick>
-<Schedule.Committee id="1487324" Star="No"><Sponsors id="1487327"><Sponsor id="1487330">Mr Mark Hoban</Sponsor>
+<PageStart id="5184211" PageType="BodyPage" PageNum="30">30</PageStart><Schedule.Committee id="1487324" Star="No"><Sponsors id="1487327"><Sponsor id="1487330">Mr Mark Hoban</Sponsor>
 <Sponsor id="1487335">Mr David Gauke</Sponsor>
 <Sponsor id="1487340">Mr Greg Hands</Sponsor>
 </Sponsors>
 <Amendment.Number id="1487346">
-<AmendmentNumber_PgfTag id="7380803">31</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7380803"><PageStart id="5184211" PageType="BodyPage" PageNum="30">30</PageStart>31</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1487381">
-<AmedTextCommitReport_PgfTag id="7380835"><Number id="1487351">Schedule <Schedule_number>6</Schedule_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7380835"><PageStart id="5184211" PageType="BodyPage" PageNum="30">30</PageStart><Number id="1487351">Schedule <Schedule_number>6</Schedule_number>, </Number>
 <Page id="1487361">page <Page_number>90</Page_number>, </Page>
 <Line id="1487371">line <Line_number>44</Line_number>, </Line>
 leave out ‘£50,000’ and insert ‘£100,000’.</AmedTextCommitReport_PgfTag>
@@ -71,10 +71,10 @@ leave out ‘£50,000’ and insert ‘£100,000’.</AmedTextCommitReport_PgfTa
 <Sponsor id="1487502">Mr Greg Hands</Sponsor>
 </Sponsors>
 <Amendment.Number id="1487508">
-<AmendmentNumber_PgfTag id="7380856">32</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7380856"><PageStart id="5184211" PageType="BodyPage" PageNum="30">30</PageStart>32</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1487543">
-<AmedTextCommitReport_PgfTag id="7380888"><Number id="1487513">Schedule <Schedule_number>6</Schedule_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7380888"><PageStart id="5184211" PageType="BodyPage" PageNum="30">30</PageStart><Number id="1487513">Schedule <Schedule_number>6</Schedule_number>, </Number>
 <Page id="1487523">page <Page_number>90</Page_number>, </Page>
 <Line id="1487533">line <Line_number>46</Line_number>, </Line>
 leave out ‘£50,000’ and insert ‘£100,000’.</AmedTextCommitReport_PgfTag>
@@ -85,10 +85,10 @@ leave out ‘£50,000’ and insert ‘£100,000’.</AmedTextCommitReport_PgfTa
 <Sponsor id="1488591">Mr Greg Hands</Sponsor>
 </Sponsors>
 <Amendment.Number id="1488597">
-<AmendmentNumber_PgfTag id="7380909">37</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7380909"><PageStart id="5184211" PageType="BodyPage" PageNum="30">30</PageStart>37</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1488632">
-<AmedTextCommitReport_PgfTag id="7380941"><Number id="1488602">Schedule <Schedule_number>6</Schedule_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7380941"><PageStart id="5184211" PageType="BodyPage" PageNum="30">30</PageStart><Number id="1488602">Schedule <Schedule_number>6</Schedule_number>, </Number>
 <Page id="1488612">page <Page_number>91</Page_number>, </Page>
 <Line id="1488622">line <Line_number>27</Line_number>, </Line>
 leave out ‘24 November’ and insert ‘31 December’.</AmedTextCommitReport_PgfTag>
@@ -99,10 +99,10 @@ leave out ‘24 November’ and insert ‘31 December’.</AmedTextCommitReport_
 <Sponsor id="1487696">Mr Greg Hands</Sponsor>
 </Sponsors>
 <Amendment.Number id="1487702">
-<AmendmentNumber_PgfTag id="7380962">33</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7380962"><PageStart id="5184211" PageType="BodyPage" PageNum="30">30</PageStart>33</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1487737">
-<AmedTextCommitReport_PgfTag id="7380994"><Number id="1487707">Schedule <Schedule_number>6</Schedule_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7380994"><PageStart id="5184211" PageType="BodyPage" PageNum="30">30</PageStart><Number id="1487707">Schedule <Schedule_number>6</Schedule_number>, </Number>
 <Page id="1487717">page <Page_number>91</Page_number>, </Page>
 <Line id="1487727">line <Line_number>31</Line_number>, </Line>
 leave out ‘£50,000’ and insert ‘£100,000’.</AmedTextCommitReport_PgfTag>
@@ -113,10 +113,10 @@ leave out ‘£50,000’ and insert ‘£100,000’.</AmedTextCommitReport_PgfTa
 <Sponsor id="1486820">Mr Greg Hands</Sponsor>
 </Sponsors>
 <Amendment.Number id="1486834">
-<AmendmentNumber_PgfTag id="7381015">28</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7381015"><PageStart id="5184211" PageType="BodyPage" PageNum="30">30</PageStart>28</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1486887">
-<AmedTextCommitReport_PgfTag id="7381045"><Number id="1486850">Schedule <Schedule_number>6</Schedule_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381045"><PageStart id="5184211" PageType="BodyPage" PageNum="30">30</PageStart><Number id="1486850">Schedule <Schedule_number>6</Schedule_number>, </Number>
 <Page id="1486867">page <Page_number>91</Page_number>, </Page>
 <Line id="1486877">line <Line_number>32</Line_number>, </Line>
 leave out ‘24 November 2009’ and insert ‘31 December 2010’.</AmedTextCommitReport_PgfTag>
@@ -127,10 +127,10 @@ leave out ‘24 November 2009’ and insert ‘31 December 2010’.</AmedTextCom
 <Sponsor id="1487904">Mr Greg Hands</Sponsor>
 </Sponsors>
 <Amendment.Number id="1487910">
-<AmendmentNumber_PgfTag id="7381068">34</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7381068"><PageStart id="5184211" PageType="BodyPage" PageNum="30">30</PageStart>34</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1487945">
-<AmedTextCommitReport_PgfTag id="7381100"><Number id="1487915">Schedule <Schedule_number>6</Schedule_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381100"><PageStart id="5184211" PageType="BodyPage" PageNum="30">30</PageStart><Number id="1487915">Schedule <Schedule_number>6</Schedule_number>, </Number>
 <Page id="1487925">page <Page_number>91</Page_number>, </Page>
 <Line id="1487935">line <Line_number>33</Line_number>, </Line>
 leave out ‘£50,000’ and insert ‘£100,000’.</AmedTextCommitReport_PgfTag>
@@ -141,10 +141,10 @@ leave out ‘£50,000’ and insert ‘£100,000’.</AmedTextCommitReport_PgfTa
 <Sponsor id="1486907">Mr Greg Hands</Sponsor>
 </Sponsors>
 <Amendment.Number id="1486913">
-<AmendmentNumber_PgfTag id="7381121">29</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7381121"><PageStart id="5184211" PageType="BodyPage" PageNum="30">30</PageStart>29</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1486948">
-<AmedTextCommitReport_PgfTag id="7381153"><Number id="1486918">Schedule <Schedule_number>6</Schedule_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381153"><PageStart id="5184211" PageType="BodyPage" PageNum="30">30</PageStart><Number id="1486918">Schedule <Schedule_number>6</Schedule_number>, </Number>
 <Page id="1486928">page <Page_number>91</Page_number>, </Page>
 <Line id="1486938">line <Line_number>34</Line_number>, </Line>
 leave out ‘24 November’ and insert ‘31 December’.</AmedTextCommitReport_PgfTag>
@@ -155,27 +155,27 @@ leave out ‘24 November’ and insert ‘31 December’.</AmedTextCommitReport_
 <Sponsor id="1487031">Mr Greg Hands</Sponsor>
 </Sponsors>
 <Amendment.Number id="1487037">
-<AmendmentNumber_PgfTag id="7381174">30</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7381174"><PageStart id="5184211" PageType="BodyPage" PageNum="30">30</PageStart>30</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1487072">
-<AmedTextCommitReport_PgfTag id="7381204"><Number id="1487042">Schedule <Schedule_number>6</Schedule_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381204"><PageStart id="5184211" PageType="BodyPage" PageNum="30">30</PageStart><Number id="1487042">Schedule <Schedule_number>6</Schedule_number>, </Number>
 <Page id="1487052">page <Page_number>91</Page_number>, </Page>
 <Line id="1487062">line <Line_number>37</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
 <SubSection id="1487238" Number="3" Letter="A" Quote="Single">
-<SubSection_PgfTag id="7381207"><PgfNumString><PgfNumString_1>‘(3A)</PgfNumString_1> </PgfNumString><SubSection_text>The limits referred to in subsubparagraphs 3(a) and (b) shall not apply to the accounting period immediately preceding the relevant accounting period in which the trading loss arose.’.</SubSection_text></SubSection_PgfTag>
+<SubSection_PgfTag id="7381207"><PgfNumString><PgfNumString_1>‘(3A)</PgfNumString_1> </PgfNumString><PageStart id="5184211" PageType="BodyPage" PageNum="30">30</PageStart><SubSection_text>The limits referred to in subsubparagraphs 3(a) and (b) shall not apply to the accounting period immediately preceding the relevant accounting period in which the trading loss arose.’.</SubSection_text></SubSection_PgfTag>
 </SubSection>
 </Amendment.Text>
 </Schedule.Committee>
-<Schedule.Committee id="1488329" Star="No"><Sponsors id="1488332"><Sponsor id="1488335">Mr Mark Hoban</Sponsor>
+<PageStart id="5184234" PageType="BodyPage" PageNum="31">31</PageStart><Schedule.Committee id="1488329" Star="No"><Sponsors id="1488332"><Sponsor id="1488335">Mr Mark Hoban</Sponsor>
 <Sponsor id="1488340">Mr David Gauke</Sponsor>
 <Sponsor id="1488345">Mr Greg Hands</Sponsor>
 </Sponsors>
 <Amendment.Number id="1488351">
-<AmendmentNumber_PgfTag id="7381231">36</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7381231"><PageStart id="5184234" PageType="BodyPage" PageNum="31">31</PageStart>36</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1488386">
-<AmedTextCommitReport_PgfTag id="7381263"><Number id="1488356">Schedule <Schedule_number>6</Schedule_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381263"><PageStart id="5184234" PageType="BodyPage" PageNum="31">31</PageStart><Number id="1488356">Schedule <Schedule_number>6</Schedule_number>, </Number>
 <Page id="1488366">page <Page_number>91</Page_number>, </Page>
 <Line id="1488376">line <Line_number>38</Line_number>, </Line>
 leave out subsections (4) and (5).</AmedTextCommitReport_PgfTag>
@@ -186,10 +186,10 @@ leave out subsections (4) and (5).</AmedTextCommitReport_PgfTag>
 <Sponsor id="1488117">Mr Greg Hands</Sponsor>
 </Sponsors>
 <Amendment.Number id="1488123">
-<AmendmentNumber_PgfTag id="7381284">35</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7381284"><PageStart id="5184234" PageType="BodyPage" PageNum="31">31</PageStart>35</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1488158">
-<AmedTextCommitReport_PgfTag id="7381316"><Number id="1488128">Schedule <Schedule_number>6</Schedule_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381316"><PageStart id="5184234" PageType="BodyPage" PageNum="31">31</PageStart><Number id="1488128">Schedule <Schedule_number>6</Schedule_number>, </Number>
 <Page id="1488138">page <Page_number>91</Page_number>, </Page>
 <Line id="1488148">line <Line_number>41</Line_number>, </Line>
 leave out ‘£50,000’ and insert ‘£100,000’.</AmedTextCommitReport_PgfTag>
@@ -201,14 +201,14 @@ leave out ‘£50,000’ and insert ‘£100,000’.</AmedTextCommitReport_PgfTa
 <Sponsor id="1488849">Mr Greg Hands</Sponsor>
 </Sponsors>
 <Amendment.Number id="1488855">
-<AmendmentNumber_PgfTag id="7381341">38</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7381341"><PageStart id="5184234" PageType="BodyPage" PageNum="31">31</PageStart>38</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1488890">
-<AmedTextCommitReport_PgfTag id="7381362"><Number id="1488860">Clause <Clause_number>25</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381362"><PageStart id="5184234" PageType="BodyPage" PageNum="31">31</PageStart><Number id="1488860">Clause <Clause_number>25</Clause_number>, </Number>
 <Page id="1488870">page <Page_number>15</Page_number>, </Page>
 leave out lines 37 to 38 and insert ‘the Treasury may by regulations make provision for and in connection with the application of all relevant enactments as follows.</AmedTextCommitReport_PgfTag>
 <SubSection id="1489118" Number="1" Letter="A" Quote="None">
-<SubSection_PgfTag id="7381365"><PgfNumString><PgfNumString_1>(1A)</PgfNumString_1> </PgfNumString><SubSection_text>The Treasury may make regulations to—</SubSection_text></SubSection_PgfTag>
+<SubSection_PgfTag id="7381365"><PgfNumString><PgfNumString_1>(1A)</PgfNumString_1> </PgfNumString><PageStart id="5184234" PageType="BodyPage" PageNum="31">31</PageStart><SubSection_text>The Treasury may make regulations to—</SubSection_text></SubSection_PgfTag>
 <Para id="1489338">
 <Paragraph_PgfTag id="7381369"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para_text>give effect to the agreement referred to in subsection (1), and</Para_text></Paragraph_PgfTag>
 </Para><Para id="1489345">
@@ -229,15 +229,15 @@ leave out lines 37 to 38 and insert ‘the Treasury may by regulations make prov
 </SubSection>
 </Amendment.Text>
 </Clause.Committee>
-<Clause.Committee id="1490136" Star="No"><Sponsors id="1490139"><Sponsor id="1490142">Mr Mark Hoban</Sponsor>
+<PageStart id="5184234" PageType="BodyPage" PageNum="31">31</PageStart><Clause.Committee id="1490136" Star="No"><Sponsors id="1490139"><Sponsor id="1490142">Mr Mark Hoban</Sponsor>
 <Sponsor id="1490147">Mr David Gauke</Sponsor>
 <Sponsor id="1490152">Mr Greg Hands</Sponsor>
 </Sponsors>
 <Amendment.Number id="1490158">
-<AmendmentNumber_PgfTag id="7381417">39</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7381417"><PageStart id="5184234" PageType="BodyPage" PageNum="31">31</PageStart>39</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1490183">
-<AmedTextCommitReport_PgfTag id="7381440"><Number id="1490163">Clause <Clause_number>25</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381440"><PageStart id="5184234" PageType="BodyPage" PageNum="31">31</PageStart><Number id="1490163">Clause <Clause_number>25</Clause_number>, </Number>
 <Page id="1490173">page <Page_number>16</Page_number>, </Page>
 leave out lines 14 to 16.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
@@ -246,22 +246,22 @@ leave out lines 14 to 16.</AmedTextCommitReport_PgfTag>
 <Schedule.Committee id="1081826" Star="No"><Sponsors id="1081834"><Sponsor id="1081838">Mr Stephen Timms</Sponsor>
 </Sponsors>
 <Amendment.Number id="1081853">
-<AmendmentNumber_PgfTag id="7381457">8</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7381457"><PageStart id="5184234" PageType="BodyPage" PageNum="31">31</PageStart>8</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1082084">
-<AmedTextCommitReport_PgfTag id="7381487"><Number id="1082088">Schedule <Schedule_number>7</Schedule_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381487"><PageStart id="5184234" PageType="BodyPage" PageNum="31">31</PageStart><Number id="1082088">Schedule <Schedule_number>7</Schedule_number>, </Number>
 <Page id="1082060">page <Page_number>96</Page_number>, </Page>
 <Line id="1082074">line <Line_number>29</Line_number>, </Line>
 after ‘acquisition’, insert ‘by the company of a major interest in the land’.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Schedule.Committee>
-<Schedule.Committee id="1082681" Star="No"><Sponsors id="1082684"><Sponsor id="1082687">Mr Stephen Timms</Sponsor>
+<PageStart id="5184255" PageType="BodyPage" PageNum="32">32</PageStart><Schedule.Committee id="1082681" Star="No"><Sponsors id="1082684"><Sponsor id="1082687">Mr Stephen Timms</Sponsor>
 </Sponsors>
 <Amendment.Number id="1082693">
-<AmendmentNumber_PgfTag id="7381502">9</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7381502"><PageStart id="5184255" PageType="BodyPage" PageNum="32">32</PageStart>9</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1082728">
-<AmedTextCommitReport_PgfTag id="7381532"><Number id="1082698">Schedule <Schedule_number>7</Schedule_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381532"><PageStart id="5184255" PageType="BodyPage" PageNum="32">32</PageStart><Number id="1082698">Schedule <Schedule_number>7</Schedule_number>, </Number>
 <Page id="1082708">page <Page_number>98</Page_number>, </Page>
 <Line id="1082718">line <Line_number>28</Line_number>, </Line>
 leave out ‘ “sub-contractor payment” substitute “connected sub-contractor payment’ and insert ‘ “sub-contracted land remediation” substitute “connected sub-contracted land remediation” ’.</AmedTextCommitReport_PgfTag>
@@ -271,15 +271,15 @@ leave out ‘ “sub-contractor payment” substitute “connected sub-contracto
 <Schedule.Committee id="1046294" Star="No"><Sponsors id="1046301"><Sponsor id="1046305">Mr Stephen Timms</Sponsor>
 </Sponsors>
 <Amendment.Number id="1046321">
-<AmendmentNumber_PgfTag id="7381551">13</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7381551"><PageStart id="5184255" PageType="BodyPage" PageNum="32">32</PageStart>13</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1047173">
-<AmedTextCommitReport_PgfTag id="7381581"><Number id="1046333">Schedule <Schedule_number>8</Schedule_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381581"><PageStart id="5184255" PageType="BodyPage" PageNum="32">32</PageStart><Number id="1046333">Schedule <Schedule_number>8</Schedule_number>, </Number>
 <Page id="1046348">page <Page_number>101</Page_number>, </Page>
 <Line id="1046358">line <Line_number>4</Line_number>, </Line>
 leave out from beginning to ‘is’ in line 5 and insert—</AmedTextCommitReport_PgfTag>
 <Para.sch id="1083782" Major_Number_Only="A1" Number="A" Quote="Single" Letter="1">
-<Paragraph.sch_PgfTag id="7381584"><PgfNumString><PgfNumString_1>‘A1</PgfNumString_1> </PgfNumString><Para.sch_text>Schedule 5B to TCGA 1992 (enterprise investment scheme: re-investment) is amended as follows.</Para.sch_text></Paragraph.sch_PgfTag>
+<Paragraph.sch_PgfTag id="7381584"><PgfNumString><PgfNumString_1>‘A1</PgfNumString_1> </PgfNumString><PageStart id="5184255" PageType="BodyPage" PageNum="32">32</PageStart><Para.sch_text>Schedule 5B to TCGA 1992 (enterprise investment scheme: re-investment) is amended as follows.</Para.sch_text></Paragraph.sch_PgfTag>
 </Para.sch><Para.sch id="1085999" Major_Number_Only="A2" Number="A" Letter="2">
 <SubParagraph.sch_PgfTag id="7381591"><PgfNumString><PgfNumString_1>A2</PgfNumString_1> <PgfNumString_2>(1)</PgfNumString_2> </PgfNumString><SubPara.sch id="1090948" Minor_Number_Only="1" Number="1"><SubPara.sch_text>Paragraph 1(2) (application of Schedule) is amended as follows.</SubPara.sch_text></SubPara.sch></SubParagraph.sch_PgfTag>
 
@@ -302,79 +302,79 @@ leave out from beginning to ‘is’ in line 5 and insert—</AmedTextCommitRepo
 <SubParagraph.sch_PgfTag id="7381636"><PgfNumString><PgfNumString_1>1</PgfNumString_1> <PgfNumString_2>(1)</PgfNumString_2> </PgfNumString><SubPara.sch id="1085994" Minor_Number_Only="1" Number="1"><SubPara.sch_text>Paragraph 9 (other reconstructions and amalgamations)’.</SubPara.sch_text></SubPara.sch></SubParagraph.sch_PgfTag>
 </Para.sch></Amendment.Text>
 </Schedule.Committee>
-<Schedule.Committee id="1489738" Star="No"><Sponsors id="1489741"><Sponsor id="1489744">Mr Mark Hoban</Sponsor>
+<PageStart id="5184255" PageType="BodyPage" PageNum="32">32</PageStart><Schedule.Committee id="1489738" Star="No"><Sponsors id="1489741"><Sponsor id="1489744">Mr Mark Hoban</Sponsor>
 <Sponsor id="1489749">Mr David Gauke</Sponsor>
 <Sponsor id="1489754">Mr Greg Hands</Sponsor>
 </Sponsors>
 <Amendment.Number id="1489760">
-<AmendmentNumber_PgfTag id="7381657">27</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7381657"><PageStart id="5184255" PageType="BodyPage" PageNum="32">32</PageStart>27</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1489795">
-<AmedTextCommitReport_PgfTag id="7381687"><Number id="1489765">Schedule <Schedule_number>8</Schedule_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381687"><PageStart id="5184255" PageType="BodyPage" PageNum="32">32</PageStart><Number id="1489765">Schedule <Schedule_number>8</Schedule_number>, </Number>
 <Page id="1489775">page <Page_number>101</Page_number>, </Page>
 <Line id="1489785">line <Line_number>12</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
 
-<SubParagraphCont.sch_PgfTag id="7381690"><PgfNumString><PgfNumString_1></PgfNumString_1> <PgfNumString_2>‘(1B)</PgfNumString_2> </PgfNumString><SubPara.sch id="1490021" Minor_Number_Only="1B" Number="1" Letter="B" Quote="Single"><SubPara.sch_text>The individual may elect for section 135 or section 136 not to apply in respect of the shares.’.</SubPara.sch_text></SubPara.sch></SubParagraphCont.sch_PgfTag>
+<SubParagraphCont.sch_PgfTag id="7381690"><PgfNumString><PgfNumString_1></PgfNumString_1> <PgfNumString_2>‘(1B)</PgfNumString_2> </PgfNumString><PageStart id="5184255" PageType="BodyPage" PageNum="32">32</PageStart><SubPara.sch id="1490021" Minor_Number_Only="1B" Number="1" Letter="B" Quote="Single"><SubPara.sch_text>The individual may elect for section 135 or section 136 not to apply in respect of the shares.’.</SubPara.sch_text></SubPara.sch></SubParagraphCont.sch_PgfTag>
 </Amendment.Text>
 </Schedule.Committee>
-<Schedule.Committee id="1093705" Star="No"><Sponsors id="1093708"><Sponsor id="1093711">Mr Stephen Timms</Sponsor>
+<PageStart id="5184255" PageType="BodyPage" PageNum="32">32</PageStart><Schedule.Committee id="1093705" Star="No"><Sponsors id="1093708"><Sponsor id="1093711">Mr Stephen Timms</Sponsor>
 </Sponsors>
 <Amendment.Number id="1093717">
-<AmendmentNumber_PgfTag id="7381706">14</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7381706"><PageStart id="5184255" PageType="BodyPage" PageNum="32">32</PageStart>14</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1093752">
-<AmedTextCommitReport_PgfTag id="7381736"><Number id="1093722">Schedule <Schedule_number>8</Schedule_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381736"><PageStart id="5184255" PageType="BodyPage" PageNum="32">32</PageStart><Number id="1093722">Schedule <Schedule_number>8</Schedule_number>, </Number>
 <Page id="1093732">page <Page_number>101</Page_number>, </Page>
 <Line id="1093742">line <Line_number>18</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
 <Para.sch id="1097273" Major_Number_Only="1A" Number="1" Letter="A" Quote="Single">
-<Paragraph.sch_PgfTag id="7381742"><PgfNumString><PgfNumString_1>‘1A</PgfNumString_1> </PgfNumString><Para.sch_text>In paragraph 16 (information), omit sub-paragraph (4A).’.</Para.sch_text></Paragraph.sch_PgfTag>
+<Paragraph.sch_PgfTag id="7381742"><PgfNumString><PgfNumString_1>‘1A</PgfNumString_1> </PgfNumString><PageStart id="5184255" PageType="BodyPage" PageNum="32">32</PageStart><Para.sch_text>In paragraph 16 (information), omit sub-paragraph (4A).’.</Para.sch_text></Paragraph.sch_PgfTag>
 </Para.sch></Amendment.Text>
 </Schedule.Committee>
-<Schedule.Committee id="1089037" Star="No"><Sponsors id="1089040"><Sponsor id="1089043">Mr Stephen Timms</Sponsor>
+<PageStart id="5184255" PageType="BodyPage" PageNum="32">32</PageStart><Schedule.Committee id="1089037" Star="No"><Sponsors id="1089040"><Sponsor id="1089043">Mr Stephen Timms</Sponsor>
 </Sponsors>
 <Amendment.Number id="1089049">
-<AmendmentNumber_PgfTag id="7381755">15</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7381755"><PageStart id="5184255" PageType="BodyPage" PageNum="32">32</PageStart>15</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1089084">
-<AmedTextCommitReport_PgfTag id="7381785"><Number id="1089054">Schedule <Schedule_number>8</Schedule_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381785"><PageStart id="5184255" PageType="BodyPage" PageNum="32">32</PageStart><Number id="1089054">Schedule <Schedule_number>8</Schedule_number>, </Number>
 <Page id="1089064">page <Page_number>102</Page_number>, </Page>
 <Line id="1089074">line <Line_number>19</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
-<CrossHeadingSch id="1089925"><CrossHeadingTitle id="1089930">‘Consequential repeals</CrossHeadingTitle>
+<PageStart id="5184255" PageType="BodyPage" PageNum="32">32</PageStart><CrossHeadingSch id="1089925"><CrossHeadingTitle id="1089930">‘Consequential repeals</CrossHeadingTitle>
 <Para.sch id="1090180" Major_Number_Only="5A" Number="5" Letter="A">
 <Paragraph.sch_PgfTag id="7381794"><PgfNumString><PgfNumString_1>5A</PgfNumString_1> </PgfNumString><Para.sch_text>In consequence of the amendments made by paragraphs A2, A3 and 1A, omit—</Para.sch_text></Paragraph.sch_PgfTag>
 
 <SubSubParagraph.sch_PgfTag id="7381798"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><SubSubPara.sch id="1090929"><SubSubPara.sch_text>in FA 2001, in Schedule 15, paragraphs 26 to 28,</SubSubPara.sch_text></SubSubPara.sch></SubSubParagraph.sch_PgfTag>
 
-<SubSubParagraph.sch_PgfTag id="7381802"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><SubSubPara.sch id="1097888"><SubSubPara.sch_text>in FA 2004, in Schedule 18, paragraph 13(1)(f), and</SubSubPara.sch_text></SubSubPara.sch></SubSubParagraph.sch_PgfTag>
+<SubSubParagraph.sch_PgfTag id="7381802"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><PageStart id="7382946" PageType="BodyPage" PageNum="33">33</PageStart><SubSubPara.sch id="1097888"><SubSubPara.sch_text>in FA 2004, in Schedule 18, paragraph 13(1)(f), and</SubSubPara.sch_text></SubSubPara.sch></SubSubParagraph.sch_PgfTag>
 
 <SubSubParagraph.sch_PgfTag id="7381810"><PgfNumString><PgfNumString_1>(c)</PgfNumString_1> </PgfNumString><SubSubPara.sch id="1090936"><SubSubPara.sch_text>in ITA 2007, in Schedule 1, paragraph 345(2)(b), (3)(a) and (13)(b).’.</SubSubPara.sch_text></SubSubPara.sch></SubSubParagraph.sch_PgfTag>
 </Para.sch></CrossHeadingSch>
 </Amendment.Text>
 </Schedule.Committee>
-<Schedule.Committee id="1089347" Star="No"><Sponsors id="1089350"><Sponsor id="1089353">Mr Stephen Timms</Sponsor>
+<PageStart id="7382946" PageType="BodyPage" PageNum="33">33</PageStart><Schedule.Committee id="1089347" Star="No"><Sponsors id="1089350"><Sponsor id="1089353">Mr Stephen Timms</Sponsor>
 </Sponsors>
 <Amendment.Number id="1089359">
-<AmendmentNumber_PgfTag id="7381823">16</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7381823"><PageStart id="7382946" PageType="BodyPage" PageNum="33">33</PageStart>16</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1089394">
-<AmedTextCommitReport_PgfTag id="7381853"><Number id="1089364">Schedule <Schedule_number>8</Schedule_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381853"><PageStart id="7382946" PageType="BodyPage" PageNum="33">33</PageStart><Number id="1089364">Schedule <Schedule_number>8</Schedule_number>, </Number>
 <Page id="1089374">page <Page_number>102</Page_number>, </Page>
 <Line id="1089384">line <Line_number>20</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
 
-<Paragraph.sch_PgfTag id="7381854"><PgfNumString><PgfNumString_1>‘5B</PgfNumString_1> </PgfNumString><Amendment.Text_text>The amendments made by paragraphs A2, A3, 1A, 3, 4 and 5A have effect in relation to shares issued on or after 22 April 2009.’.</Amendment.Text_text></Paragraph.sch_PgfTag>
+<Paragraph.sch_PgfTag id="7381854"><PgfNumString><PgfNumString_1>‘5B</PgfNumString_1> </PgfNumString><PageStart id="7382946" PageType="BodyPage" PageNum="33">33</PageStart>The amendments made by paragraphs A2, A3, 1A, 3, 4 and 5A have effect in relation to shares issued on or after 22 April 2009.’.</Paragraph.sch_PgfTag>
 </Amendment.Text>
 </Schedule.Committee>
-<Schedule.Committee id="1103009" Star="No"><Sponsors id="1103012"><Sponsor id="1103015">Mr Stephen Timms</Sponsor>
+<PageStart id="7382946" PageType="BodyPage" PageNum="33">33</PageStart><Schedule.Committee id="1103009" Star="No"><Sponsors id="1103012"><Sponsor id="1103015">Mr Stephen Timms</Sponsor>
 </Sponsors>
 <Amendment.Number id="1103021">
-<AmendmentNumber_PgfTag id="7381869">17</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7381869"><PageStart id="7382946" PageType="BodyPage" PageNum="33">33</PageStart>17</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1103056">
-<AmedTextCommitReport_PgfTag id="7381901"><Number id="1103026">Schedule <Schedule_number>8</Schedule_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381901"><PageStart id="7382946" PageType="BodyPage" PageNum="33">33</PageStart><Number id="1103026">Schedule <Schedule_number>8</Schedule_number>, </Number>
 <Page id="1103036">page <Page_number>102</Page_number>, </Page>
 <Line id="1103046">line <Line_number>32</Line_number>, </Line>
 leave out paragraph 8.</AmedTextCommitReport_PgfTag>
@@ -386,27 +386,27 @@ leave out paragraph 8.</AmedTextCommitReport_PgfTag>
 <Sponsor id="1488236">Mr Greg Hands</Sponsor>
 </Sponsors>
 <Amendment.Number id="1488242">
-<AmendmentNumber_PgfTag id="7381926">23</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7381926"><PageStart id="7382946" PageType="BodyPage" PageNum="33">33</PageStart>23</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1488433">
-<AmedTextCommitReport_PgfTag id="7381956"><Number id="1488247">Schedule <Schedule_number>9</Schedule_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7381956"><PageStart id="7382946" PageType="BodyPage" PageNum="33">33</PageStart><Number id="1488247">Schedule <Schedule_number>9</Schedule_number>, </Number>
 <Page id="1488257">page <Page_number>103</Page_number>, </Page>
 <Line id="1488267">line <Line_number>2</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
 <Para.sch id="7363555" Major_Number_Only="A1" Number="A" Letter="1" Quote="Single">
-<SubParagraph.sch_PgfTag id="7381962"><PgfNumString><PgfNumString_1>‘A1</PgfNumString_1> <PgfNumString_2>(1)</PgfNumString_2> </PgfNumString><SubPara.sch id="1488437" Minor_Number_Only="1" Number="1" Quote="Single" RunIntoPara="No"><SubPara.sch_text>Section 832(1) of ICTA is amended as follows.</SubPara.sch_text></SubPara.sch></SubParagraph.sch_PgfTag>
+<SubParagraph.sch_PgfTag id="7381962"><PgfNumString><PgfNumString_1>‘A1</PgfNumString_1> <PgfNumString_2>(1)</PgfNumString_2> </PgfNumString><PageStart id="7382946" PageType="BodyPage" PageNum="33">33</PageStart><SubPara.sch id="1488437" Minor_Number_Only="1" Number="1" Quote="Single" RunIntoPara="No"><SubPara.sch_text>Section 832(1) of ICTA is amended as follows.</SubPara.sch_text></SubPara.sch></SubParagraph.sch_PgfTag>
 
 <SubParagraphCont.sch_PgfTag id="7381965"><PgfNumString><PgfNumString_1></PgfNumString_1> <PgfNumString_2>(2)</PgfNumString_2> </PgfNumString></SubParagraphCont.sch_PgfTag>
 <SubPara.sch id="7377998" Minor_Number_Only="2"><SubPara.sch_text>For the definition of “ordinary share capital”, substitute—</SubPara.sch_text><Definition id="1488716">“ordinary share capital”, in relation to a company, means all the issued share capital (by whatever name called) of the company, other than relevant preference shares (within the meaning of Schedule 18).’.</Definition>
 </SubPara.sch></Para.sch></Amendment.Text>
 </Schedule.Committee>
-<Schedule.Committee id="444485" Star="No"><Sponsors id="444488"><Sponsor id="1066698">Mr Stephen Timms</Sponsor>
+<PageStart id="7382946" PageType="BodyPage" PageNum="33">33</PageStart><Schedule.Committee id="444485" Star="No"><Sponsors id="444488"><Sponsor id="1066698">Mr Stephen Timms</Sponsor>
 </Sponsors>
 <Amendment.Number id="444501">
-<AmendmentNumber_PgfTag id="7381987">10</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7381987"><PageStart id="7382946" PageType="BodyPage" PageNum="33">33</PageStart>10</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="444536">
-<AmedTextCommitReport_PgfTag id="7382017"><Number id="444506">Schedule <Schedule_number>9</Schedule_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7382017"><PageStart id="7382946" PageType="BodyPage" PageNum="33">33</PageStart><Number id="444506">Schedule <Schedule_number>9</Schedule_number>, </Number>
 <Page id="444516">page <Page_number>103</Page_number>, </Page>
 <Line id="444526">line <Line_number>28</Line_number>, </Line>
 leave out ‘in any circumstances’ and insert ‘by virtue of any term subject to which the shares are issued or held’.</AmedTextCommitReport_PgfTag>
@@ -415,10 +415,10 @@ leave out ‘in any circumstances’ and insert ‘by virtue of any term subject
 <Schedule.Committee id="1080185" Star="No"><Sponsors id="1080189"><Sponsor id="1080192">Mr Stephen Timms</Sponsor>
 </Sponsors>
 <Amendment.Number id="1080198">
-<AmendmentNumber_PgfTag id="7382033">11</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7382033"><PageStart id="7382946" PageType="BodyPage" PageNum="33">33</PageStart>11</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1080233">
-<AmedTextCommitReport_PgfTag id="7382063"><Number id="1080203">Schedule <Schedule_number>9</Schedule_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7382063"><PageStart id="7382946" PageType="BodyPage" PageNum="33">33</PageStart><Number id="1080203">Schedule <Schedule_number>9</Schedule_number>, </Number>
 <Page id="1080213">page <Page_number>103</Page_number>, </Page>
 <Line id="1080223">line <Line_number>39</Line_number>, </Line>
 leave out ‘in any circumstances’ and insert ‘by virtue of any term subject to which the shares are issued or held’.</AmedTextCommitReport_PgfTag>
@@ -427,10 +427,10 @@ leave out ‘in any circumstances’ and insert ‘by virtue of any term subject
 <Schedule.Committee id="1080245" Star="No"><Sponsors id="1080249"><Sponsor id="1080252">Mr Stephen Timms</Sponsor>
 </Sponsors>
 <Amendment.Number id="1080258">
-<AmendmentNumber_PgfTag id="7382079">12</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7382079"><PageStart id="7382946" PageType="BodyPage" PageNum="33">33</PageStart>12</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1080293">
-<AmedTextCommitReport_PgfTag id="7382111"><Number id="1080263">Schedule <Schedule_number>9</Schedule_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7382111"><PageStart id="7382946" PageType="BodyPage" PageNum="33">33</PageStart><Number id="1080263">Schedule <Schedule_number>9</Schedule_number>, </Number>
 <Page id="1080273">page <Page_number>104</Page_number>, </Page>
 <Line id="1080283">line <Line_number>14</Line_number>, </Line>
 leave out sub-paragraph (i).</AmedTextCommitReport_PgfTag>
@@ -441,42 +441,42 @@ leave out sub-paragraph (i).</AmedTextCommitReport_PgfTag>
 <Sponsor id="1487567">Mr Greg Hands</Sponsor>
 </Sponsors>
 <Amendment.Number id="1487573">
-<AmendmentNumber_PgfTag id="7382132">22</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7382132"><PageStart id="7382946" PageType="BodyPage" PageNum="33">33</PageStart>22</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1487608">
-<AmedTextCommitReport_PgfTag id="7382162"><Number id="1487578">Schedule <Schedule_number>9</Schedule_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7382162"><PageStart id="7382946" PageType="BodyPage" PageNum="33">33</PageStart><Number id="1487578">Schedule <Schedule_number>9</Schedule_number>, </Number>
 <Page id="1487588">page <Page_number>104</Page_number>, </Page>
 <Line id="1487598">line <Line_number>21</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
 
-<SubParagraphCont.sch_PgfTag id="7382165"><PgfNumString><PgfNumString_1></PgfNumString_1> <PgfNumString_2>‘(6A)</PgfNumString_2> </PgfNumString><SubPara.sch id="1488083" Minor_Number_Only="6A" Number="6" Letter="A" Quote="Single"><SubPara.sch_text>An order under sub-paragraph (5) must specify that no company may be regarded as being or having been in severe financial difficulties in any accounting period during which it agrees or agreed to contribute to, or increases or increased the value of, the pension arrangements of any director or former director a sum in excess of £1 million.’.</SubPara.sch_text></SubPara.sch></SubParagraphCont.sch_PgfTag>
+<SubParagraphCont.sch_PgfTag id="7382165"><PgfNumString><PgfNumString_1></PgfNumString_1> <PgfNumString_2>‘(6A)</PgfNumString_2> </PgfNumString><PageStart id="7382946" PageType="BodyPage" PageNum="33">33</PageStart><SubPara.sch id="1488083" Minor_Number_Only="6A" Number="6" Letter="A" Quote="Single"><SubPara.sch_text>An order under sub-paragraph (5) must specify that no company may be regarded as being or having been in severe financial difficulties in any accounting period during which it agrees or agreed to contribute to, or increases or increased the value of, the pension arrangements of any director or former director a sum in excess of £1 million.’.</SubPara.sch_text></SubPara.sch></SubParagraphCont.sch_PgfTag>
 </Amendment.Text>
 </Schedule.Committee>
-<Schedule.Committee id="1487202" Star="No"><Sponsors id="1487205"><Sponsor id="1487208">Mr Mark Hoban</Sponsor>
+<PageStart id="7382976" PageType="BodyPage" PageNum="34">34</PageStart><Schedule.Committee id="1487202" Star="No"><Sponsors id="1487205"><Sponsor id="1487208">Mr Mark Hoban</Sponsor>
 <Sponsor id="1487213">Mr David Gauke</Sponsor>
 <Sponsor id="1487218">Mr Greg Hands</Sponsor>
 </Sponsors>
 <Amendment.Number id="1487224">
-<AmendmentNumber_PgfTag id="7382189">21</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7382189"><PageStart id="7382976" PageType="BodyPage" PageNum="34">34</PageStart>21</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1487259">
-<AmedTextCommitReport_PgfTag id="7382219"><Number id="1487229">Schedule <Schedule_number>9</Schedule_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7382219"><PageStart id="7382976" PageType="BodyPage" PageNum="34">34</PageStart><Number id="1487229">Schedule <Schedule_number>9</Schedule_number>, </Number>
 <Page id="1487239">page <Page_number>104</Page_number>, </Page>
 <Line id="1487249">line <Line_number>33</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
 <Para.sch id="1487453" Major_Number_Only="1B" Number="1" Letter="B" Quote="Single">
-<Paragraph.sch_PgfTag id="7382222"><PgfNumString><PgfNumString_1>‘1B</PgfNumString_1> </PgfNumString><Para.sch_text>Notwithstanding anything else in this Schedule, in determining whether two or more companies are members of the same group no account shall be taken of any interest held by UK Financial Investments Limited.”’.</Para.sch_text></Paragraph.sch_PgfTag>
+<Paragraph.sch_PgfTag id="7382222"><PgfNumString><PgfNumString_1>‘1B</PgfNumString_1> </PgfNumString><PageStart id="7382976" PageType="BodyPage" PageNum="34">34</PageStart><Para.sch_text>Notwithstanding anything else in this Schedule, in determining whether two or more companies are members of the same group no account shall be taken of any interest held by UK Financial Investments Limited.”’.</Para.sch_text></Paragraph.sch_PgfTag>
 </Para.sch></Amendment.Text>
 </Schedule.Committee>
-<Schedule.Committee id="1488737" Star="No"><Sponsors id="1488740"><Sponsor id="1488743">Mr Mark Hoban</Sponsor>
+<PageStart id="7382976" PageType="BodyPage" PageNum="34">34</PageStart><Schedule.Committee id="1488737" Star="No"><Sponsors id="1488740"><Sponsor id="1488743">Mr Mark Hoban</Sponsor>
 <Sponsor id="1488748">Mr David Gauke</Sponsor>
 <Sponsor id="1488753">Mr Greg Hands</Sponsor>
 </Sponsors>
 <Amendment.Number id="1488759">
-<AmendmentNumber_PgfTag id="7382246">24</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7382246"><PageStart id="7382976" PageType="BodyPage" PageNum="34">34</PageStart>24</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1488995">
-<AmedTextCommitReport_PgfTag id="7382278"><Number id="1488764">Schedule <Schedule_number>9</Schedule_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7382278"><PageStart id="7382976" PageType="BodyPage" PageNum="34">34</PageStart><Number id="1488764">Schedule <Schedule_number>9</Schedule_number>, </Number>
 <Page id="1488774">page <Page_number>104</Page_number>, </Page>
 <Line id="1488784">line <Line_number>39</Line_number>, </Line>
 after ‘by’, insert ‘paragraphs 1 to 4 of’.</AmedTextCommitReport_PgfTag>
@@ -487,30 +487,30 @@ after ‘by’, insert ‘paragraphs 1 to 4 of’.</AmedTextCommitReport_PgfTag>
 <Sponsor id="1489015">Mr Greg Hands</Sponsor>
 </Sponsors>
 <Amendment.Number id="1489021">
-<AmendmentNumber_PgfTag id="7382299">25</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7382299"><PageStart id="7382976" PageType="BodyPage" PageNum="34">34</PageStart>25</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1489056">
-<AmedTextCommitReport_PgfTag id="7382329"><Number id="1489026">Schedule <Schedule_number>9</Schedule_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7382329"><PageStart id="7382976" PageType="BodyPage" PageNum="34">34</PageStart><Number id="1489026">Schedule <Schedule_number>9</Schedule_number>, </Number>
 <Page id="1489036">page <Page_number>104</Page_number>, </Page>
 <Line id="1489046">line <Line_number>43</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
 <SubPara.sch id="1489236" Minor_Number_Only="6A" Number="6" Letter="A" Quote="Single">
-<SubParagraphCont.sch_PgfTag id="7382332"><PgfNumString><PgfNumString_1></PgfNumString_1> <PgfNumString_2>‘(6A)</PgfNumString_2> </PgfNumString><SubPara.sch_text>If a company so elects, the amendments made by paragraph (A1) of this Schedule, do not have effect in relation to shares issued by the company—</SubPara.sch_text></SubParagraphCont.sch_PgfTag>
+<SubParagraphCont.sch_PgfTag id="7382332"><PgfNumString><PgfNumString_1></PgfNumString_1> <PgfNumString_2>‘(6A)</PgfNumString_2> </PgfNumString><PageStart id="7382976" PageType="BodyPage" PageNum="34">34</PageStart><SubPara.sch_text>If a company so elects, the amendments made by paragraph (A1) of this Schedule, do not have effect in relation to shares issued by the company—</SubPara.sch_text></SubParagraphCont.sch_PgfTag>
 
 <SubSubParagraph.sch_PgfTag id="7382336"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><SubSubPara.sch id="1489418"><SubSubPara.sch_text>before the date on which this Act is passed;</SubSubPara.sch_text></SubSubPara.sch></SubSubParagraph.sch_PgfTag>
 
 <SubSubParagraph.sch_PgfTag id="7382343"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><SubSubPara.sch id="1489425"><SubSubPara.sch_text>on or after that date under an agreement entered into before that date.’.</SubSubPara.sch_text></SubSubPara.sch></SubSubParagraph.sch_PgfTag>
 </SubPara.sch></Amendment.Text>
 </Schedule.Committee>
-<Schedule.Committee id="1489437" Star="No"><Sponsors id="1489440"><Sponsor id="1489443">Mr Mark Hoban</Sponsor>
+<PageStart id="7382976" PageType="BodyPage" PageNum="34">34</PageStart><Schedule.Committee id="1489437" Star="No"><Sponsors id="1489440"><Sponsor id="1489443">Mr Mark Hoban</Sponsor>
 <Sponsor id="1489448">Mr David Gauke</Sponsor>
 <Sponsor id="1489453">Mr Greg Hands</Sponsor>
 </Sponsors>
 <Amendment.Number id="1489459">
-<AmendmentNumber_PgfTag id="7382364">26</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7382364"><PageStart id="7382976" PageType="BodyPage" PageNum="34">34</PageStart>26</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1489734">
-<AmedTextCommitReport_PgfTag id="7382396"><Number id="1489464">Schedule <Schedule_number>9</Schedule_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7382396"><PageStart id="7382976" PageType="BodyPage" PageNum="34">34</PageStart><Number id="1489464">Schedule <Schedule_number>9</Schedule_number>, </Number>
 <Page id="1489474">page <Page_number>104</Page_number>, </Page>
 <Line id="1489484">line <Line_number>44</Line_number>, </Line>
 after ‘6’, insert ‘or 6A’.</AmedTextCommitReport_PgfTag>
@@ -522,82 +522,82 @@ after ‘6’, insert ‘or 6A’.</AmedTextCommitReport_PgfTag>
 <Sponsor id="1486960">Mr Greg Hands</Sponsor>
 </Sponsors>
 <Amendment.Number id="1486856">
-<AmendmentNumber_PgfTag id="7382421">19</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7382421"><PageStart id="7382976" PageType="BodyPage" PageNum="34">34</PageStart>19</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1486900">
-<AmedTextCommitReport_PgfTag id="7382451"><Number id="1486866">Schedule <Schedule_number>11</Schedule_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7382451"><PageStart id="7382976" PageType="BodyPage" PageNum="34">34</PageStart><Number id="1486866">Schedule <Schedule_number>11</Schedule_number>, </Number>
 <Page id="1486880">page <Page_number>108</Page_number>, </Page>
 <Line id="1486890">line <Line_number>30</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
 <Para.sch id="1486904" Major_Number_Only="2A" Number="2" Letter="A" Quote="Single">
-<Paragraph.sch_PgfTag id="7382457"><PgfNumString><PgfNumString_1>‘2A</PgfNumString_1> </PgfNumString><Para.sch_text>In section 45D(4) for “110” insert “160”’.</Para.sch_text></Paragraph.sch_PgfTag>
+<Paragraph.sch_PgfTag id="7382457"><PgfNumString><PgfNumString_1>‘2A</PgfNumString_1> </PgfNumString><PageStart id="7382976" PageType="BodyPage" PageNum="34">34</PageStart><Para.sch_text>In section 45D(4) for “110” insert “160”’.</Para.sch_text></Paragraph.sch_PgfTag>
 </Para.sch></Amendment.Text>
 </Schedule.Committee>
-<Schedule.Committee id="1486971" Star="No"><Sponsors id="1486974"><Sponsor id="1486977">Mr Mark Hoban</Sponsor>
+<PageStart id="7382976" PageType="BodyPage" PageNum="34">34</PageStart><Schedule.Committee id="1486971" Star="No"><Sponsors id="1486974"><Sponsor id="1486977">Mr Mark Hoban</Sponsor>
 <Sponsor id="1486982">Mr David Gauke</Sponsor>
 <Sponsor id="1486987">Mr Greg Hands</Sponsor>
 </Sponsors>
 <Amendment.Number id="1486993">
-<AmendmentNumber_PgfTag id="7382478">20</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7382478"><PageStart id="7382976" PageType="BodyPage" PageNum="34">34</PageStart>20</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1487121">
-<AmedTextCommitReport_PgfTag id="7382508"><Number id="1486998">Schedule <Schedule_number>11</Schedule_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7382508"><PageStart id="7382976" PageType="BodyPage" PageNum="34">34</PageStart><Number id="1486998">Schedule <Schedule_number>11</Schedule_number>, </Number>
 <Page id="1487008">page <Page_number>109</Page_number>, </Page>
 <Line id="7344274">line <Line_number>32</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
 
-<SubParagraphCont.sch_PgfTag id="7382511"><PgfNumString><PgfNumString_1></PgfNumString_1> <PgfNumString_2>‘(5A)</PgfNumString_2> </PgfNumString><SubPara.sch id="1487125" Minor_Number_Only="5A" Number="5" Letter="A" Quote="Single"><SubPara.sch_text>An order under subsection (5) may not be made until 2 years after this Act has passed and any subsequent change will be subject to a 2 year notice period.’.</SubPara.sch_text></SubPara.sch></SubParagraphCont.sch_PgfTag>
+<SubParagraphCont.sch_PgfTag id="7382511"><PgfNumString><PgfNumString_1></PgfNumString_1> <PgfNumString_2>‘(5A)</PgfNumString_2> </PgfNumString><PageStart id="7382976" PageType="BodyPage" PageNum="34">34</PageStart><SubPara.sch id="1487125" Minor_Number_Only="5A" Number="5" Letter="A" Quote="Single"><SubPara.sch_text>An order under subsection (5) may not be made until 2 years after this Act has passed and any subsequent change will be subject to a 2 year notice period.’.</SubPara.sch_text></SubPara.sch></SubParagraphCont.sch_PgfTag>
 </Amendment.Text>
 </Schedule.Committee>
-<Separator.thick id="7346662"></Separator.thick>
-<Schedule.Committee id="7338025" Star="No"><Sponsors id="7338028"><Sponsor id="7338031">Mr Stephen Timms</Sponsor>
+<PageStart id="7382976" PageType="BodyPage" PageNum="34">34</PageStart><Separator.thick id="7346662"></Separator.thick>
+<PageStart id="7383008" PageType="BodyPage" PageNum="35">35</PageStart><Schedule.Committee id="7338025" Star="No"><Sponsors id="7338028"><Sponsor id="7338031">Mr Stephen Timms</Sponsor>
 </Sponsors>
 <Amendment.Number id="7338037">
-<AmendmentNumber_PgfTag id="7382531">18</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7382531"><PageStart id="7383008" PageType="BodyPage" PageNum="35">35</PageStart>18</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="7338071">
-<AmedTextCommitReport_PgfTag id="7382561"><Number id="7338042">Schedule <Schedule_number>12</Schedule_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7382561"><PageStart id="7383008" PageType="BodyPage" PageNum="35">35</PageStart><Number id="7338042">Schedule <Schedule_number>12</Schedule_number>, </Number>
 <Page id="7338052">page <Page_number>128</Page_number>, </Page>
 <Line id="1069960">line <Line_number>5</Line_number>, </Line>
 at end insert—</AmedTextCommitReport_PgfTag>
 <SubSection id="1071759" Number="1" Letter="A" Quote="Single">
-<SubSection_PgfTag id="7382564"><PgfNumString><PgfNumString_1>‘(1A)</PgfNumString_1> </PgfNumString><SubSection_text>In determining for the purposes of subsection (1)(c) whether subsection (1) of section 171 would have applied, it is to be assumed that subsection (1A)(b) of that section read—</SubSection_text></SubSection_PgfTag>
+<SubSection_PgfTag id="7382564"><PgfNumString><PgfNumString_1>‘(1A)</PgfNumString_1> </PgfNumString><PageStart id="7383008" PageType="BodyPage" PageNum="35">35</PageStart><SubSection_text>In determining for the purposes of subsection (1)(c) whether subsection (1) of section 171 would have applied, it is to be assumed that subsection (1A)(b) of that section read—</SubSection_text></SubSection_PgfTag>
 <Amendment id="1072557"><Para id="1072566" Number="b" Quote="Double">
 <_Paragraph_PgfTag id="7382569"><PgfNumString><PgfNumString_1>“(b)</PgfNumString_1> </PgfNumString><Para_text>that, at the time of the disposal, company B is resident in the United Kingdom, or carrying on a trade in the United Kingdom through a permanent establishment there.” ’.</Para_text></_Paragraph_PgfTag>
 </Para></Amendment>
 </SubSection>
 </Amendment.Text>
 </Schedule.Committee>
-<Separator.thick id="5167131"></Separator.thick>
+<PageStart id="7383008" PageType="BodyPage" PageNum="35">35</PageStart><Separator.thick id="5167131"></Separator.thick>
 <Heading.text id="5166821">New Clauses</Heading.text>
 <NewClause.Committee id="1151073" Star="No"><ClauseTitle id="1151081">
-<New_C_STitle_PgfTag id="7382588"><PgfNumString></PgfNumString><ClauseTitle_text>Taxation: general anti-avoidance principle</ClauseTitle_text></New_C_STitle_PgfTag>
-</ClauseTitle><Sponsors id="1151090"><Sponsor id="1151094">Mr Michael Meacher</Sponsor>
+<New_C_STitle_PgfTag id="7382588"><PgfNumString></PgfNumString><PageStart id="7383008" PageType="BodyPage" PageNum="35">35</PageStart><ClauseTitle_text>Taxation: general anti-avoidance principle</ClauseTitle_text></New_C_STitle_PgfTag>
+</ClauseTitle><PageStart id="7383008" PageType="BodyPage" PageNum="35">35</PageStart><Sponsors id="1151090"><Sponsor id="1151094">Mr Michael Meacher</Sponsor>
 </Sponsors>
 <Amendment.Number id="1151102">
-<AmendmentNumber_PgfTag id="7382599">NC1</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7382599"><PageStart id="7383008" PageType="BodyPage" PageNum="35">35</PageStart>NC1</AmendmentNumber_PgfTag>
 </Amendment.Number>
-<Move id="1151112">To move the following Clause:—</Move>
+<PageStart id="7383008" PageType="BodyPage" PageNum="35">35</PageStart><Move id="1151112">To move the following Clause:—</Move>
 <ClauseText id="1151123"><SubSection id="1151133">
-<SubSection1_PgfTag id="7382611"><PgfNumString><PgfNumString_1>‘(1)</PgfNumString_1> </PgfNumString><SubSection_text>If, when determining the liability of a person to taxation, duty or similar charge due under statute in the United Kingdom, it shall be estimated that a step or steps have been included in a transaction giving rise to that liability or to any claim for an allowance, deduction or relief, with such steps having been included for the sole or one of the main purposes of securing a reduction in that liability to taxation, deduction or similar charge with no other material economic purpose for the inclusion of such a step being capable of demonstration by the taxpayer, then, subject to the sole exception that the step or steps in question are specifically permitted under the terms of any legislation promoted for the specific purpose of permitting such use, such step or steps shall be ignored when calculating the resulting liability to taxation, duty or similar charge.</SubSection_text></SubSection1_PgfTag>
+<SubSection1_PgfTag id="7382611"><PgfNumString><PgfNumString_1>‘(1)</PgfNumString_1> </PgfNumString><PageStart id="7383008" PageType="BodyPage" PageNum="35">35</PageStart><SubSection_text>If, when determining the liability of a person to taxation, duty or similar charge due under statute in the United Kingdom, it shall be estimated that a step or steps have been included in a transaction giving rise to that liability or to any claim for an allowance, deduction or relief, with such steps having been included for the sole or one of the main purposes of securing a reduction in that liability to taxation, deduction or similar charge with no other material economic purpose for the inclusion of such a step being capable of demonstration by the taxpayer, then, subject to the sole exception that the step or steps in question are specifically permitted under the terms of any legislation promoted for the specific purpose of permitting such use, such step or steps shall be ignored when calculating the resulting liability to taxation, duty or similar charge.</SubSection_text></SubSection1_PgfTag>
 </SubSection>
 <SubSection id="1151138">
 <SubSection_PgfTag id="7382615"><PgfNumString><PgfNumString_1>(2)</PgfNumString_1> </PgfNumString><SubSection_text>In the interpretation of this provision a construction that would promote the purpose or object underlying the provision shall be preferred to a construction that would not promote that purpose or object.’.</SubSection_text></SubSection_PgfTag>
 </SubSection>
 </ClauseText>
- </NewClause.Committee>
+<PageStart id="7383008" PageType="BodyPage" PageNum="35">35</PageStart> </NewClause.Committee>
 <NewClause.Committee id="5166869" Star="No"><ClauseTitle id="5166872">
-<New_C_STitle_PgfTag id="7382628"><PgfNumString></PgfNumString><ClauseTitle_text>Personal allowances for 2009-10 for those aged over 65</ClauseTitle_text></New_C_STitle_PgfTag>
-</ClauseTitle><Sponsors id="5166877"><Sponsor id="5166880">Mr David Gauke</Sponsor>
+<New_C_STitle_PgfTag id="7382628"><PgfNumString></PgfNumString><PageStart id="7383008" PageType="BodyPage" PageNum="35">35</PageStart><ClauseTitle_text>Personal allowances for 2009-10 for those aged over 65</ClauseTitle_text></New_C_STitle_PgfTag>
+</ClauseTitle><PageStart id="7383008" PageType="BodyPage" PageNum="35">35</PageStart><Sponsors id="5166877"><Sponsor id="5166880">Mr David Gauke</Sponsor>
 <Sponsor id="1484612">Mr Mark Hoban</Sponsor>
 <Sponsor id="1484621">Mr Greg Hands</Sponsor>
 </Sponsors>
 <Amendment.Number id="5166894">
-<AmendmentNumber_PgfTag id="7382647">NC2</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7382647"><PageStart id="7383008" PageType="BodyPage" PageNum="35">35</PageStart>NC2</AmendmentNumber_PgfTag>
 </Amendment.Number>
-<Move id="5166899">To move the following Clause:—</Move>
+<PageStart id="7383008" PageType="BodyPage" PageNum="35">35</PageStart><Move id="5166899">To move the following Clause:—</Move>
 <ClauseText id="1484678"><SubSection id="1484688">
-<SubSection1_PgfTag id="7382659"><PgfNumString><PgfNumString_1>‘(1)</PgfNumString_1> </PgfNumString><SubSection_text>For the tax year 2009-10 the amount specified in—</SubSection_text></SubSection1_PgfTag>
+<SubSection1_PgfTag id="7382659"><PgfNumString><PgfNumString_1>‘(1)</PgfNumString_1> </PgfNumString><PageStart id="7383008" PageType="BodyPage" PageNum="35">35</PageStart><SubSection_text>For the tax year 2009-10 the amount specified in—</SubSection_text></SubSection1_PgfTag>
 <Para id="1484695">
 <Paragraph_PgfTag id="7382663"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para_text>section 36 of ITA 2007, and</Para_text></Paragraph_PgfTag>
 </Para><Para id="1484702">
@@ -609,7 +609,7 @@ at end insert—</AmedTextCommitReport_PgfTag>
 <SubSection id="1484725">
 <SubSection_PgfTag id="7382675"><PgfNumString><PgfNumString_1>(2)</PgfNumString_1> </PgfNumString><SubSection_text>For the tax year 2009-10 the amount specified in—</SubSection_text></SubSection_PgfTag>
 <Para id="1484736">
-<Paragraph_PgfTag id="7382679"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para_text>section 37 of ITA 2007, and</Para_text></Paragraph_PgfTag>
+<Paragraph_PgfTag id="7382679"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><PageStart id="7383033" PageType="BodyPage" PageNum="36">36</PageStart><Para_text>section 37 of ITA 2007, and</Para_text></Paragraph_PgfTag>
 </Para><Para id="1484743">
 <Paragraph_PgfTag id="7382683"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text>section 257(3) of ICTA,</Para_text></Paragraph_PgfTag>
 </Para>
@@ -617,19 +617,19 @@ at end insert—</AmedTextCommitReport_PgfTag>
 </SubSection_PgfTag>
 </SubSection>
 </ClauseText>
- </NewClause.Committee>
+<PageStart id="7383033" PageType="BodyPage" PageNum="36">36</PageStart> </NewClause.Committee>
 <NewClause.Committee id="1485418" Star="No"><ClauseTitle id="1485426">
-<New_C_STitle_PgfTag id="7382700"><PgfNumString></PgfNumString><ClauseTitle_text>Thresholds for residential property</ClauseTitle_text></New_C_STitle_PgfTag>
-</ClauseTitle><Sponsors id="1485435"><Sponsor id="1485439">Mr David Gauke</Sponsor>
+<New_C_STitle_PgfTag id="7382700"><PgfNumString></PgfNumString><PageStart id="7383033" PageType="BodyPage" PageNum="36">36</PageStart><ClauseTitle_text>Thresholds for residential property</ClauseTitle_text></New_C_STitle_PgfTag>
+</ClauseTitle><PageStart id="7383033" PageType="BodyPage" PageNum="36">36</PageStart><Sponsors id="1485435"><Sponsor id="1485439">Mr David Gauke</Sponsor>
 <Sponsor id="1485445">Mr Mark Hoban</Sponsor>
 <Sponsor id="1485454">Mr Greg Hands</Sponsor>
 </Sponsors>
 <Amendment.Number id="1485468">
-<AmendmentNumber_PgfTag id="7382719">NC3</AmendmentNumber_PgfTag>
+<AmendmentNumber_PgfTag id="7382719"><PageStart id="7383033" PageType="BodyPage" PageNum="36">36</PageStart>NC3</AmendmentNumber_PgfTag>
 </Amendment.Number>
-<Move id="1485484">To move the following Clause:—</Move>
+<PageStart id="7383033" PageType="BodyPage" PageNum="36">36</PageStart><Move id="1485484">To move the following Clause:—</Move>
 <ClauseText id="1485495"><SubSection id="1485514">
-<SubSection1_PgfTag id="7382731"><PgfNumString><PgfNumString_1>‘(1)</PgfNumString_1> </PgfNumString><SubSection_text>A land transaction is exempt from the charge to stamp duty land tax if—</SubSection_text></SubSection1_PgfTag>
+<SubSection1_PgfTag id="7382731"><PgfNumString><PgfNumString_1>‘(1)</PgfNumString_1> </PgfNumString><PageStart id="7383033" PageType="BodyPage" PageNum="36">36</PageStart><SubSection_text>A land transaction is exempt from the charge to stamp duty land tax if—</SubSection_text></SubSection1_PgfTag>
 <Para id="1485521">
 <Paragraph_PgfTag id="7382734"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para_text>it is a relevant acquisition of land which consists entirely of residential property,</Para_text></Paragraph_PgfTag>
 </Para><Para id="1485528">
@@ -656,9 +656,9 @@ at end insert—</AmedTextCommitReport_PgfTag>
 </SubSection>
 </ClauseText>
 </NewClause.Committee>
- </Committee>
+<PageStart id="7383033" PageType="BodyPage" PageNum="36">36</PageStart> </Committee>
 <Order.House id="7325194"><OrderDate id="7325197">
-<OrderHeading_PgfTag id="7382791"><PgfNumString></PgfNumString><OrderDate_text>Order of the House [6 MAY 2009]</OrderDate_text></OrderHeading_PgfTag>
+<OrderHeading_PgfTag id="7382791"><PgfNumString></PgfNumString><PageStart id="7383033" PageType="BodyPage" PageNum="36">36</PageStart><OrderDate_text>Order of the House [6 MAY 2009]</OrderDate_text></OrderHeading_PgfTag>
 </OrderDate>
 <OrderPreamble id="7325208">That the following provisions shall apply to the Finance Bill:/n</OrderPreamble><OrderText id="7325213">
 <OrderHousePara_PgfTag id="7382800"><PgfNumString><PgfNumString_1>1.</PgfNumString_1> </PgfNumString><OrderPara id="7325216"><OrderPara_text>Clauses 7, 8, 9, 11, 14, 16, 20 and 92 be committed to a Committee of the whole House;</OrderPara_text></OrderPara></OrderHousePara_PgfTag>
@@ -667,16 +667,16 @@ at end insert—</AmedTextCommitReport_PgfTag>
 
 <OrderHousePara_PgfTag id="7382808"><PgfNumString><PgfNumString_1>3.</PgfNumString_1> </PgfNumString><OrderPara id="7325226"><OrderPara_text>when the provisions of the Bill considered by the Committee of the whole House and the Public Bill Committee have been reported to the House, the Bill be proceeded with as if it had been reported as a whole to the House from the Public Bill Committee.</OrderPara_text></OrderPara></OrderHousePara_PgfTag>
 </OrderText>
- </Order.House>
+<PageStart id="7383033" PageType="BodyPage" PageNum="36">36</PageStart> </Order.House>
 <Order.Motion id="1484767"><OrderHeading id="7329842">
-<OrderHeading_PgfTag id="7382821"><PgfNumString></PgfNumString><OrderHeading_text>Resolution of the Committee [19 May 2009]</OrderHeading_text></OrderHeading_PgfTag>
+<OrderHeading_PgfTag id="7382821"><PgfNumString></PgfNumString><PageStart id="7383052" PageType="BodyPage" PageNum="37">37</PageStart><OrderHeading_text>Resolution of the Committee [19 May 2009]</OrderHeading_text></OrderHeading_PgfTag>
 </OrderHeading>
 <OrderAmendmentText id="7330294">That the Committee shall meet—/n  on Tuesdays at 10.30 a.m. and 4.30 p.m., and/n  on Thursdays (other than Thursday 4 June) at 9.00 a.m. and 1.00 p.m.,/n when the House is sitting.</OrderAmendmentText>
- </Order.Motion>
+<PageStart id="7383052" PageType="BodyPage" PageNum="37">37</PageStart> </Order.Motion>
 <Order.Committee id="7323403"><OrderDate id="7323407">
-<OrderHeading_PgfTag id="7382842"><PgfNumString></PgfNumString><OrderDate_text>Order of the Committee [19 May 2009]</OrderDate_text></OrderHeading_PgfTag>
+<OrderHeading_PgfTag id="7382842"><PgfNumString></PgfNumString><PageStart id="7383052" PageType="BodyPage" PageNum="37">37</PageStart><OrderDate_text>Order of the Committee [19 May 2009]</OrderDate_text></OrderHeading_PgfTag>
 </OrderDate>
 <ResolutionPreamble id="7336802">That the order in which proceedings are taken shall be: Clauses 1 to 5; Schedule 1; Clause 6; Schedules 2 and 3; Clauses 10, 12, and 13; Schedule 4; Clauses 15 and 17; Schedule 5; Clauses 18, 19 and 21 to 23; Schedule 6; Clauses 24 to 26; Schedule 7; Clause 27; Schedule 8; Clause 28; Schedule 9; Clause 29; Schedule 10; Clause 30; Schedule 11; Clause 31; Schedule 12; Clause 32; Schedule 13; Clauses 33 and 34; Schedule 14; Clause 35; Schedule 15; Clause 36; Schedule 16; Clause 37; Schedule 17; Clause 38; Schedule 18; Clauses 39 and 40; Schedule 19; Clause 41; Schedule 20; Clauses 42 and 43; Schedule 21; Clause 44; Schedule 22; Clauses 45 and 46; Schedule 23; Clauses 47 and 48; Schedule 24; Clause 49; Schedule 25; Clause 50; Schedule 26; Clause 51; Schedule 27; Clauses 52 and 53; Schedule 28; Clauses 54 to 58; Schedule 29; Clauses 59 to 61; Schedule 30; Clause 62; Schedule 31; Clause 63; Schedule 32; Clause 64; Schedule 33; Clause 65; Schedule 34; Clauses 66 to 71; Schedule 35; Clauses 72 to 75; Schedule 36; Clauses 76 to 82; Schedule 37; Clause 83; Schedule 38; Clause 84; Schedule 39; Clause 85; Schedule 40; Clause 86; Schedule 41; Clause 87; Schedule 42; Clause 88; Schedule 43; Clause 89; Schedule 44; Clause 90; Schedule 45; Clause 91; Schedule 46; Clauses 93 and 94; Schedule 47; Clause 95; Schedule 48; Clause 96; Schedule 49; Clause 97; Schedule 50; Clause 98; Schedule 51; Clause 99; Schedule 52; Clause 100; Schedule 53; Clause 101; Schedule 54; Clauses 102 to 105; Schedule 55; Clause106; Schedule 56; Clauses 107 and 108; Schedule 57; Clause 109; Schedule 58; Clauses 110 to 117; Schedule 59; Clause 118; Schedule 60; Clauses 119 to 122; Schedule 61; Clauses 123 and 124; new Clauses; new Schedules; Clauses 125 and 126</ResolutionPreamble>
- </Order.Committee>
+<PageStart id="7383052" PageType="BodyPage" PageNum="37">37</PageStart> </Order.Committee>
 </Amendments.Commons>
 </Document>

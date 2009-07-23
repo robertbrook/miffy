@@ -66,7 +66,7 @@ describe MifParser do
 
     it 'should move Amendment.Number ETag round AmendmentNumber PgfTag' do
       # line below should not be hardcoded
-      # File.open('/Users/x/apps/uk/ex.xml','w') {|f| f.write @result }
+      File.open('/Users/x/apps/uk/ex.xml','w') {|f| f.write @result }
       @result.tr('.','-').should have_tag('Amendment-Number[id="2494686"]') do
         with_tag('AmendmentNumber_PgfTag', :text => '4')
       end
@@ -107,8 +107,8 @@ describe MifParser do
     end
     
     it 'should put page element around page content' do
-      # @result.should have_tag('Clauses[id="1112573"]') do
-        # with_tag('Page[id="996720"][PageType="BodyPage"][PageNum="1"]')
+      @result.should have_tag('PageStart[id="996720"][PageType="BodyPage"][PageNum="1"]') 
+      # have_tag('Clauses[id="1112573"]') do
       # end
     end
     
@@ -254,98 +254,6 @@ describe MifParser do
           end
         end
       end
-
-      "<Document>
-  <Amendments.Commons id='1020493'>
-    <Head id='1033398'>
-      <HeadNotice id='1033750'>
-        <NoticeOfAmds id='1042951'>
-          Notices of Amendments
-        </NoticeOfAmds>
-        <Given id='1045577'>
-          given on
-        </Given>
-        <Date id='1041467'>
-          <Day id='1041470'>
-            Monday
-          </Day>
-          <Date.text id='1041477'>
-            1 June 2009
-          </Date.text>
-        </Date>
-        <Stageheader id='1045600'>
-          Public Bill Committee
-        </Stageheader>
-        <CommitteeShorttitle id='1045605'>
-          <STText id='1053525'>
-            Local Democracy, Economic Development and Construction Bill
-          </STText>
-          <STHouse id='5229516'>
-             [
-            <STLords id='5229520'>
-              Lords
-            </STLords>
-            ]
-          </STHouse>
-        </CommitteeShorttitle>
-      </HeadNotice>
-    </Head>
-    <Committee id='1150928'>
-      <NewClause.Committee id='1497582'>
-        <New_C_STitle>
-          <PgfNumString>
-            \\t
-          </PgfNumString>
-          <ClauseTitle id='1497590'>
-            Award of construction projects
-          </ClauseTitle>
-        </New_C_STitle>
-        <Sponsors id='1497599'>
-          <Sponsor id='1497603'>
-            Ms Sally Keeble
-          </Sponsor>
-          <Sponsor id='1497609'>
-            Ms Dari Taylor
-          </Sponsor>
-          <Sponsor id='1497618'>
-            Joan Walley
-          </Sponsor>
-        </Sponsors>
-        <Amendment.Number id='1497632'>
-          NC1
-        </Amendment.Number>
-        <Move id='1497648'>
-          To move the following Clause:—
-        </Move>
-        <ClauseText id='1497659'>
-          ‘In considering the award of a contract in accordance with the
-          Housing Grant, Construction and Regeneration Act 1996 (c. 53), a local
-          authority may have regard to—
-          <Paragraph>
-            <PgfNumString>
-              \\t(a)\\t
-            </PgfNumString>
-            <Para id='1497669'>
-              their functions under section 66 of the Local Democracy, Economic
-              Development and Construction Act 2009 (local authority economic
-              assessment); and
-            </Para>
-          </Paragraph>
-          <Paragraph>
-            <PgfNumString>
-              \\t(b)\\t
-            </PgfNumString>
-            <Para id='1497676'>
-              the desirability of maintaining a diverse range of contractors in
-              its local authority area.’.
-            </Para>
-          </Paragraph>
-        </ClauseText>
-      </NewClause.Committee>
-    </Committee>
-  </Amendments.Commons>
-</Document>"
-
     end
   end
 
