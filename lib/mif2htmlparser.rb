@@ -83,7 +83,9 @@ class Mif2HtmlParser
       Arrangement
       Rubric
       Cover
+      BillData
       CoverHeading
+      CoverPara
       Heading_ar
       Head_thin
       HeadNotice
@@ -114,6 +116,7 @@ class Mif2HtmlParser
       Motion
       Text_motion
       Table
+      Footer
       SubSection].inject({}){|h,v| h[v]=true; h}
   DIV_RE = Regexp.new "(^#{DIV.keys.join("$|")}$)"
 
