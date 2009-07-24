@@ -97,7 +97,6 @@ class Mif2HtmlParser
       ABillTo Abt1 Abt2 Abt3 Abt4 LongTitle Bpara WordsOfEnactment
       Clauses  
       Clauses_ar
-      Clause_ar
       Amendment_Text Amendment_Number
       ClauseText Heading_text
       CrossHeadingTitle ClauseTitle
@@ -152,7 +151,6 @@ class Mif2HtmlParser
       Page_text
       Para_text
       Line_text
-      Clause_ar_text
       ClauseTitle_text
       Amendment_Text_text
       Para_sch_text
@@ -293,13 +291,28 @@ class Mif2HtmlParser
         add_html_element(tag, node, xml)
         @in_paragraph = false unless already_in_paragraph
         
-     when /^(Clause)$/
-       clause_num = get_clause_num(node).to_s
-       clause_id = get_clause_id(node).to_s
-       unless clause_num.empty? || clause_id.empty?
-         xml << %Q|<a id="clause_#{clause_id}" name="clause#{clause_num}"></a>|
-       end
-       add_html_element 'div', node, xml
+      when /^(Clause)$/
+        clause_num = get_clause_num(node).to_s
+        clause_id = get_clause_id(node).to_s
+        unless clause_num.empty? || clause_id.empty?
+          xml << %Q|<a id="clause_#{clause_id}" name="clause#{clause_num}"></a>|
+        end
+        add_html_element 'div', node, xml
+      
+      when /^(Clause_ar)$/
+        @clause_ref = node.attributes['HardReference']
+        add_html_element 'div', node, xml
+        
+      when /^(Clause_ar_text)$/
+        add_html_element 'span', node, xml
+        
+        end_tag = xml.pop
+        last_line = xml.pop
+        clause_file = Dir.glob(RAILS_ROOT + '/spec/fixtures/Clauses.mif')
+        xml << %Q|<a href="convert?file=#{clause_file}#clause_#{@clause_ref}">|
+        xml << last_line
+        xml << "</a>"
+        xml << end_tag
 
       when DIV_RE
         add_html_element 'div', node, xml
