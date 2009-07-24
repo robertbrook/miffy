@@ -96,7 +96,6 @@ class Mif2HtmlParser
       Prelim
       ABillTo Abt1 Abt2 Abt3 Abt4 LongTitle Bpara WordsOfEnactment
       Clauses  
-      Clause
       Clauses_ar
       Clause_ar
       Amendment_Text Amendment_Number
@@ -293,14 +292,16 @@ class Mif2HtmlParser
         @in_paragraph = true
         add_html_element(tag, node, xml)
         @in_paragraph = false unless already_in_paragraph
+        
+     when /Clause/
+       clause_num = get_clause_num(node).to_s
+       clause_id = get_clause_id(node).to_s
+       unless clause_num.empty?
+         xml << %Q|<a id="clause_#{clause_id}" name="clause#{clause_num}"></a>|
+       end
+       add_html_element 'div', node, xml
 
       when DIV_RE
-        if node.name == 'Clause'
-          clause_num = get_clause_id(node).to_s
-          unless clause_num.empty?
-            xml << %Q|<a name="clause#{clause_num}"></a>|
-          end
-        end
         add_html_element 'div', node, xml
       when SPAN_RE
         add_html_element 'span', node, xml
@@ -328,10 +329,14 @@ class Mif2HtmlParser
     end
   end
 
-  def get_clause_id xml
+  def get_clause_num xml
     doc = Hpricot.XML xml.to_s
-    element = (doc/'ClauseTitle'/'ClauseTitle_PgfTag'/'PgfNumString'/'PgfNumString_1')
-    element.at('text()')
+    (doc/'ClauseTitle'/'ClauseTitle_PgfTag'/'PgfNumString'/'PgfNumString_1/'/'text()')
   end
   
+  def get_clause_id xml
+    doc = Hpricot.XML xml.to_s
+    element = (doc/'Clause')
+    element.first.attributes['HardReference']
+  end
 end
