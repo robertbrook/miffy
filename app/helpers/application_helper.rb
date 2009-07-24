@@ -1,7 +1,7 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
   
-  def file_type file_name
+  def document_type file_name
     if file_name.include?('Clauses.mif')
       "clauses"
     elsif file_name.include?('Cover.mif')
@@ -18,6 +18,6 @@ module ApplicationHelper
   end
   
   def page_title file_name
-    file_type(file_name).sub('_', ' ').gsub(/\b\w/){$&.upcase}
+    document_type(file_name).sub('_', ' ').gsub(/\b\w/){$&.upcase}
   end
 end

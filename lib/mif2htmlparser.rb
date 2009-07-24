@@ -14,7 +14,6 @@ class Mif2HtmlParser
 
   def parse_xml xml, options={:format => :html}
     doc = Hpricot.XML xml
-    @in_clause = false
     format = options[:format]
     if format == :html
       generate_html doc, options
