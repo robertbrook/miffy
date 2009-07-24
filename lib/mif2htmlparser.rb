@@ -210,7 +210,9 @@ class Mif2HtmlParser
       node_children_to_html(node, xml)
       xml << "</#{name}>"
     end
-    @in_para_line = false
+    unless node.name == 'SmallCaps'
+      @in_para_line = false
+    end
   end
 
   def find_act_url act_name
