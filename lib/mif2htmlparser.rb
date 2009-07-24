@@ -293,10 +293,10 @@ class Mif2HtmlParser
         add_html_element(tag, node, xml)
         @in_paragraph = false unless already_in_paragraph
         
-     when /Clause/
+     when /^(Clause)$/
        clause_num = get_clause_num(node).to_s
        clause_id = get_clause_id(node).to_s
-       unless clause_num.empty?
+       unless clause_num.empty? || clause_id.empty?
          xml << %Q|<a id="clause_#{clause_id}" name="clause#{clause_num}"></a>|
        end
        add_html_element 'div', node, xml
@@ -337,6 +337,10 @@ class Mif2HtmlParser
   def get_clause_id xml
     doc = Hpricot.XML xml.to_s
     element = (doc/'Clause')
-    element.first.attributes['HardReference']
+    if element && element.first && !element.first.attributes.nil?
+      element.first.attributes['HardReference']
+    else
+      ''
+    end
   end
 end
