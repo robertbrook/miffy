@@ -398,7 +398,11 @@ class MifParser
     @etags_stack << tag
     @e_tag = tag
     uid = element.at('../Unique/text()').to_s
-    attributes = get_attributes(element)
+    if @e_tag == 'Clauses.ar'
+      attributes = get_attributes(element/'Attributes')
+    else
+      attributes = get_attributes(element)
+    end
 
     if move_etag_outside_paragraph?(element, tag)
       move_etag_outside_paragraph tag, uid, attributes

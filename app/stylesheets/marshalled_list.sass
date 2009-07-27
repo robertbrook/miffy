@@ -9,33 +9,26 @@ body
       text-align: left
       margin: 0 0 2em 0
 
-    hr, table
-      float: left
+      .Head
+        +column(30, true)
+        
+        .HeadNotice
+          float: left
+        
+          .NoticeOfAmds
+            +amendments_heading
+        
+          .Given
+            +given_subheading
+      
+          .Date
+            +date_heading
 
-    .Italic
-      font-style: italic
+          .Stageheader
+            +stage_title
 
-    .Bold
-      font-weight: bold
-
-    .Head
-      +column(30, true)
-
-    .HeadNotice 
-      .Date
-        +date_heading
-
-      .NoticeOfAmds
-        +amendments_heading
-
-      .Given
-        +given_subheading
-
-    .Stageheader
-      +stage_title
-
-    .CommitteeShorttitle
-      +bill_title
+          .CommitteeShorttitle
+            +bill_title
     
     .Committee
       +column(30, true)
@@ -63,6 +56,11 @@ body
         text-align: right
         margin-bottom: 0
 
+      .Move
+        +prepend(1)
+        float: left
+        margin-bottom: 1em
+
       .ClauseText
         +column(28, true)
         +prepend(2)
@@ -75,10 +73,8 @@ body
             +append(1)
             +column(1, true)
 
-          .Para
+        .Para
+          +column(28, true)
+            
+          .Para_text
             +column(24, true)
-
-      .Move
-        +prepend(1)
-        float: left
-        margin-bottom: 1em
