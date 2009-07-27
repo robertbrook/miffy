@@ -247,9 +247,13 @@ class Mif2HtmlParser
     unless @clause_number.blank? || clause_id.blank?
       clause_name = "clause#{@clause_number}"
       @clause_anchor_start = %Q|<a id="clause_#{clause_id}" name="#{clause_name}" href="#{clause_name}">|
+      html << %Q|<div class="#{node.name.gsub('.','_')}" id="#{node['id']}">|
       html << @clause_anchor_start + '</a>'
+      node_children_to_html(node, html)
+      html << "</div>"
+    else
+      add_html_element 'div', node, html
     end
-    add_html_element 'div', node, html
   end
   
   def handle_pgf_num_string node, html
