@@ -32,14 +32,15 @@ end
 
 describe MifParser do
 
-  before do
-    @parser = Mif2HtmlParser.new
-    @parser.stub!(:find_act_url).and_return nil
+  def parser
+    parser = Mif2HtmlParser.new
+    parser.stub!(:find_act_url).and_return nil
+    parser
   end
 
   describe 'when parsing Clauses MIF XML file to haml' do
-    before do
-      @result = @parser.parse_xml(fixture('clauses.xml'), :format => :haml)
+    before(:all) do
+      @result = parser.parse_xml(fixture('clauses.xml'), :format => :haml)
     end
     it 'should not put Para span before _Paragraph_PgfTag paragraph' do
       @result.should_not include("%span#1112895.Para")      
@@ -51,8 +52,8 @@ describe MifParser do
   end
 
   describe 'when parsing another MIF XML file to html' do
-    before do
-      @result = @parser.parse_xml(fixture('pbc0850206m.xml'), :format => :html)
+    before(:all) do
+      @result = parser.parse_xml(fixture('pbc0850206m.xml'), :format => :html)
     end
     it 'should create html' do
       # File.open('/Users/x/apps/uk/ex.html','w') {|f| f.write @result }
@@ -76,11 +77,15 @@ describe MifParser do
         end
       end
     end
+    
+    it 'should make clause/page/line reference a hyperlink' do
+      # @result.
+    end
   end
   
   describe 'when parsing longer MIF XML file to html' do
-    before do
-      @result = @parser.parse_xml(fixture('pbc0900206m.xml'), :format => :html)
+    before(:all) do
+      @result = parser.parse_xml(fixture('pbc0900206m.xml'), :format => :html)
     end
     it 'should create html' do
       # File.open('/Users/x/apps/uk/ex.html','w') {|f| f.write @result }
