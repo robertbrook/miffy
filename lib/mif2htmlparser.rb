@@ -295,9 +295,13 @@ class Mif2HtmlParser
         clause_num = get_clause_num(node).to_s
         clause_id = get_clause_id(node).to_s
         unless clause_num.empty? || clause_id.empty?
+          xml << %Q|<div class="#{node.name.gsub('.','_')} #{node['class']}"|
           xml << %Q|<a id="clause_#{clause_id}" name="clause#{clause_num}"></a>|
+          node_children_to_html(node, xml)
+          xml << "</div>"
+        else
+          add_html_element 'div', node, xml
         end
-        add_html_element 'div', node, xml
       
       when /^(Clause_ar)$/
         @clause_ref = node.attributes['HardReference']
