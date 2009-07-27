@@ -1,14 +1,9 @@
-// This import applies a global reset to any page that imports this stylesheet.
 @import blueprint/reset.sass
-// To configure blueprint, edit the partials/base.sass file.
 @import partials/base.sass
-// Import all the default blueprint modules so that we can access their mixins.
 @import blueprint
 
-// To generate css equivalent to the blueprint css but with your configuration applied, uncomment:
 +blueprint
 
-// Page layout can be done using mixins applied to your semantic classes and IDs:
 body
   +blueprint-typography
   +blueprint-utilities
@@ -16,6 +11,15 @@ body
   #container
     +container
 
+    hr, .OrderCrossHeading, .OrderHousePara_PgfTag, table
+      float: left
+    
+    .Italic
+      font-style: italic
+
+    .Bold
+      font-weight: bold
+        
     .PageStart
       font-weight: bold
       float: right
