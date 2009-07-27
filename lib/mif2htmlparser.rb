@@ -193,11 +193,14 @@ class Mif2HtmlParser
     end if node.children
   end
 
-  def add_html_element name, node, html
+  def css_class node
     css_class = node.name.gsub('.','_')
     css_class += " #{node['class']}" unless node['class'].blank?
-
-    html << %Q|<#{name} class="#{css_class}"|
+    css_class
+  end
+  
+  def add_html_element name, node, html
+    html << %Q|<#{name} class="#{css_class(node)}"|
     html << %Q| id="#{node['id']}"| if node['id']
     if name == 'hr'
       html << " />"
@@ -246,9 +249,8 @@ class Mif2HtmlParser
     clause_id = node['HardReference'].to_s.strip
     unless @clause_number.blank? || clause_id.blank?
       clause_name = "clause#{@clause_number}"
-      @clause_anchor_start = %Q|<a id="clause_#{clause_id}" name="#{clause_name}" href="#{clause_name}">|
-      html << %Q|<div class="#{node.name.gsub('.','_')}" id="#{node['id']}">|
-      html << @clause_anchor_start + '</a>'
+      @clause_anchor_start = %Q|<a id="clause_#{clause_id}" name="#{clause_name}" href="##{clause_name}">|
+      html << %Q|<div class="#{css_class(node)}" id="#{node['id']}">|
       node_children_to_html(node, html)
       html << "</div>"
     else
@@ -257,7 +259,16 @@ class Mif2HtmlParser
   end
   
   def handle_pgf_num_string node, html
-    add_html_element 'span', node, html
+    if @clause_anchor_start
+      html << %Q|<span class="#{css_class(node)}>"|
+      html << @clause_anchor_start
+      node_children_to_html(node, html)
+      html << '</a>'
+      html << %Q|</span>"|
+      @clause_anchor_start = nil
+    else
+      add_html_element 'span', node, html
+    end
   end
   
   def node_to_html(node, html)
