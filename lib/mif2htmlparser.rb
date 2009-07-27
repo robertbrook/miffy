@@ -7,6 +7,23 @@ class Mif2HtmlParser
 
   include MifParserUtils
 
+  class << self
+
+    NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX  = Regexp.new('(Number|Page|Line)\n' +       '(\s+)(\S+)\n(\s+)%span\.(\S+)_number\n(\s+)(\S+)\n(\s+),', Regexp::MULTILINE)
+    NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX2 = Regexp.new('(Number|Page|Line)\n(\s+)(.+)\n(\s+)(\S+)\n(\s+)%span\.(\S+)_number\n(\s+)(\S+)\n(\s+),', Regexp::MULTILINE)
+  
+    def format_haml haml
+      haml.gsub!(NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX,  '\1' + "\n" +                 '\2\3 <span class="\5_number">\7</span>,')
+      # haml.gsub!(NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX2, '\1' + "\n" + '\2\3' + "\n" + '\4\5 <span class="\7_number">\9</span>,')
+      
+      haml.gsub!(/(Letter|FrameData|Dropcap|Bold|\w+_number|PgfNumString_\d|(clause_.+\}))\n/, '\1' + "<>\n")
+      haml.gsub!(/(^\s*(#|%).+(SmallCaps|\}|PgfNumString|\w+_text|PageStart|Number|Page|Line|Sponsor|AmendmentNumber_PgfTag))\n/, '\1' + "<\n")
+      
+      haml
+    end
+    
+  end
+  
   # e.g. parser.parse_xml_file("pbc0930106a.mif.xml")
   def parse_xml_file xml_file, options
     parse_xml(IO.read(xml_file), options)
@@ -31,17 +48,9 @@ class Mif2HtmlParser
     haml = `#{cmd}`
     html_file.delete
     
-    format_haml(haml)
+    Mif2HtmlParser.format_haml(haml)
   end
 
-  def format_haml haml
-    reg_exp = Regexp.new('(Number|Page|Line)\n(\s+)(\S+)\n(\s+)%span\.(\S+)_number\n(\s+)(\S+)\n(\s+),', Regexp::MULTILINE)
-    haml.gsub!(reg_exp, '\1' + "\n" + '\2\3 <span class="\5_number">\7</span>,')
-    haml.gsub!(/(Letter|FrameData|Dropcap|Bold|\w+_number|PgfNumString_\d|(clause_.+\}))\n/, '\1' + "<>\n")
-    haml.gsub!(/(SmallCaps|\}|PgfNumString|\w+_text|PageStart|Number|Page|Line|Sponsor|AmendmentNumber_PgfTag)\n/, '\1' + "<\n")
-    haml
-  end
-  
   def generate_html doc, options
     if options[:body_only]
       result = doc_to_html(doc, [])
