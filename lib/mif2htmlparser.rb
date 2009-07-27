@@ -363,9 +363,9 @@ class Mif2HtmlParser
       when 'Para'
         handle_para node
       when 'PageStart'
-        handle_page_start node  
+        handle_page_start node
       when 'Clause'
-        handle_clause node      
+        handle_clause node  
       when 'Clause_ar'
         handle_clause_ar node
       when 'Clause_ar_text'
@@ -387,15 +387,15 @@ class Mif2HtmlParser
       when LI_RE
         add_html_element 'li', node
       when HR_RE
-        add_html_element("hr", node) 
+        add_html_element 'hr', node 
       when TR_RE
-        add_html_element("tr", node)
+        add_html_element 'tr', node
       when TH_RE
-        add_html_element("th", node)
+        add_html_element 'th', node
       when TD_RE
-        add_html_element("td", node)
+        add_html_element 'td', node
       when TABLE_RE
-        add_html_element("table", node)
+        add_html_element 'table', node
       else
         raise node.name
         node_children_to_html(node)
