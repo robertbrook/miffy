@@ -37,7 +37,7 @@ class Mif2HtmlParser
   def format_haml haml
     reg_exp = Regexp.new('(Number|Page|Line)\n(\s+)(\S+)\n(\s+)%span\.(\S+)_number\n(\s+)(\S+)\n(\s+),', Regexp::MULTILINE)
     haml.gsub!(reg_exp, '\1' + "\n" + '\2\3 <span class="\5_number">\7</span>,')
-    haml.gsub!(/(Letter|FrameData|Dropcap|Bold|\w+_number|PgfNumString_\d)\n/, '\1' + "<>\n")
+    haml.gsub!(/(Letter|FrameData|Dropcap|Bold|\w+_number|PgfNumString_\d|(clause_.+\}))\n/, '\1' + "<>\n")
     haml.gsub!(/(SmallCaps|\}|PgfNumString|\w+_text|PageStart|Number|Page|Line|Sponsor|AmendmentNumber_PgfTag)\n/, '\1' + "<\n")
     haml
   end
@@ -260,7 +260,7 @@ class Mif2HtmlParser
   
   def handle_pgf_num_string node, html
     if @clause_anchor_start
-      html << %Q|<span class="#{css_class(node)}>"|
+      html << %Q|<span class="#{css_class(node)}">|
       html << @clause_anchor_start
       node_children_to_html(node, html)
       html << '</a>'
