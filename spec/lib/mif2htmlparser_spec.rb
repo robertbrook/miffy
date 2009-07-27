@@ -23,7 +23,10 @@ describe MifParser do
     end
     it 'should not put Para span before _Paragraph_PgfTag paragraph' do
       @result.should_not include("%span#1112895.Para")      
-      @result.should include("#1112895.Para")      
+      @result.should include("#1112895.Para")  
+    end
+    it 'should have an anchor name marking a clause start' do
+      @result.should include(%Q|<span class=\"PgfNumString_1>\"\n                %a#clause_LC1{ :name => \"clause1\", :href => \"#clause1\" }<\n                  1\n|)
     end
   end
 

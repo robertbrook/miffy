@@ -193,19 +193,21 @@ class Mif2HtmlParser
     end if node.children
   end
 
-  def add_html_element name, node, xml
-    unless node['class'].blank?
-      xml << %Q|<#{name} class="#{node.name.gsub('.','_')} #{node['class']}"|
-    else
-      xml << %Q|<#{name} class="#{node.name.gsub('.','_')}"|
-    end
-    xml << %Q| id="#{node['id']}"| if node['id']
+  def css_class node
+    css_class = node.name.gsub('.','_')
+    css_class += " #{node['class']}" unless node['class'].blank?
+    css_class
+  end
+  
+  def add_html_element name, node, html
+    html << %Q|<#{name} class="#{css_class(node)}"|
+    html << %Q| id="#{node['id']}"| if node['id']
     if name == 'hr'
-      xml << " />"
+      html << " />"
     else
-      xml << ">"
-      node_children_to_html(node, xml)
-      xml << "</#{name}>"
+      html << ">"
+      node_children_to_html(node, html)
+      html << "</#{name}>"
     end
     unless node.name == 'SmallCaps'
       @in_para_line = false
@@ -234,130 +236,133 @@ class Mif2HtmlParser
     end
   end
   
-  def add_link_element node, xml
+  def add_link_element node, html
     item = node.inner_text
     url = item[/Act/] ? find_act_url(item) : ''
-    xml << %Q|<a href="#{url}" class="#{node.name}">|
-    node_children_to_html(node, xml)    
-    xml << "</a>"
+    html << %Q|<a href="#{url}" class="#{node.name}">|
+    node_children_to_html(node, html)    
+    html << "</a>"
   end
   
-  def node_to_html(node, xml)
+  def handle_clause node, html
+    @clause_number = node.at('PgfNumString').inner_text.strip
+    clause_id = node['HardReference'].to_s.strip
+    unless @clause_number.blank? || clause_id.blank?
+      clause_name = "clause#{@clause_number}"
+      @clause_anchor_start = %Q|<a id="clause_#{clause_id}" name="#{clause_name}" href="##{clause_name}">|
+      html << %Q|<div class="#{css_class(node)}" id="#{node['id']}">|
+      node_children_to_html(node, html)
+      html << "</div>"
+    else
+      add_html_element 'div', node, html
+    end
+  end
+  
+  def handle_pgf_num_string node, html
+    if @clause_anchor_start
+      html << %Q|<span class="#{css_class(node)}>"|
+      html << @clause_anchor_start
+      node_children_to_html(node, html)
+      html << '</a>'
+      html << %Q|</span>"|
+      @clause_anchor_start = nil
+    else
+      add_html_element 'span', node, html
+    end
+  end
+  
+  def node_to_html(node, html)
     case node.name.gsub('.','_')
       when /Citation/
-        add_link_element node, xml
+        add_link_element node, html
       when /_number$/
-        add_html_element 'span', node, xml
+        add_html_element 'span', node, html
       when /^PgfNumString_\d+$/
-        add_html_element 'span', node, xml
+        handle_pgf_num_string node, html
       when /_PgfTag$/
         already_in_paragraph = @in_paragraph
         tag = (already_in_paragraph ? 'span' : 'p')
         @in_paragraph = true
-        add_html_element(tag, node, xml)
+        add_html_element(tag, node, html)
         @in_paragraph = false unless already_in_paragraph
       when 'ParaLineStart'
         line = node['LineNum'].to_s
-        xml << %Q|<br />| if @in_para_line
-        xml << %Q|<a name="page#{@page_number}-line#{line}"></a>|
+        html << %Q|<br />| if @in_para_line
+        html << %Q|<a name="page#{@page_number}-line#{line}"></a>|
         @in_para_line = true
 
       when /^(Para|PageStart)$/
         already_in_paragraph = @in_paragraph
         tag = (already_in_paragraph ? 'span' : 'div')
-        add_html_element(tag, node, xml)
+        add_html_element(tag, node, html)
         if node.name == 'PageStart' && already_in_paragraph
-          line = xml.pop
+          line = html.pop
           line += '<br />'
-          xml << line
+          html << line
         end
         if node.name == 'PageStart'
-          end_tag = xml.pop
-          text = xml.pop
+          end_tag = html.pop
+          text = html.pop
           page = text[/Page (.+)/]
           if page
             @page_number = $1
             anchor = page.sub(' ','').downcase
             text.sub!(page, %Q|<a href="##{anchor}" name="#{anchor}">#{page}</a>|)
           end
-          xml << text
-          xml << end_tag          
+          html << text
+          html << end_tag          
         end
         
       when /^(SubPara_sch|SubSubPara_sch|ResolutionPara|)$/
         already_in_paragraph = @in_paragraph
         tag = (already_in_paragraph ? 'span' : 'p')
         @in_paragraph = true
-        add_html_element(tag, node, xml)
+        add_html_element(tag, node, html)
         @in_paragraph = false unless already_in_paragraph
         
       when /^(Clause)$/
-        clause_num = get_clause_num(node).to_s
-        clause_id = get_clause_id(node).to_s
-        unless clause_num.empty? || clause_id.empty?
-          xml << %Q|<div class="#{node.name.gsub('.','_')}" id="#{node['id']}">|
-          xml << %Q|<a id="clause_#{clause_id}" name="clause#{clause_num}"></a>|
-          node_children_to_html(node, xml)
-          xml << "</div>"
-        else
-          add_html_element 'div', node, xml
-        end
+        handle_clause node, html
       
       when /^(Clause_ar)$/
-        @clause_ref = node.attributes['HardReference']
-        add_html_element 'div', node, xml
+        @clause_ref = node['HardReference']
+        add_html_element 'div', node, html
         
       when /^(Clause_ar_text)$/
-        add_html_element 'span', node, xml
+        add_html_element 'span', node, html
         
-        end_tag = xml.pop
-        last_line = xml.pop
+        end_tag = html.pop
+        last_line = html.pop
         clause_file = Dir.glob(RAILS_ROOT + '/spec/fixtures/Clauses.mif')
-        xml << %Q|<a href="convert?file=#{clause_file}#clause_#{@clause_ref}">|
-        xml << last_line
-        xml << "</a>"
-        xml << end_tag
+        html << %Q|<a href="convert?file=#{clause_file}#clause_#{@clause_ref}">|
+        html << last_line
+        html << "</a>"
+        html << end_tag
 
       when DIV_RE
-        add_html_element 'div', node, xml
+        add_html_element 'div', node, html
       when SPAN_RE
-        add_html_element 'span', node, xml
+        add_html_element 'span', node, html
       when UL_RE
-        add_html_element 'ul', node, xml
+        add_html_element 'ul', node, html
       when LI_RE
-        add_html_element 'li', node, xml
+        add_html_element 'li', node, html
       when HR_RE
-        add_html_element("hr", node, xml) 
+        add_html_element("hr", node, html) 
       when TR_RE
-        add_html_element("tr", node, xml)
+        add_html_element("tr", node, html)
       when TH_RE
-        add_html_element("th", node, xml)
+        add_html_element("th", node, html)
       when TD_RE
-        add_html_element("td", node, xml)
+        add_html_element("td", node, html)
       when TABLE_RE
-        add_html_element("table", node, xml)
+        add_html_element("table", node, html)
       else
         raise node.name
-        node_children_to_html(node, xml)
+        node_children_to_html(node, html)
     end if node.elem?
 
     if node.text?
-      xml << node.to_s.gsub("/n", "<br />")
-    end
-  end
-
-  def get_clause_num xml
-    doc = Hpricot.XML xml.to_s
-    (doc/'ClauseTitle'/'ClauseTitle_PgfTag'/'PgfNumString'/'PgfNumString_1/'/'text()')
-  end
-  
-  def get_clause_id xml
-    doc = Hpricot.XML xml.to_s
-    element = (doc/'Clause')
-    if element && element.first && !element.first.attributes.nil?
-      element.first.attributes['HardReference']
-    else
-      ''
+      html << node.to_s.gsub("/n", "<br />")
     end
   end
 end
