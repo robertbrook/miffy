@@ -5,6 +5,32 @@ require 'action_controller/assertions/selector_assertions'
 include ActionController::Assertions::SelectorAssertions
 
 describe MifParser do
+  describe 'when formatting certain spans' do
+    def check span, ending
+      Mif2HtmlParser.format_haml("#{span}\n").should == "#{span}#{ending}\n"
+    end
+    it 'should close whitespace following span' do
+      check "%span#1003816.Letter", "<>"
+      check "%span#1112726.FrameData", "<>"
+      check "%span#1003796.Dropcap", "<>"
+      check "%span#1003802.SmallCaps", "<"      
+    end
+    
+    it 'should expand clause number span' do
+      text = %Q|%span#1485163.Number
+              %a{ :name => "page29-line24" }
+              Clause
+              %span.Clause_number
+                1
+              ,|
+      Mif2HtmlParser.format_haml(text).should == %Q|%span#1485163.Number<
+              %a{ :name => "page29-line24" }<
+              Clause <span class="Clause_number">1</span>,|
+    end
+  end
+end
+
+describe MifParser do
 
   before do
     @parser = Mif2HtmlParser.new
@@ -14,12 +40,6 @@ describe MifParser do
   describe 'when parsing Clauses MIF XML file to haml' do
     before do
       @result = @parser.parse_xml(fixture('clauses.xml'), :format => :haml)
-    end
-    it 'should close whitespace following Letter and Dropcap spans' do
-      @result.should include("%span#1003816.Letter<>")
-      @result.should include("%span#1112726.FrameData<>")
-      @result.should include("%span#1003796.Dropcap<>")
-      @result.should include("%span#1003802.SmallCaps<")      
     end
     it 'should not put Para span before _Paragraph_PgfTag paragraph' do
       @result.should_not include("%span#1112895.Para")      

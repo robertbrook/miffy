@@ -7,6 +7,21 @@ class Mif2HtmlParser
 
   include MifParserUtils
 
+  class << self
+
+    NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX  = Regexp.new('(\s+)(\S+)\n(\s+)%span\.(\S+)_number\n(\s+)(\S+)\n(\s+),', Regexp::MULTILINE)
+  
+    def format_haml haml
+      haml.gsub!(NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX,  '\1\2 <span class="\4_number">\6</span>,')
+      
+      haml.gsub!(/(Letter|FrameData|Dropcap|Bold|\w+_number|PgfNumString_\d|(clause_.+\}))\n/, '\1' + "<>\n")
+      haml.gsub!(/(^\s*(#|%).+(SmallCaps|\}|PgfNumString|\w+_text|PageStart|Number|Page|Line|Sponsor|AmendmentNumber_PgfTag))\n/, '\1' + "<\n")
+      
+      haml
+    end
+    
+  end
+  
   # e.g. parser.parse_xml_file("pbc0930106a.mif.xml")
   def parse_xml_file xml_file, options
     parse_xml(IO.read(xml_file), options)
@@ -31,27 +46,20 @@ class Mif2HtmlParser
     haml = `#{cmd}`
     html_file.delete
     
-    format_haml(haml)
+    Mif2HtmlParser.format_haml(haml)
   end
 
-  def format_haml haml
-    reg_exp = Regexp.new('(Number|Page|Line)\n(\s+)(\S+)\n(\s+)%span\.(\S+)_number\n(\s+)(\S+)\n(\s+),', Regexp::MULTILINE)
-    haml.gsub!(reg_exp, '\1' + "\n" + '\2\3 <span class="\5_number">\7</span>,')
-    haml.gsub!(/(Letter|FrameData|Dropcap|Bold|\w+_number|PgfNumString_\d|(clause_.+\}))\n/, '\1' + "<>\n")
-    haml.gsub!(/(SmallCaps|\}|PgfNumString|\w+_text|PageStart|Number|Page|Line|Sponsor|AmendmentNumber_PgfTag)\n/, '\1' + "<\n")
-    haml
-  end
-  
   def generate_html doc, options
     if options[:body_only]
-      result = doc_to_html(doc, [])
+      @html = []
+      doc_to_html(doc)
     else
-      result = ['<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /></head><body>']
-      doc_to_html(doc, result)
-      result << ['</body></html>'] 
+      @html = ['<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /></head><body>']
+      doc_to_html(doc)
+      add ['</body></html>'] 
     end
 
-    result = result.join('')
+    result = @html.join('')
     begin
       doc = REXML::Document.new(result)
     rescue Exception => e
@@ -181,15 +189,14 @@ class Mif2HtmlParser
   HR = %w[Separator_thick Separator_thin].inject({}){|h,v| h[v]=true; h}
   HR_RE = Regexp.new "(#{HR.keys.join("|")})"
 
-  def doc_to_html(doc, xml)
+  def doc_to_html(doc)
     @in_paragraph = false
-    node_children_to_html(doc.root, xml)
-    xml
+    node_children_to_html(doc.root)
   end
 
-  def node_children_to_html(node, xml)
+  def node_children_to_html(node)
     node.children.each do |child|
-      node_to_html(child, xml)
+      node_to_html(child)
     end if node.children
   end
 
@@ -199,15 +206,15 @@ class Mif2HtmlParser
     css_class
   end
   
-  def add_html_element name, node, html
-    html << %Q|<#{name} class="#{css_class(node)}"|
-    html << %Q| id="#{node['id']}"| if node['id']
+  def add_html_element name, node
+    add %Q|<#{name} class="#{css_class(node)}"|
+    add %Q| id="#{node['id']}"| if node['id']
     if name == 'hr'
-      html << " />"
+      add " />"
     else
-      html << ">"
-      node_children_to_html(node, html)
-      html << "</#{name}>"
+      add ">"
+      node_children_to_html(node)
+      add "</#{name}>"
     end
     unless node.name == 'SmallCaps'
       @in_para_line = false
@@ -236,133 +243,166 @@ class Mif2HtmlParser
     end
   end
   
-  def add_link_element node, html
+  def add_link_element node
     item = node.inner_text
     url = item[/Act/] ? find_act_url(item) : ''
-    html << %Q|<a href="#{url}" class="#{node.name}">|
-    node_children_to_html(node, html)    
-    html << "</a>"
+    add %Q|<a href="#{url}" class="#{node.name}">|
+    node_children_to_html(node)    
+    add "</a>"
   end
   
-  def handle_clause node, html
+  def handle_clause node
     @clause_number = node.at('PgfNumString').inner_text.strip
     clause_id = node['HardReference'].to_s.strip
     unless @clause_number.blank? || clause_id.blank?
       clause_name = "clause#{@clause_number}"
       @clause_anchor_start = %Q|<a id="clause_#{clause_id}" name="#{clause_name}" href="##{clause_name}">|
-      html << %Q|<div class="#{css_class(node)}" id="#{node['id']}">|
-      node_children_to_html(node, html)
-      html << "</div>"
+      add %Q|<div class="#{css_class(node)}" id="#{node['id']}">|
+      node_children_to_html(node)
+      add "</div>"
     else
-      add_html_element 'div', node, html
+      add_html_element 'div', node
     end
   end
   
-  def handle_pgf_num_string node, html
+  def handle_pgf_num_string node
     if @clause_anchor_start
-      html << %Q|<span class="#{css_class(node)}">|
-      html << @clause_anchor_start
-      node_children_to_html(node, html)
-      html << '</a>'
-      html << %Q|</span>"|
+      add %Q|<span class="#{css_class(node)}">|
+      add @clause_anchor_start
+      node_children_to_html(node)
+      add '</a>'
+      add %Q|</span>|
       @clause_anchor_start = nil
     else
-      add_html_element 'span', node, html
+      add_html_element 'span', node
     end
   end
   
-  def node_to_html(node, html)
+  def handle_pdf_tag node
+    already_in_paragraph = @in_paragraph
+    tag = (already_in_paragraph ? 'span' : 'p')
+    @in_paragraph = true
+    add_html_element(tag, node)
+    @in_paragraph = false unless already_in_paragraph
+  end
+  
+  def handle_para_line_start node
+    line = node['LineNum'].to_s
+    add %Q|<br />| if @in_para_line
+    add %Q|<a name="page#{@page_number}-line#{line}"></a>|
+    @in_para_line = true
+  end
+
+  def handle_para node
+    already_in_paragraph = @in_paragraph
+    tag = (already_in_paragraph ? 'span' : 'div')
+    add_html_element(tag, node)
+    already_in_paragraph
+  end
+
+  def handle_page_start node
+    already_in_paragraph = handle_para node        
+    if node.name == 'PageStart' && already_in_paragraph
+      line = @html.pop
+      line += '<br />'
+      add line
+    end
+    if node.name == 'PageStart'
+      end_tag = @html.pop
+      text = @html.pop
+      page = text[/Page (.+)/]
+      if page
+        @page_number = $1
+        anchor = page.sub(' ','').downcase
+        text.sub!(page, %Q|<a href="##{anchor}" name="#{anchor}">#{page}</a>|)
+      end
+      add text
+      add end_tag
+    end
+  end
+  
+  def handle_sub_para_variants node
+    already_in_paragraph = @in_paragraph
+    tag = (already_in_paragraph ? 'span' : 'p')
+    @in_paragraph = true
+    add_html_element(tag, node)
+    @in_paragraph = false unless already_in_paragraph
+  end
+
+  def handle_clause_ar node
+    @clause_ref = node['HardReference']
+    add_html_element 'div', node
+  end
+
+  def handle_clause_ar_text node
+    add_html_element 'span', node
+    
+    end_tag = @html.pop
+    last_line = @html.pop
+    clause_file = Dir.glob(RAILS_ROOT + '/spec/fixtures/Clauses.mif')
+    add %Q|<a href="convert?file=#{clause_file}#clause_#{@clause_ref}">|
+    add last_line
+    add "</a>"
+    add end_tag
+  end
+  
+  def add text
+    if text.nil?
+      raise 'text should not be null'
+    else
+      @html << text
+    end
+  end
+
+  def node_to_html(node)
     case node.name.gsub('.','_')
-      when /Citation/
-        add_link_element node, html
-      when /_number$/
-        add_html_element 'span', node, html
-      when /^PgfNumString_\d+$/
-        handle_pgf_num_string node, html
-      when /_PgfTag$/
-        already_in_paragraph = @in_paragraph
-        tag = (already_in_paragraph ? 'span' : 'p')
-        @in_paragraph = true
-        add_html_element(tag, node, html)
-        @in_paragraph = false unless already_in_paragraph
+      when 'Citation'
+        add_link_element node
       when 'ParaLineStart'
-        line = node['LineNum'].to_s
-        html << %Q|<br />| if @in_para_line
-        html << %Q|<a name="page#{@page_number}-line#{line}"></a>|
-        @in_para_line = true
-
-      when /^(Para|PageStart)$/
-        already_in_paragraph = @in_paragraph
-        tag = (already_in_paragraph ? 'span' : 'div')
-        add_html_element(tag, node, html)
-        if node.name == 'PageStart' && already_in_paragraph
-          line = html.pop
-          line += '<br />'
-          html << line
-        end
-        if node.name == 'PageStart'
-          end_tag = html.pop
-          text = html.pop
-          page = text[/Page (.+)/]
-          if page
-            @page_number = $1
-            anchor = page.sub(' ','').downcase
-            text.sub!(page, %Q|<a href="##{anchor}" name="#{anchor}">#{page}</a>|)
-          end
-          html << text
-          html << end_tag          
-        end
-        
+        handle_para_line_start node
+      when 'Para'
+        handle_para node
+      when 'PageStart'
+        handle_page_start node
+      when 'Clause'
+        handle_clause node  
+      when 'Clause_ar'
+        handle_clause_ar node
+      when 'Clause_ar_text'
+        handle_clause_ar_text node
+      when /_number$/
+        add_html_element 'span', node
+      when /^PgfNumString_\d+$/
+        handle_pgf_num_string node
+      when /_PgfTag$/
+        handle_pdf_tag node
       when /^(SubPara_sch|SubSubPara_sch|ResolutionPara|)$/
-        already_in_paragraph = @in_paragraph
-        tag = (already_in_paragraph ? 'span' : 'p')
-        @in_paragraph = true
-        add_html_element(tag, node, html)
-        @in_paragraph = false unless already_in_paragraph
-        
-      when /^(Clause)$/
-        handle_clause node, html
-      
-      when /^(Clause_ar)$/
-        @clause_ref = node['HardReference']
-        add_html_element 'div', node, html
-        
-      when /^(Clause_ar_text)$/
-        add_html_element 'span', node, html
-        
-        end_tag = html.pop
-        last_line = html.pop
-        clause_file = Dir.glob(RAILS_ROOT + '/spec/fixtures/Clauses.mif')
-        html << %Q|<a href="convert?file=#{clause_file}#clause_#{@clause_ref}">|
-        html << last_line
-        html << "</a>"
-        html << end_tag
-
+        handle_sub_para_variants node
       when DIV_RE
-        add_html_element 'div', node, html
+        add_html_element 'div', node
       when SPAN_RE
-        add_html_element 'span', node, html
+        add_html_element 'span', node
       when UL_RE
-        add_html_element 'ul', node, html
+        add_html_element 'ul', node
       when LI_RE
-        add_html_element 'li', node, html
+        add_html_element 'li', node
       when HR_RE
-        add_html_element("hr", node, html) 
+        add_html_element 'hr', node 
       when TR_RE
-        add_html_element("tr", node, html)
+        add_html_element 'tr', node
       when TH_RE
-        add_html_element("th", node, html)
+        add_html_element 'th', node
       when TD_RE
-        add_html_element("td", node, html)
+        add_html_element 'td', node
       when TABLE_RE
-        add_html_element("table", node, html)
+        add_html_element 'table', node
       else
         raise node.name
-        node_children_to_html(node, html)
+        node_children_to_html(node)
     end if node.elem?
 
     if node.text?
-      html << node.to_s.gsub("/n", "<br />")
+      add node.to_s.gsub("/n", "<br />")
     end
   end
 end
