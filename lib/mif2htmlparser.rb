@@ -9,12 +9,10 @@ class Mif2HtmlParser
 
   class << self
 
-    NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX  = Regexp.new('(Number|Page|Line)\n' +       '(\s+)(\S+)\n(\s+)%span\.(\S+)_number\n(\s+)(\S+)\n(\s+),', Regexp::MULTILINE)
-    NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX2 = Regexp.new('(Number|Page|Line)\n(\s+)(.+)\n(\s+)(\S+)\n(\s+)%span\.(\S+)_number\n(\s+)(\S+)\n(\s+),', Regexp::MULTILINE)
+    NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX  = Regexp.new('(\s+)(\S+)\n(\s+)%span\.(\S+)_number\n(\s+)(\S+)\n(\s+),', Regexp::MULTILINE)
   
     def format_haml haml
-      haml.gsub!(NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX,  '\1' + "\n" +                 '\2\3 <span class="\5_number">\7</span>,')
-      # haml.gsub!(NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX2, '\1' + "\n" + '\2\3' + "\n" + '\4\5 <span class="\7_number">\9</span>,')
+      haml.gsub!(NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX,  '\1\2 <span class="\4_number">\6</span>,')
       
       haml.gsub!(/(Letter|FrameData|Dropcap|Bold|\w+_number|PgfNumString_\d|(clause_.+\}))\n/, '\1' + "<>\n")
       haml.gsub!(/(^\s*(#|%).+(SmallCaps|\}|PgfNumString|\w+_text|PageStart|Number|Page|Line|Sponsor|AmendmentNumber_PgfTag))\n/, '\1' + "<\n")

@@ -15,6 +15,18 @@ describe MifParser do
       check "%span#1003796.Dropcap", "<>"
       check "%span#1003802.SmallCaps", "<"      
     end
+    
+    it 'should expand clause number span' do
+      text = %Q|%span#1485163.Number
+              %a{ :name => "page29-line24" }
+              Clause
+              %span.Clause_number
+                1
+              ,|
+      Mif2HtmlParser.format_haml(text).should == %Q|%span#1485163.Number<
+              %a{ :name => "page29-line24" }<
+              Clause <span class="Clause_number">1</span>,|
+    end
   end
 end
 
