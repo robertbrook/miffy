@@ -271,7 +271,7 @@ class Mif2HtmlParser
       html << @clause_anchor_start
       node_children_to_html(node, html)
       html << '</a>'
-      html << %Q|</span>"|
+      html << %Q|</span>|
       @clause_anchor_start = nil
     else
       add_html_element 'span', node, html
