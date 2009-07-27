@@ -1,5 +1,5 @@
 -@external_sheet = params[:style]
--@file = params[:file]
+-@file = params[:file] || "Index"
 %html{:lang=>"en-GB"}
   %head
     %title= @title ? @title : 'Miffy'
