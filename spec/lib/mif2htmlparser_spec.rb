@@ -17,14 +17,14 @@ describe MifParser do
     end
     
     it 'should expand clause number span' do
-      text = %Q|%span#1485163.Number
-              %a{ :name => "page29-line24" }
+      text = %Q|
+            %span#1485163.Number
               Clause
               %span.Clause_number
                 1
               ,|
-      Mif2HtmlParser.format_haml(text).should == %Q|%span#1485163.Number<
-              %a{ :name => "page29-line24" }<
+      Mif2HtmlParser.format_haml(text).should == %Q|
+            %span#1485163.Number<
               Clause <span class="Clause_number">1</span>,|
     end
   end
@@ -32,14 +32,15 @@ end
 
 describe MifParser do
 
-  before do
-    @parser = Mif2HtmlParser.new
-    @parser.stub!(:find_act_url).and_return nil
+  def parser
+    parser = Mif2HtmlParser.new
+    parser.stub!(:find_act_url).and_return nil
+    parser
   end
 
   describe 'when parsing Clauses MIF XML file to haml' do
-    before do
-      @result = @parser.parse_xml(fixture('clauses.xml'), :format => :haml)
+    before(:all) do
+      @result = parser.parse_xml(fixture('clauses.xml'), :format => :haml)
     end
     it 'should not put Para span before _Paragraph_PgfTag paragraph' do
       @result.should_not include("%span#1112895.Para")      
@@ -51,8 +52,8 @@ describe MifParser do
   end
 
   describe 'when parsing another MIF XML file to html' do
-    before do
-      @result = @parser.parse_xml(fixture('pbc0850206m.xml'), :format => :html)
+    before(:all) do
+      @result = parser.parse_xml(fixture('pbc0850206m.xml'), :format => :html)
     end
     it 'should create html' do
       # File.open('/Users/x/apps/uk/ex.html','w') {|f| f.write @result }
@@ -62,7 +63,7 @@ describe MifParser do
           with_tag('p[class="OrderHeading_PgfTag"][id="7335998"]', :text => 'Resolution of the Programming Sub-Committee')
         end
       end
-      
+            
       @result.should have_tag('table[class="TableData"][id="7336058"]') do
         with_tag('tr[class="Row"][id="6540534"]') do
           with_tag('th[class="CellH first"][id="6540535"]', :text => 'Date')
@@ -76,11 +77,23 @@ describe MifParser do
         end
       end
     end
+    
+    it 'should put anchor before span' do
+      @result.should have_tag('a[name="page29-line24"]')
+      @result.should have_tag('span[id="1485163"][class="Number"]', :text => 'Clause 1,') do
+        with_tag('span[class="Clause_number"]', :text=>'1')
+      end
+    end
+
+    # it 'should make clause/page/line reference a hyperlink' do
+      # @result.should have_tag('') do
+      # end
+    # end
   end
   
   describe 'when parsing longer MIF XML file to html' do
-    before do
-      @result = @parser.parse_xml(fixture('pbc0900206m.xml'), :format => :html)
+    before(:all) do
+      @result = parser.parse_xml(fixture('pbc0900206m.xml'), :format => :html)
     end
     it 'should create html' do
       # File.open('/Users/x/apps/uk/ex.html','w') {|f| f.write @result }
