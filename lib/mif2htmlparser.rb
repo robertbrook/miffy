@@ -10,11 +10,11 @@ class Mif2HtmlParser
   class << self
 
     NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX  = Regexp.new('(\s+)(\S+)\n(\s+)%span\.(\S+)_number\n(\s+)(\S+)\n(\s+),', Regexp::MULTILINE)
-    MOVE_ANCHOR_BEFORE_NUMBER_SPAN_REGEX = Regexp.new('\n(\s+)(\S+Number)\n(\s+)\s\s(%a\{[^\}]+\})\n', Regexp::MULTILINE)
+    # MOVE_ANCHOR_BEFORE_NUMBER_SPAN_REGEX = Regexp.new('\n(\s+)(\S+Number)\n(\s+)\s\s(%a\{[^\}]+\})\n', Regexp::MULTILINE)
 
     def format_haml haml
       haml.gsub!(NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX,  '\1\2 <span class="\4_number">\6</span>,')    
-      haml.gsub!(MOVE_ANCHOR_BEFORE_NUMBER_SPAN_REGEX, "\n" + '\3\4' + "\n" + '\1\2' + "\n")
+      # haml.gsub!(MOVE_ANCHOR_BEFORE_NUMBER_SPAN_REGEX, "\n" + '\3\4' + "\n" + '\1\2' + "\n")
       haml.gsub!(/(Letter|FrameData|Dropcap|Bold|\w+_number|PgfNumString_\d|(clause_.+\}))\n/, '\1' + "<>\n")
       haml.gsub!(/(^\s*(#|%).+(SmallCaps|\}|PgfNumString|\w+_text|PageStart|Number|Page|Line|Sponsor|AmendmentNumber_PgfTag))\n/, '\1' + "<\n")
       
@@ -208,18 +208,23 @@ class Mif2HtmlParser
   end
   
   def add_html_element name, node
-    add %Q|<#{name} class="#{css_class(node)}"|
-    add %Q| id="#{node['id']}"| if node['id']
+    start_tag = []
+    start_tag << %Q|<#{name} class="#{css_class(node)}"|
+    start_tag << %Q| id="#{node['id']}"| if node['id']
     if name == 'hr'
-      add " />"
+      start_tag << " />"
     else
-      add ">"
+      start_tag << ">"
+    end
+
+    add start_tag.join('')
+    
+    if name != 'hr'
       node_children_to_html(node)
       add "</#{name}>"
     end
-    unless node.name == 'SmallCaps'
-      @in_para_line = false
-    end
+    
+    @in_para_line = false unless node.name == 'SmallCaps'
   end
 
   def find_act_url act_name
@@ -288,9 +293,18 @@ class Mif2HtmlParser
   end
   
   def handle_para_line_start node
+    last_line = nil
+    if @html.last && @html.last.include?('<span')
+      last_line = @html.pop
+    end
+
     line = node['LineNum'].to_s
     add %Q|<br />| if @in_para_line
     add %Q|<a name="page#{@page_number}-line#{line}"></a>|
+    
+    if last_line
+      add last_line
+    end
     @in_para_line = true
   end
 

@@ -19,13 +19,11 @@ describe MifParser do
     it 'should expand clause number span' do
       text = %Q|
             %span#1485163.Number
-              %a{ :name => "page29-line24" }
               Clause
               %span.Clause_number
                 1
               ,|
       Mif2HtmlParser.format_haml(text).should == %Q|
-            %a{ :name => "page29-line24" }<
             %span#1485163.Number<
               Clause <span class="Clause_number">1</span>,|
     end
@@ -58,14 +56,14 @@ describe MifParser do
       @result = parser.parse_xml(fixture('pbc0850206m.xml'), :format => :html)
     end
     it 'should create html' do
-      # File.open('/Users/x/apps/uk/ex.html','w') {|f| f.write @result }
+      File.open('/Users/x/apps/uk/ex.html','w') {|f| f.write @result }
       @result.should have_tag('html')
       @result.should have_tag('div[class="Resolution"][id="1070180"]') do
         with_tag('div[class="ResolutionHead"][id="1070184"]') do
           with_tag('p[class="OrderHeading_PgfTag"][id="7335998"]', :text => 'Resolution of the Programming Sub-Committee')
         end
       end
-      
+            
       @result.should have_tag('table[class="TableData"][id="7336058"]') do
         with_tag('tr[class="Row"][id="6540534"]') do
           with_tag('th[class="CellH first"][id="6540535"]', :text => 'Date')
@@ -80,6 +78,13 @@ describe MifParser do
       end
     end
     
+    it 'should put anchor before span' do
+      @result.should have_tag('a[name="page29-line24"]')
+      @result.should have_tag('span[id="1485163"][class="Number"]', :text => 'Clause 1,') do
+        with_tag('span[class="Clause_number"]', :text=>'1')
+      end
+    end
+
     # it 'should make clause/page/line reference a hyperlink' do
       # @result.should have_tag('') do
       # end
