@@ -294,9 +294,7 @@ class MifParser
           add pgf_num_string if pgf_num_string
           lines.reverse.each {|line| add line}
         else
-          last_line = @strings.pop || ''
-          last_line += page_start
-          @strings << last_line
+          add_to_last_line page_start
         end
       else
         @first_page = page_start
@@ -381,22 +379,17 @@ class MifParser
     @etags_stack << tag
     @e_tag = tag
     uid = element.at('../Unique/text()').to_s
-    if @e_tag == 'Clauses.ar'
-      attributes = get_attributes(element/'Attributes')
-    else
-      attributes = get_attributes(element)
-    end
+    attributes = get_attributes(@e_tag == 'Clauses.ar' ? (element/'Attributes') : element)
 
     if move_etag_outside_paragraph?(element, tag)
       move_etag_outside_paragraph tag, uid, attributes
-    elsif @e_tag == 'Bold'
-      last_line = @strings.pop || ''
-      last_line += %Q|<#{tag} id="#{uid}"#{attributes}>|
-      @strings << last_line
-      # add %Q|<#{tag} id="#{uid}"#{attributes}>|
-      @opened_in_paragraph[tag] = true if @in_paragraph
     else
-      add %Q|<#{tag} id="#{uid}"#{attributes}>|
+      start_tag = %Q|<#{tag} id="#{uid}"#{attributes}>|
+      if @e_tag == 'Bold'
+        add_to_last_line start_tag
+      else
+        add start_tag
+      end
       @opened_in_paragraph[tag] = true if @in_paragraph
     end
     
@@ -436,9 +429,7 @@ class MifParser
     tag = @etags_stack.last
     
     if tag == 'Bold'
-      last_line = @strings.pop || ''
-      last_line += "</#{tag}>"
-      @strings << last_line
+      add_to_last_line "</#{tag}>"
       @opened_in_paragraph.delete(tag)
       tag = @etags_stack.pop
     else
@@ -480,26 +471,25 @@ class MifParser
     @last_was_pdf_num_string = true
   end
 
-  def handle_string element
-    if @paraline_start
-      last_line = @strings.pop || ''
-      @line_num += 1
-      para_line_start = %Q|<ParaLineStart LineNum="#{@line_num}"></ParaLineStart>|
+  def add_paraline_start
+    @line_num += 1
+    para_line_start = %Q|<ParaLineStart LineNum="#{@line_num}"></ParaLineStart>|
 
-      if last_line.empty? && @xml.last.include?('<Number ')
-        last_line = @xml.pop
-        last_line.sub!('<Number ', "#{para_line_start}<Number ")
-        add last_line
-      else
-        last_line += para_line_start
-        @strings << last_line
-      end
-      @paraline_start = false
-      @in_paraline = true
+    if @strings.last.blank? && @xml.last.include?('<Number ')
+      last_line = @xml.pop
+      last_line.sub!('<Number ', "#{para_line_start}<Number ")
+      add last_line
+    else
+      add_to_last_line para_line_start
     end
-    
+    @paraline_start = false
+    @in_paraline = true
+  end
+  
+  def handle_string element
+    add_paraline_start if @paraline_start    
     text = clean(element)
-    last_line = @strings.pop || ''
+    last_line = @strings.last || ''
 
     if @prefix_end && text[/^\d+$/] && @e_tag      
       if (type = last_line[/(Clause|Schedule)/, 1])
@@ -509,14 +499,11 @@ class MifParser
       end
     end
 
-    last_line += text
-    @strings << last_line 
+    add_to_last_line text
   end
   
   def handle_char element
-    last_line = @strings.pop || ''
-    last_line += get_char(element)
-    @strings << last_line
+    add_to_last_line get_char(element)
   end
   
   def flush_strings
@@ -553,14 +540,19 @@ class MifParser
 
   def handle_variable_name element
     var_id = clean(element.at('text()'))
+    add_to_last_line @variable_list[var_id]
+  end
+  
+  def add_to_last_line text
     last_line = @strings.pop || ''
-    last_line += @variable_list[var_id]
+    last_line += text
     @strings << last_line    
   end
   
   def initialize_flow_state
     @pgf_tag = nil
     @e_tag = nil
+    @amendment_reference = nil
     @in_paragraph = false
     @prefix_end = false
     @in_page = false
