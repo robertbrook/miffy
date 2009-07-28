@@ -502,9 +502,9 @@ class MifParser
       @line_num += 1
       para_line_start = %Q|<ParaLineStart LineNum="#{@line_num}"></ParaLineStart>|
 
-      if last_line.empty? && @xml.last.include?('<Number')
+      if last_line.empty? && @xml.last.include?('<Number ')
         last_line = @xml.pop
-        last_line.sub!('<Number', "#{para_line_start}<Number")
+        last_line.sub!('<Number ', "#{para_line_start}<Number ")
         add last_line
       else
         last_line += para_line_start
