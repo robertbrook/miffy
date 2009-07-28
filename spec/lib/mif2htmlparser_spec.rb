@@ -17,14 +17,14 @@ describe MifParser do
     end
     
     it 'should expand clause number span' do
-      text = %Q|%span#1485163.Number
+      text = %Q|            %span#1485163.Number
               %a{ :name => "page29-line24" }
               Clause
               %span.Clause_number
                 1
               ,|
-      Mif2HtmlParser.format_haml(text).should == %Q|%span#1485163.Number<
-              %a{ :name => "page29-line24" }<
+      Mif2HtmlParser.format_haml(text).should == %Q|            %a{ :name => "page29-line24" }<
+            %span#1485163.Number<
               Clause <span class="Clause_number">1</span>,|
     end
   end
@@ -78,9 +78,10 @@ describe MifParser do
       end
     end
     
-    it 'should make clause/page/line reference a hyperlink' do
-      # @result.
-    end
+    # it 'should make clause/page/line reference a hyperlink' do
+      # @result.should have_tag('') do
+      # end
+    # end
   end
   
   describe 'when parsing longer MIF XML file to html' do

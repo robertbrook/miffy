@@ -10,10 +10,11 @@ class Mif2HtmlParser
   class << self
 
     NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX  = Regexp.new('(\s+)(\S+)\n(\s+)%span\.(\S+)_number\n(\s+)(\S+)\n(\s+),', Regexp::MULTILINE)
-  
+    MOVE_ANCHOR_BEFORE_NUMBER_SPAN_REGEX = Regexp.new('(\s+)(\S+Number)\n(\s+)\s\s(%a\{[^\}]+\})\n', Regexp::MULTILINE)
+
     def format_haml haml
-      haml.gsub!(NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX,  '\1\2 <span class="\4_number">\6</span>,')
-      
+      haml.gsub!(NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX,  '\1\2 <span class="\4_number">\6</span>,')    
+      haml.gsub!(MOVE_ANCHOR_BEFORE_NUMBER_SPAN_REGEX, '\3\4' + "\n" + '\1\2' + "\n")
       haml.gsub!(/(Letter|FrameData|Dropcap|Bold|\w+_number|PgfNumString_\d|(clause_.+\}))\n/, '\1' + "<>\n")
       haml.gsub!(/(^\s*(#|%).+(SmallCaps|\}|PgfNumString|\w+_text|PageStart|Number|Page|Line|Sponsor|AmendmentNumber_PgfTag))\n/, '\1' + "<\n")
       

@@ -8,7 +8,7 @@ include ActionController::Assertions::SelectorAssertions
 describe MifParser do
 # =begin
   describe 'when parsing MIF file' do
-    before do
+    before(:all) do
       @parser = MifParser.new
     end
 
