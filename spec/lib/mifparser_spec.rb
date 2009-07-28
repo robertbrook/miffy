@@ -209,7 +209,15 @@ describe MifParser do
       end
       @result.gsub("\n",'').should include(%Q|<AmedTextCommitReport_PgfTag id="7336764"><ParaLineStart LineNum="10"></ParaLineStart><Number id="1485525">Clause <Clause_number>4</Clause_number>, </Number>|)
     end
-    
+=begin 
+    it 'should wrap Number/Page/Line elements in AmendmentReference element' do
+      @result.should have_tag('AmendmentReference[Clause="1"][Page="1"][Line="29"]') do
+        with_tag('Number[id="1484880"]', :text=>'Clause 1,')
+        with_tag('Page[id="1484795"]', :text=>'page 1,')
+        with_tag('Line[id="1484805"]', :text=>'line 29,')
+      end
+    end
+=end    
     it 'should put PageStart before Motion element' do
       @result.should have_tag('PageStart[id="5184234"][PageType="BodyPage"][PageNum="29"]', :text => 'Page 29')            
       @result.gsub("\n",'').should include(%Q|<PageStart id="5184234" PageType="BodyPage" PageNum="29">Page 29</PageStart><Motion id="6541538">|)
