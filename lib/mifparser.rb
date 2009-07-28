@@ -500,8 +500,16 @@ class MifParser
     if @paraline_start
       last_line = @strings.pop || ''
       @line_num += 1
-      last_line += %Q|<ParaLineStart LineNum="#{@line_num}"></ParaLineStart>|
-      @strings << last_line
+      para_line_start = %Q|<ParaLineStart LineNum="#{@line_num}"></ParaLineStart>|
+
+      if last_line.empty? && @xml.last.include?('<Number')
+        last_line = @xml.pop
+        last_line.sub!('<Number', "#{para_line_start}<Number")
+        add last_line
+      else
+        last_line += para_line_start
+        @strings << last_line
+      end
       @paraline_start = false
       @in_paraline = true
     end
