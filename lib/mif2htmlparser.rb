@@ -113,6 +113,7 @@ class Mif2HtmlParser
       OrderPreamble ResolutionPreamble
       Stageheader
       CommitteeShorttitle
+      Shorttitle
       MarshalledOrderNote
       ClausesToBeConsidered
       Para_sch

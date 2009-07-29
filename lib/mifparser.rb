@@ -377,7 +377,7 @@ class MifParser
 
   MOVE_OUTSIDE = %w[Amendment Amendment.Number Amendment.Text SubPara.sch      
       ClauseTitle Clause Clauses.ar Clause.ar ClauseText 
-      Committee Resolution SubSection
+      Committee Resolution SubSection NewClause.Committee
       ResolutionHead ResolutionText OrderDate OrderHeading 
       Para.sch Para].inject({}){|h,v| h[v]=true; h}
   

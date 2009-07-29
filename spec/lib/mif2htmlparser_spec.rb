@@ -115,14 +115,16 @@ describe MifParser do
       end
 
       @result.should have_tag('div[class="Para_sch"][id="1085999"]') do
-        with_tag('p[class="SubParagraph_sch_PgfTag"][id="7381591"]') do
-          with_tag('span[class="PgfNumString"]') do
-            with_tag('span[class="PgfNumString_1"]', :text => 'A2')
-            with_tag('span[class="PgfNumString_2"]', :text => '(1)')
+        with_tag('p[class="SubPara_sch"]') do
+          with_tag('span[class="SubParagraph_sch_PgfTag"][id="7381591"]') do
+            with_tag('span[class="PgfNumString"]') do
+              with_tag('span[class="PgfNumString_1"]', :text => 'A2')
+              with_tag('span[class="PgfNumString_2"]', :text => '(1)')
+            end
+            with_tag('span[class="SubPara_sch_text"]', :text => 'Paragraph 1(2) (application of Schedule) is amended as follows.')
           end
-          with_tag('span[class="SubPara_sch"]', :text => 'Paragraph 1(2) (application of Schedule) is amended as follows.')
         end
-        with_tag('p[class="SubParagraphCont_sch_PgfTag"][id="7381594"]') do
+        with_tag('span[class="SubParagraphCont_sch_PgfTag"][id="7381594"]') do
           with_tag('span[class="PgfNumString"]') do
             with_tag('span[class="PgfNumString_1"]', :text => '')
             with_tag('span[class="PgfNumString_2"]', :text => '(2)')
@@ -130,27 +132,13 @@ describe MifParser do
         end
       end
 
-      @result.should have_tag('p[class="SubParagraph_sch_PgfTag"][id="7381591"]') do
-        with_tag('span[class="PgfNumString"]', :text =>'A2 (1)')
-        with_tag('span[class="SubPara_sch"][id="1090948"]', :text => 'Paragraph 1(2) (application of Schedule) is amended as follows.')
+      @result.should have_tag('span[class="SubPara_sch_text"][id="1090948"]') do
+        with_tag('span[class="SubParagraph_sch_PgfTag"][id="7381591"]') do
+          with_tag('span[class="PgfNumString"]', :text =>'A2 (1)')
+          with_tag('span[class="SubPara_sch_text"]', :text => 'Paragraph 1(2) (application of Schedule) is amended as follows.')
+        end
       end
     end
-%Q|    <Committee id="5166572">
-      <Clause.Committee id="2494674" Star="No">
-        <Sponsors id="2494677">
-          <Sponsor id="2494680">Mr Jeremy Browne</Sponsor>
-        </Sponsors>
-        <Amendment.Number id="2494686">4</Amendment.Number>
-        <Number id="2494691">Clause 17, </Number>
-        <Page id="2494701">page 11, </Page>
-        <Line id="2494711">line 4, </Line>
-        <Amendment.Text id="2494721">leave out from ‘substitute’ to end of line 29 and insert—
-<SubSection_PgfTag id="7332538"><PgfNumString>\t‘(1)\t</PgfNumString>
-            <SubSection id="7316809" Number="1" Quote="Single">Aircraft flight duty is chargeable in respect of each freight and passenger aircraft on each flight undertaken by that aircraft from a destination within the UK.’.</SubSection>
-          </SubSection_PgfTag>
-        </Amendment.Text>
-      </Clause.Committee>
-|
   end
 
 end
