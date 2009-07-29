@@ -1,0 +1,29 @@
+@import partials/base.sass
+@import blueprint
+
+.Table
+  +prepend(2)
+  +column(26)
+  +append(2)
+
+  table
+    border-collapse: collapse
+
+  td
+    vertical-align: top
+    border-top: 1px solid black
+    border-left: 1px solid black
+
+  th
+    font-weight: normal
+    font-style: italic
+    text-align: center
+    border-left: 1px solid black
+    border-bottom: 1px solid black
+    border-top: 0
+
+  td.first, th.first
+    border-left: 0
+
+  td.first
+    padding-left: 0.5em
