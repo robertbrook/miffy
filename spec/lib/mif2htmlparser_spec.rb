@@ -132,7 +132,7 @@ describe MifParser do
         end
       end
 
-      @result.should have_tag('span[class="SubPara_sch"][id="1090948"]') do
+      @result.should have_tag('p[class="SubPara_sch"][id="1090948"]') do
         with_tag('span[class="SubParagraph_sch_PgfTag"][id="7381591"]') do
           with_tag('span[class="PgfNumString"]', :text =>'A2 (1)')
           with_tag('span[class="SubPara_sch_text"]', :text => 'Paragraph 1(2) (application of Schedule) is amended as follows.')
