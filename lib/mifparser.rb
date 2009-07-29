@@ -55,9 +55,8 @@ class MifParser
     end
   end
   
-
   def initialize_doc_state doc
-    @bill_attributes = get_bill_attributes doc    
+    @bill_attributes = get_bill_attributes doc
     @table_list = get_tables doc
     @frame_list = get_frames doc
     @pages = get_pages doc
@@ -180,9 +179,7 @@ class MifParser
         when 'ETag'
           tag = clean(element)
           @e_tag = tag
-          uid = element.at('../Unique/text()').to_s
-          attributes = get_attributes(element)
-          frames[@frame_id] << %Q|<#{tag} id="#{uid}"#{attributes}>|
+          frames[@frame_id] << start_tag(tag, element)
         when 'String'
           text = clean(element.at('text()'))
           frames[@frame_id] << text
@@ -214,8 +211,7 @@ class MifParser
           if tag != 'Table'
             break
           else
-            table_id = element.at('../Unique/text()').to_s
-            tables.merge!({@current_table_id, %Q|<TableData id="#{table_id}">|})
+            tables.merge!({@current_table_id, start_tag('TableData', element)})
           end
         when 'Row'
           if @in_row
@@ -309,7 +305,7 @@ class MifParser
     flush_strings
     tag = clean(element).gsub(' ','_')
     @pgf_tag = "#{tag}_PgfTag"
-    @pgf_tag_id = element.at('../Unique/text()').to_s
+    @pgf_tag_id = get_uid element
 
     if tag == 'AmendmentNumber' || tag == 'AmedTextCommitReport'
       add_pgf_tag
@@ -329,7 +325,16 @@ class MifParser
     end
   end
 
+  def start_tag tag, element
+    %Q|<#{tag} id="#{get_uid(element)}"#{get_attributes(element)}>|
+  end
+  
+  def get_uid element
+    element.at('../Unique/text()').to_s
+  end
+  
   def get_attributes element
+    element = (element/'Attributes') if @e_tag == 'Clauses.ar' 
     attributes = (element/'../Attributes/Attribute')
     attribute_list = ''
     if attributes && attributes.size > 0
@@ -348,12 +353,12 @@ class MifParser
       ResolutionHead ResolutionText OrderDate OrderHeading 
       Para.sch Para].inject({}){|h,v| h[v]=true; h}
   
-  def move_etag_outside_paragraph?(element, tag)
+  def move_etag_outside_paragraph?(tag, element)
     collapsed = element.at('../Collapsed/text()').to_s == 'Yes'
     @in_paragraph && (collapsed || MOVE_OUTSIDE[tag])
   end
 
-  def move_etag_outside_paragraph tag, uid, attributes
+  def move_etag_outside_paragraph tag, element
     line = @xml.pop
     lines = []
     while !line.include?(@pgf_tag)
@@ -366,7 +371,7 @@ class MifParser
     end
     pgf_start_tag = line
 
-    add %Q|<#{tag} id="#{uid}"#{attributes}>|
+    add start_tag(tag, element)
     add pgf_start_tag
     add pgf_num_string if pgf_num_string
     lines.reverse.each {|line| add line}
@@ -378,17 +383,14 @@ class MifParser
     tag = clean(element)
     @etags_stack << tag
     @e_tag = tag
-    uid = element.at('../Unique/text()').to_s
-    attributes = get_attributes(@e_tag == 'Clauses.ar' ? (element/'Attributes') : element)
 
-    if move_etag_outside_paragraph?(element, tag)
-      move_etag_outside_paragraph tag, uid, attributes
+    if move_etag_outside_paragraph?(tag, element)
+      move_etag_outside_paragraph tag, element
     else
-      start_tag = %Q|<#{tag} id="#{uid}"#{attributes}>|
       if @e_tag == 'Bold'
-        add_to_last_line start_tag
+        add_to_last_line start_tag(tag, element)
       else
-        add start_tag
+        add start_tag(tag, element)
       end
       @opened_in_paragraph[tag] = true if @in_paragraph
     end
