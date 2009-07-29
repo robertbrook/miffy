@@ -380,19 +380,18 @@ class MifParser
 
   def handle_etag element
     flush_strings
-    tag = clean(element)
-    @etags_stack << tag
-    @e_tag = tag
+    @e_tag = clean(element)
+    @etags_stack << @e_tag
 
-    if move_etag_outside_paragraph?(tag, element)
-      move_etag_outside_paragraph tag, element
+    if move_etag_outside_paragraph?(@e_tag, element)
+      move_etag_outside_paragraph @e_tag, element
     else
       if @e_tag == 'Bold'
-        add_to_last_line start_tag(tag, element)
+        add_to_last_line start_tag(@e_tag, element)
       else
-        add start_tag(tag, element)
+        add start_tag(@e_tag, element)
       end
-      @opened_in_paragraph[tag] = true if @in_paragraph
+      @opened_in_paragraph[@e_tag] = true if @in_paragraph
     end
     
     if !@after_first_page && @first_page
