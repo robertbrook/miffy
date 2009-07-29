@@ -63,10 +63,10 @@
 <AmendmentNumber_PgfTag id="7336425"><ParaLineStart LineNum="11"></ParaLineStart>35</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="5244478">
-<AmedTextCommitReport_PgfTag id="7336457"><ParaLineStart LineNum="12"></ParaLineStart><Number id="5244448">Clause <Clause_number>1</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7336457"><ParaLineStart LineNum="12"></ParaLineStart><AmendmentReference Clause="1" Page="1" Line="26"><Number id="5244448">Clause <Clause_number>1</Clause_number>, </Number>
 <Page id="5244458">page <Page_number>1</Page_number>, </Page>
 <Line id="5244468">line <Line_number>26</Line_number>, </Line>
-leave out subsections (2) to (7).</AmedTextCommitReport_PgfTag>
+</AmendmentReference>leave out subsections (2) to (7).</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Clause.Committee id="1484768" Star="No"><Sponsors id="1484771"><Sponsor id="1484774"><ParaLineStart LineNum="13"></ParaLineStart>Mr Mark Harper</Sponsor>
@@ -77,10 +77,10 @@ leave out subsections (2) to (7).</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7336478"><ParaLineStart LineNum="16"></ParaLineStart>2</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1484815">
-<AmedTextCommitReport_PgfTag id="7336508"><ParaLineStart LineNum="17"></ParaLineStart><Number id="1484880">Clause <Clause_number>1</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7336508"><ParaLineStart LineNum="17"></ParaLineStart><AmendmentReference Clause="1" Page="1" Line="29"><Number id="1484880">Clause <Clause_number>1</Clause_number>, </Number>
 <Page id="1484795">page <Page_number>1</Page_number>, </Page>
 <Line id="1484805">line <Line_number>29</Line_number>, </Line>
-leave out subsection (3) and insert—</AmedTextCommitReport_PgfTag>
+</AmendmentReference>leave out subsection (3) and insert—</AmedTextCommitReport_PgfTag>
 <SubSection id="1484894" Number="3" Quote="Single">
 <SubSection_PgfTag id="7336511"><PgfNumString><PgfNumString_1>‘(3)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="18"></ParaLineStart>A Minister of the Crown may by regulations list public authorities to which this <ParaLineStart LineNum="19"></ParaLineStart>section applies.’.</SubSection_text></SubSection_PgfTag>
 </SubSection>
@@ -94,10 +94,10 @@ leave out subsection (3) and insert—</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7336535"><ParaLineStart LineNum="23"></ParaLineStart>4</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1485316">
-<AmedTextCommitReport_PgfTag id="7336567"><ParaLineStart LineNum="24"></ParaLineStart><Number id="1485163">Clause <Clause_number>1</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7336567"><ParaLineStart LineNum="24"></ParaLineStart><AmendmentReference Clause="1" Page="2" Line="18"><Number id="1485163">Clause <Clause_number>1</Clause_number>, </Number>
 <Page id="1485173">page <Page_number>2</Page_number>, </Page>
 <Line id="1485183">line <Line_number>18</Line_number>, </Line>
-leave out subsection (4).</AmedTextCommitReport_PgfTag>
+</AmendmentReference>leave out subsection (4).</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Clause.Committee id="1484635" Star="No"><Sponsors id="1484643"><Sponsor id="1484647"><ParaLineStart LineNum="25"></ParaLineStart>Mr Mark Harper</Sponsor>
@@ -108,9 +108,9 @@ leave out subsection (4).</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7336588"><ParaLineStart LineNum="28"></ParaLineStart>1</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1484764">
-<AmedTextCommitReport_PgfTag id="7336611"><Page id="1484740"><ParaLineStart LineNum="29"></ParaLineStart>Page <Page_number>1</Page_number>, </Page>
+<AmedTextCommitReport_PgfTag id="7336611"><ParaLineStart LineNum="29"></ParaLineStart><AmendmentReference Page="1" Line="21"><Page id="1484740">Page <Page_number>1</Page_number>, </Page>
 <Line id="1484754">line <Line_number>21</Line_number>, </Line>
-leave out Clause 1.</AmedTextCommitReport_PgfTag>
+</AmendmentReference>leave out Clause 1.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Separator.thin id="5231729"></Separator.thin>
@@ -122,9 +122,9 @@ leave out Clause 1.</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7336636"><ParaLineStart LineNum="33"></ParaLineStart>3</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1485132">
-<AmedTextCommitReport_PgfTag id="7336659"><Page id="1485002"><ParaLineStart LineNum="34"></ParaLineStart>Page <Page_number>2</Page_number>, </Page>
+<AmedTextCommitReport_PgfTag id="7336659"><ParaLineStart LineNum="34"></ParaLineStart><AmendmentReference Page="2" Line="39"><Page id="1485002">Page <Page_number>2</Page_number>, </Page>
 <Line id="1485012">line <Line_number>39</Line_number>, </Line>
-leave out Clause 2.</AmedTextCommitReport_PgfTag>
+</AmendmentReference>leave out Clause 2.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Separator.thin id="5231814"></Separator.thin>
@@ -136,9 +136,9 @@ leave out Clause 2.</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7336684"><ParaLineStart LineNum="4"></ParaLineStart>5</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1485367">
-<AmedTextCommitReport_PgfTag id="7336707"><Page id="1485347"><ParaLineStart LineNum="5"></ParaLineStart>Page <Page_number>3</Page_number>, </Page>
+<AmedTextCommitReport_PgfTag id="7336707"><ParaLineStart LineNum="5"></ParaLineStart><AmendmentReference Page="3" Line="37"><Page id="1485347">Page <Page_number>3</Page_number>, </Page>
 <Line id="1485357">line <Line_number>37</Line_number>, </Line>
-leave out Clause 3.</AmedTextCommitReport_PgfTag>
+</AmendmentReference>leave out Clause 3.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Separator.thin id="5231840"></Separator.thin>
@@ -150,10 +150,10 @@ leave out Clause 3.</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7336732"><ParaLineStart LineNum="9"></ParaLineStart>6</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1485555">
-<AmedTextCommitReport_PgfTag id="7336764"><ParaLineStart LineNum="10"></ParaLineStart><Number id="1485525">Clause <Clause_number>4</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7336764"><ParaLineStart LineNum="10"></ParaLineStart><AmendmentReference Clause="4" Page="4" Line="11"><Number id="1485525">Clause <Clause_number>4</Clause_number>, </Number>
 <Page id="1485535">page <Page_number>4</Page_number>, </Page>
 <Line id="1485545">line <Line_number>11</Line_number>, </Line>
-at end insert ‘or paternity’.</AmedTextCommitReport_PgfTag>
+</AmendmentReference>at end insert ‘or paternity’.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Separator.thick id="5231848"></Separator.thick>
@@ -165,10 +165,10 @@ at end insert ‘or paternity’.</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7336789"><ParaLineStart LineNum="14"></ParaLineStart>7</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1485751">
-<AmedTextCommitReport_PgfTag id="7336821"><ParaLineStart LineNum="15"></ParaLineStart><Number id="1485721">Clause <Clause_number>13</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7336821"><ParaLineStart LineNum="15"></ParaLineStart><AmendmentReference Clause="13" Page="9" Line="5"><Number id="1485721">Clause <Clause_number>13</Clause_number>, </Number>
 <Page id="1485731">page <Page_number>9</Page_number>, </Page>
 <Line id="1485741">line <Line_number>5</Line_number>, </Line>
-leave out ‘because of’ and insert ‘on grounds of’.</AmedTextCommitReport_PgfTag>
+</AmendmentReference>leave out ‘because of’ and insert ‘on grounds of’.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Separator.thin id="5231864"></Separator.thin>
@@ -180,10 +180,10 @@ leave out ‘because of’ and insert ‘on grounds of’.</AmedTextCommitReport
 <AmendmentNumber_PgfTag id="7336846"><ParaLineStart LineNum="19"></ParaLineStart>8</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1485962">
-<AmedTextCommitReport_PgfTag id="7336878"><ParaLineStart LineNum="20"></ParaLineStart><Number id="1485932">Clause <Clause_number>14</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7336878"><ParaLineStart LineNum="20"></ParaLineStart><AmendmentReference Clause="14" Page="10" Line="5"><Number id="1485932">Clause <Clause_number>14</Clause_number>, </Number>
 <Page id="1485942">page <Page_number>10</Page_number>, </Page>
 <Line id="1485952">line <Line_number>5</Line_number>, </Line>
-leave out paragraph (c).</AmedTextCommitReport_PgfTag>
+</AmendmentReference>leave out paragraph (c).</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Separator.thin id="5231872"></Separator.thin>
@@ -195,9 +195,9 @@ leave out paragraph (c).</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7336903"><ParaLineStart LineNum="24"></ParaLineStart>9</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1486186">
-<AmedTextCommitReport_PgfTag id="7336926"><ParaLineStart LineNum="25"></ParaLineStart><Number id="1486156">Clause <Clause_number>18</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7336926"><ParaLineStart LineNum="25"></ParaLineStart><AmendmentReference Clause="18" Page="13"><Number id="1486156">Clause <Clause_number>18</Clause_number>, </Number>
 <Page id="1486166">page <Page_number>13</Page_number>, </Page>
-leave out line 17.</AmedTextCommitReport_PgfTag>
+</AmendmentReference>leave out line 17.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Separator.thin id="5231888"></Separator.thin>
@@ -209,10 +209,10 @@ leave out line 17.</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7336951"><ParaLineStart LineNum="29"></ParaLineStart>10</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1486425">
-<AmedTextCommitReport_PgfTag id="7336983"><ParaLineStart LineNum="30"></ParaLineStart><Number id="1486395">Clause <Clause_number>26</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7336983"><ParaLineStart LineNum="30"></ParaLineStart><AmendmentReference Clause="26" Page="19" Line="3"><Number id="1486395">Clause <Clause_number>26</Clause_number>, </Number>
 <Page id="1486405">page <Page_number>19</Page_number>, </Page>
 <Line id="1486415">line <Line_number>3</Line_number>, </Line>
-leave out paragraph (a).</AmedTextCommitReport_PgfTag>
+</AmendmentReference>leave out paragraph (a).</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Separator.thick id="5231900"></Separator.thick>
@@ -224,10 +224,10 @@ leave out paragraph (a).</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7337008"><ParaLineStart LineNum="4"></ParaLineStart>11</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1486681">
-<AmedTextCommitReport_PgfTag id="7337040"><ParaLineStart LineNum="5"></ParaLineStart><Number id="1486651">Clause <Clause_number>30</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7337040"><ParaLineStart LineNum="5"></ParaLineStart><AmendmentReference Clause="30" Page="22" Line="6"><Number id="1486651">Clause <Clause_number>30</Clause_number>, </Number>
 <Page id="1486661">page <Page_number>22</Page_number>, </Page>
 <Line id="1486671">line <Line_number>6</Line_number>, </Line>
-leave out paragraph (a).</AmedTextCommitReport_PgfTag>
+</AmendmentReference>leave out paragraph (a).</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Separator.thick id="5231918"></Separator.thick>
@@ -239,10 +239,10 @@ leave out paragraph (a).</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7337065"><ParaLineStart LineNum="9"></ParaLineStart>28</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1497603">
-<AmedTextCommitReport_PgfTag id="7337097"><ParaLineStart LineNum="10"></ParaLineStart><Number id="1497573">Clause <Clause_number>73</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7337097"><ParaLineStart LineNum="10"></ParaLineStart><AmendmentReference Clause="73" Page="55" Line="14"><Number id="1497573">Clause <Clause_number>73</Clause_number>, </Number>
 <Page id="1497583">page <Page_number>55</Page_number>, </Page>
 <Line id="1497593">line <Line_number>14</Line_number>, </Line>
-leave out ‘by regulations’ and insert ‘not’.</AmedTextCommitReport_PgfTag>
+</AmendmentReference>leave out ‘by regulations’ and insert ‘not’.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Clause.Committee id="1488358" Star="No"><Sponsors id="1488361"><Sponsor id="1488364"><ParaLineStart LineNum="11"></ParaLineStart>Mr Mark Harper</Sponsor>
@@ -253,10 +253,10 @@ leave out ‘by regulations’ and insert ‘not’.</AmedTextCommitReport_PgfTa
 <AmendmentNumber_PgfTag id="7337118"><ParaLineStart LineNum="14"></ParaLineStart>15</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1488732">
-<AmedTextCommitReport_PgfTag id="7337148"><ParaLineStart LineNum="15"></ParaLineStart><Number id="1488385">Clause <Clause_number>73</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7337148"><ParaLineStart LineNum="15"></ParaLineStart><AmendmentReference Clause="73" Page="55" Line="17"><Number id="1488385">Clause <Clause_number>73</Clause_number>, </Number>
 <Page id="1488395">page <Page_number>55</Page_number>, </Page>
 <Line id="1488405">line <Line_number>17</Line_number>, </Line>
-at end insert ‘and</AmedTextCommitReport_PgfTag>
+</AmendmentReference>at end insert ‘and</AmedTextCommitReport_PgfTag>
 <Para id="1489026" Quote="None" Number="b">
 <Paragraph_PgfTag id="7337151"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="16"></ParaLineStart>employees who have a disability and employees who do not have a <ParaLineStart LineNum="17"></ParaLineStart>disability.’.</Para_text></Paragraph_PgfTag>
 </Para></Amendment.Text>
@@ -269,10 +269,10 @@ at end insert ‘and</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7337175"><ParaLineStart LineNum="21"></ParaLineStart>14</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1487539">
-<AmedTextCommitReport_PgfTag id="7337205"><ParaLineStart LineNum="22"></ParaLineStart><Number id="1487509">Clause <Clause_number>73</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7337205"><ParaLineStart LineNum="22"></ParaLineStart><AmendmentReference Clause="73" Page="55" Line="19"><Number id="1487509">Clause <Clause_number>73</Clause_number>, </Number>
 <Page id="1487519">page <Page_number>55</Page_number>, </Page>
 <Line id="1487529">line <Line_number>19</Line_number>, </Line>
-at end insert—</AmedTextCommitReport_PgfTag>
+</AmendmentReference>at end insert—</AmedTextCommitReport_PgfTag>
 <Para id="1487815" Number="0" Letter="0" Quote="Single">
 <Paragraph_PgfTag id="7337209"><PgfNumString><PgfNumString_1>‘( )</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="23"></ParaLineStart>the Armed Forces;</Para_text></Paragraph_PgfTag>
 </Para><Para id="1488086" Number="0" Letter="0">
@@ -287,10 +287,10 @@ at end insert—</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7337236"><ParaLineStart LineNum="29"></ParaLineStart>13</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1487236">
-<AmedTextCommitReport_PgfTag id="7337268"><ParaLineStart LineNum="30"></ParaLineStart><Number id="1487206">Clause <Clause_number>73</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7337268"><ParaLineStart LineNum="30"></ParaLineStart><AmendmentReference Clause="73" Page="55" Line="20"><Number id="1487206">Clause <Clause_number>73</Clause_number>, </Number>
 <Page id="1487216">page <Page_number>55</Page_number>, </Page>
 <Line id="1487226">line <Line_number>20</Line_number>, </Line>
-leave out paragraph (b).</AmedTextCommitReport_PgfTag>
+</AmendmentReference>leave out paragraph (b).</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Clause.Committee id="1486893" Star="No"><Sponsors id="1486896"><Sponsor id="1486899"><ParaLineStart LineNum="31"></ParaLineStart>Mr Mark Harper</Sponsor>
@@ -301,9 +301,9 @@ leave out paragraph (b).</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7337289"><ParaLineStart LineNum="34"></ParaLineStart>12</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1486950">
-<AmedTextCommitReport_PgfTag id="7337312"><Page id="1486930"><ParaLineStart LineNum="35"></ParaLineStart>Page <Page_number>55</Page_number>, </Page>
+<AmedTextCommitReport_PgfTag id="7337312"><ParaLineStart LineNum="35"></ParaLineStart><AmendmentReference Page="55" Line="13"><Page id="1486930">Page <Page_number>55</Page_number>, </Page>
 <Line id="1486940">line <Line_number>13</Line_number>, </Line>
-leave out Clause 73.</AmedTextCommitReport_PgfTag>
+</AmendmentReference>leave out Clause 73.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Separator.thick id="5232801"></Separator.thick>
@@ -315,10 +315,10 @@ leave out Clause 73.</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7337337"><ParaLineStart LineNum="39"></ParaLineStart>16</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1489718">
-<AmedTextCommitReport_PgfTag id="7337369"><ParaLineStart LineNum="40"></ParaLineStart><Number id="1489346">Clause <Clause_number>118</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7337369"><ParaLineStart LineNum="40"></ParaLineStart><AmendmentReference Clause="118" Page="85" Line="28"><Number id="1489346">Clause <Clause_number>118</Clause_number>, </Number>
 <Page id="1489356">page <Page_number>85</Page_number>, </Page>
 <Line id="1489366">line <Line_number>28</Line_number>, </Line>
-leave out paragraph (c).</AmedTextCommitReport_PgfTag>
+</AmendmentReference>leave out paragraph (c).</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <PageStart id="7338407" PageType="BodyPage" PageNum="32">Page 32</PageStart><Clause.Committee id="1489722" Star="No"><Sponsors id="1489725"><Sponsor id="1489728"><ParaLineStart LineNum="1"></ParaLineStart>Mr Mark Harper</Sponsor>
@@ -329,10 +329,10 @@ leave out paragraph (c).</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7337390"><ParaLineStart LineNum="4"></ParaLineStart>17</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1489779">
-<AmedTextCommitReport_PgfTag id="7337420"><ParaLineStart LineNum="5"></ParaLineStart><Number id="1489749">Clause <Clause_number>118</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7337420"><ParaLineStart LineNum="5"></ParaLineStart><AmendmentReference Clause="118" Page="85" Line="29"><Number id="1489749">Clause <Clause_number>118</Clause_number>, </Number>
 <Page id="1489759">page <Page_number>85</Page_number>, </Page>
 <Line id="1489769">line <Line_number>29</Line_number>, </Line>
-leave out subsection (3) and insert—</AmedTextCommitReport_PgfTag>
+</AmendmentReference>leave out subsection (3) and insert—</AmedTextCommitReport_PgfTag>
 <SubSection id="1490108" Number="3" Quote="Single">
 <SubSection_PgfTag id="7337423"><PgfNumString><PgfNumString_1>‘(3)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="6"></ParaLineStart>In the event that an employment tribunal finds that an employer has contravened <ParaLineStart LineNum="7"></ParaLineStart>a term modified or included by an equality clause, the employer shall be required <ParaLineStart LineNum="8"></ParaLineStart>to undertake an audit, to be known as an equal pay audit, and to make the results <ParaLineStart LineNum="9"></ParaLineStart>of the audit available in a manner prescribed in regulations made by the Secretary <ParaLineStart LineNum="10"></ParaLineStart>of State.’.</SubSection_text></SubSection_PgfTag>
 </SubSection>
@@ -346,10 +346,10 @@ leave out subsection (3) and insert—</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7337447"><ParaLineStart LineNum="14"></ParaLineStart>18</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1490864">
-<AmedTextCommitReport_PgfTag id="7337479"><ParaLineStart LineNum="15"></ParaLineStart><Number id="1490466">Clause <Clause_number>118</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7337479"><ParaLineStart LineNum="15"></ParaLineStart><AmendmentReference Clause="118" Page="86" Line="8"><Number id="1490466">Clause <Clause_number>118</Clause_number>, </Number>
 <Page id="1490476">page <Page_number>86</Page_number>, </Page>
 <Line id="1490486">line <Line_number>8</Line_number>, </Line>
-leave out subsection (7).</AmedTextCommitReport_PgfTag>
+</AmendmentReference>leave out subsection (7).</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Separator.thin id="5232868"></Separator.thin>
@@ -361,10 +361,10 @@ leave out subsection (7).</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7337504"><ParaLineStart LineNum="19"></ParaLineStart>19</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1490925">
-<AmedTextCommitReport_PgfTag id="7337534"><ParaLineStart LineNum="20"></ParaLineStart><Number id="1490895">Clause <Clause_number>143</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7337534"><ParaLineStart LineNum="20"></ParaLineStart><AmendmentReference Clause="143" Page="105" Line="14"><Number id="1490895">Clause <Clause_number>143</Clause_number>, </Number>
 <Page id="1490905">page <Page_number>105</Page_number>, </Page>
 <Line id="1490915">line <Line_number>14</Line_number>, </Line>
-at beginning insert ‘Subsection (1) will also apply <ParaLineStart LineNum="21"></ParaLineStart>to’.</AmedTextCommitReport_PgfTag>
+</AmendmentReference>at beginning insert ‘Subsection (1) will also apply <ParaLineStart LineNum="21"></ParaLineStart>to’.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Clause.Committee id="1491292" Star="No"><Sponsors id="1491295"><Sponsor id="1491298"><ParaLineStart LineNum="22"></ParaLineStart>Mr Mark Harper</Sponsor>
@@ -375,9 +375,9 @@ at beginning insert ‘Subsection (1) will also apply <ParaLineStart LineNum="21
 <AmendmentNumber_PgfTag id="7337557"><ParaLineStart LineNum="25"></ParaLineStart>20</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1491349">
-<AmedTextCommitReport_PgfTag id="7337578"><ParaLineStart LineNum="26"></ParaLineStart><Number id="1491319">Clause <Clause_number>143</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7337578"><ParaLineStart LineNum="26"></ParaLineStart><AmendmentReference Clause="143" Page="105"><Number id="1491319">Clause <Clause_number>143</Clause_number>, </Number>
 <Page id="1491329">page <Page_number>105</Page_number>, </Page>
-leave out lines 15 and 16 and insert ‘except in relation to matters <ParaLineStart LineNum="27"></ParaLineStart>of employment’.</AmedTextCommitReport_PgfTag>
+</AmendmentReference>leave out lines 15 and 16 and insert ‘except in relation to matters <ParaLineStart LineNum="27"></ParaLineStart>of employment’.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Clause.Committee id="1491758" Star="No"><Sponsors id="1491761"><Sponsor id="1491764"><ParaLineStart LineNum="28"></ParaLineStart>Mr Mark Harper</Sponsor>
@@ -388,10 +388,10 @@ leave out lines 15 and 16 and insert ‘except in relation to matters <ParaLineS
 <AmendmentNumber_PgfTag id="7337601"><ParaLineStart LineNum="31"></ParaLineStart>21</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1491815">
-<AmedTextCommitReport_PgfTag id="7337631"><ParaLineStart LineNum="32"></ParaLineStart><Number id="1491785">Clause <Clause_number>143</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7337631"><ParaLineStart LineNum="32"></ParaLineStart><AmendmentReference Clause="143" Page="105" Line="35"><Number id="1491785">Clause <Clause_number>143</Clause_number>, </Number>
 <Page id="1491795">page <Page_number>105</Page_number>, </Page>
 <Line id="1491805">line <Line_number>35</Line_number>, </Line>
-at end insert—</AmedTextCommitReport_PgfTag>
+</AmendmentReference>at end insert—</AmedTextCommitReport_PgfTag>
 <SubSection id="1492226" Number="5" Quote="Single" Letter="A">
 <SubSection_PgfTag id="7337634"><PgfNumString><PgfNumString_1>‘(5A)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="33"></ParaLineStart>A public authority must collect and publish data annually showing, in the exercise <ParaLineStart LineNum="34"></ParaLineStart>of its functions, the extent to which it has succeeded in meeting the requirements <ParaLineStart LineNum="35"></ParaLineStart>under subsection (1).’.</SubSection_text></SubSection_PgfTag>
 </SubSection>
@@ -406,10 +406,10 @@ at end insert—</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7337662"><ParaLineStart LineNum="39"></ParaLineStart>22</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1493132">
-<AmedTextCommitReport_PgfTag id="7337692"><ParaLineStart LineNum="40"></ParaLineStart><Number id="1492658">Clause <Clause_number>147</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7337692"><ParaLineStart LineNum="40"></ParaLineStart><AmendmentReference Clause="147" Page="108" Line="27"><Number id="1492658">Clause <Clause_number>147</Clause_number>, </Number>
 <Page id="1492668">page <Page_number>108</Page_number>, </Page>
 <Line id="1492678">line <Line_number>27</Line_number>, </Line>
-at end insert—</AmedTextCommitReport_PgfTag>
+</AmendmentReference>at end insert—</AmedTextCommitReport_PgfTag>
 <SubSection id="1493136" Number="5" Quote="Single">
 <SubSection_PgfTag id="7337695"><PgfNumString><PgfNumString_1>‘(5)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="41"></ParaLineStart>Before regulations are made under this section, there must be laid before both <ParaLineStart LineNum="42"></ParaLineStart>Houses of Parliament—</SubSection_text></SubSection_PgfTag>
 <Para id="1493562">
@@ -428,10 +428,10 @@ at end insert—</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7337731"><ParaLineStart LineNum="6"></ParaLineStart>29</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1497732">
-<AmedTextCommitReport_PgfTag id="7337761"><ParaLineStart LineNum="7"></ParaLineStart><Number id="1497702">Clause <Clause_number>153</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7337761"><ParaLineStart LineNum="7"></ParaLineStart><AmendmentReference Clause="153" Page="113" Line="2"><Number id="1497702">Clause <Clause_number>153</Clause_number>, </Number>
 <Page id="1497712">page <Page_number>113</Page_number>, </Page>
 <Line id="1497722">line <Line_number>2</Line_number>, </Line>
-leave out ‘reasonably thinks’ and insert ‘can <ParaLineStart LineNum="8"></ParaLineStart>demonstrate’.</AmedTextCommitReport_PgfTag>
+</AmendmentReference>leave out ‘reasonably thinks’ and insert ‘can <ParaLineStart LineNum="8"></ParaLineStart>demonstrate’.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Clause.Committee id="1493581" Star="No"><Sponsors id="1493584"><Sponsor id="1493587"><ParaLineStart LineNum="9"></ParaLineStart>Mr Mark Harper</Sponsor>
@@ -442,10 +442,10 @@ leave out ‘reasonably thinks’ and insert ‘can <ParaLineStart LineNum="8"><
 <AmendmentNumber_PgfTag id="7337784"><ParaLineStart LineNum="12"></ParaLineStart>23</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1494126">
-<AmedTextCommitReport_PgfTag id="7337814"><ParaLineStart LineNum="13"></ParaLineStart><Number id="1493608">Clause <Clause_number>153</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7337814"><ParaLineStart LineNum="13"></ParaLineStart><AmendmentReference Clause="153" Page="113" Line="16"><Number id="1493608">Clause <Clause_number>153</Clause_number>, </Number>
 <Page id="1493618">page <Page_number>113</Page_number>, </Page>
 <Line id="1493628">line <Line_number>16</Line_number>, </Line>
-leave out ‘as qualified as’ and insert ‘equally <ParaLineStart LineNum="14"></ParaLineStart>qualified to’.</AmedTextCommitReport_PgfTag>
+</AmendmentReference>leave out ‘as qualified as’ and insert ‘equally <ParaLineStart LineNum="14"></ParaLineStart>qualified to’.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Clause.Committee id="1494130" Star="No"><Sponsors id="1494133"><Sponsor id="1494136"><ParaLineStart LineNum="15"></ParaLineStart>Mr Mark Harper</Sponsor>
@@ -456,9 +456,9 @@ leave out ‘as qualified as’ and insert ‘equally <ParaLineStart LineNum="14
 <AmendmentNumber_PgfTag id="7337837"><ParaLineStart LineNum="18"></ParaLineStart>24</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1494187">
-<AmedTextCommitReport_PgfTag id="7337860"><Page id="1494167"><ParaLineStart LineNum="19"></ParaLineStart>Page <Page_number>113</Page_number>, </Page>
+<AmedTextCommitReport_PgfTag id="7337860"><ParaLineStart LineNum="19"></ParaLineStart><AmendmentReference Page="113" Line="1"><Page id="1494167">Page <Page_number>113</Page_number>, </Page>
 <Line id="1494177">line <Line_number>1</Line_number>, </Line>
-leave out Clause 153.</AmedTextCommitReport_PgfTag>
+</AmendmentReference>leave out Clause 153.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Separator.thick id="5232902"></Separator.thick>
@@ -470,10 +470,10 @@ leave out Clause 153.</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7337885"><ParaLineStart LineNum="23"></ParaLineStart>30</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1497875">
-<AmedTextCommitReport_PgfTag id="7337915"><ParaLineStart LineNum="24"></ParaLineStart><Number id="1497845">Clause <Clause_number>190</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7337915"><ParaLineStart LineNum="24"></ParaLineStart><AmendmentReference Clause="190" Page="135" Line="23"><Number id="1497845">Clause <Clause_number>190</Clause_number>, </Number>
 <Page id="1497855">page <Page_number>135</Page_number>, </Page>
 <Line id="1497865">line <Line_number>23</Line_number>, </Line>
-at end insert—</AmedTextCommitReport_PgfTag>
+</AmendmentReference>at end insert—</AmedTextCommitReport_PgfTag>
 <SubSection id="1497976" Number="5" Quote="Single">
 <SubSection_PgfTag id="7337918"><PgfNumString><PgfNumString_1>‘(5)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="25"></ParaLineStart>An order under subsection (1) may only be made if the Minister can demonstrate <ParaLineStart LineNum="26"></ParaLineStart>that persons of a specified age are being discriminated against for no legitimate <ParaLineStart LineNum="27"></ParaLineStart>reason.’.</SubSection_text></SubSection_PgfTag>
 </SubSection>
@@ -487,9 +487,9 @@ at end insert—</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7337942"><ParaLineStart LineNum="31"></ParaLineStart>25</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1494702">
-<AmedTextCommitReport_PgfTag id="7337965"><Page id="1494682"><ParaLineStart LineNum="32"></ParaLineStart>Page <Page_number>135</Page_number>, </Page>
+<AmedTextCommitReport_PgfTag id="7337965"><ParaLineStart LineNum="32"></ParaLineStart><AmendmentReference Page="135" Line="9"><Page id="1494682">Page <Page_number>135</Page_number>, </Page>
 <Line id="1494692">line <Line_number>9</Line_number>, </Line>
-leave out Clause 190.</AmedTextCommitReport_PgfTag>
+</AmendmentReference>leave out Clause 190.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Separator.thin id="5232922"></Separator.thin>
@@ -501,10 +501,10 @@ leave out Clause 190.</AmedTextCommitReport_PgfTag>
 <AmendmentNumber_PgfTag id="7337990"><ParaLineStart LineNum="36"></ParaLineStart>31</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1498134">
-<AmedTextCommitReport_PgfTag id="7338022"><ParaLineStart LineNum="37"></ParaLineStart><Number id="1498104">Clause <Clause_number>191</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7338022"><ParaLineStart LineNum="37"></ParaLineStart><AmendmentReference Clause="191" Page="136" Line="4"><Number id="1498104">Clause <Clause_number>191</Clause_number>, </Number>
 <Page id="1498114">page <Page_number>136</Page_number>, </Page>
 <Line id="1498124">line <Line_number>4</Line_number>, </Line>
-leave out ‘thinks’ and insert ‘can demonstrate’.</AmedTextCommitReport_PgfTag>
+</AmendmentReference>leave out ‘thinks’ and insert ‘can demonstrate’.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <PageStart id="7338456" PageType="BodyPage" PageNum="34">Page 34</PageStart><Clause.Committee id="1498284" Star="No"><Sponsors id="1498287"><Sponsor id="1498290"><ParaLineStart LineNum="1"></ParaLineStart>Mr Mark Harper</Sponsor>
@@ -515,10 +515,10 @@ leave out ‘thinks’ and insert ‘can demonstrate’.</AmedTextCommitReport_P
 <AmendmentNumber_PgfTag id="7338043"><ParaLineStart LineNum="4"></ParaLineStart>32</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1498341">
-<AmedTextCommitReport_PgfTag id="7338075"><ParaLineStart LineNum="5"></ParaLineStart><Number id="1498311">Clause <Clause_number>191</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7338075"><ParaLineStart LineNum="5"></ParaLineStart><AmendmentReference Clause="191" Page="136" Line="9"><Number id="1498311">Clause <Clause_number>191</Clause_number>, </Number>
 <Page id="1498321">page <Page_number>136</Page_number>, </Page>
 <Line id="1498331">line <Line_number>9</Line_number>, </Line>
-leave out ‘thinks’ and insert ‘can demonstrate’.</AmedTextCommitReport_PgfTag>
+</AmendmentReference>leave out ‘thinks’ and insert ‘can demonstrate’.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Clause.Committee id="1498490" Star="No"><Sponsors id="1498493"><Sponsor id="1498496"><ParaLineStart LineNum="6"></ParaLineStart>Mr Mark Harper</Sponsor>
@@ -529,10 +529,10 @@ leave out ‘thinks’ and insert ‘can demonstrate’.</AmedTextCommitReport_P
 <AmendmentNumber_PgfTag id="7338096"><ParaLineStart LineNum="9"></ParaLineStart>33</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1498547">
-<AmedTextCommitReport_PgfTag id="7338128"><ParaLineStart LineNum="10"></ParaLineStart><Number id="1498517">Clause <Clause_number>191</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7338128"><ParaLineStart LineNum="10"></ParaLineStart><AmendmentReference Clause="191" Page="136" Line="16"><Number id="1498517">Clause <Clause_number>191</Clause_number>, </Number>
 <Page id="1498527">page <Page_number>136</Page_number>, </Page>
 <Line id="1498537">line <Line_number>16</Line_number>, </Line>
-leave out ‘thinks’ and insert ‘can demonstrate’.</AmedTextCommitReport_PgfTag>
+</AmendmentReference>leave out ‘thinks’ and insert ‘can demonstrate’.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Clause.Committee id="1498703" Star="No"><Sponsors id="1498706"><Sponsor id="1498709"><ParaLineStart LineNum="11"></ParaLineStart>Mr Mark Harper</Sponsor>
@@ -543,10 +543,10 @@ leave out ‘thinks’ and insert ‘can demonstrate’.</AmedTextCommitReport_P
 <AmendmentNumber_PgfTag id="7338149"><ParaLineStart LineNum="14"></ParaLineStart>34</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1498760">
-<AmedTextCommitReport_PgfTag id="7338181"><ParaLineStart LineNum="15"></ParaLineStart><Number id="1498730">Clause <Clause_number>191</Clause_number>, </Number>
+<AmedTextCommitReport_PgfTag id="7338181"><ParaLineStart LineNum="15"></ParaLineStart><AmendmentReference Clause="191" Page="136" Line="23"><Number id="1498730">Clause <Clause_number>191</Clause_number>, </Number>
 <Page id="1498740">page <Page_number>136</Page_number>, </Page>
 <Line id="1498750">line <Line_number>23</Line_number>, </Line>
-leave out ‘thinks’ and insert ‘can demonstrate’.</AmedTextCommitReport_PgfTag>
+</AmendmentReference>leave out ‘thinks’ and insert ‘can demonstrate’.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Clause.Committee id="1495185" Star="No"><Sponsors id="1495188"><Sponsor id="1495191"><ParaLineStart LineNum="16"></ParaLineStart>Mr Mark Harper</Sponsor>
@@ -557,9 +557,9 @@ leave out ‘thinks’ and insert ‘can demonstrate’.</AmedTextCommitReport_P
 <AmendmentNumber_PgfTag id="7338202"><ParaLineStart LineNum="19"></ParaLineStart>26</AmendmentNumber_PgfTag>
 </Amendment.Number>
 <Amendment.Text id="1495232">
-<AmedTextCommitReport_PgfTag id="7338225"><Page id="1495212"><ParaLineStart LineNum="20"></ParaLineStart>Page <Page_number>136</Page_number>, </Page>
+<AmedTextCommitReport_PgfTag id="7338225"><ParaLineStart LineNum="20"></ParaLineStart><AmendmentReference Page="136" Line="1"><Page id="1495212">Page <Page_number>136</Page_number>, </Page>
 <Line id="1495222">line <Line_number>1</Line_number>, </Line>
-leave out Clause 191.</AmedTextCommitReport_PgfTag>
+</AmendmentReference>leave out Clause 191.</AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Separator.thick id="5231613"></Separator.thick>

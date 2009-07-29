@@ -359,6 +359,23 @@ class Mif2HtmlParser
     add end_tag
   end
   
+  def handle_amendment_reference node
+    clause = node['Clause']
+    schedule = node['Schedule']
+    page = node['Page']
+    line = node['Line']
+    ref = ''
+    ref += "clause#{clause}-" if clause
+    ref += "schedule#{schedule}-" if schedule
+    ref += "page#{page}-" if page
+    ref += "line#{line}" if line
+    ref.chomp!('-')
+    
+    add %Q|<a href="##{ref}" class="#{css_class(node)}">|
+    node_children_to_html(node)
+    add '</a>'    
+  end
+  
   def add text
     if text.nil?
       raise 'text should not be null'
@@ -383,6 +400,8 @@ class Mif2HtmlParser
         handle_clause_ar node
       when 'Clause_ar_text'
         handle_clause_ar_text node
+      when 'AmendmentReference'
+        handle_amendment_reference node
       when /_number$/
         add_html_element 'span', node
       when /^PgfNumString_\d+$/

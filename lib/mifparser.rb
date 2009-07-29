@@ -5,11 +5,28 @@ require 'hpricot'
 require 'rexml/document'
 
 class MifPage
-  attr_accessor :unique_id, :page_type, :page_num
+  attr_accessor :unique_id, :page_type, :page_num, :page_id
+  
+  include MifParserUtils
+
+  def initialize page_xml
+    self.unique_id = page_xml.at('Unique/text()').to_s
+    self.page_type = page_xml.at('PageType/text()').to_s
+    self.page_num = clean(page_xml.at('PageNum')) if page_xml.at('PageNum')    
+    self.page_id = page_xml.at('TextRect[1]/ID/text()').to_s
+  end
 end
 
 class AmendmentReference
   attr_accessor :number_type, :number, :page_number, :line_number
+
+  def start_tag
+    attributes = ''
+    attributes += %Q| #{number_type}="#{number}"| if number_type
+    attributes += %Q| Page="#{page_number}"| if page_number
+    attributes += %Q| Line="#{line_number}"| if line_number
+    %Q|<AmendmentReference#{attributes}>|
+  end
 end
 
 class MifParser
@@ -84,8 +101,10 @@ class MifParser
   
   def get_pages doc
     pages = (doc/'Page')
-    pages.inject({}) do |hash, page|
-      handle_page_definition(page, hash)
+    pages.inject({}) do |hash, page_xml|
+      page = MifPage.new page_xml
+      hash[page.page_id] = page    
+      hash
     end
   end
 
@@ -135,17 +154,6 @@ class MifParser
     attrib_value
   end
   
-  def handle_page_definition page_xml, pages
-    page = MifPage.new
-    page.unique_id = page_xml.at('Unique/text()').to_s
-    page.page_type = page_xml.at('PageType/text()').to_s
-    page.page_num = clean(page_xml.at('PageNum')) if page_xml.at('PageNum')
-    
-    page_id = page_xml.at('TextRect[1]/ID/text()').to_s
-    pages[page_id] = page    
-    pages
-  end
-
   def handle_variable var_xml, vars
     @var_id = ''
     
@@ -262,6 +270,35 @@ class MifParser
     tables
   end
 
+  def wrap_paragraph
+    line = @xml.pop
+    lines = []
+    while !line.include?(@pgf_tag)
+      if line[/PgfNumString/]
+        pgf_num_string = line
+      else
+        lines << line
+      end
+      line = @xml.pop
+    end
+    pgf_start_tag = line
+
+    yield :before
+    add pgf_start_tag
+    yield :start
+    
+    add pgf_num_string if pgf_num_string
+    unless lines.empty?
+      lines = lines.reverse
+      first_line = lines.first
+      yield :first_line, first_line
+      lines.delete_at(0)
+      lines.each {|line| add line}
+    end
+
+    yield :end
+  end
+  
   def handle_text_rect text_rect
     text_rect_id = text_rect.inner_text
 
@@ -273,22 +310,13 @@ class MifParser
         at_beginning_of_paragraph = @strings.empty? && @xml.last && @xml.last.include?('PgfNumString')
 
         if at_beginning_of_paragraph
-          line = @xml.pop
-          lines = []
-          while !line.include?(@pgf_tag)
-            if line[/PgfNumString/]
-              pgf_num_string = line
-            else
-              lines << line
+          wrap_paragraph do |indicator, line|
+            if indicator == :before
+              add page_start 
+            elsif indicator == :first_line
+              add line
             end
-            line = @xml.pop
           end
-          pgf_start_tag = line
-
-          add page_start
-          add pgf_start_tag
-          add pgf_num_string if pgf_num_string
-          lines.reverse.each {|line| add line}
         else
           add_to_last_line page_start
         end
@@ -378,11 +406,19 @@ class MifParser
     @opened_in_paragraph.clear
   end
 
+  def is_amendment_reference_part?(tag)
+    tag[/^(Number|Line|Page)$/]
+  end
+  
   def handle_etag element
     flush_strings
     @e_tag = clean(element)
     @etags_stack << @e_tag
 
+    if is_amendment_reference_part?(@e_tag)
+      @amendment_reference ||= AmendmentReference.new
+    end
+    
     if move_etag_outside_paragraph?(@e_tag, element)
       move_etag_outside_paragraph @e_tag, element
     else
@@ -476,9 +512,10 @@ class MifParser
     @line_num += 1
     para_line_start = %Q|<ParaLineStart LineNum="#{@line_num}"></ParaLineStart>|
 
-    if @strings.last.blank? && @xml.last.include?('<Number ')
+    if @strings.last.blank? && @xml.last[/<(Number|Page) /]
+      tag_name = $1
       last_line = @xml.pop
-      last_line.sub!('<Number ', "#{para_line_start}<Number ")
+      last_line.sub!("<#{tag_name} ", "#{para_line_start}<#{tag_name} ")
       add last_line
     else
       add_to_last_line para_line_start
@@ -486,20 +523,53 @@ class MifParser
     @paraline_start = false
     @in_paraline = true
   end
+
+  def clause_or_schedule line
+    line[/(Clause|Schedule)/, 1]
+  end
+
+  def is_reference_number? text
+    @prefix_end && text[/^\d+$/] && @e_tag
+  end
+
+  def handle_reference_number text
+    last_line = @strings.last || ''
+    if clause_or_schedule = clause_or_schedule(last_line)
+      @amendment_reference.number_type = clause_or_schedule
+      @amendment_reference.number = text
+      %Q|<#{clause_or_schedule}_number>#{text}</#{clause_or_schedule}_number>|
+    else
+      @amendment_reference.page_number = text if @e_tag == 'Page'
+      @amendment_reference.line_number = text if @e_tag == 'Line'
+      %Q|<#{@e_tag}_number>#{text}</#{@e_tag}_number>|
+    end
+  end
+
+  def is_end_of_amendment_reference?
+    @amendment_reference && !is_amendment_reference_part?(@e_tag)
+  end
+
+  def handle_amendment_reference
+    wrap_paragraph do |indicator, line|
+      if indicator == :first_line
+        if line.include?('</ParaLineStart>')
+          add line.sub('</ParaLineStart>', "</ParaLineStart>#{@amendment_reference.start_tag}")
+        else
+          add @amendment_reference.start_tag
+          add line
+        end
+      elsif indicator == :end
+        add '</AmendmentReference>'
+      end
+    end
+    @amendment_reference = nil
+  end
   
   def handle_string element
     add_paraline_start if @paraline_start    
     text = clean(element)
-    last_line = @strings.last || ''
-
-    if @prefix_end && text[/^\d+$/] && @e_tag      
-      if (type = last_line[/(Clause|Schedule)/, 1])
-        text = %Q|<#{type}_number>#{text}</#{type}_number>|
-      else
-        text = %Q|<#{@e_tag}_number>#{text}</#{@e_tag}_number>|
-      end
-    end
-
+    text = handle_reference_number(text) if is_reference_number?(text)
+    handle_amendment_reference if is_end_of_amendment_reference?      
     add_to_last_line text
   end
   
@@ -513,7 +583,7 @@ class MifParser
       text = @strings.pop
       text_tag = @etags_stack.last
       
-      if (@last_was_pdf_num_string || text_tag == "ResolutionText") && !text[/^<(PageStart)/]
+      if (@last_was_pdf_num_string || text_tag == "ResolutionText") && !text[/^<(PageStart)/] && !is_amendment_reference_part?(text_tag)
         last_line += "<#{text_tag}_text>#{text}</#{text_tag}_text>"
       else
         last_line += text
