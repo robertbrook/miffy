@@ -375,7 +375,7 @@ class MifParser
     attribute_list
   end
 
-  MOVE_OUTSIDE = %w[Amendment Amendment.Number Amendment.Text      
+  MOVE_OUTSIDE = %w[Amendment Amendment.Number Amendment.Text SubPara.sch      
       ClauseTitle Clause Clauses.ar Clause.ar ClauseText 
       Committee Resolution SubSection
       ResolutionHead ResolutionText OrderDate OrderHeading 

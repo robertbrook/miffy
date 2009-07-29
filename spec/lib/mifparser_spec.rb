@@ -39,6 +39,12 @@ describe MifParser do
       @result.should_not have_tag('BillTitle', :text => 'Law Commission Bill [HL]')
     end
 
+    it 'should move SubPara.sch ETag round SubParagraphCont.sch PdfTag' do
+      @result.tr('.','-').should have_tag('SubPara-sch[id="1090960"]') do
+        with_tag('SubParagraphCont-sch_PgfTag[id="7381594"]')
+      end
+    end
+
     it 'should add element around text in mixed element/text situation' do
       @result.should have_tag('SubSection[id="1151133"]') do
         with_tag('SubSection1_PgfTag[id="7382611"]') do
