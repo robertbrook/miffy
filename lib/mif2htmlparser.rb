@@ -280,6 +280,11 @@ class Mif2HtmlParser
       @clause_anchor_start = nil
     else
       add_html_element 'span', node
+      if node.at('/text()').to_s.empty?
+        end_tag = @html.pop
+        add "&nbsp;"
+        add end_tag
+      end
     end
   end
   

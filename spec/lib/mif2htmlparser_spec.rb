@@ -126,7 +126,7 @@ describe MifParser do
         end
         with_tag('span[class="SubParagraphCont_sch_PgfTag"][id="7381594"]') do
           with_tag('span[class="PgfNumString"]') do
-            with_tag('span[class="PgfNumString_1"]', :text => '')
+            with_tag('span[class="PgfNumString_1"]', :text => '&nbsp;')
             with_tag('span[class="PgfNumString_2"]', :text => '(2)')
           end
         end
