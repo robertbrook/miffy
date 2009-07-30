@@ -225,18 +225,27 @@
           padding: 0
            
         .Para_sch_text
-          +column(25, true)
+          +column(26, true)
           
         .SubPara_sch
-          +column(23, true)
+          +column(26, true)
           float: left
+          
+          .SubParagraphCont_sch_PgfTag
+            +column(26, true)
+            
+            .Subpara_sch_text
+              +column(22, true)
+            
+          .Definition
+            +column(25, true)
           
           .SubParagraph_sch_PgfTag
             display: block
-            +column(23, true)
+            +column(26, true)
             
             .Subpara_sch_text
-              +column(19, true)
+              +column(22, true)
               
           .SubSubParagraph_sch_PgfTag
             display: block
