@@ -13,6 +13,7 @@
 
     .PgfNumString_0
       +column(1, true)
+      text-align: left
 
     .PgfNumString_1
       +append(1)
@@ -230,10 +231,25 @@
           +column(23, true)
           float: left
           
-          .Subpara_sch_text 
+          .SubParagraph_sch_PgfTag
+            display: block
             +column(23, true)
             
+            .Subpara_sch_text
+              +column(19, true)
+              
           .SubSubParagraph_sch_PgfTag
+            display: block
+            +prepend(5)
+            +column(21, true)
+            
+            .SubSubPara_sch
+              +column(19, true)
+                
+              .SubSubPara_sch_text
+                +column(19, true)
+          
+          .Subpara_sch_text 
             +column(23, true)
             
             .PgfNumString
