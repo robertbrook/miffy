@@ -61,7 +61,7 @@ class MifParser
       doc = REXML::Document.new(xml)
     rescue Exception => e
       puts e.to_s
-      raise e
+      # raise e
     end
     if options[:indent]
       indented = ''
@@ -375,7 +375,8 @@ class MifParser
     attribute_list
   end
 
-  MOVE_OUTSIDE = %w[Amendment Amendment.Number Amendment.Text SubPara.sch      
+  MOVE_OUTSIDE = %w[Amendment Amendment.Number Amendment.Text Longtitle.text
+      SubPara.sch      
       ClauseTitle Clause Clauses.ar Clause.ar ClauseText 
       Committee Resolution SubSection NewClause.Committee
       ResolutionHead ResolutionText OrderDate OrderHeading 
@@ -410,19 +411,23 @@ class MifParser
     tag[/^(Number|Line|Page)$/]
   end
   
+  def dont_add_text_around_child_text? tag
+    tag[/^(Bold|Italic|Citation)$/]
+  end
+  
   def handle_etag element
     flush_strings
     @e_tag = clean(element)
     @etags_stack << @e_tag
 
-    if is_amendment_reference_part?(@e_tag)
+    if is_amendment_reference_part?(@e_tag) && @e_tag != 'Line'
       @amendment_reference ||= AmendmentReference.new
     end
     
     if move_etag_outside_paragraph?(@e_tag, element)
       move_etag_outside_paragraph @e_tag, element
     else
-      if @e_tag == 'Bold'
+      if dont_add_text_around_child_text? @e_tag
         add_to_last_line start_tag(@e_tag, element)
       else
         add start_tag(@e_tag, element)
@@ -465,7 +470,7 @@ class MifParser
   def handle_element_end element
     tag = @etags_stack.last
     
-    if tag == 'Bold'
+    if dont_add_text_around_child_text? tag
       add_to_last_line "</#{tag}>"
       @opened_in_paragraph.delete(tag)
       tag = @etags_stack.pop
@@ -529,7 +534,7 @@ class MifParser
   end
 
   def is_reference_number? text
-    @prefix_end && text[/^\d+$/] && @e_tag
+    @prefix_end && text[/^\d+$/] && @e_tag && @amendment_reference
   end
 
   def handle_reference_number text

@@ -104,6 +104,7 @@ class Mif2HtmlParser
       ABillTo Abt1 Abt2 Abt3 Abt4 LongTitle Bpara WordsOfEnactment
       Clauses  
       Clauses_ar
+      Longtitle_text
       Amendment_Text Amendment_Number
       ClauseText Heading_text
       CrossHeadingTitle ClauseTitle

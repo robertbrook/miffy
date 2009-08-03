@@ -14,8 +14,7 @@ ake provision in relation to the Law Commission.<Enact id="1004229"> </Enact>
 </Prelim>
 <Clause id="1093880" TemplateVersion="4.2.002" HardReference="LC1"><ClauseTitle id="1093884">
 <ClauseTitle_PgfTag id="1112748"><PgfNumString><PgfNumString_1>1</PgfNumString_1> </PgfNumString><ClauseTitle_text><ParaLineStart LineNum="10"></ParaLineStart>Reports on implementation of Law Commission proposals</ClauseTitle_text></ClauseTitle_PgfTag>
-</ClauseTitle><ClauseText id="1112590"><ParaLineStart LineNum="11"></ParaLineStart>After section 3 of the <Citation id="1111593" Show="Yes" Year="1965" Chapter="(c.\x11 22)">Law Commissions Act 1965 (c. 22)</Citation>
- insert—<Amendment id="1111602"><Clause id="1111611" Number="3" Letter="A" Quote="Double"><ClauseTitle id="1111615">
+</ClauseTitle><ClauseText id="1112590"><ParaLineStart LineNum="11"></ParaLineStart>After section 3 of the <Citation id="1111593" Show="Yes" Year="1965" Chapter="(c.\x11 22)">Law Commissions Act 1965 (c. 22)</Citation> insert—<Amendment id="1111602"><Clause id="1111611" Number="3" Letter="A" Quote="Double"><ClauseTitle id="1111615">
 <_ClauseTitle_PgfTag id="1112765"><PgfNumString><PgfNumString_1>“3A</PgfNumString_1> </PgfNumString><ClauseTitle_text><ParaLineStart LineNum="12"></ParaLineStart>Reports on implementation of Law Commission proposals</ClauseTitle_text></_ClauseTitle_PgfTag>
 </ClauseTitle><ClauseText id="1111640"><SubSection id="1112770">
 <_SubSection_PgfTag id="1112771"><PgfNumString><PgfNumString_1>(1)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="13"></ParaLineStart>As soon as practicable after the end of each reporting year, the Lord <ParaLineStart LineNum="14"></ParaLineStart>Chancellor must prepare a report on—</SubSection_text></_SubSection_PgfTag>
@@ -54,8 +53,7 @@ ake provision in relation to the Law Commission.<Enact id="1004229"> </Enact>
 </Clause>
 <Clause id="1112874" TemplateVersion="4.2.002" HardReference="LC2"><ClauseTitle id="1112878">
 <ClauseTitle_PgfTag id="1112880"><PgfNumString><PgfNumString_1>2</PgfNumString_1> </PgfNumString><ClauseTitle_text><ParaLineStart LineNum="9"></ParaLineStart>Protocol about the Law Commission’s work</ClauseTitle_text></ClauseTitle_PgfTag>
-</ClauseTitle><ClauseText id="1112883"><ParaLineStart LineNum="10"></ParaLineStart>Before section 4 of the <Citation id="1112886" Show="Yes" Year="1965" Chapter="(c.\x11 22)">Law Commissions Act 1965 (c. 22)</Citation>
- insert—<Amendment id="1112894"><Clause id="1112897" Number="3" Letter="B" Quote="Double"><ClauseTitle id="1112900">
+</ClauseTitle><ClauseText id="1112883"><ParaLineStart LineNum="10"></ParaLineStart>Before section 4 of the <Citation id="1112886" Show="Yes" Year="1965" Chapter="(c.\x11 22)">Law Commissions Act 1965 (c. 22)</Citation> insert—<Amendment id="1112894"><Clause id="1112897" Number="3" Letter="B" Quote="Double"><ClauseTitle id="1112900">
 <_ClauseTitle_PgfTag id="1112902"><PgfNumString><PgfNumString_1>“3B</PgfNumString_1> </PgfNumString><ClauseTitle_text><ParaLineStart LineNum="11"></ParaLineStart>Protocol about the Law Commission’s work</ClauseTitle_text></_ClauseTitle_PgfTag>
 </ClauseTitle><ClauseText id="1112905"><SubSection id="1112908">
 <_SubSection_PgfTag id="1112909"><PgfNumString><PgfNumString_1>(1)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="12"></ParaLineStart>The Lord Chancellor and the Law Commission may agree for the <ParaLineStart LineNum="13"></ParaLineStart>purposes of this section a statement (a “protocol”) about the Law <ParaLineStart LineNum="14"></ParaLineStart>Commission’s work.</SubSection_text></_SubSection_PgfTag>

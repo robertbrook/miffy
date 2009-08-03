@@ -196,7 +196,7 @@ describe MifParser do
       @result.should have_tag('BillTitle', :text => 'Law Commission Bill [HL]')
     end
   end
-# =end
+
   describe 'when parsing Equality Bill Amendment Paper MIF XML file' do
     before(:all) do
       @parser = MifParser.new
@@ -312,4 +312,15 @@ describe MifParser do
     end
   end
 # =end
+  describe 'when parsing longer MIF XML file to xml' do
+    before(:all) do
+      @parser = MifParser.new
+      @result = @parser.parse_xml(fixture('CommA20031218DummyFM7.mif.xml'))
+      File.open(RAILS_ROOT + '/spec/fixtures/CommA20031218DummyFM7.xml','w') {|f| f.write @result }
+    end
+    it 'should parse' do
+      @result.should_not be_nil
+    end
+  end
+  
 end
