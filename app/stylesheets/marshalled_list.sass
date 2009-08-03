@@ -14,6 +14,7 @@ body
         +column(30, true)
         
         .HeadNotice
+          +column(30, true)
           float: left
         
           .NoticeOfAmds
@@ -34,28 +35,6 @@ body
     .Committee
       +column(30, true)
       border-top: 1px solid grey
-
-      .Clause_Committee, .Schedule_Committee, .NewClause_Committee
-        +column(30, true)
-        text-align: left
-        border-bottom: 1px solid grey
-        padding: 1em 0
-
-      .ClauseTitle
-        +clause_title
-
-      ul.Sponsors
-        +column(30, true)
-        list-style: none
-        margin: 0
-        padding: 0.5em 0
-
-      .AmendmentNumber_PgfTag
-        +prepend(28)
-        +column(2, true)
-        font-weight: bold
-        text-align: right
-        margin-bottom: 0
 
       .Move
         +prepend(1)
