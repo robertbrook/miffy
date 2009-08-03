@@ -10,7 +10,7 @@ module ApplicationHelper
       "arrangement"
     elsif (file_name =~ /pbc(.)*m.mif/).is_a?(Fixnum)
       "amendment_paper"
-    elsif (file_name =~ /pbc(.)*a.mif/).is_a?(Fixnum)
+    elsif (file_name =~ /pbc(.)*a.mif/).is_a?(Fixnum) | file_name.include?('CommA')
       "marshalled_list"
     else
       "converted"
