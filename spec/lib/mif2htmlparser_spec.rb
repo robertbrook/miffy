@@ -32,9 +32,9 @@ end
 
 describe MifParser do
 
-  def parser
+  def parser url=nil
     parser = Mif2HtmlParser.new
-    parser.stub!(:find_act_url).and_return nil
+    parser.stub!(:find_act_url).and_return url
     parser
   end
 
@@ -96,7 +96,6 @@ describe MifParser do
       @result = parser.parse_xml(fixture('pbc0900206m.xml'), :format => :html)
     end
     it 'should create html' do
-      # File.open('/Users/x/apps/uk/ex.html','w') {|f| f.write @result }
       @result.should have_tag('html')
 
       @result.should have_tag('div[class="Committee"][id="5166572"]') do
@@ -141,4 +140,23 @@ describe MifParser do
     end
   end
 
+  describe 'when parsing longer MIF XML file to html' do
+    before(:all) do
+      @url = 'http://www.opsi.gov.uk/acts/acts1992/ukpga_19920004_en_1'
+      @result = parser(@url).parse_xml(fixture('CommA20031218DummyFM7.xml'), :format => :html)
+      File.open(RAILS_ROOT + '/spec/fixtures/CommA20031218DummyFM7.html','w') {|f| f.write @result }
+    end
+    it 'should put new line anchor outside of citation link' do
+      @result.should have_tag('p[id="1055416"][class="Paragraph_PgfTag"]') do
+        with_tag('span[class="Para_text"]') do
+          with_tag('a[id="1055415"][class="Citation"][href="'+@url+'"]', :text => 'Social Security Contributions and Benefits Act 1992 (c. 4)')
+          with_tag('a[name="page14-line7"]')          
+        end
+      end
+      
+      @result.should_not include('<a id="1055415" href="'+@url+'" class="Citation">Social Security Contributions and <a name="page14-line7"></a>Benefits Act 1992 (c. 4)</a>')
+
+      @result.should include('<a id="1055415" href="'+@url+'" class="Citation">Social Security Contributions and <br />Benefits Act 1992 (c. 4)</a><a name="page14-line7"></a>')
+    end
+  end
 end

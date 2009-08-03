@@ -17,6 +17,8 @@ module MifParserUtils
   def get_char element
     char = element.at('text()').to_s
     case char
+      when 'NoHyphen'
+        ''
       when 'EmSpace'
         ' '
       when 'Pound'

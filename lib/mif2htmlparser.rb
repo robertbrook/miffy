@@ -104,7 +104,7 @@ class Mif2HtmlParser
       ABillTo Abt1 Abt2 Abt3 Abt4 LongTitle Bpara WordsOfEnactment
       Clauses  
       Clauses_ar
-      Longtitle_text
+      Longtitle_text Move_text
       Amendment_Text Amendment_Number
       ClauseText Heading_text
       CrossHeadingTitle ClauseTitle
@@ -169,7 +169,6 @@ class Mif2HtmlParser
       STHouse
       STLords
       STCommons
-      Citation
       Letter
       Enact
       Italic
@@ -192,6 +191,8 @@ class Mif2HtmlParser
 
   def doc_to_html(doc)
     @in_paragraph = false
+    @in_citation = false
+    @para_line_anchor = nil
     node_children_to_html(doc.root)
   end
 
@@ -252,9 +253,15 @@ class Mif2HtmlParser
   def add_link_element node
     item = node.inner_text
     url = item[/Act/] ? find_act_url(item) : ''
-    add %Q|<a href="#{url}" class="#{node.name}">|
-    node_children_to_html(node)    
+    add %Q|<a id="#{node['id']}" href="#{url}" class="#{node.name}">|
+    @in_citation = true
+    node_children_to_html(node)
+    @in_citation = false
     add "</a>"
+    if @para_line_anchor
+      add @para_line_anchor
+      @para_line_anchor = nil
+    end
   end
   
   def handle_clause node
@@ -304,9 +311,15 @@ class Mif2HtmlParser
     end
 
     line = node['LineNum'].to_s
-    add %Q|<br />| if @in_para_line
-    add %Q|<a name="page#{@page_number}-line#{line}"></a>|
-    
+    add %Q|<br />| if @in_para_line || @in_citation
+    para_line_anchor = %Q|<a name="page#{@page_number}-line#{line}"></a>|
+
+    if @in_citation
+      @para_line_anchor = para_line_anchor
+    else
+      add para_line_anchor
+    end
+
     if last_line
       add last_line
     end
