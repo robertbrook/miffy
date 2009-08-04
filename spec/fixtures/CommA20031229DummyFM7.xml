@@ -849,9 +849,9 @@
 <Amendment.Number id="1053038">
 <AmendmentNumber_PgfTag id="1053040"><ParaLineStart LineNum="24"></ParaLineStart>nc4</AmendmentNumber_PgfTag>
 </Amendment.Number>
-
-<Move_PgfTag id="1053048"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><Move id="1053043"><Move_text><ParaLineStart LineNum="25"></ParaLineStart>To move the following Clause:—</Move_text></Move>
-</Move_PgfTag>
+<Move id="1053043">
+<Move_PgfTag id="1053048"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><Move_text><ParaLineStart LineNum="25"></ParaLineStart>To move the following Clause:—</Move_text></Move_PgfTag>
+</Move>
 <ClauseText id="1053051"><SubSection id="1053054">
 <SubSection_PgfTag id="1053055"><PgfNumString><PgfNumString_1>‘(1)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="26"></ParaLineStart>For the purpose of any contract entered into in respect of a child trust fund, the <ParaLineStart LineNum="27"></ParaLineStart>age of majority shall be 16.</SubSection_text></SubSection_PgfTag>
 </SubSection>
@@ -902,9 +902,9 @@
 <Amendment.Number id="1053174">
 <AmendmentNumber_PgfTag id="1053176"><ParaLineStart LineNum="16"></ParaLineStart>nc5</AmendmentNumber_PgfTag>
 </Amendment.Number>
-
-<Move_PgfTag id="1053184"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><Move id="1053179"><Move_text><ParaLineStart LineNum="17"></ParaLineStart>To move the following Clause:—</Move_text></Move>
-</Move_PgfTag>
+<Move id="1053179">
+<Move_PgfTag id="1053184"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><Move_text><ParaLineStart LineNum="17"></ParaLineStart>To move the following Clause:—</Move_text></Move_PgfTag>
+</Move>
 <ClauseText id="1053187"><ParaLineStart LineNum="18"></ParaLineStart>‘The Treasury shall lay before each House of Parliament a report setting out the <ParaLineStart LineNum="19"></ParaLineStart>Treasury’s estimate of the net increase in saving which will result from the <ParaLineStart LineNum="20"></ParaLineStart>provisions of this Act.’.</ClauseText>
 </NewClause.Committee>
 <NewClause.Committee id="1053203" Star="Yes"><ClauseTitle id="1053206">
@@ -915,9 +915,9 @@
 <Amendment.Number id="1053225">
 <AmendmentNumber_PgfTag id="1053227"><ParaLineStart LineNum="24"></ParaLineStart>nc6</AmendmentNumber_PgfTag>
 </Amendment.Number>
-
-<Move_PgfTag id="1053235"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><Move id="1053230"><Move_text><ParaLineStart LineNum="25"></ParaLineStart>To move the following Clause:—</Move_text></Move>
-</Move_PgfTag>
+<Move id="1053230">
+<Move_PgfTag id="1053235"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><Move_text><ParaLineStart LineNum="25"></ParaLineStart>To move the following Clause:—</Move_text></Move_PgfTag>
+</Move>
 <ClauseText id="1053238"><ParaLineStart LineNum="26"></ParaLineStart>‘The Treasury and the Department for Work and Pensions shall lay before each <ParaLineStart LineNum="27"></ParaLineStart>House of Parliament a joint report on the Government’s policies to improve <ParaLineStart LineNum="28"></ParaLineStart>savings incentives from birth to retirement.’.</ClauseText>
 </NewClause.Committee>
 <NewClause.Committee id="1053249" Star="Yes"><ClauseTitle id="1053252">
@@ -928,9 +928,9 @@
 <Amendment.Number id="1053271">
 <AmendmentNumber_PgfTag id="1053273"><ParaLineStart LineNum="33"></ParaLineStart>nc7</AmendmentNumber_PgfTag>
 </Amendment.Number>
-
-<Move_PgfTag id="1053281"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><Move id="1053276"><Move_text><ParaLineStart LineNum="34"></ParaLineStart>To move the following Clause:—</Move_text></Move>
-</Move_PgfTag>
+<Move id="1053276">
+<Move_PgfTag id="1053281"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><Move_text><ParaLineStart LineNum="34"></ParaLineStart>To move the following Clause:—</Move_text></Move_PgfTag>
+</Move>
 <ClauseText id="1053284"><ParaLineStart LineNum="35"></ParaLineStart>‘The Treasury shall lay before each House of Parliament a report setting out <ParaLineStart LineNum="36"></ParaLineStart>proposals for child trust fund accounts to become, on maturity, tax-advantaged <ParaLineStart LineNum="37"></ParaLineStart>accounts for retirement saving.’.</ClauseText>
 </NewClause.Committee>
 <PageStart id="1054514" PageType="BodyPage" PageNum="11">Page 11</PageStart><ParaLineStart LineNum="1"></ParaLineStart> </Committee>
