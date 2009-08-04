@@ -376,7 +376,7 @@ class MifParser
   end
 
   MOVE_OUTSIDE = %w[Amendment Amendment.Number Amendment.Text Longtitle.text
-      SubPara.sch Move      
+      SubPara.sch Move List      
       ClauseTitle Clause Clauses.ar Clause.ar ClauseText 
       Committee Resolution SubSection NewClause.Committee
       ResolutionHead ResolutionText OrderDate OrderHeading 
@@ -412,7 +412,7 @@ class MifParser
   end
   
   def dont_add_text_around_child_text? tag
-    tag[/^(Bold|Italic|Citation)$/]
+    tag[/^(Bold|Italic|Citation|ListItem|List)$/]
   end
   
   def handle_etag element

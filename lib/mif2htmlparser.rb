@@ -101,7 +101,8 @@ class Mif2HtmlParser
       SchedulesTitle_ar
       Prelim
       ABillTo Abt1 Abt2 Abt3 Abt4 LongTitle Bpara WordsOfEnactment
-      Clauses  
+      Clauses
+      List
       Clauses_ar
       Longtitle_text
       Amendment_Text Amendment_Number
@@ -159,6 +160,7 @@ class Mif2HtmlParser
       Page_text
       Para_text
       Line_text
+      ListItem
       ClauseTitle_text
       Amendment_Text_text
       Move_text
