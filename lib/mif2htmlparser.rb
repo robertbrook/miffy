@@ -17,8 +17,7 @@ class Mif2HtmlParser
       haml.gsub!(/(^\s*(#|%).+(SmallCaps|\}|PgfNumString|\w+_text|PageStart|Number|Page|Line|Sponsor|AmendmentNumber_PgfTag))\n/, '\1' + "<\n")
       
       haml
-    end
-    
+    end    
   end
   
   # e.g. parser.parse_xml_file("pbc0930106a.mif.xml")
@@ -203,9 +202,9 @@ class Mif2HtmlParser
   end
 
   def css_class node
-    css_class = node.name.gsub('.','_')
-    css_class += " #{node['class']}" unless node['class'].blank?
-    css_class
+    @last_css_class = node.name.gsub('.','_')
+    @last_css_class += " #{node['class']}" unless node['class'].blank?
+    @last_css_class
   end
   
   def add_html_element name, node
@@ -311,7 +310,7 @@ class Mif2HtmlParser
     end
 
     line = node['LineNum'].to_s
-    add %Q|<br />| if @in_para_line || @in_citation
+    add %Q|<br />| if @in_para_line || @in_citation || @last_css_class[/(Bold|Italic|_text$)/]
     para_line_anchor = %Q|<a name="page#{@page_number}-line#{line}"></a>|
 
     if @in_citation

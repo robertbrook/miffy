@@ -312,11 +312,22 @@ describe MifParser do
     end
   end
 # =end
-  describe 'when parsing longer MIF XML file to xml' do
+  describe 'when parsing a standing committee MIF XML file to xml' do
     before(:all) do
       @parser = MifParser.new
       @result = @parser.parse_xml(fixture('CommA20031218DummyFM7.mif.xml'))
       File.open(RAILS_ROOT + '/spec/fixtures/CommA20031218DummyFM7.xml','w') {|f| f.write @result }
+    end
+    it 'should parse' do
+      @result.should_not be_nil
+    end
+  end
+  
+  describe 'when parsing another standing committee MIF XML file to xml' do
+    before(:all) do
+      @parser = MifParser.new
+      @result = @parser.parse_xml(fixture('CommA20031229DummyFM7.mif.xml'))
+      File.open(RAILS_ROOT + '/spec/fixtures/CommA20031229DummyFM7.xml','w') {|f| f.write @result }
     end
     it 'should parse' do
       @result.should_not be_nil

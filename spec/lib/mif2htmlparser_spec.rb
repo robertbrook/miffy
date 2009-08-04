@@ -140,23 +140,40 @@ describe MifParser do
     end
   end
 
-  describe 'when parsing longer MIF XML file to html' do
+  describe 'when parsing a standing committee MIF XML file to html' do
     before(:all) do
       @url = 'http://www.opsi.gov.uk/acts/acts1992/ukpga_19920004_en_1'
       @result = parser(@url).parse_xml(fixture('CommA20031218DummyFM7.xml'), :format => :html)
-      File.open(RAILS_ROOT + '/spec/fixtures/CommA20031218DummyFM7.html','w') {|f| f.write @result }
     end
     it 'should put new line anchor outside of citation link' do
       @result.should have_tag('p[id="1055416"][class="Paragraph_PgfTag"]') do
         with_tag('span[class="Para_text"]') do
-          with_tag('a[id="1055415"][class="Citation"][href="'+@url+'"]', :text => 'Social Security Contributions and Benefits Act 1992 (c. 4)')
+          with_tag('a[id="1055415"][class="Citation"][href="' + @url + '"]', :text => 'Social Security Contributions and Benefits Act 1992 (c. 4)')
           with_tag('a[name="page14-line7"]')          
         end
       end
       
-      @result.should_not include('<a id="1055415" href="'+@url+'" class="Citation">Social Security Contributions and <a name="page14-line7"></a>Benefits Act 1992 (c. 4)</a>')
+      @result.should_not include('<a id="1055415" href="' + @url + '" class="Citation">Social Security Contributions and <a name="page14-line7"></a>Benefits Act 1992 (c. 4)</a>')
 
-      @result.should include('<a id="1055415" href="'+@url+'" class="Citation">Social Security Contributions and <br />Benefits Act 1992 (c. 4)</a><a name="page14-line7"></a>')
+      @result.should include('<a id="1055415" href="' + @url + '" class="Citation">Social Security Contributions and <br />Benefits Act 1992 (c. 4)</a><a name="page14-line7"></a>')
+    end    
+  end
+  
+  
+  describe 'when parsing another standing committee MIF XML file to html' do
+    before(:all) do
+      @url = 'http://www.opsi.gov.uk/acts/acts1992/ukpga_19920004_en_1'
+      @result = parser(@url).parse_xml(fixture('CommA20031229DummyFM7.xml'), :format => :html)
+      File.open(RAILS_ROOT + '/spec/fixtures/CommA20031229DummyFM7.html','w') {|f| f.write @result }
+    end
+
+    it 'should add a br when there is a new line in a Amendment_Text_text span, and make SoftHyphen a hyphen' do
+      @result.should include('<span class="Amendment_Text_text">after second ‘the’, insert ‘first day of the month that in-<br /><a name="page5-line18"></a>cludes the’.</span></p>')
+    end
+    
+    it 'should add a br when new line occurs in an Italic span' do
+      @result.should include('<span class="Italic" id="1051524">reduction of age of <br /><a name="page5-line35"></a>majority in respect of child trust funds</span>')
     end
   end
+
 end

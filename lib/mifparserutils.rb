@@ -19,6 +19,8 @@ module MifParserUtils
     case char
       when 'NoHyphen'
         ''
+      when 'SoftHyphen'
+        '-'
       when 'EmSpace'
         ' '
       when 'Pound'
