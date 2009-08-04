@@ -224,7 +224,7 @@ class Mif2HtmlParser
       add "</#{name}>"
     end
     
-    @in_para_line = false unless node.name == 'SmallCaps'
+    @in_para_line = false unless @last_css_class[/^(Bold|Italic|SmallCaps)$/]
   end
 
   def find_act_url act_name
@@ -310,7 +310,7 @@ class Mif2HtmlParser
     end
 
     line = node['LineNum'].to_s
-    add %Q|<br />| if @in_para_line || @in_citation || @last_css_class[/(Bold|Italic|_text$)/]
+    add %Q|<br />| if @in_para_line || @in_citation
     para_line_anchor = %Q|<a name="page#{@page_number}-line#{line}"></a>|
 
     if @in_citation
@@ -453,7 +453,9 @@ class Mif2HtmlParser
     end if node.elem?
 
     if node.text?
-      add node.to_s.gsub("/n", "<br />")
+      text = node.to_s.gsub("/n", "<br />")
+      add text
+      @in_para_line = true if !text.blank? && @last_css_class[/^(Bold|Italic|SmallCaps|.+_text)$/]
     end
   end
 end
