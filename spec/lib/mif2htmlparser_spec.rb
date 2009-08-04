@@ -174,6 +174,19 @@ describe MifParser do
     it 'should add a br when new line occurs in an Italic span' do
       @result.should include('<span class="Italic" id="1051524">reduction of age of <br /><a name="page5-line35"></a>majority in respect of child trust funds</span>')
     end
+    
+    it 'should not restart _text span when it encloses an Italic span' do
+      italicized = 'reduction of age of majority in respect of child trust funds'
+      text = "‘(2) Section [#{italicized}] extends to Northern Ireland, but does not extend to Scotland.’."
+      
+      @result.should have_tag('div[class="SubSection"][id="1051587"]') do
+        with_tag('p[class="SubSection_PgfTag"][id="1051592"]') do
+          with_tag('span[class="SubSection_text"]', :text => text) do
+            with_tag('span[class="Italic"][id="1051590"]', :text => italicized)
+          end
+        end
+      end
+    end
   end
 
 end

@@ -416,8 +416,8 @@ class MifParser
   end
   
   def handle_etag element
-    flush_strings
     @e_tag = clean(element)
+    flush_strings unless @e_tag == 'Italic'
     @etags_stack << @e_tag
 
     if is_amendment_reference_part?(@e_tag) && @e_tag != 'Line'

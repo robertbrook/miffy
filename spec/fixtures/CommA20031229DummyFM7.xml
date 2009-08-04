@@ -487,7 +487,7 @@
 <AmedTextCommitReport_PgfTag id="1051525"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="34"></ParaLineStart><AmendmentReference Clause="30" Page="15" Line="15"><Number id="1051491">Clause <Clause_number>30</Clause_number>, </Number>
 <Page id="1051501">page <Page_number>15</Page_number>, </Page>
 <Line id="1051511">line <Line_number>15</Line_number>, </Line>
-</AmendmentReference><Amendment.Text_text>after ‘Act’, insert ‘except section [</Amendment.Text_text><Amendment.Text_text><Italic id="1051524">reduction of age of <ParaLineStart LineNum="35"></ParaLineStart>majority in respect of child trust funds</Italic>]’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</AmendmentReference><Amendment.Text_text>after ‘Act’, insert ‘except section [<Italic id="1051524">reduction of age of <ParaLineStart LineNum="35"></ParaLineStart>majority in respect of child trust funds</Italic>]’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Clause.Committee id="1051531" Star="Yes"><Sponsors id="1051534"><Sponsor id="1051537"><ParaLineStart LineNum="36"></ParaLineStart>Mr George Osborne</Sponsor>
@@ -502,7 +502,7 @@
 <Line id="1051573">line <Line_number>16</Line_number>, </Line>
 </AmendmentReference><Amendment.Text_text>at end add—</Amendment.Text_text></AmedTextCommitReport_PgfTag>
 <SubSection id="1051587">
-<SubSection_PgfTag id="1051592"><PgfNumString></PgfNumString><SubSection_text><ParaLineStart LineNum="40"></ParaLineStart>‘(2) Section [</SubSection_text><SubSection_text><Italic id="1051590">reduction of age of majority in respect of child trust funds</Italic>] extends to <ParaLineStart LineNum="41"></ParaLineStart>Northern Ireland, but does not extend to Scotland.’.</SubSection_text></SubSection_PgfTag>
+<SubSection_PgfTag id="1051592"><PgfNumString></PgfNumString><SubSection_text><ParaLineStart LineNum="40"></ParaLineStart>‘(2) Section [<Italic id="1051590">reduction of age of majority in respect of child trust funds</Italic>] extends to <ParaLineStart LineNum="41"></ParaLineStart>Northern Ireland, but does not extend to Scotland.’.</SubSection_text></SubSection_PgfTag>
 </SubSection>
 </Amendment.Text>
 </Clause.Committee>
@@ -600,7 +600,7 @@
 <AmedTextCommitReport_PgfTag id="1052012"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="39"></ParaLineStart><AmendmentReference Clause="27" Page="15" Line="12"><Number id="1051978">Clause <Clause_number>27</Clause_number>, </Number>
 <Page id="1051988">page <Page_number>15</Page_number>, </Page>
 <Line id="1051998">line <Line_number>12</Line_number>, </Line>
-</AmendmentReference><Amendment.Text_text>after ‘section’, insert ‘section [</Amendment.Text_text><Amendment.Text_text><Italic id="1052011">report on savings effect <ParaLineStart LineNum="40"></ParaLineStart>of child trust funds</Italic>],’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</AmendmentReference><Amendment.Text_text>after ‘section’, insert ‘section [<Italic id="1052011">report on savings effect <ParaLineStart LineNum="40"></ParaLineStart>of child trust funds</Italic>],’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <PageStart id="1054417" PageType="BodyPage" PageNum="7">Page 7</PageStart><Clause.Committee id="1052018" Star="Yes"><Sponsors id="1052021"><Sponsor id="1052024"><ParaLineStart LineNum="1"></ParaLineStart>Mr David Laws</Sponsor>
@@ -613,7 +613,7 @@
 <AmedTextCommitReport_PgfTag id="1052074"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="4"></ParaLineStart><AmendmentReference Clause="27" Page="15" Line="12"><Number id="1052040">Clause <Clause_number>27</Clause_number>, </Number>
 <Page id="1052050">page <Page_number>15</Page_number>, </Page>
 <Line id="1052060">line <Line_number>12</Line_number>, </Line>
-</AmendmentReference><Amendment.Text_text>after ‘section’, insert ‘section [</Amendment.Text_text><Amendment.Text_text><Italic id="1052073">report on savings incen-<ParaLineStart LineNum="5"></ParaLineStart>tives</Italic>],’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</AmendmentReference><Amendment.Text_text>after ‘section’, insert ‘section [<Italic id="1052073">report on savings incen-<ParaLineStart LineNum="5"></ParaLineStart>tives</Italic>],’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Clause.Committee id="1052080" Star="Yes"><Sponsors id="1052083"><Sponsor id="1052086"><ParaLineStart LineNum="6"></ParaLineStart>Mr David Laws</Sponsor>
@@ -628,7 +628,7 @@
 <Line id="1052122">line <Line_number>17</Line_number>, </Line>
 </AmendmentReference><Amendment.Text_text>at end add—</Amendment.Text_text></AmedTextCommitReport_PgfTag>
 <SubSection id="1052136">
-<SubSection_PgfTag id="1052137"><PgfNumString></PgfNumString><SubSection_text><ParaLineStart LineNum="10"></ParaLineStart>‘(4) No order may be made under subsection (3) until the report specified in section <ParaLineStart LineNum="11"></ParaLineStart>[</SubSection_text><SubSection_text><Italic id="1052140">report on savings effect of child trust funds</Italic>] has been laid before Parliament.’.</SubSection_text></SubSection_PgfTag>
+<SubSection_PgfTag id="1052137"><PgfNumString></PgfNumString><SubSection_text><ParaLineStart LineNum="10"></ParaLineStart>‘(4) No order may be made under subsection (3) until the report specified in section <ParaLineStart LineNum="11"></ParaLineStart>[<Italic id="1052140">report on savings effect of child trust funds</Italic>] has been laid before Parliament.’.</SubSection_text></SubSection_PgfTag>
 </SubSection>
 </Amendment.Text>
 </Clause.Committee>
@@ -644,7 +644,7 @@
 <Line id="1052189">line <Line_number>17</Line_number>, </Line>
 </AmendmentReference><Amendment.Text_text>at end add—</Amendment.Text_text></AmedTextCommitReport_PgfTag>
 <SubSection id="1052203">
-<SubSection_PgfTag id="1052204"><PgfNumString></PgfNumString><SubSection_text><ParaLineStart LineNum="16"></ParaLineStart>‘(4) No order may be made under subsection (3) until the report specified in section <ParaLineStart LineNum="17"></ParaLineStart>[</SubSection_text><SubSection_text><Italic id="1052207">report on savings incentives</Italic>] has been laid before Parliament.’.</SubSection_text></SubSection_PgfTag>
+<SubSection_PgfTag id="1052204"><PgfNumString></PgfNumString><SubSection_text><ParaLineStart LineNum="16"></ParaLineStart>‘(4) No order may be made under subsection (3) until the report specified in section <ParaLineStart LineNum="17"></ParaLineStart>[<Italic id="1052207">report on savings incentives</Italic>] has been laid before Parliament.’.</SubSection_text></SubSection_PgfTag>
 </SubSection>
 </Amendment.Text>
 </Clause.Committee>
@@ -822,7 +822,7 @@
 <AmedTextCommitReport_PgfTag id="1052938"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="12"></ParaLineStart><AmendmentReference Clause="27" Page="15" Line="12"><Number id="1052904">Clause <Clause_number>27</Clause_number>, </Number>
 <Page id="1052914">page <Page_number>15</Page_number>, </Page>
 <Line id="1052924">line <Line_number>12</Line_number>, </Line>
-</AmendmentReference><Amendment.Text_text>after ‘section’, insert ‘section [</Amendment.Text_text><Amendment.Text_text><Italic id="1052937">proposals for conver-<ParaLineStart LineNum="13"></ParaLineStart>sion of child trust funds to tax-advantaged accounts for retirement saving</Italic>],’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</AmendmentReference><Amendment.Text_text>after ‘section’, insert ‘section [<Italic id="1052937">proposals for conver-<ParaLineStart LineNum="13"></ParaLineStart>sion of child trust funds to tax-advantaged accounts for retirement saving</Italic>],’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Clause.Committee id="1052944" Star="Yes"><Sponsors id="1052947"><Sponsor id="1052950"><ParaLineStart LineNum="14"></ParaLineStart>Mr David Laws</Sponsor>
@@ -837,7 +837,7 @@
 <Line id="1052986">line <Line_number>17</Line_number>, </Line>
 </AmendmentReference><Amendment.Text_text>at end add—</Amendment.Text_text></AmedTextCommitReport_PgfTag>
 <SubSection id="1053000">
-<SubSection_PgfTag id="1053001"><PgfNumString></PgfNumString><SubSection_text><ParaLineStart LineNum="18"></ParaLineStart>‘(4) No order may be made under subsection (3) until the report specified in section <ParaLineStart LineNum="19"></ParaLineStart>[</SubSection_text><SubSection_text><Italic id="1053004">proposals for conversion of child trust funds to tax-advantaged accounts for <ParaLineStart LineNum="20"></ParaLineStart>retirement saving</Italic>] has been laid before Parliament.’.</SubSection_text></SubSection_PgfTag>
+<SubSection_PgfTag id="1053001"><PgfNumString></PgfNumString><SubSection_text><ParaLineStart LineNum="18"></ParaLineStart>‘(4) No order may be made under subsection (3) until the report specified in section <ParaLineStart LineNum="19"></ParaLineStart>[<Italic id="1053004">proposals for conversion of child trust funds to tax-advantaged accounts for <ParaLineStart LineNum="20"></ParaLineStart>retirement saving</Italic>] has been laid before Parliament.’.</SubSection_text></SubSection_PgfTag>
 </SubSection>
 </Amendment.Text>
 </Clause.Committee>

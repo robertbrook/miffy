@@ -332,6 +332,21 @@ describe MifParser do
     it 'should parse' do
       @result.should_not be_nil
     end
+
+    it 'should not restart _text span when it encloses an Italic span' do
+      italicized = 'reduction of age of majority in respect of child trust funds'
+      text = "‘(2) Section [#{italicized}] extends to Northern Ireland, but does not extend to Scotland.’."
+      
+# <SubSection_PgfTag id="1051592"><PgfNumString></PgfNumString><SubSection_text>
+# <ParaLineStart LineNum="40"></ParaLineStart>‘(2) Section [</SubSection_text><SubSection_text><Italic id="1051590">reduction of age of majority in respect of child trust funds</Italic>] extends to <ParaLineStart LineNum="41"></ParaLineStart>Northern Ireland, but does not extend to Scotland.’.</SubSection_text></SubSection_PgfTag>
+      @result.should have_tag('SubSection[id="1051587"]') do
+        with_tag('SubSection_PgfTag[id="1051592"]') do
+          with_tag('SubSection_text', :text => text) do
+            with_tag('Italic[id="1051590"]', :text => italicized)
+          end
+        end
+      end
+    end
   end
   
 end

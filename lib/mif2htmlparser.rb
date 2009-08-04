@@ -13,7 +13,7 @@ class Mif2HtmlParser
 
     def format_haml haml
       haml.gsub!(NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX,  '\1\2 <span class="\4_number">\6</span>,')    
-      haml.gsub!(/(Letter|FrameData|Dropcap|Bold|\w+_number|PgfNumString_\d|(clause_.+\}))\n/, '\1' + "<>\n")
+      haml.gsub!(/(Letter|FrameData|Dropcap|Bold|Italic|\w+_number|PgfNumString_\d|(clause_.+\}))\n/, '\1' + "<>\n")
       haml.gsub!(/(^\s*(#|%).+(SmallCaps|\}|PgfNumString|\w+_text|PageStart|Number|Page|Line|Sponsor|AmendmentNumber_PgfTag))\n/, '\1' + "<\n")
       
       haml
