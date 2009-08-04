@@ -160,6 +160,7 @@ class Mif2HtmlParser
       Page_text
       Para_text
       Line_text
+      List_text
       ListItem
       ClauseTitle_text
       Amendment_Text_text
