@@ -94,9 +94,11 @@ class Mif2HtmlParser
       CoverPara
       Heading_ar
       Head_thin
+      HeadAmd
       HeadNotice
       NoticeOfAmds
       Given
+      Report
       Schedules_ar
       SchedulesTitle_ar
       Prelim
@@ -433,6 +435,8 @@ class Mif2HtmlParser
         handle_pdf_tag node
       when /^(SubPara_sch|SubSubPara_sch|ResolutionPara|)$/
         handle_sub_para_variants node
+      when /^EndRule$/
+        #ignore
       when DIV_RE
         add_html_element 'div', node
       when SPAN_RE
