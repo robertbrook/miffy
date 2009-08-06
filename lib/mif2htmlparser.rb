@@ -99,6 +99,7 @@ class Mif2HtmlParser
       NoticeOfAmds
       Given
       Report
+      Jref
       Schedules_ar
       SchedulesTitle_ar
       Prelim
@@ -153,6 +154,8 @@ class Mif2HtmlParser
       OrderDate
       ResolutionDate
       OrderPara
+      Jref_text
+      Definition_text
       SubSection_text
       ResolutionHead_text
       Number_text
