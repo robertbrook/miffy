@@ -50,6 +50,8 @@ class ApplicationController < ActionController::Base
       display_type = type.sub('_', ' ').gsub(/\b\w/){$&.upcase}
       if display_type == 'Marshalled List'
         display_type << ' of Amendments'
+      elsif display_type == 'Consideration'
+        display_type << ' of Bill'
       end
 
       if type == 'clauses' || type == 'cover' || type == 'arrangement'
@@ -59,6 +61,10 @@ class ApplicationController < ActionController::Base
       elsif type == 'amendment_paper' || type == 'marshalled_list'
         doc = Hpricot.XML xml.to_s
         doc_title = (doc/'CommitteeShorttitle'/'STText'/'text()').to_s
+        title = doc_title + " (#{display_type})"
+      elsif type == 'consideration'
+        doc = Hpricot.XML xml.to_s
+        doc_title = (doc/'Head'/'HeadAmd'/'Shorttitle'/'text()').to_s
         title = doc_title + " (#{display_type})"
       else
         title = display_type
