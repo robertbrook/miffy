@@ -12,7 +12,7 @@ module ApplicationHelper
       "amendment_paper"
     elsif (file_name =~ /pbc(.)*a.mif/).is_a?(Fixnum) | file_name.include?('CommA')
       "marshalled_list"
-    elsif file_name.include?('cr2.mif') || file_name.include?('Report.mif')
+    elsif file_name.include?('2.mif') || file_name.include?('Report.mif')
       "consideration"
     else
       "converted"

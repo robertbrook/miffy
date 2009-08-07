@@ -216,7 +216,7 @@ class MifParser
           @current_table_id = element.at('text()').to_s
         when 'TblTag'
           tag = clean(element.at('text()'))
-          if tag != 'Table'
+          if tag != 'Table' && tag != 'RepealContinue'
             break
           else
             tables.merge!({@current_table_id, start_tag('TableData', element)})
@@ -250,7 +250,7 @@ class MifParser
         when 'TblH'
           @in_heading = true
         when 'TblBody'
-          tables[@current_table_id] << '</CellH></Row>'
+          tables[@current_table_id] << '</CellH></Row>' if @in_heading
           @in_row = false
           @in_cell = false
           @in_heading = false
@@ -605,8 +605,9 @@ class MifParser
   end
 
   def handle_a_table element
+    flush_strings
     table_id = element.at('text()').to_s
-    add @table_list[table_id]
+    add @table_list[table_id] unless @table_list[table_id].nil?
   end
 
   def handle_a_frame element
