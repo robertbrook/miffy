@@ -7,7 +7,7 @@ include ActionController::Assertions::SelectorAssertions
 describe MifParser do
   describe 'when formatting certain spans' do
     def check span, ending
-      Mif2HtmlParser.format_haml("#{span}\n").should == "#{span}#{ending}\n"
+      MifToHtmlParser.format_haml("#{span}\n").should == "#{span}#{ending}\n"
     end
     it 'should close whitespace following span' do
       check "%span#1003816.Letter", "<>"
@@ -23,7 +23,7 @@ describe MifParser do
               %span.Clause_number
                 1
               ,|
-      Mif2HtmlParser.format_haml(text).should == %Q|
+      MifToHtmlParser.format_haml(text).should == %Q|
             %span#1485163.Number<
               Clause <span class="Clause_number">1</span>,|
     end
@@ -33,7 +33,7 @@ end
 describe MifParser do
 
   def parser url=nil
-    parser = Mif2HtmlParser.new
+    parser = MifToHtmlParser.new
     parser.stub!(:find_act_url).and_return url
     parser
   end

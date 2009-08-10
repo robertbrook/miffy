@@ -3,7 +3,7 @@ require 'htmlentities'
 require 'open-uri'
 require 'hpricot'
 
-class Mif2HtmlParser
+class MifToHtmlParser
 
   include MifParserUtils
 
@@ -44,7 +44,7 @@ class Mif2HtmlParser
     haml = `#{cmd}`
     html_file.delete
     
-    Mif2HtmlParser.format_haml(haml)
+    MifToHtmlParser.format_haml(haml)
   end
 
   def generate_html doc, options

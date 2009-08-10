@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
     
     if File.exists?(file_name)
       xml = MifParser.new.parse file_name
-      haml = Mif2HtmlParser.new.parse_xml xml, :format => :haml, :body_only => true
+      haml = MifToHtmlParser.new.parse_xml xml, :format => :haml, :body_only => true
       
       @title = page_title(file_name, xml)
       
