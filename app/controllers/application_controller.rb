@@ -44,8 +44,16 @@ class ApplicationController < ActionController::Base
       Helper.instance
     end
   
+    def text_item xml, xpath
+      doc = Hpricot.XML xml.to_s
+      (doc/xpath).to_s
+    end
+    
+    def make_title xml, display_type, xpath
+      text_item(xml, 'BillData/BillTitle/text()') + " (#{display_type})"
+    end
+    
     def page_title file_name, xml
-      title = ''
       type = helper.document_type(file_name)
       display_type = type.sub('_', ' ').gsub(/\b\w/){$&.upcase}
       if display_type == 'Marshalled List'
@@ -54,21 +62,15 @@ class ApplicationController < ActionController::Base
         display_type << ' of Bill'
       end
 
-      if type == 'clauses' || type == 'cover' || type == 'arrangement'
-        doc = Hpricot.XML xml.to_s
-        doc_title = (doc/'BillData'/'BillTitle'/'text()').to_s
-        title = doc_title + " (#{display_type})"
-      elsif type == 'amendment_paper' || type == 'marshalled_list'
-        doc = Hpricot.XML xml.to_s
-        doc_title = (doc/'CommitteeShorttitle'/'STText'/'text()').to_s
-        title = doc_title + " (#{display_type})"
-      elsif type == 'consideration'
-        doc = Hpricot.XML xml.to_s
-        doc_title = (doc/'Head'/'HeadAmd'/'Shorttitle'/'text()').to_s
-        title = doc_title + " (#{display_type})"
-      else
-        title = display_type
-      end
-      title
+      case type
+        when /^(clauses|cover|arrangement)$/
+          make_title xml, display_type, 'BillData/BillTitle/text()'
+        when /^(amendment_paper|marshalled_list)$/
+          make_title xml, display_type, 'CommitteeShorttitle/STText/text()'
+        when 'consideration'
+          make_title xml, display_type, 'Head/HeadAmd/Shorttitle/text()'
+        else
+          display_type
+      end      
     end
 end
