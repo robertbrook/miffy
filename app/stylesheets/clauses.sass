@@ -4,12 +4,18 @@
 
 body
   #container
+  
+    .BillData
+      +column(30, true)
+      float: left
+      
     .BillTitle
       font-size: 1.8em
       +column(30, true)
       text-align: center
       padding: 1.25em 0 2.5em 0
       border-bottom: 1px solid black
+      clear: both
       
     .PgfNumString
       float: left
@@ -72,6 +78,7 @@ body
       text-align: left
       border-top: 2px solid black
       margin: 1px 0 2em 0
+      clear: both
       
       .Rubric
         +column(30, true)
@@ -79,6 +86,7 @@ body
 
       .Clause
         +column(30, true)
+        clear: both
 
         .SubSection
           +column(28, true)
