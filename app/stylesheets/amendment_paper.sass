@@ -2,8 +2,11 @@
 @import partials/amendment_docs_shared.sass
 @import blueprint
 
+.BillData
+  +column(30, true)
+
 .Amendments_Commons
-  +column(30)
+  +column(30, true)
   text-align: left
   margin: 0 0 2em 0
   
@@ -28,23 +31,32 @@
 
   .HeadConsider 
     float: left
+    +column(30 ,true)
+    clear: both
       
     .Date
+      +column(30, true)
       +date_heading
         
     .Stageheader
       +stage_title
+      +column(30, true)
+      clear: both
       
     .CommitteeShorttitle
+      +column(30, true)
+      clear: both
       +bill_title
             
     .ClausesToBeConsidered
       +considered_clauses
+      clear: both
         
     .MarshalledOrderNote
       font-weight: bold
       +prepend(2)
       +column(28, true)
+      clear: both
       text-align: left
 
       .Notehead
@@ -52,17 +64,20 @@
 
       .NoteTxt
         +prepend(1)
-        +column(27, true)
+        +column(26, true)
 
     .Resolution
       +column(30, true)
       padding: 1em 0 0 0
+      clear: both
 
       .ResolutionHead
         +column(30, true)
+        clear: both
 
       .ResolutionDate
         +column(30, true)
+        clear: both
         font-style: italic
 
       .ResolutionText > p.ResolutionPara > span.ResolutionPara_text
@@ -70,6 +85,7 @@
 
       .ResolutionText
         +column(30, true)
+        clear: both
 
         .ResolutionText_text
           +column(30, true)
@@ -94,6 +110,7 @@
       
       .Motion
         +column(30, true)
+        clear: both
 
         .Proposer_name
           +column(30, true)
@@ -106,6 +123,7 @@
     .Motion
       +column(30, true)
       padding: 0.5em 0
+      clear: both
       
       .Proposer_name
         +column(30, true)
