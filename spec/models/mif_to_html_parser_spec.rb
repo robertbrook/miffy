@@ -51,7 +51,7 @@ describe MifParser do
     end
     
     it 'should have toggle link around clause title' do
-      @result.should include(%Q|= link_to_function "Reports on implementation of Law Commission proposals", page['1112590'].toggle()|)
+      @result.should include(%Q|= link_to_function "Reports on implementation of Law Commission proposals", "$('1112590').toggle()"|)
     end
   end
 
