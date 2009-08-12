@@ -11,24 +11,31 @@ body
 
       .Head
         +column(30, true)
+        clear: both
 
         .HeadAmd
           +column(30, true)
+          clear: both
       
           .Date
+            +column(30, true)
             +date_heading
 
           .Stageheader
+            +column(30, true)
             +stage_title
 
           .Shorttitle
+            +column(30, true)
             +bill_title
     
     .Report
       +column(30, true)
+      clear: both
 
       .Clause_Report, .Schedule_Report
         +column(30, true)
+        clear: both
         border-top: 1px solid grey
         
         ul.Sponsors
