@@ -12,6 +12,8 @@
       -if page_class == 'application convert'
         = stylesheet_link_tag document_type(@file), :media => 'screen, projection'
         = stylesheet_link_tag document_type(@file) + '_print', :media => 'print'
+      -if page_class == 'application act'
+        = stylesheet_link_tag 'act', :media => 'screen, projection'
     = stylesheet_link_tag 'ie', :media => 'screen, projection'
   %body{:class => page_class.gsub(' ', '_')}
     #container

@@ -36,6 +36,26 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def act
+    file_name = URI.decode(params[:file])
+    
+    if File.exists?(file_name)
+      haml = ActToHtmlParser.new.parse_xml_file file_name, :format => :haml, :body_only => true
+      
+      @title = 'test'
+      
+      results_dir = RAILS_ROOT + '/app/views/results'
+      Dir.mkdir results_dir unless File.exist?(results_dir)
+      template = "#{results_dir}/#{file_name.gsub('/','_').gsub('.','_')}.haml"
+      
+      File.open(template,'w+') {|f| f.write(haml) }
+      
+      render :template => template
+    else
+      render_not_found
+    end
+  end
+
   def render_not_found
     render :template => 'public/404.html', :status => 404
   end
