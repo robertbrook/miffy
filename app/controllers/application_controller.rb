@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
       xml = MifParser.new.parse file_name
       result = MifToHtmlParser.new.parse_xml xml, :format => template_format, :body_only => true
       
-      params[:format] = params[:format] || 'text'
+      params[:format] = params[:format] || 'html'
       respond_to do |format|
         format.html { render_html(file_name, xml, result) }
         format.text { render :text => result }

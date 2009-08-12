@@ -14,7 +14,7 @@ class MifToHtmlParser
     def format_haml haml      
       haml.gsub!(NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX,  '\1\2 <span class="\4_number">\6</span>,')    
       haml.gsub!(/(Letter|FrameData|Dropcap|SmallCaps|Bold|Italic|\w+_number|PgfNumString_\d|(clause_.+\}))\n/, '\1' + "<>\n")
-      haml.gsub!(/(^\s*(#|%).+(\}|PgfNumString|\w+_text|PageStart|Number|Page|Line|Sponsor|AmendmentNumber_PgfTag))\n/, '\1' + "<\n")
+      haml.gsub!(/(^\s*(#|%).+(\}|PgfNumString|\w+_text|PageStart|Number|Page|Line|Sponsor|AmendmentNumber_PgfTag|Abt\d))\n/, '\1' + "<\n")
       
       toggle_regex = Regexp.new('ClauseTitle_text<\n(\s+)([^\n]+)\n(\s+)\#(\d+)\.ClauseText', Regexp::MULTILINE)
       haml.gsub!(toggle_regex, 'ClauseTitle_text<' + "\n" + '\1= link_to_function "\2", "$(\'\4\').toggle()"' + "\n" + '\3#\4.ClauseText')
@@ -44,7 +44,7 @@ class MifToHtmlParser
       html.gsub!("<br","\n<br")
       html.gsub!("\n\n","\n")
       
-      ActionController::Base.helpers.strip_tags(html)
+      html = ActionController::Base.helpers.strip_tags(html)
     else
       raise "don't know how to generate format: #{format}"
     end
