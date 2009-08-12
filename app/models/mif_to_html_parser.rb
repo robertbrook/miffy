@@ -36,6 +36,17 @@ class MifToHtmlParser
     elsif format == :haml
       html = generate_html doc, options
       generate_haml html, options
+    elsif format == :text
+      html = generate_html doc, options
+      html.gsub!("\n",'')
+      html.gsub!("<div","\n<div")
+      html.gsub!("<p","\n<p")
+      html.gsub!("<br","\n<br")
+      html.gsub!("\n\n","\n")
+      
+      ActionController::Base.helpers.strip_tags(html)
+    else
+      raise "don't know how to generate format: #{format}"
     end
   end
 

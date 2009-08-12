@@ -17,20 +17,17 @@ class ApplicationController < ActionController::Base
   
   def convert
     file_name = URI.decode(params[:file])
+    template_format = (params[:format] || :haml).to_sym
     
     if File.exists?(file_name)
       xml = MifParser.new.parse file_name
-      haml = MifToHtmlParser.new.parse_xml xml, :format => :haml, :body_only => true
+      result = MifToHtmlParser.new.parse_xml xml, :format => template_format, :body_only => true
       
-      @title = page_title(file_name, xml)
-      
-      results_dir = RAILS_ROOT + '/app/views/results'
-      Dir.mkdir results_dir unless File.exist?(results_dir)
-      template = "#{results_dir}/#{file_name.gsub('/','_').gsub('.','_')}.haml"
-      
-      File.open(template,'w+') {|f| f.write(haml) }
-        
-      render :template => template
+      params[:format] = params[:format] || 'text'
+      respond_to do |format|
+        format.html { render_html(file_name, xml, result) }
+        format.text { render :text => result }
+      end
     else
       render_not_found 
     end
@@ -41,6 +38,19 @@ class ApplicationController < ActionController::Base
   end
 
   private
+  
+    def render_html file_name, xml, result
+      @title = page_title(file_name, xml)
+      
+      results_dir = RAILS_ROOT + '/app/views/results'
+      Dir.mkdir results_dir unless File.exist?(results_dir)
+      template = "#{results_dir}/#{file_name.gsub('/','_').gsub('.','_')}.haml"
+      
+      File.open(template,'w+') {|f| f.write(result) }
+        
+      render :template => template
+    end
+
     def helper
       Helper.instance
     end
