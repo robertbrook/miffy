@@ -137,7 +137,7 @@ class MifParser
   def get_bill_attributes doc
     attributes = nil
     (doc/'Element').each do |element|      
-      attributes = (element/'Attributes/Attribute') if clean(element.at('ETag/text()')) == "Bill"
+      attributes = (element/'Attributes/Attribute') if clean(element.at('ETag')) == "Bill"
     end
     attributes
   end
@@ -146,8 +146,8 @@ class MifParser
     attrib_value = ""
     unless @bill_attributes.nil?
       @bill_attributes.each do |attribute|
-        if clean(attribute.at('AttrName/text()')) == attrib
-          attrib_value =  clean(attribute.at('AttrValue/text()'))
+        if clean(attribute.at('AttrName')) == attrib
+          attrib_value = clean(attribute.at('AttrValue'))
         end
       end
     end
@@ -160,9 +160,9 @@ class MifParser
     var_xml.traverse_element do |element|
       case element.name
         when 'VariableName'
-          @var_id = clean(element.at('text()'))
+          @var_id = clean(element)
         when 'VariableDef'
-          var_value = clean(element.at('text()'))
+          var_value = clean(element)
           vars.merge!({"#{@var_id}", "#{var_value}"})
       end
     end
@@ -170,35 +170,33 @@ class MifParser
   end
   
   def handle_frame frame_xml, frames
-    @frame_id = ''
-    @in_frame = false
-    @e_tag = ''
+    frame_id = ''
+    in_frame = false
+    e_tag = ''
     
     frame_xml.traverse_element do |element|
       case element.name
         when 'ID'
-          @frame_id = element.at('text()').to_s
+          frame_id = element.at('text()').to_s
         when 'Unique'
-          unless @frame_id == '' or @in_frame
+          unless frame_id == '' or in_frame
             unique_id = element.at('text()').to_s
-            frames.merge!({@frame_id, %Q|<FrameData id="#{unique_id}">|})
-            @in_frame = true
+            frames.merge!({frame_id, %Q|<FrameData id="#{unique_id}">|})
+            in_frame = true
           end
         when 'ETag'
           tag = clean(element)
-          @e_tag = tag
-          frames[@frame_id] << start_tag(tag, element)
+          e_tag = tag
+          frames[frame_id] << start_tag(tag, element)
         when 'String'
-          text = clean(element.at('text()'))
-          frames[@frame_id] << text
+          text = clean(element)
+          frames[frame_id] << text
       end
     end
     
-    if frames[@frame_id] 
-      unless @e_tag.empty?
-        frames[@frame_id] << "</#{@e_tag}>"
-      end
-      frames[@frame_id] << "</FrameData>"
+    if frames[frame_id]
+      frames[frame_id] << "</#{e_tag}>" unless e_tag.empty?
+      frames[frame_id] << "</FrameData>"
     end
     frames
   end
@@ -215,7 +213,7 @@ class MifParser
         when 'TblID'
           @current_table_id = element.at('text()').to_s
         when 'TblTag'
-          tag = clean(element.at('text()'))
+          tag = clean(element)
           if tag != 'Table' && tag != 'RepealContinue'
             break
           else
@@ -255,7 +253,7 @@ class MifParser
           @in_cell = false
           @in_heading = false
         when 'String'
-          text = clean(element.at('text()'))
+          text = clean(element)
           tables[@current_table_id] << text
         when 'Char'
           text = get_char(element)
@@ -367,8 +365,8 @@ class MifParser
     attribute_list = ''
     if attributes && attributes.size > 0
       attributes.each do |attribute|
-        name = clean(attribute.at('AttrName/text()'))
-        value = clean(attribute.at('AttrValue/text()'))
+        name = clean(attribute.at('AttrName'))
+        value = clean(attribute.at('AttrValue'))
         attribute_list += %Q| #{name}="#{value}"|
       end
     end
@@ -417,6 +415,7 @@ class MifParser
   
   def handle_etag element
     @e_tag = clean(element)
+    add_paraline_start if @e_tag == 'Bpara'
     flush_strings unless @e_tag == 'Italic'
     @etags_stack << @e_tag
 
@@ -616,7 +615,7 @@ class MifParser
   end
 
   def handle_variable_name element
-    var_id = clean(element.at('text()'))
+    var_id = clean(element)
     add_to_last_line @variable_list[var_id]
   end
   

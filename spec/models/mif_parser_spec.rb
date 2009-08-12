@@ -110,6 +110,14 @@ describe MifParser do
       end
     end
     
+    it 'should put para line start before Bpara' do
+      @result.should have_tag('WordsOfEnactment[id="1003778"]') do
+        with_tag('ParaLineStart[LineNum="7"]')
+        with_tag('Bpara[id="1003785"]')
+      end
+      @result.should include('<ParaLineStart LineNum="7"></ParaLineStart><Bpara id="1003785">')
+    end
+
     it 'should put page start inside clauses element around page content' do
       @result.should have_tag('Clauses[id="1112573"]') do
         with_tag('PageStart[id="996720"][PageType="BodyPage"][PageNum="1"]')
