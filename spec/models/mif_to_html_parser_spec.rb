@@ -49,6 +49,10 @@ describe MifParser do
     it 'should have an anchor name marking a clause start' do
       @result.should include(%Q|%span.PgfNumString_1<>\n                  %a#clause_LC1{ :name => \"clause1\", :href => \"#clause1\" }<>\n                    1\n|)
     end
+    
+    it 'should have toggle link around clause title' do
+      @result.should include(%Q|= link_to_function "Reports on implementation of Law Commission proposals", page['1112590'].toggle()|)
+    end
   end
 
   describe 'when parsing another MIF XML file to html' do
