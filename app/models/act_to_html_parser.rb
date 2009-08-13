@@ -59,13 +59,13 @@ class ActToHtmlParser
   
   DIV = %w[LongTitle DateOfEnactment
       P1group 
-      P1
-      Pnumber
       P1para
       P2
       P2para
       P3
       P3para
+      Number
+      LongTitle
       Text].inject({}){|h,v| h[v]=true; h}
   DIV_RE = Regexp.new "(^#{DIV.keys.join("$|")}$)"
 
@@ -82,6 +82,8 @@ class ActToHtmlParser
   def doc_to_html(doc)
     @in_prelims = false
     @in_body= false
+    @last_element_P1 = false
+    @clause_title = ""
     node_children_to_html(doc.root)
   end
   
@@ -138,12 +140,22 @@ class ActToHtmlParser
         if @in_prelims
           add_html_element('h1', node)
         elsif @in_body
-          add_html_element('div', node)
+          @clause_title = node.children[0].to_s
         end
-      when 'Number'
+      when 'P1'
+        @last_element_P1 = true
         add_html_element('div', node)
-      when 'LongTitle'
-        add_html_element('div', node)
+      when 'Pnumber'
+        if @last_element_P1
+          add %Q|<div class="P1Title">|
+          add %Q|<div class="TitleNum">#{node.children[0].to_s}</div>|
+          add %Q|<div class="Title">#{@clause_title}</div>|
+          add "</div>"
+          @last_element_P1 = false
+          @clause_title = ""
+        else
+          add %Q|<div class="Pnumber">(#{node.children[0].to_s})</div>|
+        end
       when /^ukm:/
         #ignore metadata for now
       when 'Commentaries'
@@ -159,6 +171,9 @@ class ActToHtmlParser
     
     if node.text?
       text = node.to_s.gsub("/n", "<br />")
+      if @in_prelims
+        text.gsub!(" c. ", " Chapter ")
+      end
       add text
     end
   end
