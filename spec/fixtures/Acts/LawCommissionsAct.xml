@@ -1,0 +1,499 @@
+<?xml version="1.0"?>
+<Legislation 
+	xmlns="http://www.legislation.gov.uk/namespaces/legislation" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/1999-07-01" 
+	IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22" 
+	xml:base="http://www.legislation.gov.uk/id/ukpga/1965/22" 
+	xsi:schemaLocation="http://www.legislation.gov.uk/namespaces/legislation http://www.legislation.gov.uk/schema/legislation.xsd" 
+	SchemaVersion="1.0" 
+	RestrictExtent="E+W+S+N.I.">
+	<ukm:Metadata xmlns:ukm="http://www.legislation.gov.uk/namespaces/metadata" xmlns:dc="http://purl.org/dc/elements/1.1/">
+		<dc:identifier>http://www.legislation.gov.uk/ukpga/1965/22</dc:identifier>
+		<dc:modified>2009-07-24</dc:modified>
+		<dc:title>Law Commissions Act 1965</dc:title>
+		<dc:description>An Act to provide for the constitution of Commissions for the reform of the law.</dc:description>
+		<dc:date>1965-06-15</dc:date>
+		<dc:type>text</dc:type>
+		<dc:format>text/xml</dc:format>
+		<dc:language>en</dc:language>
+		<dct:valid xmlns:dct="http://purl.org/dc/terms/">1999-07-01</dct:valid>
+		<ukm:PrimaryMetadata>
+			<ukm:DocumentClassification>
+				<ukm:DocumentCategory Value="primary"/>
+				<ukm:DocumentMainType Value="UnitedKingdomPublicGeneralAct"/>
+				<ukm:DocumentStatus Value="final"/>
+			</ukm:DocumentClassification>
+			<ukm:Year Value="1965"/>
+			<ukm:Number Value="22"/>
+			<ukm:EnactmentDate Date="1965-06-15"/>
+			<ukm:UnappliedEffects>
+				<ukm:UnappliedEffect Type="Commencement Order" Notes="commencement order for 2002 c. 26" AffectingClass="NorthernIrelandStatutoryRule" AffectingYear="2007" AffectingNumber="237" AffectingSectionRef="article-2" AffectingURI="/id/nisr/2007/237/article/2"/>
+			</ukm:UnappliedEffects>
+		</ukm:PrimaryMetadata>
+	</ukm:Metadata>
+
+	<Primary>
+		<PrimaryPrelims>
+			<Title>Law Commissions Act 1965</Title>
+			<Number>1965 c. 22</Number>
+			<LongTitle>An Act to provide for the constitution of Commissions for the reform of the law.</LongTitle>
+			<DateOfEnactment>
+				<DateText>[15th June 1965]<CommentaryRef Ref="c657277"/></DateText>
+			</DateOfEnactment>
+		</PrimaryPrelims>
+
+		<Body>			
+			<P1group RestrictExtent="E+W+S+N.I.">
+				<Title> The Law Commission</Title>
+				<P1 id="section-1" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/1/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/1">
+					<Pnumber>1</Pnumber>
+					<P1para>
+						<P2 id="section-1-1" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/1/1/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/1/1">
+							<Pnumber>1</Pnumber>
+							<P2para>
+								<Text>For the purpose of promoting the reform of the law there shall be constituted in accordance with this section a body of Commissioners, to be known as the Law Commission, consisting <Addition ChangeId="d1705919p52" CommentaryRef="c657278">(except during any temporary vacancy)</Addition> of a Chairman and four other Commissioners appointed by the Lord Chancellor.</Text>
+							</P2para>
+						</P2>
+						<P2 id="section-1-2" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/1/2/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/1/2">
+							<Pnumber>2</Pnumber>
+							<P2para>
+								<Text>The persons appointed to be Commissioners shall be persons appearing to the Lord Chancellor to be suitably qualified by the holding of judicial office or by experience as a <Addition ChangeId="d1705919p62" CommentaryRef="c657279">person having a general qualification (within the meaning of section 71 of the Courts and Legal Services Act 1990)</Addition> or as a teacher of law in a university.</Text>
+							</P2para>
+						</P2>
+						<P2 id="section-1-3" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/1/3/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/1/3">
+							<Pnumber>3</Pnumber>
+							<P2para>
+								<Text>A person appointed to be a Commissioner shall be appointed for such term (not exceeding five years) and subject to such conditions as may be determined by the Lord Chancellor at the time of his appointment; but a Commissioner may at any time resign his office and a person who ceases to be a Commissioner shall be eligible for reappointment.</Text>
+							</P2para>
+						</P2>
+						<P2 id="section-1-4" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/1/4/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/1/4">
+							<Pnumber>4</Pnumber>
+							<P2para>
+								<Text>A person who holds judicial office may be appointed as a Commissioner without relinquishing that office, but shall not (unless otherwise provided by the terms of his appointment) be required to perform his duties as the holder of that office while he remains a member of the Commission.</Text>
+							</P2para>
+						</P2>
+						<P2 id="section-1-5" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/1/5/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/1/5">
+							<Pnumber>5</Pnumber>
+							<P2para>
+								<Text>In this section &#x201C;<Term id="term-the-law">the law</Term>&#x201D; does not include the law of Scotland or any law of Northern Ireland which the Parliament of Northern Ireland has power to amend.</Text>
+							</P2para>
+						</P2>
+					</P1para>
+				</P1>
+			</P1group>
+			
+			<P1group RestrictExtent="E+W+S+N.I." RestrictStartDate="1999-07-01">
+				<Title> The Scottish Law Commission</Title>
+				<P1 id="section-2" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/2/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/2">
+					<Pnumber>2</Pnumber>
+					<P1para>
+						<P2 id="section-2-1" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/2/1/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/2/1">
+							<Pnumber>1</Pnumber>
+							<P2para>
+								<Text>For the purpose of promoting the reform of the law of Scotland, there shall be constituted in accordance with this section a body of Commissioners, to be known as the Scottish Law Commission, consisting of a Chairman and not more than four other Commissioners appointed by . . . <CommentaryRef Ref="c657293"/> the <Addition ChangeId="d1705919p103" CommentaryRef="c657294">Scottish Ministers</Addition>.</Text>
+							</P2para>
+						</P2>
+						<P2 id="section-2-2" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/2/2/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/2/2">
+							<Pnumber>2</Pnumber>
+							<P2para>
+								<Text>The persons appointed to be Commissioners shall be persons appearing to . . . <CommentaryRef Ref="c657293"/> the <Addition ChangeId="d1705919p115" CommentaryRef="c657294">Scottish Ministers</Addition> to be suitably qualified by the holding of judicial office or by experience as an advocate or solicitor or as a teacher of law in a university.</Text>
+							</P2para>
+						</P2>
+						<P2 id="section-2-3" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/2/3/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/2/3">
+							<Pnumber>3</Pnumber>
+							<P2para>
+								<Text>A person appointed to be a Commissioner shall be appointed for such term (not exceeding five years) and subject to such conditions as may be determined by . . . <CommentaryRef Ref="c657293"/> the <Addition ChangeId="d1705919p127" CommentaryRef="c657294">Scottish Ministers</Addition> at the time of his appointment; but a Commissioner may at any time resign his office, and a person who ceases to be a Commissioner shall be eligible for reappointment.</Text>
+							</P2para>
+						</P2>
+						<P2 id="section-2-4" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/2/4/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/2/4">
+							<Pnumber>4</Pnumber>
+							<P2para>
+								<Text>A person who holds judicial office may be appointed as a Commissioner without relinquishing that office, but shall not (unless otherwise provided by the terms of his appointment) be required to perform his duties as the holder of that office while he remains a member of the Commission.</Text>
+							</P2para>
+						</P2>
+						<P2 id="section-2-5" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/2/5/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/2/5">
+							<Pnumber>
+								<Addition ChangeId="d1705919p137" CommentaryRef="c657299">5</Addition>
+							</Pnumber>
+							<P2para>
+								<Text>
+									<Addition ChangeId="d1705919p137" CommentaryRef="c657299">Subsection (4) above shall have effect, in relation to a salaried [</Addition>
+									<Addition ChangeId="d1705919p137" CommentaryRef="c657299"><CommentaryRef Ref="c657300"/>sheriff], notwithstanding anything in [</Addition>
+									<Addition ChangeId="d1705919p137" CommentaryRef="c657299"><CommentaryRef Ref="c657301"/>section 6 of the </Addition>
+									<Addition ChangeId="d1705919p137" CommentaryRef="c657299"><CommentaryRef Ref="c657302"/>Sheriff Courts (Scotland) Act 1971] (which among other things prohibits such a [</Addition>
+									<Addition ChangeId="d1705919p137" CommentaryRef="c657299"><CommentaryRef Ref="c657300"/>sheriff] from being appointed to any office except such office as shall be by statute attached to the office of [</Addition>
+									<Addition ChangeId="d1705919p137" CommentaryRef="c657299"><CommentaryRef Ref="c657300"/>sheriff]).</Addition>
+								</Text>
+							</P2para>
+						</P2>
+					</P1para>
+				</P1>
+			</P1group>
+
+			<P1group RestrictExtent="E+W+S+N.I." RestrictStartDate="1999-07-01">
+				<Title> Functions of the Commissions</Title>
+				<P1 id="section-3" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/3/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/3">
+					<Pnumber>3</Pnumber>
+					<P1para>
+						<P2 id="section-3-1" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/3/1/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/3/1">
+							<Pnumber>1</Pnumber>
+							<P2para>
+								<Text>It shall be the duty of each of the Commissions to take and keep under review all the law with which they are respectively concerned with a view to its systematic development and reform, including in particular the codification of such law, the elimination of anomalies, the repeal of obsolete and unnecessary enactments, the reduction of the number of separate enactments and generally the simplification and modernisation of the law, and for that purpose&#x2014;</Text>
+								<P3 id="section-3-1-a" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/3/1/a/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/3/1/a">
+									<Pnumber>a</Pnumber>
+									<P3para>
+										<Text>to receive and consider any proposals for the reform of the law which may be made or referred to them;</Text>
+									</P3para>
+								</P3>
+								<P3 id="section-3-1-b" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/3/1/b/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/3/1/b">
+									<Pnumber>b</Pnumber>
+									<P3para>
+										<Text>to prepare and submit to the Minister from time to time programmes for the examination of different branches of the law with a view to reform, including recommendations as to the agency (whether the Commission or another body) by which any such examination should be carried out;</Text>
+									</P3para>
+								</P3>
+								<P3 id="section-3-1-c" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/3/1/c/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/3/1/c">
+									<Pnumber>c</Pnumber>
+									<P3para>
+										<Text>to undertake, pursuant to any such recommendations approved by the Minister, the examination of particular branches of the law and the formulation, by means of draft Bills or otherwise, of proposals for reform therein;</Text>
+									</P3para>
+								</P3>
+								<P3 id="section-3-1-d" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/3/1/d/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/3/1/d">
+									<Pnumber>d</Pnumber>
+									<P3para>
+										<Text>to prepare from time to time at the request of the Minister comprehensive programmes of consolidation and statute law revision, and to undertake the preparation of draft Bills pursuant to any such programme approved by the Minister;</Text>
+									</P3para>
+								</P3>
+								<P3 id="section-3-1-e" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/3/1/e/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/3/1/e">
+									<Pnumber>e</Pnumber>
+									<P3para>
+										<Text>to provide advice and information to government departments and other authorities or bodies concerned at the instance of the Government <Addition ChangeId="d1705919p199" CommentaryRef="c657305">of the United Kingdom or the Scottish Administration</Addition>with proposals for the reform or amendment of any branch of the law;</Text>
+									</P3para>
+								</P3>
+								<P3 id="section-3-1-f" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/3/1/f/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/3/1/f">
+									<Pnumber>f</Pnumber>
+									<P3para>
+										<Text>to obtain such information as to the legal systems of other countries as appears to the Commissioners likely to facilitate the performance of any of their functions.</Text>
+									</P3para>
+								</P3>
+							</P2para>
+						</P2>
+						<P2 id="section-3-2" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/3/2/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/3/2">
+							<Pnumber>2</Pnumber>
+							<P2para>
+								<Text>The Minister shall lay before Parliament any programmes prepared by the Commission and approved by him and any proposals for reform formulated by the Commission pursuant to such programmes.</Text>
+							</P2para>
+						</P2>
+						<P2 id="section-3-3" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/3/3/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/3/3">
+							<Pnumber>3</Pnumber>
+							<P2para>
+								<Text>Each of the Commissions shall make an annual report to the Minister on their proceedings, and the Minister shall lay the report before Parliament with such comments (if any) as he thinks fit.</Text>
+							</P2para>
+						</P2>
+						<P2 id="section-3-3A" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/3/3A/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/3/3A">
+							<Pnumber>
+								<Addition ChangeId="d1705919p221" CommentaryRef="c657306">3A</Addition>
+							</Pnumber>
+							<P2para>
+								<Text>
+									<Addition ChangeId="d1705919p221" CommentaryRef="c657306">Subsections (2) and (3) of this section shall have effect in relation to the Scottish Law Commission with the substitution of &#x201C;the Scottish Parliament&#x201D; for &#x201C;Parliament&#x201D;.</Addition>
+								</Text>
+							</P2para>
+						</P2>
+						<P2 id="section-3-4" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/3/4/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/3/4">
+							<Pnumber>4</Pnumber>
+							<P2para>
+								<Text>In the exercise of their functions under this Act the Commissions shall act in consultation with each other.</Text>
+							</P2para>
+						</P2>
+					</P1para>
+				</P1>
+			</P1group>
+
+			<P1group RestrictExtent="E+W+S+N.I." RestrictStartDate="1999-07-01">
+				<Title> Remuneration and pensions of Commissioners</Title>
+				<P1 id="section-4" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/4/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/4">
+					<Pnumber>4</Pnumber>
+					<P1para>
+						<P2 id="section-4-1" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/4/1/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/4/1">
+							<Pnumber>1</Pnumber>
+							<P2para>
+								<Text>There shall be paid to the Commissioners of the Law Commission <CommentaryRef Ref="c657312"/>. . ., other than a Commissioner who holds high judicial office, such salaries or remuneration as may be determined, with the approval of the Treasury, by the Lord Chancellor <CommentaryRef Ref="c657312"/>. . ..</Text>
+							</P2para>
+						</P2>
+						<P2 id="section-4-1A" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/4/1A/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/4/1A">
+							<Pnumber>
+								<Addition ChangeId="d1705919p253" CommentaryRef="c657314">1A</Addition>
+							</Pnumber>
+							<P2para>
+								<Text>
+									<Addition ChangeId="d1705919p253" CommentaryRef="c657314">There shall be paid to the Commissioners of the Scottish Law Commission, other than a Commissioner who holds high judicial office, such salaries or remuneration as may be determined by the Scottish Ministers.</Addition>
+								</Text>
+							</P2para>
+						</P2>
+						<P2 id="section-4-2" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/4/2/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/4/2">
+							<Pnumber>2</Pnumber>
+							<P2para>
+								<Text>In the case of any such holder of the office of Commissioner as may be so determined, there shall be paid such pension, allowance or gratuity to or in respect of him on his retirement or death, or such contributions or other payments towards provision for such a pension, allowance or gratuity, as may be so determined.</Text>
+							</P2para>
+						</P2>
+						<P2 id="section-4-3" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/4/3/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/4/3">
+							<Pnumber>3</Pnumber>
+							<P2para>
+								<Text>As soon as may be after the making of any determination under subsection (2) of this section, a statement of the amount of the pension, allowance or gratuity, or contributions or other payments towards the pension, allowance or gratuity, payable in pursuance of the determination.</Text>
+								<P3 id="section-4-3-a" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/4/3/a/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/4/3/a">
+									<Pnumber>
+										<Addition ChangeId="d1705919p273" CommentaryRef="c657315">a</Addition>
+									</Pnumber>
+									<P3para>
+										<Text>
+											<Addition ChangeId="d1705919p273" CommentaryRef="c657315">in the case of the Law Commission, the Lord Chancellor shall lay before each House of Parliament; and</Addition>
+										</Text>
+									</P3para>
+								</P3>
+								<P3 id="section-4-3-b" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/4/3/b/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/4/3/b">
+									<Pnumber>
+										<Addition ChangeId="d1705919p273" CommentaryRef="c657315">b</Addition>
+									</Pnumber>
+									<P3para>
+										<Text>
+											<Addition ChangeId="d1705919p273" CommentaryRef="c657315">in the case of the Scottish Law Commission, the Scottish Ministers shall lay before the Scottish Parliament,</Addition>
+										</Text>
+									</P3para>
+								</P3>
+							</P2para>
+						</P2>
+						<P2 id="section-4-4" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/4/4/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/4/4">
+							<Pnumber>4</Pnumber>
+							<P2para>
+								<Text><Addition ChangeId="d1705919p292" CommentaryRef="c657316">In the case of the Law Commission,</Addition> the salaries or remuneration of the Commissioners, and any sums payable to or in respect of the Commissioners under subsection (2) of this section, shall be paid out of moneys provided by Parliament.</Text>
+							</P2para>
+						</P2>
+						<P2 id="section-4-5" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/4/5/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/4/5">
+							<Pnumber>
+								<Addition ChangeId="d1705919p296" CommentaryRef="c657317">5</Addition>
+							</Pnumber>
+							<P2para>
+								<Text>
+									<Addition ChangeId="d1705919p296" CommentaryRef="c657317">In the case of the Scottish Law Commission, the salaries or remuneration of the Commissioners, and any sums payable to or in respect of the Commissioners under subsection (2) of this section, shall be paid by the Scottish Ministers.</Addition>
+								</Text>
+							</P2para>
+						</P2>
+					</P1para>
+				</P1>
+			</P1group>
+
+			<P1group RestrictExtent="E+W+S+N.I." RestrictStartDate="1999-07-01">
+				<Title> Staff and expenses</Title>
+				<P1 id="section-5" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/5/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/5">
+					<Pnumber>5</Pnumber>
+					<P1para>
+						<P2 id="section-5-1" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/5/1/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/5/1">
+							<Pnumber>1</Pnumber>
+							<P2para>
+								<Text>The Lord Chancellor may appoint such officers and servants of the Law Commission, <CommentaryRef Ref="c657319"/>. . ., as he may, with the approval of the Treasury as to number and conditions of service, determine.</Text>
+							</P2para>
+						</P2>
+						<P2 id="section-5-1A" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/5/1A/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/5/1A">
+							<Pnumber>
+								<Addition ChangeId="d1705919p320" CommentaryRef="c657320">1A</Addition>
+							</Pnumber>
+							<P2para>
+								<Text>
+									<Addition ChangeId="d1705919p320" CommentaryRef="c657320">The Scottish Ministers may appoint such officers and servants of the Scottish Law Commission as they may determine.</Addition>
+								</Text>
+							</P2para>
+						</P2>
+						<P2 id="section-5-2" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/5/2/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/5/2">
+							<Pnumber>2</Pnumber>
+							<P2para>
+								<Text>The Treasury may make regulations providing for the counting of service as an officer or servant of either of the Commissions as pensionable service in any other capacity under the Crown and vice versa.</Text>
+							</P2para>
+						</P2>
+						<P2 id="section-5-3" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/5/3/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/5/3">
+							<Pnumber>3</Pnumber>
+							<P2para>
+								<Text>The power of the Treasury to make regulations under subsection (2) of this section shall be exercisable by statutory instrument, and any statutory instrument made by virtue of that subsection shall be subject to annulment in pursuance of a resolution of either House of Parliament.</Text>
+							</P2para>
+						</P2>
+						<P2 id="section-5-4" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/5/4/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/5/4">
+							<Pnumber>4</Pnumber>
+							<P2para>
+								<Text>The expenses of the Law Commission <CommentaryRef Ref="c657321"/>. . ., including the remuneration of officers and servants appointed under this section, shall be defrayed out of moneys provided by Parliament.</Text>
+							</P2para>
+						</P2>
+						<P2 id="section-5-5" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/5/5/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/5/5">
+							<Pnumber>
+								<Addition ChangeId="d1705919p348" CommentaryRef="c657322">5</Addition>
+							</Pnumber>
+							<P2para>
+								<Text>
+									<Addition ChangeId="d1705919p348" CommentaryRef="c657322">The expenses of the Scottish Law Commission, including the remuneration of its officers and servants appointed under this section, shall be paid by the Scottish Ministers.</Addition>
+								</Text>
+							</P2para>
+						</P2>
+					</P1para>
+				</P1>
+			</P1group>
+
+			<P1group RestrictExtent="E+W+S+N.I." RestrictStartDate="1999-07-01">
+				<Title> Supplemental</Title>
+				<P1 id="section-6" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/6/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/6">
+					<Pnumber>6</Pnumber>
+					<P1para>
+						<P2 id="section-6-1" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/6/1/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/6/1">
+							<Pnumber>1</Pnumber>
+							<P2para>
+								<Text>. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . <CommentaryRef Ref="c657327"/></Text>
+							</P2para>
+						</P2>
+						<P2 id="section-6-2" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/6/2/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/6/2">
+							<Pnumber>2</Pnumber>
+							<P2para>
+								<Text>In this Act &#x201C;<Term id="term-high-judicial-office">high judicial office</Term>&#x201D; has the same meaning as in the <CommentaryRef Ref="c657328"/>Appellate Jurisdiction Act 1876 as amended by the <CommentaryRef Ref="c657329"/>Appellate Jurisdiction Act 1887; and &#x201C;<Term id="term-the-minister">the Minister</Term>&#x201D; means, in relation to the Law Commission the Lord Chancellor and in relation to the Scottish Law Commission . . . <CommentaryRef Ref="c657330"/><Addition ChangeId="d1705919p388" CommentaryRef="c657331">the Scottish Ministers</Addition>.</Text>
+							</P2para>
+						</P2>
+					</P1para>
+				</P1>
+			</P1group>
+
+			<P1group>
+				<Title> Short title</Title>
+				<P1 id="section-7" DocumentURI="http://www.legislation.gov.uk/ukpga/1965/22/section/7/1999-07-01" IdURI="http://www.legislation.gov.uk/id/ukpga/1965/22/section/7">
+					<Pnumber>7</Pnumber>
+					<P1para>
+						<Text>This Act may be cited as the Law Commissions Act 1965.</Text>
+					</P1para>
+				</P1>
+			</P1group>
+		</Body>
+	</Primary>
+	
+	<Commentaries>
+		<Commentary id="c657277" Type="C">
+			<Para>
+				<Text>Act: Functions transferred (19.5.1999) by <Acronym Expansion="Statutory Instrument">S.I.</Acronym> 1999/678, art. 2(1), <Abbreviation Expansion="Schedule">Sch.</Abbreviation></Text>
+			</Para>
+		</Commentary>
+		<Commentary id="c657278" Type="F">
+			<Para>
+				<Text>Words inserted by Administration of Justice Act 1982 (c. 53, SIF 37), s. 64</Text>
+			</Para>
+		</Commentary>
+		<Commentary id="c657279" Type="F">
+			<Para>
+				<Text>Words substituted by Courts and Legal Services Act 1990 (c. 41, SIF 37), s. 71(2), Sch. 10 para. 25</Text>
+			</Para>
+		</Commentary>
+		<Commentary id="c657293" Type="F">
+			<Para>
+				<Text>Words repealed by S.I. 1972/2002 art. 3(3)(b)</Text>
+			</Para>
+		</Commentary>
+		<Commentary id="c657294" Type="F">
+			<Para>
+				<Text>Words in s. 2(1)-(3) substituted (1.7.1999) by S.I. 1999/1820, arts. 1(2), 4, Sch. 2 <Abbreviation Expansion="Part">Pt.</Abbreviation> I para. 36(2)</Text>
+			</Para>
+		</Commentary>
+		<Commentary id="c657299" Type="F">
+			<Para>
+				<Text>S. 2(5) repealed (S.) by Law Reform (Miscellaneous Provisions) (Scotland) Act 1985 (c. 73, SIF 36:1), s. 59, Sch. 4</Text>
+			</Para>
+		</Commentary>
+		<Commentary id="c657300" Type="F">
+			<Para>
+				<Text>Word substituted by virtue of Sheriff Courts (Scotland) Act 1971 (c. 58), s. 4(2)</Text>
+			</Para>
+		</Commentary>
+		<Commentary id="c657301" Type="F">
+			<Para>
+				<Text>Words substituted by virtue of Interpretation Act 1978 (c. 30) s. 17(2)(a)</Text>
+			</Para>
+		</Commentary>
+		<Commentary id="c657302" Type="M">
+			<Para>
+				<Text>1971 c. 58. </Text>
+			</Para>
+		</Commentary>
+		<Commentary id="c657305" Type="F">
+			<Para>
+				<Text>Words in s. 3(1)(e) inserted (1.7.1999) by S.I. 1999/1820, arts. 1(2), 4, Sch. 2 Pt. I para. 36(3)(a)</Text>
+			</Para>
+		</Commentary>
+		<Commentary id="c657306" Type="F">
+			<Para>
+				<Text>S. 3(3A) inserted (1.7.1999) by S.I. 1999/1820, arts. 1(2), 4, Sch. 2 Pt. I para. 36(3)(b)</Text>
+			</Para>
+		</Commentary>
+		<Commentary id="c657312" Type="F">
+			<Para>
+				<Text>Words in s. 4(1) repealed (1.7.1999) by S.I. 1999/1820, arts. 1(2), 4, Sch. 2 Pt. I para. 36(4)(a), Pt. <Acronym Expansion="4">IV</Acronym></Text>
+			</Para>
+		</Commentary>
+		<Commentary id="c657314" Type="F">
+			<Para>
+				<Text>S. 4(1A) inserted (1.7.1999) by S.I. 1999/1820, arts. 1(2), 4, Sch. 2 Pt. I para. 36(4)(b)</Text>
+			</Para>
+		</Commentary>
+		<Commentary id="c657315" Type="F">
+			<Para>
+				<Text>S. 4(3)(a)(b) substituted (1.7.1999) by S.I. 1999/1820, arts. 1(2), 4, Sch. 2 Pt. I para. 36(4)(c)</Text>
+			</Para>
+		</Commentary>
+		<Commentary id="c657316" Type="F">
+			<Para>
+				<Text>Words in s. 4(4) inserted (1.7.1999) by S.I. 1999/1820, arts. 1(2), 4, Sch. 2 Pt. I para. 36(4)(d)</Text>
+			</Para>
+		</Commentary>
+		<Commentary id="c657317" Type="F">
+			<Para>
+				<Text>S. 4(5) inserted (1.7.1999) by S.I. 1999/1820, arts. 1(2), 4, Sch. 2 Pt. I para. 36(4)(e)</Text>
+			</Para>
+		</Commentary>
+		<Commentary id="c657319" Type="F">
+			<Para>
+				<Text>Words in s. 5(1) repealed (1.7.1999) by S.I. 1999/1820, arts. 1(2), 4, Sch. 2 Pt. I para. 36(5)(a), Pt. IV</Text>
+			</Para>
+		</Commentary>
+		<Commentary id="c657320" Type="F">
+			<Para>
+				<Text>S. 5(1A) inserted (1.7.1999) by S.I. 1999/1820, arts. 1(2), 4, Sch. 2 Pt. I para. 36(5)(b)</Text>
+			</Para>
+		</Commentary>
+		<Commentary id="c657321" Type="F">
+			<Para>
+				<Text>Words in s. 5(4) repealed (1.7.1999) by S.I. 1999/1820, arts. 1(2), 4, Sch. 2 Pt. I para. 36(5)(c), Pt. IV</Text>
+			</Para>
+		</Commentary>
+		<Commentary id="c657322" Type="F">
+			<Para>
+				<Text>S. 5(5) inserted (1.7.1999) by S.I. 1999/1820, arts. 1(2), 4, Sch. 2 Pt. I para. 36(5)(d)</Text>
+			</Para>
+		</Commentary>
+		<Commentary id="c657327" Type="F">
+			<Para>
+				<Text>S. 6(1) repealed by House of Commons Disqualification Act 1975 (c. 24), Sch. 3 and Northern Ireland Assembly Disqualification Act 1975 (c. 25), Sch. 3 Pt. I</Text>
+			</Para>
+		</Commentary>
+		<Commentary id="c657328" Type="M">
+			<Para>
+				<Text>1876 c. 59. </Text>
+			</Para>
+		</Commentary>
+		<Commentary id="c657329" Type="M">
+			<Para>
+				<Text>1887 c. 70. </Text>
+			</Para>
+		</Commentary>
+		<Commentary id="c657330" Type="F">
+			<Para>
+				<Text>Words repealed by S.I. 1972/2002 art. 3(3)(b)</Text>
+			</Para>
+		</Commentary>
+		<Commentary id="c657331" Type="F">
+			<Para>
+				<Text>Words in s. 6(2) substituted (1.7.1999) by S.I. 1999/1820, arts. 1(2), 4, Sch. 2 Pt. I para. 36(6)</Text>
+			</Para>
+		</Commentary>
+	</Commentaries>
+</Legislation>

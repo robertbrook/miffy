@@ -37,18 +37,18 @@ describe MifParser do
     parser.stub!(:find_act_url).and_return url
     parser
   end
-=begin
+
   describe 'when parsing Clauses MIF XML file to text' do
     before(:all) do
       @result = parser.parse_xml(fixture('clauses.xml'), :format => :text)
     end
     it 'should not have any tags in output' do
-      @result.should include('Be it enacted by the Queen’s most Excellent Majesty, by and with the advice and
-consent of the Lords Spiritual and Temporal, and Commons, in this present
-Parliament assembled, and by the authority of the same, as follows:— ')
+      @result.should include('Be it enacted by the Queen’s most Excellent Majesty, by and with the advice and 
+consent of the Lords Spiritual and Temporal, and Commons, in this present 
+Parliament assembled, and by the authority of the same, as follows:—')
     end
   end
-=end  
+
   describe 'when parsing Clauses MIF XML file to haml' do
     before(:all) do
       @result = parser.parse_xml(fixture('clauses.xml'), :format => :haml)
