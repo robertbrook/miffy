@@ -20,7 +20,9 @@ class MifToHtmlParser
 
       toggle_regex = Regexp.new('ClauseTitle_text<\n(\s+)([^\n]+)\n(\s+)\#(\d+)\.ClauseText', Regexp::MULTILINE)
       haml.gsub!(toggle_regex, 'ClauseTitle_text<' + "\n" + '\1= link_to_function "\2", "$(\'\4\').toggle()"' + "\n" + '\3#\4.ClauseText')
-
+      
+      toggle_regex = Regexp.new('(%a\{ :name => "[^"]+" \})<>\n(\s+#\d+)', Regexp::MULTILINE)
+      haml.gsub!(toggle_regex, '\1' + "\n" + '\2')
       haml
     end    
   end

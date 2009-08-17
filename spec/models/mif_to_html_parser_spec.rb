@@ -35,6 +35,11 @@ describe MifParser do
             %span#1485163.Number<
               Clause <span class="Clause_number">1</span>,|
     end
+    it 'should line break if anchor outside div' do
+      text = %Q|        %a{ :name => "page27-line3" }<>
+        #1045605.CommitteeShorttitle<|
+      MifToHtmlParser.format_haml(text).should == text.sub('<>','')
+    end
   end
 end
 
