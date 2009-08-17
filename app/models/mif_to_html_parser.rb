@@ -95,57 +95,34 @@ class MifToHtmlParser
     end
   end
 
-  DIV = %w[Amendments_Commons Head HeadConsider Date
-      Committee Clause_Committee Resolution Order_Committee Schedule_Committee
-      CrossHeadingSch Amendment
-      OrderCrossHeading
-      NewClause_Committee Order_House
-      Arrangement
-      Rubric
-      Cover
-      BillData
-      CoverHeading
-      CoverPara
-      Heading_ar
-      Head_thin
-      HeadAmd
-      HeadNotice
-      NoticeOfAmds
-      Given
-      Report
-      Jref
-      Schedules_ar
-      SchedulesTitle_ar
-      Prelim
-      ABillTo Abt1 Abt2 Abt3 Abt4 LongTitle Bpara WordsOfEnactment
-      Clauses
-      List
-      Clauses_ar
-      Longtitle_text
-      Amendment_Text Amendment_Number
-      ClauseText Heading_text
-      CrossHeadingTitle ClauseTitle
-      OrderText OrderAmendmentText
-      Order_Motion OrderHeading
-      ResolutionHead ResolutionText
-      OrderPreamble ResolutionPreamble
-      Stageheader
-      CommitteeShorttitle
-      Shorttitle
-      MarshalledOrderNote
-      ClausesToBeConsidered
-      Para_sch
-      BillTitle
-      Move
-      Motion
-      Text_motion
-      Table
-      Footer
-      SubSection].inject({}){|h,v| h[v]=true; h}
+  DIV = %w[ABillTo Abt1 Abt2 Abt3 Abt4
+    Amendment Amendment_Number Amendment_Text Amendments_Commons Arrangement
+    BillData BillTitle Bpara
+    ClauseText ClauseTitle Clause_Committee
+    Clauses ClausesToBeConsidered Clauses_ar
+    Committee CommitteeShorttitle
+    Cover CoverHeading CoverPara
+    CrossHeadingSch CrossHeadingTitle
+    Date
+    Footer
+    Given
+    Head HeadAmd HeadConsider HeadNotice Head_thin
+    Heading_ar Heading_text
+    Jref
+    List LongTitle Longtitle_text
+    MarshalledOrderNote Motion Move
+    NewClause_Committee NoticeOfAmds
+    OrderAmendmentText OrderCrossHeading OrderHeading OrderPreamble OrderText
+    Order_Committee Order_House Order_Motion
+    Para_sch Prelim
+    Report Resolution ResolutionHead ResolutionPreamble ResolutionText Rubric
+    Schedule_Committee SchedulesTitle_ar Schedules_ar
+    Shorttitle Stageheader SubSection
+    Table Text_motion
+    WordsOfEnactment].inject({}){|h,v| h[v]=true; h}
+
   DIV_RE = Regexp.new "(^#{DIV.keys.join("$|")}$)"
 
-  # P = %w[].inject({}){|h,v| h[v]=true; h}
-  
   TABLE = %w[TableData].inject({}){|h,v| h[v]=true; h}
   TABLE_RE = Regexp.new "(^#{TABLE.keys.join("$|")}$)"
 
@@ -158,49 +135,26 @@ class MifToHtmlParser
   TD = %w[Cell].inject({}){|h,v| h[v]=true; h}
   TD_RE = Regexp.new "(^#{TD.keys.join("$|")}$)"
 
-  SPAN = %w[ResolutionPara ResolutionSubPara
-      SubPara
-      SubPara_sch
-      SubSubPara_sch
-      Definition
-      TextContinuation
-      PgfNumString
-      OrderDate
-      ResolutionDate
-      OrderPara
-      Jref_text
-      Definition_text
-      SubSection_text
-      ResolutionHead_text
-      Number_text
-      ResolutionText_text
-      ResolutionPara_text
-      ResolutionSubPara_text
-      Page_text
-      Para_text
-      Line_text
-      List_text
-      ListItem
+  SPAN = %w[Amendment_Text_text
+      Bold Bold_text
       ClauseTitle_text
-      Amendment_Text_text
-      Move_text
-      Para_sch_text
-      TextContinuation_text
-      Proposer_name
-      Day Date_text STText Notehead NoteTxt
-      STHouse
-      STLords
-      STCommons
-      Letter
+      Date_text Day Definition Definition_text Dropcap
       Enact
-      Italic
-      SmallCaps
-      Dropcap
-      Bold
-      Bold_text
-      WHITESPACE
       FrameData
-      Number Page Line ].inject({}){|h,v| h[v]=true; h}
+      Italic
+      Jref_text
+      Letter Line Line_text ListItem List_text
+      Move_text
+      NoteTxt Notehead Number Number_text
+      OrderDate OrderPara
+      Page Page_text Para_sch_text Para_text PgfNumString Proposer_name
+      ResolutionDate ResolutionHead_text ResolutionPara ResolutionPara_text
+      ResolutionSubPara ResolutionSubPara_text ResolutionText_text
+      STCommons STHouse STLords STText SmallCaps
+      SubPara SubPara_sch SubSection_text SubSubPara_sch
+      TextContinuation TextContinuation_text
+      WHITESPACE ].inject({}){|h,v| h[v]=true; h}
+      
   SPAN_RE = Regexp.new "(^#{SPAN.keys.join("$|")}$)"
 
   UL = %w[Sponsors].inject({}){|h,v| h[v]=true; h}
