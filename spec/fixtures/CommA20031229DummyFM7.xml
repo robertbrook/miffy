@@ -1,9 +1,9 @@
 <Document><BillData><Amendments.Commons id="1020493" Auto="Yes"><PageStart id="996720" PageType="BodyPage" PageNum="1">Page 1</PageStart><Head id="1033398"><HeadNotice id="1033750" Given="given on"><NoticeOfAmds id="1042951"><ParaLineStart LineNum="1"></ParaLineStart>Notices of Amendments</NoticeOfAmds>
-<Given id="1045577"><ParaLineStart LineNum="2"></ParaLineStart>given on</Given>
+<ParaLineStart LineNum="2"></ParaLineStart><Given id="1045577">given on</Given>
 <Date id="1041467"><Day id="1041470"><ParaLineStart LineNum="3"></ParaLineStart>Monday </Day><Date.text id="1041477">29th December 2003</Date.text>
 </Date>
-<Stageheader id="1045600" Stage="Committee" SC="S.C.A."><ParaLineStart LineNum="4"></ParaLineStart>Standing Committee A</Stageheader>
-<Shorttitle id="1045605"><ParaLineStart LineNum="5"></ParaLineStart>Child Trust Funds Bill</Shorttitle>
+<ParaLineStart LineNum="4"></ParaLineStart><Stageheader id="1045600" Stage="Committee" SC="S.C.A.">Standing Committee A</Stageheader>
+<ParaLineStart LineNum="5"></ParaLineStart><Shorttitle id="1045605">Child Trust Funds Bill</Shorttitle>
 </HeadNotice>
 </Head>
 <Committee id="1049366"><Clause.Committee id="1049369" Star="Yes"><Sponsors id="1049372"><Sponsor id="1049375"><ParaLineStart LineNum="6"></ParaLineStart>Mr George Osborne</Sponsor>

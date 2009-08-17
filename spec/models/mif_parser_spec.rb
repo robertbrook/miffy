@@ -329,6 +329,13 @@ describe MifParser do
     it 'should parse' do
       @result.should_not be_nil
     end
+    
+    it 'should put para line start before Shorttitle|Stageheader|Given' do
+      @result.should include('<ParaLineStart LineNum="2"></ParaLineStart><Given id="1045577">given on</Given>')
+      # @result.should include('<ParaLineStart LineNum="3"></ParaLineStart><Date id="1041467"><Day id="1041470">Thursday ')
+      @result.should include('<ParaLineStart LineNum="4"></ParaLineStart><Stageheader id="1045600" SC="S.C.A." Stage="Committee">Standing Committee A</Stageheader>')
+      @result.should include('<ParaLineStart LineNum="5"></ParaLineStart><Shorttitle id="1045605">Child Trust Funds Bill</Shorttitle>')
+    end
   end
   
   describe 'when parsing another standing committee MIF XML file to xml' do
@@ -345,8 +352,6 @@ describe MifParser do
       italicized = 'reduction of age of majority in respect of child trust funds'
       text = "‘(2) Section [#{italicized}] extends to Northern Ireland, but does not extend to Scotland.’."
       
-# <SubSection_PgfTag id="1051592"><PgfNumString></PgfNumString><SubSection_text>
-# <ParaLineStart LineNum="40"></ParaLineStart>‘(2) Section [</SubSection_text><SubSection_text><Italic id="1051590">reduction of age of majority in respect of child trust funds</Italic>] extends to <ParaLineStart LineNum="41"></ParaLineStart>Northern Ireland, but does not extend to Scotland.’.</SubSection_text></SubSection_PgfTag>
       @result.should have_tag('SubSection[id="1051587"]') do
         with_tag('SubSection_PgfTag[id="1051592"]') do
           with_tag('SubSection_text', :text => text) do
