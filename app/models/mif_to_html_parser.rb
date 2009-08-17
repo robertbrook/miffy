@@ -15,7 +15,7 @@ class MifToHtmlParser
     def format_haml haml      
       haml.gsub!(NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX,  '\1\2 <span class="\4_number">\6</span>,')
       haml.gsub!(/(Letter|FrameData|Dropcap|SmallCaps|Bold|Italic|\w+_number|PgfNumString_\d|(clause_.+\})|(name.+\})|Abt\d)\n/, '\1' + "<>\n")
-      haml.gsub!(/(^\s*(#|%).+(PgfNumString|\w+_text|PageStart|Number|Page|Line|BillTitle|Sponsor|AmendmentNumber_PgfTag|Given|Stageheader|Shorttitle))\n/, '\1' + "<\n")
+      haml.gsub!(/(^\s*(#|%).+(PgfNumString|\w+_text|PageStart|Number|Page|Line|STText|Sponsor|AmendmentNumber_PgfTag|Given|Stageheader|Shorttitle))\n/, '\1' + "<\n")
       haml.gsub!(/(^\s*(.BillTitle|%a.+\}))\n/, '\1' + "<\n")
 
       toggle_regex = Regexp.new('ClauseTitle_text<\n(\s+)([^\n]+)\n(\s+)\#(\d+)\.ClauseText', Regexp::MULTILINE)

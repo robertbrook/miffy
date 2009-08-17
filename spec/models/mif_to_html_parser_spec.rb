@@ -17,7 +17,7 @@ describe MifParser do
       check "%span#1003802.SmallCaps", "<>"
       check ".BillTitle", "<"
       check "%a{ :href => 'http://services.parliament.uk/bills/2008-09/lawcommission.html' }", "<"
-      
+      check "%span#1053799.STText", '<'
       check "#1045577.Given", '<'              
       check "#1045600.Stageheader", '<'
       check "#1045605.Shorttitle", '<'
