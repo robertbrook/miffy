@@ -14,6 +14,8 @@ describe MifParser do
       check "%span#1112726.FrameData", "<>"
       check "%span#1003796.Dropcap", "<>"
       check "%span#1003802.SmallCaps", "<>"
+      check "%span#1003802.SmallCaps", "<>"
+      check ".BillTitle", "<"
     end
     
     it 'should expand clause number span' do
