@@ -209,40 +209,13 @@ class MifToHtmlParser
   end
 
   def find_bill_url bill_name
-    search_url = "http://www.publications.parliament.uk/cgi-bin/search.pl?q=%22#{URI.escape(bill_name)}%22+more%3Abusiness"
-    links = nil
-    
-    WWW::Mechanize.new.get(search_url) do |result|
-      links = result.links.select {|x| x.text[bill_name] && x.uri.to_s['services'] }
-    end
-
-    if links && links.size == 1
-      links.first.uri.to_s
-    else
-      ''
-    end
+    bill = Bill.from_name bill_name
+    bill.parliament_url
   end
   
   def find_act_url act_name
-    search_url = "http://search.opsi.gov.uk/search?q=#{URI.escape(act_name)}&output=xml_no_dtd&client=opsisearch_semaphore&site=opsi_collection"
-    begin
-      doc = Hpricot.XML open(search_url)
-      url = nil
-      
-      (doc/'R/T').each do |result|
-        term = result.inner_text.gsub(/<[^>]+>/,'')
-        if act_name == term
-          url = result.at('../U/text()').to_s
-        end
-      end
-      
-      url
-    rescue Exception => e
-      puts 'error retrieving: ' + search_url
-      puts e.class.name
-      puts e.to_s
-      nil
-    end
+    act = Act.from_name act_name
+    act.opsi_url
   end
   
   def add_link_element node, div=false
