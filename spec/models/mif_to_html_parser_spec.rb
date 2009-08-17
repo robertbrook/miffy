@@ -15,7 +15,13 @@ describe MifParser do
       check "%span#1003796.Dropcap", "<>"
       check "%span#1003802.SmallCaps", "<>"
       check "%span#1003802.SmallCaps", "<>"
-      check "%a.BillTitle{ :href => 'url' }", "<"
+      check ".BillTitle", "<"
+      check "%a{ :href => 'http://services.parliament.uk/bills/2008-09/lawcommission.html' }", "<"
+      check '%a{ :name => "page27-line3" }', '<>'
+      check "%span#1053799.STText", '<'
+      check "#1045577.Given", '<'              
+      check "#1045600.Stageheader", '<'
+      check "#1045605.Shorttitle", '<'
     end
     
     it 'should expand clause number span' do
@@ -29,15 +35,20 @@ describe MifParser do
             %span#1485163.Number<
               Clause <span class="Clause_number">1</span>,|
     end
+    it 'should line break if anchor outside div' do
+      text = %Q|        %a{ :name => "page27-line3" }<>
+        #1045605.CommitteeShorttitle<|
+      MifToHtmlParser.format_haml(text).should == text.sub('<>','')
+    end
   end
 end
 
 describe MifParser do
 
-  def parser url=nil
+  def parser url=nil, other_url=nil
     parser = MifToHtmlParser.new
     parser.stub!(:find_act_url).and_return url
-    parser.stub!(:find_bill_url).and_return url
+    parser.stub!(:find_bill_url).and_return other_url
     parser
   end
 
@@ -161,7 +172,7 @@ Parliament assembled, and by the authority of the same, as follows:—')
   describe 'when parsing a standing committee MIF XML file to html' do
     before(:all) do
       @url = 'http://www.opsi.gov.uk/acts/acts1992/ukpga_19920004_en_1'
-      @result = parser(@url).parse_xml(fixture('CommA20031218DummyFM7.xml'), :format => :html)
+      @result = parser(@url,nil).parse_xml(fixture('CommA20031218DummyFM7.xml'), :format => :html)
     end
     it 'should put new line anchor outside of citation link' do
       @result.should have_tag('p[id="1055416"][class="Paragraph_PgfTag"]') do
@@ -174,7 +185,11 @@ Parliament assembled, and by the authority of the same, as follows:—')
       @result.should_not include('<a id="1055415" href="' + @url + '" class="Citation">Social Security Contributions and <a name="page14-line7"></a>Benefits Act 1992 (c. 4)</a>')
 
       @result.should include('<a id="1055415" href="' + @url + '" class="Citation">Social Security Contributions and <br />Benefits Act 1992 (c. 4)</a><a name="page14-line7"></a>')
-    end    
+    end
+
+    it 'should put new line anchor outside of Shorttitle link' do
+      @result.should include('<a name="page1-line5"></a><div id="1045605" class="Shorttitle">Child Trust Funds Bill</div>')
+    end
   end
   
   

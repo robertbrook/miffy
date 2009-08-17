@@ -415,7 +415,7 @@ class MifParser
   
   def handle_etag element
     @e_tag = clean(element)
-    add_paraline_start if @e_tag == 'Bpara'
+    add_paraline_start if @e_tag[/^(Bpara|Stageheader|Shorttitle|Given|CommitteeShorttitle)$/]
     flush_strings unless @e_tag == 'Italic'
     @etags_stack << @e_tag
 

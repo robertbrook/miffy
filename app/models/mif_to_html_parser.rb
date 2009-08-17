@@ -15,12 +15,14 @@ class MifToHtmlParser
     def format_haml haml      
       haml.gsub!(NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX,  '\1\2 <span class="\4_number">\6</span>,')
       haml.gsub!(/(Letter|FrameData|Dropcap|SmallCaps|Bold|Italic|\w+_number|PgfNumString_\d|(clause_.+\})|(name.+\})|Abt\d)\n/, '\1' + "<>\n")
-      haml.gsub!(/(^\s*(#|%).+(PgfNumString|\w+_text|PageStart|Number|Page|Line|BillTitle|Sponsor|AmendmentNumber_PgfTag))\n/, '\1' + "<\n")
-      haml.gsub!(/(^\s*(#|%).+(BillTitle).+)\n/, '\1' + "<\n")
+      haml.gsub!(/(^\s*(#|%).+(PgfNumString|\w+_text|PageStart|Number|Page|Line|STText|Sponsor|AmendmentNumber_PgfTag|Given|Stageheader|Shorttitle))\n/, '\1' + "<\n")
+      haml.gsub!(/(^\s*(.BillTitle|%a.+\}))\n/, '\1' + "<\n")
 
       toggle_regex = Regexp.new('ClauseTitle_text<\n(\s+)([^\n]+)\n(\s+)\#(\d+)\.ClauseText', Regexp::MULTILINE)
       haml.gsub!(toggle_regex, 'ClauseTitle_text<' + "\n" + '\1= link_to_function "\2", "$(\'\4\').toggle()"' + "\n" + '\3#\4.ClauseText')
-
+      
+      toggle_regex = Regexp.new('(%a\{ :name => "[^"]+" \})<>\n(\s+#\d+)', Regexp::MULTILINE)
+      haml.gsub!(toggle_regex, '\1' + "\n" + '\2')
       haml
     end    
   end
@@ -207,43 +209,16 @@ class MifToHtmlParser
   end
 
   def find_bill_url bill_name
-    search_url = "http://www.publications.parliament.uk/cgi-bin/search.pl?q=%22#{URI.escape(bill_name)}%22+more%3Abusiness"
-    links = nil
-    
-    WWW::Mechanize.new.get(search_url) do |result|
-      links = result.links.select {|x| x.text[bill_name] && x.uri.to_s['services'] }
-    end
-
-    if links && links.size == 1
-      links.first.uri.to_s
-    else
-      ''
-    end
+    bill = Bill.from_name bill_name
+    bill.parliament_url
   end
   
   def find_act_url act_name
-    search_url = "http://search.opsi.gov.uk/search?q=#{URI.escape(act_name)}&output=xml_no_dtd&client=opsisearch_semaphore&site=opsi_collection"
-    begin
-      doc = Hpricot.XML open(search_url)
-      url = nil
-      
-      (doc/'R/T').each do |result|
-        term = result.inner_text.gsub(/<[^>]+>/,'')
-        if act_name == term
-          url = result.at('../U/text()').to_s
-        end
-      end
-      
-      url
-    rescue Exception => e
-      puts 'error retrieving: ' + search_url
-      puts e.class.name
-      puts e.to_s
-      nil
-    end
+    act = Act.from_name act_name
+    act.opsi_url
   end
   
-  def add_link_element node
+  def add_link_element node, div=false
     item = node.inner_text
     url = case item
       when /Act/
@@ -255,11 +230,21 @@ class MifToHtmlParser
     end
     
     id = node['id'] ? %Q| id="#{node['id']}"| : ''
-    add %Q|<a#{id} href="#{url}" class="#{node.name}">|
+    if div
+      add %Q|<div#{id} class="#{node.name}">|
+      add %Q|<a href="#{url}">| unless url.blank?
+    elsif url.blank?
+      add %Q|<span#{id} class="#{node.name}">|
+    else
+      add %Q|<a#{id} href="#{url}" class="#{node.name}">|
+    end
     @in_hyperlink = true
     node_children_to_html(node)
     @in_hyperlink = false
-    add "</a>"
+    add "</a>" unless url.blank?
+    add "</div>" if div
+    add "</span>" if url.blank? && !div
+      
     if @para_line_anchor
       add @para_line_anchor
       @para_line_anchor = nil
@@ -408,8 +393,10 @@ class MifToHtmlParser
 
   def node_to_html(node)
     case node.name.gsub('.','_')
-      when /Citation|BillTitle/
+      when 'Citation'
         add_link_element node
+      when /BillTitle|Shorttitle/
+        add_link_element node, true
       when 'ParaLineStart'
         handle_para_line_start node
       when 'Para'

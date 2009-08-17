@@ -1,7 +1,7 @@
 <Document><BillData><Amendments.Commons id="1054859" Auto="Yes" AutoRules="Yes"><PageStart id="996720" PageType="BodyPage" PageNum="29">Page 29</PageStart><Head id="1054862"><HeadConsider id="1054865"><Date id="1054868"><Day id="1054871"><ParaLineStart LineNum="1"></ParaLineStart>Tuesday </Day><Date.text id="1054878">2 June 2009</Date.text>
 </Date>
-<Stageheader id="5162740" Stage="Committee"><ParaLineStart LineNum="2"></ParaLineStart>Public Bill Committee</Stageheader>
-<CommitteeShorttitle id="1045605"><STText id="1053799"><ParaLineStart LineNum="3"></ParaLineStart>Finance Bill</STText></CommitteeShorttitle>
+<ParaLineStart LineNum="2"></ParaLineStart><Stageheader id="5162740" Stage="Committee">Public Bill Committee</Stageheader>
+<ParaLineStart LineNum="3"></ParaLineStart><CommitteeShorttitle id="1045605"><STText id="1053799">Finance Bill</STText></CommitteeShorttitle>
 <ClausesToBeConsidered id="1151029"><ParaLineStart LineNum="4"></ParaLineStart>(Except Clauses 7, 8, 9, 11, 14, 16, 20 and 92)</ClausesToBeConsidered>
 <MarshalledOrderNote id="7313383"><Notehead id="7313387"><ParaLineStart LineNum="5"></ParaLineStart>Note</Notehead>
 <NoteTxt id="7313431"><ParaLineStart LineNum="6"></ParaLineStart>The Amendments have been arranged according to the Order of the Committee <ParaLineStart LineNum="7"></ParaLineStart>[19 May 2009].</NoteTxt>
