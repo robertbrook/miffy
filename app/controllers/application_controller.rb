@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
   def index
     @files = Dir.glob(RAILS_ROOT + '/spec/fixtures/*.mif')
     @act_files = Dir.glob(RAILS_ROOT + '/spec/fixtures/Acts/*.xml')
+    @title = "MIF Files"
     render :template => 'index.haml'
   end
   
