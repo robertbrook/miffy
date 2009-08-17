@@ -2,17 +2,16 @@
   - if @files.length > 0
     %h1 Files
     %h2 MIF Files
-    %div.files
-      %ul.files
-        - @files.each do |file|
-          %li.file 
-            =link_to File.basename(file, ".mif"), "convert?file=#{file}"
-            =number_to_human_size(File.size(file))
+    %ul.mif-files
+      - @files.each do |file|
+        %li.mif-file 
+          =link_to File.basename(file, ".mif"), "convert?file=#{file}"
+          =number_to_human_size(File.size(file))
   - if @act_files.length > 0
-    %h2 Legislation examples
-    %div.files
-      %ul.files
-        -@act_files.each do |file|
+    %h2 Legislation (examples)
+    %ul.legislation-files
+      -@act_files.each do |file|
+        %li.legislation-file
           =link_to File.basename(file, ".xml"), "act?file=#{file}"
           =number_to_human_size(File.size(file))
 - else
