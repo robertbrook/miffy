@@ -214,6 +214,9 @@ describe MifParser do
       @result.gsub('.','-').should have_tag('Amendments-Commons')    
     end
     
+    it 'should put para line start before STText' do
+      @result.should include('<ParaLineStart LineNum="3"></ParaLineStart><CommitteeShorttitle id="1045605"><STText id="1053799">Equality Bill</STText></CommitteeShorttitle>')
+    end
     it 'should put ParaLineStart before Number' do
       @result.should have_tag('AmedTextCommitReport_PgfTag[id="7336764"]') do
         with_tag('ParaLineStart[LineNum="10"]')
