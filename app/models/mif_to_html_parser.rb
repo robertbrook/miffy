@@ -2,6 +2,7 @@ require 'mifparserutils'
 require 'htmlentities'
 require 'open-uri'
 require 'hpricot'
+require 'mechanize'
 
 class MifToHtmlParser
 
@@ -15,7 +16,7 @@ class MifToHtmlParser
       haml.gsub!(NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX,  '\1\2 <span class="\4_number">\6</span>,')
       haml.gsub!(/(Letter|FrameData|Dropcap|SmallCaps|Bold|Italic|\w+_number|PgfNumString_\d|(clause_.+\})|(name.+\})|Abt\d)\n/, '\1' + "<>\n")
       haml.gsub!(/(^\s*(#|%).+(PgfNumString|\w+_text|PageStart|Number|Page|Line|BillTitle|Sponsor|AmendmentNumber_PgfTag))\n/, '\1' + "<\n")
-      haml.gsub!(/(^\s*(\.)(BillTitle))\n/, '\1' + "<\n")
+      haml.gsub!(/(^\s*(#|%).+(BillTitle).+)\n/, '\1' + "<\n")
 
       toggle_regex = Regexp.new('ClauseTitle_text<\n(\s+)([^\n]+)\n(\s+)\#(\d+)\.ClauseText', Regexp::MULTILINE)
       haml.gsub!(toggle_regex, 'ClauseTitle_text<' + "\n" + '\1= link_to_function "\2", "$(\'\4\').toggle()"' + "\n" + '\3#\4.ClauseText')
@@ -168,7 +169,7 @@ class MifToHtmlParser
 
   def doc_to_html(doc)
     @in_paragraph = false
-    @in_citation = false
+    @in_hyperlink = false
     @para_line_anchor = nil
     node_children_to_html(doc.root)
   end
@@ -205,6 +206,21 @@ class MifToHtmlParser
     @in_para_line = false unless @last_css_class[/^(Bold|Italic|SmallCaps)$/]
   end
 
+  def find_bill_url bill_name
+    search_url = "http://www.publications.parliament.uk/cgi-bin/search.pl?q=%22#{URI.escape(bill_name)}%22+more%3Abusiness"
+    links = nil
+    
+    WWW::Mechanize.new.get(search_url) do |result|
+      links = result.links.select {|x| x.text[bill_name] && x.uri.to_s['services'] }
+    end
+
+    if links && links.size == 1
+      links.first.uri.to_s
+    else
+      ''
+    end
+  end
+  
   def find_act_url act_name
     search_url = "http://search.opsi.gov.uk/search?q=#{URI.escape(act_name)}&output=xml_no_dtd&client=opsisearch_semaphore&site=opsi_collection"
     begin
@@ -229,11 +245,20 @@ class MifToHtmlParser
   
   def add_link_element node
     item = node.inner_text
-    url = item[/Act/] ? find_act_url(item) : ''
-    add %Q|<a id="#{node['id']}" href="#{url}" class="#{node.name}">|
-    @in_citation = true
+    url = case item
+      when /Act/
+        find_act_url(item)
+      when /Bill/
+        find_bill_url(item)
+      else
+        ''
+    end
+    
+    id = node['id'] ? %Q| id="#{node['id']}"| : ''
+    add %Q|<a#{id} href="#{url}" class="#{node.name}">|
+    @in_hyperlink = true
     node_children_to_html(node)
-    @in_citation = false
+    @in_hyperlink = false
     add "</a>"
     if @para_line_anchor
       add @para_line_anchor
@@ -288,10 +313,10 @@ class MifToHtmlParser
     end
 
     line = node['LineNum'].to_s
-    add %Q|<br />| if @in_para_line || @in_citation
+    add %Q|<br />| if @in_para_line || @in_hyperlink
     para_line_anchor = %Q|<a name="page#{@page_number}-line#{line}"></a>|
 
-    if @in_citation
+    if @in_hyperlink
       @para_line_anchor = para_line_anchor
     else
       add para_line_anchor
@@ -383,7 +408,7 @@ class MifToHtmlParser
 
   def node_to_html(node)
     case node.name.gsub('.','_')
-      when 'Citation'
+      when /Citation|BillTitle/
         add_link_element node
       when 'ParaLineStart'
         handle_para_line_start node
