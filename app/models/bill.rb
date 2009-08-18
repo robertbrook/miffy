@@ -6,19 +6,15 @@ class Bill < ActiveRecord::Base
   
   validates_presence_of :name
   before_validation :populate_parliament_url
+  after_find :populate_parliament_url
 
   class << self
     def from_name name
-      if bill = find_by_name(name)
-        bill.populate_parliament_url unless bill.parliament_url?
-        bill
-      else
-        create! :name => name
-      end
+      find_or_create_by_name(name)
     end
   end
   
-  private
+  protected
     def populate_parliament_url
       unless parliament_url
         search_url = "http://www.publications.parliament.uk/cgi-bin/search.pl?q=%22#{URI.escape(name)}%22+more%3Abusiness"

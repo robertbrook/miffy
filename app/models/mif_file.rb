@@ -21,9 +21,11 @@ class MifFile < ActiveRecord::Base
         end
         hash
       end
+      logger.warn bills.inspect
       paths.collect do |path|
-        file = find_or_create_by_path(path)        
-        file.set_bill_title(title) if file.bill_id.nil? && (title = bills[file])
+        file = find_or_create_by_path(path)
+        bill_name = bills[path]
+        file.set_bill_title(bill_name) if file.bill_id.nil? && bill_name
         file
       end
     end
@@ -48,8 +50,8 @@ class MifFile < ActiveRecord::Base
 
   def set_bill_title text
     if text[/Bill$/]
-      bill = Bill.from_name name
-      logger.info "  setting bill: #{name}"
+      bill = Bill.from_name text
+      logger.info "  setting bill: #{text}"
       self.bill_id = bill.id
       self.save
     end
