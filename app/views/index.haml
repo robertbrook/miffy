@@ -2,8 +2,10 @@
   - if @files_by_bill.size > 0
     %h1 Files
     %h2 MIF Files
-    - @files_by_bill.each do |bill, files|
-      %p= bill ? bill.name : 'No Bill'
+    - @bill_names.each do |bill_name|
+      - key = bill_name.blank? ? nil : bill_name  
+      - files = @files_by_bill[key]
+      %p= key ? bill_name : 'No bill'
       %ul.mif-files
         - files.collect(&:path).each do |file|
           %li.mif-file 

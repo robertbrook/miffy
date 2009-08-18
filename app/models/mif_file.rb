@@ -11,13 +11,20 @@ class MifFile < ActiveRecord::Base
   class << self
     def load paths
       directories = paths.collect {|x| File.dirname(x)}.uniq
+      
       bills = directories.inject({}) do |hash, dir|
         cmd = %Q[cd #{dir}; grep -A12 "ETag \\`Shorttitle'" *.mif | grep String]
         values = `#{cmd}`
-        cmd = %Q[cd #{dir}; grep -A1 "<AttrName \\`HouseBillTitle'" *.mif | grep AttrValue]
+        cmd = %Q[cd #{dir}; grep -A1 "<AttrName \\`ShortTitle'" *.mif | grep AttrValue]
+        values += `#{cmd}`
+        cmd = %Q[cd #{dir}; grep -A24 "ETag \\`CommitteeShorttitle'" *.mif | grep String]
         values += `#{cmd}`
         parse_bill_titles(values, dir) do |file, title|
-          hash[file] = title
+          if hash[file]
+            hash[file] += title
+          else
+            hash[file] = title
+          end
         end
         hash
       end
@@ -49,6 +56,7 @@ class MifFile < ActiveRecord::Base
   end
 
   def set_bill_title text
+    text = text.chomp(' [HL]')
     if text[/Bill$/]
       bill = Bill.from_name text
       logger.info "  setting bill: #{text}"

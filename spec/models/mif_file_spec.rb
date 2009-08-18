@@ -30,19 +30,25 @@ describe MifFile do
                 testnumbers.mif-   <String `Courts Bill'>
                 Arrangement.mif-      <AttrValue `Law Commission [HL]'>
                 Clauses.mif-      <AttrValue `Law Commission [HL]'>
-                Cover.mif-      <AttrValue `Law Commission [HL]'>"
+                Cover.mif-      <AttrValue `Law Commission [HL]'>
+                pbc0850206m.mif-   <String `Equality Bill'>
+                pbc0900206m.mif-   <String `Finance Bill'>
+                pbc0930106a.mif-   <String `Local Democracy, Economic Development and '>
+                pbc0930106a.mif-   <String `Construction Bill'>"
       
       results = []
       MifFile.parse_bill_titles(titles,'/home/x') do |file, title|
         results << [file, title]
       end
       
-      results.size.should == 27
+      results.size.should == 31
       results.first.should == ['/home/x/030703fines_cc(j-refs_resolved).mif', 'Courts Bill']
       results[8].should ==    ['/home/x/Report.backup.mif', 'Legal Deposit Libraries Bill']
       results[17].should ==   ['/home/x/amsorig.mif', 'Finance Bill']
       results[21].should ==     ['/home/x/fiream2.mif', 'Fireworks Bill']
-      results.last.should ==  ['/home/x/Cover.mif', 'Law Commission [HL]']
+      results[26].should ==  ['/home/x/Cover.mif', 'Law Commission [HL]']
+      results[29].should ==  ['/home/x/pbc0930106a.mif', 'Local Democracy, Economic Development and ']
+      results.last.should ==  ['/home/x/pbc0930106a.mif', 'Construction Bill']
     end
   end
 end
