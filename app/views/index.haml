@@ -1,22 +1,22 @@
 - if @files_by_bill.size > 0 || @act_files.length > 0
+  - if @act_files.length > 0
+    %h2 Legislation Files
+    %table.legislation-files
+      %caption Legislation
+      -@act_files.each do |file|
+        %tr.legislation-file{:class => cycle("even", "odd")}
+          %td=link_to File.basename(file, ".xml"), "act?file=#{file}"
+          %td=number_to_human_size(File.size(file))
   - if @files_by_bill.size > 0
-    %h1 Files
     %h2 MIF Files
     - @bill_names.each do |bill_name|
       - key = bill_name.blank? ? nil : bill_name  
       - files = @files_by_bill[key]
-      %p= key ? bill_name : 'No bill'
-      %ul.mif-files
+      %table.mif-files
+        %caption= key ? bill_name : 'No bill'
         - files.collect(&:path).each do |file|
-          %li.mif-file 
-            = link_to File.basename(file, ".mif"), "convert?file=#{file}"
-            = number_to_human_size(File.size(file))
-  - if @act_files.length > 0
-    %h2 Legislation (examples)
-    %ul.legislation-files
-      -@act_files.each do |file|
-        %li.legislation-file
-          =link_to File.basename(file, ".xml"), "act?file=#{file}"
-          =number_to_human_size(File.size(file))
+          %tr.mif-file{:class => cycle("even", "odd")}
+            %td= link_to File.basename(file, ".mif"), "convert?file=#{file}"
+            %td= number_to_human_size(File.size(file))
 - else
   %p No files available to parse
