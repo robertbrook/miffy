@@ -3,6 +3,15 @@
   - if @act_files.length > 0
     %table.legislation-files
       %caption Legislation
+      %thead
+        %tr
+          %th File
+          %th Size
+      %tfoot
+        %tr
+          %th File
+          %th Size
+      %tbody
       -@act_files.each do |file|
         %tr.legislation-file{:class => cycle("even", "odd")}
           %td=link_to File.basename(file, ".xml"), "act?file=#{file}"
@@ -11,6 +20,15 @@
     - @files_by_bill.each do |bill, files|
       %table.mif-files
         %caption= bill ? bill.name : 'No Bill'
+        %thead
+          %tr
+            %th File
+            %th Size
+        %tfoot
+          %tr
+            %th File
+            %th Size
+        %tbody
         - files.collect(&:path).each do |file|
           %tr.mif-file{:class => cycle("even", "odd")}
             %td= link_to File.basename(file, ".mif"), "convert?file=#{file}"
