@@ -19,7 +19,7 @@ describe MifParser do
       temp_xml_file = mock(Tempfile, :path => tempfile_path)
       Tempfile.should_receive(:new).with("#{mif_file}.xml", RAILS_ROOT+'/tmp').and_return temp_xml_file
       temp_xml_file.should_receive(:close)
-      Kernel.should_receive(:system).with("mif2xml < #{mif_file} > #{tempfile_path}")
+      Kernel.should_receive(:system).with(%Q|mif2xml < "#{mif_file}" > "#{tempfile_path}"|)
 
       @parser.should_receive(:parse_xml_file).with(tempfile_path, {})
       temp_xml_file.should_receive(:delete)

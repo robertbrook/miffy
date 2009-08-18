@@ -11,7 +11,9 @@ class ApplicationController < ActionController::Base
   end
 
   def index
-    @files = Dir.glob(RAILS_ROOT + '/spec/fixtures/*.mif')
+    paths = Dir.glob(RAILS_ROOT + '/spec/fixtures/*.mif')
+    @mif_files = MifFile.load(paths)
+    @files_by_bill = @mif_files.group_by(&:bill)
     @act_files = Dir.glob(RAILS_ROOT + '/spec/fixtures/Acts/*.xml')
     @title = "MIF Files"
     render :template => 'index.haml'
