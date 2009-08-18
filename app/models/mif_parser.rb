@@ -37,7 +37,7 @@ class MifParser
   def parse mif_file, options={}
     mif_xml_file = Tempfile.new("#{mif_file.gsub('/','_')}.xml", "#{RAILS_ROOT}/tmp")
     mif_xml_file.close # was open
-    Kernel.system "mif2xml < #{mif_file} > #{mif_xml_file.path}"
+    Kernel.system %Q|mif2xml < "#{mif_file}" > "#{mif_xml_file.path}"|
     result = parse_xml_file(mif_xml_file.path, options)
     mif_xml_file.delete
     result
