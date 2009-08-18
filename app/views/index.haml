@@ -1,17 +1,16 @@
 - if @files_by_bill.size > 0 || @act_files.length > 0
   %h1=@title
   - if @act_files.length > 0
-    %h2 Legislation
     %table.legislation-files
+      %caption Legislation
       -@act_files.each do |file|
         %tr.legislation-file{:class => cycle("even", "odd")}
           %td=link_to File.basename(file, ".xml"), "act?file=#{file}"
           %td=number_to_human_size(File.size(file))
   - if @files_by_bill.size > 0
-    %h2 MIF
     - @files_by_bill.each do |bill, files|
-      %h3= bill ? bill.name : 'No Bill'
       %table.mif-files
+        %caption= bill ? bill.name : 'No Bill'
         - files.collect(&:path).each do |file|
           %tr.mif-file{:class => cycle("even", "odd")}
             %td= link_to File.basename(file, ".mif"), "convert?file=#{file}"
