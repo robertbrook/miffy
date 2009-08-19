@@ -1,5 +1,4 @@
 - unless @act_files.empty?
-  %h2 Legislation
   %table.legislation-files
     %caption Legislation
     %tbody
@@ -10,7 +9,6 @@
           %td
             =number_to_human_size(File.size(file))
 - unless @files_by_bill.empty?
-  %h2 Bills
   - @bill_names.each do |bill_name|
     - key = bill_name.blank? ? nil : bill_name  
     - files = @files_by_bill[key]
