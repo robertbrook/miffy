@@ -1,6 +1,6 @@
 - unless @act_files.empty?
   %table.legislation-files
-    %caption Legislation
+    %caption Acts
     %tbody
       -@act_files.each do |file|
         %tr.legislation-file{:class => cycle("even", "odd")}
@@ -13,7 +13,7 @@
     - key = bill_name.blank? ? nil : bill_name  
     - files = @files_by_bill[key]
     %table.mif-files
-      %caption= key ? bill_name : 'No bill'
+      %caption= key ? bill_name : '(No bill named)'
       %tbody
         - files.collect(&:path).each do |file|
           %tr.mif-file{:class => cycle("even", "odd")}
