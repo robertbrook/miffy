@@ -2,19 +2,13 @@
   %h2 Legislation
   %table.legislation-files
     %caption Legislation
-    %thead
-      %tr
-        %th File
-        %th Size
-    %tfoot
-      %tr
-        %th File
-        %th Size
     %tbody
       -@act_files.each do |file|
         %tr.legislation-file{:class => cycle("even", "odd")}
-          %td=link_to File.basename(file, ".xml"), "act?file=#{file}"
-          %td=number_to_human_size(File.size(file))
+          %td
+            =link_to File.basename(file, ".xml"), "act?file=#{file}"
+          %td
+            =number_to_human_size(File.size(file))
 - unless @files_by_bill.empty?
   %h2 Bills
   - @bill_names.each do |bill_name|
@@ -22,18 +16,15 @@
     - files = @files_by_bill[key]
     %table.mif-files
       %caption= key ? bill_name : 'No bill'
-      %thead
-        %tr
-          %th File
-          %th Size
-      %tfoot
-        %tr
-          %th File
-          %th Size
       %tbody
-        - files.collect(&:path).each do |file|
+        - files.each do |file|
           %tr.mif-file{:class => cycle("even", "odd")}
-            %td= link_to File.basename(file, ".mif"), "convert?file=#{file}"
-            %td= number_to_human_size(File.size(file))
+            %td
+              = link_to file.name, "convert?file=#{file.path}"
+            %td
+              - if file.haml_template_exists?
+                = button_to 're-convert from mif', :contoller => "application", :action => "convert", :force => 'true', :file=>"#{file.path}", :method => 'get'
+              - else
+                = number_to_human_size(File.size(file.path))
 - else
   %p No files available to parse

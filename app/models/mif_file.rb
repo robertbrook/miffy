@@ -5,7 +5,7 @@ class MifFile < ActiveRecord::Base
   belongs_to :bill
 
   validates_presence_of :path, :name
-  
+
   before_validation_on_create :set_name
 
   class << self
@@ -52,7 +52,6 @@ class MifFile < ActiveRecord::Base
         yield [file, title]
       end
     end
-
   end
 
   def set_bill_title text
@@ -64,13 +63,74 @@ class MifFile < ActiveRecord::Base
       self.save
     end
   end
+
+  def haml_template_exists?
+    File.exist?(haml_template) && html_page_title
+  end
+  
+  def haml_template
+    results_dir = RAILS_ROOT + '/app/views/results'
+    Dir.mkdir results_dir unless File.exist?(results_dir)
+    "#{results_dir}/#{path.gsub('/','_').gsub('.','_')}.haml"
+  end
+  
+  def convert_to_haml
+    xml = MifParser.new.parse path
+    set_html_page_title(xml)
+    result = MifToHtmlParser.new.parse_xml xml, :format => :haml, :body_only => true
+    File.open(haml_template, 'w+') {|f| f.write(result) }
+  end
+
+  def convert_to_text
+    xml = MifParser.new.parse path
+    result = MifToHtmlParser.new.parse_xml xml, :format => :text, :body_only => true
+  end
   
   private
 
-    def set_name      
+    class Helper
+      include Singleton
+      include ApplicationHelper
+    end
+  
+    def helper
+      Helper.instance
+    end
+  
+    def text_item xml, xpath
+      doc = Hpricot.XML xml.to_s
+      (doc/xpath).to_s
+    end
+
+    def make_title xml, display_type, xpath
+      text_item(xml, 'BillData/BillTitle/text()') + " (#{display_type})"
+    end
+
+    def set_html_page_title xml
+      type = helper.document_type(path)
+      display_type = type.sub('_', ' ').gsub(/\b\w/){$&.upcase}
+      if display_type == 'Marshalled List'
+        display_type << ' of Amendments'
+      elsif display_type == 'Consideration'
+        display_type << ' of Bill'
+      end
+
+      self.html_page_title = case type
+        when /^(clauses|cover|arrangement)$/
+          make_title xml, display_type, 'BillData/BillTitle/text()'
+        when /^(amendment_paper|marshalled_list)$/
+          make_title xml, display_type, 'CommitteeShorttitle/STText/text()'
+        when 'consideration'
+          make_title xml, display_type, 'Head/HeadAmd/Shorttitle/text()'
+        else
+          display_type
+      end
+      save!
+    end
+
+    def set_name
       logger.info "creating: #{path}"
-      $stdout.flush
-      self.name = path.split('/').last.chomp('.mif') if path
+      self.name = File.basename(path, ".mif") if path
     end
 
 end

@@ -16,6 +16,7 @@
         = stylesheet_link_tag document_type(@file) + '_print', :media => 'print'
       -if page_class == 'application act'
         = stylesheet_link_tag 'act', :media => 'screen, projection'
+    %meta{ :name=>"viewport", :content=>"width = 480" }
     = stylesheet_link_tag 'ie', :media => 'screen, projection'
   %body{:class => page_class}
     #container= yield
