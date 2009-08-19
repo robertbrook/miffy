@@ -24,7 +24,9 @@ class ApplicationController < ActionController::Base
 
       respond_to do |format|
         format.html do
-          @title, template = mif_file.convert_to_haml
+          mif_file.convert_to_haml unless mif_file.haml_template_exists?
+          @title = mif_file.html_page_title
+          template = mif_file.haml_template
           render :template => template          
         end
         format.text do

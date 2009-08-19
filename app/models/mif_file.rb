@@ -63,19 +63,22 @@ class MifFile < ActiveRecord::Base
       self.save
     end
   end
+
+  def haml_template_exists?
+    File.exist?(haml_template) && html_page_title
+  end
+  
+  def haml_template
+    results_dir = RAILS_ROOT + '/app/views/results'
+    Dir.mkdir results_dir unless File.exist?(results_dir)
+    "#{results_dir}/#{path.gsub('/','_').gsub('.','_')}.haml"
+  end
   
   def convert_to_haml
     xml = MifParser.new.parse path
+    set_html_page_title(xml)
     result = MifToHtmlParser.new.parse_xml xml, :format => :haml, :body_only => true
-    
-    results_dir = RAILS_ROOT + '/app/views/results'
-    Dir.mkdir results_dir unless File.exist?(results_dir)
-    template = "#{results_dir}/#{path.gsub('/','_').gsub('.','_')}.haml"
-    
-    File.open(template,'w+') {|f| f.write(result) }
-    title = page_title(xml)
-    
-    return [title, template]
+    File.open(haml_template, 'w+') {|f| f.write(result) }
   end
 
   def convert_to_text
@@ -98,12 +101,12 @@ class MifFile < ActiveRecord::Base
       doc = Hpricot.XML xml.to_s
       (doc/xpath).to_s
     end
-        
+
     def make_title xml, display_type, xpath
       text_item(xml, 'BillData/BillTitle/text()') + " (#{display_type})"
     end
 
-    def page_title xml
+    def set_html_page_title xml
       type = helper.document_type(path)
       display_type = type.sub('_', ' ').gsub(/\b\w/){$&.upcase}
       if display_type == 'Marshalled List'
@@ -112,7 +115,7 @@ class MifFile < ActiveRecord::Base
         display_type << ' of Bill'
       end
 
-      case type
+      self.html_page_title = case type
         when /^(clauses|cover|arrangement)$/
           make_title xml, display_type, 'BillData/BillTitle/text()'
         when /^(amendment_paper|marshalled_list)$/
@@ -121,10 +124,11 @@ class MifFile < ActiveRecord::Base
           make_title xml, display_type, 'Head/HeadAmd/Shorttitle/text()'
         else
           display_type
-      end      
+      end
+      save!
     end
 
-    def set_name      
+    def set_name
       logger.info "creating: #{path}"
       $stdout.flush
       self.name = path.split('/').last.chomp('.mif') if path
