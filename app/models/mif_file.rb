@@ -52,7 +52,6 @@ class MifFile < ActiveRecord::Base
         yield [file, title]
       end
     end
-
   end
 
   def set_bill_title text
@@ -65,6 +64,17 @@ class MifFile < ActiveRecord::Base
     end
   end
   
+  def convert_to_haml
+    haml = ActToHtmlParser.new.parse_xml_file path, :format => :haml, :body_only => true
+    
+    results_dir = RAILS_ROOT + '/app/views/results'
+    Dir.mkdir results_dir unless File.exist?(results_dir)
+    template = "#{results_dir}/#{path.gsub('/','_').gsub('.','_')}.haml"
+    
+    File.open(template,'w+') {|f| f.write(haml) }
+    template
+  end
+
   private
 
     def set_name      

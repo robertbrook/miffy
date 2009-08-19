@@ -42,15 +42,10 @@ class ApplicationController < ActionController::Base
     file_name = URI.decode(params[:file])
     
     if File.exists?(file_name)
-      haml = ActToHtmlParser.new.parse_xml_file file_name, :format => :haml, :body_only => true
-      
       @title = 'test'
-      
-      results_dir = RAILS_ROOT + '/app/views/results'
-      Dir.mkdir results_dir unless File.exist?(results_dir)
-      template = "#{results_dir}/#{file_name.gsub('/','_').gsub('.','_')}.haml"
-      
-      File.open(template,'w+') {|f| f.write(haml) }
+
+      mif_file = MifFile.find_by_path(file_name)
+      template = mif_file.convert_to_haml
       
       render :template => template
     else
