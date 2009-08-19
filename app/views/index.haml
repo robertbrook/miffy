@@ -1,6 +1,14 @@
 - unless @act_files.empty?
   %table.legislation-files
     %caption Acts
+    %thead
+      %tr
+        %th Name
+        %th Size
+    %tfoot
+      %tr
+        %td Name
+        %td Size
     %tbody
       -@act_files.each do |file|
         %tr.legislation-file{:class => cycle("even", "odd")}
@@ -14,6 +22,14 @@
     - files = @files_by_bill[key]
     %table.mif-files
       %caption= key ? bill_name : '(No bill named)'
+      %thead
+        %tr
+          %th Name
+          %th Size
+      %tfoot
+        %tr
+          %td Name
+          %td Size
       %tbody
         - files.each do |file|
           %tr.mif-file{:class => cycle("even", "odd")}
