@@ -5,7 +5,7 @@ class MifFile < ActiveRecord::Base
   belongs_to :bill
 
   validates_presence_of :path, :name
-  
+
   before_validation_on_create :set_name
 
   class << self
@@ -130,8 +130,7 @@ class MifFile < ActiveRecord::Base
 
     def set_name
       logger.info "creating: #{path}"
-      $stdout.flush
-      self.name = path.split('/').last.chomp('.mif') if path
+      self.name = File.basename(path, ".mif") if path
     end
 
 end
