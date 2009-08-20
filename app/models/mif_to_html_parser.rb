@@ -170,6 +170,7 @@ class MifToHtmlParser
   HR_RE = Regexp.new "(#{HR.keys.join("|")})"
 
   def doc_to_html(doc)
+    @in_clauses = false
     @in_paragraph = false
     @in_hyperlink = false
     @para_line_anchor = nil
@@ -251,8 +252,15 @@ class MifToHtmlParser
     end
   end
   
+  def handle_clauses node
+    @in_clauses = true
+    add_html_element 'div', node
+  end
+
   def handle_clause node
-    @clause_number = node.at('PgfNumString').inner_text.strip
+    if node['HardReference'] && @in_clauses
+      @clause_number = node.at('PgfNumString').inner_text.strip
+    end
     clause_id = node['HardReference'].to_s.strip
     unless @clause_number.blank? || clause_id.blank?
       clause_name = "clause#{@clause_number}"
@@ -299,7 +307,9 @@ class MifToHtmlParser
 
     line = node['LineNum'].to_s
     add %Q|<br />| if @in_para_line || @in_hyperlink
-    para_line_anchor = %Q|<a name="page#{@page_number}-line#{line}"></a>|
+    anchor_name = "page#{@page_number}-line#{line}"
+    para_line_anchor = %Q|<a name="#{anchor_name}"></a>|
+    para_line_anchor += %Q|<a name="clause#{@clause_number}-#{anchor_name}"></a>| unless @clause_number.blank?
 
     if @in_hyperlink
       @para_line_anchor = para_line_anchor
@@ -403,6 +413,8 @@ class MifToHtmlParser
         handle_para node
       when 'PageStart'
         handle_page_start node
+      when 'Clauses'
+        handle_clauses node
       when 'Clause'
         handle_clause node  
       when 'Clause_ar'
