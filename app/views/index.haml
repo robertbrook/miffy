@@ -12,7 +12,7 @@
 - unless @files_by_bill.empty?
   %h2 Bills
   - @bill_names.each do |bill_name|
-    - key = bill_name.blank? ? nil : bill_name  
+    - key = bill_name.blank? ? nil : bill_name
     - files = @files_by_bill[key]
     %table.mif-files
       %caption= key ? bill_name : 'No bill'
@@ -23,7 +23,7 @@
               = link_to file.name, "convert?file=#{file.path}"
             %td
               - if file.haml_template_exists?
-                = button_to 're-convert from mif', :contoller => "application", :action => "convert", :force => 'true', :file=>"#{file.path}", :method => 'get'
+                = button_to 're-convert from mif', :controller => "application", :action => "convert", :force => 'true', :file=>"#{file.path}", :method => 'get'
               - else
                 = number_to_human_size(File.size(file.path))
 - else

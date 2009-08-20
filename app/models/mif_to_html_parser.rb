@@ -8,25 +8,6 @@ class MifToHtmlParser
 
   include MifParserUtils
 
-  class << self
-
-    NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX  = Regexp.new('(\s+)(\S+)\n(\s+)%span\.(\S+)_number\n(\s+)(\S+)\n(\s+),', Regexp::MULTILINE)
-
-    def format_haml haml      
-      haml.gsub!(NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX,  '\1\2 <span class="\4_number">\6</span>,')
-      haml.gsub!(/(Letter|FrameData|Dropcap|SmallCaps|Bold|Italic|\w+_number|PgfNumString_\d|(clause_.+\})|(name.+\})|Abt\d)\n/, '\1' + "<>\n")
-      haml.gsub!(/(^\s*(#|%).+(PgfNumString|\w+_text|PageStart|Number|Page|Line|STText|Sponsor|AmendmentNumber_PgfTag|Given|Stageheader|Shorttitle))\n/, '\1' + "<\n")
-      haml.gsub!(/(^\s*(.BillTitle|%a.+\}))\n/, '\1' + "<\n")
-
-      toggle_regex = Regexp.new('ClauseTitle_text<\n(\s+)([^\n]+)\n(\s+)\#(\d+)\.ClauseText', Regexp::MULTILINE)
-      haml.gsub!(toggle_regex, 'ClauseTitle_text<' + "\n" + '\1= link_to_function "\2", "$(\'\4\').toggle()"' + "\n" + '\3#\4.ClauseText')
-      
-      toggle_regex = Regexp.new('(%a\{ :name => "[^"]+" \})<>\n(\s+#\d+)', Regexp::MULTILINE)
-      haml.gsub!(toggle_regex, '\1' + "\n" + '\2')
-      haml
-    end    
-  end
-  
   # e.g. parser.parse_xml_file("pbc0930106a.mif.xml")
   def parse_xml_file xml_file, options
     parse_xml(IO.read(xml_file), options)
@@ -35,6 +16,7 @@ class MifToHtmlParser
   def parse_xml xml, options={:format => :html}
     doc = Hpricot.XML xml
     format = options[:format]
+    @clauses_file = options[:clauses_file]
     if format == :html
       generate_html doc, options
     elsif format == :haml
@@ -47,8 +29,10 @@ class MifToHtmlParser
       html.gsub!("<p","\n<p")
       html.gsub!("<br","\n<br")
       html.gsub!("\n\n","\n")
-      
+
       html = ActionController::Base.helpers.strip_tags(html)
+      html.gsub!(" \n","\n")
+      html
     else
       raise "don't know how to generate format: #{format}"
     end
@@ -61,8 +45,8 @@ class MifToHtmlParser
     cmd = "html2haml #{html_file.path}"
     haml = `#{cmd}`
     html_file.delete
-    
-    MifToHtmlParser.format_haml(haml)
+
+    format_haml(haml, @clauses_file)
   end
 
   def generate_html doc, options
@@ -72,7 +56,7 @@ class MifToHtmlParser
     else
       @html = ['<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /></head><body>']
       doc_to_html(doc)
-      add ['</body></html>'] 
+      add ['</body></html>']
     end
 
     result = @html.join('')
@@ -89,7 +73,7 @@ class MifToHtmlParser
       result
     end
   end
-  
+
   def get_html_for_char element
     char = get_char(element)
     if char == "\n"
@@ -132,10 +116,10 @@ class MifToHtmlParser
 
   TR = %w[Row].inject({}){|h,v| h[v]=true; h}
   TR_RE = Regexp.new "(^#{TR.keys.join("$|")}$)"
-  
+
   TH = %w[CellH].inject({}){|h,v| h[v]=true; h}
   TH_RE = Regexp.new "(^#{TH.keys.join("$|")}$)"
-  
+
   TD = %w[Cell].inject({}){|h,v| h[v]=true; h}
   TD_RE = Regexp.new "(^#{TD.keys.join("$|")}$)"
 
@@ -158,7 +142,7 @@ class MifToHtmlParser
       SubPara SubPara_sch SubSection_text SubSubPara_sch
       TextContinuation TextContinuation_text
       WHITESPACE ].inject({}){|h,v| h[v]=true; h}
-      
+
   SPAN_RE = Regexp.new "(^#{SPAN.keys.join("$|")}$)"
 
   UL = %w[Sponsors].inject({}){|h,v| h[v]=true; h}
@@ -188,7 +172,7 @@ class MifToHtmlParser
     @last_css_class += " #{node['class']}" unless node['class'].blank?
     @last_css_class
   end
-  
+
   def add_html_element name, node
     start_tag = []
     start_tag << %Q|<#{name} class="#{css_class(node)}"|
@@ -200,12 +184,12 @@ class MifToHtmlParser
     end
 
     add start_tag.join('')
-    
+
     if name != 'hr'
       node_children_to_html(node)
       add "</#{name}>"
     end
-    
+
     @in_para_line = false unless @last_css_class[/^(Bold|Italic|SmallCaps)$/]
   end
 
@@ -213,12 +197,12 @@ class MifToHtmlParser
     bill = Bill.from_name bill_name
     bill.parliament_url
   end
-  
+
   def find_act_url act_name
     act = Act.from_name act_name
     act.opsi_url
   end
-  
+
   def add_link_element node, div=false
     item = node.inner_text
     url = case item
@@ -229,7 +213,7 @@ class MifToHtmlParser
       else
         ''
     end
-    
+
     id = node['id'] ? %Q| id="#{node['id']}"| : ''
     if div
       add %Q|<div#{id} class="#{node.name}">|
@@ -245,13 +229,13 @@ class MifToHtmlParser
     add "</a>" unless url.blank?
     add "</div>" if div
     add "</span>" if url.blank? && !div
-      
+
     if @para_line_anchor
       add @para_line_anchor
       @para_line_anchor = nil
     end
   end
-  
+
   def handle_clauses node
     @in_clauses = true
     add_html_element 'div', node
@@ -272,7 +256,7 @@ class MifToHtmlParser
       add_html_element 'div', node
     end
   end
-  
+
   def handle_pgf_num_string node
     if @clause_anchor_start
       add %Q|<span class="#{css_class(node)}">|
@@ -290,7 +274,7 @@ class MifToHtmlParser
       end
     end
   end
-  
+
   def handle_pdf_tag node
     already_in_paragraph = @in_paragraph
     tag = (already_in_paragraph ? 'span' : 'p')
@@ -298,7 +282,7 @@ class MifToHtmlParser
     add_html_element(tag, node)
     @in_paragraph = false unless already_in_paragraph
   end
-  
+
   def handle_para_line_start node
     last_line = nil
     if @html.last && @html.last.include?('<span')
@@ -331,7 +315,7 @@ class MifToHtmlParser
   end
 
   def handle_page_start node
-    already_in_paragraph = handle_para node        
+    already_in_paragraph = handle_para node
     if node.name == 'PageStart' && already_in_paragraph
       line = @html.pop
       line += '<br />'
@@ -350,7 +334,7 @@ class MifToHtmlParser
       add end_tag
     end
   end
-  
+
   def handle_sub_para_variants node
     already_in_paragraph = @in_paragraph
     tag = (already_in_paragraph ? 'span' : 'p')
@@ -366,7 +350,7 @@ class MifToHtmlParser
 
   def handle_clause_ar_text node
     add_html_element 'span', node
-    
+
     end_tag = @html.pop
     last_line = @html.pop
     clause_file = Dir.glob(RAILS_ROOT + '/spec/fixtures/Clauses.mif')
@@ -375,7 +359,7 @@ class MifToHtmlParser
     add "</a>"
     add end_tag
   end
-  
+
   def handle_amendment_reference node
     clause = node['Clause']
     schedule = node['Schedule']
@@ -387,12 +371,12 @@ class MifToHtmlParser
     ref += "page#{page}-" if page
     ref += "line#{line}" if line
     ref.chomp!('-')
-    
+
     add %Q|<a href="##{ref}" class="#{css_class(node)}">|
     node_children_to_html(node)
-    add '</a>'    
+    add '</a>'
   end
-  
+
   def add text
     if text.nil?
       raise 'text should not be null'
@@ -416,7 +400,7 @@ class MifToHtmlParser
       when 'Clauses'
         handle_clauses node
       when 'Clause'
-        handle_clause node  
+        handle_clause node
       when 'Clause_ar'
         handle_clause_ar node
       when 'Clause_ar_text'
@@ -442,7 +426,7 @@ class MifToHtmlParser
       when LI_RE
         add_html_element 'li', node
       when HR_RE
-        add_html_element 'hr', node 
+        add_html_element 'hr', node
       when TR_RE
         add_html_element 'tr', node
       when TH_RE

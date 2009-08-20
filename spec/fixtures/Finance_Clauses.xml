@@ -1,0 +1,387 @@
+
+<Document>
+  <BillData>
+    <BillTitle>Finance Bill</BillTitle>
+    <Clauses id="1112573">
+      <PageStart id="996720" PageType="BodyPage" PageNum="1">Page 1</PageStart>
+      <Rubric id="1003899" TemplateVersion="4.2.002">
+        <Bold id="1004395">
+          <ParaLineStart LineNum="1"></ParaLineStart>[NOTE: The words marked in bold type were inserted by the Lords to avoid <ParaLineStart LineNum="2"></ParaLineStart>questions of privilege.]</Bold>
+      </Rubric>
+      <Prelim id="1112588">
+        <ABillTo id="1003906" TemplateVersion="4.2.002">
+          <Abt1 id="1003909">
+            <ParaLineStart LineNum="3"></ParaLineStart>A</Abt1>
+          <Abt2 id="1003917">
+            <ParaLineStart LineNum="4"></ParaLineStart>Bill</Abt2>
+          <Abt3 id="1003924"></Abt3>
+          <Abt4 id="1003929">
+            <ParaLineStart LineNum="5"></ParaLineStart>To</Abt4>
+        </ABillTo>
+        <LongTitle id="1003732" TemplateVersion="4.2.002">
+          <ParaLineStart LineNum="6"></ParaLineStart>
+          <Bpara id="1003762">
+            <Letter id="1003816">M</Letter>
+ake provision in relation to the Law Commission.<Enact id="1004229"> </Enact>
+          </Bpara>
+        </LongTitle>
+        <WordsOfEnactment id="1003778" TemplateVersion="4.2.002">
+          <ParaLineStart LineNum="7"></ParaLineStart>
+          <Bpara id="1003785">
+            <FrameData id="1112726">
+              <Dropcap id="1003796">B</Dropcap>
+            </FrameData>
+            <SmallCaps id="1003802">e it enacted</SmallCaps>
+ by the Queen’s most Excellent Majesty, by and with the advice and <ParaLineStart LineNum="8"></ParaLineStart>consent of the Lords Spiritual and Temporal, and Commons, in this present <ParaLineStart LineNum="9"></ParaLineStart>Parliament assembled, and by the authority of the same, as follows:— </Bpara>
+        </WordsOfEnactment>
+      </Prelim>
+
+      <PageStart id="1112600" PageType="BodyPage" PageNum="2">Page 11</PageStart>
+      <Clause id="1113207" TemplateVersion="4.2.002" HardReference="LC17">
+        <ClauseTitle>
+          <ClauseTitle_PgfTag>
+            <PgfNumString>
+              <PgfNumString_1>17</PgfNumString_1>
+            </PgfNumString>
+            <ClauseTitle_text>
+              <ParaLineStart LineNum="2"></ParaLineStart>Rates of air passenger duty</ClauseTitle_text>
+          </ClauseTitle_PgfTag>
+        </ClauseTitle>
+        <ClauseText>
+          <SubSection>
+            <SubSection_PgfTag>
+              <PgfNumString>
+                <PgfNumString_1>(1)</PgfNumString_1>
+              </PgfNumString>
+              <SubSection_text>
+                <ParaLineStart LineNum="3"></ParaLineStart>In section 30 of FA 1994 (air passenger duty: rates), for subsections (1) to (4) <ParaLineStart LineNum="4"></ParaLineStart>substitute—</SubSection_text>
+            </SubSection_PgfTag>
+          </SubSection>
+        </ClauseText>
+        <Amendment id="1112894">
+          <Clause>
+            <ClauseText>
+              <SubSection>
+                <_SubSection_PgfTag>
+                  <PgfNumString>
+                    <PgfNumString_1>“(1)</PgfNumString_1>
+                  </PgfNumString>
+                  <SubSection_text>
+                    <ParaLineStart LineNum="5"></ParaLineStart>Air passenger duty is chargeable on the carriage of each chargeable <ParaLineStart LineNum="6"></ParaLineStart>passenger at the rate determined as follows.</SubSection_text>
+                </_SubSection_PgfTag>
+              </SubSection>
+              <SubSection>
+                <_SubSection_PgfTag>
+                  <PgfNumString>
+                    <PgfNumString_1>(2)</PgfNumString_1>
+                  </PgfNumString>
+                  <SubSection_text>
+                    <ParaLineStart LineNum="7"></ParaLineStart>If the passenger’s journey ends at a place in the United Kingdom or a  <ParaLineStart LineNum="8"></ParaLineStart>territory specified in Part 1 of Schedule 5A—</SubSection_text>
+                </_SubSection_PgfTag>
+                <Para>
+                  <_Paragraph_PgfTag>
+                    <PgfNumString>
+                      <PgfNumString_1>(a)</PgfNumString_1>
+                    </PgfNumString>
+                    <Para_text>
+                      <ParaLineStart LineNum="9"></ParaLineStart>if the passenger’s agreement for carriage provides for standard  <ParaLineStart LineNum="10"></ParaLineStart>class travel in relation to every flight on the passenger’s <ParaLineStart LineNum="11"></ParaLineStart>journey, the rate is £11, and</Para_text>
+                  </_Paragraph_PgfTag>
+                </Para>
+                <Para>
+                  <_Paragraph_PgfTag>
+                    <PgfNumString>
+                      <PgfNumString_1>(b)</PgfNumString_1>
+                    </PgfNumString>
+                    <Para_text>
+                      <ParaLineStart LineNum="12"></ParaLineStart>in any other case, the rate is £22.</Para_text>
+                  </_Paragraph_PgfTag>
+                </Para>
+              </SubSection>
+            </ClauseText>
+          </Clause>
+        </Amendment>
+      </Clause>
+
+
+      <Clause id="1093880" TemplateVersion="4.2.002" HardReference="LC1">
+        <ClauseTitle id="1093884">
+          <ClauseTitle_PgfTag id="1112748">
+            <PgfNumString>
+              <PgfNumString_1>1</PgfNumString_1>
+            </PgfNumString>
+            <ClauseTitle_text>
+              <ParaLineStart LineNum="10"></ParaLineStart>Reports on implementation of Law Commission proposals</ClauseTitle_text>
+          </ClauseTitle_PgfTag>
+        </ClauseTitle>
+        <ClauseText id="1112590">
+          <ParaLineStart LineNum="11"></ParaLineStart>After section 3 of the <Citation id="1111593" Show="Yes" Year="1965" Chapter="(c.\x11 22)">Law Commissions Act 1965 (c. 22)</Citation> insert—
+          <Amendment id="1111602">
+            <Clause id="1111611" Number="3" Letter="A" Quote="Double">
+              <ClauseTitle id="1111615">
+                <_ClauseTitle_PgfTag id="1112765">
+                  <PgfNumString><PgfNumString_1>“3A</PgfNumString_1></PgfNumString>
+                  <ClauseTitle_text>
+                    <ParaLineStart LineNum="12"></ParaLineStart>Reports on implementation of Law Commission proposals</ClauseTitle_text>
+                </_ClauseTitle_PgfTag>
+              </ClauseTitle>
+              <ClauseText id="1111640">
+                <SubSection id="1112770">
+                  <_SubSection_PgfTag id="1112771">
+                    <PgfNumString>
+                      <PgfNumString_1>(1)</PgfNumString_1>
+                    </PgfNumString>
+                    <SubSection_text>
+                      <ParaLineStart LineNum="13"></ParaLineStart>As soon as practicable after the end of each reporting year, the Lord <ParaLineStart LineNum="14"></ParaLineStart>Chancellor must prepare a report on—</SubSection_text>
+                  </_SubSection_PgfTag>
+                  <Para id="1112774">
+                    <_Paragraph_PgfTag id="1112775">
+                      <PgfNumString>
+                        <PgfNumString_1>(a)</PgfNumString_1>
+                      </PgfNumString>
+                      <Para_text>
+                        <ParaLineStart LineNum="15"></ParaLineStart>the Law Commission proposals implemented (in whole or in <ParaLineStart LineNum="16"></ParaLineStart>part) during the year;</Para_text>
+                    </_Paragraph_PgfTag>
+                  </Para>
+                  <Para id="1111739">
+                    <_Paragraph_PgfTag id="1112779">
+                      <PgfNumString>
+                        <PgfNumString_1>(b)</PgfNumString_1>
+                      </PgfNumString>
+                      <Para_text>
+                        <ParaLineStart LineNum="17"></ParaLineStart>the Law Commission proposals that have not been <ParaLineStart LineNum="18"></ParaLineStart>implemented (in whole or in part) as at the end of the year, <ParaLineStart LineNum="19"></ParaLineStart>including—</Para_text>
+                    </_Paragraph_PgfTag>
+
+                    <_SubParagraph_PgfTag id="1112784">
+                      <PgfNumString>
+                        <PgfNumString_1>(i)</PgfNumString_1>
+                      </PgfNumString>
+                      <SubPara id="1112782">
+                        <SubPara_text>
+                          <ParaLineStart LineNum="20"></ParaLineStart>plans for dealing with any of those proposals;</SubPara_text>
+                      </SubPara>
+                    </_SubParagraph_PgfTag>
+
+                    <_SubParagraph_PgfTag id="1112788">
+                      <PgfNumString>
+                        <PgfNumString_1>(ii)</PgfNumString_1>
+                      </PgfNumString>
+                      <SubPara id="1112787">
+                        <SubPara_text>
+                          <ParaLineStart LineNum="21"></ParaLineStart>any decision not to implement any of those proposals (in <ParaLineStart LineNum="22"></ParaLineStart>whole or in part) taken during the year and the reasons <ParaLineStart LineNum="23"></ParaLineStart>for the decision.</SubPara_text>
+                      </SubPara>
+                    </_SubParagraph_PgfTag>
+                  </Para>
+                </SubSection>
+                <SubSection id="1112794">
+                  <_SubSection_PgfTag id="1112796">
+                    <PgfNumString>
+                      <PgfNumString_1>(2)</PgfNumString_1>
+                    </PgfNumString>
+                    <SubSection_text>
+                      <ParaLineStart LineNum="24"></ParaLineStart>The Lord Chancellor must lay the report before Parliament.</SubSection_text>
+                  </_SubSection_PgfTag>
+                </SubSection>
+                <SubSection id="1112799">
+                  <_SubSection_PgfTag id="1112800">
+                    <PgfNumString>
+                      <PgfNumString_1>(3)</PgfNumString_1>
+                    </PgfNumString>
+                    <SubSection_text>
+                      <ParaLineStart LineNum="25"></ParaLineStart>The first reporting year is the year starting with the day on which <ParaLineStart LineNum="26"></ParaLineStart>section 1 of the Law Commission Act 2009 comes into force; and the <ParaLineStart LineNum="27"></ParaLineStart>second reporting year is the year after that and so on.</SubSection_text>
+                  </_SubSection_PgfTag>
+                </SubSection>
+                <SubSection id="1112804">
+                  <_SubSection_PgfTag id="1112805">
+                    <PgfNumString>
+                      <PgfNumString_1>(4)</PgfNumString_1>
+                    </PgfNumString>
+                    <SubSection_text>
+                      <ParaLineStart LineNum="28"></ParaLineStart>If a decision not to implement a Law Commission proposal (in whole <ParaLineStart LineNum="29"></ParaLineStart>or in part) is taken in a reporting year, subsection (1)(b) does not require <ParaLineStart LineNum="30"></ParaLineStart>a report for a later reporting year to deal with the proposal so far as it <ParaLineStart LineNum="31"></ParaLineStart>is covered by that decision.</SubSection_text>
+                  </_SubSection_PgfTag>
+                </SubSection>
+                <SubSection id="1112827">
+                  <_SubSection_PgfTag id="1112828">
+                    <PgfNumString>
+                      <PgfNumString_1>(5)</PgfNumString_1>
+                    </PgfNumString>
+                    <SubSection_text>
+                      <ParaLineStart LineNum="32"></ParaLineStart>If a decision not to implement a Law Commission proposal (in whole <ParaLineStart LineNum="33"></ParaLineStart>or in part) has been taken before the first reporting year, subsection <PageStart id="1112600" PageType="BodyPage" PageNum="2">Page 2</PageStart>
+                      <ParaLineStart LineNum="1"></ParaLineStart>(1)(b) does not require any report to deal with the proposal so far as it <ParaLineStart LineNum="2"></ParaLineStart>is covered by that decision.</SubSection_text>
+                  </_SubSection_PgfTag>
+                </SubSection>
+                <SubSection id="1112832">
+                  <_SubSection_PgfTag id="1112833">
+                    <PgfNumString>
+                      <PgfNumString_1>(6)</PgfNumString_1>
+                    </PgfNumString>
+                    <SubSection_text>
+                      <ParaLineStart LineNum="3"></ParaLineStart>“Law Commission proposal” means—</SubSection_text>
+                  </_SubSection_PgfTag>
+                  <Para id="1112836">
+                    <_Paragraph_PgfTag id="1112837">
+                      <PgfNumString>
+                        <PgfNumString_1>(a)</PgfNumString_1>
+                      </PgfNumString>
+                      <Para_text>
+                        <ParaLineStart LineNum="4"></ParaLineStart>a proposal formulated by the Law Commission as mentioned in <ParaLineStart LineNum="5"></ParaLineStart>section 3(1)(c);</Para_text>
+                    </_Paragraph_PgfTag>
+                  </Para>
+                  <Para id="1112841">
+                    <_Paragraph_PgfTag id="1112842">
+                      <PgfNumString>
+                        <PgfNumString_1>(b)</PgfNumString_1>
+                      </PgfNumString>
+                      <Para_text>
+                        <ParaLineStart LineNum="6"></ParaLineStart>a proposal for consolidation or statute law revision for which a <ParaLineStart LineNum="7"></ParaLineStart>draft Bill has been prepared by the Law Commission as <ParaLineStart LineNum="8"></ParaLineStart>mentioned in section 3(1)(d).”</Para_text>
+                    </_Paragraph_PgfTag>
+                  </Para>
+                </SubSection>
+              </ClauseText>
+            </Clause>
+          </Amendment>
+        </ClauseText>
+      </Clause>
+      <Clause id="1112874" TemplateVersion="4.2.002" HardReference="LC2">
+        <ClauseTitle id="1112878">
+          <ClauseTitle_PgfTag id="1112880">
+            <PgfNumString>
+              <PgfNumString_1>2</PgfNumString_1>
+            </PgfNumString>
+            <ClauseTitle_text>
+              <ParaLineStart LineNum="9"></ParaLineStart>Protocol about the Law Commission’s work</ClauseTitle_text>
+          </ClauseTitle_PgfTag>
+        </ClauseTitle>
+        <ClauseText id="1112883">
+          <ParaLineStart LineNum="10"></ParaLineStart>Before section 4 of the <Citation id="1112886" Show="Yes" Year="1965" Chapter="(c.\x11 22)">Law Commissions Act 1965 (c. 22)</Citation> insert—<Amendment id="1112894"><Clause id="1112897" Number="3" Letter="B" Quote="Double"><ClauseTitle id="1112900">
+<_ClauseTitle_PgfTag id="1112902"><PgfNumString><PgfNumString_1>“3B</PgfNumString_1>
+                  </PgfNumString>
+                  <ClauseTitle_text>
+                    <ParaLineStart LineNum="11"></ParaLineStart>Protocol about the Law Commission’s work</ClauseTitle_text>
+                </_ClauseTitle_PgfTag>
+              </ClauseTitle>
+              <ClauseText id="1112905">
+                <SubSection id="1112908">
+                  <_SubSection_PgfTag id="1112909">
+                    <PgfNumString>
+                      <PgfNumString_1>(1)</PgfNumString_1>
+                    </PgfNumString>
+                    <SubSection_text>
+                      <ParaLineStart LineNum="12"></ParaLineStart>The Lord Chancellor and the Law Commission may agree for the <ParaLineStart LineNum="13"></ParaLineStart>purposes of this section a statement (a “protocol”) about the Law <ParaLineStart LineNum="14"></ParaLineStart>Commission’s work.</SubSection_text>
+                  </_SubSection_PgfTag>
+                </SubSection>
+                <SubSection id="1112913">
+                  <_SubSection_PgfTag id="1112914">
+                    <PgfNumString>
+                      <PgfNumString_1>(2)</PgfNumString_1>
+                    </PgfNumString>
+                    <SubSection_text>
+                      <ParaLineStart LineNum="15"></ParaLineStart>The protocol may include (among other things) provision about—</SubSection_text>
+                  </_SubSection_PgfTag>
+                  <Para id="1112844">
+                    <_Paragraph_PgfTag id="1112917">
+                      <PgfNumString>
+                        <PgfNumString_1>(a)</PgfNumString_1>
+                      </PgfNumString>
+                      <Para_text>
+                        <ParaLineStart LineNum="16"></ParaLineStart>principles and methods to be applied in deciding the work to be <ParaLineStart LineNum="17"></ParaLineStart>carried out by the Law Commission and in the carrying out of <ParaLineStart LineNum="18"></ParaLineStart>that work;</Para_text>
+                    </_Paragraph_PgfTag>
+                  </Para>
+                  <Para id="1112895">
+                    <_Paragraph_PgfTag id="1112921">
+                      <PgfNumString>
+                        <PgfNumString_1>(b)</PgfNumString_1>
+                      </PgfNumString>
+                      <Para_text>
+                        <ParaLineStart LineNum="19"></ParaLineStart>the assistance and information that Ministers of the Crown and <ParaLineStart LineNum="20"></ParaLineStart>the Law Commission are to give each other;</Para_text>
+                    </_Paragraph_PgfTag>
+                  </Para>
+                  <Para id="1113165">
+                    <_Paragraph_PgfTag id="1113166">
+                      <PgfNumString>
+                        <PgfNumString_1>(c)</PgfNumString_1>
+                      </PgfNumString>
+                      <Para_text>
+                        <ParaLineStart LineNum="21"></ParaLineStart>the way in which Ministers of the Crown are to deal with the <ParaLineStart LineNum="22"></ParaLineStart>Law Commission’s proposals for reform, consolidation or <ParaLineStart LineNum="23"></ParaLineStart>statute law revision.</Para_text>
+                    </_Paragraph_PgfTag>
+                  </Para>
+                </SubSection>
+                <SubSection id="1112997">
+                  <_SubSection_PgfTag id="1113171">
+                    <PgfNumString>
+                      <PgfNumString_1>(3)</PgfNumString_1>
+                    </PgfNumString>
+                    <SubSection_text>
+                      <ParaLineStart LineNum="24"></ParaLineStart>The Lord Chancellor and the Law Commission must from time to time <ParaLineStart LineNum="25"></ParaLineStart>review the protocol and may agree to revise it.</SubSection_text>
+                  </_SubSection_PgfTag>
+                </SubSection>
+                <SubSection id="1112991">
+                  <_SubSection_PgfTag id="1113175">
+                    <PgfNumString>
+                      <PgfNumString_1>(4)</PgfNumString_1>
+                    </PgfNumString>
+                    <SubSection_text>
+                      <ParaLineStart LineNum="26"></ParaLineStart>The Lord Chancellor must lay the protocol (and any revision of it) <ParaLineStart LineNum="27"></ParaLineStart>before Parliament.</SubSection_text>
+                  </_SubSection_PgfTag>
+                </SubSection>
+                <SubSection id="1112965">
+                  <_SubSection_PgfTag id="1113179">
+                    <PgfNumString>
+                      <PgfNumString_1>(5)</PgfNumString_1>
+                    </PgfNumString>
+                    <SubSection_text>
+                      <ParaLineStart LineNum="28"></ParaLineStart>Ministers of the Crown and the Law Commission must have regard to <ParaLineStart LineNum="29"></ParaLineStart>the protocol.”</SubSection_text>
+                  </_SubSection_PgfTag>
+                </SubSection>
+              </ClauseText>
+            </Clause>
+          </Amendment>
+        </ClauseText>
+      </Clause>
+      <Clause id="1113207" TemplateVersion="4.2.002" HardReference="LC3">
+        <ClauseTitle id="1113211">
+          <ClauseTitle_PgfTag id="1113213">
+            <PgfNumString>
+              <PgfNumString_1>3</PgfNumString_1>
+            </PgfNumString>
+            <ClauseTitle_text>
+              <ParaLineStart LineNum="30"></ParaLineStart>Commencement and short title</ClauseTitle_text>
+          </ClauseTitle_PgfTag>
+        </ClauseTitle>
+        <ClauseText id="1099624">
+          <SubSection id="1110091">
+            <SubSection_PgfTag id="1113218">
+              <PgfNumString>
+                <PgfNumString_1>(1)</PgfNumString_1>
+              </PgfNumString>
+              <SubSection_text>
+                <ParaLineStart LineNum="31"></ParaLineStart>This Act comes into force at the end of the period of 2 months beginning with <ParaLineStart LineNum="32"></ParaLineStart>the day on which it is passed.</SubSection_text>
+            </SubSection_PgfTag>
+          </SubSection>
+          <SubSection id="1113222">
+            <SubSection_PgfTag id="1113224">
+              <PgfNumString>
+                <PgfNumString_1>(2)</PgfNumString_1>
+              </PgfNumString>
+              <SubSection_text>
+                <ParaLineStart LineNum="33"></ParaLineStart>This Act may be cited as the Law Commission Act 2009.</SubSection_text>
+            </SubSection_PgfTag>
+          </SubSection>
+          <SubSection id="1113227">
+            <SubSection_PgfTag id="1113230">
+              <PgfNumString>
+                <PgfNumString_1>(3)</PgfNumString_1>
+              </PgfNumString>
+              <SubSection_text>
+                <Bold id="1112372">
+                  <ParaLineStart LineNum="34"></ParaLineStart>Nothing in this Act shall impose any charge on the people or on public <ParaLineStart LineNum="35"></ParaLineStart>funds, or vary the amount or incidence of or otherwise alter any such charge <ParaLineStart LineNum="36"></ParaLineStart>in any manner, or affect the assessment, levying, administration or <ParaLineStart LineNum="37"></ParaLineStart>application of any money raised by any such charge</Bold>.</SubSection_text>
+            </SubSection_PgfTag>
+          </SubSection>
+        </ClauseText>
+      </Clause>
+    </Clauses>
+    <Footer>
+      <BillPrintNumber>Bill 101</BillPrintNumber>
+      <BillSessionNumber>54/4</BillSessionNumber>
+    </Footer>
+  </BillData>
+</Document>
