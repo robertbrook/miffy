@@ -78,6 +78,14 @@ Parliament assembled, and by the authority of the same, as follows:—')
     it 'should have toggle link around clause title' do
       @result.should include(%Q|= link_to_function "Reports on implementation of Law Commission proposals", "$('1112590').toggle()"|)
     end
+
+    it 'should have clause-page-line and page-line anchors' do
+      @result.should include('%a{ :name => "page1-line10" }')
+      @result.should include('%a{ :name => "page1-line15" }')
+
+      @result.should include('%a{ :name => "clause1-page1-line10" }')
+      @result.should include('%a{ :name => "clause1-page1-line15" }')
+    end
   end
 
   describe 'when parsing another MIF XML file to html' do
