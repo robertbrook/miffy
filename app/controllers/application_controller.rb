@@ -21,6 +21,7 @@ class ApplicationController < ActionController::Base
     if File.exists?(file_name)
       params[:format] = params[:format] || 'html'
       mif_file = MifFile.find_by_path(file_name)
+      mif_file = MifFile.new :path => file_name unless mif_file
 
       respond_to do |format|
         format.html do

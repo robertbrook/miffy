@@ -75,7 +75,11 @@ class MifFile < ActiveRecord::Base
   end
   
   def convert_to_haml
-    xml = MifParser.new.parse path
+    if File.extname(path) == '.mif'
+      xml = MifParser.new.parse path
+    else
+      xml = IO.read(path)
+    end
     set_html_page_title(xml)
     result = MifToHtmlParser.new.parse_xml xml, :format => :haml, :body_only => true
     File.open(haml_template, 'w+') {|f| f.write(result) }

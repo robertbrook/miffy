@@ -19,14 +19,20 @@ class Bill < ActiveRecord::Base
       unless parliament_url
         search_url = "http://www.publications.parliament.uk/cgi-bin/search.pl?q=%22#{URI.escape(name)}%22+more%3Abusiness"
         links = nil
+
+        begin
         
-        WWW::Mechanize.new.get(search_url) do |result|
-          links = result.links.select {|x| x.text[name] && x.uri.to_s['services'] }
-        end
-  
-        self.parliament_url = if links && links.size == 1
-          links.first.uri.to_s
-        else
+          WWW::Mechanize.new.get(search_url) do |result|
+            links = result.links.select {|x| x.text[name] && x.uri.to_s['services'] }
+          end
+    
+          self.parliament_url = if links && links.size == 1
+            links.first.uri.to_s
+          else
+            nil
+          end
+        rescue Exception => e
+          logger.warn "cannot connect to: #{search_url}"
           nil
         end
       end

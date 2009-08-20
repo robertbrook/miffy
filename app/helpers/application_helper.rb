@@ -2,7 +2,7 @@
 module ApplicationHelper
   
   def document_type file_name
-    if file_name.include?('Clauses.mif')
+    if file_name.include?('Clauses.mif') || file_name.include?('Clauses.xml')
       "clauses"
     elsif file_name.include?('Cover.mif')
       "cover"
