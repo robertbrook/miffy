@@ -35,10 +35,9 @@
           %tr.mif-file{:class => cycle("even", "odd")}
             %td
               = link_to file.name, "convert?file=#{file.path}"
-            %td
-              = number_to_human_size(File.size(file.path))
               - if file.haml_template_exists?
-                = button_to 're-convert from mif', :contoller => "application", :action => "convert", :force => 'true', :file=>"#{file.path}", :method => 'get'
-              
+                = link_to '[Regenerate]', :contoller => "application", :action => "convert", :force => 'true', :file=>"#{file.path}", :method => 'get'
+            %td
+              = number_to_human_size(File.size(file.path))              
 - else
   %p No files available to parse
