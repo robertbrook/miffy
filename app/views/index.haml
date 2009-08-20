@@ -18,7 +18,7 @@
             =number_to_human_size(File.size(file))
 - unless @files_by_bill.empty?
   - @bill_names.each do |bill_name|
-    - key = bill_name.blank? ? nil : bill_name  
+    - key = bill_name.blank? ? nil : bill_name
     - files = @files_by_bill[key]
     %table.mif-files
       %caption= key ? bill_name : '(No bill named)'
