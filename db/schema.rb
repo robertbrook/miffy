@@ -9,10 +9,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090819112147) do
+ActiveRecord::Schema.define(:version => 20090821135549) do
 
   create_table "acts", :force => true do |t|
-    t.text     "name"
+    t.string   "name"
     t.text     "title"
     t.integer  "year"
     t.integer  "number"
@@ -26,13 +26,40 @@ ActiveRecord::Schema.define(:version => 20090819112147) do
   add_index "acts", ["name"], :name => "index_acts_on_name"
 
   create_table "bills", :force => true do |t|
-    t.text     "name"
+    t.string   "name"
     t.text     "parliament_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "bills", ["name"], :name => "index_bills_on_name"
+
+  create_table "explanatory_notes", :force => true do |t|
+    t.string   "type"
+    t.integer  "bill_id"
+    t.integer  "explanatory_notes_file_id"
+    t.string   "clause_number"
+    t.string   "schedule_number"
+    t.text     "note_text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "explanatory_notes", ["bill_id", "clause_number"], :name => "by_bill_clause", :unique => true
+  add_index "explanatory_notes", ["bill_id", "schedule_number"], :name => "by_bill_schedule", :unique => true
+  add_index "explanatory_notes", ["bill_id"], :name => "index_explanatory_notes_on_bill_id"
+  add_index "explanatory_notes", ["explanatory_notes_file_id"], :name => "index_explanatory_notes_on_explanatory_notes_file_id"
+
+  create_table "explanatory_notes_files", :force => true do |t|
+    t.string   "name"
+    t.integer  "bill_id"
+    t.string   "path"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "explanatory_notes_files", ["bill_id"], :name => "index_explanatory_notes_files_on_bill_id"
+  add_index "explanatory_notes_files", ["path"], :name => "index_explanatory_notes_files_on_path"
 
   create_table "mif_files", :force => true do |t|
     t.string   "name"
