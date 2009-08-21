@@ -40,13 +40,7 @@ ake provision in relation to the Law Commission.<Enact id="1004229"> </Enact>
 
       <Clause id="1113207" TemplateVersion="4.2.002" HardReference="LC17">
         <ClauseTitle>
-          <ClauseTitle_PgfTag>
-            <PgfNumString>
-              <PgfNumString_1>17</PgfNumString_1>
-            </PgfNumString>
-            <ClauseTitle_text>
-              <ParaLineStart LineNum="2"></ParaLineStart>Rates of air passenger duty</ClauseTitle_text>
-          </ClauseTitle_PgfTag>
+          <ClauseTitle_PgfTag id="1113209"><PgfNumString><PgfNumString_1>17</PgfNumString_1></PgfNumString> <ClauseTitle_text><ParaLineStart LineNum="2"></ParaLineStart>Rates of air passenger duty</ClauseTitle_text></ClauseTitle_PgfTag>
         </ClauseTitle>
         <ClauseText id="1">
           <SubSection>
@@ -218,13 +212,7 @@ ake provision in relation to the Law Commission.<Enact id="1004229"> </Enact>
 
       <Clause id="1113208" TemplateVersion="4.2.002" HardReference="LC18">
         <ClauseTitle>
-          <ClauseTitle_PgfTag>
-            <PgfNumString>
-              <PgfNumString_1>18</PgfNumString_1>
-            </PgfNumString>
-            <ClauseTitle_text>
-              <ParaLineStart LineNum="33"></ParaLineStart>Standard rate of landfill tax</ClauseTitle_text>
-          </ClauseTitle_PgfTag>
+          <ClauseTitle_PgfTag id="1113210"><PgfNumString><PgfNumString_1>18</PgfNumString_1></PgfNumString> <ClauseTitle_text><ParaLineStart LineNum="33"></ParaLineStart>Standard rate of landfill tax</ClauseTitle_text></ClauseTitle_PgfTag>
         </ClauseTitle>
         <ClauseText id="2">
           <SubSection>
@@ -254,13 +242,7 @@ ake provision in relation to the Law Commission.<Enact id="1004229"> </Enact>
 
       <Clause id="1093880" TemplateVersion="4.2.002" HardReference="LC1">
         <ClauseTitle id="1093884">
-          <ClauseTitle_PgfTag id="1112748">
-            <PgfNumString>
-              <PgfNumString_1>1</PgfNumString_1>
-            </PgfNumString>
-            <ClauseTitle_text>
-              <ParaLineStart LineNum="10"></ParaLineStart>Reports on implementation of Law Commission proposals</ClauseTitle_text>
-          </ClauseTitle_PgfTag>
+          <ClauseTitle_PgfTag id="1112748"><PgfNumString><PgfNumString_1>1</PgfNumString_1></PgfNumString> <ClauseTitle_text><ParaLineStart LineNum="10"></ParaLineStart>Reports on implementation of Law Commission proposals</ClauseTitle_text></ClauseTitle_PgfTag>
         </ClauseTitle>
         <ClauseText id="1112590">
           <ParaLineStart LineNum="11"></ParaLineStart>After section 3 of the <Citation id="1111593" Show="Yes" Year="1965" Chapter="(c.\x11 22)">Law Commissions Act 1965 (c. 22)</Citation> insert—
@@ -392,13 +374,7 @@ ake provision in relation to the Law Commission.<Enact id="1004229"> </Enact>
       </Clause>
       <Clause id="1112874" TemplateVersion="4.2.002" HardReference="LC2">
         <ClauseTitle id="1112878">
-          <ClauseTitle_PgfTag id="1112880">
-            <PgfNumString>
-              <PgfNumString_1>2</PgfNumString_1>
-            </PgfNumString>
-            <ClauseTitle_text>
-              <ParaLineStart LineNum="9"></ParaLineStart>Protocol about the Law Commission’s work</ClauseTitle_text>
-          </ClauseTitle_PgfTag>
+          <ClauseTitle_PgfTag id="1112880"><PgfNumString><PgfNumString_1>2</PgfNumString_1></PgfNumString> <ClauseTitle_text><ParaLineStart LineNum="9"></ParaLineStart>Protocol about the Law Commission’s work</ClauseTitle_text></ClauseTitle_PgfTag>
         </ClauseTitle>
         <ClauseText id="1112883">
           <ParaLineStart LineNum="10"></ParaLineStart>Before section 4 of the <Citation id="1112886" Show="Yes" Year="1965" Chapter="(c.\x11 22)">Law Commissions Act 1965 (c. 22)</Citation> insert—<Amendment id="1112894"><Clause id="1112897" Number="3" Letter="B" Quote="Double"><ClauseTitle id="1112900">
@@ -488,13 +464,7 @@ ake provision in relation to the Law Commission.<Enact id="1004229"> </Enact>
       </Clause>
       <Clause id="1113207" TemplateVersion="4.2.002" HardReference="LC3">
         <ClauseTitle id="1113211">
-          <ClauseTitle_PgfTag id="1113213">
-            <PgfNumString>
-              <PgfNumString_1>3</PgfNumString_1>
-            </PgfNumString>
-            <ClauseTitle_text>
-              <ParaLineStart LineNum="30"></ParaLineStart>Commencement and short title</ClauseTitle_text>
-          </ClauseTitle_PgfTag>
+          <ClauseTitle_PgfTag id="1113213"><PgfNumString><PgfNumString_1>3</PgfNumString_1></PgfNumString> <ClauseTitle_text><ParaLineStart LineNum="30"></ParaLineStart>Commencement and short title</ClauseTitle_text></ClauseTitle_PgfTag>
         </ClauseTitle>
         <ClauseText id="1099624">
           <SubSection id="1110091">

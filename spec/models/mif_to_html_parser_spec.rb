@@ -28,10 +28,12 @@ Parliament assembled, and by the authority of the same, as follows:—')
     before(:all) do
       @result = parser.parse_xml(fixture('clauses.xml'), :format => :haml)
     end
+
     it 'should not put Para span before _Paragraph_PgfTag paragraph' do
       @result.should_not include("%span#1112895.Para")
       @result.should include("#1112895.Para")
     end
+
     it 'should have an anchor name marking a clause start' do
       @result.should include(%Q|%span.PgfNumString_1<>\n                  %a#clause_LC1{ :name => \"clause1\", :href => \"#clause1\" }<>\n                    1\n|)
     end

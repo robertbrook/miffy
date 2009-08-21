@@ -295,6 +295,12 @@ class MifToHtmlParser
     para_line_anchor = %Q|<a name="#{anchor_name}"></a>|
     para_line_anchor += %Q|<a name="clause#{@clause_number}-#{anchor_name}"></a>| unless @clause_number.blank?
 
+    # if last_line && last_line.include?('ClauseTitle_text')
+      # puts "@in_hyperlink: #{@in_hyperlink}"
+      # puts para_line_anchor
+      # puts last_line
+    # end
+
     if @in_hyperlink
       @para_line_anchor = para_line_anchor
     else
