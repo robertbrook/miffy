@@ -4,18 +4,22 @@
     %thead
       %tr
         %th Name
+        %th Text output
         %th Size
+        %th Regenerate
     %tfoot
       %tr
-        %td Name
-        %td Size
+        %th Name
+        %th Text output
+        %th Size
+        %th Regenerate
     %tbody
       -@act_files.each do |file|
         %tr.legislation-file{:class => cycle("even", "odd")}
+          %td=link_to File.basename(file, ".xml"), "act?file=#{file}"
           %td
-            =link_to File.basename(file, ".xml"), "act?file=#{file}"
+          %td=number_to_human_size(File.size(file))
           %td
-            =number_to_human_size(File.size(file))
 - unless @files_by_bill.empty?
   - @bill_names.each do |bill_name|
     - key = bill_name.blank? ? nil : bill_name
@@ -25,19 +29,23 @@
       %thead
         %tr
           %th Name
+          %th Text output
           %th Size
+          %th Regenerate
       %tfoot
         %tr
-          %td Name
-          %td Size
+          %th Name
+          %th Text output
+          %th Size
+          %th Regenerate
       %tbody
         - files.each do |file|
           %tr.mif-file{:class => cycle("even", "odd")}
+            %td= link_to file.name, "convert?file=#{file.path}"
+            %td= link_to "Text", "convert?file=#{file.path}&format=text"
+            %td= number_to_human_size(File.size(file.path))          
             %td
-              = link_to file.name, "convert?file=#{file.path}"
               - if file.haml_template_exists?
-                = link_to '[Regenerate]', :contoller => "application", :action => "convert", :force => 'true', :file=>"#{file.path}", :method => 'get'
-            %td
-              = number_to_human_size(File.size(file.path))              
+                = link_to 'Regenerate', :contoller => "application", :action => "convert", :force => 'true', :file=>"#{file.path}", :method => 'get'    
 - else
   %p No files available to parse
