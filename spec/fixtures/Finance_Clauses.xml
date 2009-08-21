@@ -48,7 +48,7 @@ ake provision in relation to the Law Commission.<Enact id="1004229"> </Enact>
               <ParaLineStart LineNum="2"></ParaLineStart>Rates of air passenger duty</ClauseTitle_text>
           </ClauseTitle_PgfTag>
         </ClauseTitle>
-        <ClauseText>
+        <ClauseText id="1">
           <SubSection>
             <SubSection_PgfTag>
               <PgfNumString>
@@ -58,137 +58,137 @@ ake provision in relation to the Law Commission.<Enact id="1004229"> </Enact>
                 <ParaLineStart LineNum="3"></ParaLineStart>In section 30 of FA 1994 (air passenger duty: rates), for subsections (1) to (4) <ParaLineStart LineNum="4"></ParaLineStart>substitute—</SubSection_text>
             </SubSection_PgfTag>
           </SubSection>
+          <Amendment id="1112894">
+            <Clause>
+              <ClauseText>
+                <SubSection>
+                  <_SubSection_PgfTag>
+                    <PgfNumString>
+                      <PgfNumString_1>“(1)</PgfNumString_1>
+                    </PgfNumString>
+                    <SubSection_text>
+                      <ParaLineStart LineNum="5"></ParaLineStart>Air passenger duty is chargeable on the carriage of each chargeable <ParaLineStart LineNum="6"></ParaLineStart>passenger at the rate determined as follows.</SubSection_text>
+                  </_SubSection_PgfTag>
+                </SubSection>
+                <SubSection>
+                  <_SubSection_PgfTag>
+                    <PgfNumString>
+                      <PgfNumString_1>(2)</PgfNumString_1>
+                    </PgfNumString>
+                    <SubSection_text>
+                      <ParaLineStart LineNum="7"></ParaLineStart>If the passenger’s journey ends at a place in the United Kingdom or a  <ParaLineStart LineNum="8"></ParaLineStart>territory specified in Part 1 of Schedule 5A—</SubSection_text>
+                  </_SubSection_PgfTag>
+                  <Para>
+                    <_Paragraph_PgfTag>
+                      <PgfNumString>
+                        <PgfNumString_1>(a)</PgfNumString_1>
+                      </PgfNumString>
+                      <Para_text>
+                        <ParaLineStart LineNum="9"></ParaLineStart>if the passenger’s agreement for carriage provides for standard  <ParaLineStart LineNum="10"></ParaLineStart>class travel in relation to every flight on the passenger’s <ParaLineStart LineNum="11"></ParaLineStart>journey, the rate is £11, and</Para_text>
+                    </_Paragraph_PgfTag>
+                  </Para>
+                  <Para>
+                    <_Paragraph_PgfTag>
+                      <PgfNumString>
+                        <PgfNumString_1>(b)</PgfNumString_1>
+                      </PgfNumString>
+                      <Para_text>
+                        <ParaLineStart LineNum="12"></ParaLineStart>in any other case, the rate is £22.</Para_text>
+                    </_Paragraph_PgfTag>
+                  </Para>
+                </SubSection>
+
+                <SubSection>
+                  <_SubSection_PgfTag>
+                    <PgfNumString>
+                      <PgfNumString_1>(3)</PgfNumString_1>
+                    </PgfNumString>
+                    <SubSection_text>
+                      <ParaLineStart LineNum="13"></ParaLineStart>If the passenger’s journey ends at a place in a territory specified in Part <ParaLineStart LineNum="14"></ParaLineStart>2 of Schedule 5A—</SubSection_text>
+                  </_SubSection_PgfTag>
+                  <Para>
+                    <_Paragraph_PgfTag>
+                      <PgfNumString>
+                        <PgfNumString_1>(a)</PgfNumString_1>
+                      </PgfNumString>
+                      <Para_text>
+                        <ParaLineStart LineNum="15"></ParaLineStart>if the passenger’s agreement for carriage provides for standard
+                        <ParaLineStart LineNum="16"></ParaLineStart>class travel in relation to every flight on the passenger’s <ParaLineStart LineNum="17"></ParaLineStart>journey, the rate is £45, and</Para_text>
+                    </_Paragraph_PgfTag>
+                  </Para>
+                  <Para>
+                    <_Paragraph_PgfTag>
+                      <PgfNumString>
+                        <PgfNumString_1>(b)</PgfNumString_1>
+                      </PgfNumString>
+                      <Para_text>
+                        <ParaLineStart LineNum="18"></ParaLineStart>in any other case, the rate is £90.</Para_text>
+                    </_Paragraph_PgfTag>
+                  </Para>
+                </SubSection>
+
+                <SubSection>
+                  <_SubSection_PgfTag>
+                    <PgfNumString>
+                      <PgfNumString_1>(4)</PgfNumString_1>
+                    </PgfNumString>
+                    <SubSection_text>
+                      <ParaLineStart LineNum="19"></ParaLineStart>If the passenger’s journey ends at a place in a territory specified in Part <ParaLineStart LineNum="20"></ParaLineStart>3 of Schedule 5A—</SubSection_text>
+                  </_SubSection_PgfTag>
+                  <Para>
+                    <_Paragraph_PgfTag>
+                      <PgfNumString>
+                        <PgfNumString_1>(a)</PgfNumString_1>
+                      </PgfNumString>
+                      <Para_text>
+                        <ParaLineStart LineNum="21"></ParaLineStart>if the passenger’s agreement for carriage provides for standard
+                        <ParaLineStart LineNum="22"></ParaLineStart>class travel in relation to every flight on the passenger’s <ParaLineStart LineNum="23"></ParaLineStart>journey, the rate is £50, and</Para_text>
+                    </_Paragraph_PgfTag>
+                  </Para>
+                  <Para>
+                    <_Paragraph_PgfTag>
+                      <PgfNumString>
+                        <PgfNumString_1>(b)</PgfNumString_1>
+                      </PgfNumString>
+                      <Para_text>
+                        <ParaLineStart LineNum="24"></ParaLineStart>in any other case, the rate is £100.</Para_text>
+                    </_Paragraph_PgfTag>
+                  </Para>
+                </SubSection>
+
+                <SubSection>
+                  <_SubSection_PgfTag>
+                    <PgfNumString>
+                      <PgfNumString_1>(4A)</PgfNumString_1>
+                    </PgfNumString>
+                    <SubSection_text>
+                      <ParaLineStart LineNum="25"></ParaLineStart>If the passenger’s journey ends at any other place—</SubSection_text>
+                  </_SubSection_PgfTag>
+                  <Para>
+                    <_Paragraph_PgfTag>
+                      <PgfNumString>
+                        <PgfNumString_1>(a)</PgfNumString_1>
+                      </PgfNumString>
+                      <Para_text>
+                        <ParaLineStart LineNum="26"></ParaLineStart>if the passenger’s agreement for carriage provides for standard
+                        <ParaLineStart LineNum="27"></ParaLineStart>class travel in relation to every flight on the passenger’s <ParaLineStart LineNum="28"></ParaLineStart>journey, the rate is £55, and</Para_text>
+                    </_Paragraph_PgfTag>
+                  </Para>
+                  <Para>
+                    <_Paragraph_PgfTag>
+                      <PgfNumString>
+                        <PgfNumString_1>(b)</PgfNumString_1>
+                      </PgfNumString>
+                      <Para_text>
+                        <ParaLineStart LineNum="29"></ParaLineStart>in any other case, the rate is £110.</Para_text>
+                    </_Paragraph_PgfTag>
+                  </Para>
+                </SubSection>
+
+              </ClauseText>
+            </Clause>
+          </Amendment>
         </ClauseText>
-        <Amendment id="1112894">
-          <Clause>
-            <ClauseText>
-              <SubSection>
-                <_SubSection_PgfTag>
-                  <PgfNumString>
-                    <PgfNumString_1>“(1)</PgfNumString_1>
-                  </PgfNumString>
-                  <SubSection_text>
-                    <ParaLineStart LineNum="5"></ParaLineStart>Air passenger duty is chargeable on the carriage of each chargeable <ParaLineStart LineNum="6"></ParaLineStart>passenger at the rate determined as follows.</SubSection_text>
-                </_SubSection_PgfTag>
-              </SubSection>
-              <SubSection>
-                <_SubSection_PgfTag>
-                  <PgfNumString>
-                    <PgfNumString_1>(2)</PgfNumString_1>
-                  </PgfNumString>
-                  <SubSection_text>
-                    <ParaLineStart LineNum="7"></ParaLineStart>If the passenger’s journey ends at a place in the United Kingdom or a  <ParaLineStart LineNum="8"></ParaLineStart>territory specified in Part 1 of Schedule 5A—</SubSection_text>
-                </_SubSection_PgfTag>
-                <Para>
-                  <_Paragraph_PgfTag>
-                    <PgfNumString>
-                      <PgfNumString_1>(a)</PgfNumString_1>
-                    </PgfNumString>
-                    <Para_text>
-                      <ParaLineStart LineNum="9"></ParaLineStart>if the passenger’s agreement for carriage provides for standard  <ParaLineStart LineNum="10"></ParaLineStart>class travel in relation to every flight on the passenger’s <ParaLineStart LineNum="11"></ParaLineStart>journey, the rate is £11, and</Para_text>
-                  </_Paragraph_PgfTag>
-                </Para>
-                <Para>
-                  <_Paragraph_PgfTag>
-                    <PgfNumString>
-                      <PgfNumString_1>(b)</PgfNumString_1>
-                    </PgfNumString>
-                    <Para_text>
-                      <ParaLineStart LineNum="12"></ParaLineStart>in any other case, the rate is £22.</Para_text>
-                  </_Paragraph_PgfTag>
-                </Para>
-              </SubSection>
-
-              <SubSection>
-                <_SubSection_PgfTag>
-                  <PgfNumString>
-                    <PgfNumString_1>(3)</PgfNumString_1>
-                  </PgfNumString>
-                  <SubSection_text>
-                    <ParaLineStart LineNum="13"></ParaLineStart>If the passenger’s journey ends at a place in a territory specified in Part <ParaLineStart LineNum="14"></ParaLineStart>2 of Schedule 5A—</SubSection_text>
-                </_SubSection_PgfTag>
-                <Para>
-                  <_Paragraph_PgfTag>
-                    <PgfNumString>
-                      <PgfNumString_1>(a)</PgfNumString_1>
-                    </PgfNumString>
-                    <Para_text>
-                      <ParaLineStart LineNum="15"></ParaLineStart>if the passenger’s agreement for carriage provides for standard
-                      <ParaLineStart LineNum="16"></ParaLineStart>class travel in relation to every flight on the passenger’s <ParaLineStart LineNum="17"></ParaLineStart>journey, the rate is £45, and</Para_text>
-                  </_Paragraph_PgfTag>
-                </Para>
-                <Para>
-                  <_Paragraph_PgfTag>
-                    <PgfNumString>
-                      <PgfNumString_1>(b)</PgfNumString_1>
-                    </PgfNumString>
-                    <Para_text>
-                      <ParaLineStart LineNum="18"></ParaLineStart>in any other case, the rate is £90.</Para_text>
-                  </_Paragraph_PgfTag>
-                </Para>
-              </SubSection>
-
-              <SubSection>
-                <_SubSection_PgfTag>
-                  <PgfNumString>
-                    <PgfNumString_1>(4)</PgfNumString_1>
-                  </PgfNumString>
-                  <SubSection_text>
-                    <ParaLineStart LineNum="19"></ParaLineStart>If the passenger’s journey ends at a place in a territory specified in Part <ParaLineStart LineNum="20"></ParaLineStart>3 of Schedule 5A—</SubSection_text>
-                </_SubSection_PgfTag>
-                <Para>
-                  <_Paragraph_PgfTag>
-                    <PgfNumString>
-                      <PgfNumString_1>(a)</PgfNumString_1>
-                    </PgfNumString>
-                    <Para_text>
-                      <ParaLineStart LineNum="21"></ParaLineStart>if the passenger’s agreement for carriage provides for standard
-                      <ParaLineStart LineNum="22"></ParaLineStart>class travel in relation to every flight on the passenger’s <ParaLineStart LineNum="23"></ParaLineStart>journey, the rate is £50, and</Para_text>
-                  </_Paragraph_PgfTag>
-                </Para>
-                <Para>
-                  <_Paragraph_PgfTag>
-                    <PgfNumString>
-                      <PgfNumString_1>(b)</PgfNumString_1>
-                    </PgfNumString>
-                    <Para_text>
-                      <ParaLineStart LineNum="24"></ParaLineStart>in any other case, the rate is £100.</Para_text>
-                  </_Paragraph_PgfTag>
-                </Para>
-              </SubSection>
-
-              <SubSection>
-                <_SubSection_PgfTag>
-                  <PgfNumString>
-                    <PgfNumString_1>(4A)</PgfNumString_1>
-                  </PgfNumString>
-                  <SubSection_text>
-                    <ParaLineStart LineNum="25"></ParaLineStart>If the passenger’s journey ends at any other place—</SubSection_text>
-                </_SubSection_PgfTag>
-                <Para>
-                  <_Paragraph_PgfTag>
-                    <PgfNumString>
-                      <PgfNumString_1>(a)</PgfNumString_1>
-                    </PgfNumString>
-                    <Para_text>
-                      <ParaLineStart LineNum="26"></ParaLineStart>if the passenger’s agreement for carriage provides for standard
-                      <ParaLineStart LineNum="27"></ParaLineStart>class travel in relation to every flight on the passenger’s <ParaLineStart LineNum="28"></ParaLineStart>journey, the rate is £55, and</Para_text>
-                  </_Paragraph_PgfTag>
-                </Para>
-                <Para>
-                  <_Paragraph_PgfTag>
-                    <PgfNumString>
-                      <PgfNumString_1>(b)</PgfNumString_1>
-                    </PgfNumString>
-                    <Para_text>
-                      <ParaLineStart LineNum="29"></ParaLineStart>in any other case, the rate is £110.</Para_text>
-                  </_Paragraph_PgfTag>
-                </Para>
-              </SubSection>
-
-            </ClauseText>
-          </Clause>
-        </Amendment>
 
         <ClauseText>
           <SubSection>
@@ -226,7 +226,7 @@ ake provision in relation to the Law Commission.<Enact id="1004229"> </Enact>
               <ParaLineStart LineNum="33"></ParaLineStart>Standard rate of landfill tax</ClauseTitle_text>
           </ClauseTitle_PgfTag>
         </ClauseTitle>
-        <ClauseText>
+        <ClauseText id="2">
           <SubSection>
             <SubSection_PgfTag>
               <PgfNumString>
