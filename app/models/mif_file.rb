@@ -101,7 +101,7 @@ class MifFile < ActiveRecord::Base
 
   def clauses_file
     file = bill.clauses_file
-    if file == self
+    if file.blank? || file == self
       nil
     else
       file.path
