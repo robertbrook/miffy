@@ -35,6 +35,7 @@
           %tr.mif-file{:class => cycle("even", "odd")}
             %td
               = link_to file.name, "convert?file=#{file.path}"
+              = link_to "[Text]", "convert?file=#{file.path}&format=text"
               - if file.haml_template_exists?
                 = link_to '[Regenerate]', :contoller => "application", :action => "convert", :force => 'true', :file=>"#{file.path}", :method => 'get'
             %td
