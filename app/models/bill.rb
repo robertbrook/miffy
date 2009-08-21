@@ -3,6 +3,7 @@ require 'mechanize'
 class Bill < ActiveRecord::Base
 
   has_many :mif_files
+  has_many :explanatory_notes
 
   validates_presence_of :name
   before_validation :populate_parliament_url

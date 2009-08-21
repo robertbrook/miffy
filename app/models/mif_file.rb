@@ -151,7 +151,6 @@ class MifFile < ActiveRecord::Base
     end
 
     def set_name
-      logger.info "creating: #{path}"
       self.name = File.basename(path, ".mif") if path
     end
 

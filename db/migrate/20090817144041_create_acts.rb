@@ -1,7 +1,7 @@
 class CreateActs < ActiveRecord::Migration
   def self.up
     create_table :acts do |t|
-      t.text :name
+      t.string :name
       t.text :title
       t.integer :year
       t.integer :number
