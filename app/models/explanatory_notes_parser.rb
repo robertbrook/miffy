@@ -66,6 +66,8 @@ class ExplanatoryNotesParser
     @in_header = false
     @in_footer = false
     @in_toc = false
+    
+    @blank_row_count = 0
   end
 
   def handle_page_headers line
@@ -244,6 +246,12 @@ class ExplanatoryNotesParser
   end
 
   def handle_txt_line line
+    if line.strip == ""
+      @blank_row_count += 1
+    else
+      @blank_row_count = 0
+    end
+    
     handle_page_headers(line)
     handle_page_footers(line)
     unless @in_header || @in_footer
@@ -270,7 +278,20 @@ class ExplanatoryNotesParser
       text = HTMLEntities.new.encode(line, :decimal)
       text = strip_control_chars(text)
 
-      add "#{text}\n"
+      if @blank_row_count > 2
+        if @in_clause
+          add "</Clause>"
+          @in_clause = false
+        elsif @in_chapter
+          add "</Chapter>"
+          @in_chapter = false
+        elsif @in_part
+          add "</Part>"
+          @in_part = false
+        end
+      end
+      
+      add "#{text}\n" unless @blank_row_count > 1
     end
   end
 
