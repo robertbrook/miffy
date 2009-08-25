@@ -246,12 +246,6 @@ class ExplanatoryNotesParser
   end
 
   def handle_txt_line line
-    if line.strip == ""
-      @blank_row_count += 1
-    else
-      @blank_row_count = 0
-    end
-    
     handle_page_headers(line)
     handle_page_footers(line)
     unless @in_header || @in_footer
@@ -259,6 +253,12 @@ class ExplanatoryNotesParser
     end
 
     unless @in_header || @in_toc || @in_footer
+      if line.strip == ""
+        @blank_row_count += 1
+      else
+        @blank_row_count = 0
+      end
+      
       case line
         when /^Clause ([^:]*): /
           handle_clause($1)
@@ -277,19 +277,6 @@ class ExplanatoryNotesParser
 
       text = HTMLEntities.new.encode(line, :decimal)
       text = strip_control_chars(text)
-
-      if @blank_row_count > 2
-        if @in_clause
-          add "</Clause>"
-          @in_clause = false
-        elsif @in_chapter
-          add "</Chapter>"
-          @in_chapter = false
-        elsif @in_part
-          add "</Part>"
-          @in_part = false
-        end
-      end
       
       add "#{text}\n" unless @blank_row_count > 1
     end
