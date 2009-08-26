@@ -66,6 +66,8 @@ class ExplanatoryNotesParser
     @in_header = false
     @in_footer = false
     @in_toc = false
+    
+    @blank_row_count = 0
   end
 
   def handle_page_headers line
@@ -251,6 +253,12 @@ class ExplanatoryNotesParser
     end
 
     unless @in_header || @in_toc || @in_footer
+      if line.strip == ""
+        @blank_row_count += 1
+      else
+        @blank_row_count = 0
+      end
+      
       case line
         when /^Clause ([^:]*): /
           handle_clause($1)
@@ -269,8 +277,8 @@ class ExplanatoryNotesParser
 
       text = HTMLEntities.new.encode(line, :decimal)
       text = strip_control_chars(text)
-
-      add "#{text}\n"
+      
+      add "#{text}\n" unless @blank_row_count > 1
     end
   end
 
