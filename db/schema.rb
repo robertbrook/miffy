@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090821135549) do
+ActiveRecord::Schema.define(:version => 20090826162008) do
 
   create_table "acts", :force => true do |t|
     t.string   "name"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20090821135549) do
   add_index "bills", ["name"], :name => "index_bills_on_name"
 
   create_table "explanatory_notes", :force => true do |t|
-    t.string   "type"
+    t.string   "note_type"
     t.integer  "bill_id"
     t.integer  "explanatory_notes_file_id"
     t.string   "clause_number"
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(:version => 20090821135549) do
     t.string   "name"
     t.integer  "bill_id"
     t.string   "path"
+    t.text     "beginning_text"
+    t.text     "ending_text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
