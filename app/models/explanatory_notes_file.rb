@@ -25,12 +25,12 @@ class ExplanatoryNotesFile < ActiveRecord::Base
     
     clauses = get_clauses(xml)
     clauses.each do |data|
-      ExplanatoryNote.create!(:clause_number => data[0], :note_type => "clause", :note_text => data[1], :bill_id => self.bill_id, :explanatory_notes_file_id => self.id)
+      NoteByClause.create!(:clause_number => data[0], :note_text => data[1], :bill_id => self.bill_id, :explanatory_notes_file_id => self.id)
     end
     
     schedules = get_schedules(xml)
     schedules.each do |data|
-      ExplanatoryNote.create!(:clause_number => data[0], :note_type => "schedule", :note_text => data[1], :bill_id => self.bill_id, :explanatory_notes_file_id => self.id)
+      NoteBySchedule.create!(:clause_number => data[0], :note_text => data[1], :bill_id => self.bill_id, :explanatory_notes_file_id => self.id)
     end
   end
 
