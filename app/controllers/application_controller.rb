@@ -8,6 +8,9 @@ class ApplicationController < ActionController::Base
   def index
     paths = Dir.glob(RAILS_ROOT + '/spec/fixtures/*.mif')
     paths << (RAILS_ROOT + '/spec/fixtures/Finance_Clauses.xml')
+    paths << (RAILS_ROOT + '/spec/fixtures/ChannelTunnel/ChannelTunnelClauses.mif')
+    paths << (RAILS_ROOT + '/spec/fixtures/ChannelTunnel/ChannelTunnelLordsClauses.mif')
+    paths << (RAILS_ROOT + '/spec/fixtures/ChannelTunnel/ChannelTunnelLordsInboundClauses.mif')
 
     @mif_files = MifFile.load(paths)
     @bill_names = @mif_files.collect(&:bill).collect{|x| x ? x.name : ''}.uniq.sort

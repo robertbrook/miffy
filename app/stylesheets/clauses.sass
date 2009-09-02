@@ -103,6 +103,25 @@ body
         .ClauseText
           +prepend(2)
           +column(27, true)
+          
+          div.Para  
+            +column(25, true)
+            
+            .Paragraph_PgfTag
+              +column(25, true)
+              
+              .Para_text
+                +column(23, true)
+                
+          div.SubSection
+            +column(25, true)
+            
+            p.SubSection_PgfTag, p._SubSection_PgfTag
+              +column(25, true)
+              
+              span.SubSection_text
+                +column(23, true)
+                float: right
 
         .Amendment 
           float:left
@@ -110,7 +129,7 @@ body
         .Clause
           float: left
           padding-left: 0
-
+          
           .ClauseText
             padding-left: 0
 
@@ -134,4 +153,4 @@ body
 
             span.Para
               float: left
-                display: block
+              display: block
