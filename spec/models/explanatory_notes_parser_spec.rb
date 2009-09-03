@@ -61,4 +61,29 @@ describe ExplanatoryNotesParser do
     end
   end
   
+  describe 'when parsing the Explanatory Notes for the Channel Tunnel Bill' do
+    before(:all) do
+      @parser = ExplanatoryNotesParser.new
+      @result = @parser.parse(RAILS_ROOT + '/spec/fixtures/ChannelTunnel/ChannelTunnelENs.pdf')
+      File.open(RAILS_ROOT + '/spec/fixtures/ChannelTunnel/ChannelTunnel.xml','w') {|f| f.write @result }
+    end
+    
+    it 'should add a BillInfo element containing Title and Version' do
+      @result.should have_tag('ENData') do
+        with_tag('Title', :text => 'Channel Tunnel Rail Link (Supplementary Provisions) Bill')
+        with_tag('Version', :text => '4')
+      end
+    end
+    
+    it 'should have Clause 1 thru Clause 5' do
+      @result.should have_tag('ENData') do
+        with_tag('Clause[Number="1"]')
+        with_tag('Clause[Number="2"]')
+        with_tag('Clause[Number="3"]')
+        with_tag('Clause[Number="4"]')
+        with_tag('Clause[Number="5"]')
+      end
+    end
+  end
+  
 end

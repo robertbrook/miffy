@@ -71,7 +71,7 @@ class ExplanatoryNotesParser
   end
 
   def handle_page_headers line
-    if line.strip[0..23] == 'These notes refer to the'
+    if line.strip[0..23] == 'These notes refer to the' || line.strip[0..24] == 'These notes relate to the'
       @in_header = true
       set_bill_title(line.strip) if @bill_title == ""
     end
@@ -79,6 +79,8 @@ class ExplanatoryNotesParser
     if @in_header
       if line.strip == ""
         @in_header = false
+        last_line = @xml.pop
+        @xml << last_line unless last_line.strip == ""
         @prev_toc_line = "header"
       else
         set_bill_version(line) if @bill_version == ""
@@ -117,6 +119,7 @@ class ExplanatoryNotesParser
 
   def set_bill_title line
     title = line.gsub('These notes refer to the ', '')
+    title = title.gsub('These notes relate to the ', '')
     if title =~ /(.* Bill)/
       @bill_title = $1
     end
@@ -130,7 +133,136 @@ class ExplanatoryNotesParser
     end
   end
 
-  def handle_clause(number)
+  def is_clause_start line
+    if line =~ /^Clause/
+      last_line = @xml.pop
+      if last_line.strip == ""
+        @xml << last_line
+        return true
+      end
+      if is_part_start(last_line)
+        @xml << last_line
+        return true
+      end
+      if is_chapter_start(last_line)
+        @xml << last_line
+        return true
+      end
+      if is_subheading(last_line)
+        @xml << last_line
+        return true
+      end
+      @xml << last_line
+    end
+    false
+  end
+
+  def is_schedule_start line
+    if line =~ /^Schedule/
+      last_line = @xml.pop
+      if last_line.strip == ""
+        prev_line = @xml.pop
+        @xml << prev_line
+        @xml << last_line
+        unless prev_line.strip[-1..-1] == ":"
+          return true
+        end
+        if last_line =~ /^Schedule/
+          return false
+        end
+      end
+      if is_part_start(last_line)
+        @xml << last_line
+        return true
+      end
+      if is_chapter_start(last_line)
+        @xml << last_line
+        return true
+      end
+      if is_subheading(last_line)
+        @xml << last_line
+        return true
+      end
+      @xml << last_line
+    end
+    false
+  end
+
+
+  def is_chapter_start line
+    if line =~ /^Chapter/
+      last_line = @xml.pop
+      if last_line.strip == ""
+        @xml << last_line
+        return true
+      end
+      if is_part_start(last_line)
+        @xml << last_line
+        return true
+      end
+      @xml << last_line
+    end
+    false
+  end
+
+  def is_part_start line
+    if line =~ /^Part/
+      last_line = @xml.pop
+      if last_line.strip == ""
+        prev_line = @xml.pop
+        @xml << prev_line
+        @xml << last_line
+        unless prev_line.strip[-1..-1] == ":"
+          return true
+        end
+      end
+      if last_line.strip =~ /^<Part/
+        prev_line = @xml.pop
+        @xml << prev_line
+        if prev_line == "" || prev_line == "</Part>"
+          @xml << last_line
+          return true
+        end
+      end
+      @xml << last_line
+    end
+    false
+  end
+  
+  def is_subheading line
+    if line.strip == ""
+      return false
+    end
+    if line.strip =~ /^\d*\./
+      return false
+    end
+    if line.strip =~ /^Part /
+      return false
+    end
+    if line.strip =~ /^Clause /
+      return false
+    end
+    if line.strip =~ /^Schedule /
+      return false
+    end
+    if line.strip =~ /^Chapter /
+      return false
+    end
+    
+    last_line = @xml.pop
+    if last_line.strip == ""
+      prev_line = @xml.pop
+      @xml << prev_line
+      @xml << last_line
+      unless prev_line.strip[-1..-1] == ":"
+        return true
+      end
+    end
+    @xml << last_line
+    false
+  end
+  
+  def handle_clause number
     if @in_section
       add "</TextSection>"
       @in_section = false
@@ -138,12 +270,16 @@ class ExplanatoryNotesParser
     if @in_clause
       add "</Clause>"
     end
+    
+    if number =~ /([^:]*):*/
+      number = $1
+    end
 
     add_section_start('Clause', number)
     @in_clause = true
   end
 
-  def handle_schedule
+  def handle_schedule number
     if @in_section
       add "</TextSection>"
       @in_section = false
@@ -151,12 +287,16 @@ class ExplanatoryNotesParser
     if @in_schedule
       add "</Schedule>"
     end
+    
+    if number =~ /([^:]*):*/
+      number = $1
+    end
 
     add_section_start('Schedule', number)
     @in_schedule = true
   end
 
-  def handle_chapter(number)
+  def handle_chapter number
     if @in_section
       add "</TextSection>"
       @in_section = false
@@ -173,11 +313,15 @@ class ExplanatoryNotesParser
       add "</Chapter>"
     end
 
+    if number =~ /([^:]*):*/
+      number = $1
+    end
+
     add_section_start('Chapter', number)
     @in_chapter = true
   end
 
-  def handle_part(number)
+  def handle_part number
     if @in_section
       add "</TextSection>"
       @in_section = false
@@ -196,6 +340,10 @@ class ExplanatoryNotesParser
     end
     if @in_part
       add "</Part>"
+    end
+    
+    if number =~ /([^:]*):*/
+      number = $1
     end
 
     add_section_start('Part', number)
@@ -259,15 +407,15 @@ class ExplanatoryNotesParser
         @blank_row_count = 0
       end
       
-      case line
-        when /^Clause ([^:]*): /
-          handle_clause($1)
-        when /^Schedule ([^:]*): /
-          handle_schedule($1)
-        when /^Part ([^:]*): /
-          handle_part($1)
-        when /^Chapter ([^:]*): /
-          handle_chapter($1)
+      case line.strip
+        when /^Clause (.*)/
+          handle_clause($1) if is_clause_start("Clause")
+        when /^Schedule (.*)/
+          handle_schedule($1) if is_schedule_start("Schedule")
+        when /^Part (.*)/
+          handle_part($1) if is_part_start("Part")
+        when /^Chapter (.*)/
+          handle_chapter($1) if is_chapter_start("Chapter")
       end
 
       unless @in_clause || @in_schedule || @in_part || @in_chapter || @in_section
