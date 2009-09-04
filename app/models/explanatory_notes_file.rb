@@ -30,7 +30,7 @@ class ExplanatoryNotesFile < ActiveRecord::Base
     
     schedules = get_schedules(xml)
     schedules.each do |data|
-      NoteBySchedule.create!(:clause_number => data[0], :note_text => data[1], :bill_id => self.bill_id, :explanatory_notes_file_id => self.id)
+      NoteBySchedule.create!(:schedule_number => data[0], :note_text => data[1], :bill_id => self.bill_id, :explanatory_notes_file_id => self.id)
     end
   end
 
