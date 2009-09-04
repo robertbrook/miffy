@@ -28,16 +28,16 @@ class ApiController < ApplicationController
     
     respond_to do |format|
       format.xml  { render :layout => false }
-      format.json { render :json => results_to_json(@clause_text, @error) }
-      format.js   { render :json => results_to_json(@clause_text, @error) }
-      format.text { render :text => results_to_text(@clause_text, @error) }
-      format.csv  { render :text => results_to_csv(@clause_text, @error) }
-      format.yaml { render :text => results_to_yaml(@clause_text, @error) }
+      format.json { render :json => note_to_json(@clause_text, @error) }
+      format.js   { render :json => note_to_json(@clause_text, @error) }
+      format.text { render :text => note_to_text(@clause_text, @error) }
+      format.csv  { render :text => note_to_csv(@clause_text, @error) }
+      format.yaml { render :text => note_to_yaml(@clause_text, @error) }
     end
   end
   
   private
-    def results_to_json message, error
+    def note_to_json message, error
       if error
         note_text = error
       else
@@ -46,20 +46,21 @@ class ApiController < ApplicationController
       %Q|{"clause_note": { "clause_text": "#{note_text}"}} |
     end
     
-    def results_to_text message, error
+    def note_to_text message, error
       if error
         note_text = error
       else
         note_text = message
       end
-      "\n\n  - " + note_text.gsub("\n", "\n\    ")
+      note_text
     end
     
-    def results_to_yaml message, error
-      "---\n#{results_to_text(message, error)}"
+    def note_to_yaml message, error
+      text = "\n\n  - " + note_to_text(message, error).gsub("\n", "\n\    ")
+      "---\n#{text}"
     end
  
-    def results_to_csv message, error
+    def note_to_csv message, error
       if error
         note_text = error
       else
