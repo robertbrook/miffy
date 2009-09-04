@@ -27,6 +27,7 @@ class ApiController < ApplicationController
     end
     
     respond_to do |format|
+      format.html { render }
       format.xml  { render :layout => false }
       format.json { render :json => note_to_json(@clause_text, @error) }
       format.js   { render :json => note_to_json(@clause_text, @error) }
