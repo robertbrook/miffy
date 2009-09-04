@@ -4,6 +4,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.connect '/convert', :controller => "application", :action => 'convert'
   map.connect '/act', :controller => "application", :action => 'act'
+  map.connect '/api', :controller => "api", :action => 'index'
+  map.connect '/api/clause_note/', :controller => "api", :action => 'clause_note'
 
   # The priority is based upon order of creation: first created -> highest priority.
 
