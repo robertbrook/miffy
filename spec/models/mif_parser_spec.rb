@@ -34,7 +34,7 @@ describe MifParser do
       @result = @parser.parse_xml(fixture('pbc0900206m.mif.xml'))
       File.open(RAILS_ROOT + '/spec/fixtures/pbc0900206m.xml','w') {|f| f.write @result }
     end
-    
+
     it 'should not add a BillTitle element' do
       @result.should_not have_tag('BillTitle', :text => 'Law Commission Bill [HL]')
     end
@@ -55,7 +55,7 @@ describe MifParser do
         end
       end
     end
-    
+
     it 'should move Amendment.Text ETag round AmedTextCommitReport PdfTag' do
       @result.tr('.','-').should have_tag('Amendment-Text[id="1047173"]') do
         with_tag('AmedTextCommitReport_PgfTag[id="7381581"]') do
@@ -98,18 +98,18 @@ describe MifParser do
   end
 
   describe 'when parsing Clauses MIF XML file' do
-    before(:all) do      
+    before(:all) do
       @parser = MifParser.new
       @result = @parser.parse_xml(fixture('Clauses.mif.xml'))
       File.open(RAILS_ROOT + '/spec/fixtures/Clauses.xml','w') {|f| f.write @result }
     end
-    
+
     it 'should create XML' do
       @result.gsub('.','-').should have_tag('Clause[id="1093880"]') do
         with_tag('ClauseTitle_PgfTag[id="1112748"]')
       end
     end
-    
+
     it 'should put para line start before Bpara' do
       @result.should have_tag('WordsOfEnactment[id="1003778"]') do
         with_tag('ParaLineStart[LineNum="7"]')
@@ -123,17 +123,17 @@ describe MifParser do
         with_tag('PageStart[id="996720"][PageType="BodyPage"][PageNum="1"]')
       end
     end
-    
+
     it 'should add a BillTitle element' do
       @result.should have_tag('BillTitle', :text => 'Law Commission Bill [HL]')
     end
-    
+
     it 'should add a Frame element' do
       @result.gsub('.','-').should have_tag('FrameData[id="1112726"]') do
         with_tag('Dropcap[id="1003796"]', :text => 'B')
       end
     end
-    
+
     it 'should add a Footer element containing the BillPrintNumber and the BillSessionNumber' do
       @result.should have_tag('Footer') do
         with_tag('BillPrintNumber', :text => 'Bill 101')
@@ -143,14 +143,14 @@ describe MifParser do
 
     it 'should put SubSection_text element around Bold element' do
       text = 'Nothing in this Act shall impose any charge on the people or on public funds, or vary the amount or incidence of or otherwise alter any such charge in any manner, or affect the assessment, levying, administration or application of any money raised by any such charge'
-      
+
       @result.gsub('.','-').should have_tag('SubSection_PgfTag[id="1113230"]') do
         with_tag('SubSection_text', :text => "#{text}-") do
           with_tag('Bold[id="1112372"]', :text => text)
         end
       end
     end
-      
+
     it 'should put Para etag around _Paragraph_PgfTag and multiple _SubParagraph_PgfTag elements' do
       @result.gsub('.','-').gsub('<_','<').gsub('</_','</').should have_tag('Para[id="1111739"]') do
         with_tag('Paragraph_PgfTag[id="1112779"]') do
@@ -177,7 +177,7 @@ describe MifParser do
         end
       end
     end
-    
+
     it 'should add in the data from the variable Regnal Title' do
       @result.should have_tag('WordsOfEnactment[id="1003778"]') do
         with_tag('Bpara[id="1003785"]', :text => "Be it enacted\n by the Queen’s most Excellent Majesty, by and with the advice and consent of the Lords Spiritual and Temporal, and Commons, in this present Parliament assembled, and by the authority of the same, as follows:—")
@@ -186,18 +186,18 @@ describe MifParser do
   end
 
   describe 'when parsing Cover MIF XML file' do
-    before(:all) do      
+    before(:all) do
       @parser = MifParser.new
       @result = @parser.parse_xml(fixture('Cover.mif.xml'))
       File.open(RAILS_ROOT + '/spec/fixtures/Cover.xml','w') {|f| f.write @result }
     end
-    
+
     it 'should create XML' do
       @result.should have_tag('Cover[id="1000723"]') do
         with_tag('Rubric[id="1002024"]')
       end
     end
-    
+
     it 'should add a BillTitle element' do
       @result.should have_tag('BillTitle', :text => 'Law Commission Bill [HL]')
     end
@@ -209,11 +209,11 @@ describe MifParser do
       @result = @parser.parse_xml(fixture('pbc0850206m.mif.xml'))
       File.open(RAILS_ROOT + '/spec/fixtures/pbc0850206m.xml','w') {|f| f.write @result }
     end
-    
+
     it 'should create XML' do
-      @result.gsub('.','-').should have_tag('Amendments-Commons')    
+      @result.gsub('.','-').should have_tag('Amendments-Commons')
     end
-    
+
     it 'should put para line start before STText' do
       @result.should include('<ParaLineStart LineNum="3"></ParaLineStart><CommitteeShorttitle id="1045605"><STText id="1053799">Equality Bill</STText></CommitteeShorttitle>')
     end
@@ -243,12 +243,12 @@ describe MifParser do
     end
 
     it 'should put PageStart before Motion element' do
-      @result.should have_tag('PageStart[id="5184234"][PageType="BodyPage"][PageNum="29"]', :text => 'Page 29')            
+      @result.should have_tag('PageStart[id="5184234"][PageType="BodyPage"][PageNum="29"]', :text => 'Page 29')
       @result.gsub("\n",'').should include(%Q|<PageStart id="5184234" PageType="BodyPage" PageNum="29">Page 29</PageStart><Motion id="6541538">|)
     end
-    
+
     it 'should put PageStart outside of Para if at start of Para' do
-      @result.should have_tag('PageStart[id="7338433"][PageType="BodyPage"][PageNum="33"]', :text => 'Page 33')      
+      @result.should have_tag('PageStart[id="7338433"][PageType="BodyPage"][PageNum="33"]', :text => 'Page 33')
       @result.should have_tag('Para[id="1493569"]') do
         with_tag('Paragraph_PgfTag[id="7337702"]') do
           with_tag('PgfNumString') { with_tag('PgfNumString_1', :text =>'(b)') }
@@ -257,7 +257,7 @@ describe MifParser do
       end
       @result.gsub("\n",'').should include(%Q|<PageStart id="7338433" PageType="BodyPage" PageNum="33">Page 33</PageStart><Para id="1493569">|)
     end
-    
+
     it 'should add element around text in mixed element/text situation' do
       @result.should have_tag('Resolution[id="1070180"]') do
         with_tag('ResolutionText[id="1070211"]') do
@@ -265,7 +265,7 @@ describe MifParser do
         end
       end
     end
-    
+
     it 'should add TableData, Row, CellH and Cell elements inside the Table element' do
       @result.should have_tag('Table[id="6540480"]') do
         with_tag('TableData[id="7336058"]') do
@@ -281,7 +281,7 @@ describe MifParser do
           end
         end
       end
-    end    
+    end
   end
 # =begin
 
@@ -330,7 +330,7 @@ describe MifParser do
     it 'should parse' do
       @result.should_not be_nil
     end
-    
+
     it 'should put para line start before Shorttitle|Stageheader|Given' do
       @result.should include('<ParaLineStart LineNum="2"></ParaLineStart><Given id="1045577">given on</Given>')
       # @result.should include('<ParaLineStart LineNum="3"></ParaLineStart><Date id="1041467"><Day id="1041470">Thursday ')
@@ -338,7 +338,18 @@ describe MifParser do
       @result.should include('<ParaLineStart LineNum="5"></ParaLineStart><Shorttitle id="1045605">Child Trust Funds Bill</Shorttitle>')
     end
   end
-  
+
+  describe 'when parsing another standing committee MIF XML file to xml' do
+    before(:all) do
+      @parser = MifParser.new
+      @result = @parser.parse_xml(fixture('Tabled 27 June.mif.xml'))
+      File.open(RAILS_ROOT + '/spec/fixtures/Tabled 27 June.xml','w') {|f| f.write @result }
+    end
+    it 'should handle square bracketed clause number correctly' do
+      @result.should include('<Number id="1043322"> [Clause <Clause_number>120</Clause_number>], </Number>')
+    end
+  end
+
   describe 'when parsing another standing committee MIF XML file to xml' do
     before(:all) do
       @parser = MifParser.new
@@ -352,7 +363,7 @@ describe MifParser do
     it 'should not restart _text span when it encloses an Italic span' do
       italicized = 'reduction of age of majority in respect of child trust funds'
       text = "‘(2) Section [#{italicized}] extends to Northern Ireland, but does not extend to Scotland.’."
-      
+
       @result.should have_tag('SubSection[id="1051587"]') do
         with_tag('SubSection_PgfTag[id="1051592"]') do
           with_tag('SubSection_text', :text => text) do
@@ -362,5 +373,5 @@ describe MifParser do
       end
     end
   end
-  
+
 end

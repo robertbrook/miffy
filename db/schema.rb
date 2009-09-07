@@ -54,8 +54,6 @@ ActiveRecord::Schema.define(:version => 20090821135549) do
     t.string   "name"
     t.integer  "bill_id"
     t.string   "path"
-    t.text     "beginning_text"
-    t.text     "ending_text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
