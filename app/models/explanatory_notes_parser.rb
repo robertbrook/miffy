@@ -288,7 +288,7 @@ class ExplanatoryNotesParser
     end
 
     add_section_start('Clause', number)
-    #@xml << last_line if insert_heading
+    @xml << last_line if insert_heading
     @in_clause = true
   end
 
