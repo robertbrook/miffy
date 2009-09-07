@@ -196,6 +196,10 @@ class ExplanatoryNotesParser
         @xml << last_line
         return true
       end
+      if last_line.strip =~ /\<Chapter /
+        @xml << last_line
+        return true
+      end
       if is_part_start(last_line)
         @xml << last_line
         return true
