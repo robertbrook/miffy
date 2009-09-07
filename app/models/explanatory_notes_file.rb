@@ -6,7 +6,7 @@ class ExplanatoryNotesFile < ActiveRecord::Base
 
   has_many :explanatory_notes
 
-  validates_presence_of :name, :path
+  validates_presence_of :name, :path, :bill_id
   validates_uniqueness_of :path
 
   before_validation_on_create :set_name, :set_bill
