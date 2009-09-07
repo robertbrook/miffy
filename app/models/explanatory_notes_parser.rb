@@ -263,11 +263,19 @@ class ExplanatoryNotesParser
   end
   
   def handle_clause number
+    insert_heading = false
+    
     if @in_section
       add "</TextSection>"
       @in_section = false
     end
     if @in_clause
+      last_line = @xml.pop
+      if is_subheading(last_line)
+        insert_heading = true
+      else
+        @xml << last_line
+      end
       add "</Clause>"
     end
     
@@ -276,6 +284,7 @@ class ExplanatoryNotesParser
     end
 
     add_section_start('Clause', number)
+    #@xml << last_line if insert_heading
     @in_clause = true
   end
 
