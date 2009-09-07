@@ -6,13 +6,13 @@ require 'rexml/document'
 
 class MifPage
   attr_accessor :unique_id, :page_type, :page_num, :page_id
-  
+
   include MifParserUtils
 
   def initialize page_xml
     self.unique_id = page_xml.at('Unique/text()').to_s
     self.page_type = page_xml.at('PageType/text()').to_s
-    self.page_num = clean(page_xml.at('PageNum')) if page_xml.at('PageNum')    
+    self.page_num = clean(page_xml.at('PageNum')) if page_xml.at('PageNum')
     self.page_id = page_xml.at('TextRect[1]/ID/text()').to_s
   end
 end
@@ -53,7 +53,7 @@ class MifParser
     flow.inner_text[instruction_regexp] ||
     (flow.at('PgfTag') && flow.at('PgfTag/text()').to_s[/(AmendmentLineNumber|\.PageNum|Body|\.A|\.Bill|\.To)/])
   end
-  
+
   def parse_xml mif_xml, options={}
     doc = Hpricot.XML mif_xml
     xml = make_xml(doc)
@@ -71,24 +71,24 @@ class MifParser
       xml
     end
   end
-  
+
   def initialize_doc_state doc
     @bill_attributes = get_bill_attributes doc
     @table_list = get_tables doc
     @frame_list = get_frames doc
     @pages = get_pages doc
-    @variable_list = get_variables doc    
+    @variable_list = get_variables doc
   end
 
   def make_xml doc
     initialize_doc_state doc
     @xml = ['<Document><BillData>']
     add_bill_attribute 'ShortTitle', 'BillTitle'
-    (doc/'TextFlow').each do |flow|      
+    (doc/'TextFlow').each do |flow|
       handle_flow(flow) unless is_instructions?(flow)
     end
     add_footer
-    add ['</BillData></Document>']    
+    add ['</BillData></Document>']
     @xml.join('')
   end
 
@@ -98,21 +98,21 @@ class MifParser
     add_bill_attribute 'SessionNumber', 'BillSessionNumber'
     add "</Footer>"
   end
-  
+
   def get_pages doc
     pages = (doc/'Page')
     pages.inject({}) do |hash, page_xml|
       page = MifPage.new page_xml
-      hash[page.page_id] = page    
+      hash[page.page_id] = page
       hash
     end
   end
 
   def add_bill_attribute name, element_name
     attribute = get_bill_attribute(name)
-    add "<#{element_name}>#{attribute}</#{element_name}>" unless attribute.empty?    
+    add "<#{element_name}>#{attribute}</#{element_name}>" unless attribute.empty?
   end
-    
+
   def get_tables doc
     tables = (doc/'Tbls/Tbl')
     tables.inject({}) do |hash, table|
@@ -136,12 +136,12 @@ class MifParser
 
   def get_bill_attributes doc
     attributes = nil
-    (doc/'Element').each do |element|      
+    (doc/'Element').each do |element|
       attributes = (element/'Attributes/Attribute') if clean(element.at('ETag')) == "Bill"
     end
     attributes
   end
-  
+
   def get_bill_attribute attrib
     attrib_value = ""
     unless @bill_attributes.nil?
@@ -153,10 +153,10 @@ class MifParser
     end
     attrib_value
   end
-  
+
   def handle_variable var_xml, vars
     @var_id = ''
-    
+
     var_xml.traverse_element do |element|
       case element.name
         when 'VariableName'
@@ -168,12 +168,12 @@ class MifParser
     end
     vars
   end
-  
+
   def handle_frame frame_xml, frames
     frame_id = ''
     in_frame = false
     e_tag = ''
-    
+
     frame_xml.traverse_element do |element|
       case element.name
         when 'ID'
@@ -193,7 +193,7 @@ class MifParser
           frames[frame_id] << text
       end
     end
-    
+
     if frames[frame_id]
       frames[frame_id] << "</#{e_tag}>" unless e_tag.empty?
       frames[frame_id] << "</FrameData>"
@@ -264,7 +264,7 @@ class MifParser
     if tables.size > hash_size
       tables[@current_table_id] << "</Cell></Row></TableData>"
     end
-    
+
     tables
   end
 
@@ -284,7 +284,7 @@ class MifParser
     yield :before
     add pgf_start_tag
     yield :start
-    
+
     add pgf_num_string if pgf_num_string
     unless lines.empty?
       lines = lines.reverse
@@ -296,21 +296,21 @@ class MifParser
 
     yield :end
   end
-  
+
   def handle_text_rect text_rect
     text_rect_id = text_rect.inner_text
 
     if (page = @pages[text_rect_id])
       page_start = %Q|<PageStart id="#{page.unique_id}" PageType="#{page.page_type}" PageNum="#{page.page_num}">Page #{page.page_num}</PageStart>|
       @line_num = 0
-      
+
       if @after_first_page
         at_beginning_of_paragraph = @strings.empty? && @xml.last && @xml.last.include?('PgfNumString')
 
         if at_beginning_of_paragraph
           wrap_paragraph do |indicator, line|
             if indicator == :before
-              add page_start 
+              add page_start
             elsif indicator == :first_line
               add line
             end
@@ -321,12 +321,12 @@ class MifParser
       else
         @first_page = page_start
       end
-      
+
       @pages.delete(text_rect_id)
       @in_page = true
     end
   end
-  
+
   def handle_pgf_tag element
     flush_strings
     tag = clean(element).gsub(' ','_')
@@ -352,15 +352,20 @@ class MifParser
   end
 
   def start_tag tag, element
-    %Q|<#{tag} id="#{get_uid(element)}"#{get_attributes(element)}>|
+    tag = %Q|<#{tag} id="#{get_uid(element)}"#{get_attributes(element)}>|
+    if @suffix
+      tag += @suffix.to_s
+      @suffix = nil
+    end
+    tag
   end
-  
+
   def get_uid element
     element.at('../Unique/text()').to_s
   end
-  
+
   def get_attributes element
-    element = (element/'Attributes') if @e_tag == 'Clauses.ar' 
+    element = (element/'Attributes') if @e_tag == 'Clauses.ar'
     attributes = (element/'../Attributes/Attribute')
     attribute_list = ''
     if attributes && attributes.size > 0
@@ -374,12 +379,12 @@ class MifParser
   end
 
   MOVE_OUTSIDE = %w[Amendment Amendment.Number Amendment.Text Longtitle.text
-      SubPara.sch Move List      
-      ClauseTitle Clause Clauses.ar Clause.ar ClauseText 
+      SubPara.sch Move List
+      ClauseTitle Clause Clauses.ar Clause.ar ClauseText
       Committee Resolution SubSection NewClause.Committee
-      ResolutionHead ResolutionText OrderDate OrderHeading 
+      ResolutionHead ResolutionText OrderDate OrderHeading
       Para.sch Para].inject({}){|h,v| h[v]=true; h}
-  
+
   def move_etag_outside_paragraph?(tag, element)
     collapsed = element.at('../Collapsed/text()').to_s == 'Yes'
     @in_paragraph && (collapsed || MOVE_OUTSIDE[tag])
@@ -408,11 +413,11 @@ class MifParser
   def is_amendment_reference_part?(tag)
     tag[/^(Number|Line|Page)$/]
   end
-  
+
   def dont_add_text_around_child_text? tag
     tag[/^(Bold|Italic|Citation|ListItem|List)$/]
   end
-  
+
   def handle_etag element
     @e_tag = clean(element)
     add_paraline_start if @e_tag[/^(Bpara|Stageheader|Shorttitle|Given|CommitteeShorttitle)$/]
@@ -422,7 +427,7 @@ class MifParser
     if is_amendment_reference_part?(@e_tag) && @e_tag != 'Line'
       @amendment_reference ||= AmendmentReference.new
     end
-    
+
     if move_etag_outside_paragraph?(@e_tag, element)
       move_etag_outside_paragraph @e_tag, element
     else
@@ -433,7 +438,7 @@ class MifParser
       end
       @opened_in_paragraph[@e_tag] = true if @in_paragraph
     end
-    
+
     if !@after_first_page && @first_page
       add @first_page
       @after_first_page = true
@@ -468,7 +473,11 @@ class MifParser
 
   def handle_element_end element
     tag = @etags_stack.last
-    
+    if @suffix && @suffix != ' ['
+      add_to_last_line @suffix
+      @suffix = nil
+    end
+
     if dont_add_text_around_child_text? tag
       add_to_last_line "</#{tag}>"
       @opened_in_paragraph.delete(tag)
@@ -476,7 +485,7 @@ class MifParser
     else
       flush_strings
       tag = @etags_stack.pop
-      
+
       if @in_paragraph && !@opened_in_paragraph[tag]
         # need to close paragraph
         add "</#{@pgf_tag}>\n"
@@ -563,30 +572,43 @@ class MifParser
           add line
         end
       elsif indicator == :end
+        if @suffix
+          add @suffix
+          @suffix = nil
+        end
         add '</AmendmentReference>'
       end
     end
     @amendment_reference = nil
   end
-  
+
   def handle_string element
-    add_paraline_start if @paraline_start    
+    add_paraline_start if @paraline_start
     text = clean(element)
-    text = handle_reference_number(text) if is_reference_number?(text)
-    handle_amendment_reference if is_end_of_amendment_reference?      
-    add_to_last_line text
+
+    if @suffix
+      @suffix += text
+    else
+      text = handle_reference_number(text) if is_reference_number?(text)
+      handle_amendment_reference if is_end_of_amendment_reference?
+      add_to_last_line text
+    end
   end
-  
+
   def handle_char element
-    add_to_last_line get_char(element)
+    if @suffix
+      @suffix += get_char(element)
+    else
+      add_to_last_line get_char(element)
+    end
   end
-  
+
   def flush_strings
     if @strings.size == 1
       last_line = @xml.pop
       text = @strings.pop
       text_tag = @etags_stack.last
-      
+
       if (@last_was_pdf_num_string || text_tag == "ResolutionText") && !text[/^<(PageStart)/] && !is_amendment_reference_part?(text_tag) && !text[/ListItem/]
         last_line += "<#{text_tag}_text>#{text}</#{text_tag}_text>"
       else
@@ -598,7 +620,7 @@ class MifParser
       raise 'why is strings size > 1? ' + @strings.inspect
     end
   end
-  
+
   def handle_para_line element
     @paraline_start = true
   end
@@ -618,40 +640,41 @@ class MifParser
     var_id = clean(element)
     add_to_last_line @variable_list[var_id]
   end
-  
+
   def add_to_last_line text
     last_line = @strings.pop || ''
     last_line += text
-    @strings << last_line    
+    @strings << last_line
   end
-  
+
   def initialize_flow_state
     @pgf_tag = nil
     @e_tag = nil
     @amendment_reference = nil
     @in_paragraph = false
     @prefix_end = false
+    @suffix = nil
     @in_page = false
     @first_page = nil
     @after_first_page = false
     @paraline_start = false
-    @in_paraline = false    
+    @in_paraline = false
     @opened_in_paragraph = {}
     @etags_stack = []
     @strings = []
   end
-  
+
   def handle_flow flow
     initialize_flow_state
     flow.traverse_element do |element|
       case element.name
-        when 'PgfTag'          
+        when 'PgfTag'
           handle_pgf_tag element
-        when 'ETag'          
+        when 'ETag'
           handle_etag element
         when 'Char'
           handle_char element
-        when 'Para'          
+        when 'Para'
           handle_para
         when 'ParaLine'
           handle_para_line element
@@ -659,12 +682,13 @@ class MifParser
           handle_pgf_num_string element
         when 'String'
           handle_string element
-        when 'ElementEnd'          
+        when 'ElementEnd'
           handle_element_end element
         when 'PrefixEnd'
           @prefix_end = true
         when 'SuffixBegin'
           @prefix_end = false
+          @suffix = ''
         when 'TextRectID'
           handle_text_rect element
         when 'ATbl'
