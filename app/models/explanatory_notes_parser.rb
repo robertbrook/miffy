@@ -68,6 +68,7 @@ class ExplanatoryNotesParser
     @in_toc = false
     
     @blank_row_count = 0
+    @page_line_count = 0
   end
 
   def handle_page_headers line
@@ -82,6 +83,7 @@ class ExplanatoryNotesParser
         last_line = @xml.pop
         @xml << last_line unless last_line.strip == ""
         @prev_toc_line = "header"
+        @page_line_count = 0
       else
         set_bill_version(line) if @bill_version == ""
       end
@@ -135,6 +137,9 @@ class ExplanatoryNotesParser
 
   def is_clause_start line
     if line =~ /^Clause/
+      if @page_line_count == 1
+        return true
+      end
       last_line = @xml.pop
       if last_line.strip == ""
         @xml << last_line
@@ -422,13 +427,13 @@ class ExplanatoryNotesParser
       
       case line.strip
         when /^Clause (.*)/
-          handle_clause($1) if is_clause_start("Clause")
+          handle_clause($1) if is_clause_start(line.strip)
         when /^Schedule (.*)/
-          handle_schedule($1) if is_schedule_start("Schedule")
+          handle_schedule($1) if is_schedule_start(line.strip)
         when /^Part (.*)/
-          handle_part($1) if is_part_start("Part")
+          handle_part($1) if is_part_start(line.strip)
         when /^Chapter (.*)/
-          handle_chapter($1) if is_chapter_start("Chapter")
+          handle_chapter($1) if is_chapter_start(line.strip)
       end
 
       unless @in_clause || @in_schedule || @in_part || @in_chapter || @in_section
@@ -440,6 +445,7 @@ class ExplanatoryNotesParser
       text = strip_control_chars(text)
       
       add "#{text}\n" unless @blank_row_count > 1
+      @page_line_count += 1
     end
   end
 
