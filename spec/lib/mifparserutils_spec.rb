@@ -93,5 +93,9 @@ describe MifParserUtils do
     it 'should convert \&nbsp; to \ ' do
       @utils.format_haml('\&nbsp; ').should == '\ '
     end
+
+    it 'should convert \. to %span<>\n \.' do
+      @utils.format_haml("              \\.\n").should == "              %span<>                \\.\n"
+    end
   end
 end

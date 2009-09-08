@@ -26,6 +26,7 @@ module MifParserUtils
       haml.gsub!(AMEND_REF, link)
     end
     haml.gsub!('\&nbsp; ','\ ')
+    haml.gsub!(/(\s+)\\.\n/,'\1%span<>' + '\1  \.' + "\n")
     haml
   end
 
