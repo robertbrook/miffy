@@ -67,6 +67,8 @@ class ExplanatoryNotesParser
     @in_footer = false
     @in_toc = false
     
+    @in_cover_page = false
+    
     @blank_row_count = 0
     @page_line_count = 0
   end
@@ -411,6 +413,32 @@ class ExplanatoryNotesParser
     end
   end
 
+  def check_for_cover_page line
+    #if the current line matches the bill name, we've hit the cover
+    if @bill_title.upcase == line.strip
+      @in_cover_page = true
+    elsif @bill_title.upcase.include?(line.strip) && line.strip != "" 
+      #check for a 2 line title
+      last_line = @xml.pop
+      if @bill_title.upcase.include?(last_line.strip) && last_line.strip != ""
+        if last_line.strip + ' ' + line.strip == @bill_title.upcase
+          @in_cover_page = true
+        elsif @bill_title.upcase.include?(last_line.strip) && last_line.strip != ""
+          #check for a 3 line title
+          last_line2 = @xml.pop
+          if last_line2.strip + ' ' + last_line.strip + ' ' + line.strip == @bill_title.upcase
+            @in_cover_page = true
+          else
+            @xml << last_line2
+            @xml << last_line
+          end
+        end
+      else
+        @xml << last_line
+      end    
+    end
+  end
+
   def handle_txt_line line
     handle_page_headers(line)
     handle_page_footers(line)
@@ -441,10 +469,14 @@ class ExplanatoryNotesParser
         @in_section = true
       end
 
+      if @in_clause
+        check_for_cover_page(line)
+      end
+
       text = HTMLEntities.new.encode(line, :decimal)
       text = strip_control_chars(text)
       
-      add "#{text}\n" unless @blank_row_count > 1
+      add "#{text}\n" unless @blank_row_count > 1 || @in_cover_page
       @page_line_count += 1
     end
   end
