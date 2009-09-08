@@ -35,9 +35,17 @@ class ApplicationController < ActionController::Base
 
       respond_to do |format|
         format.html do
-          mif_file.convert_to_haml unless mif_file.haml_template_exists? && !params[:force]
+          if params[:interleave]
+            mif_file.convert_to_haml('interleave')
+          else
+            mif_file.convert_to_haml unless mif_file.haml_template_exists? && !params[:force]
+          end
           @title = mif_file.html_page_title
-          template = mif_file.haml_template
+          if params[:interleave]
+            template = mif_file.haml_template 'interleave'
+          else
+            template = mif_file.haml_template
+          end
           render :template => template
         end
         format.text do

@@ -50,6 +50,11 @@ class MifToHtmlParser
   end
 
   def generate_html doc, options
+    if options[:ens] == 'interleave'
+      @interleave = true
+    else
+      @interleave = false
+    end
     if options[:body_only]
       @html = []
       doc_to_html(doc)
@@ -194,8 +199,8 @@ class MifToHtmlParser
   end
 
   def find_bill_url bill_name
-    bill = Bill.from_name bill_name
-    bill.parliament_url
+    @bill = Bill.from_name bill_name
+    @bill.parliament_url
   end
 
   def find_act_url act_name
@@ -251,6 +256,14 @@ class MifToHtmlParser
       @clause_anchor_start = %Q|<a id="clause_#{clause_id}" name="#{clause_name}" href="##{clause_name}">|
       add %Q|<div class="#{css_class(node)}" id="#{node['id']}">|
       node_children_to_html(node)
+      
+      if @interleave
+        explanatory_note = @bill.note_by_clauses.find_by_clause_number @clause_number
+        if explanatory_note
+          add %Q|<div class="explanatory_note"><pre>#{explanatory_note.note_text}</pre></div>|
+        end
+      end
+      
       add "</div>"
     else
       add_html_element 'div', node

@@ -74,13 +74,17 @@ class MifFile < ActiveRecord::Base
     File.exist?(haml_template) && html_page_title
   end
 
-  def haml_template
+  def haml_template explanatory_notes = ''
+    en_suffix = ''
+    unless explanatory_notes.blank?
+      en_suffix = "_#{explanatory_notes}"
+    end
     results_dir = RAILS_ROOT + '/app/views/results'
     Dir.mkdir results_dir unless File.exist?(results_dir)
-    "#{results_dir}/#{path.gsub('/','_').gsub('.','_')}.haml"
+    "#{results_dir}/#{path.gsub('/','_').gsub('.','_')}#{en_suffix}.haml"
   end
 
-  def convert_to_haml
+  def convert_to_haml explanatory_notes = ''
     if File.extname(path) == '.mif'
       xml = MifParser.new.parse path
     elsif File.extname(path) == '.xml'
@@ -90,8 +94,8 @@ class MifFile < ActiveRecord::Base
     end
 
     set_html_page_title(xml)
-    result = MifToHtmlParser.new.parse_xml xml, :clauses_file => clauses_file, :format => :haml, :body_only => true
-    File.open(haml_template, 'w+') {|f| f.write(result) }
+    result = MifToHtmlParser.new.parse_xml xml, :clauses_file => clauses_file, :format => :haml, :body_only => true, :ens => explanatory_notes
+    File.open(haml_template(explanatory_notes), 'w+') {|f| f.write(result) }
   end
 
   def convert_to_text
