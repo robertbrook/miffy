@@ -33,24 +33,28 @@ class ApplicationController < ActionController::Base
       params[:format] = params[:format] || 'html'
       mif_file = MifFile.find_by_path(file_name)
 
-      respond_to do |format|
-        format.html do
-          if params[:interleave]
-            mif_file.convert_to_haml('interleave')
-          else
-            mif_file.convert_to_haml unless mif_file.haml_template_exists? && !params[:force]
+      if mif_file
+        respond_to do |format|
+          format.html do
+            if params[:interleave]
+              mif_file.convert_to_haml('interleave')
+            else
+              mif_file.convert_to_haml unless mif_file.haml_template_exists? && !params[:force]
+            end
+            @title = mif_file.html_page_title
+            if params[:interleave]
+              template = mif_file.haml_template 'interleave'
+            else
+              template = mif_file.haml_template
+            end
+            render :template => template
           end
-          @title = mif_file.html_page_title
-          if params[:interleave]
-            template = mif_file.haml_template 'interleave'
-          else
-            template = mif_file.haml_template
+          format.text do
+            render :text => mif_file.convert_to_text
           end
-          render :template => template
         end
-        format.text do
-          render :text => mif_file.convert_to_text
-        end
+      else
+        render_not_found
       end
     else
       render_not_found
