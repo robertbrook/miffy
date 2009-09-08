@@ -260,7 +260,9 @@ class MifToHtmlParser
 
       add %Q|<div class="#{css_class(node)}" id="#{node['id']}">|
       node_children_to_html(node)
-      add %Q|<div class="explanatory_note">#{note.html_note_text}</div>| if note = explanatory_note
+      if (note = explanatory_note)
+        add %Q|<div class="explanatory_note">#{note.html_note_text}</div>|
+      end
       add "</div>"
     else
       add_html_element 'div', node
