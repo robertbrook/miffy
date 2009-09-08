@@ -209,6 +209,7 @@ class MifToHtmlParser
   end
 
   def add_link_element node, div=false
+    id = node['id'] ? %Q| id="#{node['id']}"| : ''
     item = node.inner_text
     url = case item
       when /Act/
@@ -219,7 +220,6 @@ class MifToHtmlParser
         ''
     end
 
-    id = node['id'] ? %Q| id="#{node['id']}"| : ''
     if div
       add %Q|<div#{id} class="#{node.name}">|
       add %Q|<a href="#{url}">| unless url.blank?
@@ -237,6 +237,7 @@ class MifToHtmlParser
 
     if @para_line_anchor
       add @para_line_anchor
+      add "&nbsp;"
       @para_line_anchor = nil
     end
   end
@@ -256,14 +257,14 @@ class MifToHtmlParser
       @clause_anchor_start = %Q|<a id="clause_#{clause_id}" name="#{clause_name}" href="##{clause_name}">|
       add %Q|<div class="#{css_class(node)}" id="#{node['id']}">|
       node_children_to_html(node)
-      
+
       if @interleave
         explanatory_note = @bill.note_by_clauses.find_by_clause_number @clause_number
         if explanatory_note
           add %Q|<div class="explanatory_note">#{explanatory_note.note_text.gsub("\n", "<br />").gsub("  ", "")}</div>|
         end
       end
-      
+
       add "</div>"
     else
       add_html_element 'div', node

@@ -193,11 +193,15 @@ Parliament assembled, and by the authority of the same, as follows:—')
     end
   end
 
-  # describe 'when parsing a bill with citation to act' do
-    # before(:all) do
-      # @url = 'http://www.opsi.gov.uk/acts/acts1992/ukpga_19920004_en_1'
-      # @result = parser(@url).parse_xml(fixture('CommA20031229DummyFM7.xml'), :format => :html)
-      # File.open(RAILS_ROOT + '/spec/fixtures/CommA20031229DummyFM7.html','w') {|f| f.write @result }
-    # end
-  # end
+  describe 'when parsing a bill with citation to act' do
+    before(:all) do
+      @url = 'http://www.opsi.gov.uk/acts/acts2005/ukpga_20050014_en_14'
+      @result = parser(@url).parse_xml(fixture('ChannelTunnel/ChannelTunnelClauses.xml'), :format => :haml)
+      File.open(RAILS_ROOT + '/spec/fixtures/ChannelTunnel/ChannelTunnelClauses.haml','w') {|f| f.write @result }
+    end
+
+    it 'should put space after page anchor when citation is at start of line' do
+      @result.should include('\ from being exercised in relation to the rail link or railway services on it.')
+    end
+  end
 end

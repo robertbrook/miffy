@@ -25,6 +25,7 @@ module MifParserUtils
       link = '%a.AmendmentReference{ :href => "http://localhost:3000/convert?file=' + URI.encode(clauses_file_name) + '\1" }<'
       haml.gsub!(AMEND_REF, link)
     end
+    haml.gsub!('\&nbsp; ','\ ')
     haml
   end
 

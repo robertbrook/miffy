@@ -89,5 +89,9 @@ describe MifParserUtils do
         #1045605.CommitteeShorttitle<|
       @utils.format_haml(text).should == text.sub('<>','')
     end
+
+    it 'should convert \&nbsp; to \ ' do
+      @utils.format_haml('\&nbsp; ').should == '\ '
+    end
   end
 end
