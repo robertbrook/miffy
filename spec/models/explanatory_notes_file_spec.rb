@@ -20,7 +20,8 @@ describe ExplanatoryNotesFile do
     end
 
     it 'should parse pdf file' do
-      @file = ExplanatoryNotesFile.new :path=>@file_path
+      create
+      @file = ExplanatoryNotesFile.new :path=>@file_path, :bill_id=>5
       @file.should_receive(:load_notes)
       @file.stub!(:set_bill)
       @file.save
