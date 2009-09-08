@@ -261,7 +261,7 @@ class MifToHtmlParser
       if @interleave
         explanatory_note = @bill.note_by_clauses.find_by_clause_number @clause_number
         if explanatory_note
-          add %Q|<div class="explanatory_note"><pre>#{explanatory_note.note_text}</pre></div>|
+          add %Q|<div class="explanatory_note">#{explanatory_note.note_text.gsub("\n", "<br />").gsub("  ", "")}</div>|
         end
       end
 

@@ -1,9 +1,13 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
   
-  def document_type file_name
+  def document_type file_name, ens=''
     if file_name.include?('Clauses.mif') || file_name.include?('Clauses.xml')
-      "clauses"
+      if ens == 'interleaved'
+        "clauses_interleaved"
+      else
+        "clauses"
+      end
     elsif file_name.include?('Cover.mif')
       "cover"
     elsif file_name.include?('Arrangement.mif')
