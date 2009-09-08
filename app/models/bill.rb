@@ -16,6 +16,10 @@ class Bill < ActiveRecord::Base
     end
   end
 
+  def find_note_for_clause_number clause_number
+    note_by_clauses.find_by_clause_number clause_number
+  end
+
   def clauses_file
     files = mif_files.select{|x| x.name[/clauses\./i]}
     if files.size == 1
