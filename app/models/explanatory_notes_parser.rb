@@ -469,7 +469,7 @@ class ExplanatoryNotesParser
         @in_section = true
       end
 
-      if @in_clause
+      if @in_clause || @in_schedule
         check_for_cover_page(line)
       end
 
