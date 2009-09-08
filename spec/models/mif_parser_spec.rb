@@ -6,7 +6,7 @@ include ActionController::Assertions::SelectorAssertions
 
 
 describe MifParser do
-# =begin
+
   describe 'when parsing MIF file' do
     before(:all) do
       @parser = MifParser.new
@@ -320,7 +320,7 @@ describe MifParser do
       end
     end
   end
-# =end
+
   describe 'when parsing a standing committee MIF XML file to xml' do
     before(:all) do
       @parser = MifParser.new
@@ -339,7 +339,7 @@ describe MifParser do
     end
   end
 
-  describe 'when parsing another standing committee MIF XML file to xml' do
+  describe 'when parsing a consideration of bill MIF XML file to xml' do
     before(:all) do
       @parser = MifParser.new
       @result = @parser.parse_xml(fixture('Tabled 27 June.mif.xml'))
@@ -368,6 +368,26 @@ describe MifParser do
         with_tag('SubSection_PgfTag[id="1051592"]') do
           with_tag('SubSection_text', :text => text) do
             with_tag('Italic[id="1051590"]', :text => italicized)
+          end
+        end
+      end
+    end
+  end
+
+  describe 'when parsing a consideration of bill MIF XML file to xml' do
+    before(:all) do
+      @parser = MifParser.new
+      @result = @parser.parse_xml(fixture('ChannelTunnel/ChannelTunnelClauses.mif.xml'))
+      File.open(RAILS_ROOT + '/spec/fixtures/ChannelTunnel/ChannelTunnelClauses.xml','w') {|f| f.write @result }
+    end
+
+    it 'should not restart SubSection_text element when Citation is in text' do
+      text = 'For the avoidance of doubt, nothing in sections 31 to 33 of the 1996 Act prevents the powers of the Secretary of State under section 6 of the Railways Act 2005 (c. 14) from being exercised in relation to the rail link or railway services on it.'
+      @result.should have_tag('SubSection_PgfTag[id="1112746"]') do
+        with_tag('SubSection_text') do
+          with_tag('SubSection_text', :text => text) do
+            with_tag('Citation[id="1112749"]') do
+            end
           end
         end
       end

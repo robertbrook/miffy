@@ -421,7 +421,7 @@ class MifParser
   def handle_etag element
     @e_tag = clean(element)
     add_paraline_start if @e_tag[/^(Bpara|Stageheader|Shorttitle|Given|CommitteeShorttitle)$/]
-    flush_strings unless @e_tag == 'Italic'
+    flush_strings unless @e_tag == 'Italic' || @e_tag == 'Citation'
     @etags_stack << @e_tag
 
     if is_amendment_reference_part?(@e_tag) && @e_tag != 'Line'
@@ -609,7 +609,9 @@ class MifParser
       text = @strings.pop
       text_tag = @etags_stack.last
 
-      if (@last_was_pdf_num_string || text_tag == "ResolutionText") && !text[/^<(PageStart)/] && !is_amendment_reference_part?(text_tag) && !text[/ListItem/]
+      wrap_text_in_element = (@last_was_pdf_num_string || text_tag == "ResolutionText") && !text[/^<(PageStart)/] && !is_amendment_reference_part?(text_tag) && !text[/ListItem/]
+
+      if wrap_text_in_element
         last_line += "<#{text_tag}_text>#{text}</#{text_tag}_text>"
       else
         last_line += text
