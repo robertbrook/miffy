@@ -18,9 +18,6 @@ class ExplanatoryNotesParser
 
     result = parse_txt_file(pdf_txt_file.path, options)
     pdf_txt_file.delete
-
-    #deleteme
-    File.open(RAILS_ROOT + '/spec/fixtures/CorpTax/ENs/HCB 1- EN Vol 3.xml','w') {|f| f.write result }
         
     result
   end
@@ -75,7 +72,7 @@ class ExplanatoryNotesParser
     
     @blank_row_count = 0
     @page_line_count = 0
-    @schedule_count = 0
+    @blank_rows_after_header = 0
   end
 
   def handle_page_headers line
@@ -89,8 +86,8 @@ class ExplanatoryNotesParser
         @in_header = false
         last_line = @xml.pop
         @xml << last_line unless last_line.strip == ""
-        @prev_toc_line = "header"
         @page_line_count = 0
+        @blank_rows_after_header = 0
       else
         set_bill_version(line) if @bill_version == ""
       end
@@ -114,14 +111,12 @@ class ExplanatoryNotesParser
       @in_toc = true
     end
 
-    if @in_toc
-      if line.strip == "" && @prev_toc_line == ""
-        @in_toc = false
-      end
-      if @prev_toc_line == "header"
-        @prev_toc_line = "hack for extra spacing after header!"
+    if @in_toc && line.strip == ""
+      if @blank_rows_after_header < 4
+        @blank_rows_after_header += 1
       else
-        @prev_toc_line = line.strip
+        @in_toc = false
+        @was_toc = true
       end
     end
   end
@@ -141,9 +136,20 @@ class ExplanatoryNotesParser
       @bill_version = $1
     end
   end
+  
+  def is_en_header line
+    if line.strip =~ /^\(.*\)$/ && line.strip == line.strip.upcase
+      last_line = @xml.pop
+      @xml << last_line
+      if last_line.strip =~ /^EXPLANATORY NOTES/
+        return true
+      end
+    end
+    false
+  end
 
   def is_clause_start line
-    if line =~ /^Clause \d/
+    if line =~ /^Clause \d+\S*(: .*)?$/
       if @page_line_count == 1
         @xml << "\n \n"
         if @in_schedule
@@ -169,13 +175,17 @@ class ExplanatoryNotesParser
         @xml << last_line
         return true
       end
+      if is_en_header(last_line)
+        @xml << last_line
+        return true
+      end
       @xml << last_line
     end
     false
   end
 
   def is_schedule_start line
-    if line =~ /^Schedule \d/
+    if line =~ /^Schedule \d+\S*(: .*)?$/
       if @page_line_count == 1
         @xml << "\n \n"
         return true
@@ -204,6 +214,10 @@ class ExplanatoryNotesParser
         @xml << last_line
         return true
       end
+      if is_en_header(last_line)
+        @xml << last_line
+        return true
+      end
       @xml << last_line
     end
     false
@@ -211,7 +225,7 @@ class ExplanatoryNotesParser
 
 
   def is_chapter_start line
-    if line =~ /^Chapter \d+/
+    if line =~ /^Chapter \d+\S*(: .*)?$/
       if @page_line_count == 1
         @xml << "\n \n"
         return true
@@ -229,13 +243,17 @@ class ExplanatoryNotesParser
         @xml << last_line
         return true
       end
+      if is_en_header(last_line)
+        @xml << last_line
+        return true
+      end
       @xml << last_line
     end
     false
   end
 
   def is_part_start line
-    if line =~ /^Part \d+/
+    if line =~ /^Part \d+\S*(: .*)?$/
       if @page_line_count == 1
         @xml << "\n \n"
         return true
@@ -257,6 +275,10 @@ class ExplanatoryNotesParser
           return true
         end
       end
+      if is_en_header(last_line)
+        @xml << last_line
+        return true
+      end
       @xml << last_line
     end
     false
@@ -269,16 +291,16 @@ class ExplanatoryNotesParser
     if line.strip =~ /^\d*\./
       return false
     end
-    if line.strip =~ /^Part /
+    if line.strip =~ /^Part \d+\S*(: .*)?$/
       return false
     end
-    if line.strip =~ /^Clause /
+    if line.strip =~ /^Clause \d+\S*(: .*)?$/
       return false
     end
-    if line.strip =~ /^Schedule /
+    if line.strip =~ /^Schedule \d+\S*(: .*)?$/
       return false
     end
-    if line.strip =~ /^Chapter /
+    if line.strip =~ /^Chapter \d+\S*(: .*)?$/
       return false
     end
     
@@ -290,6 +312,10 @@ class ExplanatoryNotesParser
       unless prev_line.strip[-1..-1] == ":"
         return true
       end
+    end
+    if is_en_header(last_line)
+      @xml << last_line
+      return true
     end
     @xml << last_line
     false
