@@ -18,9 +18,6 @@ class ExplanatoryNotesParser
 
     result = parse_txt_file(pdf_txt_file.path, options)
     pdf_txt_file.delete
-
-    #deleteme
-    File.open(RAILS_ROOT + '/spec/fixtures/CorpTax/ENs/HCB 1- EN Vol 3.xml','w') {|f| f.write result }
         
     result
   end
