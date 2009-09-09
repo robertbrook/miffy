@@ -100,6 +100,68 @@ describe ExplanatoryNotesParser do
     end
   end
   
+  describe 'when parsing Volume 3 of the Explanatory Notes for the Corporation Tax Bill' do
+    before(:all) do
+      @parser = ExplanatoryNotesParser.new
+      @result = @parser.parse(RAILS_ROOT + '/spec/fixtures/CorpTax/ENs/HCB1-EN Vol 3.pdf')
+      File.open(RAILS_ROOT + '/spec/fixtures/CorpTax/ENs/HCB1-EN Vol 3.xml','w') {|f| f.write @result }
+    end
+    
+    it 'should add a BillInfo element containing Title and Version' do
+      @result.should have_tag('ENData') do
+        with_tag('Title', :text => 'Corporation Tax Bill')
+        with_tag('Version', :text => '1')
+      end
+    end
+    
+    it 'should handle Part 9 correctly' do
+      @result.should have_tag('Part[Number="9"]') do
+        with_tag('Chapter[Number="1"]') do
+          with_tag('Clause[Number="907"]')
+        end
+        with_tag('Chapter[Number="2"]') do
+          with_tag('Clause[Number="908"]')
+          with_tag('Clause[Number="909"]')
+          with_tag('Clause[Number="910"]')
+        end
+        with_tag('Chapter[Number="3"]') do
+          with_tag('Clause[Number="911"]')
+          with_tag('Clause[Number="912"]')
+          with_tag('Clause[Number="913"]')
+          with_tag('Clause[Number="914"]')
+          with_tag('Clause[Number="915"]')
+          with_tag('Clause[Number="916"]')
+          with_tag('Clause[Number="917"]')
+          with_tag('Clause[Number="919"]')
+          with_tag('Clause[Number="920"]')
+          with_tag('Clause[Number="921"]')
+          with_tag('Clause[Number="923"]')
+        end
+        with_tag('Chapter[Number="4"]') do
+          with_tag('Clause[Number="924"]')
+          with_tag('Clause[Number="925"]')
+        end
+        with_tag('Chapter[Number="5"]') do
+          with_tag('Clause[Number="926"]')
+          with_tag('Clause[Number="927"]')
+          with_tag('Clause[Number="928"]')
+          with_tag('Clause[Number="929"]')
+          with_tag('Clause[Number="930"]')
+          with_tag('Clause[Number="931"]')
+        end
+      end
+    end
+    
+    it 'should have Schedule 1 thru Schedule 4' do
+      @result.should have_tag('ENData') do
+        with_tag('Schedule[Number="1"]')
+        with_tag('Schedule[Number="2"]')
+        with_tag('Schedule[Number="3"]')
+        with_tag('Schedule[Number="4"]')
+      end
+    end
+  end
+  
   describe 'when parsing the Explanatory Notes for the Channel Tunnel Bill' do
     before(:all) do
       @parser = ExplanatoryNotesParser.new
