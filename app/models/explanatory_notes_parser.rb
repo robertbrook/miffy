@@ -18,6 +18,7 @@ class ExplanatoryNotesParser
 
     result = parse_txt_file(pdf_txt_file.path, options)
     pdf_txt_file.delete
+        
     result
   end
 
@@ -71,6 +72,7 @@ class ExplanatoryNotesParser
     
     @blank_row_count = 0
     @page_line_count = 0
+    @schedule_count = 0
   end
 
   def handle_page_headers line
@@ -304,6 +306,14 @@ class ExplanatoryNotesParser
       add "</TextSection>"
       @in_section = false
     end
+    if @in_clause
+      add "</Clause>"
+      @in_clause = false
+    end
+    if @in_part && @schedule_count == 0
+      add "</Part>"
+      @in_part = false
+    end
     if @in_schedule
       add "</Schedule>"
     end
@@ -313,6 +323,7 @@ class ExplanatoryNotesParser
     end
 
     add_section_start('Schedule', number)
+    @schedule_count += 1
     @in_schedule = true
   end
 
@@ -350,10 +361,6 @@ class ExplanatoryNotesParser
       add "</Clause>"
       @in_clause = false
     end
-    if @in_schedule
-      add "</Schedule>"
-      @in_schedule = false
-    end
     if @in_chapter
       add "</Chapter>"
       @in_chapter = false
@@ -365,9 +372,11 @@ class ExplanatoryNotesParser
     if number =~ /([^:]*):*/
       number = $1
     end
-
-    add_section_start('Part', number)
-    @in_part = true
+    
+    unless @in_schedule
+      add_section_start('Part', number)
+      @in_part = true
+    end
   end
 
   def add text
@@ -385,14 +394,14 @@ class ExplanatoryNotesParser
     if @in_clause
       add "</Clause>"
     end
+    if @in_part
+      add "</Part>"
+    end
     if @in_schedule
       add "</Schedule>"
     end
     if @in_chapter
       add "</Chapter>"
-    end
-    if @in_part
-      add "</Part>"
     end
   end
 
