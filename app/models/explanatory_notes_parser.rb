@@ -140,12 +140,14 @@ class ExplanatoryNotesParser
   end
 
   def is_clause_start line
-    if @in_schedule
-      return false
-    end
     if line =~ /^Clause/
       if @page_line_count == 1
-        return true
+        @xml << "\n \n"
+        if @in_schedule
+          return false
+        else
+          return true
+        end
       end
       last_line = @xml.pop
       if last_line.strip == ""
@@ -171,6 +173,10 @@ class ExplanatoryNotesParser
 
   def is_schedule_start line
     if line =~ /^Schedule/
+      if @page_line_count == 1
+        @xml << "\n \n"
+        return true
+      end
       last_line = @xml.pop
       if last_line.strip == ""
         prev_line = @xml.pop
