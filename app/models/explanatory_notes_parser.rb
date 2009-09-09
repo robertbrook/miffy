@@ -18,6 +18,9 @@ class ExplanatoryNotesParser
 
     result = parse_txt_file(pdf_txt_file.path, options)
     pdf_txt_file.delete
+
+    #deleteme
+    File.open(RAILS_ROOT + '/spec/fixtures/CorpTax/ENs/HCB 1- EN Vol 3.xml','w') {|f| f.write result }
         
     result
   end
@@ -140,7 +143,7 @@ class ExplanatoryNotesParser
   end
 
   def is_clause_start line
-    if line =~ /^Clause/
+    if line =~ /^Clause \d/
       if @page_line_count == 1
         @xml << "\n \n"
         if @in_schedule
@@ -172,7 +175,7 @@ class ExplanatoryNotesParser
   end
 
   def is_schedule_start line
-    if line =~ /^Schedule/
+    if line =~ /^Schedule \d/
       if @page_line_count == 1
         @xml << "\n \n"
         return true
@@ -208,7 +211,11 @@ class ExplanatoryNotesParser
 
 
   def is_chapter_start line
-    if line =~ /^Chapter/
+    if line =~ /^Chapter \d+/
+      if @page_line_count == 1
+        @xml << "\n \n"
+        return true
+      end
       last_line = @xml.pop
       if last_line.strip == ""
         @xml << last_line
@@ -228,7 +235,11 @@ class ExplanatoryNotesParser
   end
 
   def is_part_start line
-    if line =~ /^Part/
+    if line =~ /^Part \d+/
+      if @page_line_count == 1
+        @xml << "\n \n"
+        return true
+      end
       last_line = @xml.pop
       if last_line.strip == ""
         prev_line = @xml.pop
@@ -315,14 +326,20 @@ class ExplanatoryNotesParser
       add "</TextSection>"
       @in_section = false
     end
+    
     if @in_clause
       add "</Clause>"
       @in_clause = false
+      if @in_chapter
+        add "</Chapter>"
+        @in_chapter = false
+      end
+      if @in_part
+        add "</Part>"
+        @in_part = false
+      end
     end
-    if @in_part && @schedule_count == 0
-      add "</Part>"
-      @in_part = false
-    end
+
     if @in_schedule
       add "</Schedule>"
     end
@@ -332,7 +349,6 @@ class ExplanatoryNotesParser
     end
 
     add_section_start('Schedule', number)
-    @schedule_count += 1
     @in_schedule = true
   end
 
@@ -362,6 +378,9 @@ class ExplanatoryNotesParser
   end
 
   def handle_part number
+    if @in_schedule
+      return
+    end
     if @in_section
       add "</TextSection>"
       @in_section = false
@@ -376,6 +395,7 @@ class ExplanatoryNotesParser
     end
     if @in_part
       add "</Part>"
+      @in_part = false
     end
     
     if number =~ /([^:]*):*/
@@ -403,14 +423,14 @@ class ExplanatoryNotesParser
     if @in_clause
       add "</Clause>"
     end
+    if @in_chapter
+      add "</Chapter>"
+    end
     if @in_part
       add "</Part>"
     end
     if @in_schedule
       add "</Schedule>"
-    end
-    if @in_chapter
-      add "</Chapter>"
     end
   end
 
