@@ -18,6 +18,9 @@ class ExplanatoryNotesParser
 
     result = parse_txt_file(pdf_txt_file.path, options)
     pdf_txt_file.delete
+
+    #deleteme
+    File.open(RAILS_ROOT + '/spec/fixtures/CorpTax/ENs/HCB 1- EN Vol 3.xml','w') {|f| f.write result }
         
     result
   end
@@ -72,7 +75,7 @@ class ExplanatoryNotesParser
     
     @blank_row_count = 0
     @page_line_count = 0
-    @schedule_count = 0
+    @blank_rows_after_header = 0
   end
 
   def handle_page_headers line
@@ -86,8 +89,8 @@ class ExplanatoryNotesParser
         @in_header = false
         last_line = @xml.pop
         @xml << last_line unless last_line.strip == ""
-        @prev_toc_line = "header"
         @page_line_count = 0
+        @blank_rows_after_header = 0
       else
         set_bill_version(line) if @bill_version == ""
       end
@@ -111,14 +114,12 @@ class ExplanatoryNotesParser
       @in_toc = true
     end
 
-    if @in_toc
-      if line.strip == "" && @prev_toc_line == ""
-        @in_toc = false
-      end
-      if @prev_toc_line == "header"
-        @prev_toc_line = "hack for extra spacing after header!"
+    if @in_toc && line.strip == ""
+      if @blank_rows_after_header < 4
+        @blank_rows_after_header += 1
       else
-        @prev_toc_line = line.strip
+        @in_toc = false
+        @was_toc = true
       end
     end
   end
@@ -137,6 +138,17 @@ class ExplanatoryNotesParser
     elsif line =~ /\[HL Bill (.*)\]/
       @bill_version = $1
     end
+  end
+  
+  def is_en_header line
+    if line.strip =~ /^\(.*\)$/ && line.strip == line.strip.upcase
+      last_line = @xml.pop
+      @xml << last_line
+      if last_line.strip =~ /^EXPLANATORY NOTES/
+        return true
+      end
+    end
+    false
   end
 
   def is_clause_start line
@@ -163,6 +175,10 @@ class ExplanatoryNotesParser
         return true
       end
       if is_subheading(last_line)
+        @xml << last_line
+        return true
+      end
+      if is_en_header(last_line)
         @xml << last_line
         return true
       end
@@ -201,6 +217,10 @@ class ExplanatoryNotesParser
         @xml << last_line
         return true
       end
+      if is_en_header(last_line)
+        @xml << last_line
+        return true
+      end
       @xml << last_line
     end
     false
@@ -223,6 +243,10 @@ class ExplanatoryNotesParser
         return true
       end
       if is_part_start(last_line)
+        @xml << last_line
+        return true
+      end
+      if is_en_header(last_line)
         @xml << last_line
         return true
       end
@@ -253,6 +277,10 @@ class ExplanatoryNotesParser
           @xml << last_line
           return true
         end
+      end
+      if is_en_header(last_line)
+        @xml << last_line
+        return true
       end
       @xml << last_line
     end
@@ -287,6 +315,10 @@ class ExplanatoryNotesParser
       unless prev_line.strip[-1..-1] == ":"
         return true
       end
+    end
+    if is_en_header(last_line)
+      @xml << last_line
+      return true
     end
     @xml << last_line
     false
