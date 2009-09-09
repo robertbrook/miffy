@@ -140,6 +140,9 @@ class ExplanatoryNotesParser
   end
 
   def is_clause_start line
+    if @in_schedule
+      return false
+    end
     if line =~ /^Clause/
       if @page_line_count == 1
         return true
