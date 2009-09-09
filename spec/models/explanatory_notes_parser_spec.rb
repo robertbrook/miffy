@@ -2,6 +2,7 @@ require File.dirname(__FILE__) + '/../spec_helper.rb'
 
 require 'action_controller'
 require 'action_controller/assertions/selector_assertions'
+require 'hpricot'
 include ActionController::Assertions::SelectorAssertions
 
 describe ExplanatoryNotesParser do
@@ -40,13 +41,13 @@ describe ExplanatoryNotesParser do
       end
     end
     
-    it 'should nest Clause 1 inside Part 1' do
+    it 'should handle Part 1 correctly' do
       @result.should have_tag('Part[Number="1"]') do
         with_tag('Clause[Number="1"]')
       end
     end
     
-    it 'should nest Chapter 1 and its Clauses inside Part 2' do
+    it 'should handle Part 2 correctly' do
       @result.should have_tag('Part[Number="2"]') do
         with_tag('Chapter[Number="1"]') do
           with_tag('Clause[Number="2"]')
@@ -57,7 +58,45 @@ describe ExplanatoryNotesParser do
           with_tag('Clause[Number="7"]')
           with_tag('Clause[Number="8"]')
         end
+        with_tag('Chapter[Number="2"]') do
+          with_tag('Clause[Number="9"]')
+          with_tag('Clause[Number="10"]')
+          with_tag('Clause[Number="11"]')
+          with_tag('Clause[Number="12"]')
+        end
+        with_tag('Chapter[Number="3"]') do
+          with_tag('Clause[Number="13"]')
+          with_tag('Clause[Number="14"]')
+          with_tag('Clause[Number="15"]')
+          with_tag('Clause[Number="16"]')
+          with_tag('Clause[Number="17"]')
+          with_tag('Clause[Number="18"]')
+        end
+        with_tag('Chapter[Number="4"]') do
+          with_tag('Clause[Number="19"]')
+          with_tag('Clause[Number="20"]')
+          with_tag('Clause[Number="21"]')
+          with_tag('Clause[Number="22"]')
+          with_tag('Clause[Number="23"]')
+          with_tag('Clause[Number="24"]')
+          with_tag('Clause[Number="25"]')
+          with_tag('Clause[Number="26"]')
+          with_tag('Clause[Number="27"]')
+          with_tag('Clause[Number="28"]')
+          with_tag('Clause[Number="29"]')
+          with_tag('Clause[Number="30"]')
+          with_tag('Clause[Number="31"]')
+          with_tag('Clause[Number="32"]')
+        end
+        with_tag('Chapter[Number="5"]') do
+          with_tag('Clause[Number="33"]')
+        end
       end
+    end
+    
+    it 'should create the expected number of Clauses' do
+      doc = Hpricot.XML @result
+      (doc/'Clause').count.should == 476
     end
   end
   

@@ -18,9 +18,6 @@ class ExplanatoryNotesParser
 
     result = parse_txt_file(pdf_txt_file.path, options)
     pdf_txt_file.delete
-
-    #deleteme
-    File.open(RAILS_ROOT + '/spec/fixtures/CorpTax/ENs/HCB 1- EN Vol 3.xml','w') {|f| f.write result }
         
     result
   end
@@ -143,7 +140,7 @@ class ExplanatoryNotesParser
   end
 
   def is_clause_start line
-    if line =~ /^Clause \d/
+    if line =~ /^Clause \d+\S*(: .*)?$/
       if @page_line_count == 1
         @xml << "\n \n"
         if @in_schedule
@@ -175,7 +172,7 @@ class ExplanatoryNotesParser
   end
 
   def is_schedule_start line
-    if line =~ /^Schedule \d/
+    if line =~ /^Schedule \d+\S*(: .*)?$/
       if @page_line_count == 1
         @xml << "\n \n"
         return true
@@ -211,7 +208,7 @@ class ExplanatoryNotesParser
 
 
   def is_chapter_start line
-    if line =~ /^Chapter \d+/
+    if line =~ /^Chapter \d+\S*(: .*)?$/
       if @page_line_count == 1
         @xml << "\n \n"
         return true
@@ -235,7 +232,7 @@ class ExplanatoryNotesParser
   end
 
   def is_part_start line
-    if line =~ /^Part \d+/
+    if line =~ /^Part \d+\S*(: .*)?$/
       if @page_line_count == 1
         @xml << "\n \n"
         return true
@@ -269,16 +266,16 @@ class ExplanatoryNotesParser
     if line.strip =~ /^\d*\./
       return false
     end
-    if line.strip =~ /^Part /
+    if line.strip =~ /^Part \d+\S*(: .*)?$/
       return false
     end
-    if line.strip =~ /^Clause /
+    if line.strip =~ /^Clause \d+\S*(: .*)?$/
       return false
     end
-    if line.strip =~ /^Schedule /
+    if line.strip =~ /^Schedule \d+\S*(: .*)?$/
       return false
     end
-    if line.strip =~ /^Chapter /
+    if line.strip =~ /^Chapter \d+\S*(: .*)?$/
       return false
     end
     
