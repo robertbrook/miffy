@@ -50,11 +50,8 @@ class MifToHtmlParser
   end
 
   def generate_html doc, options
-    if options[:ens] == 'interleave'
-      @interleave = true
-    else
-      @interleave = false
-    end
+    @interleave = options[:ens] == 'interleave'
+
     if options[:body_only]
       @html = []
       doc_to_html(doc)
@@ -247,24 +244,25 @@ class MifToHtmlParser
     add_html_element 'div', node
   end
 
+  def explanatory_note
+    @interleave && (note = @bill.find_note_for_clause_number(@clause_number))
+  end
+
   def handle_clause node
     if node['HardReference'] && @in_clauses
       @clause_number = node.at('PgfNumString').inner_text.strip
     end
     clause_id = node['HardReference'].to_s.strip
+
     unless @clause_number.blank? || clause_id.blank?
       clause_name = "clause#{@clause_number}"
       @clause_anchor_start = %Q|<a id="clause_#{clause_id}" name="#{clause_name}" href="##{clause_name}">|
+
       add %Q|<div class="#{css_class(node)}" id="#{node['id']}">|
       node_children_to_html(node)
-
-      if @interleave
-        explanatory_note = @bill.note_by_clauses.find_by_clause_number @clause_number
-        if explanatory_note
-          add %Q|<div class="explanatory_note">#{explanatory_note.note_text.gsub("\n", "<br />").gsub("  ", "")}</div>|
-        end
+      if (note = explanatory_note)
+        add %Q|<div class="explanatory_note">#{note.html_note_text}</div>|
       end
-
       add "</div>"
     else
       add_html_element 'div', node

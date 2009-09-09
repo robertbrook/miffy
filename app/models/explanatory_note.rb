@@ -5,4 +5,8 @@ class ExplanatoryNote < ActiveRecord::Base
 
   validates_presence_of :note_text
 
+  def html_note_text
+    note_text.gsub("\n", "<br />").gsub("  ", "")
+  end
+
 end
