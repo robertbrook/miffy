@@ -47,6 +47,17 @@ describe MifParserUtils do
 |
     end
 
+    it 'should have toggle link around clause title when explanatory note present' do
+      text = %Q|          %span.ClauseTitle_text<
+            Reports on implementation of Law Commission proposals
+      #1112590en.ClauseTextWithExplanatoryNote
+|
+      @utils.format_haml(text).should == %Q|          %span.ClauseTitle_text<
+            = link_to_function "Reports on implementation of Law Commission proposals", "$('1112590en').toggle()"
+      #1112590en.ClauseTextWithExplanatoryNote
+|
+    end
+
     it 'should expand line number span' do
       text = %Q|%span#1043312.Line
                 line

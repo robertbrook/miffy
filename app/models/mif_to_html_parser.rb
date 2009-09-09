@@ -50,7 +50,7 @@ class MifToHtmlParser
   end
 
   def generate_html doc, options
-    @interleave = options[:ens] == 'interleave'
+    @interleave = (options[:ens] == 'interleave')
 
     if options[:body_only]
       @html = []
@@ -244,7 +244,7 @@ class MifToHtmlParser
     add_html_element 'div', node
   end
 
-  def explanatory_note
+  def find_explanatory_note
     @interleave && (note = @bill.find_note_for_clause_number(@clause_number))
   end
 
@@ -258,15 +258,28 @@ class MifToHtmlParser
       clause_name = "clause#{@clause_number}"
       @clause_anchor_start = %Q|<a id="clause_#{clause_id}" name="#{clause_name}" href="##{clause_name}">|
 
+      @explanatory_note = find_explanatory_note
+
       add %Q|<div class="#{css_class(node)}" id="#{node['id']}">|
       node_children_to_html(node)
-      if (note = explanatory_note)
-        add %Q|<div class="explanatory_note">#{note.html_note_text}</div>|
+      if @explanatory_note
+        add %Q|<div class="explanatory_note">#{@explanatory_note.html_note_text}</div>|
+        add "</div>"
       end
+
       add "</div>"
+
+      @explanatory_note = nil
     else
       add_html_element 'div', node
     end
+  end
+
+  def handle_clause_text node
+    if @explanatory_note
+      add %Q|<div class="ClauseTextWithExplanatoryNote" id="#{node['id']}en">|
+    end
+    add_html_element 'div', node
   end
 
   def handle_pgf_num_string node
@@ -435,6 +448,8 @@ class MifToHtmlParser
         handle_sub_para_variants node
       when /^EndRule$/
         #ignore
+      when 'ClauseText'
+        handle_clause_text node
       when DIV_RE
         add_html_element 'div', node
       when SPAN_RE
