@@ -15,6 +15,15 @@ class ExplanatoryNote < ActiveRecord::Base
       if lines.first[/^\s*Clause (\d+|\d+:.+)\s*$/]
         result << '<span class="NoteClauseTitle">Clause ' + $1 + '</span>'
         make_paragraph result, lines, adj=1
+      elsif lines.size > 1 && lines[1][/^\s*Clause (\d+|\d+:.+)\s*$/]
+        result = result << '<span class="NoteClauseTitle">Clause ' + lines[0] + '<br />' + lines[1] + '</span>'
+        make_paragraph result, lines, adj=2
+      elsif lines.first[/^\s*Schedule (\d+|\d+:.+)\s*$/]
+        result << '<span class="NoteScheduleTitle">Schedule ' + $1 + '</span>'
+        make_paragraph result, lines, adj=1
+      elsif lines.size > 1 && lines[1][/^\s*Schedule (\d+|\d+:.+)\s*$/]
+        result = result << '<span class="NoteScheduleTitle">Schedule ' + lines[0] + '<br />' + lines[1] + '</span>'
+        make_paragraph result, lines, adj=2
       else
         make_paragraph result, lines
       end
