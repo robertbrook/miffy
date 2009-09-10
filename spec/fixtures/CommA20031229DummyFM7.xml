@@ -861,7 +861,7 @@
 <SubSection id="1053064">
 <SubSection_PgfTag id="1053065"><PgfNumString><PgfNumString_1>(3)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="29"></ParaLineStart>After section 1 insert—</SubSection_text></SubSection_PgfTag>
 <Amendment id="1053068"><Clause id="1053071"><ClauseTitle id="1053074">
-<ClauseTitle_PgfTag id="1053076"><PgfNumString></PgfNumString><ClauseTitle_text><ParaLineStart LineNum="30"></ParaLineStart>“1A Reduction of age of majority in respect of child trust funds</ClauseTitle_text></ClauseTitle_PgfTag>
+<ClauseTitle_PgfTag id="1053076"><PgfNumString></PgfNumString><ActClauseTitle_text><ParaLineStart LineNum="30"></ParaLineStart>“1A Reduction of age of majority in respect of child trust funds</ActClauseTitle_text></ClauseTitle_PgfTag>
 </ClauseTitle><ClauseText id="1053079"><SubSection id="1053082">
 <SubSection_PgfTag id="1053083"><PgfNumString><PgfNumString_1>(1)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="31"></ParaLineStart>For the purposes of any matter specified in subsection (2) which relates <ParaLineStart LineNum="32"></ParaLineStart>to a contract entered into in respect of a child trust fund, a person shall <ParaLineStart LineNum="33"></ParaLineStart>attain full age on attaining the age of sixteen.</SubSection_text></SubSection_PgfTag>
 </SubSection>

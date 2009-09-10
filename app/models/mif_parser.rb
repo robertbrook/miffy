@@ -420,6 +420,7 @@ class MifParser
 
   def handle_etag element
     @e_tag = clean(element)
+    @in_amendment = true if (@e_tag == 'Amendment')
     add_paraline_start if @e_tag[/^(Bpara|Stageheader|Shorttitle|Given|CommitteeShorttitle)$/]
     flush_strings unless @e_tag == 'Italic' || @e_tag == 'Citation'
     @etags_stack << @e_tag
@@ -473,6 +474,8 @@ class MifParser
 
   def handle_element_end element
     tag = @etags_stack.last
+    @in_amendment = false if (tag == 'Amendment')
+
     if @suffix && @suffix != ' ['
       add_to_last_line @suffix
       @suffix = nil
@@ -612,7 +615,8 @@ class MifParser
       wrap_text_in_element = (@last_was_pdf_num_string || text_tag == "ResolutionText") && !text[/^<(PageStart)/] && !is_amendment_reference_part?(text_tag) && !text[/ListItem/]
 
       if wrap_text_in_element
-        last_line += "<#{text_tag}_text>#{text}</#{text_tag}_text>"
+        prefix = (@in_amendment && text_tag.starts_with?('Clause')) ? 'Act' : ''
+        last_line += "<#{prefix}#{text_tag}_text>#{text}</#{prefix}#{text_tag}_text>"
       else
         last_line += text
       end
@@ -653,6 +657,7 @@ class MifParser
     @pgf_tag = nil
     @e_tag = nil
     @amendment_reference = nil
+    @in_amendment = false
     @in_paragraph = false
     @prefix_end = false
     @suffix = nil

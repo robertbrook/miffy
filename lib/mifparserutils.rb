@@ -7,21 +7,21 @@ module MifParserUtils
   COMPRESS_WHITESPACE_2 = /(^\s*(#|%).+(PgfNumString|\w+_text|PageStart|Number|Page|Line|STText|Sponsor|AmendmentNumber_PgfTag|Given|Stageheader|Shorttitle))\n/
   COMPRESS_WHITESPACE_3 = /(^\s*(.BillTitle|%a.+\}))\n/
 
-  TOGGLE_SHOW_REGEXP = Regexp.new('ClauseTitle_text<\n(\s+)([^\n]+)\n(\s+)\#(\d+)\.ClauseText', Regexp::MULTILINE)
-  TOGGLE_SHOW_REGEXP_2 = Regexp.new('ClauseTitle_text<\n(\s+)([^\n]+)\n(\s+)\#(\d+en)\.ClauseTextWithExplanatoryNote', Regexp::MULTILINE)
+  TOGGLE_SHOW_REGEXP = Regexp.new('%span\.ClauseTitle_text<\n(\s+)([^\n]+)\n(\s+)\#(\d+)\.ClauseText', Regexp::MULTILINE)
+  TOGGLE_SHOW_REGEXP_2 = Regexp.new('%span\.ClauseTitle_text<\n(\s+)([^\n]+)\n(\s+)\#(\d+en)\.ClauseTextWithExplanatoryNote', Regexp::MULTILINE)
 
   COMPRESS_WHITESPACE_4 = Regexp.new('(%a\{ :name => "[^"]+" \})<>\n(\s+#\d+)', Regexp::MULTILINE)
   AMEND_REF = Regexp.new('%a.AmendmentReference\{ :href => "([^"]+)" \}<')
 
   def format_haml haml, clauses_file_name=nil
-    haml.gsub!(NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX,  '\1\2 <span class="\4_number">\6</span>\8')
+    haml = haml.gsub(NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX,  '\1\2 <span class="\4_number">\6</span>\8')
     haml.gsub!(NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX_2,  '\1\2 <span class="\4_number">\6</span>' + "\n")
     haml.gsub!(COMPRESS_WHITESPACE, '\1' + "<>\n")
     haml.gsub!(COMPRESS_WHITESPACE_2, '\1' + "<\n")
     haml.gsub!(COMPRESS_WHITESPACE_3, '\1' + "<\n")
 
-    haml.gsub!(TOGGLE_SHOW_REGEXP, 'ClauseTitle_text<' + "\n" + '\1= link_to_function "\2", "$(\'\4\').toggle()"' + "\n" + '\3#\4.ClauseText')
-    haml.gsub!(TOGGLE_SHOW_REGEXP_2, 'ClauseTitle_text<' + "\n" + '\1= link_to_function "\2", "$(\'\4\').toggle()"' + "\n" + '\3#\4.ClauseTextWithExplanatoryNote')
+    haml.gsub!(TOGGLE_SHOW_REGEXP, '%span.ClauseTitle_text<' + "\n" + '\1= link_to_function "\2", "$(\'\4\').toggle()"' + "\n" + '\3#\4.ClauseText')
+    haml.gsub!(TOGGLE_SHOW_REGEXP_2, '%span.ClauseTitle_text<' + "\n" + '\1= link_to_function "\2", "$(\'\4\').toggle()"' + "\n" + '\3#\4.ClauseTextWithExplanatoryNote')
 
     haml.gsub!(COMPRESS_WHITESPACE_4, '\1' + "\n" + '\2')
 
