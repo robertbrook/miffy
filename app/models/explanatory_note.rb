@@ -42,7 +42,7 @@ class ExplanatoryNote < ActiveRecord::Base
       list_item = false
 
       if first_line[/• /]
-        first_line = first_line.gsub("• ", "<li>") + "</li>"
+        first_line = first_line.gsub("• ", "<li>")
         list_item = true
       end
 
