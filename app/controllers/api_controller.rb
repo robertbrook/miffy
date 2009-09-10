@@ -5,6 +5,7 @@ class ApiController < ApplicationController
   def clause_note
     @error = nil
     @clause_text = ""
+    @clause_html = ""
     
     bill_id = params[:bill_id]
     clause_num = params[:clause]
@@ -22,6 +23,7 @@ class ApiController < ApplicationController
           @error = "Clause not found"
         else
           @clause_text = clause.note_text
+          @clause_html = clause.html_note_text
         end
       end
     end
@@ -40,6 +42,7 @@ class ApiController < ApplicationController
   def schedule_note
     @error = nil
     @schedule_text = ""
+    @schedule_html = ""
     
     bill_id = params[:bill_id]
     schedule_num = params[:schedule]
@@ -57,6 +60,7 @@ class ApiController < ApplicationController
           @error = "Schedule not found"
         else
           @schedule_text = schedule.note_text
+          @schedule_html = schedule.html_note_text
         end
       end
     end
