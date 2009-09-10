@@ -6,6 +6,7 @@ class ExplanatoryNote < ActiveRecord::Base
   validates_presence_of :note_text
 
   def html_note_text
+    @in_list = false
     tokens = note_text.gsub("\r","").gsub(/\n\s+\n/,"\n\n").split("\n\n")
 
     html = tokens.collect do |token|
@@ -38,16 +39,50 @@ class ExplanatoryNote < ActiveRecord::Base
 
     def make_paragraph html, lines, adj=0
       first_line = lines[0+adj].strip
+      list_item = false
+
+      if first_line[/• /]
+        first_line = first_line.gsub("• ", "<li>") + "</li>"
+        list_item = true
+      end
 
       if (lines.size-adj) == 1
-        html << "<p>#{first_line}</p>"
+        if list_item
+          unless @in_list
+            html << "<ul>"
+            @in_list = true
+          end
+          html << first_line
+        else
+          if @in_list && first_line.strip != ""
+            html << "</ul>"
+            @in_list = false
+          end
+          html << "<p>#{first_line}</p>"
+        end
       else
-        html << "<p>#{first_line}"
+        if list_item
+          unless @in_list
+            html << "<ul>"
+            @in_list = true
+          end
+          html << first_line
+        else
+          if @in_list
+            html << "</ul>"
+            @in_list = false
+          end
+          html << "<p>#{first_line}"
+        end
         if lines.size > 2+adj
           rest = lines[(1+adj)..(lines.size-2)]
           rest.each {|line| html << line.strip}
         end
-        html << "#{lines.last.strip}</p>"
+        if list_item
+          html << "#{lines.last.strip}</li>"
+        else
+          html << "#{lines.last.strip}</p>"
+        end
       end
     end
 
