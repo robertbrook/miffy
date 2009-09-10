@@ -2,6 +2,7 @@ require File.dirname(__FILE__) + '/../spec_helper.rb'
 
 require 'action_controller'
 require 'action_controller/assertions/selector_assertions'
+require 'hpricot'
 include ActionController::Assertions::SelectorAssertions
 
 describe ExplanatoryNotesParser do
@@ -40,13 +41,13 @@ describe ExplanatoryNotesParser do
       end
     end
     
-    it 'should nest Clause 1 inside Part 1' do
+    it 'should handle Part 1 correctly' do
       @result.should have_tag('Part[Number="1"]') do
         with_tag('Clause[Number="1"]')
       end
     end
     
-    it 'should nest Chapter 1 and its Clauses inside Part 2' do
+    it 'should handle Part 2 correctly' do
       @result.should have_tag('Part[Number="2"]') do
         with_tag('Chapter[Number="1"]') do
           with_tag('Clause[Number="2"]')
@@ -57,6 +58,106 @@ describe ExplanatoryNotesParser do
           with_tag('Clause[Number="7"]')
           with_tag('Clause[Number="8"]')
         end
+        with_tag('Chapter[Number="2"]') do
+          with_tag('Clause[Number="9"]')
+          with_tag('Clause[Number="10"]')
+          with_tag('Clause[Number="11"]')
+          with_tag('Clause[Number="12"]')
+        end
+        with_tag('Chapter[Number="3"]') do
+          with_tag('Clause[Number="13"]')
+          with_tag('Clause[Number="14"]')
+          with_tag('Clause[Number="15"]')
+          with_tag('Clause[Number="16"]')
+          with_tag('Clause[Number="17"]')
+          with_tag('Clause[Number="18"]')
+        end
+        with_tag('Chapter[Number="4"]') do
+          with_tag('Clause[Number="19"]')
+          with_tag('Clause[Number="20"]')
+          with_tag('Clause[Number="21"]')
+          with_tag('Clause[Number="22"]')
+          with_tag('Clause[Number="23"]')
+          with_tag('Clause[Number="24"]')
+          with_tag('Clause[Number="25"]')
+          with_tag('Clause[Number="26"]')
+          with_tag('Clause[Number="27"]')
+          with_tag('Clause[Number="28"]')
+          with_tag('Clause[Number="29"]')
+          with_tag('Clause[Number="30"]')
+          with_tag('Clause[Number="31"]')
+          with_tag('Clause[Number="32"]')
+        end
+        with_tag('Chapter[Number="5"]') do
+          with_tag('Clause[Number="33"]')
+        end
+      end
+    end
+    
+    it 'should create the expected number of Clauses' do
+      doc = Hpricot.XML @result
+      (doc/'Clause').count.should == 476
+    end
+  end
+  
+  describe 'when parsing Volume 3 of the Explanatory Notes for the Corporation Tax Bill' do
+    before(:all) do
+      @parser = ExplanatoryNotesParser.new
+      @result = @parser.parse(RAILS_ROOT + '/spec/fixtures/CorpTax/ENs/HCB1-EN Vol 3.pdf')
+      File.open(RAILS_ROOT + '/spec/fixtures/CorpTax/ENs/HCB1-EN Vol 3.xml','w') {|f| f.write @result }
+    end
+    
+    it 'should add a BillInfo element containing Title and Version' do
+      @result.should have_tag('ENData') do
+        with_tag('Title', :text => 'Corporation Tax Bill')
+        with_tag('Version', :text => '1')
+      end
+    end
+    
+    it 'should handle Part 9 correctly' do
+      @result.should have_tag('Part[Number="9"]') do
+        with_tag('Chapter[Number="1"]') do
+          with_tag('Clause[Number="907"]')
+        end
+        with_tag('Chapter[Number="2"]') do
+          with_tag('Clause[Number="908"]')
+          with_tag('Clause[Number="909"]')
+          with_tag('Clause[Number="910"]')
+        end
+        with_tag('Chapter[Number="3"]') do
+          with_tag('Clause[Number="911"]')
+          with_tag('Clause[Number="912"]')
+          with_tag('Clause[Number="913"]')
+          with_tag('Clause[Number="914"]')
+          with_tag('Clause[Number="915"]')
+          with_tag('Clause[Number="916"]')
+          with_tag('Clause[Number="917"]')
+          with_tag('Clause[Number="919"]')
+          with_tag('Clause[Number="920"]')
+          with_tag('Clause[Number="921"]')
+          with_tag('Clause[Number="923"]')
+        end
+        with_tag('Chapter[Number="4"]') do
+          with_tag('Clause[Number="924"]')
+          with_tag('Clause[Number="925"]')
+        end
+        with_tag('Chapter[Number="5"]') do
+          with_tag('Clause[Number="926"]')
+          with_tag('Clause[Number="927"]')
+          with_tag('Clause[Number="928"]')
+          with_tag('Clause[Number="929"]')
+          with_tag('Clause[Number="930"]')
+          with_tag('Clause[Number="931"]')
+        end
+      end
+    end
+    
+    it 'should have Schedule 1 thru Schedule 4' do
+      @result.should have_tag('ENData') do
+        with_tag('Schedule[Number="1"]')
+        with_tag('Schedule[Number="2"]')
+        with_tag('Schedule[Number="3"]')
+        with_tag('Schedule[Number="4"]')
       end
     end
   end

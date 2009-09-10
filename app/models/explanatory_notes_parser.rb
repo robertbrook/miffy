@@ -18,6 +18,7 @@ class ExplanatoryNotesParser
 
     result = parse_txt_file(pdf_txt_file.path, options)
     pdf_txt_file.delete
+        
     result
   end
 
@@ -67,8 +68,11 @@ class ExplanatoryNotesParser
     @in_footer = false
     @in_toc = false
     
+    @in_cover_page = false
+    
     @blank_row_count = 0
     @page_line_count = 0
+    @blank_rows_after_header = 0
   end
 
   def handle_page_headers line
@@ -82,8 +86,8 @@ class ExplanatoryNotesParser
         @in_header = false
         last_line = @xml.pop
         @xml << last_line unless last_line.strip == ""
-        @prev_toc_line = "header"
         @page_line_count = 0
+        @blank_rows_after_header = 0
       else
         set_bill_version(line) if @bill_version == ""
       end
@@ -107,14 +111,12 @@ class ExplanatoryNotesParser
       @in_toc = true
     end
 
-    if @in_toc
-      if line.strip == "" && @prev_toc_line == ""
-        @in_toc = false
-      end
-      if @prev_toc_line == "header"
-        @prev_toc_line = "hack for extra spacing after header!"
+    if @in_toc && line.strip == ""
+      if @blank_rows_after_header < 4
+        @blank_rows_after_header += 1
       else
-        @prev_toc_line = line.strip
+        @in_toc = false
+        @was_toc = true
       end
     end
   end
@@ -134,11 +136,27 @@ class ExplanatoryNotesParser
       @bill_version = $1
     end
   end
+  
+  def is_en_header line
+    if line.strip =~ /^\(.*\)$/ && line.strip == line.strip.upcase
+      last_line = @xml.pop
+      @xml << last_line
+      if last_line.strip =~ /^EXPLANATORY NOTES/
+        return true
+      end
+    end
+    false
+  end
 
   def is_clause_start line
-    if line =~ /^Clause/
+    if line =~ /^Clause \d+\S*(: .*)?$/
       if @page_line_count == 1
-        return true
+        @xml << "\n \n"
+        if @in_schedule
+          return false
+        else
+          return true
+        end
       end
       last_line = @xml.pop
       if last_line.strip == ""
@@ -157,13 +175,21 @@ class ExplanatoryNotesParser
         @xml << last_line
         return true
       end
+      if is_en_header(last_line)
+        @xml << last_line
+        return true
+      end
       @xml << last_line
     end
     false
   end
 
   def is_schedule_start line
-    if line =~ /^Schedule/
+    if line =~ /^Schedule \d+\S*(: .*)?$/
+      if @page_line_count == 1
+        @xml << "\n \n"
+        return true
+      end
       last_line = @xml.pop
       if last_line.strip == ""
         prev_line = @xml.pop
@@ -188,6 +214,10 @@ class ExplanatoryNotesParser
         @xml << last_line
         return true
       end
+      if is_en_header(last_line)
+        @xml << last_line
+        return true
+      end
       @xml << last_line
     end
     false
@@ -195,7 +225,11 @@ class ExplanatoryNotesParser
 
 
   def is_chapter_start line
-    if line =~ /^Chapter/
+    if line =~ /^Chapter \d+\S*(: .*)?$/
+      if @page_line_count == 1
+        @xml << "\n \n"
+        return true
+      end
       last_line = @xml.pop
       if last_line.strip == ""
         @xml << last_line
@@ -209,13 +243,21 @@ class ExplanatoryNotesParser
         @xml << last_line
         return true
       end
+      if is_en_header(last_line)
+        @xml << last_line
+        return true
+      end
       @xml << last_line
     end
     false
   end
 
   def is_part_start line
-    if line =~ /^Part/
+    if line =~ /^Part \d+\S*(: .*)?$/
+      if @page_line_count == 1
+        @xml << "\n \n"
+        return true
+      end
       last_line = @xml.pop
       if last_line.strip == ""
         prev_line = @xml.pop
@@ -233,6 +275,10 @@ class ExplanatoryNotesParser
           return true
         end
       end
+      if is_en_header(last_line)
+        @xml << last_line
+        return true
+      end
       @xml << last_line
     end
     false
@@ -245,16 +291,16 @@ class ExplanatoryNotesParser
     if line.strip =~ /^\d*\./
       return false
     end
-    if line.strip =~ /^Part /
+    if line.strip =~ /^Part \d+\S*(: .*)?$/
       return false
     end
-    if line.strip =~ /^Clause /
+    if line.strip =~ /^Clause \d+\S*(: .*)?$/
       return false
     end
-    if line.strip =~ /^Schedule /
+    if line.strip =~ /^Schedule \d+\S*(: .*)?$/
       return false
     end
-    if line.strip =~ /^Chapter /
+    if line.strip =~ /^Chapter \d+\S*(: .*)?$/
       return false
     end
     
@@ -266,6 +312,10 @@ class ExplanatoryNotesParser
       unless prev_line.strip[-1..-1] == ":"
         return true
       end
+    end
+    if is_en_header(last_line)
+      @xml << last_line
+      return true
     end
     @xml << last_line
     false
@@ -302,6 +352,20 @@ class ExplanatoryNotesParser
       add "</TextSection>"
       @in_section = false
     end
+    
+    if @in_clause
+      add "</Clause>"
+      @in_clause = false
+      if @in_chapter
+        add "</Chapter>"
+        @in_chapter = false
+      end
+      if @in_part
+        add "</Part>"
+        @in_part = false
+      end
+    end
+
     if @in_schedule
       add "</Schedule>"
     end
@@ -340,6 +404,9 @@ class ExplanatoryNotesParser
   end
 
   def handle_part number
+    if @in_schedule
+      return
+    end
     if @in_section
       add "</TextSection>"
       @in_section = false
@@ -348,24 +415,23 @@ class ExplanatoryNotesParser
       add "</Clause>"
       @in_clause = false
     end
-    if @in_schedule
-      add "</Schedule>"
-      @in_schedule = false
-    end
     if @in_chapter
       add "</Chapter>"
       @in_chapter = false
     end
     if @in_part
       add "</Part>"
+      @in_part = false
     end
     
     if number =~ /([^:]*):*/
       number = $1
     end
-
-    add_section_start('Part', number)
-    @in_part = true
+    
+    unless @in_schedule
+      add_section_start('Part', number)
+      @in_part = true
+    end
   end
 
   def add text
@@ -383,14 +449,14 @@ class ExplanatoryNotesParser
     if @in_clause
       add "</Clause>"
     end
-    if @in_schedule
-      add "</Schedule>"
-    end
     if @in_chapter
       add "</Chapter>"
     end
     if @in_part
       add "</Part>"
+    end
+    if @in_schedule
+      add "</Schedule>"
     end
   end
 
@@ -408,6 +474,32 @@ class ExplanatoryNotesParser
     unless @doc_started
       add "<BillInfo><Title>#{@bill_title}</Title><Version>#{@bill_version}</Version></BillInfo>"
       @doc_started = true
+    end
+  end
+
+  def check_for_cover_page line
+    #if the current line matches the bill name, we've hit the cover
+    if @bill_title.upcase == line.strip
+      @in_cover_page = true
+    elsif @bill_title.upcase.include?(line.strip) && line.strip != "" 
+      #check for a 2 line title
+      last_line = @xml.pop
+      if @bill_title.upcase.include?(last_line.strip) && last_line.strip != ""
+        if last_line.strip + ' ' + line.strip == @bill_title.upcase
+          @in_cover_page = true
+        elsif @bill_title.upcase.include?(last_line.strip) && last_line.strip != ""
+          #check for a 3 line title
+          last_line2 = @xml.pop
+          if last_line2.strip + ' ' + last_line.strip + ' ' + line.strip == @bill_title.upcase
+            @in_cover_page = true
+          else
+            @xml << last_line2
+            @xml << last_line
+          end
+        end
+      else
+        @xml << last_line
+      end    
     end
   end
 
@@ -441,10 +533,14 @@ class ExplanatoryNotesParser
         @in_section = true
       end
 
+      if @in_clause || @in_schedule
+        check_for_cover_page(line)
+      end
+
       text = HTMLEntities.new.encode(line, :decimal)
       text = strip_control_chars(text)
       
-      add "#{text}\n" unless @blank_row_count > 1
+      add "#{text}\n" unless @blank_row_count > 1 || @in_cover_page
       @page_line_count += 1
     end
   end

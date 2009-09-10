@@ -6,7 +6,10 @@ module MifParserUtils
   COMPRESS_WHITESPACE = /(Letter|FrameData|Dropcap|SmallCaps|Bold|Italic|\w+_number|PgfNumString_\d|(clause_.+\})|(name.+\})|Abt\d)\n/
   COMPRESS_WHITESPACE_2 = /(^\s*(#|%).+(PgfNumString|\w+_text|PageStart|Number|Page|Line|STText|Sponsor|AmendmentNumber_PgfTag|Given|Stageheader|Shorttitle))\n/
   COMPRESS_WHITESPACE_3 = /(^\s*(.BillTitle|%a.+\}))\n/
+
   TOGGLE_SHOW_REGEXP = Regexp.new('ClauseTitle_text<\n(\s+)([^\n]+)\n(\s+)\#(\d+)\.ClauseText', Regexp::MULTILINE)
+  TOGGLE_SHOW_REGEXP_2 = Regexp.new('ClauseTitle_text<\n(\s+)([^\n]+)\n(\s+)\#(\d+en)\.ClauseTextWithExplanatoryNote', Regexp::MULTILINE)
+
   COMPRESS_WHITESPACE_4 = Regexp.new('(%a\{ :name => "[^"]+" \})<>\n(\s+#\d+)', Regexp::MULTILINE)
   AMEND_REF = Regexp.new('%a.AmendmentReference\{ :href => "([^"]+)" \}<')
 
@@ -18,6 +21,7 @@ module MifParserUtils
     haml.gsub!(COMPRESS_WHITESPACE_3, '\1' + "<\n")
 
     haml.gsub!(TOGGLE_SHOW_REGEXP, 'ClauseTitle_text<' + "\n" + '\1= link_to_function "\2", "$(\'\4\').toggle()"' + "\n" + '\3#\4.ClauseText')
+    haml.gsub!(TOGGLE_SHOW_REGEXP_2, 'ClauseTitle_text<' + "\n" + '\1= link_to_function "\2", "$(\'\4\').toggle()"' + "\n" + '\3#\4.ClauseTextWithExplanatoryNote')
 
     haml.gsub!(COMPRESS_WHITESPACE_4, '\1' + "\n" + '\2')
 
