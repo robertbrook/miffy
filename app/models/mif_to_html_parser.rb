@@ -158,6 +158,7 @@ class MifToHtmlParser
   def doc_to_html(doc)
     @in_clauses = false
     @in_paragraph = false
+    @in_amendment = false
     @in_hyperlink = false
     @para_line_anchor = nil
     node_children_to_html(doc.root)
@@ -254,29 +255,33 @@ class MifToHtmlParser
     end
     clause_id = node['HardReference'].to_s.strip
 
+    @in_amendment = (node.parent.name == 'Amendment')
+
     unless @clause_number.blank? || clause_id.blank?
       clause_name = "clause#{@clause_number}"
       @clause_anchor_start = %Q|<a id="clause_#{clause_id}" name="#{clause_name}" href="##{clause_name}">|
 
-      @explanatory_note = find_explanatory_note
+      @explanatory_note = find_explanatory_note unless @in_amendment
 
       add %Q|<div class="#{css_class(node)}" id="#{node['id']}">|
       node_children_to_html(node)
-      if @explanatory_note
+      if @explanatory_note && !@in_amendment
         add %Q|<div class="explanatory_note">#{@explanatory_note.html_note_text}</div>|
         add "</div>"
       end
 
       add "</div>"
 
-      @explanatory_note = nil
+      @explanatory_note = nil unless @in_amendment
     else
       add_html_element 'div', node
     end
+
+    @in_amendment = false
   end
 
   def handle_clause_text node
-    if @explanatory_note
+    if @explanatory_note && !@in_amendment
       add %Q|<div class="ClauseTextWithExplanatoryNote" id="#{node['id']}en">|
     end
     add_html_element 'div', node
