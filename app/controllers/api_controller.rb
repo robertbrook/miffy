@@ -42,6 +42,7 @@ class ApiController < ApplicationController
   def schedule_note
     @error = nil
     @schedule_text = ""
+    @schedule_html = ""
     
     bill_id = params[:bill_id]
     schedule_num = params[:schedule]
@@ -59,6 +60,7 @@ class ApiController < ApplicationController
           @error = "Schedule not found"
         else
           @schedule_text = schedule.note_text
+          @schedule_html = schedule.html_note_text
         end
       end
     end
