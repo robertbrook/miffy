@@ -66,17 +66,17 @@ class ExplanatoryNote < ActiveRecord::Base
             html << "<ul>"
             @in_list = true
           end
-          html << first_line
+          html << "#{first_line}<br />"
         else
           if @in_list
             html << "</ul>"
             @in_list = false
           end
-          html << "<p>#{first_line}"
+          html << "<p>#{first_line}<br />"
         end
         if lines.size > 2+adj
           rest = lines[(1+adj)..(lines.size-2)]
-          rest.each {|line| html << line.strip}
+          rest.each {|line| html << "#{line.strip}</br/>"}
         end
         if list_item
           html << "#{lines.last.strip}</li>"
