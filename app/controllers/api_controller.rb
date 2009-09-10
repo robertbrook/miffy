@@ -5,6 +5,7 @@ class ApiController < ApplicationController
   def clause_note
     @error = nil
     @clause_text = ""
+    @clause_html = ""
     
     bill_id = params[:bill_id]
     clause_num = params[:clause]
@@ -22,6 +23,7 @@ class ApiController < ApplicationController
           @error = "Clause not found"
         else
           @clause_text = clause.note_text
+          @clause_html = clause.html_note_text
         end
       end
     end
