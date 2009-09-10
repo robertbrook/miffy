@@ -9,10 +9,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090821135549) do
+ActiveRecord::Schema.define(:version => 20090908135358) do
 
   create_table "acts", :force => true do |t|
-    t.string   "name"
+    t.text     "name"
     t.text     "title"
     t.integer  "year"
     t.integer  "number"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(:version => 20090821135549) do
   add_index "acts", ["name"], :name => "index_acts_on_name"
 
   create_table "bills", :force => true do |t|
-    t.string   "name"
+    t.text     "name"
     t.text     "parliament_url"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(:version => 20090821135549) do
     t.string   "name"
     t.integer  "bill_id"
     t.string   "path"
+    t.text     "beginning_text"
+    t.text     "ending_text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
