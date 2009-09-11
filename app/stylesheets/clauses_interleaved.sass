@@ -1,5 +1,4 @@
 @import partials/base_interleaved.sass
-@import partials/bill_docs_shared.sass
 @import blueprint
 
 body
@@ -166,3 +165,16 @@ body
             span.Para
               float: left
               display: block
+              
+.Footer
+  +column(60, true)
+  padding: 4em 0 0 0
+  text-align: left
+
+  .BillPrintNumber
+    +column(10, true)
+
+  .BillSessionNumber
+    +prepend(40)
+    +column(10, true)
+    text-align: right

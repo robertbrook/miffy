@@ -58,6 +58,31 @@ describe MifParserUtils do
 |
     end
 
+    it 'should not have a toggle link around act clause title' do
+      text = %Q|            #1112875.ClauseTitle
+              %p#1112877._ClauseTitle_PgfTag
+                %span.PgfNumString
+                  %span.PgfNumString_1
+                    “21A
+                %a{ :name => "page2-line3" }
+                %a{ :name => "clause4-page2-line3" }
+                %span.ActClauseTitle_text
+                  Fees
+            #1112440.ClauseText
+|
+      @utils.format_haml(text).should == %Q|            #1112875.ClauseTitle
+              %p#1112877._ClauseTitle_PgfTag
+                %span.PgfNumString<
+                  %span.PgfNumString_1<>
+                    “21A
+                %a{ :name => "page2-line3" }<>
+                %a{ :name => "clause4-page2-line3" }<>
+                %span.ActClauseTitle_text<
+                  Fees
+            #1112440.ClauseText
+|
+    end
+
     it 'should expand line number span' do
       text = %Q|%span#1043312.Line
                 line

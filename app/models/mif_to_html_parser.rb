@@ -127,6 +127,7 @@ class MifToHtmlParser
 
   SPAN = %w[Amendment_Text_text
       Bold Bold_text
+      ActClauseTitle_text
       ClauseTitle_text
       Date_text Day Definition Definition_text Dropcap
       Enact
