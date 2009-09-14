@@ -5,6 +5,8 @@ module ApplicationHelper
     if file_name.include?('Clauses.mif') || file_name.include?('Clauses.xml')
       if ens == 'interleaved'
         "clauses_interleaved"
+      elsif ens == 'interleaved_wide'
+        "clauses_interleaved_wide"
       else
         "clauses"
       end

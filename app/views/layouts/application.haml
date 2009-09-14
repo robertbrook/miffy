@@ -1,7 +1,10 @@
 -@external_sheet = params[:style]
 -@file = params[:file] || "Index"
 - if params[:interleave]
-  - @ens = 'interleaved'
+  - if params[:wide]
+    - @ens = 'interleaved_wide'
+  -else
+    - @ens = 'interleaved'
 - else
   - @ens = ''
 
@@ -13,7 +16,8 @@
     -if @external_sheet
       = stylesheet_link_tag @external_sheet, :media => 'screen, projection, print'
     -else
-      = stylesheet_link_tag 'screen', :media => 'screen, projection'
+      -unless params[:wide]
+        = stylesheet_link_tag 'screen', :media => 'screen, projection'
       -if page_class == 'application index'
         = stylesheet_link_tag 'index', :media => 'screen, projection'
       -if page_class == 'application convert'

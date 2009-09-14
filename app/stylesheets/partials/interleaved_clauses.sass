@@ -1,0 +1,163 @@
+body
+  #container
+
+    .BillData
+      +column(60, true)
+      float: left
+
+    .BillTitle
+      font-size: 1.8em
+      +column(60, true)
+      text-align: center
+      padding: 1.25em 0 2.5em 0
+      border-bottom: 1px solid black
+      clear: both
+
+    .Head
+      +column(60, true)
+
+    .Prelim
+      float: left
+
+      .ABillTo
+        float: left
+        text-transform: uppercase
+        +column(60, true)
+        text-align: center
+        padding: 2em 0
+
+        .Abt1, .Abt3
+          +column(60, true)
+
+        .Abt2
+          +column(60, true)
+          font-size: 2.5em
+          letter-spacing: 0.3em
+          font-weight: bold
+          padding: 0.4em 0
+
+      .LongTitle
+        +column(60, true)
+        padding: 0 0 2em 0
+        font-size: 1.1em
+
+      .WordsOfEnactment
+        +column(60, true)
+        padding-bottom: 1.5em
+
+        .Dropcap
+          font-size: 2.4em
+          float: left
+          margin-top: -0.25em
+
+        .SmallCaps
+          float: left
+          text-transform: uppercase
+          margin-right: 0.3em
+
+    .Clauses
+      +column(60, true)
+      text-align: left
+      border-top: 2px solid black
+      margin: 1px 0 2em 0
+      clear: both
+
+      .Rubric
+        +column(30, true)
+        clear: both
+        text-align: center
+
+      .Clause
+        +column(60, true)
+        clear: both
+        
+        .ClauseTextWithExplanatoryNote
+          +column(60, true)
+          clear: both
+
+        .explanatory_note
+          +column(28, true)
+          +append(1)
+
+          .NoteClauseTitle
+            font-weight: bold
+
+        .SubSection
+          +column(30, true)
+
+          .SubSection_text
+            +column(28, true)
+
+          p.SubSection_PgfTag
+            +column(28, true)
+
+        ._ClauseTitle_PgfTag, .ClauseTitle_PgfTag
+          font-weight: bold
+
+        .ClauseText
+          +prepend(2)
+          +column(28, true)
+
+          div.Para
+            +column(25, true)
+
+            .Paragraph_PgfTag
+              +column(25, true)
+
+              .Para_text
+                +column(21, true)
+
+          div.SubSection
+            +column(28, true)
+
+            p.SubSection_PgfTag, p._SubSection_PgfTag
+              +column(28, true)
+
+              span.SubSection_text
+                +column(25, true)
+                float: right
+
+        .Amendment
+          float:left
+
+        .Clause
+          float: left
+          padding-left: 0
+
+          .ClauseText
+            padding-left: 0
+
+            ._Paragraph_PgfTag
+              +column(28, true)
+              +prepend(1)
+
+              .Para_text
+                +column(23, true)
+
+            p._SubSection_PgfTag
+              margin-left
+              float: left
+
+            p._SubParagraph_PgfTag
+              +column(25, true)
+              +prepend(3)
+
+              .SubPara_text
+                +column(23, true)
+
+            span.Para
+              float: left
+              display: block
+              
+.Footer
+  +column(60, true)
+  padding: 4em 0 0 0
+  text-align: left
+
+  .BillPrintNumber
+    +column(10, true)
+
+  .BillSessionNumber
+    +prepend(40)
+    +column(10, true)
+    text-align: right

@@ -1,4 +1,4 @@
-@import partials/base_interleaved.sass
+@import partials/base_interleaved_wide.sass
 @import blueprint
 @import partials/interleaved_clauses.sass
 
@@ -6,19 +6,19 @@
   float: left
 
   .PgfNumString_0
-    +column(2, true)
+    +column(1, true)
 
   .PgfNumString_1
     +append(1)
-    +column(2)
+    +column(1)
 
   .PgfNumString_2
     +append(1)
-    +column(2, true)
+    +column(1, true)
 
 .Clauses
   .Clause
     .ClauseTextWithExplanatoryNote
       .explanatory_note
-        +column(28, true)
-        float: right
+        +column(27)
+        float: left
