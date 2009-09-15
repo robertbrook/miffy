@@ -17,13 +17,13 @@ class ExplanatoryNote < ActiveRecord::Base
         result << '<span class="NoteClauseTitle">Clause ' + $1 + '</span>'
         make_paragraph result, lines, adj=1
       elsif lines.size > 1 && lines[1][/^\s*Clause (\d+|\d+:.+)\s*$/]
-        result = result << '<span class="NoteClauseTitle">Clause ' + lines[0] + '<br />' + lines[1] + '</span>'
+        result = result << '<span class="NoteClauseTitle">Clause ' + lines[0] + lines[1] + '</span>'
         make_paragraph result, lines, adj=2
       elsif lines.first[/^\s*Schedule (\d+|\d+:.+)\s*$/]
         result << '<span class="NoteScheduleTitle">Schedule ' + $1 + '</span>'
         make_paragraph result, lines, adj=1
       elsif lines.size > 1 && lines[1][/^\s*Schedule (\d+|\d+:.+)\s*$/]
-        result = result << '<span class="NoteScheduleTitle">Schedule ' + lines[0] + '<br />' + lines[1] + '</span>'
+        result = result << '<span class="NoteScheduleTitle">Schedule ' + lines[0] + lines[1] + '</span>'
         make_paragraph result, lines, adj=2
       else
         make_paragraph result, lines
@@ -66,17 +66,17 @@ class ExplanatoryNote < ActiveRecord::Base
             html << "<ul>"
             @in_list = true
           end
-          html << "#{first_line}<br />"
+          html << "#{first_line}"
         else
           if @in_list
             html << "</ul>"
             @in_list = false
           end
-          html << "<p>#{first_line}<br />"
+          html << "<p>#{first_line}"
         end
         if lines.size > 2+adj
           rest = lines[(1+adj)..(lines.size-2)]
-          rest.each {|line| html << "#{line.strip}</br/>"}
+          rest.each {|line| html << "#{line.strip}"}
         end
         if list_item
           html << "#{lines.last.strip}</li>"
