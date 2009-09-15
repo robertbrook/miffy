@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
         respond_to do |format|
           format.html do
             if params[:interleave]
-              mif_file.convert_to_haml('interleave')
+              mif_file.convert_to_haml('interleave') unless mif_file.haml_template_exists? && !params[:force]
               template = mif_file.haml_template 'interleave'
             else
               mif_file.convert_to_haml unless mif_file.haml_template_exists? && !params[:force]
