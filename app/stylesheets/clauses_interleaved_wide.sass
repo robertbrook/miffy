@@ -2,6 +2,33 @@
 @import blueprint
 @import partials/_interleaved_clauses.sass
 
++blueprint-typography
++blueprint-utilities
+
+pre
+  text-align: left
+
+a
+  text-decoration: none
+
+#container
+  +container
+  
+  hr, .OrderCrossHeading, .OrderHousePara_PgfTag, table
+    float: left
+  
+  .Italic
+    font-style: italic
+
+  .Bold
+    font-weight: bold
+      
+  .PageStart
+    font-weight: bold
+    float: right
+    text-align: right
+  
+
 .explanatory_note   
   .NoteClauseTitle
     display: none
