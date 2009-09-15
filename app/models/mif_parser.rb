@@ -78,6 +78,7 @@ class MifParser
     @frame_list = get_frames doc
     @pages = get_pages doc
     @variable_list = get_variables doc
+    @citations = []
   end
 
   def make_xml doc
@@ -87,6 +88,7 @@ class MifParser
     (doc/'TextFlow').each do |flow|
       handle_flow(flow) unless is_instructions?(flow)
     end
+    add_interpretation
     add_footer
     add ['</BillData></Document>']
     @xml.join('')
@@ -106,6 +108,24 @@ class MifParser
       hash[page.page_id] = page
       hash
     end
+  end
+
+  def add_interpretation
+    add "<Interpretation>"
+    unless @citations.empty?
+      @citations.each do |citation|
+        text = citation.first
+        if text[/“(the\s+.+\s+Act)”\s+means/]
+          attributes = citation[1]
+          name = citation[2]
+          add "<ActAbbreviation>"
+          add "<AbbreviatedActName>#{$1}</AbbreviatedActName>"
+          add %Q|<Citation #{attributes}>#{name}</Citation>|
+          add "</ActAbbreviation>"
+        end
+      end
+    end
+    add "</Interpretation>"
   end
 
   def add_bill_attribute name, element_name
@@ -352,7 +372,8 @@ class MifParser
   end
 
   def start_tag tag, element
-    tag = %Q|<#{tag} id="#{get_uid(element)}"#{get_attributes(element)}>|
+    attributes = get_attributes(element)
+    tag = %Q|<#{tag} id="#{get_uid(element)}"#{attributes}>|
     if @suffix
       tag += @suffix.to_s
       @suffix = nil
@@ -364,7 +385,7 @@ class MifParser
     element.at('../Unique/text()').to_s
   end
 
-  def get_attributes element
+  def get_attributes element, includes=nil
     element = (element/'Attributes') if @e_tag == 'Clauses.ar'
     attributes = (element/'../Attributes/Attribute')
     attribute_list = ''
@@ -372,7 +393,9 @@ class MifParser
       attributes.each do |attribute|
         name = clean(attribute.at('AttrName'))
         value = clean(attribute.at('AttrValue'))
-        attribute_list += %Q| #{name}="#{value}"|
+        if includes.blank? || includes.include?(name)
+          attribute_list += %Q| #{name}="#{value}"|
+        end
       end
     end
     attribute_list
@@ -422,8 +445,12 @@ class MifParser
     @e_tag = clean(element)
     @in_amendment = true if (@e_tag == 'Amendment')
     add_paraline_start if @e_tag[/^(Bpara|Stageheader|Shorttitle|Given|CommitteeShorttitle)$/]
+
+    @citations << [@strings.last, get_attributes(element, ['Year','Chapter'])] if @e_tag == 'Citation'
+
     flush_strings unless @e_tag == 'Italic' || @e_tag == 'Citation'
     @etags_stack << @e_tag
+
 
     if is_amendment_reference_part?(@e_tag) && @e_tag != 'Line'
       @amendment_reference ||= AmendmentReference.new
@@ -585,9 +612,19 @@ class MifParser
     @amendment_reference = nil
   end
 
+  def citations
+    @citations
+  end
+
   def handle_string element
     add_paraline_start if @paraline_start
     text = clean(element)
+
+    if @e_tag == 'Citation' && text.include?('Act')
+      citation = @citations.pop
+      citation << text
+      @citations << citation
+    end
 
     if @suffix
       @suffix += text

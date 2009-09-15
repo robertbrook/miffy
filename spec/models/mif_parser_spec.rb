@@ -392,6 +392,21 @@ describe MifParser do
         end
       end
     end
+
+    it 'should add an interpretation element' do
+      @result.should have_tag('BillData') do
+        with_tag('Interpretation')
+      end
+    end
+
+    it 'should put definition of act name substitution in interpretation element' do
+      @result.should have_tag('Interpretation') do
+        with_tag('ActAbbreviation') do
+          with_tag('AbbreviatedActName', :text => 'the 1996 Act')
+          with_tag('Citation[Year="1996"][Chapter="(c.\x11 61)"]', :text => 'Channel Tunnel Rail Link Act 1996')
+        end
+      end
+    end
   end
 
 end

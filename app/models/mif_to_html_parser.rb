@@ -474,6 +474,8 @@ class MifToHtmlParser
         add_html_element 'td', node
       when TABLE_RE
         add_html_element 'table', node
+      when 'Interpretation'
+        # ignore for now
       else
         raise node.name
         node_children_to_html(node)
