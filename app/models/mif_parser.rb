@@ -29,6 +29,18 @@ class AmendmentReference
   end
 end
 
+class ActCitation
+  attr_accessor :act_name, :previous_text, :citation_attributes
+
+  def act_abbreviation
+    if previous_text[/“(the\s+.+\s+Act)”\s+means/]
+      $1
+    else
+      nil
+    end
+  end
+end
+
 class MifParser
 
   include MifParserUtils
@@ -114,13 +126,10 @@ class MifParser
     add "<Interpretation>"
     unless @citations.empty?
       @citations.each do |citation|
-        text = citation.first
-        if text[/“(the\s+.+\s+Act)”\s+means/]
-          attributes = citation[1]
-          name = citation[2]
+        if citation.act_abbreviation
           add "<ActAbbreviation>"
-          add "<AbbreviatedActName>#{$1}</AbbreviatedActName>"
-          add %Q|<Citation #{attributes}>#{name}</Citation>|
+          add "<AbbreviatedActName>#{citation.act_abbreviation}</AbbreviatedActName>"
+          add %Q|<Citation #{citation.citation_attributes}>#{citation.act_name}</Citation>|
           add "</ActAbbreviation>"
         end
       end
@@ -441,12 +450,23 @@ class MifParser
     tag[/^(Bold|Italic|Citation|ListItem|List)$/]
   end
 
+  def in_citation?
+    @e_tag == 'Citation'
+  end
+
+  def add_previous_text_and_attributes_to_citations element
+    citation = ActCitation.new
+    citation.previous_text = @strings.last
+    citation.citation_attributes = get_attributes(element, ['Year','Chapter'])
+    @citations << citation
+  end
+
   def handle_etag element
     @e_tag = clean(element)
     @in_amendment = true if (@e_tag == 'Amendment')
     add_paraline_start if @e_tag[/^(Bpara|Stageheader|Shorttitle|Given|CommitteeShorttitle)$/]
 
-    @citations << [@strings.last, get_attributes(element, ['Year','Chapter'])] if @e_tag == 'Citation'
+    add_previous_text_and_attributes_to_citations(element) if in_citation?
 
     flush_strings unless @e_tag == 'Italic' || @e_tag == 'Citation'
     @etags_stack << @e_tag
@@ -616,15 +636,18 @@ class MifParser
     @citations
   end
 
+  def is_act_name_in_citation? text
+    in_citation? && text.include?('Act')
+  end
+
+  def add_act_name_to_citations text
+    @citations.last.act_name = text
+  end
+
   def handle_string element
     add_paraline_start if @paraline_start
     text = clean(element)
-
-    if @e_tag == 'Citation' && text.include?('Act')
-      citation = @citations.pop
-      citation << text
-      @citations << citation
-    end
+    add_act_name_to_citations(text) if is_act_name_in_citation?(text)
 
     if @suffix
       @suffix += text
