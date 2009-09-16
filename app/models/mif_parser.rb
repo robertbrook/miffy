@@ -32,6 +32,15 @@ end
 class ActCitation
   attr_accessor :act_name, :previous_text, :citation_attributes
 
+  def citation_attributes= attributes
+    @chapter = attributes[/Chapter="(.+)"/] ? $1.sub('\x11','') : nil
+    @citation_attributes = attributes
+  end
+
+  def full_act_name
+    @chapter ? "#{act_name} #{@chapter}" : act_name
+  end
+
   def act_abbreviation
     if previous_text[/“(the\s+.+\s+Act)”\s+means/]
       $1
@@ -43,7 +52,7 @@ class ActCitation
   def act_abbreviation_element
     "<ActAbbreviation>" +
     "<AbbreviatedActName>#{act_abbreviation}</AbbreviatedActName>" +
-    "<Citation #{citation_attributes}>#{act_name}</Citation>" +
+    "<Citation #{citation_attributes}>#{full_act_name}</Citation>" +
     "</ActAbbreviation>"
   end
 end
