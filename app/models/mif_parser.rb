@@ -39,6 +39,13 @@ class ActCitation
       nil
     end
   end
+
+  def act_abbreviation_element
+    "<ActAbbreviation>" +
+    "<AbbreviatedActName>#{act_abbreviation}</AbbreviatedActName>" +
+    "<Citation #{citation_attributes}>#{act_name}</Citation>" +
+    "</ActAbbreviation>"
+  end
 end
 
 class MifParser
@@ -124,15 +131,8 @@ class MifParser
 
   def add_interpretation
     add "<Interpretation>"
-    unless @citations.empty?
-      @citations.each do |citation|
-        if citation.act_abbreviation
-          add "<ActAbbreviation>"
-          add "<AbbreviatedActName>#{citation.act_abbreviation}</AbbreviatedActName>"
-          add %Q|<Citation #{citation.citation_attributes}>#{citation.act_name}</Citation>|
-          add "</ActAbbreviation>"
-        end
-      end
+    @citations.select(&:act_abbreviation).each do |citation|
+      add citation.act_abbreviation_element
     end
     add "</Interpretation>"
   end
