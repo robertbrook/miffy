@@ -403,7 +403,7 @@ describe MifParser do
       @result.should have_tag('Interpretation') do
         with_tag('ActAbbreviation') do
           with_tag('AbbreviatedActName', :text => 'the 1996 Act')
-          with_tag('Citation[Year="1996"][Chapter="(c.\x11 61)"]', :text => 'Channel Tunnel Rail Link Act 1996')
+          with_tag('Citation[Year="1996"][Chapter="(c.\x11 61)"]', :text => 'Channel Tunnel Rail Link Act 1996 (c. 61)')
         end
       end
     end
