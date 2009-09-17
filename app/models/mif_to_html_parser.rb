@@ -108,6 +108,7 @@ class MifToHtmlParser
     Report Resolution ResolutionHead ResolutionPreamble ResolutionText Rubric
     Schedule_Committee SchedulesTitle_ar Schedules_ar
     Shorttitle Stageheader SubSection
+    CenteredHeading
     Table Text_motion
     WordsOfEnactment].inject({}){|h,v| h[v]=true; h}
 
