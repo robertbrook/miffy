@@ -41,7 +41,7 @@
       %tbody
         - files.each do |file|
           %tr.mif-file{:class => cycle("even", "odd")}
-            %td.name= link_to file.name, "convert?file=#{file.path}"
+            %td.name= link_to file.name, "convert?file=#{file.path.gsub('&', '%26')}"
             %td.text= link_to "Text", "convert?file=#{file.path}&format=text"
             %td.size= number_to_human_size(File.size(file.path))          
             %td.regenerate
