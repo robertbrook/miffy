@@ -7,6 +7,12 @@ include ActionController::Assertions::SelectorAssertions
 
 describe MifParser do
 
+  before(:all) do
+    Act.stub!(:from_name).and_return mock('act',
+      :opsi_url => 'http://www.opsi.gov.uk/acts/acts1996/ukpga_19960061_en_1',
+      :legislation_url => 'http://www.legislation.gov.uk/ukpga/1996/61')
+  end
+
   describe 'when parsing MIF file' do
     before(:all) do
       @parser = MifParser.new
@@ -403,7 +409,7 @@ describe MifParser do
       @result.should have_tag('Interpretation') do
         with_tag('ActAbbreviation') do
           with_tag('AbbreviatedActName', :text => 'the 1996 Act')
-          with_tag('Citation[Year="1996"][Chapter="(c.\x11 61)"]', :text => 'Channel Tunnel Rail Link Act 1996 (c. 61)')
+          with_tag('Citation[Year="1996"][Chapter="(c.\x11 61)"][legislation_url="http://www.legislation.gov.uk/ukpga/1996/61"][opsi_url="http://www.opsi.gov.uk/acts/acts1996/ukpga_19960061_en_1"]', :text => 'Channel Tunnel Rail Link Act 1996 (c. 61)')
         end
       end
     end
