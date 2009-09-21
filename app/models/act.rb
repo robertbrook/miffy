@@ -4,7 +4,7 @@ require 'hpricot'
 class Act < ActiveRecord::Base
 
   validates_presence_of :name
-  before_validation :populate_opsi_url
+  before_validation :populate_year, :populate_number, :populate_title, :populate_opsi_url, :populate_legislation_url
 
   class << self
     def from_name name
@@ -28,8 +28,52 @@ class Act < ActiveRecord::Base
     template
   end
 
+  def populate_year
+    if year.blank?
+      if name[/Act\s(\d\d\d\d)/]
+        self.year = $1
+      end
+    end
+  end
+
+  def populate_number
+    if number.blank?
+      if name[/\(c\.\s?(\d+)/]
+        self.number = $1
+      end
+    end
+  end
+
+  def populate_title
+    if title.blank?
+      if name[/^(.+)\s\(c\.\s?\d+.+$/]
+        self.title = $1
+      end
+    end
+  end
+
+  def populate_legislation_url
+    if legislation_url.blank?
+      number_part = number? ? "&number=#{number}" : ''
+      search_url = "http://www.legislation.gov.uk/id?title=#{URI.escape(title)}#{number_part}"
+      begin
+        doc = Hpricot.XML open(search_url)
+        url = nil
+
+        if doc && doc.at('Legislation')
+          self.legislation_url = doc.at('Legislation')['DocumentURI']
+        end
+      rescue Exception => e
+        warn 'error retrieving: ' + search_url
+        warn e.class.name
+        warn e.to_s
+      end
+    end
+  end
+
   def populate_opsi_url force=false
-    unless force || opsi_url.blank?
+    do_search = (force || opsi_url.blank?)
+    if do_search
       search_url = "http://search.opsi.gov.uk/search?q=#{URI.escape(name)}&output=xml_no_dtd&client=opsisearch_semaphore&site=opsi_collection"
       begin
         doc = Hpricot.XML open(search_url)
@@ -37,16 +81,17 @@ class Act < ActiveRecord::Base
 
         (doc/'R/T').each do |result|
           unless url
-            term = result.inner_text.gsub(/<[^>]+>/,'')
-            url = result.at('../U/text()').to_s if name == term
+            term = result.inner_text.gsub(/<[^>]+>/,'').strip
+            puts term
+            url = result.at('../U/text()').to_s if(name == term || term.starts_with?(title))
           end
         end
 
         self.opsi_url = url
       rescue Exception => e
-        puts 'error retrieving: ' + search_url
-        puts e.class.name
-        puts e.to_s
+        warn 'error retrieving: ' + search_url
+        warn e.class.name
+        warn e.to_s
       end
     end
   end
