@@ -178,6 +178,18 @@ class MifToHtmlParser
     @last_css_class
   end
 
+  def add_anchor node
+    start_tag = []
+    start_tag << '<a'
+    start_tag << " rel='#{node['rel']}'" if node['rel']
+    start_tag << " resource='#{node['resource']}'" if node['resource']
+    start_tag << " href='#{node['href']}'" if node['href']
+    start_tag << '>'
+    add start_tag.join('')
+    node_children_to_html(node)
+    add '</a>'
+  end
+
   def add_html_element name, node
     start_tag = []
     start_tag << %Q|<#{name} class="#{css_class(node)}"|
@@ -475,6 +487,8 @@ class MifToHtmlParser
         add_html_element 'td', node
       when TABLE_RE
         add_html_element 'table', node
+      when 'a'
+        add_anchor node
       when 'Interpretation'
         # ignore for now
       else

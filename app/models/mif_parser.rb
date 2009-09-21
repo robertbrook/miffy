@@ -50,8 +50,7 @@ class ActCitation
   end
 
   def act_abbreviation_element
-    act = Act.from_name act_name
-
+    act = Act.from_name full_act_name
     "<ActAbbreviation>" +
     "<AbbreviatedActName>#{act_abbreviation}</AbbreviatedActName>" +
     %Q|<Citation #{citation_attributes} opsi_url="#{act.opsi_url}" legislation_url="#{act.legislation_url}">#{full_act_name}</Citation>| +

@@ -74,7 +74,7 @@ class MifFile < ActiveRecord::Base
     File.exist?(haml_template) && html_page_title
   end
 
-  def haml_template explanatory_notes = ''
+  def haml_template explanatory_notes=''
     en_suffix = ''
     unless explanatory_notes.blank?
       en_suffix = "_#{explanatory_notes}"
@@ -84,7 +84,7 @@ class MifFile < ActiveRecord::Base
     "#{results_dir}/#{path.gsub('/','_').gsub('.','_')}#{en_suffix}.haml"
   end
 
-  def convert_to_haml explanatory_notes = ''
+  def convert_to_haml explanatory_notes=''
     if File.extname(path) == '.mif'
       xml = MifParser.new.parse path
     elsif File.extname(path) == '.xml'
@@ -94,6 +94,7 @@ class MifFile < ActiveRecord::Base
     end
 
     set_html_page_title(xml)
+    xml = ActReferenceParser.new.parse_xml(xml)
     result = MifToHtmlParser.new.parse_xml xml, :clauses_file => clauses_file, :format => :haml, :body_only => true, :ens => explanatory_notes
     File.open(haml_template(explanatory_notes), 'w+') {|f| f.write(result) }
   end

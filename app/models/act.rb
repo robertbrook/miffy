@@ -55,7 +55,8 @@ class Act < ActiveRecord::Base
   def populate_legislation_url
     if legislation_url.blank?
       number_part = number? ? "&number=#{number}" : ''
-      search_url = "http://www.legislation.gov.uk/id?title=#{URI.escape(title)}#{number_part}"
+      act_title = title.blank? ? name : title
+      search_url = "http://www.legislation.gov.uk/id?title=#{URI.escape(act_title)}#{number_part}"
       begin
         doc = Hpricot.XML open(search_url)
         url = nil
@@ -82,7 +83,6 @@ class Act < ActiveRecord::Base
         (doc/'R/T').each do |result|
           unless url
             term = result.inner_text.gsub(/<[^>]+>/,'').strip
-            puts term
             url = result.at('../U/text()').to_s if(name == term || term.starts_with?(title))
           end
         end
