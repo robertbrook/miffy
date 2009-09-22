@@ -489,7 +489,7 @@ class MifToHtmlParser
         add_html_element 'table', node
       when 'a'
         add_anchor node
-      when 'Interpretation'
+      when /Interpretation|FileType/
         # ignore for now
       else
         raise node.name
