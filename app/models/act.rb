@@ -3,8 +3,10 @@ require 'hpricot'
 
 class Act < ActiveRecord::Base
 
+  has_many :act_sections
+
   validates_presence_of :name, :opsi_url, :legislation_url
-  before_validation :populate_year, :populate_number, :populate_title, :populate_opsi_url, :populate_legislation_url
+  before_validation :populate_year, :populate_number, :populate_title, :populate_opsi_url, :populate_legislation_url, :populate_act_sections
 
   class << self
     def from_name name
@@ -92,6 +94,22 @@ class Act < ActiveRecord::Base
         warn 'error retrieving: ' + search_url
         warn e.class.name
         warn e.to_s
+      end
+    end
+  end
+
+  def populate_act_sections
+    if act_sections.size == 0 && opsi_url && legislation_url
+      doc = Hpricot open(opsi_url)
+      (doc/'span[@class="LegDS LegContentsNo"]').each do |span|
+        section_number = span.inner_text.chomp('.')
+        path = span.at('a')['href']
+        base = opsi_url[/^(.+\/)[^\/]+$/,1]
+        section_title = span.next_sibling.inner_text
+
+        act_sections.create :number => section_number, :title => section_title,
+            :opsi_url => "#{base}#{path}",
+            :legislation_url => "#{legislation_url}/#{section_number}"
       end
     end
   end
