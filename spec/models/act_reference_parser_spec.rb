@@ -11,6 +11,7 @@ describe ActReferenceParser do
     before(:all) do
       @parser = ActReferenceParser.new
       @result = @parser.parse_xml(fixture('ChannelTunnel/ChannelTunnelClauses.xml'))
+      File.open(RAILS_ROOT + '/spec/fixtures/ChannelTunnel/ChannelTunnelClauses.act.xml','w') {|f| f.write @result }
     end
 
     it 'should put rel cite anchor element around abbrebrivated act name' do

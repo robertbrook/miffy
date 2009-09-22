@@ -11,6 +11,7 @@ module MifParserUtils
   TOGGLE_SHOW_REGEXP_2 = Regexp.new('%span\.ClauseTitle_text<\n(\s+)([^\n]+)\n(\s+)\#(\d+en)\.ClauseTextWithExplanatoryNote', Regexp::MULTILINE)
 
   COMPRESS_WHITESPACE_4 = Regexp.new('(%a\{ :name => "[^"]+" \})<>\n(\s+#\d+)', Regexp::MULTILINE)
+  COMPRESS_WHITESPACE_5 = Regexp.new('(“\n\s+)(%a\{[^\{]+\})<\n', Regexp::MULTILINE)
   AMEND_REF = Regexp.new('%a.AmendmentReference\{ :href => "([^"]+)" \}<')
 
   def format_haml haml, clauses_file_name=nil
@@ -24,6 +25,7 @@ module MifParserUtils
     haml.gsub!(TOGGLE_SHOW_REGEXP_2, '%span.ClauseTitle_text<' + "\n" + '\1= link_to_function "\2", "$(\'\4\').toggle()"' + "\n" + '\3#\4.ClauseTextWithExplanatoryNote')
 
     haml.gsub!(COMPRESS_WHITESPACE_4, '\1' + "\n" + '\2')
+    haml.gsub!(COMPRESS_WHITESPACE_5, '\1\2<>' + "\n" )
 
     if clauses_file_name
       link = '%a.AmendmentReference{ :href => "http://localhost:3000/convert?file=' + URI.encode(clauses_file_name) + '\1" }<'
