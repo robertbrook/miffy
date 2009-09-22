@@ -121,7 +121,7 @@ class MifParser
     else
       if clean(stage_para/'String/text()') && clean(stage_para/'String/text()').downcase.strip == "consideration of bill"
         header_para = doc.search("//TextFlow[Para]").search("Para[text()*=`Header']/ParaLine")
-        if clean(header_para.last/'String/text()').downcase.strip =~ /tabled/
+        if clean(header_para.last/'String/text()') && clean(header_para.last/'String/text()').downcase.strip =~ /tabled/
           file_type = "Tabled "
         end
         file_type += "Report"
