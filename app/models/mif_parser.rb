@@ -121,7 +121,7 @@ class MifParser
     else
       if clean(stage_para/'String/text()') && clean(stage_para/'String/text()').downcase.strip == "consideration of bill"
         header_para = doc.search("//TextFlow[Para]").search("Para[text()*=`Header']/ParaLine")
-        if clean(header_para.last/'String/text()').downcase.strip =~ /tabled/
+        if clean(header_para.last/'String/text()') && clean(header_para.last/'String/text()').downcase.strip =~ /tabled/
           file_type = "Tabled "
         end
         file_type += "Report"
@@ -131,6 +131,8 @@ class MifParser
         etag_elements = (doc/'TextFlow/Para/ParaLine/ElementBegin/ETag/text()').to_s.gsub("`","").split("'")
         if etag_elements.include?("Clauses") && etag_elements.include?("WordsOfEnactment")
           file_type = "Clauses"
+        elsif etag_elements.include?("Arrangement")
+          file_type = "Arrangement"
         end 
       end
     end

@@ -69,6 +69,12 @@ class MifFile < ActiveRecord::Base
       self.save
     end
   end
+  
+  def set_file_type xml
+    doc = Hpricot.XML xml
+    self.file_type = (doc/'BillData/FileType/text()').to_s
+    self.save
+  end
 
   def haml_template_exists?
     File.exist?(haml_template) && html_page_title
@@ -93,6 +99,7 @@ class MifFile < ActiveRecord::Base
       raise "unrecognized path: #{path}"
     end
 
+    set_file_type(xml)
     set_html_page_title(xml)
     xml = ActReferenceParser.new.parse_xml(xml)
     result = MifToHtmlParser.new.parse_xml xml, :clauses_file => clauses_file, :format => :haml, :body_only => true, :ens => explanatory_notes

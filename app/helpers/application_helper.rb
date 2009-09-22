@@ -2,26 +2,33 @@
 module ApplicationHelper
   
   def document_type file_name, ens=''
-    if file_name.include?('Clauses.mif') || file_name.include?('Clauses.xml')
-      if ens == 'interleaved'
-        "clauses_interleaved"
-      elsif ens == 'interleaved_wide'
-        "clauses_interleaved_wide"
+    mif_file = MifFile.find_by_path(file_name)
+
+    case mif_file.file_type
+      when 'Clauses'
+        if ens == 'interleaved'
+          "clauses_interleaved"
+        elsif ens == 'interleaved_wide'
+          "clauses_interleaved_wide"
+        else
+          "clauses"
+        end
+      when 'Arrangement'
+        "arrangement"
+      when 'Amendments'
+        "amendment_paper"
+      when 'Marshalled List'
+        "marshalled_list"
+      when 'Report'
+        "consideration"
+      when 'Tabled Report'
+        "consideration"
       else
-        "clauses"
-      end
-    elsif file_name.include?('Cover.mif')
-      "cover"
-    elsif file_name.include?('Arrangement.mif')
-      "arrangement"
-    elsif (file_name =~ /pbc(.)*m.mif/).is_a?(Fixnum)
-      "amendment_paper"
-    elsif (file_name =~ /pbc(.)*a.mif/).is_a?(Fixnum) || file_name.include?('CommA')
-      "marshalled_list"
-    elsif file_name.include?('2.mif') || file_name.include?('Report.mif') || file_name.include?('amsorig.mif')
-      "consideration"
-    else
-      "converted"
+        if file_name =~ /Finance_Clauses.xml$/
+          "clauses"
+        else
+          "converted"
+        end
     end
   end
 
