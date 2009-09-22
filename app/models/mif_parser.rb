@@ -131,6 +131,8 @@ class MifParser
         etag_elements = (doc/'TextFlow/Para/ParaLine/ElementBegin/ETag/text()').to_s.gsub("`","").split("'")
         if etag_elements.include?("Clauses") && etag_elements.include?("WordsOfEnactment")
           file_type = "Clauses"
+        elsif etag_elements.include?("Arrangement")
+          file_type = "Arrangement"
         end 
       end
     end

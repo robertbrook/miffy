@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090921161904) do
+ActiveRecord::Schema.define(:version => 20090922101346) do
 
   create_table "acts", :force => true do |t|
     t.string   "name"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(:version => 20090921161904) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "html_page_title"
+    t.string   "file_type"
   end
 
   add_index "mif_files", ["bill_id"], :name => "index_mif_files_on_bill_id"
