@@ -17,7 +17,8 @@ class ActReferenceParser
       act_abbreviations.each do |abbreviation|
         abbreviated = abbreviation.at('AbbreviatedActName/text()').to_s
         citation = abbreviation.at('Citation')
-        abbreviations[abbreviated] = citation
+        act = Act.find_by_legislation_url(citation['legislation_url'])
+        abbreviations[abbreviated] = act
       end
 
       clauses = (doc/'ClauseText')
@@ -26,13 +27,14 @@ class ActReferenceParser
         if html[/\sAct\s/]
           abbreviations.keys.each do |name|
             if html[/#{name}/]
-              citation = abbreviations[name]
+              act = abbreviations[name]
               if html[/(section (\d+) of #{name})/]
-                cite = %Q|rel="cite" resource="#{citation['legislation_url']}/#{$2}" href="#{citation['opsi_url']}"|
+                section_number = $2
+                cite = %Q|rel="cite" resource="#{act.legislation_url}/#{section_number}" href="#{act.opsi_url}"|
                 changed = html.gsub($1, "<a #{cite}>#{$1}</a>")
                 clause.inner_html = changed
               else
-                cite = %Q|rel="cite" resource="#{citation['legislation_url']}" href="#{citation['opsi_url']}"|
+                cite = %Q|rel="cite" resource="#{act.legislation_url}" href="#{act.opsi_url}"|
                 changed = html.gsub(name, "<a #{cite}>#{name}</a>")
                 clause.inner_html = changed
               end
