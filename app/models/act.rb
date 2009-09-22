@@ -3,7 +3,7 @@ require 'hpricot'
 
 class Act < ActiveRecord::Base
 
-  validates_presence_of :name
+  validates_presence_of :name, :opsi_url, :legislation_url
   before_validation :populate_year, :populate_number, :populate_title, :populate_opsi_url, :populate_legislation_url
 
   class << self
