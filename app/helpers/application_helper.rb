@@ -24,7 +24,11 @@ module ApplicationHelper
       when 'Tabled Report'
         "consideration"
       else
-        "converted"
+        if file_name =~ /Finance_Clauses.xml$/
+          "clauses"
+        else
+          "converted"
+        end
     end
   end
 
