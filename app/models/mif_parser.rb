@@ -705,7 +705,15 @@ class MifParser
     if @suffix
       @suffix += get_char(element)
     else
-      add_to_last_line get_char(element)
+      last_line = @xml.pop
+      if last_line.include?("<TableData ")
+        add_to_last_line get_char(element)
+        flush_strings
+        @xml << last_line
+      else
+        @xml << last_line
+        add_to_last_line get_char(element)
+      end
     end
   end
 
