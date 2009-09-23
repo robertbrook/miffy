@@ -19,6 +19,10 @@ class Act < ActiveRecord::Base
     end
   end
 
+  def find_section_by_number section_number
+    act_sections.find_by_number section_number
+  end
+
   def convert_to_haml
     haml = ActToHtmlParser.new.parse_xml_file path, :format => :haml, :body_only => true
 
@@ -103,13 +107,17 @@ class Act < ActiveRecord::Base
       doc = Hpricot open(opsi_url)
       (doc/'span[@class="LegDS LegContentsNo"]').each do |span|
         section_number = span.inner_text.chomp('.')
-        path = span.at('a')['href']
-        base = opsi_url[/^(.+\/)[^\/]+$/,1]
-        section_title = span.next_sibling.inner_text
+        if span.at('a')
+          path = span.at('a')['href']
+          base = opsi_url[/^(.+\/)[^\/]+$/,1]
+          section_title = span.next_sibling.inner_text
 
-        act_sections.create :number => section_number, :title => section_title,
-            :opsi_url => "#{base}#{path}",
-            :legislation_url => "#{legislation_url}/#{section_number}"
+          act_sections.create :number => section_number, :title => section_title,
+              :opsi_url => "#{base}#{path}",
+              :legislation_url => "#{legislation_url}/#{section_number}"
+        else
+          warn "cannot find opsi url for section #{section_number} of #{name}"
+        end
       end
     end
   end
