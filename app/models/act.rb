@@ -19,6 +19,10 @@ class Act < ActiveRecord::Base
     end
   end
 
+  def find_section_by_number section_number
+    act_sections.find_by_number section_number
+  end
+
   def convert_to_haml
     haml = ActToHtmlParser.new.parse_xml_file path, :format => :haml, :body_only => true
 

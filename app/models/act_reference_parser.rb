@@ -30,7 +30,7 @@ class ActReferenceParser
               act = abbreviations[name]
               if html[/(section (\d+) of #{name})/]
                 section_number = $2
-                section = act.act_sections.find_by_number(section_number)
+                section = act.find_section_by_number(section_number)
                 if section
                   cite = %Q|rel="cite" resource="#{section.legislation_url}" href="#{section.opsi_url}"|
                 else
