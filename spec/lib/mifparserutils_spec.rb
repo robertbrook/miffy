@@ -36,6 +36,17 @@ describe MifParserUtils do
         '%a.AmendmentReference{ :href => "http://localhost:3000/convert?file=' + clauses_file + '#clause1-page1-line29" }<'
     end
 
+    it 'should collapse whitespace around quoted act link' do
+      text = %Q|              In this Act, “
+              %a{ :href => "http://www.opsi.gov.uk/acts/acts1996/ukpga_19960061_en_1", :rel => "cite", :resource => "http://www.legislation.gov.uk/ukpga/1996/61" }<
+                the 1996 Act
+              ” means the|
+      @utils.format_haml(text).should == %Q|              In this Act, “
+              %a{ :href => "http://www.opsi.gov.uk/acts/acts1996/ukpga_19960061_en_1", :rel => "cite", :resource => "http://www.legislation.gov.uk/ukpga/1996/61" }<>
+                the 1996 Act
+              ” means the|
+    end
+
     it 'should have toggle link around clause title' do
       text = %Q|          %span.ClauseTitle_text<
             Reports on implementation of Law Commission proposals

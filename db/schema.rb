@@ -9,20 +9,35 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090921161904) do
+ActiveRecord::Schema.define(:version => 20090922152827) do
+
+  create_table "act_sections", :force => true do |t|
+    t.integer  "act_id"
+    t.integer  "number"
+    t.string   "title"
+    t.string   "opsi_url"
+    t.string   "legislation_url"
+    t.text     "statutelaw_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "act_sections", ["act_id"], :name => "index_act_sections_on_act_id"
+  add_index "act_sections", ["legislation_url"], :name => "index_act_sections_on_legislation_url"
 
   create_table "acts", :force => true do |t|
     t.text     "name"
     t.text     "title"
     t.integer  "year"
     t.integer  "number"
-    t.text     "opsi_url"
     t.text     "statutelaw_url"
-    t.text     "legislation_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "opsi_url"
+    t.string   "legislation_url"
   end
 
+  add_index "acts", ["legislation_url"], :name => "index_acts_on_legislation_url"
   add_index "acts", ["name"], :name => "index_acts_on_name"
 
   create_table "bills", :force => true do |t|
@@ -70,6 +85,7 @@ ActiveRecord::Schema.define(:version => 20090921161904) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "html_page_title"
+    t.string   "file_type"
   end
 
   add_index "mif_files", ["bill_id"], :name => "index_mif_files_on_bill_id"

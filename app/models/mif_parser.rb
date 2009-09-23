@@ -121,7 +121,7 @@ class MifParser
     else
       if clean(stage_para/'String/text()') && clean(stage_para/'String/text()').downcase.strip == "consideration of bill"
         header_para = doc.search("//TextFlow[Para]").search("Para[text()*=`Header']/ParaLine")
-        if clean(header_para.last/'String/text()').downcase.strip =~ /tabled/
+        if clean(header_para.last/'String/text()') && clean(header_para.last/'String/text()').downcase.strip =~ /tabled/
           file_type = "Tabled "
         end
         file_type += "Report"
@@ -131,6 +131,10 @@ class MifParser
         etag_elements = (doc/'TextFlow/Para/ParaLine/ElementBegin/ETag/text()').to_s.gsub("`","").split("'")
         if etag_elements.include?("Clauses") && etag_elements.include?("WordsOfEnactment")
           file_type = "Clauses"
+        elsif etag_elements.include?("Schedules") && etag_elements.include?("ScheduleNumber") && etag_elements.include?("ScheduleTitle")
+          file_type = "Schedules"
+        elsif etag_elements.include?("Arrangement")
+          file_type = "Arrangement"
         end 
       end
     end
@@ -701,7 +705,15 @@ class MifParser
     if @suffix
       @suffix += get_char(element)
     else
-      add_to_last_line get_char(element)
+      last_line = @xml.pop
+      if last_line.include?("<TableData ")
+        add_to_last_line get_char(element)
+        flush_strings
+        @xml << last_line
+      else
+        @xml << last_line
+        add_to_last_line get_char(element)
+      end
     end
   end
 
