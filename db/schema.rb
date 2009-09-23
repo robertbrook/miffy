@@ -9,7 +9,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090923134721) do
+ActiveRecord::Schema.define(:version => 20090923135802) do
+
+  create_table "act_parts", :force => true do |t|
+    t.integer  "act_id"
+    t.string   "name"
+    t.string   "title"
+    t.string   "opsi_url"
+    t.string   "legislation_url"
+    t.string   "statutelaw_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "act_parts", ["act_id"], :name => "index_act_parts_on_act_id"
+  add_index "act_parts", ["legislation_url"], :name => "index_act_parts_on_legislation_url"
 
   create_table "act_sections", :force => true do |t|
     t.integer  "act_id"
@@ -20,9 +34,11 @@ ActiveRecord::Schema.define(:version => 20090923134721) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "statutelaw_url"
+    t.integer  "act_part_id"
   end
 
   add_index "act_sections", ["act_id"], :name => "index_act_sections_on_act_id"
+  add_index "act_sections", ["act_part_id"], :name => "index_act_sections_on_act_part_id"
   add_index "act_sections", ["legislation_url"], :name => "index_act_sections_on_legislation_url"
 
   create_table "acts", :force => true do |t|

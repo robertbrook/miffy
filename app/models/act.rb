@@ -3,6 +3,7 @@ require 'hpricot'
 
 class Act < ActiveRecord::Base
 
+  has_many :act_parts
   has_many :act_sections
 
   validates_presence_of :name, :opsi_url, :legislation_url
