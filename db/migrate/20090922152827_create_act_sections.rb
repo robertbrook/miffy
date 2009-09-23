@@ -20,8 +20,6 @@ class CreateActSections < ActiveRecord::Migration
     add_index :act_sections, :act_id
     add_index :act_sections, :legislation_url
     add_index :acts, :legislation_url
-
-    Act.find_each {|x| x.save }
   end
 
   def self.down
