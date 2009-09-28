@@ -89,6 +89,7 @@ class MifToHtmlParser
     Amendment Amendment_Number Amendment_Text Amendments_Commons Arrangement
     BillData BillTitle Bpara
     ClauseText ClauseTitle Clause_Committee
+    ScheduleTitle Schedule PartSch PartTitle
     Clauses ClausesToBeConsidered Clauses_ar
     Committee CommitteeShorttitle
     Cover CoverHeading CoverPara
@@ -129,7 +130,7 @@ class MifToHtmlParser
   SPAN = %w[Amendment_Text_text
       Bold Bold_text
       ActClauseTitle_text
-      ClauseTitle_text
+      ClauseTitle_text ScheduleTitle_text
       Date_text Day Definition Definition_text Dropcap
       Enact
       FrameData
