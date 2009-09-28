@@ -1,4 +1,5 @@
 require 'open-uri'
+require 'morph'
 require 'hpricot'
 
 class Act < ActiveRecord::Base
@@ -7,7 +8,7 @@ class Act < ActiveRecord::Base
   has_many :act_sections
 
   validates_presence_of :name, :opsi_url, :legislation_url
-  before_validation :populate_year, :populate_number, :populate_title, :populate_opsi_url, :populate_legislation_url, :populate_act_sections
+  before_validation :populate_year, :populate_number, :populate_title, :populate_opsi_url, :populate_legislation_url #, :populate_act_sections
 
   class << self
     def from_name name
@@ -103,7 +104,31 @@ class Act < ActiveRecord::Base
     end
   end
 
-  def populate_act_sections
+  # def populate_act_sections
+    # if act_sections.size == 0 && legislation_url
+      # xml = open(legislation_url)
+      # xml.gsub!(' Type=','TheType=')
+      # xml.gsub!('dc:type','dc:the_type')
+      # legislation = Morph.from_hash(Hash.from_xml(xml))
+#
+      # legislation.contents.contents_parts.each do |part|
+        # act_part = act_parts.create :name => part.contents_number,
+            # :title => part.contents_title,
+            # :legislation_url => part.document_uri
+#
+        # sections = part.contents_pblocks.collect(&:contents_items).flatten
+#
+        # sections.each do |section|
+          # act_sections.create :number => section.contents_number,
+              # :title => section.contents_title.title.strip,
+              # :act_part_id => act_part.id,
+              # :legislation_url => section.document_uri
+        # end
+      # end
+    # end
+  # end
+
+  def populate_act_sections_from_opsi_url
     if act_sections.size == 0 && opsi_url && legislation_url
       doc = Hpricot open(opsi_url)
       (doc/'span[@class="LegDS LegContentsNo"]').each do |span|
