@@ -119,14 +119,23 @@ class MifParser
         file_type = "Marshalled List"
       end
     else
+      header_para = doc.search("//TextFlow[Para]").search("Para[text()*=`Header']/ParaLine")
       if clean(stage_para/'String/text()') && clean(stage_para/'String/text()').downcase.strip == "consideration of bill"
-        header_para = doc.search("//TextFlow[Para]").search("Para[text()*=`Header']/ParaLine")
         if clean(header_para.last/'String/text()') && clean(header_para.last/'String/text()').downcase.strip =~ /tabled/
           file_type = "Tabled "
         end
         file_type += "Report"
-      elsif clean(stage_para/'String/text()') && clean(stage_para/'String/text()').downcase.strip =~ /committee$/
-        file_type = "Amendments"
+      elsif clean(stage_para/'String/text()') && clean(stage_para/'String/text()').downcase.strip =~ /committee/
+        if clean(header_para.last/'String/text()') && clean(header_para.last/'String/text()').downcase.strip =~ /tabled/
+          file_type = "Tabled Report"
+        else
+          day_para = doc.search("//TextFlow[Para]").search("Para[text()*=`Date']")
+          if clean(day_para/'String/text()').to_s =~ /tabled/
+            file_type = "Tabled Amendments"
+          else
+            file_type = "Amendments"
+          end
+        end
       else
         etag_elements = (doc/'TextFlow/Para/ParaLine/ElementBegin/ETag/text()').to_s.gsub("`","").split("'")
         if etag_elements.include?("Clauses") && etag_elements.include?("WordsOfEnactment")

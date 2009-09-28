@@ -136,10 +136,6 @@ class MifFile < ActiveRecord::Base
       (doc/xpath).to_s
     end
 
-    def make_title xml, display_type, xpath
-      text_item(xml, 'BillData/BillTitle/text()') + " (#{display_type})"
-    end
-
     def set_html_page_title xml
       type = helper.document_type(path)
       display_type = type.sub('_', ' ').gsub(/\b\w/){$&.upcase}
@@ -149,16 +145,7 @@ class MifFile < ActiveRecord::Base
         display_type << ' of Bill'
       end
 
-      self.html_page_title = case type
-        when /^(clauses|cover|arrangement)$/
-          make_title xml, display_type, 'BillData/BillTitle/text()'
-        when /^(amendment_paper|marshalled_list)$/
-          make_title xml, display_type, 'CommitteeShorttitle/STText/text()'
-        when 'consideration'
-          make_title xml, display_type, 'Head/HeadAmd/Shorttitle/text()'
-        else
-          display_type
-      end
+      self.html_page_title = Bill.find_by_id(self.bill_id).name + " (#{display_type})"
       save!
     end
 
