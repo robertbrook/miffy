@@ -132,6 +132,7 @@ describe ExplanatoryNotesParser do
           with_tag('Clause[Number="915"]')
           with_tag('Clause[Number="916"]')
           with_tag('Clause[Number="917"]')
+          with_tag('Clause[Number="918"]')
           with_tag('Clause[Number="919"]')
           with_tag('Clause[Number="920"]')
           with_tag('Clause[Number="921"]')
@@ -184,6 +185,11 @@ describe ExplanatoryNotesParser do
         with_tag('Clause[Number="4"]')
         with_tag('Clause[Number="5"]')
       end
+    end
+    
+    it 'should create the expected number of Clauses' do
+      doc = Hpricot.XML @result
+      (doc/'Clause').count.should == 5
     end
   end
   

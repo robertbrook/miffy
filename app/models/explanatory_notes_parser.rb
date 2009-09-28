@@ -152,11 +152,11 @@ class ExplanatoryNotesParser
     if line =~ /^Clause \d+\S*(: .*)?$/
       if @page_line_count == 1
         @xml << "\n \n"
-        if @in_schedule
-          return false
-        else
-          return true
-        end
+      end
+      if @in_schedule
+        return false
+      else
+        return true
       end
       last_line = @xml.pop
       if last_line.strip == ""
@@ -180,6 +180,16 @@ class ExplanatoryNotesParser
         return true
       end
       @xml << last_line
+    end
+    if line =~ /^Clause \d+[^\s\.*]$/
+      if @page_line_count == 1
+        @xml << "\n \n"
+      end
+      if @in_schedule
+        return false
+      else
+        return true
+      end
     end
     false
   end
