@@ -5,18 +5,21 @@ require 'legislation_uk'
 
 class Act < ActiveRecord::Base
 
-  has_many :act_parts
-  has_many :act_sections
+  has_many :act_parts, :dependent => :delete_all
+  has_many :act_sections, :dependent => :delete_all
 
-  validates_presence_of :name, :opsi_url, :legislation_url
-  before_validation :populate_year, :populate_number, :populate_title, :populate_legislation_urls
+  validates_presence_of :name, :legislation_url
+  validates_uniqueness_of :legislation_url
+
+  before_validation :populate_year, :populate_number, :populate_title,
+      :populate_legislation_urls, :populate_act_sections
 
   class << self
     def from_name name
       if act = find_by_name(name)
-        act.populate_opsi_url unless act.opsi_url?
         act
       else
+        logger.info "creating from name: #{name}"
         create! :name => name
       end
     end
@@ -74,36 +77,31 @@ class Act < ActiveRecord::Base
   def populate_legislation_urls
     if legislation_url.blank?
       if legislation = get_legislation
-        self.legislation_url = legislation.legislation_url
-        self.opsi_url = legislation.opsi_url
-        self.statutelaw_url = legislation.statutelaw_url
+        self.legislation_url = legislation.legislation_uri
+        self.opsi_url = legislation.opsi_uri
+        self.statutelaw_url = legislation.statutelaw_uri
       end
     end
   end
 
-  # def populate_act_sections
-    # if act_sections.size == 0 && legislation_url
-      # xml = open(legislation_url)
-      # xml.gsub!(' Type=','TheType=')
-      # xml.gsub!('dc:type','dc:the_type')
-      # legislation = Morph.from_hash(Hash.from_xml(xml))
-#
-      # legislation.contents.contents_parts.each do |part|
-        # act_part = act_parts.create :name => part.contents_number,
-            # :title => part.contents_title,
-            # :legislation_url => part.document_uri
-#
-        # sections = part.contents_pblocks.collect(&:contents_items).flatten
-#
-        # sections.each do |section|
-          # act_sections.create :number => section.contents_number,
-              # :title => section.contents_title.title.strip,
-              # :act_part_id => act_part.id,
-              # :legislation_url => section.document_uri
-        # end
-      # end
-    # end
-  # end
+  def populate_act_sections
+    if act_sections.empty?
+      if legislation = get_legislation
+        legislation.parts.each do |part|
+          act_part = act_parts.build :name => part.number,
+              :title => part.title,
+              :legislation_url => part.legislation_uri
+
+          part.sections.each do |section|
+            act_sections.build :number => section.number,
+                :title => section.title,
+                :act_part => act_part,
+                :legislation_url => section.legislation_uri
+          end
+        end
+      end
+    end
+  end
 
   def populate_act_sections_from_opsi_url
     if act_sections.size == 0 && opsi_url && legislation_url
