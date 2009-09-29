@@ -89,17 +89,17 @@ class MifToHtmlParser
     Amendment Amendment_Number Amendment_Text Amendments_Commons Arrangement
     BillData BillTitle Bpara
     ClauseText ClauseTitle Clause_Committee
-    ScheduleTitle Schedule PartSch PartTitle
+    ScheduleTitle Schedule PartSch PartTitle 
     Clauses ClausesToBeConsidered Clauses_ar
-    Committee CommitteeShorttitle
+    Committee CommitteeShorttitle ChapterTitle
     Cover CoverHeading CoverPara
-    CrossHeadingSch CrossHeadingTitle
+    CrossHeading CrossHeadingSch CrossHeadingTitle
+    Part Chapter TableTitle Xref Sbscript Formula
     Date
     Footer
     Given
     Head HeadAmd HeadConsider HeadNotice Head_thin
     Heading_ar Heading_text
-    Jref
     List LongTitle Longtitle_text
     MarshalledOrderNote Motion Move
     NewClause_Committee NoticeOfAmds
@@ -132,10 +132,10 @@ class MifToHtmlParser
       ActClauseTitle_text
       ClauseTitle_text ScheduleTitle_text
       Date_text Day Definition Definition_text Dropcap
-      Enact
+      DefinitionListItem_text Xref_text
+      Enact Sbscript_text
       FrameData
       Italic
-      Jref_text
       Letter Line Line_text ListItem List_text
       Move_text
       NoteTxt Notehead Number Number_text
@@ -149,6 +149,13 @@ class MifToHtmlParser
       WHITESPACE ].inject({}){|h,v| h[v]=true; h}
 
   SPAN_RE = Regexp.new "(^#{SPAN.keys.join("$|")}$)"
+  
+  IGNORE = %w[Jref_text  
+      InternalReference InternalReference_text
+      Interpretation FileType
+      Jref ].inject({}){|h,v| h[v]=true; h}
+      
+  IGNORE_RE = Regexp.new "(^#{IGNORE.keys.join("$|")}$)"
 
   UL = %w[Sponsors].inject({}){|h,v| h[v]=true; h}
   UL_RE = Regexp.new "(#{UL.keys.join("|")})"
@@ -490,7 +497,7 @@ class MifToHtmlParser
         add_html_element 'table', node
       when 'a'
         add_anchor node
-      when /Interpretation|FileType/
+      when IGNORE_RE
         # ignore for now
       else
         raise node.name
