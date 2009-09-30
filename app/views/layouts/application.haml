@@ -6,7 +6,6 @@
   %head
     %title= @title ? @title : 'Miffy'
     %meta{ :content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type" }
-    = javascript_include_tag :defaults
     = stylesheet_link_tag @external_sheet, :media => 'screen, projection, print' if @external_sheet
     -else
       -unless params[:wide]
@@ -22,6 +21,6 @@
     = stylesheet_link_tag 'ie', :media => 'screen, projection'
   %body{:class => page_class}
     #page_header
-    #container
-      = yield
+      HEADER
+    #container= yield
     #page_footer
