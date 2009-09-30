@@ -22,9 +22,7 @@
     %meta{ :name=>"viewport", :content=>"width = 480" }
     = stylesheet_link_tag 'ie', :media => 'screen, projection'
   %body{:class => page_class}
+    #page_header
     #container
-      #header
-        / header
       = yield
-      #footer
-        / footer
+    #page_footer
