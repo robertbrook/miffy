@@ -1391,9 +1391,9 @@
 <Paragraph_PgfTag id="1055394"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="39"></ParaLineStart>a person is entitled to child benefit in respect of the child, or</Para_text></Paragraph_PgfTag>
 </Para><PageStart id="1057562" PageType="BodyPage" PageNum="14">Page 14</PageStart><Para id="1055397">
 <Paragraph_PgfTag id="1055398"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="1"></ParaLineStart>entitlement to child benefit in respect of the child is excluded by the <ParaLineStart LineNum="2"></ParaLineStart>provisions specified in subsection (2)(a) or (b) (children in care of <ParaLineStart LineNum="3"></ParaLineStart>authority),</Para_text></Paragraph_PgfTag>
-</Para>
-<SubSection_PgfTag id="1055405"><PgfNumString></PgfNumString><TextContinuation id="1055402"><TextContinuation_text><ParaLineStart LineNum="4"></ParaLineStart>but subject as follows.</TextContinuation_text></TextContinuation>
-</SubSection_PgfTag>
+</Para><TextContinuation id="1055402">
+<SubSection_PgfTag id="1055405"><PgfNumString></PgfNumString><TextContinuation_text><ParaLineStart LineNum="4"></ParaLineStart>but subject as follows.</TextContinuation_text></SubSection_PgfTag>
+</TextContinuation>
 </SubSection>
 <SubSection id="1055408">
 <SubSection_PgfTag id="1055409"><PgfNumString><PgfNumString_1>(2)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="5"></ParaLineStart>The provisions referred to in subsection (1)(b) are—</SubSection_text></SubSection_PgfTag>
@@ -1457,9 +1457,9 @@
 <Paragraph_PgfTag id="1055583"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="1"></ParaLineStart>subscriptions to, and</Para_text></Paragraph_PgfTag>
 </Para><Para id="1055586">
 <Paragraph_PgfTag id="1055588"><PgfNumString><PgfNumString_1>(c)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="2"></ParaLineStart>investments under</Para_text></Paragraph_PgfTag>
-</Para>
-<SubSection_PgfTag id="1055594"><PgfNumString></PgfNumString><TextContinuation id="1055591"><TextContinuation_text><ParaLineStart LineNum="3"></ParaLineStart>a child trust fund.</TextContinuation_text></TextContinuation>
-</SubSection_PgfTag>
+</Para><TextContinuation id="1055591">
+<SubSection_PgfTag id="1055594"><PgfNumString></PgfNumString><TextContinuation_text><ParaLineStart LineNum="3"></ParaLineStart>a child trust fund.</TextContinuation_text></SubSection_PgfTag>
+</TextContinuation>
 </SubSection>
 <SubSection id="1055597">
 <SubSection_PgfTag id="1055598"><PgfNumString><PgfNumString_1>(2)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="4"></ParaLineStart>Those matters are—</SubSection_text></SubSection_PgfTag>
@@ -1469,9 +1469,9 @@
 <Paragraph_PgfTag id="1055608"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="6"></ParaLineStart>entitlement to, and</Para_text></Paragraph_PgfTag>
 </Para><Para id="1055611">
 <Paragraph_PgfTag id="1055613"><PgfNumString><PgfNumString_1>(c)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="7"></ParaLineStart>levels of</Para_text></Paragraph_PgfTag>
-</Para>
-<SubSection_PgfTag id="1055617"><PgfNumString></PgfNumString><TextContinuation id="1055616"><TextContinuation_text><ParaLineStart LineNum="8"></ParaLineStart>the benefits and credits specified in subsection (3) in respect of the holder of a <ParaLineStart LineNum="9"></ParaLineStart>child trust fund.</TextContinuation_text></TextContinuation>
-</SubSection_PgfTag>
+</Para><TextContinuation id="1055616">
+<SubSection_PgfTag id="1055617"><PgfNumString></PgfNumString><TextContinuation_text><ParaLineStart LineNum="8"></ParaLineStart>the benefits and credits specified in subsection (3) in respect of the holder of a <ParaLineStart LineNum="9"></ParaLineStart>child trust fund.</TextContinuation_text></SubSection_PgfTag>
+</TextContinuation>
 </SubSection>
 <SubSection id="1055622">
 <SubSection_PgfTag id="1055623"><PgfNumString><PgfNumString_1>(3)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="10"></ParaLineStart>The following are specified in this subsection—</SubSection_text></SubSection_PgfTag>

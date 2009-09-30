@@ -1,12 +1,6 @@
--@external_sheet = params[:style]
--@file = params[:file] || "Index"
-- if params[:interleave]
-  - if params[:wide]
-    - @ens = 'interleaved_wide'
-  -else
-    - @ens = 'interleaved'
-- else
-  - @ens = ''
+- @external_sheet = params[:style]
+- @file = params[:file] || "Index"
+- params[:interleave] ? (params[:wide] ? @ens = 'interleaved_wide' : @ens = 'interleaved') : @ens = ''
 
 %html{:lang=>"en-GB"}
   %head
