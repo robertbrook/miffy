@@ -96,7 +96,8 @@ class Act < ActiveRecord::Base
             act_sections.build :number => section.number,
                 :title => section.title,
                 :act_part => act_part,
-                :legislation_url => section.legislation_uri
+                :legislation_url => section.legislation_uri,
+                :opsi_url => section.opsi_uri
           end
         end
       end
