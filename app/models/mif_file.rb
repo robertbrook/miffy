@@ -55,27 +55,32 @@ class MifFile < ActiveRecord::Base
           title = title[0..0].upcase + title[1..(title.length-1)]
         end
         if title == "Finance Bill"
-          cmd = %Q[cd #{dir}; grep -A2 "AttrName \\`CopyrightYear'" '#{parts[0].strip}.mif' | grep AttrValue]
-          values = `#{cmd}`
-          if values == ''
-            cmd = %Q[cd #{dir}; grep -A8 "ETag \\`Date.text'" '#{parts[0].strip}.mif' | grep String]
-            values += `#{cmd}`
-          end
-          if values == ''
-            cmd = %Q[cd #{dir}; grep -A8 "ETag \\`Day'" '#{parts[0].strip}.mif' | grep String]
-            values += `#{cmd}`
-          end
-          if values == ''
-            cmd = %Q[cd #{dir}; grep -A8 "ETag \\`Date'" '#{parts[0].strip}.mif' | grep String]
-            values += `#{cmd}`
-          end
-          year = ""
-          if values[/.*(\d\d\d\d).*/]
-            title += " #{$1}"
-          end
+          title = append_year_to_title(title, dir, "#{parts[0].strip}.mif")
         end
         yield [file, title]
       end
+    end
+
+    def append_year_to_title(title, dir, filename)
+      cmd = %Q[cd #{dir}; grep -A2 "AttrName \\`CopyrightYear'" '#{filename}' | grep AttrValue]
+      values = `#{cmd}`
+      if values == ''
+        cmd = %Q[cd #{dir}; grep -A8 "ETag \\`Date.text'" '#{filename}' | grep String]
+        values += `#{cmd}`
+      end
+      if values == ''
+        cmd = %Q[cd #{dir}; grep -A8 "ETag \\`Day'" '#{filename}' | grep String]
+        values += `#{cmd}`
+      end
+      if values == ''
+        cmd = %Q[cd #{dir}; grep -A8 "ETag \\`Date'" '#{filename}' | grep String]
+        values += `#{cmd}`
+      end
+      year = ""
+      if values[/.*(\d\d\d\d).*/]
+        title += " #{$1}"
+      end
+      title
     end
   end
 
