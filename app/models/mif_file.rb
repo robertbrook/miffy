@@ -35,7 +35,7 @@ class MifFile < ActiveRecord::Base
         bill_name = bills[path]
 
         if path.include?('Finance_Clauses.xml')
-          bill_name = 'Finance Bill'
+          bill_name = 'Finance Bill 2009'
         end
 
         file.set_bill_title(bill_name) if file.bill_id.nil? && bill_name
@@ -54,7 +54,26 @@ class MifFile < ActiveRecord::Base
         if title[0..0][/[a-z]/]
           title = title[0..0].upcase + title[1..(title.length-1)]
         end
-
+        if title == "Finance Bill"
+          cmd = %Q[cd #{dir}; grep -A2 "AttrName \\`CopyrightYear'" '#{parts[0].strip}.mif' | grep AttrValue]
+          values = `#{cmd}`
+          if values == ''
+            cmd = %Q[cd #{dir}; grep -A8 "ETag \\`Date.text'" '#{parts[0].strip}.mif' | grep String]
+            values += `#{cmd}`
+          end
+          if values == ''
+            cmd = %Q[cd #{dir}; grep -A8 "ETag \\`Day'" '#{parts[0].strip}.mif' | grep String]
+            values += `#{cmd}`
+          end
+          if values == ''
+            cmd = %Q[cd #{dir}; grep -A8 "ETag \\`Date'" '#{parts[0].strip}.mif' | grep String]
+            values += `#{cmd}`
+          end
+          year = ""
+          if values[/.*(\d\d\d\d).*/]
+            title += " #{$1}"
+          end
+        end
         yield [file, title]
       end
     end
@@ -62,7 +81,7 @@ class MifFile < ActiveRecord::Base
 
   def set_bill_title text
     text = text.chomp(' [HL]')
-    if text[/Bill$/]
+    if text[/Bill$/] or text[/Bill \d\d\d\d$/]
       bill = Bill.from_name text
       logger.info "  setting bill: #{text}"
       self.bill_id = bill.id

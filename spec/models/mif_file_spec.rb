@@ -4,6 +4,8 @@ describe MifFile do
   
   describe 'when parsing bill titles' do
     it 'should find file names and titles' do
+      fixtures_folder = RAILS_ROOT + '/spec/fixtures'
+      
       titles = "030703fines_cc(j-refs_resolved).mif-   <String `Courts Bill'>
                 030703fines_cc(j-refs_unresolved).backup.mif-   <String `Courts Bill'>
                 030703fines_cc(j-refs_unresolved).mif-   <String `Courts Bill'>
@@ -37,18 +39,18 @@ describe MifFile do
                 pbc0930106a.mif-   <String `Construction Bill'>"
       
       results = []
-      MifFile.parse_bill_titles(titles,'/home/x') do |file, title|
+      MifFile.parse_bill_titles(titles,fixtures_folder) do |file, title|
         results << [file, title]
       end
       
       results.size.should == 31
-      results.first.should == ['/home/x/030703fines_cc(j-refs_resolved).mif', 'Courts Bill']
-      results[8].should ==    ['/home/x/Report.backup.mif', 'Legal Deposit Libraries Bill']
-      results[17].should ==   ['/home/x/amsorig.mif', 'Finance Bill']
-      results[21].should ==     ['/home/x/fiream2.mif', 'Fireworks Bill']
-      results[26].should ==  ['/home/x/Cover.mif', 'Law Commission [HL]']
-      results[29].should ==  ['/home/x/pbc0930106a.mif', 'Local Democracy, Economic Development and ']
-      results.last.should ==  ['/home/x/pbc0930106a.mif', 'Construction Bill']
+      results.first.should == ["#{fixtures_folder}/030703fines_cc(j-refs_resolved).mif", 'Courts Bill']
+      results[8].should ==    ["#{fixtures_folder}/Report.backup.mif", 'Legal Deposit Libraries Bill']
+      results[17].should ==   ["#{fixtures_folder}/amsorig.mif", 'Finance Bill 2003']
+      results[21].should ==     ["#{fixtures_folder}/fiream2.mif", 'Fireworks Bill']
+      results[26].should ==  ["#{fixtures_folder}/Cover.mif", 'Law Commission [HL]']
+      results[29].should ==  ["#{fixtures_folder}/pbc0930106a.mif", 'Local Democracy, Economic Development and ']
+      results.last.should ==  ["#{fixtures_folder}/pbc0930106a.mif", 'Construction Bill']
     end
   end
 end
