@@ -34,10 +34,12 @@ class MifFile < ActiveRecord::Base
         file = find_or_create_by_path(path)
         bill_name = bills[path]
 
-        parts = path.split("/")
-        filename = parts.pop
-        filedir = parts.join("/")
-        file_type = get_file_type(filedir, filename) if file.file_type.nil? && file_type
+        if file.file_type.nil?
+          parts = path.split("/")
+          filename = parts.pop
+          filedir = parts.join("/")
+          file_type = get_file_type(filedir, filename) 
+        end
         
         if path.include?('Finance_Clauses.xml')
           bill_name = 'Finance Bill 2009'
