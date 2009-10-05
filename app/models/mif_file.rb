@@ -12,7 +12,7 @@ class MifFile < ActiveRecord::Base
   class << self
     def load paths
       directories = paths.collect {|x| File.dirname(x)}.uniq
-
+ 
       bills = directories.inject({}) do |hash, dir|
         cmd = %Q[cd #{dir}; grep -A12 "ETag \\`Shorttitle'" *.mif | grep String]
         values = `#{cmd}`
@@ -34,11 +34,19 @@ class MifFile < ActiveRecord::Base
         file = find_or_create_by_path(path)
         bill_name = bills[path]
 
+        parts = path.split("/")
+        filename = parts.pop
+        filedir = parts.join("/")
+        file_type = get_file_type(filedir, filename) if file.file_type.nil? && file_type
+        
         if path.include?('Finance_Clauses.xml')
           bill_name = 'Finance Bill 2009'
+          file_type = 'Clauses'
         end
 
         file.set_bill_title(bill_name) if file.bill_id.nil? && bill_name
+        file.set_file_type(file_type) if file.file_type.nil? && file_type
+        
         file
       end
     end
@@ -61,7 +69,7 @@ class MifFile < ActiveRecord::Base
       end
     end
 
-    def append_year_to_title(title, dir, filename)
+    def append_year_to_title title, dir, filename
       cmd = %Q[cd #{dir}; grep -A2 "AttrName \\`CopyrightYear'" '#{filename}' | grep AttrValue]
       values = `#{cmd}`
       if values == ''
@@ -82,6 +90,68 @@ class MifFile < ActiveRecord::Base
       end
       title
     end
+    
+    def get_file_type dir, filename
+      cmd = %Q[cd #{dir}; grep -A7 "ETag \\`NoticeOfAmds'" '#{filename}' | grep String]
+      values = `#{cmd}`
+      if values.downcase.include?('notices of amendments')
+        return "Marshalled List"
+      end
+
+      cmd = %Q[cd #{dir}; grep -A7 "ETag \\`Stageheader'" '#{filename}' | grep String]
+      values = `#{cmd}`
+      if values.downcase.include?('consideration of bill')
+        cmd = %Q[cd #{dir}; grep -A7 "ETag \\`Date'" '#{filename}' | grep String]
+        values = `#{cmd}`
+        if values.downcase.include?('tabled')
+          return "Tabled Report"
+        end
+        cmd = %Q[cd #{dir}; grep -A7 "PgfTag \\`Header'" '#{filename}' | grep String]
+        values = `#{cmd}`
+        if values.downcase.include?('tabled')
+          return "Tabled Report"
+        end
+
+        return "Report"
+      end
+
+      cmd = %Q[cd #{dir}; grep -A12 "ETag \\`Stageheader'" '#{filename}' | grep String]
+      values = `#{cmd}`
+      if values.downcase.include?('committee')
+        cmd = %Q[cd #{dir}; grep -A7 "ETag \\`Day'" '#{filename}' | grep String]
+        values = `#{cmd}`
+        if values.downcase.include?('tabled')
+          return "Tabled Amendments"
+        end
+
+        return "Amendments"
+      end
+
+      cmd = %Q[cd #{dir}; grep -A1 "ETag \\`WordsOfEnactment'" '#{filename}']
+      values = `#{cmd}`
+      unless values == ''
+        return "Clauses"
+      end
+
+      cmd = %Q[cd #{dir}; grep -A2 "<ElementBegin" '#{filename}' | grep "ETag \\`Arrangement'"]
+      values = `#{cmd}`
+      unless values == ''
+        return "Arrangement"
+      end
+
+      cmd = %Q[cd #{dir}; grep -A5 "PgfTag \\`SchedulesTitle'" '#{filename}' | grep ETag]
+      values = `#{cmd}`
+      unless values == ""
+        return "Schedules"
+      end
+
+      return "Other"
+    end
+  end
+
+  def set_file_type text
+    self.file_type = text
+    self.save
   end
 
   def set_bill_title text
@@ -92,12 +162,6 @@ class MifFile < ActiveRecord::Base
       self.bill_id = bill.id
       self.save
     end
-  end
-  
-  def set_file_type xml
-    doc = Hpricot.XML xml
-    self.file_type = (doc/'BillData/FileType/text()').to_s
-    self.save
   end
 
   def haml_template_exists?
@@ -123,7 +187,6 @@ class MifFile < ActiveRecord::Base
       raise "unrecognized path: #{path}"
     end
 
-    set_file_type(xml)
     set_html_page_title(xml)
     xml = ActReferenceParser.new.parse_xml(xml)
     result = MifToHtmlParser.new.parse_xml xml, :clauses_file => clauses_file, :format => :haml, :body_only => true, :ens => explanatory_notes

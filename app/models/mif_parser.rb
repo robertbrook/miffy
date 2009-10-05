@@ -109,53 +109,11 @@ class MifParser
     @variable_list = get_variables doc
     @citations = []
   end
-
-  def get_file_type doc
-    file_type = ""
-    
-    stage_para = doc.search("//TextFlow[Para]").search("Para[text()*=`StageHeader']")
-    if stage_para.size == 2
-      if clean(stage_para[0]/'String/text()').downcase.strip == "notices of amendments"
-        file_type = "Marshalled List"
-      end
-    else
-      header_para = doc.search("//TextFlow[Para]").search("Para[text()*=`Header']/ParaLine")
-      if clean(stage_para/'String/text()') && clean(stage_para/'String/text()').downcase.strip == "consideration of bill"
-        if clean(header_para.last/'String/text()') && clean(header_para.last/'String/text()').downcase.strip =~ /tabled/
-          file_type = "Tabled "
-        end
-        file_type += "Report"
-      elsif clean(stage_para/'String/text()') && clean(stage_para/'String/text()').downcase.strip =~ /committee/
-        if clean(header_para.last/'String/text()') && clean(header_para.last/'String/text()').downcase.strip =~ /tabled/
-          file_type = "Tabled Report"
-        else
-          day_para = doc.search("//TextFlow[Para]").search("Para[text()*=`Date']")
-          if clean(day_para/'String/text()').to_s =~ /tabled/
-            file_type = "Tabled Amendments"
-          else
-            file_type = "Amendments"
-          end
-        end
-      else
-        etag_elements = (doc/'TextFlow/Para/ParaLine/ElementBegin/ETag/text()').to_s.gsub("`","").split("'")
-        if etag_elements.include?("Clauses") && etag_elements.include?("WordsOfEnactment")
-          file_type = "Clauses"
-        elsif etag_elements.include?("Schedules") && etag_elements.include?("ScheduleNumber") && etag_elements.include?("ScheduleTitle")
-          file_type = "Schedules"
-        elsif etag_elements.include?("Arrangement")
-          file_type = "Arrangement"
-        end 
-      end
-    end
-    file_type = "Other" if file_type == ""
-    file_type
-  end
   
   def make_xml doc
     initialize_doc_state doc
     @xml = ['<Document><BillData>']
     add_bill_attribute 'ShortTitle', 'BillTitle'
-    add "<FileType>#{get_file_type(doc)}</FileType>"
     (doc/'TextFlow').each do |flow|
       handle_flow(flow) unless is_instructions?(flow)
     end
