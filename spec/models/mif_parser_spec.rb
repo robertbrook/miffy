@@ -133,10 +133,6 @@ describe MifParser do
     it 'should add a BillTitle element' do
       @result.should have_tag('BillTitle', :text => 'Law Commission Bill [HL]')
     end
-    
-    it 'should add a FileType element' do
-      @result.should have_tag('FileType', :text => 'Clauses')
-    end
 
     it 'should add a Frame element' do
       @result.gsub('.','-').should have_tag('FrameData[id="1112726"]') do
@@ -222,10 +218,6 @@ describe MifParser do
 
     it 'should create XML' do
       @result.gsub('.','-').should have_tag('Amendments-Commons')
-    end
-    
-    it 'should add a FileType element' do
-      @result.should have_tag('FileType', :text => 'Amendments')
     end
 
     it 'should put para line start before STText' do
