@@ -224,9 +224,8 @@ class MifToHtmlParser
   end
 
   def find_act_url act_name
-    #act = Act.from_name act_name
-    #act.opsi_url
-    "test"
+    act = Act.from_name act_name
+    act.opsi_url
   end
 
   def add_link_element node, div=false
@@ -343,6 +342,9 @@ class MifToHtmlParser
     end
     
     first_line = false
+    if @html.last && @html.last.strip == ''
+      @html.pop
+    end
     if @html.last && @html.last.include?('<')
       first_line = true
     end
