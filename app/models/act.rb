@@ -90,14 +90,16 @@ class Act < ActiveRecord::Base
         legislation.parts.each do |part|
           act_part = act_parts.build :name => part.number,
               :title => part.title,
-              :legislation_url => part.legislation_uri
+              :legislation_url => part.legislation_uri,
+              :statutelaw_url => part.statutelaw_uri
 
           part.sections.each do |section|
             act_sections.build :number => section.number,
                 :title => section.title,
                 :act_part => act_part,
                 :legislation_url => section.legislation_uri,
-                :opsi_url => section.opsi_uri
+                :opsi_url => section.opsi_uri,
+                :statutelaw_url => section.statutelaw_uri
           end
         end
       end
