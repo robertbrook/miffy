@@ -89,7 +89,7 @@ class MifToHtmlParser
     Amendment Amendment_Number Amendment_Text Amendments_Commons Arrangement
     BillData BillTitle Bpara
     ClauseText ClauseTitle Clause_Committee
-    ScheduleTitle Schedule PartSch PartTitle 
+    ScheduleTitle Schedule PartSch PartTitle
     Clauses ClausesToBeConsidered Clauses_ar
     Committee CommitteeShorttitle ChapterTitle
     Cover CoverHeading CoverPara
@@ -149,12 +149,12 @@ class MifToHtmlParser
       WHITESPACE ].inject({}){|h,v| h[v]=true; h}
 
   SPAN_RE = Regexp.new "(^#{SPAN.keys.join("$|")}$)"
-  
-  IGNORE = %w[Jref_text  
+
+  IGNORE = %w[Jref_text
       InternalReference InternalReference_text
       Interpretation FileType
       Jref ].inject({}){|h,v| h[v]=true; h}
-      
+
   IGNORE_RE = Regexp.new "(^#{IGNORE.keys.join("$|")}$)"
 
   UL = %w[Sponsors].inject({}){|h,v| h[v]=true; h}
@@ -225,7 +225,7 @@ class MifToHtmlParser
 
   def find_act_url act_name
     act = Act.from_name act_name
-    act.opsi_url
+    act.statutelaw_url
   end
 
   def add_link_element node, div=false
@@ -340,7 +340,7 @@ class MifToHtmlParser
     if @html.last && @html.last.include?('<span')
       last_line = @html.pop
     end
-    
+
     first_line = false
     if @html.last && @html.last.strip == ''
       @html.pop
