@@ -10,7 +10,9 @@ describe MifParser do
   before(:all) do
     Act.stub!(:from_name).and_return mock('act',
       :opsi_url => 'http://www.opsi.gov.uk/acts/acts1996/ukpga_19960061_en_1',
-      :legislation_url => 'http://www.legislation.gov.uk/ukpga/1996/61')
+      :legislation_url => 'http://www.legislation.gov.uk/ukpga/1996/61',
+      :statutelaw_url => 'http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61'
+    )
   end
 
   describe 'when parsing MIF file' do
