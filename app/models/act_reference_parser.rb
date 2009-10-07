@@ -32,15 +32,15 @@ class ActReferenceParser
                 section_number = $2
                 section = act.find_section_by_number(section_number)
                 if section
-                  opsi_url = section.opsi_url.blank? ? act.opsi_url : section.opsi_url
-                  cite = %Q|rel="cite" resource="#{section.legislation_url}" href="#{opsi_url}"|
+                  statutelaw_url = section.statutelaw_url.blank? ? act.statutelaw_url : section.statutelaw_url
+                  cite = %Q|rel="cite" resource="#{section.legislation_url}" href="#{statutelaw_url}"|
                 else
-                  cite = %Q|rel="cite" resource="#{act.legislation_url}" href="#{act.opsi_url}"|
+                  cite = %Q|rel="cite" resource="#{act.legislation_url}" href="#{act.statutelaw_url}"|
                 end
                 changed = html.gsub($1, "<a #{cite}>#{$1}</a>")
                 clause.inner_html = changed
               else
-                cite = %Q|rel="cite" resource="#{act.legislation_url}" href="#{act.opsi_url}"|
+                cite = %Q|rel="cite" resource="#{act.legislation_url}" href="#{act.statutelaw_url}"|
                 changed = html.gsub(name, "<a #{cite}>#{name}</a>")
                 clause.inner_html = changed
               end
