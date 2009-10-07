@@ -413,6 +413,19 @@ describe MifParser do
         end
       end
     end
+
+    it 'should add ClauseText paragraph element if there are no sub paragraphs' do
+      text = 'In section 56 of the 1996 Act (interpretation) in the definition of “development agreement” in subsection (1), for “or maintenance” substitute “, maintenance or operation”.'
+      @result.should have_tag('ClauseText[id="1113674"]') do
+        with_tag('ClauseText_PgfTag[id="1113675"]', :text => text) do
+          with_tag('ParaLineStart[LineNum="30"]')
+          # with_tag('SubSection_text', :text => text) do
+            # with_tag('Citation[id="1112749"]') do
+            # end
+          # end
+        end
+      end
+    end
   end
 
 end

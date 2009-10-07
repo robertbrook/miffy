@@ -109,7 +109,7 @@ class MifParser
     @variable_list = get_variables doc
     @citations = []
   end
-  
+
   def make_xml doc
     initialize_doc_state doc
     @xml = ['<Document><BillData>']
@@ -708,6 +708,7 @@ class MifParser
   end
 
   def handle_para_line element
+    add_pgf_tag unless @in_paragraph || !@pgf_tag[/ClauseText/]
     @paraline_start = true
   end
 
