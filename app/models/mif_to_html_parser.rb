@@ -186,29 +186,34 @@ class MifToHtmlParser
     @last_css_class
   end
 
+  def a_attribute node, attribute
+    node[attribute] ? " #{attribute}='#{node[attribute]}'" : ''
+  end
+
   def add_anchor node
-    start_tag = []
-    start_tag << '<a'
-    start_tag << " rel='#{node['rel']}'" if node['rel']
-    start_tag << " resource='#{node['resource']}'" if node['resource']
-    start_tag << " href='#{node['href']}'" if node['href']
-    start_tag << '>'
-    add start_tag.join('')
+    tag = []
+    tag << '<a'
+    tag << a_attribute(node, 'rel')
+    tag << a_attribute(node, 'resource')
+    tag << a_attribute(node, 'href')
+    tag << a_attribute(node, 'title')
+    tag << '>'
+    add tag.join('')
     node_children_to_html(node)
     add '</a>'
   end
 
   def add_html_element name, node
-    start_tag = []
-    start_tag << %Q|<#{name} class="#{css_class(node)}"|
-    start_tag << %Q| id="#{node['id']}"| if node['id']
+    tag = []
+    tag << %Q|<#{name} class="#{css_class(node)}"|
+    tag << %Q| id="#{node['id']}"| if node['id']
     if name == 'hr'
-      start_tag << " />"
+      tag << " />"
     else
-      start_tag << ">"
+      tag << ">"
     end
 
-    add start_tag.join('')
+    add tag.join('')
 
     if name != 'hr'
       node_children_to_html(node)
