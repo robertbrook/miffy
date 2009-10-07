@@ -109,7 +109,7 @@ class MifParser
     @variable_list = get_variables doc
     @citations = []
   end
-  
+
   def make_xml doc
     initialize_doc_state doc
     @xml = ['<Document><BillData>']
@@ -421,7 +421,7 @@ class MifParser
   end
 
   MOVE_OUTSIDE = %w[Amendment Amendment.Number Amendment.Text Longtitle.text
-      SubPara.sch Move List
+      SubPara.sch Move List Motion Text.motion
       ClauseTitle Clause Clauses.ar Clause.ar ClauseText
       Schedule TextContinuation
       InternalReference PartSch DefinitionList Chapter Part Xref
@@ -520,7 +520,7 @@ class MifParser
           @in_paragraph = false
           @opened_in_paragraph.clear
         else
-          raise "too tricky to close <#{@pgf_tag}> paragraph, opened element: #{@opened_in_paragraph.keys.first} last_line: #{last_line} xml: #{@xml.join("\n").reverse[0..1000].reverse}"
+          raise "too tricky to close <#{@pgf_tag}> paragraph\n opened element: '#{@opened_in_paragraph.keys.first}'\n last_line: '#{last_line}'\n xml:\n ...#{@xml.join("\n").reverse[0..1000].reverse}"
         end
       else
         add "</#{@pgf_tag}>\n"
@@ -708,6 +708,9 @@ class MifParser
   end
 
   def handle_para_line element
+    if !@in_paragraph && @pgf_tag[/Text_PgfTag/]
+      add_pgf_tag unless @pgf_tag[/DropCapText_PgfTag/]
+    end
     @paraline_start = true
   end
 

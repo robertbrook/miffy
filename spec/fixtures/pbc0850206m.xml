@@ -8,8 +8,12 @@
 <Resolution id="1070180"><ResolutionHead id="1070184">
 <OrderHeading_PgfTag id="7335998"><PgfNumString></PgfNumString><ResolutionHead_text><ParaLineStart LineNum="8"></ParaLineStart>Resolution of the Programming Sub-Committee</ResolutionHead_text></OrderHeading_PgfTag>
 </ResolutionHead>
-<ResolutionDate id="1070197" Auto="No"><ParaLineStart LineNum="9"></ParaLineStart>The Programming Sub-Committee appointed by the Speaker in respect of the Bill <ParaLineStart LineNum="10"></ParaLineStart>agreed the following Resolution at its meeting on Tuesday 19 May (Standing Order No. <ParaLineStart LineNum="11"></ParaLineStart>83C):</ResolutionDate>
-<ResolutionText id="1070211"><ResolutionText_text><ParaLineStart LineNum="12"></ParaLineStart>That—</ResolutionText_text>
+
+<MotionText_PgfTag id="7336001"><ResolutionDate id="1070197" Auto="No"><ParaLineStart LineNum="9"></ParaLineStart>The Programming Sub-Committee appointed by the Speaker in respect of the Bill <ParaLineStart LineNum="10"></ParaLineStart>agreed the following Resolution at its meeting on Tuesday 19 May (Standing Order No. <ParaLineStart LineNum="11"></ParaLineStart>83C):</ResolutionDate>
+</MotionText_PgfTag>
+<ResolutionText id="1070211">
+<MotionText_PgfTag id="7336008"><ResolutionText_text><ParaLineStart LineNum="12"></ParaLineStart>That—</ResolutionText_text></MotionText_PgfTag>
+
 <ResolutionPara_PgfTag id="7336011"><PgfNumString><PgfNumString_1>(1)</PgfNumString_1> </PgfNumString></ResolutionPara_PgfTag>
 <ResolutionPara id="1070215"><ResolutionPara_text><ParaLineStart LineNum="13"></ParaLineStart>the Committee shall (in addition to its first meeting at 10.30 a.m. on Tuesday <ParaLineStart LineNum="14"></ParaLineStart>2 June) meet—</ResolutionPara_text>
 <ResolutionPara_PgfTag id="7336015"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><ResolutionSubPara id="1070230"><ResolutionSubPara_text><ParaLineStart LineNum="15"></ParaLineStart>at 4.00 p.m. on Tuesday 2 June;</ResolutionSubPara_text></ResolutionSubPara></ResolutionPara_PgfTag>
@@ -39,18 +43,30 @@
 
 <ResolutionPara_PgfTag id="7336116"><PgfNumString><PgfNumString_1>(4)</PgfNumString_1> </PgfNumString><ResolutionPara id="1070309"><ResolutionPara_text><ParaLineStart LineNum="14"></ParaLineStart>the proceedings shall (so far as not previously concluded) be brought to a <ParaLineStart LineNum="15"></ParaLineStart>conclusion at 7.00 p.m. on Tuesday 7 July.</ResolutionPara_text></ResolutionPara></ResolutionPara_PgfTag>
 </ResolutionText>
-<Motion id="1070332"><Text.motion id="1070355"><Italic id="6539820"><ParaLineStart LineNum="16"></ParaLineStart>The Solicitor General has given notice of her intention to move a motion in the terms <ParaLineStart LineNum="17"></ParaLineStart>of the Resolution of the Programming Sub-Committee</Italic> [<Italic id="6541062">Standing Order No. 83C(9)</Italic>].</Text.motion>
-<Text.motion id="7339473"><WHITESPACE id="7339486"></WHITESPACE>
-<Bold id="7339501"><ParaLineStart LineNum="18"></ParaLineStart>The Programming Sub-Committee is expected to agree a revised Resolution at its <ParaLineStart LineNum="19"></ParaLineStart>meeting on Tuesday 2 June.</Bold></Text.motion>
+<Motion id="1070332"><Text.motion id="1070355">
+<MotionText_PgfTag id="7336125"><Italic id="6539820"><ParaLineStart LineNum="16"></ParaLineStart>The Solicitor General has given notice of her intention to move a motion in the terms <ParaLineStart LineNum="17"></ParaLineStart>of the Resolution of the Programming Sub-Committee</Italic> [<Italic id="6541062">Standing Order No. 83C(9)</Italic>].</MotionText_PgfTag>
+</Text.motion>
+<Text.motion id="7339473">
+<MotionText_PgfTag id="7339474"><WHITESPACE id="7339486"></WHITESPACE>
+</MotionText_PgfTag>
+
+<MotionText_PgfTag id="7339502"><Bold id="7339501"><ParaLineStart LineNum="18"></ParaLineStart>The Programming Sub-Committee is expected to agree a revised Resolution at its <ParaLineStart LineNum="19"></ParaLineStart>meeting on Tuesday 2 June.</Bold></MotionText_PgfTag>
+</Text.motion>
 </Motion>
 <ParaLineStart LineNum="20"></ParaLineStart> </Resolution>
 <PageStart id="5184234" PageType="BodyPage" PageNum="29">Page 29</PageStart><Motion id="6541538"><Proposer.name id="6541541"><ParaLineStart LineNum="1"></ParaLineStart>The Solicitor General</Proposer.name>
-<Text.motion id="6541546"><ParaLineStart LineNum="2"></ParaLineStart>That, subject to the discretion of the Chairman, any written evidence received by the <ParaLineStart LineNum="3"></ParaLineStart>Committee shall be reported to the House for publication.</Text.motion>
+<Text.motion id="6541546">
+<MotionText_PgfTag id="7336145"><ParaLineStart LineNum="2"></ParaLineStart>That, subject to the discretion of the Chairman, any written evidence received by the <ParaLineStart LineNum="3"></ParaLineStart>Committee shall be reported to the House for publication.</MotionText_PgfTag>
+</Text.motion>
 </Motion>
 <Head.thin id="6547721"></Head.thin>
 <Motion id="6541484"><Proposer.name id="6541497"><ParaLineStart LineNum="4"></ParaLineStart>The Solicitor General</Proposer.name>
-<Text.motion id="6541505"><ParaLineStart LineNum="5"></ParaLineStart>That, at this and any subsequent meeting at which oral evidence is to be heard, the <ParaLineStart LineNum="6"></ParaLineStart>Committee shall sit in private until the witnesses are admitted.</Text.motion>
-<ParaLineStart LineNum="7"></ParaLineStart> </Motion>
+<Text.motion id="6541505">
+<MotionText_PgfTag id="7336160"><ParaLineStart LineNum="5"></ParaLineStart>That, at this and any subsequent meeting at which oral evidence is to be heard, the <ParaLineStart LineNum="6"></ParaLineStart>Committee shall sit in private until the witnesses are admitted.</MotionText_PgfTag>
+</Text.motion>
+
+<MotionText_PgfTag id="7336166"><ParaLineStart LineNum="7"></ParaLineStart> </MotionText_PgfTag>
+</Motion>
 </HeadConsider>
 </Head>
 <Committee id="1150952"><Clause.Committee id="5244421" Star="No"><Sponsors id="5244424"><Sponsor id="5244427"><ParaLineStart LineNum="8"></ParaLineStart>Mr Mark Harper</Sponsor>
@@ -561,7 +577,9 @@
 </Amendment.Text>
 </Clause.Committee>
 <Separator.thick id="5231613"></Separator.thick>
-<Heading.text id="5231630"><ParaLineStart LineNum="21"></ParaLineStart>New Clauses</Heading.text>
+
+<HeadingText_PgfTag id="7338233"><Heading.text id="5231630"><ParaLineStart LineNum="21"></ParaLineStart>New Clauses</Heading.text>
+</HeadingText_PgfTag>
 <NewClause.Committee id="1495739" Star="No"><ClauseTitle id="1495747">
 <New_C_STitle_PgfTag id="7338239"><PgfNumString></PgfNumString><ClauseTitle_text><ParaLineStart LineNum="22"></ParaLineStart>Free miners</ClauseTitle_text></New_C_STitle_PgfTag>
 </ClauseTitle><Sponsors id="1495759"><Sponsor id="1495762"><ParaLineStart LineNum="23"></ParaLineStart>Mr Mark Harper</Sponsor>
@@ -605,7 +623,9 @@
 <Order.House id="5229327"><OrderDate id="5229330" Auto="No">
 <OrderHeading_PgfTag id="7338337"><PgfNumString></PgfNumString><OrderDate_text><ParaLineStart LineNum="10"></ParaLineStart>Order of the House [11 MAY 2009]</OrderDate_text></OrderHeading_PgfTag>
 </OrderDate>
-<OrderPreamble id="5229335"><ParaLineStart LineNum="11"></ParaLineStart>That the following provisions shall apply to the Equality Bill:</OrderPreamble><OrderText id="5229340"><OrderCrossHeading id="5229343"><CrossHeadingTitle id="5229346"><ParaLineStart LineNum="12"></ParaLineStart>Committal</CrossHeadingTitle>
+
+<MotionText_PgfTag id="7332359"><OrderPreamble id="5229335"><ParaLineStart LineNum="11"></ParaLineStart>That the following provisions shall apply to the Equality Bill:</OrderPreamble></MotionText_PgfTag>
+<OrderText id="5229340"><OrderCrossHeading id="5229343"><CrossHeadingTitle id="5229346"><ParaLineStart LineNum="12"></ParaLineStart>Committal</CrossHeadingTitle>
 
 <OrderHousePara_PgfTag id="7332372"><PgfNumString><PgfNumString_1>1.</PgfNumString_1> </PgfNumString><OrderPara id="5229351"><OrderPara_text><ParaLineStart LineNum="13"></ParaLineStart>The Bill shall be committed to a Public Bill Committee.</OrderPara_text></OrderPara></OrderHousePara_PgfTag>
 </OrderCrossHeading>

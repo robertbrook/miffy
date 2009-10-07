@@ -905,7 +905,9 @@
 <Move id="1053179">
 <Move_PgfTag id="1053184"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><Move_text><ParaLineStart LineNum="17"></ParaLineStart>To move the following Clause:—</Move_text></Move_PgfTag>
 </Move>
-<ClauseText id="1053187"><ParaLineStart LineNum="18"></ParaLineStart>‘The Treasury shall lay before each House of Parliament a report setting out the <ParaLineStart LineNum="19"></ParaLineStart>Treasury’s estimate of the net increase in saving which will result from the <ParaLineStart LineNum="20"></ParaLineStart>provisions of this Act.’.</ClauseText>
+<ClauseText id="1053187">
+<Text_PgfTag id="1053188"><ParaLineStart LineNum="18"></ParaLineStart>‘The Treasury shall lay before each House of Parliament a report setting out the <ParaLineStart LineNum="19"></ParaLineStart>Treasury’s estimate of the net increase in saving which will result from the <ParaLineStart LineNum="20"></ParaLineStart>provisions of this Act.’.</Text_PgfTag>
+</ClauseText>
 </NewClause.Committee>
 <NewClause.Committee id="1053203" Star="Yes"><ClauseTitle id="1053206">
 <New_C_STitle_PgfTag id="1053208"><PgfNumString></PgfNumString><ClauseTitle_text><ParaLineStart LineNum="21"></ParaLineStart>Report on savings incentives</ClauseTitle_text></New_C_STitle_PgfTag>
@@ -918,7 +920,9 @@
 <Move id="1053230">
 <Move_PgfTag id="1053235"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><Move_text><ParaLineStart LineNum="25"></ParaLineStart>To move the following Clause:—</Move_text></Move_PgfTag>
 </Move>
-<ClauseText id="1053238"><ParaLineStart LineNum="26"></ParaLineStart>‘The Treasury and the Department for Work and Pensions shall lay before each <ParaLineStart LineNum="27"></ParaLineStart>House of Parliament a joint report on the Government’s policies to improve <ParaLineStart LineNum="28"></ParaLineStart>savings incentives from birth to retirement.’.</ClauseText>
+<ClauseText id="1053238">
+<Text_PgfTag id="1053239"><ParaLineStart LineNum="26"></ParaLineStart>‘The Treasury and the Department for Work and Pensions shall lay before each <ParaLineStart LineNum="27"></ParaLineStart>House of Parliament a joint report on the Government’s policies to improve <ParaLineStart LineNum="28"></ParaLineStart>savings incentives from birth to retirement.’.</Text_PgfTag>
+</ClauseText>
 </NewClause.Committee>
 <NewClause.Committee id="1053249" Star="Yes"><ClauseTitle id="1053252">
 <New_C_STitle_PgfTag id="1053253"><PgfNumString></PgfNumString><ClauseTitle_text><ParaLineStart LineNum="29"></ParaLineStart>Proposals for conversion of child trust funds to tax-advantaged accounts for retirement <ParaLineStart LineNum="30"></ParaLineStart>saving</ClauseTitle_text></New_C_STitle_PgfTag>
@@ -931,8 +935,12 @@
 <Move id="1053276">
 <Move_PgfTag id="1053281"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><Move_text><ParaLineStart LineNum="34"></ParaLineStart>To move the following Clause:—</Move_text></Move_PgfTag>
 </Move>
-<ClauseText id="1053284"><ParaLineStart LineNum="35"></ParaLineStart>‘The Treasury shall lay before each House of Parliament a report setting out <ParaLineStart LineNum="36"></ParaLineStart>proposals for child trust fund accounts to become, on maturity, tax-advantaged <ParaLineStart LineNum="37"></ParaLineStart>accounts for retirement saving.’.</ClauseText>
+<ClauseText id="1053284">
+<Text_PgfTag id="1053285"><ParaLineStart LineNum="35"></ParaLineStart>‘The Treasury shall lay before each House of Parliament a report setting out <ParaLineStart LineNum="36"></ParaLineStart>proposals for child trust fund accounts to become, on maturity, tax-advantaged <ParaLineStart LineNum="37"></ParaLineStart>accounts for retirement saving.’.</Text_PgfTag>
+</ClauseText>
 </NewClause.Committee>
-<PageStart id="1054514" PageType="BodyPage" PageNum="11">Page 11</PageStart><ParaLineStart LineNum="1"></ParaLineStart> </Committee>
+
+<MotionText_PgfTag id="1053331"><PageStart id="1054514" PageType="BodyPage" PageNum="11">Page 11</PageStart><ParaLineStart LineNum="1"></ParaLineStart> </MotionText_PgfTag>
+</Committee>
 </Amendments.Commons>
 <Interpretation></Interpretation><Footer></Footer></BillData></Document>

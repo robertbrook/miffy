@@ -24,7 +24,9 @@ ake provision amending, and supplementary to, the Channel Tunnel Rail <ParaLineS
 </Clause>
 <Clause HardReference="j3" id="1112782" TemplateVersion="4.2.002"><ClauseTitle id="1112786">
 <ClauseTitle_PgfTag id="1112788"><PgfNumString><PgfNumString_1>2</PgfNumString_1> </PgfNumString><ClauseTitle_text><ParaLineStart LineNum="14"></ParaLineStart>Access contracts</ClauseTitle_text></ClauseTitle_PgfTag>
-</ClauseTitle><ClauseText id="1112791"><ParaLineStart LineNum="15"></ParaLineStart>In <a href="http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61/PartI/56" resource="http://www.legislation.gov.uk/ukpga/1996/61/section/56" rel="cite">section 17 of the 1996 Act</a> (access agreements), the following are repealed—<Para id="1112795">
+</ClauseTitle><ClauseText id="1112791">
+<ClauseText_PgfTag id="1112792"><ParaLineStart LineNum="15"></ParaLineStart>In <a href="http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61/PartI/56" resource="http://www.legislation.gov.uk/ukpga/1996/61/section/56" rel="cite">section 17 of the 1996 Act</a> (access agreements), the following are repealed—</ClauseText_PgfTag>
+<Para id="1112795">
 <Paragraph_PgfTag id="1112797"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="16"></ParaLineStart>in subsection (2), the words “Subject to subsection (3) below,”;</Para_text></Paragraph_PgfTag>
 </Para><Para id="1112800">
 <Paragraph_PgfTag id="1112804"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="17"></ParaLineStart>subsection (3).</Para_text></Paragraph_PgfTag>
@@ -32,7 +34,9 @@ ake provision amending, and supplementary to, the Channel Tunnel Rail <ParaLineS
 </Clause>
 <Clause HardReference="j4" id="1112821" TemplateVersion="4.2.002"><ClauseTitle id="1112825">
 <ClauseTitle_PgfTag id="1112827"><PgfNumString><PgfNumString_1>3</PgfNumString_1> </PgfNumString><ClauseTitle_text><ParaLineStart LineNum="18"></ParaLineStart>Duties of Office of Rail Regulation</ClauseTitle_text></ClauseTitle_PgfTag>
-</ClauseTitle><ClauseText id="1112830"><ParaLineStart LineNum="19"></ParaLineStart>In <a href="http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61/PartI/56" resource="http://www.legislation.gov.uk/ukpga/1996/61/section/56" rel="cite">section 21 of the 1996 Act</a> (duties of the Office of Rail Regulation as to the <ParaLineStart LineNum="20"></ParaLineStart>exercise of regulatory functions), the following are repealed—<Para id="1111744">
+</ClauseTitle><ClauseText id="1112830">
+<ClauseText_PgfTag id="1112831"><ParaLineStart LineNum="19"></ParaLineStart>In <a href="http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61/PartI/56" resource="http://www.legislation.gov.uk/ukpga/1996/61/section/56" rel="cite">section 21 of the 1996 Act</a> (duties of the Office of Rail Regulation as to the <ParaLineStart LineNum="20"></ParaLineStart>exercise of regulatory functions), the following are repealed—</ClauseText_PgfTag>
+<Para id="1111744">
 <Paragraph_PgfTag id="1112835"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="21"></ParaLineStart>subsections (2) to (5);</Para_text></Paragraph_PgfTag>
 </Para><Para id="1111767">
 <Paragraph_PgfTag id="1112838"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="22"></ParaLineStart>in subsection (6), the definitions of “existing”, “international services” <ParaLineStart LineNum="23"></ParaLineStart>and “network”;</Para_text></Paragraph_PgfTag>
@@ -42,7 +46,9 @@ ake provision amending, and supplementary to, the Channel Tunnel Rail <ParaLineS
 </Clause>
 <PageStart PageType="BodyPage" PageNum="2" id="1112569">Page 2</PageStart><Clause HardReference="j8" id="1112856" TemplateVersion="4.2.002"><ClauseTitle id="1112860">
 <ClauseTitle_PgfTag id="1112862"><PgfNumString><PgfNumString_1>4</PgfNumString_1> </PgfNumString><ClauseTitle_text><ParaLineStart LineNum="1"></ParaLineStart>Power of Office of Rail Regulation to charge fees</ClauseTitle_text></ClauseTitle_PgfTag>
-</ClauseTitle><ClauseText id="1112865"><ParaLineStart LineNum="2"></ParaLineStart>After <a href="http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61/PartI/56" resource="http://www.legislation.gov.uk/ukpga/1996/61/section/56" rel="cite">section 21 of the 1996 Act</a> insert—<Amendment id="1112869"><Clause Number="21" id="1112872" Letter="A" Quote="Double"><ClauseTitle id="1112875">
+</ClauseTitle><ClauseText id="1112865">
+<ClauseText_PgfTag id="1112866"><ParaLineStart LineNum="2"></ParaLineStart>After <a href="http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61/PartI/56" resource="http://www.legislation.gov.uk/ukpga/1996/61/section/56" rel="cite">section 21 of the 1996 Act</a> insert—</ClauseText_PgfTag>
+<Amendment id="1112869"><Clause Number="21" id="1112872" Letter="A" Quote="Double"><ClauseTitle id="1112875">
 <_ClauseTitle_PgfTag id="1112877"><PgfNumString><PgfNumString_1>“21A</PgfNumString_1> </PgfNumString><ActClauseTitle_text><ParaLineStart LineNum="3"></ParaLineStart>Fees</ActClauseTitle_text></_ClauseTitle_PgfTag>
 </ClauseTitle><ClauseText id="1112440"><SubSection id="1112448">
 <_SubSection_PgfTag id="1113594"><PgfNumString><PgfNumString_1>(1)</PgfNumString_1> </PgfNumString><SubSection_text><Italic id="1113593"><ParaLineStart LineNum="4"></ParaLineStart>Subject to this section, the Office of Rail Regulation may by notice require a <ParaLineStart LineNum="5"></ParaLineStart>rail link undertaker to pay a fee in respect of the exercise of any of the Office of <ParaLineStart LineNum="6"></ParaLineStart>Rail Regulation’s functions in relation to the rail link</Italic>.</SubSection_text></_SubSection_PgfTag>
@@ -80,7 +86,9 @@ ake provision amending, and supplementary to, the Channel Tunnel Rail <ParaLineS
 </Clause>
 <Clause HardReference="j2" id="1113665" TemplateVersion="4.2.002"><ClauseTitle id="1113669">
 <ClauseTitle_PgfTag id="1113671"><PgfNumString><PgfNumString_1>5</PgfNumString_1> </PgfNumString><ClauseTitle_text><ParaLineStart LineNum="29"></ParaLineStart>Meaning of “development agreement”</ClauseTitle_text></ClauseTitle_PgfTag>
-</ClauseTitle><ClauseText id="1113674"><ParaLineStart LineNum="30"></ParaLineStart>In <a href="http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61/PartI/56" resource="http://www.legislation.gov.uk/ukpga/1996/61/section/56" rel="cite">section 56 of the 1996 Act</a> (interpretation) in the definition of “development <ParaLineStart LineNum="31"></ParaLineStart>agreement” in subsection (1), for “or maintenance” substitute “, maintenance or <ParaLineStart LineNum="32"></ParaLineStart>operation”.</ClauseText>
+</ClauseTitle><ClauseText id="1113674">
+<ClauseText_PgfTag id="1113675"><ParaLineStart LineNum="30"></ParaLineStart>In <a href="http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61/PartI/56" resource="http://www.legislation.gov.uk/ukpga/1996/61/section/56" rel="cite">section 56 of the 1996 Act</a> (interpretation) in the definition of “development <ParaLineStart LineNum="31"></ParaLineStart>agreement” in subsection (1), for “or maintenance” substitute “, maintenance or <ParaLineStart LineNum="32"></ParaLineStart>operation”.</ClauseText_PgfTag>
+</ClauseText>
 </Clause>
 <Clause HardReference="j5" id="1113687" TemplateVersion="4.2.002"><ClauseTitle id="1113691">
 <ClauseTitle_PgfTag id="1113693"><PgfNumString><PgfNumString_1>6</PgfNumString_1> </PgfNumString><ClauseTitle_text><ParaLineStart LineNum="33"></ParaLineStart>Interpretation, commencement, short title</ClauseTitle_text></ClauseTitle_PgfTag>

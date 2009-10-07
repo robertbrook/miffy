@@ -1,8 +1,12 @@
 <Document><BillData><Amendments.Commons id="1041717" Auto="Yes"><PageStart id="996720" PageType="BodyPage" PageNum="1">Page 1</PageStart><Head id="1041720"><HeadAmd id="1041724"><Date id="1041727"><Day id="1041730"><ParaLineStart LineNum="1"></ParaLineStart>Friday </Day><Date.text id="1041737">27th June 2003</Date.text>
 </Date>
 <ParaLineStart LineNum="2"></ParaLineStart><Stageheader id="1041743">Consideration of Bill</Stageheader>
-<Motion id="1041748"><Proposer.name id="1041751"></Proposer.name>
-<Text.motion id="1041756"></Text.motion>
+<Motion id="1041748">
+<MotionText_PgfTag id="1041753"><Proposer.name id="1041751"></Proposer.name>
+</MotionText_PgfTag>
+<Text.motion id="1041756">
+<MotionText_PgfTag id="1041759"></MotionText_PgfTag>
+</Text.motion>
 </Motion>
 <ParaLineStart LineNum="3"></ParaLineStart><Shorttitle id="1041762" Amended="AsAmended">Finance Bill, As Amended</Shorttitle>
 </HeadAmd>
