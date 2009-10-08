@@ -7,6 +7,14 @@ class ActReferenceParser
     parse_xml(IO.read(xml_file), options)
   end
 
+  def attributes resource, href, title
+    if title
+      %Q|rel="cite" resource="#{resource}" href="#{href}" title="#{title}"|
+    else
+      %Q|rel="cite" resource="#{resource}" href="#{href}"|
+    end
+  end
+
   def parse_xml xml, options={}
     doc = Hpricot.XML xml
     act_abbreviations = (doc/'/Document/BillData/Interpretation/ActAbbreviation')
@@ -37,28 +45,28 @@ class ActReferenceParser
                   if section.statutelaw_url.blank?
                     if section.opsi_url.blank?
                       if act.statutelaw_url.blank?
-                        cite = %Q|rel="cite" resource="#{section.legislation_url}" href="#{act.opsi_url}" title="#{section.title}"|
+                        cite = attributes section.legislation_url, act.opsi_url, section.label
                       else
-                        cite = %Q|rel="cite" resource="#{section.legislation_url}" href="#{act.statutelaw_url}" title="#{section.title}"|
+                        cite = attributes section.legislation_url, act.statutelaw_url, section.label
                       end
                     else
-                      cite = %Q|rel="cite" resource="#{section.legislation_url}" href="#{section.opsi_url}" title="#{section.title}"|
+                      cite = attributes section.legislation_url, section.opsi_url, section.label
                     end
                   else
-                    cite = %Q|rel="cite" resource="#{section.legislation_url}" href="#{section.statutelaw_url}" title="#{section.title}"|
+                    cite = attributes section.legislation_url, section.statutelaw_url, section.label
                   end
                 elsif act.statutelaw_url.blank?
-                  cite = %Q|rel="cite" resource="#{act.legislation_url}" href="#{act.opsi_url}"|
+                  cite = attributes act.legislation_url, act.opsi_url, ''
                 else
-                  cite = %Q|rel="cite" resource="#{act.legislation_url}" href="#{act.statutelaw_url}"|
+                  cite = attributes act.legislation_url, act.statutelaw_url, ''
                 end
                 changed = html.gsub($1, "<a #{cite}>#{$1}</a>")
                 clause.inner_html = changed
               else
                 if act.statutelaw_url.blank?
-                  cite = %Q|rel="cite" resource="#{act.legislation_url}" href="#{act.opsi_url}"|
+                  cite = attributes act.legislation_url, act.opsi_url, act.title
                 else
-                  cite = %Q|rel="cite" resource="#{act.legislation_url}" href="#{act.statutelaw_url}"|
+                  cite = attributes act.legislation_url, act.statutelaw_url, act.title
                 end
                 changed = html.gsub(name, "<a #{cite}>#{name}</a>")
                 clause.inner_html = changed
@@ -69,6 +77,7 @@ class ActReferenceParser
       end
       doc.to_s
     end
+
   end
 
 end
