@@ -16,7 +16,8 @@ describe ActReferenceParser do
         :opsi_url => 'http://www.opsi.gov.uk/acts/acts1996/ukpga_19960061_en_1')
       act.stub!(:find_section_by_number).and_return mock_model(ActSection,
         :legislation_url=> 'http://www.legislation.gov.uk/ukpga/1996/61/section/56',
-        :statutelaw_url => 'http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61/PartI/56')
+        :statutelaw_url => 'http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61/PartI/56',
+        :title => 'Interpretation')
       Act.stub!(:find_by_legislation_url).and_return act
       @result = @parser.parse_xml(fixture('ChannelTunnel/ChannelTunnelClauses.xml'))
       File.open(RAILS_ROOT + '/spec/fixtures/ChannelTunnel/ChannelTunnelClauses.act.xml','w') {|f| f.write @result }
@@ -45,6 +46,12 @@ describe ActReferenceParser do
     it 'should put rel cite anchor element with href around reference to section of act' do
       @result.should have_tag('ClauseText[id="1113674"]') do
         with_tag('a[href="http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61/PartI/56"]', :text => 'section 56 of the 1996 Act')
+      end
+    end
+
+    it 'should put rel cite anchor element with title around reference to section of act' do
+      @result.should have_tag('ClauseText[id="1113674"]') do
+        with_tag('a[title="Interpretation"]', :text => 'section 56 of the 1996 Act')
       end
     end
   end

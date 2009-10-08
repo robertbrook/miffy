@@ -33,7 +33,7 @@ class ActReferenceParser
                 section = act.find_section_by_number(section_number)
                 if section
                   statutelaw_url = section.statutelaw_url.blank? ? act.statutelaw_url : section.statutelaw_url
-                  cite = %Q|rel="cite" resource="#{section.legislation_url}" href="#{statutelaw_url}"|
+                  cite = %Q|rel="cite" resource="#{section.legislation_url}" href="#{statutelaw_url}" title="#{section.title}"|
                 else
                   cite = %Q|rel="cite" resource="#{act.legislation_url}" href="#{act.statutelaw_url}"|
                 end

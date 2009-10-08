@@ -89,7 +89,7 @@ class MifToHtmlParser
     Amendment Amendment_Number Amendment_Text Amendments_Commons Arrangement
     BillData BillTitle Bpara
     ClauseText ClauseTitle Clause_Committee
-    ScheduleTitle Schedule PartSch PartTitle 
+    ScheduleTitle Schedule PartSch PartTitle
     Clauses ClausesToBeConsidered Clauses_ar
     Committee CommitteeShorttitle ChapterTitle
     Cover CoverHeading CoverPara
@@ -149,12 +149,12 @@ class MifToHtmlParser
       WHITESPACE ].inject({}){|h,v| h[v]=true; h}
 
   SPAN_RE = Regexp.new "(^#{SPAN.keys.join("$|")}$)"
-  
-  IGNORE = %w[Jref_text  
+
+  IGNORE = %w[Jref_text
       InternalReference InternalReference_text
       Interpretation FileType
       Jref ].inject({}){|h,v| h[v]=true; h}
-      
+
   IGNORE_RE = Regexp.new "(^#{IGNORE.keys.join("$|")}$)"
 
   UL = %w[Sponsors].inject({}){|h,v| h[v]=true; h}
@@ -186,29 +186,34 @@ class MifToHtmlParser
     @last_css_class
   end
 
+  def a_attribute node, attribute
+    node[attribute] ? " #{attribute}='#{node[attribute]}'" : ''
+  end
+
   def add_anchor node
-    start_tag = []
-    start_tag << '<a'
-    start_tag << " rel='#{node['rel']}'" if node['rel']
-    start_tag << " resource='#{node['resource']}'" if node['resource']
-    start_tag << " href='#{node['href']}'" if node['href']
-    start_tag << '>'
-    add start_tag.join('')
+    tag = []
+    tag << '<a'
+    tag << a_attribute(node, 'rel')
+    tag << a_attribute(node, 'resource')
+    tag << a_attribute(node, 'href')
+    tag << a_attribute(node, 'title')
+    tag << '>'
+    add tag.join('')
     node_children_to_html(node)
     add '</a>'
   end
 
   def add_html_element name, node
-    start_tag = []
-    start_tag << %Q|<#{name} class="#{css_class(node)}"|
-    start_tag << %Q| id="#{node['id']}"| if node['id']
+    tag = []
+    tag << %Q|<#{name} class="#{css_class(node)}"|
+    tag << %Q| id="#{node['id']}"| if node['id']
     if name == 'hr'
-      start_tag << " />"
+      tag << " />"
     else
-      start_tag << ">"
+      tag << ">"
     end
 
-    add start_tag.join('')
+    add tag.join('')
 
     if name != 'hr'
       node_children_to_html(node)
@@ -225,7 +230,7 @@ class MifToHtmlParser
 
   def find_act_url act_name
     act = Act.from_name act_name
-    act.opsi_url
+    act.statutelaw_url
   end
 
   def add_link_element node, div=false
@@ -340,7 +345,7 @@ class MifToHtmlParser
     if @html.last && @html.last.include?('<span')
       last_line = @html.pop
     end
-    
+
     first_line = false
     if @html.last && @html.last.strip == ''
       @html.pop
