@@ -8,8 +8,8 @@ class Act < ActiveRecord::Base
   has_many :act_parts, :dependent => :delete_all
   has_many :act_sections, :dependent => :delete_all
 
-  validates_presence_of :name, :legislation_url
-  validates_uniqueness_of :legislation_url
+  validates_presence_of :name
+  validates_uniqueness_of :legislation_url, :allow_nil => true
 
   before_validation :populate_year, :populate_number, :populate_title,
       :populate_legislation_urls, :populate_act_sections
