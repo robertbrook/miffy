@@ -18,6 +18,9 @@ class ActReferenceParser
         abbreviated = abbreviation.at('AbbreviatedActName/text()').to_s
         citation = abbreviation.at('Citation')
         act = Act.find_by_legislation_url(citation['legislation_url'])
+        unless act
+          act = Act.find_by_legislation_url(citation['opsi_url'])
+        end
         abbreviations[abbreviated] = act
       end
 
@@ -31,15 +34,32 @@ class ActReferenceParser
                 section_number = $2
                 section = act.find_section_by_number(section_number)
                 if section
-                  statutelaw_url = section.statutelaw_url.blank? ? act.statutelaw_url : section.statutelaw_url
-                  cite = %Q|rel="cite" resource="#{section.legislation_url}" href="#{statutelaw_url}" title="#{section.title}"|
+                  if section.statutelaw_url.blank?
+                    if section.opsi_url.blank?
+                      if act.statutelaw_url.blank?
+                        cite = %Q|rel="cite" resource="#{section.legislation_url}" href="#{act.opsi_url}" title="#{section.title}"|
+                      else
+                        cite = %Q|rel="cite" resource="#{section.legislation_url}" href="#{act.statutelaw_url}" title="#{section.title}"|
+                      end
+                    else
+                      cite = %Q|rel="cite" resource="#{section.legislation_url}" href="#{section.opsi_url}" title="#{section.title}"|
+                    end
+                  else
+                    cite = %Q|rel="cite" resource="#{section.legislation_url}" href="#{section.statutelaw_url}" title="#{section.title}"|
+                  end
+                elsif act.statutelaw_url.blank?
+                  cite = %Q|rel="cite" resource="#{act.legislation_url}" href="#{act.opsi_url}"|
                 else
                   cite = %Q|rel="cite" resource="#{act.legislation_url}" href="#{act.statutelaw_url}"|
                 end
                 changed = html.gsub($1, "<a #{cite}>#{$1}</a>")
                 clause.inner_html = changed
               else
-                cite = %Q|rel="cite" resource="#{act.legislation_url}" href="#{act.statutelaw_url}"|
+                if act.statutelaw_url.blank?
+                  cite = %Q|rel="cite" resource="#{act.legislation_url}" href="#{act.opsi_url}"|
+                else
+                  cite = %Q|rel="cite" resource="#{act.legislation_url}" href="#{act.statutelaw_url}"|
+                end
                 changed = html.gsub(name, "<a #{cite}>#{name}</a>")
                 clause.inner_html = changed
               end

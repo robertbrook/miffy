@@ -17,6 +17,7 @@ class Act < ActiveRecord::Base
   class << self
     def from_name name
       if act = find_by_name(name)
+        act.save if act.opsi_url.blank?
         act
       else
         logger.info "creating from name: #{name}"
@@ -80,6 +81,8 @@ class Act < ActiveRecord::Base
         self.legislation_url = legislation.legislation_uri
         self.opsi_url = legislation.opsi_uri
         self.statutelaw_url = legislation.statutelaw_uri
+      else
+        populate_legislation_urls_via_opsi
       end
     end
   end
@@ -106,6 +109,34 @@ class Act < ActiveRecord::Base
     end
   end
 
+  def populate_legislation_urls_via_opsi
+    search_url = "http://search.opsi.gov.uk/search?q=#{URI.escape(name)}&output=xml_no_dtd&client=opsisearch_semaphore&site=opsi_collection"
+    begin
+      puts search_url
+      doc = Hpricot.XML open(search_url)
+      url = nil
+
+      if doc
+        (doc/'R/T').each do |result|
+          unless url
+            term = result.inner_text.gsub(/<[^>]+>/,'').strip
+            url = result.at('../U/text()').to_s if(name == term || term.starts_with?(title))
+          end
+        end
+
+        self.opsi_url = url
+        if opsi_url[/ukpga/]
+          self.legislation_url = "http://www.legislation.gov.uk/ukpga/#{year}/#{number}"
+        end
+        populate_act_sections_from_opsi_url
+      end
+    rescue Exception => e
+      warn 'error retrieving: ' + search_url
+      warn e.class.name
+      warn e.to_s
+    end
+  end
+
   def populate_act_sections_from_opsi_url
     if act_sections.size == 0 && opsi_url && legislation_url
       doc = Hpricot open(opsi_url)
@@ -116,9 +147,9 @@ class Act < ActiveRecord::Base
           base = opsi_url[/^(.+\/)[^\/]+$/,1]
           section_title = span.next_sibling.inner_text
 
-          act_sections.create :number => section_number, :title => section_title,
+          act_sections.build :number => section_number, :title => section_title,
               :opsi_url => "#{base}#{path}",
-              :legislation_url => "#{legislation_url}/#{section_number}"
+              :legislation_url => "#{legislation_url}/section/#{section_number}"
         else
           warn "cannot find opsi url for section #{section_number} of #{name}"
         end
