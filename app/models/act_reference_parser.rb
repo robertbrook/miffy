@@ -26,8 +26,7 @@ class ActReferenceParser
         html = clause.inner_html
         if html[/\sAct\s/]
           abbreviations.keys.each do |name|
-            if html[/#{name}/]
-              act = abbreviations[name]
+            if html[/#{name}/] && (act = abbreviations[name])
               if html[/(section (\d+) of #{name})/]
                 section_number = $2
                 section = act.find_section_by_number(section_number)
