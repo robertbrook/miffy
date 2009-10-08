@@ -230,7 +230,7 @@ class MifToHtmlParser
 
   def find_act_url act_name
     act = Act.from_name act_name
-    act.statutelaw_url
+    act.statutelaw_url ? act.statutelaw_url : act.opsi_url
   end
 
   def add_link_element node, div=false
