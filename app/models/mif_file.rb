@@ -192,6 +192,10 @@ class MifFile < ActiveRecord::Base
     bill && bill.has_explanatory_notes?
   end
 
+  def haml_template_exists? options={}
+    File.exist?(haml_template(options)) && html_page_title
+  end
+
   private
 
     def convert_to_xml
@@ -214,10 +218,6 @@ class MifFile < ActiveRecord::Base
           :interleave_notes => options[:interleave_notes]
 
       File.open(haml_template(options), 'w+') {|f| f.write(result) }
-    end
-
-    def haml_template_exists? options
-      File.exist?(haml_template(options)) && html_page_title
     end
 
     def results_dir
