@@ -20,7 +20,7 @@
         = stylesheet_link_tag 'act', :media => 'screen, projection'
     %meta{ :name=>"viewport", :content=>"width = 480" }
     = stylesheet_link_tag 'ie', :media => 'screen, projection'
-    = javascript_include_tag :defaults, :cache => true
+    = javascript_include_tag "prototype", :cache => true
   %body{:class => page_class}
     #page_header{:style=>"margin:1em;"}
       =link_to_unless_current("Bill Formats demo", { :action => "index" })
