@@ -50,7 +50,7 @@ class MifToHtmlParser
   end
 
   def generate_html doc, options
-    @interleave = (options[:ens] == 'interleave')
+    @interleave = options[:interleave_notes]
 
     if options[:body_only]
       @html = []
