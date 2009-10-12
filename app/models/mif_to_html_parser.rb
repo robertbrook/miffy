@@ -245,13 +245,15 @@ class MifToHtmlParser
         ''
     end
 
+    title = node.inner_text.blank? ? '' : %Q| title="#{node.inner_text}"|
+
     if div
       add %Q|<div#{id} class="#{node.name}">|
-      add %Q|<a href="#{url}">| unless url.blank?
+      add %Q|<a href="#{url}"#{title}>| unless url.blank?
     elsif url.blank?
       add %Q|<span#{id} class="#{node.name}">|
     else
-      add %Q|<a#{id} href="#{url}" class="#{node.name}">|
+      add %Q|<a#{id} href="#{url}" class="#{node.name}"#{title}>|
     end
     @in_hyperlink = true
     node_children_to_html(node)
