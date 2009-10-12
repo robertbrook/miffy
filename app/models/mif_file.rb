@@ -188,6 +188,10 @@ class MifFile < ActiveRecord::Base
     end
   end
 
+  def has_explanatory_notes?
+    bill && bill.has_explanatory_notes?
+  end
+
   private
 
     def convert_to_xml
