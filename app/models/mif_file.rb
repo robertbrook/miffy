@@ -12,7 +12,7 @@ class MifFile < ActiveRecord::Base
   class << self
     def load paths
       directories = paths.collect {|x| File.dirname(x)}.uniq
- 
+
       bills = directories.inject({}) do |hash, dir|
         cmd = %Q[cd #{dir}; grep -A12 "ETag \\`Shorttitle'" *.mif | grep String]
         values = `#{cmd}`
@@ -38,9 +38,9 @@ class MifFile < ActiveRecord::Base
           parts = path.split("/")
           filename = parts.pop
           filedir = parts.join("/")
-          file_type = get_file_type(filedir, filename) 
+          file_type = get_file_type(filedir, filename)
         end
-        
+
         if path.include?('Finance_Clauses.xml')
           bill_name = 'Finance Bill 2009'
           file_type = 'Clauses'
@@ -48,7 +48,7 @@ class MifFile < ActiveRecord::Base
 
         file.set_bill_title(bill_name) if file.bill_id.nil? && bill_name
         file.set_file_type(file_type) if file.file_type.nil? && file_type
-        
+
         file
       end
     end
@@ -92,7 +92,7 @@ class MifFile < ActiveRecord::Base
       end
       title
     end
-    
+
     def get_file_type dir, filename
       cmd = %Q[cd #{dir}; grep -A7 "ETag \\`NoticeOfAmds'" '#{filename}' | grep String]
       values = `#{cmd}`
@@ -166,33 +166,28 @@ class MifFile < ActiveRecord::Base
     end
   end
 
-  def haml_template_exists?
-    File.exist?(haml_template) && html_page_title
-  end
+  # options
+  # :interleave_notes => true (defaults to false)
+  # :force => true (defaults to false)
+  def convert_to_haml options={}
+    unless haml_template_exists?(options) && !options[:force]
+      if File.extname(path) == '.mif'
+        xml = MifParser.new.parse path
+      elsif File.extname(path) == '.xml'
+        xml = IO.read(path)
+      else
+        raise "unrecognized path: #{path}"
+      end
 
-  def haml_template explanatory_notes=''
-    en_suffix = ''
-    unless explanatory_notes.blank?
-      en_suffix = "_#{explanatory_notes}"
-    end
-    results_dir = RAILS_ROOT + '/app/views/results'
-    Dir.mkdir results_dir unless File.exist?(results_dir)
-    "#{results_dir}/#{path.gsub('/','_').gsub('.','_')}#{en_suffix}.haml"
-  end
-
-  def convert_to_haml explanatory_notes=''
-    if File.extname(path) == '.mif'
-      xml = MifParser.new.parse path
-    elsif File.extname(path) == '.xml'
-      xml = IO.read(path)
+      set_html_page_title(xml)
+      xml = ActReferenceParser.new.parse_xml(xml)
+      result = MifToHtmlParser.new.parse_xml xml, :clauses_file => clauses_file, :format => :haml, :body_only => true, :interleave_notes => options[:interleave_notes]
+      file_name = haml_template(options)
+      File.open(file_name, 'w+') {|f| f.write(result) }
+      file_name
     else
-      raise "unrecognized path: #{path}"
+      haml_template(options)
     end
-
-    set_html_page_title(xml)
-    xml = ActReferenceParser.new.parse_xml(xml)
-    result = MifToHtmlParser.new.parse_xml xml, :clauses_file => clauses_file, :format => :haml, :body_only => true, :ens => explanatory_notes
-    File.open(haml_template(explanatory_notes), 'w+') {|f| f.write(result) }
   end
 
   def convert_to_text
@@ -210,6 +205,20 @@ class MifFile < ActiveRecord::Base
   end
 
   private
+
+    def haml_template_exists? options
+      File.exist?(haml_template(options)) && html_page_title
+    end
+
+    def results_dir
+      results_dir = RAILS_ROOT + '/app/views/results'
+      Dir.mkdir results_dir unless File.exist?(results_dir)
+    end
+
+    def haml_template options
+      en_suffix = options[:interleave_notes] ? '_interleave' : ''
+      "#{results_dir}/#{path.gsub('/','_').gsub('.','_')}#{en_suffix}.haml"
+    end
 
     class Helper
       include Singleton
