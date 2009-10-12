@@ -12,7 +12,7 @@ class MifFile < ActiveRecord::Base
   class << self
     def load paths
       directories = paths.collect {|x| File.dirname(x)}.uniq
- 
+
       bills = directories.inject({}) do |hash, dir|
         cmd = %Q[cd #{dir}; grep -A12 "ETag \\`Shorttitle'" *.mif | grep String]
         values = `#{cmd}`
@@ -38,9 +38,9 @@ class MifFile < ActiveRecord::Base
           parts = path.split("/")
           filename = parts.pop
           filedir = parts.join("/")
-          file_type = get_file_type(filedir, filename) 
+          file_type = get_file_type(filedir, filename)
         end
-        
+
         if path.include?('Finance_Clauses.xml')
           bill_name = 'Finance Bill 2009'
           file_type = 'Clauses'
@@ -48,7 +48,7 @@ class MifFile < ActiveRecord::Base
 
         file.set_bill_title(bill_name) if file.bill_id.nil? && bill_name
         file.set_file_type(file_type) if file.file_type.nil? && file_type
-        
+
         file
       end
     end
@@ -92,7 +92,7 @@ class MifFile < ActiveRecord::Base
       end
       title
     end
-    
+
     def get_file_type dir, filename
       cmd = %Q[cd #{dir}; grep -A7 "ETag \\`NoticeOfAmds'" '#{filename}' | grep String]
       values = `#{cmd}`
@@ -170,13 +170,13 @@ class MifFile < ActiveRecord::Base
     File.exist?(haml_template) && html_page_title
   end
 
-  def haml_template explanatory_notes=''
-    en_suffix = ''
-    unless explanatory_notes.blank?
-      en_suffix = "_#{explanatory_notes}"
-    end
+  def results_dir
     results_dir = RAILS_ROOT + '/app/views/results'
     Dir.mkdir results_dir unless File.exist?(results_dir)
+  end
+
+  def haml_template suffix=''
+    en_suffix = suffix.blank? ? '' : "_#{suffix}"
     "#{results_dir}/#{path.gsub('/','_').gsub('.','_')}#{en_suffix}.haml"
   end
 
