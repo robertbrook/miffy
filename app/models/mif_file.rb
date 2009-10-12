@@ -170,24 +170,8 @@ class MifFile < ActiveRecord::Base
   # :interleave_notes => true (defaults to false)
   # :force => true (defaults to false)
   def convert_to_haml options={}
-    unless haml_template_exists?(options) && !options[:force]
-      if File.extname(path) == '.mif'
-        xml = MifParser.new.parse path
-      elsif File.extname(path) == '.xml'
-        xml = IO.read(path)
-      else
-        raise "unrecognized path: #{path}"
-      end
-
-      set_html_page_title(xml)
-      xml = ActReferenceParser.new.parse_xml(xml)
-      result = MifToHtmlParser.new.parse_xml xml, :clauses_file => clauses_file, :format => :haml, :body_only => true, :interleave_notes => options[:interleave_notes]
-      file_name = haml_template(options)
-      File.open(file_name, 'w+') {|f| f.write(result) }
-      file_name
-    else
-      haml_template(options)
-    end
+    do_convert_to_haml(options) if !haml_template_exists?(options) || options[:force]
+    haml_template(options)
   end
 
   def convert_to_text
@@ -205,6 +189,28 @@ class MifFile < ActiveRecord::Base
   end
 
   private
+
+    def convert_to_xml
+      case File.extname(path)
+        when '.mif'
+          MifParser.new.parse(path)
+        when '.xml'
+          IO.read(path)
+        else
+          raise "unrecognized path: #{path}"
+      end
+    end
+
+    def do_convert_to_haml options
+      xml = convert_to_xml
+      set_html_page_title(xml)
+      xml = ActReferenceParser.new.parse_xml(xml)
+      result = MifToHtmlParser.new.parse_xml xml, :clauses_file => clauses_file,
+          :format => :haml, :body_only => true,
+          :interleave_notes => options[:interleave_notes]
+
+      File.open(haml_template(options), 'w+') {|f| f.write(result) }
+    end
 
     def haml_template_exists? options
       File.exist?(haml_template(options)) && html_page_title
