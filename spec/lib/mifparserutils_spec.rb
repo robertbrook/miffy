@@ -119,6 +119,16 @@ describe MifParserUtils do
               Clause <span class="Clause_number">1</span>,|
     end
 
+    it 'should expand anchor followed by char' do
+      text = %Q|
+        %a{ :href => "http://www.opsi.gov.uk/acts/acts1996/ukpga_19960061_en_2#pt1-pb5-l1g17", :title => "subsection (2)", :rel => "cite", :resource => "http://www.legislation.gov.uk/ukpga/1996/61/section/17/2" }
+          subsection (2)
+        , the words|
+      @utils.format_haml(text).should == %Q|
+        =%Q{<a href="http://www.opsi.gov.uk/acts/acts1996/ukpga_19960061_en_2#pt1-pb5-l1g17" title="subsection (2)" rel="cite" resource="http://www.legislation.gov.uk/ukpga/1996/61/section/17/2">subsection (2)</a>,}
+        the words|
+    end
+
     it 'should expand clause number with square brackets span' do
       text = %Q|
             %span#1485163.Number
