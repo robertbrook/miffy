@@ -65,17 +65,11 @@ class ActReferenceParser
       abbreviations
     end
 
-    def get_cite_attributes html, act, name
-      if html[/(section (\d+) of #{name})/]
-        name = $1
-        section_number = $2
-        if section = act.find_section_by_number(section_number)
-          attributes section.legislation_url, get_section_uri(section, act), section.label
-        else
-          act_cite_attributes act
-        end
+    def get_cite_attributes act, section_number
+      if section = act.find_section_by_number(section_number)
+        attributes section.legislation_url, get_section_uri(section, act), section.label
       else
-        act_cite_attributes act, act.title
+        act_cite_attributes act
       end
     end
 
@@ -84,7 +78,12 @@ class ActReferenceParser
       if html[/\sAct\s/]
         abbreviations.keys.each do |name|
           if html[/#{name}/] && (act = abbreviations[name])
-            cite = get_cite_attributes html, act, name
+            if html[/(section (\d+) of #{name})/]
+              name = $1
+              cite = get_cite_attributes(act, section_number=$2)
+            else
+              cite = act_cite_attributes(act, act.title)
+            end
             changed = html.gsub(name, "<a #{cite}>#{name}</a>")
             clause.inner_html = changed
           end
