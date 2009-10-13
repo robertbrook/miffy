@@ -15,11 +15,14 @@ describe ActReferenceParser do
         :statutelaw_url => 'http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61',
         :opsi_url => 'http://www.opsi.gov.uk/acts/acts1996/ukpga_19960061_en_1',
         :title => 'Channel Tunnel Rail Link Act 1996')
-      act.stub!(:find_section_by_number).and_return mock_model(ActSection,
-        :legislation_url=> 'http://www.legislation.gov.uk/ukpga/1996/61/section/56',
-        :statutelaw_url => 'http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61/PartI/56',
-        :title => 'Interpretation',
-        :label => 'Section 56: Interpretation')
+      act_section = mock_model(ActSection,
+              :legislation_url => 'http://www.legislation.gov.uk/ukpga/1996/61/section/56',
+              :statutelaw_url => 'http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61/PartI/56',
+              :title => 'Interpretation',
+              :label => 'Section 56: Interpretation')
+      act_section.stub!(:legislation_uri_for_subsection).and_return 'http://www.legislation.gov.uk/ukpga/1996/61/section/56/1'
+
+      act.stub!(:find_section_by_number).and_return act_section
       Act.stub!(:find_by_legislation_url).and_return act
       @result = @parser.parse_xml(fixture('ChannelTunnel/ChannelTunnelClauses.xml'))
       File.open(RAILS_ROOT + '/spec/fixtures/ChannelTunnel/ChannelTunnelClauses.act.xml','w') {|f| f.write @result }
@@ -33,29 +36,70 @@ describe ActReferenceParser do
       # end
     # end
 
-    it 'should put rel cite anchor element around reference to section of act' do
-      @result.should have_tag('ClauseText[id="1113674"]') do
-        with_tag('a[rel="cite"]', :text => 'section 56 of the 1996 Act')
+    describe 'when marking up reference to section of act, ' do
+      before(:all) do
+        @section = 'section 56 of the 1996 Act'
+      end
+
+      it 'should put rel cite anchor element around reference' do
+        @result.should have_tag('ClauseText[id="1113674"]') do
+          with_tag('a[rel="cite"]', :text => @section)
+        end
+      end
+
+      describe 'rel cite anchor' do
+        it 'should have resource attribute' do
+          @result.should have_tag('ClauseText[id="1113674"]') do
+            with_tag('a[resource="http://www.legislation.gov.uk/ukpga/1996/61/section/56"]', :text => @section)
+          end
+        end
+
+        it 'should have href attribute' do
+          @result.should have_tag('ClauseText[id="1113674"]') do
+            with_tag('a[href="http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61/PartI/56"]', :text => @section)
+          end
+        end
+
+        it 'should have title attribute' do
+          @result.should have_tag('ClauseText[id="1113674"]') do
+            with_tag('a[title="Section 56: Interpretation"]', :text => @section)
+          end
+        end
       end
     end
 
-    it 'should put rel cite anchor element with resource around reference to section of act' do
-      @result.should have_tag('ClauseText[id="1113674"]') do
-        with_tag('a[resource="http://www.legislation.gov.uk/ukpga/1996/61/section/56"]', :text => 'section 56 of the 1996 Act')
+    describe 'when marking up reference to subsection of act, ' do
+      before(:all) do
+        @subsection = 'subsection (1)'
+      end
+
+      it 'should put rel cite anchor element around reference' do
+        @result.should have_tag('ClauseText[id="1113674"]') do
+          with_tag('a[rel="cite"]', :text => @subsection)
+        end
+      end
+
+      describe 'rel cite anchor' do
+        it 'should have resource attribute' do
+          @result.should have_tag('ClauseText[id="1113674"]') do
+            with_tag('a[resource="http://www.legislation.gov.uk/ukpga/1996/61/section/56/1"]', :text => @subsection)
+          end
+        end
+
+        it 'should have href attribute' do
+          @result.should have_tag('ClauseText[id="1113674"]') do
+            with_tag('a[href="http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61/PartI/56"]', :text => @section)
+          end
+        end
+
+        it 'should have title attribute' do
+          @result.should have_tag('ClauseText[id="1113674"]') do
+            with_tag('a[title="subsection (1)"]', :text => @section)
+          end
+        end
       end
     end
 
-    it 'should put rel cite anchor element with href around reference to section of act' do
-      @result.should have_tag('ClauseText[id="1113674"]') do
-        with_tag('a[href="http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61/PartI/56"]', :text => 'section 56 of the 1996 Act')
-      end
-    end
-
-    it 'should put rel cite anchor element with title around reference to section of act' do
-      @result.should have_tag('ClauseText[id="1113674"]') do
-        with_tag('a[title="Section 56: Interpretation"]', :text => 'section 56 of the 1996 Act')
-      end
-    end
   end
 
 end

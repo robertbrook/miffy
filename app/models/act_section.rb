@@ -6,4 +6,8 @@ class ActSection < ActiveRecord::Base
   def label
     "Section #{number}: #{title}"
   end
+
+  def legislation_uri_for_subsection subsection_number
+    "#{legislation_url}/#{subsection_number}"
+  end
 end
