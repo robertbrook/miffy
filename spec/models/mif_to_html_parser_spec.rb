@@ -155,7 +155,7 @@ Parliament assembled, and by the authority of the same, as follows:—')
 
       @result.should_not include('<a id="1055415" href="' + @url + '" class="Citation">Social Security Contributions and <a name="page14-line7"></a>Benefits Act 1992 (c. 4)</a>')
 
-      @result.should include('<a id="1055415" href="' + @url + '" class="Citation">Social Security Contributions and <br />Benefits Act 1992 (c. 4)</a><a name="page14-line7"></a>')
+      @result.should include('<a id="1055415" href="' + @url + '" class="Citation" title="Social Security Contributions and Benefits Act 1992 (c. 4)">Social Security Contributions and <br />Benefits Act 1992 (c. 4)</a><a name="page14-line7"></a>')
     end
 
     it 'should put new line anchor outside of Shorttitle link' do

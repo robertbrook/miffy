@@ -37,13 +37,12 @@ class ApplicationController < ActionController::Base
       if mif_file
         respond_to do |format|
           format.html do
-            if params[:interleave]
-              template = mif_file.convert_to_haml(:interleave_notes=>true, :force=>params[:force])
-            else
-              template = mif_file.convert_to_haml(:force=>params[:force])
-            end
+            options = {:interleave_notes=>params[:interleave], :force=>params[:force]}
+            template = mif_file.convert_to_haml(options)
+            @mif_file = mif_file
             @title = mif_file.html_page_title
-
+            @show_interleave_link = mif_file.has_explanatory_notes? && !params[:interleave]
+            @show_uninterleave_link = mif_file.has_explanatory_notes? && params[:interleave]
             render :template => template
           end
           format.text do

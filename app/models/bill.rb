@@ -31,6 +31,10 @@ class Bill < ActiveRecord::Base
     end
   end
 
+  def has_explanatory_notes?
+    !note_by_clauses.empty? || !note_by_schedules.empty?
+  end
+
   protected
     def populate_parliament_url
       unless parliament_url
