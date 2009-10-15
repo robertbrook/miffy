@@ -223,6 +223,7 @@ class MifFile < ActiveRecord::Base
     def results_dir
       results_dir = RAILS_ROOT + '/app/views/results'
       Dir.mkdir results_dir unless File.exist?(results_dir)
+      results_dir
     end
 
     def haml_template options

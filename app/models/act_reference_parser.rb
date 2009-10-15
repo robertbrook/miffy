@@ -24,13 +24,18 @@ class ActReferenceParser
       abbreviations = get_abbreviations(act_abbreviations)
       clauses = (doc/'ClauseText')
       clauses.each do |clause|
-        add_links clause, abbreviations
+        add_links(clause, abbreviations) if contains_acts?(clause)
       end
       doc.to_s
     end
   end
 
   private
+
+    def contains_acts? clause
+      clause.inner_html[/\sAct\s/]
+    end
+
     def get_act_uri act
       act.statutelaw_url.blank? ? act.opsi_url : act.statutelaw_url
     end
@@ -47,10 +52,6 @@ class ActReferenceParser
       end
     end
 
-    def act_cite_attributes act, label=''
-      attributes act.legislation_url, get_act_uri(act), label
-    end
-
     def find_act citation
       Act.find_by_legislation_url(citation['legislation_url']) || Act.find_by_opsi_url(citation['opsi_url'])
     end
@@ -65,29 +66,59 @@ class ActReferenceParser
       abbreviations
     end
 
-    def get_cite_attributes act, section_number
+    def act_cite_attributes act, label=''
+      attributes act.legislation_url, get_act_uri(act), label
+    end
+
+    def section_cite_attributes act, section_number, sections
       if section = act.find_section_by_number(section_number)
+        sections << section
         attributes section.legislation_url, get_section_uri(section, act), section.label
       else
         act_cite_attributes act
       end
     end
 
-    def add_links clause, abbreviations
+    def subsection_cite_attributes act, section, subsection
+      subsection_number = subsection[/subsection \((\d+)\)/,1]
+      legislation_uri = section.legislation_uri_for_subsection(subsection_number)
+      attributes legislation_uri, get_section_uri(section, act), subsection
+    end
+
+    def add_link clause, name, cite
       html = clause.inner_html
-      if html[/\sAct\s/]
-        abbreviations.keys.each do |name|
-          if html[/#{name}/] && (act = abbreviations[name])
-            if html[/(section (\d+) of #{name})/]
-              name = $1
-              cite = get_cite_attributes(act, section_number=$2)
-            else
-              cite = act_cite_attributes(act, act.title)
-            end
-            changed = html.gsub(name, "<a #{cite}>#{name}</a>")
-            clause.inner_html = changed
-          end
+      changed = html.gsub(name, "<a #{cite}>#{name}</a>")
+      clause.inner_html = changed
+    end
+
+    def add_act_and_section_links clause, name, act, sections
+      if clause.inner_html[/(section (\d+) of #{name})/]
+        add_link clause, name=$1, section_cite_attributes(act, section_number=$2, sections)
+      else
+        add_link clause, name, act_cite_attributes(act, act.title)
+      end
+    end
+
+    def add_subsection_links clause, act, section
+      subsections = clause.inner_html.scan(/subsection \(\d+\)/).uniq
+
+      subsections.each do |subsection|
+        add_link clause, subsection, subsection_cite_attributes(act, section, subsection)
+      end
+    end
+
+    def add_links clause, abbreviations
+      acts = []
+      sections = []
+      abbreviations.keys.each do |name|
+        if clause.inner_html[/#{name}/] && (act = abbreviations[name])
+          acts << act
+          add_act_and_section_links clause, name, act, sections
         end
+      end
+
+      if acts.size == 1 && sections.size == 1
+        add_subsection_links clause, acts.first, sections.first
       end
     end
 
