@@ -23,7 +23,7 @@
 - unless @files_by_bill.empty?
   - @bill_names.each do |bill_name|
     - key = bill_name.blank? ? nil : bill_name
-    - files = @files_by_bill[key]
+    - files_by_type = @files_by_bill[key].group_by{|x| x.file_type ? x.file_type : nil}
     %table.mif-files
       %caption= key ? bill_name : '(No bill named)'
       %thead
@@ -39,15 +39,19 @@
           %th Size
           %th Regenerate
       %tbody
-        - files.each do |file|
-          %tr.mif-file{:class => cycle("even", "odd")}
-            %td.name{:title => file.file_type }= link_to file.name, "convert?file=#{file.path.gsub('&', '%26')}"
-            %td.text= link_to "Text", "convert?file=#{file.path}&format=text"
-            %td.size= number_to_human_size(File.size(file.path))         
-            %td.regenerate
-              - if file.haml_template_exists?
-                = link_to 'Regenerate', :contoller => "application", :action => "convert", :force => 'true', :file=>"#{file.path}", :method => 'get'
-              - else
-                &nbsp;
+        - files_by_type.keys.each do |file_type|
+          %tr.mif-file-type
+            %th.file-type{:colspan => 4 }= "#{file_type} files"
+          - files = files_by_type[file_type]
+          - files.each do |file|
+            %tr.mif-file{:class => cycle("even", "odd")}
+              %td.name{:title => file.file_type }= link_to file.name, "convert?file=#{file.path.gsub('&', '%26')}"
+              %td.text= link_to "Text", "convert?file=#{file.path}&format=text"
+              %td.size= number_to_human_size(File.size(file.path))         
+              %td.regenerate
+                - if file.haml_template_exists?
+                  = link_to 'Regenerate', :contoller => "application", :action => "convert", :force => 'true', :file=>"#{file.path}", :method => 'get'
+                - else
+                  &nbsp;
 - else
   %p No files available to parse
