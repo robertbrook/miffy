@@ -41,7 +41,7 @@
       %tbody
         - files_by_type.keys.each do |file_type|
           %tr.mif-file-type
-            %th.file-type{:colspan => 4 }= "#{file_type} files"
+            %th.file-type{:colspan => 4 }= file_type.pluralize
           - files = files_by_type[file_type]
           - files.each do |file|
             %tr.mif-file{:class => cycle("even", "odd")}
