@@ -17,6 +17,7 @@ module MifParserUtils
   AMEND_REF = Regexp.new('%a.AmendmentReference\{ :href => "([^"]+)" \}<')
 
   COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_COMMA  = Regexp.new('(\s+)(%a\{)([^\n]+)(\}\n)(\s+)([^\n]+)(\n)(\s+)(, )', Regexp::MULTILINE)
+  COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_SEMICOLON = Regexp.new('(\s+)(%a\{)([^\n]+)(\}\n)(\s+)([^\n]+)(\n)(\s+)(;)', Regexp::MULTILINE)
 
   def format_haml haml, clauses_file_name=nil
     haml = haml.gsub(NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX,  '\1\2 <span class="\4_number">\6</span>\8')
@@ -29,6 +30,14 @@ module MifParserUtils
     matches.each do |match|
       text = match.to_s
       to = "#{match[0]}=%Q{<a #{match[2].gsub(' => ','=').gsub(', :',' ').sub(' :',' ').strip}>#{match[5]}</a>,}\n#{match[7]}"
+      haml.gsub!(text, to)
+    end
+    haml.scan(COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_SEMICOLON) do |match|
+      matches << match
+    end
+    matches.each do |match|
+      text = match.to_s
+      to = "#{match[0]}=%Q{<a #{match[2].gsub(' => ','=').gsub(', :',' ').sub(' :',' ').strip}>#{match[5]}</a>;}\n#{match[7]}"
       haml.gsub!(text, to)
     end
 
