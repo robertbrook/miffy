@@ -92,11 +92,18 @@ class ActReferenceParser
     end
 
     def add_act_and_section_links clause, name, act, sections
+      section_reference = false
+      if clause.inner_html[/(sections (\d+) to (\d+) of #{name})/]
+        add_link clause, name=$1, section_cite_attributes(act, section_number=$2, sections)
+        section_reference = true
+      end
+
       if clause.inner_html[/(section (\d+) of #{name})/]
         add_link clause, name=$1, section_cite_attributes(act, section_number=$2, sections)
-      else
-        add_link clause, name, act_cite_attributes(act, act.title)
+        section_reference = true
       end
+
+      add_link clause, name, act_cite_attributes(act, act.title) unless section_reference
     end
 
     def add_link_to_part clause, name, cite, index

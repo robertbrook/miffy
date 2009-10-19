@@ -36,6 +36,19 @@ describe ActReferenceParser do
       # end
     # end
 
+
+    describe 'when marking up reference to sections of act, ' do
+      before(:all) do
+        @section = 'sections 31 to 33 of the 1996 Act'
+      end
+
+      it 'should put rel cite anchor element around reference' do
+        @result.should have_tag('SubSection_PgfTag[id="1112746"]') do
+          with_tag('a[rel="cite"]', :text => @section)
+        end
+      end
+    end
+
     describe 'when marking up reference to section of act, ' do
       before(:all) do
         @section = 'section 56 of the 1996 Act'
