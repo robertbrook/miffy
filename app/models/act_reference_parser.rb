@@ -99,11 +99,23 @@ class ActReferenceParser
       end
     end
 
-    def add_subsection_links clause, act, section
-      subsections = clause.inner_html.scan(/subsection \(\d+\)/).uniq
+    def add_link_to_part clause, name, cite, index
+      part = clause.inner_html.split(/“[^”]+”/)[index]
+      changed = part.gsub(name, "<a #{cite}>#{name}</a>")
+      text = clause.inner_html
+      clause.inner_html = text.sub(part, changed)
+    end
 
-      subsections.each do |subsection|
-        add_link clause, subsection, subsection_cite_attributes(act, section, subsection)
+    def add_subsection_links clause, act, section
+      text = clause.inner_html
+      parts = text.split(/“[^”]+”/)
+
+      parts.each_with_index do |part, index|
+        subsections = part.scan(/subsection \(\d+\)/).uniq
+
+        subsections.each do |subsection|
+          add_link_to_part clause, subsection, subsection_cite_attributes(act, section, subsection), index
+        end
       end
     end
 
