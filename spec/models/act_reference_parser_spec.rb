@@ -36,6 +36,19 @@ describe ActReferenceParser do
       # end
     # end
 
+
+    describe 'when marking up reference to sections of act, ' do
+      before(:all) do
+        @sections = 'sections 31 to 33 of the 1996 Act'
+      end
+
+      it 'should put rel cite anchor element around reference' do
+        @result.should have_tag('SubSection_PgfTag[id="1112746"]') do
+          with_tag('a[rel="cite"]', :text => @sections)
+        end
+      end
+    end
+
     describe 'when marking up reference to section of act, ' do
       before(:all) do
         @section = 'section 56 of the 1996 Act'
@@ -63,6 +76,20 @@ describe ActReferenceParser do
         it 'should have title attribute' do
           @result.should have_tag('ClauseText[id="1113674"]') do
             with_tag('a[title="Section 56: Interpretation"]', :text => @section)
+          end
+        end
+      end
+    end
+
+    describe 'when marking up reference to subsections of act, ' do
+      describe 'and reference is not in double quotes text' do
+        before(:all) do
+          @subsections = 'subsections (2) to (5)'
+        end
+
+        it 'should put rel cite anchor element around reference' do
+          @result.should have_tag('Paragraph_PgfTag[id="1112835"]') do
+            with_tag('a[rel="cite"]', :text => @subsections)
           end
         end
       end
