@@ -2,9 +2,9 @@
 - @file = params[:file] || "Index"
 - params[:interleave] ? (params[:wide] ? @ens = 'interleaved_wide' : @ens = 'interleaved') : @ens = ''
 <!DOCTYPE html>
-%html{:lang=>"en-GB",:manifest=>'site.manifest'}
+%html{:lang=>"en-GB"}
   %head
-    %title= @title ? @title : 'Bills'
+    %title= @title ? @title : 'Miffy'
     %meta{ :content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type" }
     - if @external_sheet
       = stylesheet_link_tag @external_sheet, :media => 'screen, projection, print'
