@@ -79,8 +79,7 @@ class ActReferenceParser
       end
     end
 
-    def subsection_cite_attributes act, section, subsection
-      subsection_number = subsection[/subsection \((\d+)\)/,1]
+    def subsection_cite_attributes act, section, subsection, subsection_number
       legislation_uri = section.legislation_uri_for_subsection(subsection_number)
       attributes legislation_uri, get_section_uri(section, act), subsection
     end
@@ -113,17 +112,27 @@ class ActReferenceParser
       clause.inner_html = text.sub(part, changed)
     end
 
+    def insert_subsection_links parts, clause, act, section, subsection_pattern, subsection_number_pattern
+      parts.each_with_index do |part, index|
+        subsections = part.scan(subsection_pattern).uniq
+
+        subsections.each do |subsection|
+          subsection_number = subsection[subsection_number_pattern,1]
+          add_link_to_part clause, subsection, subsection_cite_attributes(act, section, subsection, subsection_number), index
+        end
+      end
+    end
+
+    SUBSECTION_REGEXP = /subsection \(\d+\)/
+    SUBSECTION_NO_REGEXP = /subsection \((\d+)\)/
+    SUBSECTIONS_REGEXP = /subsections \(\d+\) to \(\d+\)/
+    SUBSECTIONS_NO_REGEXP = /subsections \((\d+)\) to \(\d+\)/
+
     def add_subsection_links clause, act, section
       text = clause.inner_html
       parts = text.split(/“[^”]+”/)
-
-      parts.each_with_index do |part, index|
-        subsections = part.scan(/subsection \(\d+\)/).uniq
-
-        subsections.each do |subsection|
-          add_link_to_part clause, subsection, subsection_cite_attributes(act, section, subsection), index
-        end
-      end
+      insert_subsection_links parts, clause, act, section, SUBSECTION_REGEXP, SUBSECTION_NO_REGEXP
+      insert_subsection_links parts, clause, act, section, SUBSECTIONS_REGEXP, SUBSECTIONS_NO_REGEXP
     end
 
     def add_links clause, abbreviations
