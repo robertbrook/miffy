@@ -60,6 +60,7 @@ class ExplanatoryNotesParser
 
     @in_section = false
     @in_clause = false
+    @in_clause_range = false
     @in_part = false
     @in_chapter = false
     @in_schedule = false
@@ -347,6 +348,10 @@ class ExplanatoryNotesParser
       end
       add "</Clause>"
     end
+    if @in_clause_range
+      add "</ClauseRange>"
+      @in_clause_range = false
+    end
     
     if number =~ /([^:]*):*/
       number = $1
@@ -355,6 +360,36 @@ class ExplanatoryNotesParser
     add_section_start('Clause', number)
     @xml << last_line if insert_heading
     @in_clause = true
+  end
+  
+  def handle_clause_range first_clause, last_clause
+    insert_heading = false
+    
+    if @in_section
+      add "</TextSection>"
+      @in_section = false
+    end
+    if @in_clause
+      last_line = @xml.pop
+      if is_subheading(last_line)
+        insert_heading = true
+      else
+        @xml << last_line
+      end
+      add "</Clause>"
+      @in_clause = false
+    end
+    if @in_clause_range
+      add "</ClauseRange>"
+      @in_clause_range = false
+    end
+    
+    @in_clause_range = true
+    @range_end = last_clause
+        
+    add (%Q|<ClauseRange start="#{first_clause}" end="#{last_clause}">|)
+    
+    @xml << last_line if insert_heading
   end
 
   def handle_schedule number
@@ -374,6 +409,10 @@ class ExplanatoryNotesParser
         add "</Part>"
         @in_part = false
       end
+    end
+    if @in_clause_range
+      add "</ClauseRange>"
+      @in_clause_range = false
     end
 
     if @in_schedule
@@ -396,6 +435,10 @@ class ExplanatoryNotesParser
     if @in_clause
       add "</Clause>"
       @in_clause = false
+    end
+    if @in_clause_range
+      add "</ClauseRange>"
+      @in_clause_range = false
     end
     if @in_schedule
       add "</Schedule>"
@@ -424,6 +467,10 @@ class ExplanatoryNotesParser
     if @in_clause
       add "</Clause>"
       @in_clause = false
+    end
+    if @in_clause_range
+      add "</ClauseRange>"
+      @in_clause_range = false
     end
     if @in_chapter
       add "</Chapter>"
@@ -458,6 +505,10 @@ class ExplanatoryNotesParser
     end
     if @in_clause
       add "</Clause>"
+    end
+    if @in_clause_range
+      add "</ClauseRange>"
+      @in_clause_range = false
     end
     if @in_chapter
       add "</Chapter>"
@@ -536,14 +587,16 @@ class ExplanatoryNotesParser
           handle_part($1) if is_part_start(line.strip)
         when /^Chapter (.*)/
           handle_chapter($1) if is_chapter_start(line.strip)
+        when /^Clauses (.*) to (.*):/
+          handle_clause_range($1, $2)
       end
 
-      unless @in_clause || @in_schedule || @in_part || @in_chapter || @in_section
+      unless @in_clause || @in_schedule || @in_part || @in_chapter || @in_section || @in_clause_range
         add_section_start('TextSection')
         @in_section = true
       end
 
-      if @in_clause || @in_schedule
+      if @in_clause || @in_schedule || @in_clause_range
         check_for_cover_page(line)
       end
 
