@@ -24,7 +24,7 @@
   %body{:class => page_class}
     #page_header{:style=>"margin:1em;"}
       #navigation
-        = link_to_unless_current("Bill Formats", { :action => "index" })
+        = link_to_unless_current("Miffy", { :action => "index" })
         - if @show_interleave_link
           &middot;
           = link_to('Show explanatory notes: Page layout', "convert?file=#{@mif_file.path}&interleave=true")

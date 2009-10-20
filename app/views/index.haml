@@ -15,7 +15,7 @@
         %th Regenerate
     %tbody
       -@act_files.each do |file|
-        %tr.legislation-file{:class => cycle("even", "odd")}
+        %tr.legislation-file
           %td.name= link_to File.basename(file, ".xml"), "act?file=#{file}"
           %td.text &nbsp;
           %td.size= number_to_human_size(File.size(file))
@@ -25,7 +25,7 @@
     - key = bill_name.blank? ? nil : bill_name
     - files_by_type = @files_by_bill[key].group_by{|x| x.file_type ? x.file_type : nil}
     %table.mif-files
-      %caption= key ? bill_name : '(No bill named)'
+      %caption= key ? bill_name : 'No bill named'
       %thead
         %tr
           %th Name
@@ -41,13 +41,13 @@
       %tbody
         - files_by_type.keys.each do |file_type|
           %tr.mif-file-type
-            %th.file-type{:colspan => 4 }= file_type.pluralize
+            %td.file-type{:colspan => 4}= file_type.pluralize
           - files = files_by_type[file_type]
           - files.each do |file|
-            %tr.mif-file{:class => cycle("even", "odd")}
-              %td.name{:title => file.file_type }= link_to file.name, "convert?file=#{file.path.gsub('&', '%26')}"
+            %tr.mif-file
+              %td.name= link_to file.name, "convert?file=#{file.path.gsub('&', '%26')}"
               %td.text= link_to "Text", "convert?file=#{file.path}&format=text"
-              %td.size= number_to_human_size(File.size(file.path))         
+              %td.size= number_to_human_size(File.size(file.path))    
               %td.regenerate
                 - if file.haml_template_exists?
                   = link_to 'Regenerate', :contoller => "application", :action => "convert", :force => 'true', :file=>"#{file.path}", :method => 'get'

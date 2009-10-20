@@ -1,5 +1,5 @@
 @import partials/base.sass
-@import partials/_amendment_docs_shared.sass
+//@import partials/_amendment_docs_shared.sass
 @import blueprint
 
 body
@@ -12,6 +12,7 @@ body
 
 td
   width: 25%
+  border-bottom: thin solid #ccc
   
 td.regenerate
   width: 6em
@@ -24,11 +25,13 @@ td.text
   width: 4em
   
 tr.mif-file-type
-  th
-    padding-top: 8px
+  td.file-type
+    padding-top: 1.6em
+    font-style: italic
   
 caption
-  font-size: 1.4em
+  font-weight: bold
 
 thead, tfoot
   display: none
+

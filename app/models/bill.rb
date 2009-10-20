@@ -5,6 +5,7 @@ class Bill < ActiveRecord::Base
   has_many :mif_files
   has_many :note_by_clauses
   has_many :note_by_schedules
+  has_many :note_range_by_clauses
 
   validates_presence_of :name
   before_validation :populate_parliament_url
@@ -16,8 +17,24 @@ class Bill < ActiveRecord::Base
     end
   end
 
-  def find_note_for_clause_number clause_number
-    note_by_clauses.find_by_clause_number clause_number
+  def find_note_for_clause_number clause_number, search_range=false
+    note = note_by_clauses.find_by_clause_number(clause_number)
+    unless note
+      note = note_range_by_clauses.find_by_clause_number(clause_number)
+    end
+    if !note && search_range
+      ranges = note_range_by_clauses
+      ranges.each do |range|
+        if range.contains_clause?(clause_number)
+          note = range
+        end
+      end
+    end
+    note
+  end
+  
+  def find_note_for_schedule_number schedule_number
+    note_by_schedules.find_by_schedule_number(schedule_number)
   end
 
   def clauses_file
