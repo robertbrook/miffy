@@ -36,7 +36,6 @@ describe ActReferenceParser do
       # end
     # end
 
-
     describe 'when marking up reference to sections of act, ' do
       before(:all) do
         @sections = 'sections 31 to 33 of the 1996 Act'
@@ -50,32 +49,47 @@ describe ActReferenceParser do
     end
 
     describe 'when marking up reference to section of act, ' do
-      before(:all) do
-        @section = 'section 56 of the 1996 Act'
-      end
 
-      it 'should put rel cite anchor element around reference' do
-        @result.should have_tag('ClauseText[id="1113674"]') do
-          with_tag('a[rel="cite"]', :text => @section)
+      describe 'and act is referenced by its full title' do
+        before(:all) do
+          @section = 'section 6 of the Railways Act 2005 (c. 14)'
+        end
+
+        it 'should put rel cite anchor element around reference' do
+          @result.should have_tag('SubSection_PgfTag[id="1112746"]') do
+            # with_tag('a[rel="cite"]', :text => @section)
+          end
         end
       end
 
-      describe 'rel cite anchor' do
-        it 'should have resource attribute' do
+      describe 'and act is referenced by an abbreviated name' do
+        before(:all) do
+          @section = 'section 56 of the 1996 Act'
+        end
+
+        it 'should put rel cite anchor element around reference' do
           @result.should have_tag('ClauseText[id="1113674"]') do
-            with_tag('a[resource="http://www.legislation.gov.uk/ukpga/1996/61/section/56"]', :text => @section)
+            with_tag('a[rel="cite"]', :text => @section)
           end
         end
 
-        it 'should have href attribute' do
-          @result.should have_tag('ClauseText[id="1113674"]') do
-            with_tag('a[href="http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61/PartI/56"]', :text => @section)
+        describe 'rel cite anchor' do
+          it 'should have resource attribute' do
+            @result.should have_tag('ClauseText[id="1113674"]') do
+              with_tag('a[resource="http://www.legislation.gov.uk/ukpga/1996/61/section/56"]', :text => @section)
+            end
           end
-        end
 
-        it 'should have title attribute' do
-          @result.should have_tag('ClauseText[id="1113674"]') do
-            with_tag('a[title="Section 56: Interpretation"]', :text => @section)
+          it 'should have href attribute' do
+            @result.should have_tag('ClauseText[id="1113674"]') do
+              with_tag('a[href="http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61/PartI/56"]', :text => @section)
+            end
+          end
+
+          it 'should have title attribute' do
+            @result.should have_tag('ClauseText[id="1113674"]') do
+              with_tag('a[title="Section 56: Interpretation"]', :text => @section)
+            end
           end
         end
       end
