@@ -11,11 +11,9 @@ class ApplicationController < ActionController::Base
     paths << (RAILS_ROOT + '/spec/fixtures/ChannelTunnel/ChannelTunnelClauses.mif')
     paths << (RAILS_ROOT + '/spec/fixtures/ChannelTunnel/ChannelTunnelLordsClauses.mif')
     paths << (RAILS_ROOT + '/spec/fixtures/ChannelTunnel/ChannelTunnelLordsInboundClauses.mif')
-    paths << (RAILS_ROOT + '/spec/fixtures/finance/aac/Schedules.mif')
 
     en_paths = []
     en_paths << (RAILS_ROOT + '/spec/fixtures/ChannelTunnel/ChannelTunnelENs.pdf')
-    en_paths << (RAILS_ROOT + '/spec/fixtures/CorpTax/ENs/HCB 1- EN Vol 1.pdf')
 
     @mif_files = MifFile.load(paths)
     @en_files = ExplanatoryNotesFile.load(en_paths)
