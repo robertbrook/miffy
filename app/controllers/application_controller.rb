@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
     @bill_names = @mif_files.collect(&:bill).collect{|x| x ? x.name : ''}.uniq.sort
     @files_by_bill = @mif_files.group_by{|x| x.bill ? x.bill.name : nil}
     @act_files = Dir.glob(RAILS_ROOT + '/spec/fixtures/Acts/*.xml')
-    @title = "MIF Files"
+    @title = "Miffy"
     render :template => 'index.haml'
   end
 
