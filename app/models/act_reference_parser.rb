@@ -17,39 +17,51 @@ class ActReferenceParser
 
   def parse_xml xml, options={}
     doc = Hpricot.XML xml
+
     act_abbreviations = (doc/'/Document/BillData/Interpretation/ActAbbreviation')
-    if act_abbreviations.size == 0
-      xml
-    else
+    handle_abbreviated_act_references(act_abbreviations, doc) unless act_abbreviations.empty?
+
+    act_citations = (doc/'/Document/BillData/Clauses/Clause/ClauseText//Citation')
+    handle_act_citation_references(act_citations, doc) unless act_citations.empty?
+
+    no_references = (act_abbreviations.empty? && act_citations.empty?)
+    no_references ? xml : doc.to_s
+  end
+
+  private
+
+    def handle_act_citation_references act_citations, doc
+      act_citations.each do |citation|
+        clause = citation.parent
+        act_title = citation.inner_text
+        text = clause.inner_text
+      end
+    end
+
+    def handle_abbreviated_act_references act_abbreviations, doc
       abbreviations = get_abbreviations(act_abbreviations)
       clauses = (doc/'ClauseText')
       clauses.each do |clause|
         add_links(clause, abbreviations) if contains_acts?(clause)
       end
-      doc.to_s
     end
-  end
 
-  private
+    ACT_REGEXP = /\sAct\s/
 
     def contains_acts? clause
-      clause.inner_html[/\sAct\s/]
+      clause.inner_html[ACT_REGEXP]
     end
 
     def get_act_uri act
       act.statutelaw_url.blank? ? act.opsi_url : act.statutelaw_url
     end
 
+    def get_section_opsi_uri section, act
+      section.opsi_url.blank? ? get_act_uri(act) : section.opsi_url
+    end
+
     def get_section_uri section, act
-      if section.statutelaw_url.blank?
-        if section.opsi_url.blank?
-          get_act_uri(act)
-        else
-          section.opsi_url
-        end
-      else
-        section.statutelaw_url
-      end
+      section.statutelaw_url.blank? ? get_section_opsi_uri(section, act) : section.statutelaw_url
     end
 
     def find_act citation
@@ -84,29 +96,45 @@ class ActReferenceParser
       attributes legislation_uri, get_section_uri(section, act), subsection
     end
 
-    def add_link clause, name, cite
+    def add_link clause, reference, cite
       html = clause.inner_html
-      changed = html.gsub(name, "<a #{cite}>#{name}</a>")
+      changed = html.gsub(reference, "<a #{cite}>#{reference}</a>")
       clause.inner_html = changed
     end
 
-    def add_act_and_section_links clause, name, act, sections
-      section_reference = false
-      if clause.inner_html[/(sections (\d+) to (\d+) of #{name})/]
-        add_link clause, name=$1, section_cite_attributes(act, section_number=$2, sections)
-        section_reference = true
-      end
-
-      if clause.inner_html[/(section (\d+) of #{name})/]
-        add_link clause, name=$1, section_cite_attributes(act, section_number=$2, sections)
-        section_reference = true
-      end
-
-      add_link clause, name, act_cite_attributes(act, act.title) unless section_reference
+    def find_subsection act_name, clause
+      /(section (\d+) of #{act_name})/ =~ clause.inner_html
+      return $1, $2
     end
 
+    def find_subsections act_name, clause
+      /(sections (\d+) to (\d+) of #{act_name})/ =~ clause.inner_html
+      return $1, $2
+    end
+
+    def link_section clause, act, sections
+      reference, section_number = yield
+      if section_number
+        add_link clause, reference, section_cite_attributes(act, section_number, sections)
+        true
+      else
+        false
+      end
+    end
+
+    def add_act_and_section_links clause, act_name, act, sections
+      found_section = link_section(clause, act, sections) { find_subsections(act_name, clause) }
+      found_section = link_section(clause, act, sections) {  find_subsection(act_name, clause) } || found_section
+
+      unless found_section
+        add_link clause, act_name, act_cite_attributes(act, act.title)
+      end
+    end
+
+    QUOTED_REGEXP = /“[^”]+”/
+
     def add_link_to_part clause, name, cite, index
-      part = clause.inner_html.split(/“[^”]+”/)[index]
+      part = clause.inner_html.split(QUOTED_REGEXP)[index]
       changed = part.gsub(name, "<a #{cite}>#{name}</a>")
       text = clause.inner_html
       clause.inner_html = text.sub(part, changed)
@@ -130,7 +158,7 @@ class ActReferenceParser
 
     def add_subsection_links clause, act, section
       text = clause.inner_html
-      parts = text.split(/“[^”]+”/)
+      parts = text.split(QUOTED_REGEXP)
       insert_subsection_links parts, clause, act, section, SUBSECTION_REGEXP, SUBSECTION_NO_REGEXP
       insert_subsection_links parts, clause, act, section, SUBSECTIONS_REGEXP, SUBSECTIONS_NO_REGEXP
     end
