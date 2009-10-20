@@ -11,11 +11,9 @@ class ApplicationController < ActionController::Base
     paths << (RAILS_ROOT + '/spec/fixtures/ChannelTunnel/ChannelTunnelClauses.mif')
     paths << (RAILS_ROOT + '/spec/fixtures/ChannelTunnel/ChannelTunnelLordsClauses.mif')
     paths << (RAILS_ROOT + '/spec/fixtures/ChannelTunnel/ChannelTunnelLordsInboundClauses.mif')
-    paths << (RAILS_ROOT + '/spec/fixtures/finance/aac/Schedules.mif')
 
     en_paths = []
     en_paths << (RAILS_ROOT + '/spec/fixtures/ChannelTunnel/ChannelTunnelENs.pdf')
-    en_paths << (RAILS_ROOT + '/spec/fixtures/CorpTax/ENs/HCB 1- EN Vol 1.pdf')
 
     @mif_files = MifFile.load(paths)
     @en_files = ExplanatoryNotesFile.load(en_paths)
@@ -23,7 +21,7 @@ class ApplicationController < ActionController::Base
     @bill_names = @mif_files.collect(&:bill).collect{|x| x ? x.name : ''}.uniq.sort
     @files_by_bill = @mif_files.group_by{|x| x.bill ? x.bill.name : nil}
     @act_files = Dir.glob(RAILS_ROOT + '/spec/fixtures/Acts/*.xml')
-    @title = "MIF Files"
+    @title = "Miffy"
     render :template => 'index.haml'
   end
 
