@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(:version => 20091019151733) do
   add_index "act_sections", ["legislation_url"], :name => "index_act_sections_on_legislation_url"
 
   create_table "acts", :force => true do |t|
-    t.text     "name"
+    t.string   "name"
     t.text     "title"
     t.integer  "year"
     t.integer  "number"
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(:version => 20091019151733) do
   add_index "acts", ["name"], :name => "index_acts_on_name"
 
   create_table "bills", :force => true do |t|
-    t.text     "name"
+    t.string   "name"
     t.text     "parliament_url"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -86,8 +86,6 @@ ActiveRecord::Schema.define(:version => 20091019151733) do
     t.string   "name"
     t.integer  "bill_id"
     t.string   "path"
-    t.text     "beginning_text"
-    t.text     "ending_text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
