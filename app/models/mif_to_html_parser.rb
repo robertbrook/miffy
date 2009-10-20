@@ -199,8 +199,12 @@ class MifToHtmlParser
     tag << a_attribute(node, 'title')
     tag << '>'
     add tag.join('')
+    @in_hyperlink = true
     node_children_to_html(node)
+    @in_hyperlink = false
     add '</a>'
+
+    add_trailing_para_line_anchor
   end
 
   def add_html_element name, node
@@ -262,6 +266,10 @@ class MifToHtmlParser
     add "</div>" if div
     add "</span>" if url.blank? && !div
 
+    add_trailing_para_line_anchor
+  end
+
+  def add_trailing_para_line_anchor
     if @para_line_anchor
       add @para_line_anchor
       add "&nbsp;"

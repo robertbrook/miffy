@@ -196,7 +196,7 @@ Parliament assembled, and by the authority of the same, as follows:—')
   describe 'when parsing a bill with citation to act' do
     before(:all) do
       @url = 'http://www.opsi.gov.uk/acts/acts2005/ukpga_20050014_en_14'
-      @result = parser(@url).parse_xml(fixture('ChannelTunnel/ChannelTunnelClauses.xml'), :format => :haml)
+      @result = parser(@url).parse_xml(fixture('ChannelTunnel/ChannelTunnelClauses.act.xml'), :format => :haml)
       File.open(RAILS_ROOT + '/spec/fixtures/ChannelTunnel/ChannelTunnelClauses.haml','w') {|f| f.write @result }
     end
 
@@ -205,7 +205,12 @@ Parliament assembled, and by the authority of the same, as follows:—')
     end
 
     it 'should put line start anchor outside of section reference anchor' do
-      # @result.should include('<a href="http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61/PartI/56" title="Section 56: Interpretation" resource="http://www.legislation.gov.uk/ukpga/1996/61/section/56" rel="cite">section 6 of the Railways Act 2005<ParaLineStart LineNum="12"></ParaLineStart> (c. 14)</a>')
+      @result.should include('
+                    section 6 of the Railways Act 2005
+                    %br
+                    (c. 14)
+                  %a{ :name => "page1-line12" }<>
+                  %a{ :name => "clause1-page1-line12" }<>')
     end
   end
 end
