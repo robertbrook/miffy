@@ -34,8 +34,32 @@ class ActReferenceParser
       act_citations.each do |citation|
         clause = citation.parent
         act_title = citation.inner_text
-        text = clause.inner_text
+        reference, number = find_section_preceeding citation
+        if reference
+          act = Act.find_by_name(act_title)
+          if act
+            add_link(clause, "#{reference} #{citation.to_s}") { %Q|<a #{section_cite_attributes(act, number, [])}>#{reference} #{citation.inner_html}</a>| }
+          else
+            warn "can't find act: #{act_title}"
+          end
+        end
       end
+    end
+
+    def add_link clause, old_html
+      html = clause.inner_html
+      changed = html.gsub(old_html, yield )
+      clause.inner_html = changed
+    end
+
+    def find_section_preceeding node
+      /(section (\d+) of the)$/ =~ node.previous_node.inner_text.strip
+      return $1, $2
+    end
+
+    def find_sections_preceeding node
+      /(sections (\d+) to (\d+) of the)$/ =~ node.previous_node.inner_text.strip
+      return $1, $2
     end
 
     def handle_abbreviated_act_references act_abbreviations, doc
@@ -96,26 +120,20 @@ class ActReferenceParser
       attributes legislation_uri, get_section_uri(section, act), subsection
     end
 
-    def add_link clause, reference, cite
-      html = clause.inner_html
-      changed = html.gsub(reference, "<a #{cite}>#{reference}</a>")
-      clause.inner_html = changed
+    def find_section act_name, node
+      /(section (\d+) of #{act_name})/ =~ node.inner_text
+      return reference=$1, number=$2
     end
 
-    def find_subsection act_name, clause
-      /(section (\d+) of #{act_name})/ =~ clause.inner_html
-      return $1, $2
-    end
-
-    def find_subsections act_name, clause
-      /(sections (\d+) to (\d+) of #{act_name})/ =~ clause.inner_html
-      return $1, $2
+    def find_sections act_name, node
+      /(sections (\d+) to (\d+) of #{act_name})/ =~ node.inner_text
+      return reference=$1, number=$2
     end
 
     def link_section clause, act, sections
       reference, section_number = yield
       if section_number
-        add_link clause, reference, section_cite_attributes(act, section_number, sections)
+        add_link(clause, reference) { "<a #{section_cite_attributes(act, section_number, sections)}>#{reference}</a>" }
         true
       else
         false
@@ -123,11 +141,11 @@ class ActReferenceParser
     end
 
     def add_act_and_section_links clause, act_name, act, sections
-      found_section = link_section(clause, act, sections) { find_subsections(act_name, clause) }
-      found_section = link_section(clause, act, sections) {  find_subsection(act_name, clause) } || found_section
+      found_section = link_section(clause, act, sections) { find_sections(act_name, clause) }
+      found_section = link_section(clause, act, sections) {  find_section(act_name, clause) } || found_section
 
       unless found_section
-        add_link clause, act_name, act_cite_attributes(act, act.title)
+        add_link(clause, act_name) { "<a #{act_cite_attributes(act, act.title)}>#{act_name}</a>" }
       end
     end
 
@@ -152,15 +170,15 @@ class ActReferenceParser
     end
 
     SUBSECTION_REGEXP = /subsection \(\d+\)/
-    SUBSECTION_NO_REGEXP = /subsection \((\d+)\)/
+    SUBSECTION_NUMBER_REGEXP = /subsection \((\d+)\)/
     SUBSECTIONS_REGEXP = /subsections \(\d+\) to \(\d+\)/
-    SUBSECTIONS_NO_REGEXP = /subsections \((\d+)\) to \(\d+\)/
+    SUBSECTIONS_NUMBER_REGEXP = /subsections \((\d+)\) to \(\d+\)/
 
     def add_subsection_links clause, act, section
       text = clause.inner_html
       parts = text.split(QUOTED_REGEXP)
-      insert_subsection_links parts, clause, act, section, SUBSECTION_REGEXP, SUBSECTION_NO_REGEXP
-      insert_subsection_links parts, clause, act, section, SUBSECTIONS_REGEXP, SUBSECTIONS_NO_REGEXP
+      insert_subsection_links parts, clause, act, section, SUBSECTION_REGEXP, SUBSECTION_NUMBER_REGEXP
+      insert_subsection_links parts, clause, act, section, SUBSECTIONS_REGEXP, SUBSECTIONS_NUMBER_REGEXP
     end
 
     def add_links clause, abbreviations

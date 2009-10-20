@@ -24,6 +24,15 @@ describe ActReferenceParser do
 
       act.stub!(:find_section_by_number).and_return act_section
       Act.stub!(:find_by_legislation_url).and_return act
+
+      other_act = mock_model(Act,
+        :legislation_url=> 'http://www.legislation.gov.uk/ukpga/1996/61',
+        :statutelaw_url => 'http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61',
+        :opsi_url => 'http://www.opsi.gov.uk/acts/acts1996/ukpga_19960061_en_1',
+        :title => 'Railways Act 2005 (c. 14)')
+      Act.stub!(:find_by_name).and_return other_act
+      other_act.stub!(:find_section_by_number).and_return act_section
+
       @result = @parser.parse_xml(fixture('ChannelTunnel/ChannelTunnelClauses.xml'))
       File.open(RAILS_ROOT + '/spec/fixtures/ChannelTunnel/ChannelTunnelClauses.act.xml','w') {|f| f.write @result }
     end
@@ -57,7 +66,7 @@ describe ActReferenceParser do
 
         it 'should put rel cite anchor element around reference' do
           @result.should have_tag('SubSection_PgfTag[id="1112746"]') do
-            # with_tag('a[rel="cite"]', :text => @section)
+            with_tag('a[rel="cite"]', :text => @section)
           end
         end
       end

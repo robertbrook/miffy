@@ -203,5 +203,9 @@ Parliament assembled, and by the authority of the same, as follows:—')
     it 'should put space after page anchor when citation is at start of line' do
       @result.should include('\ from being exercised in relation to the rail link or railway services on it.')
     end
+
+    it 'should put line start anchor outside of section reference anchor' do
+      # @result.should include('<a href="http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61/PartI/56" title="Section 56: Interpretation" resource="http://www.legislation.gov.uk/ukpga/1996/61/section/56" rel="cite">section 6 of the Railways Act 2005<ParaLineStart LineNum="12"></ParaLineStart> (c. 14)</a>')
+    end
   end
 end
