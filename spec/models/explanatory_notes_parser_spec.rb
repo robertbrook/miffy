@@ -153,6 +153,10 @@ describe ExplanatoryNotesParser do
       end
     end
     
+    it 'should include a ClauseRange element' do
+      @result.should have_tag('ClauseRange[start="1239"][end="1243"]')
+    end
+    
     it 'should have Schedule 1 thru Schedule 4' do
       @result.should have_tag('ENData') do
         with_tag('Schedule[Number="1"]')

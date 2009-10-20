@@ -18,7 +18,7 @@ class ApiController < ApplicationController
       unless bill
         @error = "Bill not found"
       else
-        clause = bill.note_by_clauses.find_by_clause_number(clause_num)
+        clause = bill.find_note_for_clause_number(clause_num, true)
         unless clause
           @error = "Clause not found"
         else
@@ -55,7 +55,7 @@ class ApiController < ApplicationController
       unless bill
         @error = "Bill not found"
       else
-        schedule = bill.note_by_schedules.find_by_schedule_number(schedule_num)
+        schedule = bill.find_note_for_schedule_number(schedule_num)
         unless schedule
           @error = "Schedule not found"
         else
