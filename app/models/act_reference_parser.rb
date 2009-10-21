@@ -32,12 +32,12 @@ class ActReferenceParser
 
     def handle_act_citation_references act_citations, doc
       act_citations.each do |citation|
-        clause = citation.parent
-        act_title = citation.inner_text
         reference, number = find_section_preceeding citation
         if reference
+          act_title = citation.inner_text
           act = Act.find_by_name(act_title)
           if act
+            clause = citation.parent
             add_link(clause, "#{reference} #{citation.to_s}") { %Q|<a #{section_cite_attributes(act, number, [])}>#{reference} #{citation.inner_html}</a>| }
           else
             warn "can't find act: #{act_title}"
