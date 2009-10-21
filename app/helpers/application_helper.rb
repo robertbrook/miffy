@@ -17,6 +17,8 @@ module ApplicationHelper
         "arrangement"
       when 'Amendments'
         "amendment_paper"
+      when 'Tabled Amendments'
+        "tabled_amendments"
       when 'Marshalled List'
         "marshalled_list"
       when 'Report'

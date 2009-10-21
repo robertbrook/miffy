@@ -1,0 +1,69 @@
+@import partials/base.sass
+@import blueprint
+
+body
+  #container
+
+    .Amendments_Commons
+      +column(30)
+      text-align: left
+      margin: 0 0 2em 0
+
+      .Head
+        +column(30, true)
+        clear: both
+
+        .HeadAmd
+          +column(30, true)
+          clear: both
+      
+          .Date
+            +column(30, true)
+            +date_heading
+
+          .Stageheader
+            +column(30, true)
+            +stage_title
+
+          .Shorttitle
+            +column(30, true)
+            +bill_title
+            
+          .CenteredHeading
+            +column(30, true)
+            text-align: center
+    
+    .Committee
+      +column(30, true)
+      clear: both
+
+      .Clause_Committee
+        clear: both
+        +column(30, true)
+        border-top: 1px solid grey
+        
+        ul.Sponsors
+          +column(30, true)
+          list-style: none
+          margin: 0
+          padding: 0.5em 0
+        
+        .Amendment_Number
+          +column(2)
+          float: left
+        
+        .Amendment_Text
+          +column(28, true)
+          
+          .Para
+            +column(28, true)
+
+            .Paragraph_PgfTag
+              +column(28, true)
+              
+            .SubParagraph_PgfTag
+              +prepend(1)
+              +column(26, true)
+                
+              .PgfNumString
+                +append(1)
