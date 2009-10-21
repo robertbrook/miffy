@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091019151733) do
+ActiveRecord::Schema.define(:version => 20091021154339) do
 
   create_table "act_parts", :force => true do |t|
     t.integer  "act_id"
@@ -56,6 +56,27 @@ ActiveRecord::Schema.define(:version => 20091019151733) do
   add_index "acts", ["legislation_url"], :name => "index_acts_on_legislation_url"
   add_index "acts", ["name"], :name => "index_acts_on_name"
 
+  create_table "amendments", :force => true do |t|
+    t.string  "type"
+    t.string  "title"
+    t.string  "amendment_number"
+    t.string  "reference"
+    t.string  "instruction"
+    t.text    "amendment_text"
+    t.integer "bill_id"
+    t.string  "clause_number"
+    t.string  "schedule_number"
+    t.string  "page_number"
+    t.string  "line_number"
+    t.boolean "new_clause"
+    t.boolean "new_schedule"
+  end
+
+  create_table "amendments_sponsors", :id => false, :force => true do |t|
+    t.integer "amendment_id", :null => false
+    t.integer "sponsor_id",   :null => false
+  end
+
   create_table "bills", :force => true do |t|
     t.string   "name"
     t.text     "parliament_url"
@@ -86,6 +107,8 @@ ActiveRecord::Schema.define(:version => 20091019151733) do
     t.string   "name"
     t.integer  "bill_id"
     t.string   "path"
+    t.text     "beginning_text"
+    t.text     "ending_text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -117,5 +140,9 @@ ActiveRecord::Schema.define(:version => 20091019151733) do
 
   add_index "slugs", ["name", "sluggable_type", "scope", "sequence"], :name => "index_slugs_on_name_and_sluggable_type_and_scope_and_sequence", :unique => true
   add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
+
+  create_table "sponsors", :force => true do |t|
+    t.string "name"
+  end
 
 end
