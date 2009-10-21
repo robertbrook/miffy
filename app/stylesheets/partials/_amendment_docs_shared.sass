@@ -70,7 +70,7 @@
     +column(30, true)
     +heading_text
 
-  .Clause_Committee, .Schedule_Committee, .NewClause_Committee, .Title_Committee
+  .Clause_Committee, .Schedule_Committee, .NewClause_Committee, .NewSchedule_Committee, .Title_Committee
     +column(30, true)
     text-align: left
     border-bottom: 1px solid grey
@@ -257,11 +257,13 @@
 
     .Move
       +prepend(1)
+      +column(29, true)
       float: left
       margin-bottom: 1em
+      clear: both
 
 
-  .Clause_Committee, .Schedule_Committee      
+  .Clause_Committee, .Schedule_Committee  
     .Para
       +column(28, true)
 
@@ -271,13 +273,13 @@
         .Para_text
           +column(24, true)
 
-  .NewClause_Committee
+  .NewClause_Committee, .NewSchedule_Committee
     +column(30, true)
     text-align: left
     border-bottom: 1px solid grey
     padding: 1em 0
 
-    p.New_C_STitle_PgfTag
+    p.New_C_STitle_PgfTag, p.ScheduleTitle_PgfTag
       float: left
       padding: 0
       margin: 0
