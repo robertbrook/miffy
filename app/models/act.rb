@@ -42,26 +42,20 @@ class Act < ActiveRecord::Base
   end
 
   def populate_year
-    if year.blank?
-      if name[/Act\s(\d\d\d\d)/]
-        self.year = $1
-      end
+    if year.blank? && name[/Act\s(\d\d\d\d)/]
+      self.year = $1
     end
   end
 
   def populate_number
-    if number.blank?
-      if name[/\(c\.\s?(\d+)/]
-        self.number = $1
-      end
+    if number.blank? && name[/\(c\.\s?(\d+)/]
+      self.number = $1
     end
   end
 
   def populate_title
-    if title.blank?
-      if name[/^(.+)\s\(c\.\s?\d+.+$/]
-        self.title = $1
-      end
+    if title.blank? && name[/^(.+)\s\(c\.\s?\d+.+$/]
+      self.title = $1
     end
   end
 
@@ -87,23 +81,37 @@ class Act < ActiveRecord::Base
     end
   end
 
+  def create_act_part part
+    act_part = act_parts.build :name => part.number,
+        :title => part.title,
+        :legislation_url => part.legislation_uri,
+        :statutelaw_url => part.statutelaw_uri
+
+    part.sections.each do |section|
+      act_sections.build :number => section.number,
+          :title => section.title,
+          :act_part => act_part,
+          :legislation_url => section.legislation_uri,
+          :opsi_url => section.opsi_uri,
+          :statutelaw_url => section.statutelaw_uri
+    end
+  end
+
+  def create_act_section section
+    act_sections.build :number => section.number,
+        :title => section.title,
+        :legislation_url => section.legislation_uri,
+        :opsi_url => section.opsi_uri,
+        :statutelaw_url => section.statutelaw_uri
+  end
+
   def populate_act_sections
     if act_sections.empty?
       if legislation = get_legislation
-        legislation.parts.each do |part|
-          act_part = act_parts.build :name => part.number,
-              :title => part.title,
-              :legislation_url => part.legislation_uri,
-              :statutelaw_url => part.statutelaw_uri
-
-          part.sections.each do |section|
-            act_sections.build :number => section.number,
-                :title => section.title,
-                :act_part => act_part,
-                :legislation_url => section.legislation_uri,
-                :opsi_url => section.opsi_uri,
-                :statutelaw_url => section.statutelaw_uri
-          end
+        if legislation.parts.empty?
+          legislation.sections.each { |section| create_act_section section }
+        else
+          legislation.parts.each { |part| create_act_part part }
         end
       end
     end
