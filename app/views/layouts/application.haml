@@ -14,8 +14,8 @@
       -if page_class == 'application index'
         = stylesheet_link_tag 'index', :media => 'screen, projection'
       -if page_class == 'application convert'
-        = stylesheet_link_tag document_type(@file, @ens), :media => 'screen, projection'
-        = stylesheet_link_tag document_type(@file, @ens) + '_print', :media => 'print'
+        = stylesheet_link_tag stylesheet_path(@file, @ens), :media => 'screen, projection'
+        = stylesheet_link_tag stylesheet_path(@file, @ens) + '_print', :media => 'print'
       -if page_class == 'application act'
         = stylesheet_link_tag 'act', :media => 'screen, projection'
     %meta{ :name=>"viewport", :content=>"width = 480" }
