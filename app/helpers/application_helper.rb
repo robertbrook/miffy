@@ -22,12 +22,45 @@ module ApplicationHelper
       when 'Marshalled List'
         "marshalled_list"
       when 'Report'
-        "consideration"
+        "report"
       when 'Tabled Report'
-        "consideration"
+        "report"
       else
         if file_name =~ /Finance_Clauses.xml$/
           "clauses"
+        else
+          "converted"
+        end
+    end
+  end
+  
+  def stylesheet_path file_name, ens=''
+    mif_file = MifFile.find_by_path(file_name)
+
+    case mif_file.file_type
+      when 'Clauses'
+        if ens == 'interleaved'
+          "clauses/clauses_interleaved"
+        elsif ens == 'interleaved_wide'
+          "clauses/clauses_interleaved_wide"
+        else
+          "clauses/clauses"
+        end
+      when 'Arrangement'
+        "arrangement/arrangement"
+      when 'Amendments'
+        "amendment_paper/amendment_paper"
+      when 'Tabled Amendments'
+        "amendment_paper/tabled_amendments"
+      when 'Marshalled List'
+        "amendment_paper/marshalled_list"
+      when 'Report'
+        "report/report"
+      when 'Tabled Report'
+        "report/report"
+      else
+        if file_name =~ /Finance_Clauses.xml$/
+          "clauses/clauses"
         else
           "converted"
         end
