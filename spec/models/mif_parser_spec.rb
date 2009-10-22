@@ -193,24 +193,6 @@ describe MifParser do
     end
   end
 
-  describe 'when parsing Cover MIF XML file' do
-    before(:all) do
-      @parser = MifParser.new
-      @result = @parser.parse_xml(fixture('Cover.mif.xml'))
-      File.open(RAILS_ROOT + '/spec/fixtures/Cover.xml','w') {|f| f.write @result }
-    end
-
-    it 'should create XML' do
-      @result.should have_tag('Cover[id="1000723"]') do
-        with_tag('Rubric[id="1002024"]')
-      end
-    end
-
-    it 'should add a BillTitle element' do
-      @result.should have_tag('BillTitle', :text => 'Law Commission Bill [HL]')
-    end
-  end
-
   describe 'when parsing Equality Bill Amendment Paper MIF XML file' do
     before(:all) do
       @parser = MifParser.new
