@@ -10,7 +10,7 @@ class MifFile < ActiveRecord::Base
   before_validation_on_create :set_name
 
   class << self
-    def load paths
+    def bill_to_paths paths
       directories = paths.collect {|x| File.dirname(x)}.uniq
 
       bills = directories.inject({}) do |hash, dir|
@@ -29,11 +29,14 @@ class MifFile < ActiveRecord::Base
         end
         hash
       end
-      logger.warn bills.inspect
+      bills
+    end
+
+    def load paths
+      bills = bill_to_paths paths
+
       paths.collect do |path|
         file = find_or_create_by_path(path)
-        bill_name = bills[path]
-
         if file.file_type.nil?
           parts = path.split("/")
           filename = parts.pop
@@ -41,6 +44,7 @@ class MifFile < ActiveRecord::Base
           file_type = get_file_type(filedir, filename)
         end
 
+        bill_name = bills[path]
         if path.include?('Finance_Clauses.xml')
           bill_name = 'Finance Bill 2009'
           file_type = 'Clauses'
