@@ -11,6 +11,8 @@ class ApplicationController < ActionController::Base
     paths << (RAILS_ROOT + '/spec/fixtures/ChannelTunnel/ChannelTunnelClauses.mif')
     paths << (RAILS_ROOT + '/spec/fixtures/ChannelTunnel/ChannelTunnelLordsClauses.mif')
     paths << (RAILS_ROOT + '/spec/fixtures/ChannelTunnel/ChannelTunnelLordsInboundClauses.mif')
+    paths << (RAILS_ROOT + '/spec/fixtures/finance/2R printed/Clauses.mif')
+    paths << (RAILS_ROOT + '/spec/fixtures/finance/2R printed/Schedules.mif')
 
     en_paths = []
     en_paths << (RAILS_ROOT + '/spec/fixtures/ChannelTunnel/ChannelTunnelENs.pdf')
