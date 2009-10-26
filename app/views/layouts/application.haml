@@ -22,7 +22,7 @@
     = stylesheet_link_tag 'ie', :media => 'screen, projection'
     = javascript_include_tag "prototype", :cache => true
   %body{:class => page_class}
-    #page_header{:style=>"margin:1em;"}
+    #page_header
       #navigation
         = link_to_unless_current("Miffy: Index", { :action => "index" })
         - if @show_interleave_link
@@ -34,6 +34,5 @@
           &middot;
           = link_to('Hide explanatory notes', "convert?file=#{@mif_file.path}")
     #container= yield
-    #page_footer{:style=>"margin:1em;"}
-      <a href="http://github.com/robertbrook/miffy">Source code</a>.
+    #page_footer
       Material is published through this service under <a href="http://www.parliament.uk/site_information/parliamentary_copyright.cfm" rel="rights copyright usage">Parliamentary Copyright</a>.
