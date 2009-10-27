@@ -184,11 +184,15 @@ class MifFile < ActiveRecord::Base
   end
 
   def clauses_file
-    file = bill.clauses_file
-    if file.blank? || file == self
-      nil
+    if bill
+      file = bill.clauses_file
+      if file.blank? || file == self
+        nil
+      else
+        file.path
+      end
     else
-      file.path
+      path
     end
   end
 
@@ -215,6 +219,7 @@ class MifFile < ActiveRecord::Base
 
     def do_convert_to_haml options
       xml = convert_to_xml
+      # File.open('/Users/x/example.xml', 'w+') {|f| f.write(xml) }
       set_html_page_title(xml)
       xml = ActReferenceParser.new.parse_xml(xml)
       result = MifToHtmlParser.new.parse_xml xml, :clauses_file => clauses_file,
@@ -258,7 +263,8 @@ class MifFile < ActiveRecord::Base
         display_type << ' of Bill'
       end
 
-      self.html_page_title = Bill.find_by_id(self.bill_id).name + " (#{display_type})"
+      self.html_page_title = Bill.find_by_id(bill_id).name + " (#{display_type})" if bill_id
+
       save!
     end
 
