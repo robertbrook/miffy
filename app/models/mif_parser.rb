@@ -103,7 +103,7 @@ class MifParser
 
   def initialize_doc_state doc
     @bill_attributes = get_bill_attributes doc
-    @table_list = get_tables doc
+    @table_list = MifTableParser.new.get_tables doc
     @frame_list = get_frames doc
     @pages = get_pages doc
     @variable_list = get_variables doc
@@ -150,13 +150,6 @@ class MifParser
   def add_bill_attribute name, element_name
     attribute = get_bill_attribute(name)
     add "<#{element_name}>#{attribute}</#{element_name}>" unless attribute.empty?
-  end
-
-  def get_tables doc
-    tables = (doc/'Tbls/Tbl')
-    tables.inject({}) do |hash, table|
-      handle_table(table, hash)
-    end
   end
 
   def get_frames doc
@@ -240,73 +233,6 @@ class MifParser
     frames
   end
 
-  def handle_table table_xml, tables
-    hash_size = tables.size
-    @current_table_id = nil
-    @in_row = false
-    @in_cell= false
-    @in_heading = false
-
-    table_xml.traverse_element do |element|
-      case element.name
-        when 'TblID'
-          @current_table_id = element.at('text()').to_s
-        when 'TblTag'
-          tag = clean(element)
-          if tag != 'Table' && tag != 'RepealContinue'
-            break
-          else
-            tables.merge!({@current_table_id, start_tag('TableData', element)})
-          end
-        when 'Row'
-          if @in_row
-            tables[@current_table_id] << "</Cell></Row>"
-            @in_row = false
-            @in_cell = false
-          end
-          row_id = element.at('Element/Unique/text()').to_s
-          @in_row = true
-          tables[@current_table_id] << %Q|<Row id="#{row_id}">|
-        when 'Cell'
-          first = ' class="first" '
-          if @in_cell
-            first = ""
-            if @in_heading
-              tables[@current_table_id] << "</CellH>"
-            else
-              tables[@current_table_id] << "</Cell>"
-            end
-          end
-          cell_id = element.at('Element/Unique/text()').to_s
-          @in_cell = true
-          if @in_heading
-            tables[@current_table_id] << %Q|<CellH id="#{cell_id}"#{first}>|
-          else
-            tables[@current_table_id] << %Q|<Cell id="#{cell_id}"#{first}>|
-          end
-        when 'TblH'
-          @in_heading = true
-        when 'TblBody'
-          tables[@current_table_id] << '</CellH></Row>' if @in_heading
-          @in_row = false
-          @in_cell = false
-          @in_heading = false
-        when 'String'
-          text = clean(element)
-          tables[@current_table_id] << text
-        when 'Char'
-          text = get_char(element)
-          tables[@current_table_id] << text
-      end
-    end
-
-    if tables.size > hash_size
-      tables[@current_table_id] << "</Cell></Row></TableData>"
-    end
-
-    tables
-  end
-
   def wrap_paragraph
     line = @xml.pop
     lines = []
@@ -388,36 +314,6 @@ class MifParser
       end
       @in_paragraph = true
     end
-  end
-
-  def start_tag tag, element
-    attributes = get_attributes(element)
-    tag = %Q|<#{tag} id="#{get_uid(element)}"#{attributes}>|
-    if @suffix
-      tag += @suffix.to_s
-      @suffix = nil
-    end
-    tag
-  end
-
-  def get_uid element
-    element.at('../Unique/text()').to_s
-  end
-
-  def get_attributes element, includes=nil
-    element = (element/'Attributes') if @e_tag == 'Clauses.ar'
-    attributes = (element/'../Attributes/Attribute')
-    attribute_list = ''
-    if attributes && attributes.size > 0
-      attributes.each do |attribute|
-        name = clean(attribute.at('AttrName'))
-        value = clean(attribute.at('AttrValue'))
-        if includes.blank? || includes.include?(name)
-          attribute_list += %Q| #{name}="#{value}"|
-        end
-      end
-    end
-    attribute_list
   end
 
   MOVE_OUTSIDE = %w[Amendment Amendment.Number Amendment.Text Longtitle.text

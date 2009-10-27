@@ -97,4 +97,38 @@ module MifParserUtils
         '[[' + char + ']]'
     end
   end
+
+  def start_tag tag, element
+    attributes = get_attributes(element)
+    tag = %Q|<#{tag} id="#{get_uid(element)}"#{attributes}>|
+    if @suffix
+      tag += @suffix.to_s
+      @suffix = nil
+    end
+    tag
+  end
+
+  def get_attributes element, includes=nil
+    element = (element/'Attributes') if @e_tag == 'Clauses.ar'
+    attributes = (element/'../Attributes/Attribute')
+    attribute_list = ''
+    if attributes && attributes.size > 0
+      attributes.each do |attribute|
+        name = clean(attribute.at('AttrName'))
+        if name[/\.(.+)/]
+          name = $1
+        end
+        value = clean(attribute.at('AttrValue'))
+        if includes.blank? || includes.include?(name)
+          attribute_list += %Q| #{name}="#{value}"|
+        end
+      end
+    end
+    attribute_list
+  end
+
+  def get_uid element
+    element.at('../Unique/text()').to_s
+  end
+
 end
