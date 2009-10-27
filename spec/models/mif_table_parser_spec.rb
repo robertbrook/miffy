@@ -16,7 +16,14 @@ describe MifTableParser do
 <CellH id="1146885"></CellH>
 <CellH id="1146886">Rate</CellH>
 <CellH id="1146887"></CellH>
-</Row></TableData>'.gsub("\n",'')
+</Row>
+<Row id="1146888">
+<CellH id="1146889" class="first" >(1)</CellH>
+<CellH id="1146890">(2)</CellH>
+<CellH id="1146891">(3)</CellH>
+<CellH id="1146892">(4)</CellH>
+</Row>
+</TableData>'.gsub("\n",'')
   end
 
   TABLE = "
@@ -163,6 +170,145 @@ describe MifTableParser do
             <Unique>1147584</Unique>
             <PgfTag>`CellHeading'</PgfTag>
             <ParaLine></ParaLine>
+          </Para>
+        </CellContent>
+      </Cell>
+    </Row>
+    <Row>
+      <RowMaxHeight>84.0 pc</RowMaxHeight>
+      <RowHeight>2.08333 pc</RowHeight>
+      <Element>
+        <Unique>1146888</Unique>
+        <ETag>`Row'</ETag>
+        <Attributes></Attributes>
+        <Collapsed>Yes</Collapsed>
+        <SpecialCase>No</SpecialCase>
+        <AttributeDisplay>None</AttributeDisplay>
+      </Element>
+      <Cell>
+        <CellLRuling>`Thin'</CellLRuling>
+        <CellBRuling>`Thin'</CellBRuling>
+        <Element>
+          <Unique>1146889</Unique>
+          <ETag>`Entry'</ETag>
+          <Attributes></Attributes>
+          <Collapsed>No</Collapsed>
+          <SpecialCase>No</SpecialCase>
+          <AttributeDisplay>None</AttributeDisplay>
+        </Element>
+        <CellContent>
+          <Notes></Notes>
+          <Para>
+            <Unique>1147589</Unique>
+            <PgfTag>`CellHeading'</PgfTag>
+            <ParaLine>
+              <ElementBegin>
+                <Unique>1147230</Unique>
+                <ETag>`Italic'</ETag>
+                <Attributes></Attributes>
+                <Collapsed>No</Collapsed>
+                <SpecialCase>No</SpecialCase>
+                <AttributeDisplay>None</AttributeDisplay>
+              </ElementBegin>
+              <String>`(1)'</String>
+              <ElementEnd>`Italic'</ElementEnd>
+            </ParaLine>
+          </Para>
+        </CellContent>
+      </Cell>
+      <Cell>
+        <CellLRuling>`Thin'</CellLRuling>
+        <CellRRuling>`Thin'</CellRRuling>
+        <CellTRuling>`Thin'</CellTRuling>
+        <Element>
+          <Unique>1146890</Unique>
+          <ETag>`Entry'</ETag>
+          <Attributes></Attributes>
+          <Collapsed>No</Collapsed>
+          <SpecialCase>No</SpecialCase>
+          <AttributeDisplay>None</AttributeDisplay>
+        </Element>
+        <CellContent>
+          <Notes></Notes>
+          <Para>
+            <Unique>1147594</Unique>
+            <PgfTag>`CellHeading'</PgfTag>
+            <ParaLine>
+              <ElementBegin>
+                <Unique>1147235</Unique>
+                <ETag>`Italic'</ETag>
+                <Attributes></Attributes>
+                <Collapsed>No</Collapsed>
+                <SpecialCase>No</SpecialCase>
+                <AttributeDisplay>None</AttributeDisplay>
+              </ElementBegin>
+              <String>`(2)'</String>
+              <ElementEnd>`Italic'</ElementEnd>
+            </ParaLine>
+          </Para>
+        </CellContent>
+      </Cell>
+      <Cell>
+        <CellLRuling>`Thin'</CellLRuling>
+        <CellRRuling>`Thin'</CellRRuling>
+        <CellTRuling>`Thin'</CellTRuling>
+        <Element>
+          <Unique>1146891</Unique>
+          <ETag>`Entry'</ETag>
+          <Attributes></Attributes>
+          <Collapsed>No</Collapsed>
+          <SpecialCase>No</SpecialCase>
+          <AttributeDisplay>None</AttributeDisplay>
+        </Element>
+        <CellContent>
+          <Notes></Notes>
+          <Para>
+            <Unique>1147599</Unique>
+            <PgfTag>`CellHeading'</PgfTag>
+            <ParaLine>
+              <ElementBegin>
+                <Unique>1147240</Unique>
+                <ETag>`Italic'</ETag>
+                <Attributes></Attributes>
+                <Collapsed>No</Collapsed>
+                <SpecialCase>No</SpecialCase>
+                <AttributeDisplay>None</AttributeDisplay>
+              </ElementBegin>
+              <String>`(3)'</String>
+              <ElementEnd>`Italic'</ElementEnd>
+            </ParaLine>
+          </Para>
+        </CellContent>
+      </Cell>
+      <Cell>
+        <CellLRuling>`Thin'</CellLRuling>
+        <CellRRuling>`Thin'</CellRRuling>
+        <CellTRuling>`Thin'</CellTRuling>
+        <Element>
+          <Unique>1146892</Unique>
+          <ETag>`Entry'</ETag>
+          <Attributes></Attributes>
+          <Collapsed>No</Collapsed>
+          <SpecialCase>No</SpecialCase>
+          <AttributeDisplay>None</AttributeDisplay>
+        </Element>
+        <CellContent>
+          <Notes></Notes>
+          <Para>
+            <Unique>1147604</Unique>
+            <PgfTag>`CellHeading'</PgfTag>
+            <ParaLine>
+              <ElementBegin>
+                <Unique>1147245</Unique>
+                <ETag>`Italic'</ETag>
+                <Attributes></Attributes>
+                <Collapsed>No</Collapsed>
+                <SpecialCase>No</SpecialCase>
+                <AttributeDisplay>None</AttributeDisplay>
+              </ElementBegin>
+              <String>`(4)'</String>
+              <ElementEnd>`Italic'</ElementEnd>
+            </ParaLine>
           </Para>
         </CellContent>
       </Cell>

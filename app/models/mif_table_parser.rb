@@ -32,7 +32,11 @@ class MifTableParser
 
   def handle_row node, tables
     if @in_row
-      tables[@current_table_id] << "</Cell></Row>"
+      if @in_heading
+        tables[@current_table_id] << "</CellH></Row>"
+      else
+        tables[@current_table_id] << "</Cell></Row>"
+      end
       @in_row = false
       @in_cell = false
     end
