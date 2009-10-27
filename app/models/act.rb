@@ -19,6 +19,9 @@ class Act < ActiveRecord::Base
       if act = find_by_name(name)
         act.save if act.opsi_url.blank?
         act
+      elsif act = find_by_title(name)
+        act.save if act.opsi_url.blank?
+        act
       else
         logger.info "creating from name: #{name}"
         create! :name => name
@@ -56,6 +59,8 @@ class Act < ActiveRecord::Base
   def populate_title
     if title.blank? && name[/^(.+)\s\(c\.\s?\d+.+$/]
       self.title = $1
+    else
+      self.title = name
     end
   end
 
@@ -82,6 +87,7 @@ class Act < ActiveRecord::Base
   end
 
   def create_act_part part
+    logger.info "creating #{part.title}"
     act_part = act_parts.build :name => part.number,
         :title => part.title,
         :legislation_url => part.legislation_uri,
