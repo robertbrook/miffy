@@ -36,6 +36,8 @@ body
   
   .PgfNumString
     padding-right: 0.5em
+    display: block
+    float: left
   
   .Clauses
     column(30, true)
@@ -77,13 +79,49 @@ body
       clear: both
       
       .ClauseText
+        float: left
         margin-left: 1em
         
+        ._ClauseTitle_PgfTag
+          float: left
+          margin-left: 1em
+          display: block
+        
         .Para
+          float: left
+          margin-left: 2em
+          display: block
+          
+          .Para_text
+            float: left
+            display: block
+        
+        .SubPara
+          float: left
+          display: block
+          
+          .SubPara_text
+            float: left
+            display: block
+        
+        .SubSection_PgfTag
+          float: left
+        
+        .SubSection
+          float: left
           margin-left: 1em
           
-        .SubSection
-          margin-left: 1em
+          .SubSection_text
+            float: left
+            display: block
+            
+          ._SubParagraph_PgfTag
+            float: left
+            margin-left: -1em
+          
+        ._SubParagraph_PgfTag
+          float: left
+          margin-left: 2em
       
       .ClauseTextWithExplanatoryNote
         float: left
