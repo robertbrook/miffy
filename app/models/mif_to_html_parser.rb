@@ -528,7 +528,10 @@ class MifToHtmlParser
     end if node.elem?
 
     if node.text?
-      text = node.to_s.gsub("/n", "<br />")
+      text = node.to_s
+      text.gsub!("/n", "<br />")
+      text.gsub!('&amp;','&')
+      text.gsub!('&','&amp;')
       add text
       @in_para_line = true if !text.blank? && @last_css_class[/^(Bold|Italic|SmallCaps|.+_text)$/]
     end

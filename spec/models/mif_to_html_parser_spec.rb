@@ -18,7 +18,7 @@ describe MifParser do
       @result = parser.parse_xml(fixture('clauses.xml'), :format => :text)
     end
     it 'should not have any tags in output' do
-      @result.should include('Be it enacted by the Queen’s most Excellent Majesty, by and with the advice and
+      @result.should include('Be it enacted by the Queen’s most Excellent Majesty, by &amp; with the advice and
 consent of the Lords Spiritual and Temporal, and Commons, in this present
 Parliament assembled, and by the authority of the same, as follows:—')
     end
