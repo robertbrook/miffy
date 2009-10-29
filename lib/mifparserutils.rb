@@ -68,6 +68,8 @@ module MifParserUtils
       text.gsub!('\xd5 ','’')
       text.gsub!('\xd2 ','“')
       text.gsub!('\xd3 ','”')
+      text.gsub!('&amp;','&')
+      text.gsub!('&','&amp;')
     else
       ''
     end
