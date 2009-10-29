@@ -317,9 +317,9 @@ class MifParser
   end
 
   MOVE_OUTSIDE = %w[Amendment Amendment.Number Amendment.Text Longtitle.text
-      SubPara.sch Move List Motion Text.motion
+      SubPara.sch SubSubPara.sch Move List Motion Text.motion
       ClauseTitle Clause Clauses.ar Clause.ar ClauseText
-      Schedule TextContinuation
+      Schedule TextContinuation DefinitionListItem
       InternalReference PartSch DefinitionList Chapter Part Xref
       Committee Resolution SubSection NewClause.Committee
       ResolutionHead ResolutionText OrderDate OrderHeading
