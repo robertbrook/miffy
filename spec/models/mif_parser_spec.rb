@@ -186,9 +186,9 @@ describe MifParser do
       end
     end
 
-    it 'should add in the data from the variable Regnal Title' do
+    it 'should add in the data from the variable Regnal Title and retain &amp;' do
       @result.should have_tag('WordsOfEnactment[id="1003778"]') do
-        with_tag('Bpara[id="1003785"]', :text => "Be it enacted\n by the Queen’s most Excellent Majesty, by and with the advice and consent of the Lords Spiritual and Temporal, and Commons, in this present Parliament assembled, and by the authority of the same, as follows:—")
+        with_tag('Bpara[id="1003785"]', :text => "Be it enacted\n by the Queen’s most Excellent Majesty, by &amp; with the advice and consent of the Lords Spiritual and Temporal, and Commons, in this present Parliament assembled, and by the authority of the same, as follows:—")
       end
     end
   end
