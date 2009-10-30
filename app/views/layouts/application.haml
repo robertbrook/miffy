@@ -43,6 +43,10 @@
         - elsif @show_uninterleave_link
           &middot;
           = link_to('Hide explanatory notes', "convert?file=#{@mif_file.path}")
+        - if page_class == 'application convert'
+          &middot;
+          =link_to('Text only version', "convert?file=#{@mif_file.path}&format=text")
+
     #container= yield
     #page_footer
       Material is published through this service under <a href="http://www.parliament.uk/site_information/parliamentary_copyright.cfm" rel="rights copyright usage">Parliamentary Copyright</a>.

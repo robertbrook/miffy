@@ -4,20 +4,17 @@
     %thead
       %tr
         %th Name
-        %th Text output
         %th Size
         %th Regenerate
     %tfoot
       %tr
         %th Name
-        %th Text output
         %th Size
         %th Regenerate
     %tbody
       -@act_files.each do |file|
         %tr.legislation-file
           %td.name= link_to File.basename(file, ".xml"), "act?file=#{file}"
-          %td.text &nbsp;
           %td.size= number_to_human_size(File.size(file))
           %td.regenerate &nbsp;
 - unless @files_by_bill.empty?
@@ -29,13 +26,11 @@
       %thead
         %tr
           %th Name
-          %th Text output
           %th Size
           %th Regenerate
       %tfoot
         %tr
           %th Name
-          %th Text output
           %th Size
           %th Regenerate
       %tbody
@@ -46,7 +41,6 @@
           - files.each do |file|
             %tr.mif-file
               %td.name= link_to file.name, "convert?file=#{file.path.gsub('&', '%26')}"
-              %td.text= link_to "Text", "convert?file=#{file.path}&format=text"
               %td.size= number_to_human_size(File.size(file.path))    
               %td.regenerate
                 - if file.haml_template_exists?
