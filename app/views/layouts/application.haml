@@ -21,6 +21,16 @@
     %meta{ :name=>"viewport", :content=>"width = 480" }
     = stylesheet_link_tag 'ie', :media => 'screen, projection'
     = javascript_include_tag "prototype", :cache => true
+    %script{ :type=>"text/javascript"}
+      function imgswap(img_id)
+      {
+      if ($(img_id).src.indexOf('down-arrow.png') > 0)
+      {
+      $(img_id).src = 'images/right-arrow.png';
+      } else {
+      $(img_id).src = 'images/down-arrow.png';
+      }
+      }
   %body{:class => page_class}
     #page_header
       #navigation
