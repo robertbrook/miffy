@@ -14,7 +14,6 @@
         %tr.legislation-file
           %td.name= link_to File.basename(file, ".xml"), "act?file=#{file}"
           %td.size= number_to_human_size(File.size(file))
-          %td.regenerate &nbsp;
 - unless @files_by_bill.empty?
   - @bill_names.each do |bill_name|
     - key = bill_name.blank? ? nil : bill_name
