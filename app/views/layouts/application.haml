@@ -48,6 +48,13 @@
           =link_to('Text only version', "convert?file=#{@mif_file.path}&format=text")
           &middot;
           =link_to('Regenerate', "convert?file=#{@mif_file.path}&force=true")
+          - if document_type(@file).include?('clauses')
+            - unless params[:style]
+              &middot;
+              =link_to('Alternative stylesheet', "convert?file=#{@mif_file.path}&style=/stylesheets/clauses_demo.css")
+            - else
+              &middot;
+              =link_to('Standard view', "convert?file=#{@mif_file.path}")
     #container= yield
     #page_footer
       Material is published through this service under <a href="http://www.parliament.uk/site_information/parliamentary_copyright.cfm" rel="rights copyright usage">Parliamentary Copyright</a>.
