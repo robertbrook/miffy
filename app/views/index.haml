@@ -5,12 +5,10 @@
       %tr
         %th Name
         %th Size
-        %th Regenerate
     %tfoot
       %tr
         %th Name
         %th Size
-        %th Regenerate
     %tbody
       -@act_files.each do |file|
         %tr.legislation-file
@@ -27,12 +25,10 @@
         %tr
           %th Name
           %th Size
-          %th Regenerate
       %tfoot
         %tr
           %th Name
           %th Size
-          %th Regenerate
       %tbody
         - files_by_type.keys.each do |file_type|
           %tr.mif-file-type
@@ -42,10 +38,5 @@
             %tr.mif-file
               %td.name= link_to file.name, "convert?file=#{file.path.gsub('&', '%26')}"
               %td.size= number_to_human_size(File.size(file.path))    
-              %td.regenerate
-                - if file.haml_template_exists?
-                  = link_to 'Regenerate', :contoller => "application", :action => "convert", :force => 'true', :file=>"#{file.path}", :method => 'get'
-                - else
-                  &nbsp;
 - else
   %p No files available to parse

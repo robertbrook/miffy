@@ -46,7 +46,8 @@
         - if page_class == 'application convert'
           &middot;
           =link_to('Text only version', "convert?file=#{@mif_file.path}&format=text")
-
+          &middot;
+          =link_to('Regenerate', "convert?file=#{@mif_file.path}&force=true")
     #container= yield
     #page_footer
       Material is published through this service under <a href="http://www.parliament.uk/site_information/parliamentary_copyright.cfm" rel="rights copyright usage">Parliamentary Copyright</a>.
