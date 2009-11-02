@@ -39,7 +39,7 @@ Parliament assembled, and by the authority of the same, as follows:—')
     end
 
     it 'should have toggle link around clause title' do
-      @result.should include(%Q|= link_to_function "Reports on implementation of Law Commission proposals", "$('1112590').toggle()"|)
+      @result.should include(%Q|= link_to_function "Reports on implementation of Law Commission proposals", "$('1112590').toggle();imgswap('1112590_img')"|)
     end
 
     it 'should have clause-page-line and page-line anchors' do

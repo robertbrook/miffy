@@ -45,8 +45,8 @@ module MifParserUtils
     haml.gsub!(COMPRESS_WHITESPACE_2, '\1' + "<\n")
     haml.gsub!(COMPRESS_WHITESPACE_3, '\1' + "<\n")
 
-    haml.gsub!(TOGGLE_SHOW_REGEXP, '%span.ClauseTitle_text<' + "\n" + '\1= link_to_function "\2", "$(\'\4\').toggle()"' + "\n" + '\3#\4.ClauseText')
-    haml.gsub!(TOGGLE_SHOW_REGEXP_2, '%span.ClauseTitle_text<' + "\n" + '\1= link_to_function "\2", "$(\'\4\').toggle()"' + "\n" + '\3#\4.ClauseTextWithExplanatoryNote')
+    haml.gsub!(TOGGLE_SHOW_REGEXP, '%img{ :src => "/images/down-arrow.png", :alt=> "", :id => "\4_img"}' + "\n" + '\1%span.ClauseTitle_text<' + "\n" + '\1= link_to_function "\2", "$(\'\4\').toggle();imgswap(\'\4_img\')"' + "\n" + '\3#\4.ClauseText')
+    haml.gsub!(TOGGLE_SHOW_REGEXP_2, '%img{ :src => "/images/down-arrow.png", :alt=> "", :id => "\4_img"}' + "\n" + '\1%span.ClauseTitle_text<' + "\n" + '\1= link_to_function "\2", "$(\'\4\').toggle();imgswap(\'\4_img\')"' + "\n" + '\3#\4.ClauseTextWithExplanatoryNote')
 
     haml.gsub!(COMPRESS_WHITESPACE_4, '\1' + "\n" + '\2')
     haml.gsub!(COMPRESS_WHITESPACE_5, '\1\2<>' + "\n" )
