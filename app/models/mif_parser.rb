@@ -321,7 +321,7 @@ class MifParser
       ClauseTitle Clause Clauses.ar Clause.ar ClauseText
       Schedule TextContinuation
       Definition DefinitionList DefinitionListItem List ListItem
-      InternalReference PartSch Chapter Part Xref
+      InternalReference PartSch Chapter Part
       Committee Resolution SubSection NewClause.Committee
       ResolutionHead ResolutionText OrderDate OrderHeading
       Para.sch Para].inject({}){|h,v| h[v]=true; h}
@@ -380,7 +380,6 @@ class MifParser
     flush_strings unless @e_tag == 'Italic' || @e_tag == 'Citation'
     @etags_stack << @e_tag
 
-
     if is_amendment_reference_part?(@e_tag) && @e_tag != 'Line'
       @amendment_reference ||= AmendmentReference.new
     end
@@ -428,8 +427,21 @@ class MifParser
     end
   end
 
+  def handle_xref_end element
+    handle_element_tag_end element, 'Xref'
+  end
+
   def handle_element_end element
+    ending_tag = clean(element)
     tag = @etags_stack.last
+    if ending_tag != tag
+      puts "TAGS: #{@etags_stack.inspect}"
+      raise "Expected: #{tag} Got: #{ending_tag}"
+    end
+    handle_element_tag_end element, tag
+  end
+
+  def handle_element_tag_end element, tag
     @in_amendment = false if (tag == 'Amendment')
 
     if @suffix && @suffix != ' ['
@@ -456,6 +468,7 @@ class MifParser
       add "</#{tag}>"
       add "\n" unless tag[/(Day|STHouse|STLords|STText|ClauseTitle|Para|OrderPreamble)/]
     end
+
   end
 
   def add text
@@ -605,7 +618,7 @@ class MifParser
   end
 
   def handle_para_line element
-    if !@in_paragraph && @pgf_tag[/Text_PgfTag/]
+    if !@in_paragraph && @pgf_tag && @pgf_tag[/Text_PgfTag/]
       add_pgf_tag unless @pgf_tag[/DropCapText_PgfTag/]
     end
     @paraline_start = true
@@ -671,6 +684,8 @@ class MifParser
           handle_string element
         when 'ElementEnd'
           handle_element_end element
+        when 'XRefEnd'
+          handle_xref_end element
         when 'PrefixEnd'
           @prefix_end = true
         when 'SuffixBegin'

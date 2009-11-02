@@ -427,7 +427,6 @@ describe MifParser do
       end
     end
   end
-
   describe 'when parsing clauses MIF XML file containing Definition into xml' do
     before(:all) do
       @parser = MifParser.new
@@ -441,6 +440,22 @@ describe MifParser do
           with_tag('DefinitionListItem[id="1117603"]') do
             with_tag('DefinitionList1_PgfTag[id="4315018"]', :text => '(d) a former participator to whom an amount is attributed under paragraph 2A(2) of Schedule 5 in respect of a default payment made in relation to the field in the relevant chargeable period; and')
           end
+        end
+      end
+    end
+  end
+
+  describe 'when parsing clauses MIF XML file containing Xref into xml' do
+    before(:all) do
+      @parser = MifParser.new
+      @result = @parser.parse_xml(fixture('finance/2R printed/Clauses_Xref_example.mif.xml'))
+      File.open(RAILS_ROOT + '/spec/fixtures/finance/2R printed/Clauses_Xref_example.xml','w') {|f| f.write @result }
+    end
+
+    it 'should have Xref inside paragraph elements' do
+      @result.should have_tag('SubSection[id="1171821"]') do
+        with_tag('SubSection_PgfTag[id="1172232"]') do
+          with_tag('Xref[id="1112723"]', :text => '(1)')
         end
       end
     end
