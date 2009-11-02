@@ -171,6 +171,7 @@ class MifToHtmlParser
     @in_amendment = false
     @in_hyperlink = false
     @para_line_anchor = nil
+    @pages_rendered = 0
     node_children_to_html(doc.root)
   end
 
@@ -405,6 +406,12 @@ class MifToHtmlParser
     if node.name == 'PageStart'
       end_tag = @html.pop
       text = @html.pop
+      if @pages_rendered == 0
+        start_tag = @html.pop
+        start_tag.gsub!("PageStart", "PageStart first")
+        add start_tag
+        @pages_rendered += 1
+      end
       page = text[/Page (.+)/]
       if page
         @page_number = $1
