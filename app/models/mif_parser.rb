@@ -294,7 +294,7 @@ class MifParser
 
   def handle_pgf_tag element
     flush_strings
-    tag = clean(element).gsub(' ','_')
+    tag = clean(element).gsub(' ','_').reverse.chomp('_').reverse
     @pgf_tag = "#{tag}_PgfTag"
     @pgf_tag_id = get_uid element
 
@@ -317,10 +317,11 @@ class MifParser
   end
 
   MOVE_OUTSIDE = %w[Amendment Amendment.Number Amendment.Text Longtitle.text
-      SubPara.sch SubSubPara.sch Move List Motion Text.motion
+      SubPara.sch SubSubPara.sch Move Motion Text.motion
       ClauseTitle Clause Clauses.ar Clause.ar ClauseText
-      Schedule TextContinuation DefinitionListItem ListItem List
-      InternalReference PartSch DefinitionList Chapter Part Xref
+      Schedule TextContinuation
+      Definition DefinitionList DefinitionListItem List ListItem
+      InternalReference PartSch Chapter Part Xref
       Committee Resolution SubSection NewClause.Committee
       ResolutionHead ResolutionText OrderDate OrderHeading
       Para.sch Para].inject({}){|h,v| h[v]=true; h}

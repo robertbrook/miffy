@@ -49,35 +49,35 @@ ake provision amending, and supplementary to, the Channel Tunnel Rail <ParaLineS
 </ClauseTitle><ClauseText id="1112865">
 <ClauseText_PgfTag id="1112866"><ParaLineStart LineNum="2"></ParaLineStart>After section 21 of the 1996 Act insert—</ClauseText_PgfTag>
 <Amendment id="1112869"><Clause id="1112872" Number="21" Letter="A" Quote="Double"><ClauseTitle id="1112875">
-<_ClauseTitle_PgfTag id="1112877"><PgfNumString><PgfNumString_1>“21A</PgfNumString_1> </PgfNumString><ActClauseTitle_text><ParaLineStart LineNum="3"></ParaLineStart>Fees</ActClauseTitle_text></_ClauseTitle_PgfTag>
+<ClauseTitle_PgfTag id="1112877"><PgfNumString><PgfNumString_1>“21A</PgfNumString_1> </PgfNumString><ActClauseTitle_text><ParaLineStart LineNum="3"></ParaLineStart>Fees</ActClauseTitle_text></ClauseTitle_PgfTag>
 </ClauseTitle><ClauseText id="1112440"><SubSection id="1112448">
-<_SubSection_PgfTag id="1113594"><PgfNumString><PgfNumString_1>(1)</PgfNumString_1> </PgfNumString><SubSection_text><Italic id="1113593"><ParaLineStart LineNum="4"></ParaLineStart>Subject to this section, the Office of Rail Regulation may by notice require a <ParaLineStart LineNum="5"></ParaLineStart>rail link undertaker to pay a fee in respect of the exercise of any of the Office of <ParaLineStart LineNum="6"></ParaLineStart>Rail Regulation’s functions in relation to the rail link</Italic>.</SubSection_text></_SubSection_PgfTag>
+<SubSection_PgfTag id="1113594"><PgfNumString><PgfNumString_1>(1)</PgfNumString_1> </PgfNumString><SubSection_text><Italic id="1113593"><ParaLineStart LineNum="4"></ParaLineStart>Subject to this section, the Office of Rail Regulation may by notice require a <ParaLineStart LineNum="5"></ParaLineStart>rail link undertaker to pay a fee in respect of the exercise of any of the Office of <ParaLineStart LineNum="6"></ParaLineStart>Rail Regulation’s functions in relation to the rail link</Italic>.</SubSection_text></SubSection_PgfTag>
 </SubSection>
 <SubSection id="1113357">
-<_SubSection_PgfTag id="1113599"><PgfNumString><PgfNumString_1>(2)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="7"></ParaLineStart>The amount of a fee under subsection (1) in any case shall be—</SubSection_text></_SubSection_PgfTag>
+<SubSection_PgfTag id="1113599"><PgfNumString><PgfNumString_1>(2)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="7"></ParaLineStart>The amount of a fee under subsection (1) in any case shall be—</SubSection_text></SubSection_PgfTag>
 <Para id="1113345">
-<_Paragraph_PgfTag id="1113602"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="8"></ParaLineStart>such amount as the Office of Rail Regulation considers to <ParaLineStart LineNum="9"></ParaLineStart>represent the costs reasonably incurred by it in the exercise of <ParaLineStart LineNum="10"></ParaLineStart>the function in relation to the rail link, or</Para_text></_Paragraph_PgfTag>
+<Paragraph_PgfTag id="1113602"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="8"></ParaLineStart>such amount as the Office of Rail Regulation considers to <ParaLineStart LineNum="9"></ParaLineStart>represent the costs reasonably incurred by it in the exercise of <ParaLineStart LineNum="10"></ParaLineStart>the function in relation to the rail link, or</Para_text></Paragraph_PgfTag>
 </Para><Para id="1113377">
-<_Paragraph_PgfTag id="1113606"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="11"></ParaLineStart>in a case where there is more than one rail link undertaker, such <ParaLineStart LineNum="12"></ParaLineStart>proportion of the amount referred to in paragraph (a) as the <ParaLineStart LineNum="13"></ParaLineStart>Office of Rail Regulation considers it reasonable for the rail link <ParaLineStart LineNum="14"></ParaLineStart>undertaker to pay.</Para_text></_Paragraph_PgfTag>
+<Paragraph_PgfTag id="1113606"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="11"></ParaLineStart>in a case where there is more than one rail link undertaker, such <ParaLineStart LineNum="12"></ParaLineStart>proportion of the amount referred to in paragraph (a) as the <ParaLineStart LineNum="13"></ParaLineStart>Office of Rail Regulation considers it reasonable for the rail link <ParaLineStart LineNum="14"></ParaLineStart>undertaker to pay.</Para_text></Paragraph_PgfTag>
 </Para></SubSection>
 <SubSection id="1112654">
-<_SubSection_PgfTag id="1113611"><PgfNumString><PgfNumString_1>(3)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="15"></ParaLineStart>Subsection (1) does not apply to the functions assigned to the Office of <ParaLineStart LineNum="16"></ParaLineStart>Rail Regulation by virtue of section 67(2) and (3) of the Railways Act <ParaLineStart LineNum="17"></ParaLineStart>1993.</SubSection_text></_SubSection_PgfTag>
+<SubSection_PgfTag id="1113611"><PgfNumString><PgfNumString_1>(3)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="15"></ParaLineStart>Subsection (1) does not apply to the functions assigned to the Office of <ParaLineStart LineNum="16"></ParaLineStart>Rail Regulation by virtue of section 67(2) and (3) of the Railways Act <ParaLineStart LineNum="17"></ParaLineStart>1993.</SubSection_text></SubSection_PgfTag>
 </SubSection>
 <SubSection id="1112462">
-<_SubSection_PgfTag id="1113615"><PgfNumString><PgfNumString_1>(4)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="18"></ParaLineStart>A notice under this section must specify—</SubSection_text></_SubSection_PgfTag>
+<SubSection_PgfTag id="1113615"><PgfNumString><PgfNumString_1>(4)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="18"></ParaLineStart>A notice under this section must specify—</SubSection_text></SubSection_PgfTag>
 <Para id="1113618">
-<_Paragraph_PgfTag id="1113620"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="19"></ParaLineStart>the amount of the fee to be paid, and</Para_text></_Paragraph_PgfTag>
+<Paragraph_PgfTag id="1113620"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="19"></ParaLineStart>the amount of the fee to be paid, and</Para_text></Paragraph_PgfTag>
 </Para><Para id="1113623">
-<_Paragraph_PgfTag id="1113626"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="20"></ParaLineStart>the date by which it is to be paid.</Para_text></_Paragraph_PgfTag>
+<Paragraph_PgfTag id="1113626"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="20"></ParaLineStart>the date by which it is to be paid.</Para_text></Paragraph_PgfTag>
 </Para></SubSection>
 <SubSection id="1112590">
-<_SubSection_PgfTag id="1113629"><PgfNumString><PgfNumString_1>(5)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="21"></ParaLineStart>Any amount payable under a notice under this section which remains <ParaLineStart LineNum="22"></ParaLineStart>unpaid after the date specified in the notice may be recovered by the <ParaLineStart LineNum="23"></ParaLineStart>Office of Rail Regulation as a civil debt due to it.</SubSection_text></_SubSection_PgfTag>
+<SubSection_PgfTag id="1113629"><PgfNumString><PgfNumString_1>(5)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="21"></ParaLineStart>Any amount payable under a notice under this section which remains <ParaLineStart LineNum="22"></ParaLineStart>unpaid after the date specified in the notice may be recovered by the <ParaLineStart LineNum="23"></ParaLineStart>Office of Rail Regulation as a civil debt due to it.</SubSection_text></SubSection_PgfTag>
 </SubSection>
 <SubSection id="1113633">
-<_SubSection_PgfTag id="1113634"><PgfNumString><PgfNumString_1>(6)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="24"></ParaLineStart>The Office of Rail Regulation may revise a notice under this section by <ParaLineStart LineNum="25"></ParaLineStart>a further such notice.</SubSection_text></_SubSection_PgfTag>
+<SubSection_PgfTag id="1113634"><PgfNumString><PgfNumString_1>(6)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="24"></ParaLineStart>The Office of Rail Regulation may revise a notice under this section by <ParaLineStart LineNum="25"></ParaLineStart>a further such notice.</SubSection_text></SubSection_PgfTag>
 </SubSection>
 <SubSection id="1113525">
-<_SubSection_PgfTag id="1113638"><PgfNumString><PgfNumString_1>(7)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="26"></ParaLineStart>The Office of Rail Regulation may refund any amount which, further to <ParaLineStart LineNum="27"></ParaLineStart>any revised notice under subsection (6), appears to have been overpaid <ParaLineStart LineNum="28"></ParaLineStart>to it.”</SubSection_text></_SubSection_PgfTag>
+<SubSection_PgfTag id="1113638"><PgfNumString><PgfNumString_1>(7)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="26"></ParaLineStart>The Office of Rail Regulation may refund any amount which, further to <ParaLineStart LineNum="27"></ParaLineStart>any revised notice under subsection (6), appears to have been overpaid <ParaLineStart LineNum="28"></ParaLineStart>to it.”</SubSection_text></SubSection_PgfTag>
 </SubSection>
 </ClauseText>
 </Clause>
