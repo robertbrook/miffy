@@ -319,7 +319,7 @@ class MifParser
   MOVE_OUTSIDE = %w[Amendment Amendment.Number Amendment.Text Longtitle.text
       SubPara.sch SubSubPara.sch Move List Motion Text.motion
       ClauseTitle Clause Clauses.ar Clause.ar ClauseText
-      Schedule TextContinuation DefinitionListItem
+      Schedule TextContinuation DefinitionListItem ListItem List
       InternalReference PartSch DefinitionList Chapter Part Xref
       Committee Resolution SubSection NewClause.Committee
       ResolutionHead ResolutionText OrderDate OrderHeading
@@ -436,7 +436,7 @@ class MifParser
       @suffix = nil
     end
 
-    if dont_add_text_around_child_text? tag
+    if dont_add_text_around_child_text?(tag) && (tag != 'ListItem')
       add_to_last_line "</#{tag}>"
       @opened_in_paragraph.delete(tag)
       tag = @etags_stack.pop
@@ -588,7 +588,7 @@ class MifParser
       text = @strings.pop
       text_tag = @etags_stack.last
 
-      wrap_text_in_element = (@last_was_pdf_num_string || text_tag == "ResolutionText") && !text[/^<(PageStart)/] && !is_amendment_reference_part?(text_tag) && !text[/ListItem/]
+      wrap_text_in_element = (@last_was_pdf_num_string || text_tag == "ResolutionText") && !text[/^<(PageStart)/] && !is_amendment_reference_part?(text_tag) && !text_tag[/ListItem/] && !text_tag[/TextContinuation/]
 
       if wrap_text_in_element
         prefix = (@in_amendment && text_tag.starts_with?('Clause')) ? 'Act' : ''

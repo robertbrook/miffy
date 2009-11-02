@@ -412,4 +412,20 @@ describe MifParser do
     end
   end
 
+  describe 'when parsing clauses MIF XML file containing lists into xml' do
+    before(:all) do
+      @parser = MifParser.new
+      @result = @parser.parse_xml(fixture('finance/2R printed/Clauses_List_example.mif.xml'))
+      File.open(RAILS_ROOT + '/spec/fixtures/finance/2R printed/Clauses_List_example.xml','w') {|f| f.write @result }
+    end
+
+    it 'should have List and ListItem outside paragraph elements' do
+      @result.should  have_tag('List[id="1120732"]') do
+        with_tag('ListItem[id="1120737"]') do
+          with_tag('SubSection_PgfTag[id="4312655"]', :text => 'WDA is the writing-down allowance to which the person would be entitled for the chargeable period apart from this section, and')
+        end
+      end
+    end
+
+  end
 end
