@@ -87,7 +87,15 @@ class Act < ActiveRecord::Base
   end
 
   def create_act_part part
-    logger.info "creating #{part.title}"
+    unless part.respond_to?(:title)
+      logger.warn "title not present on: #{part.inspect}"
+    else
+      begin
+        logger.info "creating #{part.title}"
+      rescue
+        raise part.inspect
+      end
+    end
     act_part = act_parts.build :name => part.number,
         :title => part.title,
         :legislation_url => part.legislation_uri,
@@ -104,11 +112,14 @@ class Act < ActiveRecord::Base
   end
 
   def create_act_section section
-    act_sections.build :number => section.number,
-        :title => section.title,
-        :legislation_url => section.legislation_uri,
-        :opsi_url => section.opsi_uri,
-        :statutelaw_url => section.statutelaw_uri
+    if section
+      opsi_uri = section.opsi_uri
+      act_sections.build :number => section.number,
+          :title => section.title,
+          :legislation_url => section.legislation_uri,
+          :opsi_url => opsi_uri,
+          :statutelaw_url => section.statutelaw_uri
+    end
   end
 
   def populate_act_sections
@@ -117,7 +128,7 @@ class Act < ActiveRecord::Base
         if legislation.parts.empty?
           legislation.sections.each { |section| create_act_section section }
         else
-          legislation.parts.each { |part| create_act_part part }
+          legislation.parts.each { |part| create_act_part part if part }
         end
       end
     end

@@ -563,7 +563,7 @@
 <SubSection id="1071759" Number="1" Letter="A" Quote="Single">
 <SubSection_PgfTag id="7382564"><PgfNumString><PgfNumString_1>‘(1A)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="4"></ParaLineStart>In determining for the purposes of subsection (1)(c) whether subsection (1) of <ParaLineStart LineNum="5"></ParaLineStart>section 171 would have applied, it is to be assumed that subsection (1A)(b) of that <ParaLineStart LineNum="6"></ParaLineStart>section read—</SubSection_text></SubSection_PgfTag>
 <Amendment id="1072557"><Para id="1072566" Number="b" Quote="Double">
-<_Paragraph_PgfTag id="7382569"><PgfNumString><PgfNumString_1>“(b)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="7"></ParaLineStart>that, at the time of the disposal, company B is resident in the <ParaLineStart LineNum="8"></ParaLineStart>United Kingdom, or carrying on a trade in the United Kingdom <ParaLineStart LineNum="9"></ParaLineStart>through a permanent establishment there.” ’.</Para_text></_Paragraph_PgfTag>
+<Paragraph_PgfTag id="7382569"><PgfNumString><PgfNumString_1>“(b)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="7"></ParaLineStart>that, at the time of the disposal, company B is resident in the <ParaLineStart LineNum="8"></ParaLineStart>United Kingdom, or carrying on a trade in the United Kingdom <ParaLineStart LineNum="9"></ParaLineStart>through a permanent establishment there.” ’.</Para_text></Paragraph_PgfTag>
 </Para></Amendment>
 </SubSection>
 </Amendment.Text>
@@ -605,7 +605,7 @@
 </Para><Para id="1484702">
 <Paragraph_PgfTag id="7382667"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="38"></ParaLineStart>section 257(2) of ICTA,</Para_text></Paragraph_PgfTag>
 </Para><TextContinuation id="1484714">
-<SubSection1_PgfTag id="7382672"><PgfNumString></PgfNumString><TextContinuation_text><ParaLineStart LineNum="39"></ParaLineStart>(personal allowance for those aged 65 to 74) is replaced with “£11,490”.</TextContinuation_text></SubSection1_PgfTag>
+<SubSection1_PgfTag id="7382672"><PgfNumString></PgfNumString><ParaLineStart LineNum="39"></ParaLineStart>(personal allowance for those aged 65 to 74) is replaced with “£11,490”.</SubSection1_PgfTag>
 </TextContinuation>
 </SubSection>
 <SubSection id="1484725">
@@ -615,7 +615,7 @@
 </Para><Para id="1484743">
 <Paragraph_PgfTag id="7382683"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="2"></ParaLineStart>section 257(3) of ICTA,</Para_text></Paragraph_PgfTag>
 </Para><TextContinuation id="1484755">
-<SubSection_PgfTag id="7382689"><PgfNumString></PgfNumString><TextContinuation_text><ParaLineStart LineNum="3"></ParaLineStart>(personal allowance for those aged 75 and over) is replaced with “£11,640”’.</TextContinuation_text></SubSection_PgfTag>
+<SubSection_PgfTag id="7382689"><PgfNumString></PgfNumString><ParaLineStart LineNum="3"></ParaLineStart>(personal allowance for those aged 75 and over) is replaced with “£11,640”’.</SubSection_PgfTag>
 </TextContinuation>
 </SubSection>
 </ClauseText>

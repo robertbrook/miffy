@@ -1346,9 +1346,9 @@
 <Page id="1055208">page <Page_number>16</Page_number>, </Page>
 <Line id="1055218">line <Line_number>8</Line_number>, </Line>
 </AmendmentReference>at end insert—</AmedTextCommitReport_PgfTag>
-
-<AmedTextCommitReport_PgfTag id="1055236"><Definition id="1055232"><ParaLineStart LineNum="23"></ParaLineStart>‘ “baby bond” has the meaning given by section 1(2),’.</Definition>
-</AmedTextCommitReport_PgfTag>
+<Definition id="1055232">
+<AmedTextCommitReport_PgfTag id="1055236"><ParaLineStart LineNum="23"></ParaLineStart>‘ “baby bond” has the meaning given by section 1(2),’.</AmedTextCommitReport_PgfTag>
+</Definition>
 </Amendment.Text>
 </Clause.Committee>
 <Clause.Committee id="1055239"><Sponsors id="1055242"><Sponsor id="1055245"><ParaLineStart LineNum="24"></ParaLineStart>Mr George Osborne</Sponsor>
@@ -1392,7 +1392,7 @@
 </Para><PageStart id="1057562" PageType="BodyPage" PageNum="14">Page 14</PageStart><Para id="1055397">
 <Paragraph_PgfTag id="1055398"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="1"></ParaLineStart>entitlement to child benefit in respect of the child is excluded by the <ParaLineStart LineNum="2"></ParaLineStart>provisions specified in subsection (2)(a) or (b) (children in care of <ParaLineStart LineNum="3"></ParaLineStart>authority),</Para_text></Paragraph_PgfTag>
 </Para><TextContinuation id="1055402">
-<SubSection_PgfTag id="1055405"><PgfNumString></PgfNumString><TextContinuation_text><ParaLineStart LineNum="4"></ParaLineStart>but subject as follows.</TextContinuation_text></SubSection_PgfTag>
+<SubSection_PgfTag id="1055405"><PgfNumString></PgfNumString><ParaLineStart LineNum="4"></ParaLineStart>but subject as follows.</SubSection_PgfTag>
 </TextContinuation>
 </SubSection>
 <SubSection id="1055408">
@@ -1458,7 +1458,7 @@
 </Para><Para id="1055586">
 <Paragraph_PgfTag id="1055588"><PgfNumString><PgfNumString_1>(c)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="2"></ParaLineStart>investments under</Para_text></Paragraph_PgfTag>
 </Para><TextContinuation id="1055591">
-<SubSection_PgfTag id="1055594"><PgfNumString></PgfNumString><TextContinuation_text><ParaLineStart LineNum="3"></ParaLineStart>a child trust fund.</TextContinuation_text></SubSection_PgfTag>
+<SubSection_PgfTag id="1055594"><PgfNumString></PgfNumString><ParaLineStart LineNum="3"></ParaLineStart>a child trust fund.</SubSection_PgfTag>
 </TextContinuation>
 </SubSection>
 <SubSection id="1055597">
@@ -1470,7 +1470,7 @@
 </Para><Para id="1055611">
 <Paragraph_PgfTag id="1055613"><PgfNumString><PgfNumString_1>(c)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="7"></ParaLineStart>levels of</Para_text></Paragraph_PgfTag>
 </Para><TextContinuation id="1055616">
-<SubSection_PgfTag id="1055617"><PgfNumString></PgfNumString><TextContinuation_text><ParaLineStart LineNum="8"></ParaLineStart>the benefits and credits specified in subsection (3) in respect of the holder of a <ParaLineStart LineNum="9"></ParaLineStart>child trust fund.</TextContinuation_text></SubSection_PgfTag>
+<SubSection_PgfTag id="1055617"><PgfNumString></PgfNumString><ParaLineStart LineNum="8"></ParaLineStart>the benefits and credits specified in subsection (3) in respect of the holder of a <ParaLineStart LineNum="9"></ParaLineStart>child trust fund.</SubSection_PgfTag>
 </TextContinuation>
 </SubSection>
 <SubSection id="1055622">
