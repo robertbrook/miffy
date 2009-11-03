@@ -20,18 +20,8 @@
         = stylesheet_link_tag 'act', :media => 'screen, projection'
     %meta{ :name=>"viewport", :content=>"width = 480" }
     = stylesheet_link_tag 'ie', :media => 'screen, projection'
-    = javascript_include_tag "prototype", :cache => true
-    %script{ :type=>"text/javascript"}
-      function imgswap(img_id)
-      {
-      if ($(img_id).src.indexOf('down-arrow.png') > 0)
-      {
-      $(img_id).src = '/images/right-arrow.png';
-      } else {
-      $(img_id).src = '/images/down-arrow.png';
-      }
-      }
-  %body{:class => page_class}
+    = javascript_include_tag "prototype", "application", :cache => true      
+  %body{:class => page_class, :id => "miffy-parliament-uk"}
     #page_header
       #navigation
         = link_to_unless_current("Miffy: Index", { :action => "index" })
