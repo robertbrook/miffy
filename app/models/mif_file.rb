@@ -14,11 +14,11 @@ class MifFile < ActiveRecord::Base
       directories = paths.collect {|x| File.dirname(x)}.uniq
 
       bills = directories.inject({}) do |hash, dir|
-        cmd = %Q[cd #{dir}; grep -A12 "ETag \\`Shorttitle'" *.mif | grep String]
+        cmd = %Q[cd "#{dir}"; grep -A12 "ETag \\`Shorttitle'" *.mif | grep String]
         values = `#{cmd}`
-        cmd = %Q[cd #{dir}; grep -A1 "<AttrName \\`ShortTitle'" *.mif | grep AttrValue]
+        cmd = %Q[cd "#{dir}"; grep -A1 "<AttrName \\`ShortTitle'" *.mif | grep AttrValue]
         values += `#{cmd}`
-        cmd = %Q[cd #{dir}; grep -A24 "ETag \\`CommitteeShorttitle'" *.mif | grep String]
+        cmd = %Q[cd "#{dir}"; grep -A24 "ETag \\`CommitteeShorttitle'" *.mif | grep String]
         values += `#{cmd}`
         parse_bill_titles(values, dir) do |file, title|
           if hash[file]
@@ -76,18 +76,18 @@ class MifFile < ActiveRecord::Base
     end
 
     def append_year_to_title title, dir, filename
-      cmd = %Q[cd #{dir}; grep -A2 "AttrName \\`CopyrightYear'" '#{filename}' | grep AttrValue]
+      cmd = %Q[cd "#{dir}"; grep -A2 "AttrName \\`CopyrightYear'" '#{filename}' | grep AttrValue]
       values = `#{cmd}`
       if values == ''
-        cmd = %Q[cd #{dir}; grep -A8 "ETag \\`Date.text'" '#{filename}' | grep String]
+        cmd = %Q[cd "#{dir}"; grep -A8 "ETag \\`Date.text'" '#{filename}' | grep String]
         values += `#{cmd}`
       end
       if values == ''
-        cmd = %Q[cd #{dir}; grep -A8 "ETag \\`Day'" '#{filename}' | grep String]
+        cmd = %Q[cd "#{dir}"; grep -A8 "ETag \\`Day'" '#{filename}' | grep String]
         values += `#{cmd}`
       end
       if values == ''
-        cmd = %Q[cd #{dir}; grep -A8 "ETag \\`Date'" '#{filename}' | grep String]
+        cmd = %Q[cd "#{dir}"; grep -A8 "ETag \\`Date'" '#{filename}' | grep String]
         values += `#{cmd}`
       end
       year = ""
@@ -98,21 +98,21 @@ class MifFile < ActiveRecord::Base
     end
 
     def get_file_type dir, filename
-      cmd = %Q[cd #{dir}; grep -A7 "ETag \\`NoticeOfAmds'" '#{filename}' | grep String]
+      cmd = %Q[cd "#{dir}"; grep -A7 "ETag \\`NoticeOfAmds'" '#{filename}' | grep String]
       values = `#{cmd}`
       if values.downcase.include?('notices of amendments')
         return "Marshalled List"
       end
 
-      cmd = %Q[cd #{dir}; grep -A7 "ETag \\`Stageheader'" '#{filename}' | grep String]
+      cmd = %Q[cd "#{dir}"; grep -A7 "ETag \\`Stageheader'" '#{filename}' | grep String]
       values = `#{cmd}`
       if values.downcase.include?('consideration of bill')
-        cmd = %Q[cd #{dir}; grep -A7 "ETag \\`Date'" '#{filename}' | grep String]
+        cmd = %Q[cd "#{dir}"; grep -A7 "ETag \\`Date'" '#{filename}' | grep String]
         values = `#{cmd}`
         if values.downcase.include?('tabled')
           return "Tabled Report"
         end
-        cmd = %Q[cd #{dir}; grep -A7 "PgfTag \\`Header'" '#{filename}' | grep String]
+        cmd = %Q[cd "#{dir}"; grep -A7 "PgfTag \\`Header'" '#{filename}' | grep String]
         values = `#{cmd}`
         if values.downcase.include?('tabled')
           return "Tabled Report"
@@ -121,10 +121,10 @@ class MifFile < ActiveRecord::Base
         return "Report"
       end
 
-      cmd = %Q[cd #{dir}; grep -A12 "ETag \\`Stageheader'" '#{filename}' | grep String]
+      cmd = %Q[cd "#{dir}"; grep -A12 "ETag \\`Stageheader'" '#{filename}' | grep String]
       values = `#{cmd}`
       if values.downcase.include?('committee')
-        cmd = %Q[cd #{dir}; grep -A7 "ETag \\`Day'" '#{filename}' | grep String]
+        cmd = %Q[cd "#{dir}"; grep -A7 "ETag \\`Day'" '#{filename}' | grep String]
         values = `#{cmd}`
         if values.downcase.include?('tabled')
           return "Tabled Amendments"
@@ -133,19 +133,19 @@ class MifFile < ActiveRecord::Base
         return "Amendments"
       end
 
-      cmd = %Q[cd #{dir}; grep -A1 "ETag \\`WordsOfEnactment'" '#{filename}']
+      cmd = %Q[cd "#{dir}"; grep -A1 "ETag \\`WordsOfEnactment'" '#{filename}']
       values = `#{cmd}`
       unless values == ''
         return "Clauses"
       end
 
-      cmd = %Q[cd #{dir}; grep -A2 "<ElementBegin" '#{filename}' | grep "ETag \\`Arrangement'"]
+      cmd = %Q[cd "#{dir}"; grep -A2 "<ElementBegin" '#{filename}' | grep "ETag \\`Arrangement'"]
       values = `#{cmd}`
       unless values == ''
         return "Arrangement"
       end
 
-      cmd = %Q[cd #{dir}; grep -A5 "PgfTag \\`SchedulesTitle'" '#{filename}' | grep ETag]
+      cmd = %Q[cd "#{dir}"; grep -A5 "PgfTag \\`SchedulesTitle'" '#{filename}' | grep ETag]
       values = `#{cmd}`
       unless values == ""
         return "Schedules"
