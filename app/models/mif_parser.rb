@@ -356,7 +356,7 @@ class MifParser
   end
 
   def dont_add_text_around_child_text? tag
-    tag[/^(Bold|Italic|Citation|ListItem|List)$/]
+    tag[/^(Bold|Italic|Citation|ListItem|List|Xref)$/]
   end
 
   def in_citation?
@@ -377,7 +377,7 @@ class MifParser
 
     add_previous_text_and_attributes_to_citations(element) if in_citation?
 
-    flush_strings unless @e_tag == 'Italic' || @e_tag == 'Citation'
+    flush_strings unless @e_tag[/^(Xref|Italic|Citation)$/]
     @etags_stack << @e_tag
 
     if is_amendment_reference_part?(@e_tag) && @e_tag != 'Line'
@@ -386,12 +386,13 @@ class MifParser
 
     if move_etag_outside_paragraph?(@e_tag, element)
       move_etag_outside_paragraph @e_tag, element
+
+    elsif dont_add_text_around_child_text? @e_tag
+      add_to_last_line start_tag(@e_tag, element)
+      @opened_in_paragraph[@e_tag] = true if @in_paragraph
+
     else
-      if dont_add_text_around_child_text? @e_tag
-        add_to_last_line start_tag(@e_tag, element)
-      else
-        add start_tag(@e_tag, element)
-      end
+      add start_tag(@e_tag, element)
       @opened_in_paragraph[@e_tag] = true if @in_paragraph
     end
 
@@ -602,7 +603,10 @@ class MifParser
       text = @strings.pop
       text_tag = @etags_stack.last
 
-      wrap_text_in_element = (@last_was_pdf_num_string || text_tag == "ResolutionText") && !text[/^<(PageStart)/] && !is_amendment_reference_part?(text_tag) && !text_tag[/ListItem/] && !text_tag[/TextContinuation/]
+      wrap_text_in_element = (@last_was_pdf_num_string || text_tag == "ResolutionText") &&
+          !text[/^<(PageStart)/] &&
+          !is_amendment_reference_part?(text_tag) &&
+          !text_tag[/ListItem|Xref|TextContinuation/]
 
       if wrap_text_in_element
         prefix = (@in_amendment && text_tag.starts_with?('Clause')) ? 'Act' : ''

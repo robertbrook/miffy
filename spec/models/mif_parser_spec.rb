@@ -455,9 +455,17 @@ describe MifParser do
     it 'should have Xref inside paragraph elements' do
       @result.should have_tag('SubSection[id="1171821"]') do
         with_tag('SubSection_PgfTag[id="1172232"]') do
-          with_tag('Xref[id="1112723"]', :text => '(1)')
+          with_tag('Xref[id="1112723"][Idref="mf.0532j-1110091NC"]', :text => '(1)')
         end
       end
+    end
+
+    it 'should not have Xref_text element' do
+      @result.should_not include('<Xref_text>(1)')
+    end
+
+    it 'should not end SubSection_text element at Xref element start' do
+      @result.should_not include('The amendment made by subsection </SubSection_text>')
     end
   end
 end
