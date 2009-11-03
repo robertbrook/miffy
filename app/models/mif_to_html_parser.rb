@@ -95,6 +95,7 @@ class MifToHtmlParser
     Committee CommitteeShorttitle ChapterTitle
     Cover CoverHeading CoverPara
     CrossHeading CrossHeadingSch CrossHeadingTitle
+    Definition DefinitionListItem
     Part Chapter TableTitle Formula
     Date
     Footer
@@ -132,8 +133,8 @@ class MifToHtmlParser
       Bold Bold_text
       ActClauseTitle_text
       ClauseTitle_text ScheduleTitle_text
-      Date_text Day Definition Definition_text Dropcap
-      DefinitionListItem Xref
+      Date_text Day Definition_text Dropcap
+      Xref
       Enact Sbscript
       FrameData
       Italic
