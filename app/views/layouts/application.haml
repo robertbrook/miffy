@@ -24,7 +24,6 @@
   %body{:class => page_class, :id => "miffy-parliament-uk"}
     #page_header
       #navigation
-        / = page_class.gsub!(/ /, '_')
         = link_to_unless_current("Miffy: Index", { :action => "index" })
         - if @show_interleave_link
           &middot;
