@@ -8,3 +8,8 @@ app/views/results
 db/*.sqlite3
 public/stylesheets/*
 app/stylesheets/.sass-cache/*
+spec/fixtures/finance/2R\ printed/Clauses_Definition_example.xml
+spec/fixtures/finance/2R\ printed/Clauses_List_example.xml
+spec/fixtures/finance/2R\ printed/Clauses_Sbscript_example.xml
+spec/fixtures/finance/2R\ printed/Clauses_Xref_example.xml
+
