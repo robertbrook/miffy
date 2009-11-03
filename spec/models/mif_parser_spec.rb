@@ -468,4 +468,28 @@ describe MifParser do
       @result.should_not include('The amendment made by subsection </SubSection_text>')
     end
   end
+
+  describe 'when parsing clauses MIF XML file containing Sbscript into xml' do
+    before(:all) do
+      @parser = MifParser.new
+      @result = @parser.parse_xml(fixture('finance/2R printed/Clauses_Sbscript_example.mif.xml'))
+      File.open(RAILS_ROOT + '/spec/fixtures/finance/2R printed/Clauses_Sbscript_example.xml','w') {|f| f.write @result }
+    end
+
+    it 'should have Sbscript inside paragraph elements' do
+      @result.should have_tag('ClauseTitle_PgfTag[id="4308711"]') do
+        with_tag('ClauseTitle_text') do
+          with_tag('Sbscript[id="4308708"]', :text => '2')
+        end
+      end
+    end
+
+    it 'should not have Sbscript_text element' do
+      @result.should_not include('<Sbscript_text>2')
+    end
+
+    it 'should not end ClauseTitle_text element at Sbscript element start' do
+      @result.should_not include('</ClauseTitle_text><Sbscript id="4308708">')
+    end
+  end
 end
