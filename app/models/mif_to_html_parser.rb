@@ -21,6 +21,7 @@ class MifToHtmlParser
       generate_html doc, options
     elsif format == :haml
       html = generate_html doc, options
+      # File.open('/Users/x/example.html', 'w+') {|f| f.write(html) }
       generate_haml html, options
     elsif format == :text
       html = generate_html doc, options
@@ -94,7 +95,7 @@ class MifToHtmlParser
     Committee CommitteeShorttitle ChapterTitle
     Cover CoverHeading CoverPara
     CrossHeading CrossHeadingSch CrossHeadingTitle
-    Part Chapter TableTitle Xref Sbscript Formula
+    Part Chapter TableTitle Formula
     Date
     Footer
     Given
@@ -132,8 +133,8 @@ class MifToHtmlParser
       ActClauseTitle_text
       ClauseTitle_text ScheduleTitle_text
       Date_text Day Definition Definition_text Dropcap
-      DefinitionListItem_text Xref_text
-      Enact Sbscript_text
+      DefinitionListItem Xref
+      Enact Sbscript
       FrameData
       Italic
       Letter Line Line_text ListItem List_text
