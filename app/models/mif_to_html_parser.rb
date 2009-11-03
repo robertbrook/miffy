@@ -291,7 +291,7 @@ class MifToHtmlParser
     if node['HardReference'] && @in_clauses
       @clause_number = node.at('PgfNumString').inner_text.strip
     end
-    clause_id = node['HardReference'].to_s.strip
+    clause_id = node['HardReference'].to_s.strip.gsub("&",'_')
 
     @in_amendment = (node.parent.name == 'Amendment')
 
