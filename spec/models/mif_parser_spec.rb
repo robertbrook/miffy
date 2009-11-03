@@ -492,4 +492,20 @@ describe MifParser do
       @result.should_not include('</ClauseTitle_text><Sbscript id="4308708">')
     end
   end
+
+  describe 'when parsing clauses MIF XML file containing Char into xml' do
+    before(:all) do
+      @parser = MifParser.new
+      @result = @parser.parse_xml(fixture('finance/2R printed/Clauses_Char_example.mif.xml'))
+      File.open(RAILS_ROOT + '/spec/fixtures/finance/2R printed/Clauses_Char_example.xml','w') {|f| f.write @result }
+    end
+
+    it 'should have Char after ParaLineStart element' do
+      @result.should include('</ParaLineStart>£0.3103')
+    end
+
+    it 'should not have Char before ParaLineStart' do
+      @result.should_not include('<Para_text>£<ParaLineStart')
+    end
+  end
 end

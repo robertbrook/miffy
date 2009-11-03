@@ -582,6 +582,7 @@ class MifParser
   end
 
   def handle_char element
+    add_paraline_start if @paraline_start
     if @suffix
       @suffix += get_char(element)
     else
