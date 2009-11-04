@@ -30,6 +30,10 @@ class MifFrameParser
           tag = clean(element)
           e_tag = tag
           frames[frame_id] << start_tag(tag, element)
+        when 'Math'
+          formula = element.at('MathFullForm')
+          formula = formula.inner_text.strip.to_s.sub('`','').chomp("'")
+          frames[frame_id] << formula
         when 'String'
           text = clean(element)
           frames[frame_id] << text
