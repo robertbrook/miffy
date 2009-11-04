@@ -22,29 +22,31 @@
     = stylesheet_link_tag 'ie', :media => 'screen, projection'
     = javascript_include_tag "prototype", "application", :cache => true      
   %body{:class => page_class, :id => "miffy-parliament-uk"}
-    #page_header
-      #navigation
-        = link_to_unless_current("Miffy: Index", { :action => "index" })
-        - if @show_interleave_link
-          &middot;
-          = link_to('Show explanatory notes: Page layout', "convert?file=#{@mif_file.path}&interleave=true")
-          &middot;
-          = link_to('Show explanatory notes: Wide layout', "convert?file=#{@mif_file.path}&interleave=true&wide=true")
-        - elsif @show_uninterleave_link
-          &middot;
-          = link_to('Hide explanatory notes', "convert?file=#{@mif_file.path}")
-        - if page_class == 'application convert'
-          &middot;
-          =link_to('Text only version', "convert?file=#{@mif_file.path}&format=text")
-          &middot;
-          =link_to('Regenerate', "convert?file=#{@mif_file.path}&force=true")
-          - if document_type(@file).include?('clauses')
-            - unless params[:style]
+    #outer_container
+      #page_container
+        #page_header
+          #navigation
+            = link_to_unless_current("Miffy: Index", { :action => "index" })
+            - if @show_interleave_link
               &middot;
-              =link_to('Alternative stylesheet', "convert?file=#{@mif_file.path}&style=/stylesheets/clauses_demo.css")
-            - else
+              = link_to('Show explanatory notes: Page layout', "convert?file=#{@mif_file.path}&interleave=true")
               &middot;
-              =link_to('Standard view', "convert?file=#{@mif_file.path}")
-    #container= yield
-    #page_footer
-      The <a href="http://github.com/robertbrook/miffy">source code for this application is available at GitHub</a>. Material is published through this service under <a href="http://www.parliament.uk/site_information/parliamentary_copyright.cfm" rel="rights copyright usage">Parliamentary Copyright</a>.
+              = link_to('Show explanatory notes: Wide layout', "convert?file=#{@mif_file.path}&interleave=true&wide=true")
+            - elsif @show_uninterleave_link
+              &middot;
+              = link_to('Hide explanatory notes', "convert?file=#{@mif_file.path}")
+            - if page_class == 'application convert'
+              &middot;
+              =link_to('Text only version', "convert?file=#{@mif_file.path}&format=text")
+              &middot;
+              =link_to('Regenerate', "convert?file=#{@mif_file.path}&force=true")
+              - if document_type(@file).include?('clauses')
+                - unless params[:style]
+                  &middot;
+                  =link_to('Alternative stylesheet', "convert?file=#{@mif_file.path}&style=/stylesheets/clauses_demo.css")
+                - else
+                  &middot;
+                  =link_to('Standard view', "convert?file=#{@mif_file.path}")
+        #container= yield
+        #page_footer
+        The <a href="http://github.com/robertbrook/miffy">source code for this application is available at GitHub</a>. Material is published through this service under <a href="http://www.parliament.uk/site_information/parliamentary_copyright.cfm" rel="rights copyright usage">Parliamentary Copyright</a>.
