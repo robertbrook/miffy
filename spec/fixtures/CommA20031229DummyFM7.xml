@@ -303,7 +303,7 @@
 <AmedTextCommitReport_PgfTag id="1050705"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="4"></ParaLineStart><AmendmentReference Clause="9" Page="5" Line="2"><Number id="1050674">Clause <Clause_number>9</Clause_number>, </Number>
 <Page id="1050684">page <Page_number>5</Page_number>, </Page>
 <Line id="1050694">line <Line_number>2</Line_number>, </Line>
-</AmendmentReference><Amendment.Text_text>leave out ‘such amount’ and insert ‘an amount no less than £<ParaLineStart LineNum="5"></ParaLineStart>250’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</AmendmentReference><Amendment.Text_text>leave out ‘such amount’ and insert ‘an amount no less than <ParaLineStart LineNum="5"></ParaLineStart>£250’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Clause.Committee id="1050710" Star="Yes"><Sponsors id="1050713"><Sponsor id="1050716"><ParaLineStart LineNum="6"></ParaLineStart>Mr George Osborne</Sponsor>
@@ -355,7 +355,7 @@
 <AmedTextCommitReport_PgfTag id="1050937"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="21"></ParaLineStart><AmendmentReference Clause="10" Page="6" Line="14"><Number id="1050906">Clause <Clause_number>10</Clause_number>, </Number>
 <Page id="1050916">page <Page_number>6</Page_number>, </Page>
 <Line id="1050926">line <Line_number>14</Line_number>, </Line>
-</AmendmentReference><Amendment.Text_text>leave out from ‘of’ to end of line and insert ‘£50, or £<ParaLineStart LineNum="22"></ParaLineStart>100 for a child to whom section 9 applies’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</AmendmentReference><Amendment.Text_text>leave out from ‘of’ to end of line and insert ‘£50, or <ParaLineStart LineNum="22"></ParaLineStart>£100 for a child to whom section 9 applies’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
 </Amendment.Text>
 </Clause.Committee>
 <Clause.Committee id="1050942" Star="Yes"><Sponsors id="1050945"><Sponsor id="1050948"><ParaLineStart LineNum="23"></ParaLineStart>Mr George Osborne</Sponsor>
