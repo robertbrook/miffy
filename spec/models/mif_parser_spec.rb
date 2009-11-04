@@ -167,19 +167,19 @@ describe MifParser do
           end
           with_tag('Para_text', :text => 'the Law Commission proposals that have not been implemented (in whole or in part) as at the end of the year, including—')
         end
-        with_tag('SubParagraph_PgfTag[id="1112784"]') do
+        with_tag('SubPara[id="1112782"]') do
           with_tag('PgfNumString') do
             with_tag('PgfNumString_1', :text => '(i)')
           end
-          with_tag('SubPara[id="1112782"]') do
+          with_tag('SubParagraph_PgfTag[id="1112784"]') do
             with_tag('SubPara_text', :text => 'plans for dealing with any of those proposals;')
           end
         end
-        with_tag('SubParagraph_PgfTag[id="1112788"]') do
+        with_tag('SubPara[id="1112787"]') do
           with_tag('PgfNumString') do
             with_tag('PgfNumString_1', :text => '(ii)')
           end
-          with_tag('SubPara[id="1112787"]') do
+          with_tag('SubParagraph_PgfTag[id="1112788"]') do
             with_tag('SubPara_text')
           end
         end
@@ -492,4 +492,42 @@ describe MifParser do
       @result.should_not include('</ClauseTitle_text><Sbscript id="4308708">')
     end
   end
+
+  describe 'when parsing clauses MIF XML file containing Char into xml' do
+    before(:all) do
+      @parser = MifParser.new
+      @result = @parser.parse_xml(fixture('finance/2R printed/Clauses_Char_example.mif.xml'))
+      File.open(RAILS_ROOT + '/spec/fixtures/finance/2R printed/Clauses_Char_example.xml','w') {|f| f.write @result }
+    end
+
+    it 'should have Char after ParaLineStart element' do
+      @result.should include('</ParaLineStart>£0.3103')
+    end
+
+    it 'should not have Char before ParaLineStart' do
+      @result.should_not include('<Para_text>£<ParaLineStart')
+    end
+  end
+
+  describe 'when parsing clauses MIF XML file containing Subpara into xml' do
+    before(:all) do
+      @parser = MifParser.new
+      @result = @parser.parse_xml(fixture('finance/2R printed/Clauses_Subpara_example.mif.xml'))
+      File.open(RAILS_ROOT + '/spec/fixtures/finance/2R printed/Clauses_Subpara_example.xml','w') {|f| f.write @result }
+    end
+
+    it 'should have Subpara outside of paragraph element' do
+      @result.should have_tag('SubPara[id="1136776"]') do
+        with_tag('SubParagraph_PgfTag[id="4316053"]')
+      end
+    end
+
+    it 'should have Subpara outside of paragraph and table elements' do
+      @result.should have_tag('SubPara[id="1136783"]') do
+        with_tag('SubParagraph_PgfTag[id="4316057"]')
+        with_tag('Table[id="1137407"]')
+      end
+    end
+  end
+
 end

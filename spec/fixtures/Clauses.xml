@@ -24,11 +24,11 @@ ake provision in relation to the Law Commission.<Enact id="1004229"> </Enact>
 <Paragraph_PgfTag id="1112775"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="15"></ParaLineStart>the Law Commission proposals implemented (in whole or in <ParaLineStart LineNum="16"></ParaLineStart>part) during the year;</Para_text></Paragraph_PgfTag>
 </Para><Para id="1111739">
 <Paragraph_PgfTag id="1112779"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="17"></ParaLineStart>the Law Commission proposals that have not been <ParaLineStart LineNum="18"></ParaLineStart>implemented (in whole or in part) as at the end of the year, <ParaLineStart LineNum="19"></ParaLineStart>including—</Para_text></Paragraph_PgfTag>
-
-<SubParagraph_PgfTag id="1112784"><PgfNumString><PgfNumString_1>(i)</PgfNumString_1> </PgfNumString><SubPara id="1112782"><SubPara_text><ParaLineStart LineNum="20"></ParaLineStart>plans for dealing with any of those proposals;</SubPara_text></SubPara></SubParagraph_PgfTag>
-
-<SubParagraph_PgfTag id="1112788"><PgfNumString><PgfNumString_1>(ii)</PgfNumString_1> </PgfNumString><SubPara id="1112787"><SubPara_text><ParaLineStart LineNum="21"></ParaLineStart>any decision not to implement any of those proposals (in <ParaLineStart LineNum="22"></ParaLineStart>whole or in part) taken during the year and the reasons <ParaLineStart LineNum="23"></ParaLineStart>for the decision.</SubPara_text></SubPara></SubParagraph_PgfTag>
-</Para></SubSection>
+<SubPara id="1112782">
+<SubParagraph_PgfTag id="1112784"><PgfNumString><PgfNumString_1>(i)</PgfNumString_1> </PgfNumString><SubPara_text><ParaLineStart LineNum="20"></ParaLineStart>plans for dealing with any of those proposals;</SubPara_text></SubParagraph_PgfTag>
+</SubPara><SubPara id="1112787">
+<SubParagraph_PgfTag id="1112788"><PgfNumString><PgfNumString_1>(ii)</PgfNumString_1> </PgfNumString><SubPara_text><ParaLineStart LineNum="21"></ParaLineStart>any decision not to implement any of those proposals (in <ParaLineStart LineNum="22"></ParaLineStart>whole or in part) taken during the year and the reasons <ParaLineStart LineNum="23"></ParaLineStart>for the decision.</SubPara_text></SubParagraph_PgfTag>
+</SubPara></Para></SubSection>
 <SubSection id="1112794">
 <SubSection_PgfTag id="1112796"><PgfNumString><PgfNumString_1>(2)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="24"></ParaLineStart>The Lord Chancellor must lay the report before Parliament.</SubSection_text></SubSection_PgfTag>
 </SubSection>

@@ -317,7 +317,7 @@ class MifParser
   end
 
   MOVE_OUTSIDE = %w[Amendment Amendment.Number Amendment.Text Longtitle.text
-      SubPara.sch SubSubPara.sch Move Motion Text.motion
+      SubPara SubPara.sch SubSubPara.sch Move Motion Text.motion
       ClauseTitle Clause Clauses.ar Clause.ar ClauseText
       Schedule TextContinuation
       Definition DefinitionList DefinitionListItem List ListItem
@@ -582,6 +582,7 @@ class MifParser
   end
 
   def handle_char element
+    add_paraline_start if @paraline_start
     if @suffix
       @suffix += get_char(element)
     else

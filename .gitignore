@@ -1,6 +1,7 @@
 log/*.log
 tmp/**/*
 test
+coverage
 config/database.yml
 .DS_Store
 doc
@@ -12,4 +13,5 @@ spec/fixtures/finance/2R\ printed/Clauses_Definition_example.xml
 spec/fixtures/finance/2R\ printed/Clauses_List_example.xml
 spec/fixtures/finance/2R\ printed/Clauses_Sbscript_example.xml
 spec/fixtures/finance/2R\ printed/Clauses_Xref_example.xml
-
+spec/fixtures/finance/2R\ printed/Clauses_Char_example.xml
+spec/fixtures/finance/2R\ printed/Clauses_Subpara_example.xml

@@ -135,6 +135,7 @@ class Act < ActiveRecord::Base
   end
 
   def populate_legislation_urls_via_opsi
+    # return
     search_url = "http://search.opsi.gov.uk/search?q=#{URI.escape(name)}&output=xml_no_dtd&client=opsisearch_semaphore&site=opsi_collection"
     begin
       puts search_url
