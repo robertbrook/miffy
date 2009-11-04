@@ -306,7 +306,7 @@ class MifToHtmlParser
       add %Q|<div class="#{css_class(node)}" id="#{node['id']}">|
       node_children_to_html(node)
       if @explanatory_note && !@in_amendment
-        add %Q|<div class="explanatory_note"><span class="en_header">Explanatory Note:</span>#{@explanatory_note.html_note_text}</div>|
+        add %Q|<div class="explanatory_note"><div class="explanatory_note_text"><span class="en_header">Explanatory Note:</span>#{@explanatory_note.html_note_text}</div></div>|
         add "</div>"
       end
 
