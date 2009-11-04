@@ -96,13 +96,14 @@ class MifToHtmlParser
     Cover CoverHeading CoverPara
     CrossHeading CrossHeadingSch CrossHeadingTitle
     Definition DefinitionListItem
-    Part Chapter TableTitle Formula
+    Part Chapter TableTitle
     Date
     Footer
     Given
     Head HeadAmd HeadConsider HeadNotice Head_thin
     Heading_ar Heading_text
-    List LongTitle Longtitle_text
+    List ListItem
+    LongTitle Longtitle_text
     MarshalledOrderNote Motion Move
     NewClause_Committee NoticeOfAmds
     OrderAmendmentText OrderCrossHeading OrderHeading OrderPreamble OrderText
@@ -111,8 +112,9 @@ class MifToHtmlParser
     Report Resolution ResolutionHead ResolutionPreamble ResolutionText Rubric
     Schedule_Committee SchedulesTitle_ar Schedules_ar
     Shorttitle Stageheader SubSection
+    SubPara
     CenteredHeading
-    Table Text_motion
+    Table Text_motion TextContinuation
     WordsOfEnactment].inject({}){|h,v| h[v]=true; h}
 
   DIV_RE = Regexp.new "(^#{DIV.keys.join("$|")}$)"
@@ -136,9 +138,9 @@ class MifToHtmlParser
       Date_text Day Definition_text Dropcap
       Xref
       Enact Sbscript
-      FrameData
+      FrameData Formula
       Italic
-      Letter Line Line_text ListItem List_text
+      Letter Line Line_text List_text
       Move_text
       NoteTxt Notehead Number Number_text
       OrderDate OrderPara
@@ -146,8 +148,7 @@ class MifToHtmlParser
       ResolutionDate ResolutionHead_text ResolutionPara ResolutionPara_text
       ResolutionSubPara ResolutionSubPara_text ResolutionText_text
       STCommons STHouse STLords STText SmallCaps
-      SubPara SubPara_sch SubSection_text SubSubPara_sch
-      TextContinuation TextContinuation_text
+      SubSection_text
       WHITESPACE ].inject({}){|h,v| h[v]=true; h}
 
   SPAN_RE = Regexp.new "(^#{SPAN.keys.join("$|")}$)"
@@ -348,9 +349,18 @@ class MifToHtmlParser
   def handle_pdf_tag node
     already_in_paragraph = @in_paragraph
     tag = (already_in_paragraph ? 'span' : 'p')
+    if css_class(node)[/_PgfTag/] && tag == 'span'
+      raise "expecting #{css_class(node)} to be a paragraph but: already_in_paragraph -> #{already_in_paragraph} + #{node.inspect}"
+    end
     @in_paragraph = true
     add_html_element(tag, node)
     @in_paragraph = false unless already_in_paragraph
+  end
+
+  def handle_sub_para_variants node
+    already_in_paragraph = @in_paragraph
+    tag = (already_in_paragraph ? 'span' : 'div')
+    add_html_element(tag, node)
   end
 
   def handle_para_line_start node
@@ -425,14 +435,6 @@ class MifToHtmlParser
     end
   end
 
-  def handle_sub_para_variants node
-    already_in_paragraph = @in_paragraph
-    tag = (already_in_paragraph ? 'span' : 'p')
-    @in_paragraph = true
-    add_html_element(tag, node)
-    @in_paragraph = false unless already_in_paragraph
-  end
-
   def handle_clause_ar node
     @clause_ref = node['HardReference']
     add_html_element 'div', node
@@ -503,7 +505,7 @@ class MifToHtmlParser
         handle_pgf_num_string node
       when /_PgfTag$/
         handle_pdf_tag node
-      when /^(SubPara_sch|SubSubPara_sch|ResolutionPara|)$/
+      when /^((Sub)+Para_sch|ResolutionPara)$/
         handle_sub_para_variants node
       when /^EndRule$/
         #ignore

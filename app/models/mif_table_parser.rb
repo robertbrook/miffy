@@ -1,8 +1,4 @@
 require 'mifparserutils'
-require 'tempfile'
-require 'rubygems'
-require 'hpricot'
-require 'rexml/document'
 
 class MifTableParser
 

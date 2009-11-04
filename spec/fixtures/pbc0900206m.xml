@@ -635,7 +635,7 @@
 <Para id="1485521">
 <Paragraph_PgfTag id="7382734"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="12"></ParaLineStart>it is a relevant acquisition of land which consists entirely of residential <ParaLineStart LineNum="13"></ParaLineStart>property,</Para_text></Paragraph_PgfTag>
 </Para><Para id="1485528">
-<Paragraph_PgfTag id="7382738"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="14"></ParaLineStart>the relevant chargeable consideration for the transaction is not more than £<ParaLineStart LineNum="15"></ParaLineStart>250,000, and</Para_text></Paragraph_PgfTag>
+<Paragraph_PgfTag id="7382738"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="14"></ParaLineStart>the relevant chargeable consideration for the transaction is not more than <ParaLineStart LineNum="15"></ParaLineStart>£250,000, and</Para_text></Paragraph_PgfTag>
 </Para><Para id="1485538">
 <Paragraph_PgfTag id="7382744"><PgfNumString><PgfNumString_1>(c)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="16"></ParaLineStart>the purchaser is a first time purchaser.</Para_text></Paragraph_PgfTag>
 </Para></SubSection>
@@ -676,7 +676,7 @@
 <OrderHeading_PgfTag id="7382821"><PgfNumString></PgfNumString><OrderHeading_text><ParaLineStart LineNum="1"></ParaLineStart>Resolution of the Committee [19 May 2009]</OrderHeading_text></OrderHeading_PgfTag>
 </OrderHeading>
 
-<MotionText_PgfTag id="7382824"><OrderAmendmentText id="7330294"><ParaLineStart LineNum="2"></ParaLineStart>That the Committee shall meet—/n  <ParaLineStart LineNum="3"></ParaLineStart>on Tuesdays at 10.30 a.m. and 4.30 p.m., and/n  <ParaLineStart LineNum="4"></ParaLineStart>on Thursdays (other than Thursday 4 June) at 9.00 a.m. and 1.00 p.m.,/n <ParaLineStart LineNum="5"></ParaLineStart>when the House is sitting.</OrderAmendmentText>
+<MotionText_PgfTag id="7382824"><OrderAmendmentText id="7330294"><ParaLineStart LineNum="2"></ParaLineStart>That the Committee shall meet—/n<ParaLineStart LineNum="3"></ParaLineStart>  on Tuesdays at 10.30 a.m. and 4.30 p.m., and/n<ParaLineStart LineNum="4"></ParaLineStart>  on Thursdays (other than Thursday 4 June) at 9.00 a.m. and 1.00 p.m.,/n<ParaLineStart LineNum="5"></ParaLineStart> when the House is sitting.</OrderAmendmentText>
 </MotionText_PgfTag>
 <ParaLineStart LineNum="6"></ParaLineStart> </Order.Motion>
 <Order.Committee id="7323403"><OrderDate id="7323407">
