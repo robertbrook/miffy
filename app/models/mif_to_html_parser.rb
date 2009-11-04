@@ -112,6 +112,7 @@ class MifToHtmlParser
     Report Resolution ResolutionHead ResolutionPreamble ResolutionText Rubric
     Schedule_Committee SchedulesTitle_ar Schedules_ar
     Shorttitle Stageheader SubSection
+    SubPara
     CenteredHeading
     Table Text_motion TextContinuation
     WordsOfEnactment].inject({}){|h,v| h[v]=true; h}
@@ -147,7 +148,7 @@ class MifToHtmlParser
       ResolutionDate ResolutionHead_text ResolutionPara ResolutionPara_text
       ResolutionSubPara ResolutionSubPara_text ResolutionText_text
       STCommons STHouse STLords STText SmallCaps
-      SubPara SubSection_text
+      SubSection_text
       WHITESPACE ].inject({}){|h,v| h[v]=true; h}
 
   SPAN_RE = Regexp.new "(^#{SPAN.keys.join("$|")}$)"
