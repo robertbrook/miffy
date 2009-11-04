@@ -115,7 +115,7 @@ Parliament assembled, and by the authority of the same, as follows:—')
 
       @result.should have_tag('div[class="Para_sch"][id="1085999"]') do
         with_tag('div[class="SubPara_sch"]') do
-          with_tag('span[class="SubParagraph_sch_PgfTag"][id="7381591"]') do
+          with_tag('p[class="SubParagraph_sch_PgfTag"][id="7381591"]') do
             with_tag('span[class="PgfNumString"]') do
               with_tag('span[class="PgfNumString_1"]', :text => 'A2')
               with_tag('span[class="PgfNumString_2"]', :text => '(1)')
@@ -123,7 +123,7 @@ Parliament assembled, and by the authority of the same, as follows:—')
             with_tag('span[class="SubPara_sch_text"]', :text => 'Paragraph 1(2) (application of Schedule) is amended as follows.')
           end
         end
-        with_tag('span[class="SubParagraphCont_sch_PgfTag"][id="7381594"]') do
+        with_tag('p[class="SubParagraphCont_sch_PgfTag"][id="7381594"]') do
           with_tag('span[class="PgfNumString"]') do
             with_tag('span[class="PgfNumString_1"]', :text => '&nbsp;')
             with_tag('span[class="PgfNumString_2"]', :text => '(2)')
@@ -132,7 +132,7 @@ Parliament assembled, and by the authority of the same, as follows:—')
       end
 
       @result.should have_tag('div[class="SubPara_sch"][id="1090948"]') do
-        with_tag('span[class="SubParagraph_sch_PgfTag"][id="7381591"]') do
+        with_tag('p[class="SubParagraph_sch_PgfTag"][id="7381591"]') do
           with_tag('span[class="PgfNumString"]', :text =>'A2 (1)')
           with_tag('span[class="SubPara_sch_text"]', :text => 'Paragraph 1(2) (application of Schedule) is amended as follows.')
         end

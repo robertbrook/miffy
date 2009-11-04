@@ -348,9 +348,18 @@ class MifToHtmlParser
   def handle_pdf_tag node
     already_in_paragraph = @in_paragraph
     tag = (already_in_paragraph ? 'span' : 'p')
+    if css_class(node)[/_PgfTag/] && tag == 'span'
+      raise "expecting #{css_class(node)} to be a paragraph but: already_in_paragraph -> #{already_in_paragraph} + #{node.inspect}"
+    end
     @in_paragraph = true
     add_html_element(tag, node)
     @in_paragraph = false unless already_in_paragraph
+  end
+
+  def handle_sub_para_variants node
+    already_in_paragraph = @in_paragraph
+    tag = (already_in_paragraph ? 'span' : 'div')
+    add_html_element(tag, node)
   end
 
   def handle_para_line_start node
@@ -423,14 +432,6 @@ class MifToHtmlParser
       add text
       add end_tag
     end
-  end
-
-  def handle_sub_para_variants node
-    already_in_paragraph = @in_paragraph
-    tag = (already_in_paragraph ? 'span' : 'div')
-    @in_paragraph = true
-    add_html_element(tag, node)
-    @in_paragraph = false unless already_in_paragraph
   end
 
   def handle_clause_ar node
