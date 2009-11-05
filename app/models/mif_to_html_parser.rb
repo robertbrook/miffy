@@ -114,8 +114,10 @@ class MifToHtmlParser
     Prelim
     Report Resolution ResolutionHead
     ResolutionPreamble ResolutionText Rubric
+    Schedules SchedulesTitle
     Schedule_Committee SchedulesTitle_ar Schedules_ar
     ScheduleTitle Schedule
+    SectionReference
     Shorttitle Stageheader SubSection
     TableTitle
     Table Text_motion TextContinuation
@@ -150,7 +152,9 @@ class MifToHtmlParser
       Page Page_text Para_sch_text Para_text PgfNumString Proposer_name
       ResolutionDate ResolutionHead_text ResolutionPara_text
       ResolutionSubPara_text ResolutionText_text
+      Roman Roman_text
       STCommons STHouse STLords STText SmallCaps
+      Superscript Superscript_text SmallCaps_text
       SubSection_text
       WHITESPACE ].inject({}){|h,v| h[v]=true; h}
 
@@ -529,7 +533,7 @@ class MifToHtmlParser
       when IGNORE_RE
         # ignore for now
       else
-        raise node.name
+        raise "don't know how to handle: #{node.name}"
         node_children_to_html(node)
     end if node.elem?
 
