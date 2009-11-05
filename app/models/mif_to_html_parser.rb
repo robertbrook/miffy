@@ -47,6 +47,7 @@ class MifToHtmlParser
     haml = `#{cmd}`
     html_file.delete
 
+    # File.open('/Users/x/example.haml', 'w+') {|f| f.write(haml)}
     format_haml(haml, @clauses_file)
   end
 
