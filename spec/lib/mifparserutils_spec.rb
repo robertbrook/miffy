@@ -27,6 +27,7 @@ describe MifParserUtils do
       check "#1045577.Given", '<'
       check "#1045600.Stageheader", '<'
       check "#1045605.Shorttitle", '<'
+      check "#1112921.Xref", '<'
     end
 
     it 'should turn AmendmentReference into a link_to call' do
