@@ -664,13 +664,13 @@
 </OrderDate>
 
 <MotionText_PgfTag id="7382794"><OrderPreamble id="7325208"><ParaLineStart LineNum="29"></ParaLineStart>That the following provisions shall apply to the Finance Bill:/n</OrderPreamble></MotionText_PgfTag>
-<OrderText id="7325213">
-<OrderHousePara_PgfTag id="7382800"><PgfNumString><PgfNumString_1>1.</PgfNumString_1> </PgfNumString><OrderPara id="7325216"><OrderPara_text><ParaLineStart LineNum="30"></ParaLineStart>Clauses 7, 8, 9, 11, 14, 16, 20 and 92 be committed to a Committee of the <ParaLineStart LineNum="31"></ParaLineStart>whole House;</OrderPara_text></OrderPara></OrderHousePara_PgfTag>
-
-<OrderHousePara_PgfTag id="7382805"><PgfNumString><PgfNumString_1>2.</PgfNumString_1> </PgfNumString><OrderPara id="7325221"><OrderPara_text><ParaLineStart LineNum="32"></ParaLineStart>the remainder of the Bill be committed to a Public Bill Committee; and</OrderPara_text></OrderPara></OrderHousePara_PgfTag>
-
-<OrderHousePara_PgfTag id="7382808"><PgfNumString><PgfNumString_1>3.</PgfNumString_1> </PgfNumString><OrderPara id="7325226"><OrderPara_text><ParaLineStart LineNum="33"></ParaLineStart>when the provisions of the Bill considered by the Committee of the whole <ParaLineStart LineNum="34"></ParaLineStart>House and the Public Bill Committee have been reported to the House, the <ParaLineStart LineNum="35"></ParaLineStart>Bill be proceeded with as if it had been reported as a whole to the House from <ParaLineStart LineNum="36"></ParaLineStart>the Public Bill Committee.</OrderPara_text></OrderPara></OrderHousePara_PgfTag>
-</OrderText>
+<OrderText id="7325213"><OrderPara id="7325216">
+<OrderHousePara_PgfTag id="7382800"><PgfNumString><PgfNumString_1>1.</PgfNumString_1> </PgfNumString><OrderPara_text><ParaLineStart LineNum="30"></ParaLineStart>Clauses 7, 8, 9, 11, 14, 16, 20 and 92 be committed to a Committee of the <ParaLineStart LineNum="31"></ParaLineStart>whole House;</OrderPara_text></OrderHousePara_PgfTag>
+</OrderPara><OrderPara id="7325221">
+<OrderHousePara_PgfTag id="7382805"><PgfNumString><PgfNumString_1>2.</PgfNumString_1> </PgfNumString><OrderPara_text><ParaLineStart LineNum="32"></ParaLineStart>the remainder of the Bill be committed to a Public Bill Committee; and</OrderPara_text></OrderHousePara_PgfTag>
+</OrderPara><OrderPara id="7325226">
+<OrderHousePara_PgfTag id="7382808"><PgfNumString><PgfNumString_1>3.</PgfNumString_1> </PgfNumString><OrderPara_text><ParaLineStart LineNum="33"></ParaLineStart>when the provisions of the Bill considered by the Committee of the whole <ParaLineStart LineNum="34"></ParaLineStart>House and the Public Bill Committee have been reported to the House, the <ParaLineStart LineNum="35"></ParaLineStart>Bill be proceeded with as if it had been reported as a whole to the House from <ParaLineStart LineNum="36"></ParaLineStart>the Public Bill Committee.</OrderPara_text></OrderHousePara_PgfTag>
+</OrderPara></OrderText>
 <ParaLineStart LineNum="37"></ParaLineStart> </Order.House>
 <PageStart id="7383052" PageType="BodyPage" PageNum="37">Page 37</PageStart><Order.Motion id="1484767"><OrderHeading id="7329842">
 <OrderHeading_PgfTag id="7382821"><PgfNumString></PgfNumString><OrderHeading_text><ParaLineStart LineNum="1"></ParaLineStart>Resolution of the Committee [19 May 2009]</OrderHeading_text></OrderHeading_PgfTag>

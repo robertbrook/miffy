@@ -277,15 +277,24 @@ class MifParser
     end
   end
 
-  MOVE_OUTSIDE = %w[Amendment Amendment.Number Amendment.Text Longtitle.text
-      SubPara SubPara.sch SubSubPara.sch Move Motion Text.motion
-      ClauseTitle Clause Clauses.ar Clause.ar ClauseText
-      Schedule TextContinuation
-      Definition DefinitionList DefinitionListItem List ListItem
-      InternalReference PartSch Chapter Part
-      Committee Resolution SubSection NewClause.Committee
-      ResolutionHead ResolutionText OrderDate OrderHeading
-      Para.sch Para].inject({}){|h,v| h[v]=true; h}
+  MOVE_OUTSIDE = %w[Amendment Amendment.Number Amendment.Text
+      Chapter Clause Clause.ar ClauseText ClauseTitle Clauses.ar Committee CoverPara
+      Definition DefinitionList DefinitionListItem
+      InternalReference
+      List ListItem Longtitle.text
+      Motion Move
+      NewClause.Committee
+      OrderDate OrderHeading
+      OrderPara OrderSubPara OrderSubSubPara
+      OrderHousePara OrderHouseSubPara OrderHouseSubSubPara
+      Para Para.sch Part PartSch
+      Resolution ResolutionHead ResolutionPara ResolutionSubPara ResolutionText
+      RunIntoPara
+      Schedule
+      SubPara SubSubPara
+      SubPara.sch SubSubPara.sch SubSubSubPara.sch SubSubSubSubPara.sch
+      SubSection
+      Text.motion TextContinuation].inject({}){|h,v| h[v]=true; h}
 
   def move_etag_outside_paragraph?(tag, element)
     collapsed = element.at('../Collapsed/text()').to_s == 'Yes'
@@ -338,7 +347,7 @@ class MifParser
 
     add_previous_text_and_attributes_to_citations(element) if in_citation?
 
-    flush_strings unless @e_tag[/^(Xref|Italic|Citation|Sbscript)$/]
+    flush_strings unless @e_tag[/^(Xref|Italic|Bold|Citation|Sbscript)$/]
     @etags_stack << @e_tag
 
     if is_amendment_reference_part?(@e_tag) && @e_tag != 'Line'
