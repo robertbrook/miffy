@@ -93,7 +93,8 @@ class Act < ActiveRecord::Base
       begin
         logger.info "creating #{part.title}"
       rescue
-        raise part.inspect
+        logger.warn "act part is nil" if part.nil?
+        return
       end
     end
     act_part = act_parts.build :name => part.number,

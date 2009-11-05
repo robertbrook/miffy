@@ -80,6 +80,40 @@ body
       margin: 1px 0 2em 0
       clear: both
       
+      .Part
+        +column(30, true)
+        
+        .PNum_PgfTag
+          +column(30, true)
+          text-align: center
+          
+          .PgfNumString
+            +column(30, true)
+            font-weight: bold
+            float: left
+            
+            .PgfNumString_0
+              +column(30, true)
+              text-align: center
+            
+          .PartNumber
+            float: left
+            
+        .PartTitle
+          +column(30, true)
+          text-align: center
+          text-transform: uppercase
+          padding: 0 0 1em 0
+          
+        .CrossHeading
+          +column(30, true)
+          clear: both
+          
+          .CrossHeadingTitle
+            font-style: italic
+            text-align: center
+            padding: 0 0 1em 0
+      
       .Rubric
         +column(30, true)
         text-align: center
@@ -92,69 +126,101 @@ body
           +column(30, true)
           clear: both
 
-        .SubSection
-          +column(28, true)
-
-          .SubSection_text
-            +column(26, true)
-
-          p.SubSection_PgfTag
-            +column(28, true)
-
-        ._ClauseTitle_PgfTag, .ClauseTitle_PgfTag
-          font-weight: bold
-
         .ClauseText
           +prepend(2)
-          +column(27, true)
+          +column(28, true)
           
-          div.Para  
-            +column(25, true)
-            
-            .Paragraph_PgfTag
-              +column(25, true)
+          .SubSection
+            +column(28, true)
+
+            .SubSection_text
+              +column(26, true)
+
+            p.SubSection_PgfTag
+              +column(28, true)
               
-              .Para_text
-                +column(23, true)
-                
-          div.SubSection
-            +column(25, true)
-            
-            p.SubSection_PgfTag, p._SubSection_PgfTag
-              +column(25, true)
-              
-              span.SubSection_text
-                +column(23, true)
-                float: right
-
-        .Amendment 
-          float:left
-
-        .Clause
-          float: left
-          padding-left: 0
-          
-          .ClauseText
-            padding-left: 0
-
-            ._Paragraph_PgfTag
-              +column(27, true)
+            .TextContinuation
               +prepend(1)
-
-              .Para_text
+              +column(26, true)
+          
+            .Definition
+              +prepend(2)
+              +column(23, true)
+              
+              .DefinitionListItem
+                +prepend(1)
+                +column(22, true)
+              
+            .Para
+              +prepend(1)
+              +column(26, true)
+            
+              .Amendment
                 +column(25, true)
-
-            p._SubSection_PgfTag
-              margin-left
-              float: left
-
-            p._SubParagraph_PgfTag
+                +prepend(1)
+                
+              .Paragraph_PgfTag
+                +column(26, true)
+              
+                .Para_text
+                  +column(24, true)
+                  
+            .Amendment
               +column(25, true)
               +prepend(3)
+              
+              .Table
+                +column(25, true)
+                
+                .TableTitle
+                  text-align: center
+                  
+                  .SmallCaps
+                    text-transform: uppercase
+                    
+                .TableData
+                  border-collapse: collapse
+                  
+                  th
+                    font-weight: normal
+                    font-style: italic
+                    text-align: center
+                    border: 1px solid black
+                    
+                  td
+                    border: 1px solid black
+                    padding: 0 0.5em
 
-              .SubPara_text
-                +column(23, true)
+          .Amendment 
+            +column(26, true)
+            +prepend(1)
 
-            span.Para
-              float: left
-              display: block
+            .Clause
+              +column(26, true)
+          
+              .ClauseText
+                +column(25, true)
+                +prepend(1)
+
+                ._Paragraph_PgfTag
+                  +column(24, true)
+                  +prepend(1)
+
+                  .Para_text
+                    +column(23, true)
+
+                p._SubSection_PgfTag
+                  margin-left
+                  float: left
+
+                p._SubParagraph_PgfTag
+                  +column(25, true)
+                  +prepend(3)
+
+                  .SubPara_text
+                    +column(23, true)
+
+                span.Para
+                  float: left
+                  display: block
+              
