@@ -119,6 +119,7 @@ class MifToHtmlParser
     ScheduleTitle Schedule
     SectionReference
     Shorttitle Stageheader SubSection
+    Split
     TableTitle
     Table Text_motion TextContinuation
     WordsOfEnactment].inject({}){|h,v| h[v]=true; h}
