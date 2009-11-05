@@ -115,11 +115,11 @@ describe MifParserUtils do
                   In consequence of subsection
                   %span#1123927.Xref
                     (6)
-                  , omit—
+                  ) omit—
               #1113761.Para
 |
       @utils.format_haml(text).should == %Q|                %span.SubSection_text<
-                  In consequence of subsection <span class="Xref" id="1123927">(6)</span>, omit—
+                  In consequence of subsection <span class="Xref" id="1123927">(6)</span>) omit—
               #1113761.Para
 |
     end
