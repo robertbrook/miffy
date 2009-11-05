@@ -27,7 +27,7 @@ describe MifParserUtils do
       check "#1045577.Given", '<'
       check "#1045600.Stageheader", '<'
       check "#1045605.Shorttitle", '<'
-      check "#1112921.Xref", '<'
+      check "#1045605.Xref", '<'
     end
 
     it 'should turn AmendmentReference into a link_to call' do
@@ -108,6 +108,42 @@ describe MifParserUtils do
                 line <span class="Line_number">42</span>
               %span#1043322.Number<
 |
+    end
+
+    it 'should expand xref span 2' do
+      text = %Q|                %span.SubSection_text
+                  In consequence of subsection
+                  %span#1123927.Xref
+                    (6)
+                  , omit—
+              #1113761.Para
+|
+      @utils.format_haml(text).should == %Q|                %span.SubSection_text<
+                  In consequence of subsection <span class="Xref" id="1123927">(6)</span>, omit—
+              #1113761.Para
+|
+    end
+
+    it 'should expand xref span 1' do
+      text = %Q|
+                  In subsection
+                  %span#4312126.Xref
+                    (10)
+                  , and
+                  %span|
+      @utils.format_haml(text).should == %Q|
+                  In subsection <span class="Xref" id="4312126">(10)</span>, and
+                  %span|
+    end
+
+    it 'should expand xref span' do
+      text = %Q|
+                  In subsection
+                  %span#4312126.Xref
+                    (10)
+                  ,|
+      @utils.format_haml(text).should == %Q|
+                  In subsection <span class="Xref" id="4312126">(10)</span>,|
     end
 
     it 'should expand clause number span' do
