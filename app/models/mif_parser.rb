@@ -338,7 +338,7 @@ class MifParser
 
     add_previous_text_and_attributes_to_citations(element) if in_citation?
 
-    flush_strings unless @e_tag[/^(Xref|Italic|Citation|Sbscript)$/]
+    flush_strings unless @e_tag[/^(Xref|Italic|Bold|Citation|Sbscript)$/]
     @etags_stack << @e_tag
 
     if is_amendment_reference_part?(@e_tag) && @e_tag != 'Line'
