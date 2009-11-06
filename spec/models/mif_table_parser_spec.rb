@@ -12,17 +12,24 @@ describe MifTableParser do
     tables = MifTableParser.new.get_tables doc
     tables.to_a.first[1].to_s.should == '<TableData id="1147573">
 <Row id="1146883">
-<CellH id="1146884" class="first"  colspan="2">CO2 emissions figure</CellH>
+<CellH id="1146884" class="first" colspan="2">CO2 emissions figure</CellH>
 <CellH id="1146886" colspan="2">Rate</CellH>
 </Row>
 <Row id="1146888">
-<CellH id="1146889" class="first" >(1)</CellH>
+<CellH id="1146889" class="first">(1)</CellH>
 <CellH id="1146890">(2)</CellH>
 <CellH id="1146891">(3)</CellH>
 <CellH id="1146892">(4)</CellH>
 </Row>
+<Row id="1146903">
+<Cell id="1146904" class="first">100</Cell>
+<Cell id="1146905" class="centered">120</Cell>
+<Cell id="1146906">15</Cell>
+<Cell id="1146907">35</Cell>
+</Row>
 </TableData>'.gsub("\n",'')
   end
+
 
   TABLE = "
 <Tbls><Tbl>
@@ -312,5 +319,139 @@ describe MifTableParser do
       </Cell>
     </Row>
   </TblH>
+  <TblBody>
+    <Element>
+      <Unique>1146882</Unique>
+      <ETag>`Tbody'</ETag>
+      <Attributes></Attributes>
+      <Collapsed>No</Collapsed>
+      <SpecialCase>No</SpecialCase>
+      <AttributeDisplay>None</AttributeDisplay>
+    </Element>
+    <Row>
+      <RowMaxHeight>84.0 pc</RowMaxHeight>
+      <RowHeight>1.75 pc</RowHeight>
+      <Element>
+        <Unique>1146903</Unique>
+        <ETag>`Row'</ETag>
+        <Attributes></Attributes>
+        <Collapsed>Yes</Collapsed>
+        <SpecialCase>No</SpecialCase>
+        <AttributeDisplay>None</AttributeDisplay>
+      </Element>
+      <Cell>
+        <CellLRuling>`Thin'</CellLRuling>
+        <CellBRuling>`Thin'</CellBRuling>
+        <CellTRuling>`Thin'</CellTRuling>
+        <Element>
+          <Unique>1146904</Unique>
+          <ETag>`Entry'</ETag>
+          <Attributes></Attributes>
+          <Collapsed>No</Collapsed>
+          <SpecialCase>No</SpecialCase>
+          <AttributeDisplay>None</AttributeDisplay>
+        </Element>
+        <CellContent>
+          <Notes></Notes>
+          <Para>
+            <Unique>1148036</Unique>
+            <PgfTag>`CellBody'</PgfTag>
+            <Pgf>
+              <PgfLIndent>0.0 pc</PgfLIndent>
+            </Pgf>
+            <ParaLine>
+              <String>`100'</String>
+            </ParaLine>
+          </Para>
+        </CellContent>
+      </Cell>
+      <Cell>
+        <CellLRuling>`Thin'</CellLRuling>
+        <CellBRuling>`Thin'</CellBRuling>
+        <CellRRuling>`Thin'</CellRRuling>
+        <CellTRuling>`Thin'</CellTRuling>
+        <Element>
+          <Unique>1146905</Unique>
+          <ETag>`Entry'</ETag>
+          <Attributes>
+            <Attribute>
+              <AttrName>`Align'</AttrName>
+              <AttrValue>`Center'</AttrValue>
+            </Attribute>
+          </Attributes>
+          <Collapsed>No</Collapsed>
+          <SpecialCase>No</SpecialCase>
+          <AttributeDisplay>None</AttributeDisplay>
+        </Element>
+        <CellContent>
+          <Notes></Notes>
+          <Para>
+            <Unique>1148038</Unique>
+            <PgfTag>`CellBody'</PgfTag>
+            <Pgf>
+              <PgfLIndent>0.0 pc</PgfLIndent>
+            </Pgf>
+            <ParaLine>
+              <String>`120'</String>
+            </ParaLine>
+          </Para>
+        </CellContent>
+      </Cell>
+      <Cell>
+        <CellLRuling>`Thin'</CellLRuling>
+        <CellBRuling>`Thin'</CellBRuling>
+        <CellRRuling>`Thin'</CellRRuling>
+        <CellTRuling>`Thin'</CellTRuling>
+        <Element>
+          <Unique>1146906</Unique>
+          <ETag>`Entry'</ETag>
+          <Attributes></Attributes>
+          <Collapsed>No</Collapsed>
+          <SpecialCase>No</SpecialCase>
+          <AttributeDisplay>None</AttributeDisplay>
+        </Element>
+        <CellContent>
+          <Notes></Notes>
+          <Para>
+            <Unique>1148040</Unique>
+            <PgfTag>`CellBody'</PgfTag>
+            <Pgf>
+              <PgfLIndent>0.0 pc</PgfLIndent>
+            </Pgf>
+            <ParaLine>
+              <String>`15'</String>
+            </ParaLine>
+          </Para>
+        </CellContent>
+      </Cell>
+      <Cell>
+        <CellLRuling>`Thin'</CellLRuling>
+        <CellBRuling>`Thin'</CellBRuling>
+        <CellRRuling>`Thin'</CellRRuling>
+        <CellTRuling>`Thin'</CellTRuling>
+        <Element>
+          <Unique>1146907</Unique>
+          <ETag>`Entry'</ETag>
+          <Attributes></Attributes>
+          <Collapsed>No</Collapsed>
+          <SpecialCase>No</SpecialCase>
+          <AttributeDisplay>None</AttributeDisplay>
+        </Element>
+        <CellContent>
+          <Notes></Notes>
+          <Para>
+            <Unique>1148042</Unique>
+            <PgfTag>`CellBody'</PgfTag>
+            <Pgf>
+              <PgfLIndent>0.0 pc</PgfLIndent>
+            </Pgf>
+            <ParaLine>
+              <String>`35'</String>
+            </ParaLine>
+          </Para>
+        </CellContent>
+      </Cell>
+    </Row>
+  </TblBody>
 </Tbl></Tbls>"
 end
