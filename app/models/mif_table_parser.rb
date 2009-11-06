@@ -42,6 +42,15 @@ class MifTableParser
   end
 
   def handle_cell node, tables
+    if @colspan_target > 0
+      if @colspan_count < @colspan_target
+        @colspan_count += 1
+        return
+      else
+        @colspan_target = 0
+      end
+    end
+    
     first = ' class="first" '
     if @in_cell
       first = ""
@@ -53,11 +62,20 @@ class MifTableParser
     end
     cell_id = node.at('Element/Unique/text()').to_s
     @in_cell = true
+  
     if @in_heading
       tables[@current_table_id] << %Q|<CellH id="#{cell_id}"#{first}>|
     else
       tables[@current_table_id] << %Q|<Cell id="#{cell_id}"#{first}>|
     end
+  end
+  
+  def handle_cell_columns node, tables
+    colspan = node.at('text()').to_s
+    table_length = tables[@current_table_id].length
+    tables[@current_table_id] = tables[@current_table_id][0..table_length-2] << %Q| colspan="#{colspan}">|
+    @colspan_target = colspan.to_i
+    @colspan_count = 1
   end
 
   def handle_body tables
@@ -83,6 +101,8 @@ class MifTableParser
         handle_row node, tables
       when 'Cell'
         handle_cell node, tables
+      when 'CellColumns'
+        handle_cell_columns node, tables
       when 'TblH'
         @in_heading = true
       when 'TblBody'
@@ -101,6 +121,8 @@ class MifTableParser
     @in_heading = false
     @in_row = false
     @in_cell= false
+    @colspan_count = 0
+    @colspan_target = 0
     table_count = tables.size
 
     table_xml.traverse_element do |node|

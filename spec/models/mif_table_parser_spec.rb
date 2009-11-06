@@ -6,16 +6,14 @@ include ActionController::Assertions::SelectorAssertions
 
 
 describe MifTableParser do
-
+  
   it 'should create table' do
     doc = Hpricot.XML TABLE
     tables = MifTableParser.new.get_tables doc
     tables.to_a.first[1].to_s.should == '<TableData id="1147573">
 <Row id="1146883">
-<CellH id="1146884" class="first" >CO2 emissions figure</CellH>
-<CellH id="1146885"></CellH>
-<CellH id="1146886">Rate</CellH>
-<CellH id="1146887"></CellH>
+<CellH id="1146884" class="first"  colspan="2">CO2 emissions figure</CellH>
+<CellH id="1146886" colspan="2">Rate</CellH>
 </Row>
 <Row id="1146888">
 <CellH id="1146889" class="first" >(1)</CellH>

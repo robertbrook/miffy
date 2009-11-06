@@ -223,6 +223,7 @@ class MifToHtmlParser
     tag = []
     tag << %Q|<#{name} class="#{css_class(node)}"|
     tag << %Q| id="#{node['id']}"| if node['id']
+    tag << %Q| colspan="#{node['colspan']}"| if node['colspan']
     if name == 'hr'
       tag << " />"
     else
