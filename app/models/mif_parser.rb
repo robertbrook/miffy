@@ -42,7 +42,7 @@ class ActCitation
   end
 
   def act_abbreviation
-    if previous_text[/“(the\s+.+\s+Act)”\s+means/]
+    if previous_text && previous_text[/“(the\s+.+\s+Act)”\s+means/]
       $1
     else
       nil
@@ -277,15 +277,24 @@ class MifParser
     end
   end
 
-  MOVE_OUTSIDE = %w[Amendment Amendment.Number Amendment.Text Longtitle.text
-      SubPara SubPara.sch SubSubPara.sch Move Motion Text.motion
-      ClauseTitle Clause Clauses.ar Clause.ar ClauseText
-      Schedule TextContinuation
-      Definition DefinitionList DefinitionListItem List ListItem
-      InternalReference PartSch Chapter Part
-      Committee Resolution SubSection NewClause.Committee
-      ResolutionHead ResolutionText OrderDate OrderHeading
-      Para.sch Para].inject({}){|h,v| h[v]=true; h}
+  MOVE_OUTSIDE = %w[Amendment Amendment.Number Amendment.Text
+      Chapter Clause Clause.ar ClauseText ClauseTitle Clauses.ar Committee CoverPara
+      Definition DefinitionList DefinitionListItem
+      InternalReference
+      List ListItem Longtitle.text
+      Motion Move
+      NewClause.Committee
+      OrderDate OrderHeading
+      OrderPara OrderSubPara OrderSubSubPara
+      OrderHousePara OrderHouseSubPara OrderHouseSubSubPara
+      Para Para.sch Part PartSch
+      Resolution ResolutionHead ResolutionPara ResolutionSubPara ResolutionText
+      RunIntoPara
+      Schedule
+      SubPara SubSubPara
+      SubPara.sch SubSubPara.sch SubSubSubPara.sch SubSubSubSubPara.sch
+      SubSection
+      Text.motion TextContinuation].inject({}){|h,v| h[v]=true; h}
 
   def move_etag_outside_paragraph?(tag, element)
     collapsed = element.at('../Collapsed/text()').to_s == 'Yes'

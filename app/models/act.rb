@@ -103,12 +103,21 @@ class Act < ActiveRecord::Base
         :statutelaw_url => part.statutelaw_uri
 
     part.sections.each do |section|
-      act_sections.build :number => section.number,
-          :title => section.title,
-          :act_part => act_part,
-          :legislation_url => section.legislation_uri,
-          :opsi_url => section.opsi_uri,
-          :statutelaw_url => section.statutelaw_uri
+      unless section.respond_to?(:title)
+        logger.warn "title not present on: #{section.inspect}"
+      else
+        begin
+          act_sections.build :number => section.number,
+              :title => section.title,
+              :act_part => act_part,
+              :legislation_url => section.legislation_uri,
+              :opsi_url => section.opsi_uri,
+              :statutelaw_url => section.statutelaw_uri
+        rescue
+          logger.warn "act section is nil" if section.nil?
+          return
+        end
+      end
     end
   end
 

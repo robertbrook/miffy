@@ -28,9 +28,8 @@ class ApplicationController < ActionController::Base
   end
 
   def convert
-    file_name = URI.decode(params[:file])
-
-    if File.exists?(file_name)
+    file_name = params[:file]
+    if file_name && File.exists?(file_name = URI.decode(file_name))
       params[:format] = params[:format] || 'html'
       mif_file = MifFile.find_by_path(file_name)
 
@@ -77,7 +76,7 @@ class ApplicationController < ActionController::Base
   end
 
   def render_not_found
-    render :template => 'public/404.html', :status => 404
+    render :template => 'public/404.html', :status => 404, :layout => false
   end
 
 end

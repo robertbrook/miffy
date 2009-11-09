@@ -90,15 +90,14 @@ class MifToHtmlParser
   DIV = %w[ABillTo Abt1 Abt2 Abt3 Abt4
     Amendment Amendment_Number Amendment_Text Amendments_Commons Arrangement
     BillData BillTitle Bpara
+    CenteredHeading Chapter
     ClauseText ClauseTitle Clause_Committee
-    ScheduleTitle Schedule PartSch PartTitle
     Clauses ClausesToBeConsidered Clauses_ar
     Committee CommitteeShorttitle ChapterTitle
-    Cover CoverHeading CoverPara
+    Cover CoverHeading
     CrossHeading CrossHeadingSch CrossHeadingTitle
-    Definition DefinitionListItem
-    Part Chapter TableTitle
     Date
+    Definition DefinitionListItem
     Footer
     Given
     Head HeadAmd HeadConsider HeadNotice Head_thin
@@ -107,14 +106,21 @@ class MifToHtmlParser
     LongTitle Longtitle_text
     MarshalledOrderNote Motion Move
     NewClause_Committee NoticeOfAmds
-    OrderAmendmentText OrderCrossHeading OrderHeading OrderPreamble OrderText
+    OrderAmendmentText OrderCrossHeading
+    OrderHeading
+    OrderPreamble OrderText
     Order_Committee Order_House Order_Motion
-    Para_sch Prelim
-    Report Resolution ResolutionHead ResolutionPreamble ResolutionText Rubric
+    Part PartSch PartTitle
+    Prelim
+    Report Resolution ResolutionHead
+    ResolutionPreamble ResolutionText Rubric
+    Schedules SchedulesTitle
     Schedule_Committee SchedulesTitle_ar Schedules_ar
+    ScheduleTitle Schedule
+    SectionReference
     Shorttitle Stageheader SubSection
-    SubPara
-    CenteredHeading
+    Split
+    TableTitle
     Table Text_motion TextContinuation
     WordsOfEnactment].inject({}){|h,v| h[v]=true; h}
 
@@ -144,11 +150,12 @@ class MifToHtmlParser
       Letter Line Line_text List_text
       Move_text
       NoteTxt Notehead Number Number_text
-      OrderDate OrderPara
       Page Page_text Para_sch_text Para_text PgfNumString Proposer_name
-      ResolutionDate ResolutionHead_text ResolutionPara ResolutionPara_text
-      ResolutionSubPara ResolutionSubPara_text ResolutionText_text
+      ResolutionDate ResolutionHead_text ResolutionPara_text
+      ResolutionSubPara_text ResolutionText_text
+      Roman Roman_text
       STCommons STHouse STLords STText SmallCaps
+      Superscript Superscript_text SmallCaps_text
       SubSection_text
       WHITESPACE ].inject({}){|h,v| h[v]=true; h}
 
@@ -216,6 +223,7 @@ class MifToHtmlParser
     tag = []
     tag << %Q|<#{name} class="#{css_class(node)}"|
     tag << %Q| id="#{node['id']}"| if node['id']
+    tag << %Q| colspan="#{node['colspan']}"| if node['colspan']
     if name == 'hr'
       tag << " />"
     else
@@ -358,10 +366,11 @@ class MifToHtmlParser
     @in_paragraph = false unless already_in_paragraph
   end
 
-  def handle_sub_para_variants node
+  def handle_para node
     already_in_paragraph = @in_paragraph
     tag = (already_in_paragraph ? 'span' : 'div')
     add_html_element(tag, node)
+    already_in_paragraph
   end
 
   def handle_para_line_start node
@@ -400,13 +409,6 @@ class MifToHtmlParser
       add last_line
     end
     @in_para_line = true
-  end
-
-  def handle_para node
-    already_in_paragraph = @in_paragraph
-    tag = (already_in_paragraph ? 'span' : 'div')
-    add_html_element(tag, node)
-    already_in_paragraph
   end
 
   def handle_page_start node
@@ -486,8 +488,6 @@ class MifToHtmlParser
         add_link_element node, true
       when 'ParaLineStart'
         handle_para_line_start node
-      when 'Para'
-        handle_para node
       when 'PageStart'
         handle_page_start node
       when 'Clauses'
@@ -506,8 +506,8 @@ class MifToHtmlParser
         handle_pgf_num_string node
       when /_PgfTag$/
         handle_pdf_tag node
-      when /^((Sub)+Para_sch|ResolutionPara)$/
-        handle_sub_para_variants node
+      when /^(Para|(Sub)+Para|Para_sch|(Sub)+Para_sch|ResolutionPara|ResolutionSubPara|CoverPara|OrderDate|OrderPara|OrderSubPara|OrderSubSubPara|OrderHousePara|OrderHouseSubPara|OrderHouseSubSubPara|RunIntoPara)$/
+        handle_para node
       when /^EndRule$/
         #ignore
       when 'ClauseText'
@@ -535,7 +535,7 @@ class MifToHtmlParser
       when IGNORE_RE
         # ignore for now
       else
-        raise node.name
+        raise "don't know how to handle: #{node.name}"
         node_children_to_html(node)
     end if node.elem?
 

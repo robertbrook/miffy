@@ -20,7 +20,7 @@ class MifTableParser
     if tag != 'Table' && tag != 'RepealContinue'
       do_break = true
     else
-      tables.merge!({@current_table_id, start_tag('TableData', node)})
+      tables[@current_table_id] = [start_tag('TableData', node)]
       do_break = false
     end
     do_break
@@ -42,7 +42,16 @@ class MifTableParser
   end
 
   def handle_cell node, tables
-    first = ' class="first" '
+    if @colspan_target > 0
+      if @colspan_count < @colspan_target
+        @colspan_count += 1
+        return
+      else
+        @colspan_target = 0
+      end
+    end
+    
+    first = ' class="first"'
     if @in_cell
       first = ""
       if @in_heading
@@ -53,10 +62,40 @@ class MifTableParser
     end
     cell_id = node.at('Element/Unique/text()').to_s
     @in_cell = true
+      
     if @in_heading
       tables[@current_table_id] << %Q|<CellH id="#{cell_id}"#{first}>|
     else
       tables[@current_table_id] << %Q|<Cell id="#{cell_id}"#{first}>|
+    end
+  end
+  
+  def handle_cell_columns node, tables
+    colspan = node.at('text()').to_s
+    cell = tables[@current_table_id].pop
+    cell = cell.gsub(">", %Q| colspan="#{colspan}">|)
+    tables[@current_table_id] << cell
+    @colspan_target = colspan.to_i
+    @colspan_count = 1
+  end
+
+  def handle_attribute node, tables
+    if clean(node.at('AttrName')) == 'Align'
+      attr_value = clean(node.at('AttrValue'))
+      alignment = ''
+      case attr_value
+        when 'Center'
+          alignment = 'centered'
+        when 'Right'
+          alignment = 'right'
+      end
+      cell_start = tables[@current_table_id].pop
+      if cell_start.include?('class=')
+        cell_start.gsub!('">', %Q| #{alignment}">|)
+      else
+        cell_start.gsub!('>', %Q| class="#{alignment}">|)
+      end
+      tables[@current_table_id] << cell_start
     end
   end
 
@@ -83,6 +122,10 @@ class MifTableParser
         handle_row node, tables
       when 'Cell'
         handle_cell node, tables
+      when 'Attribute'
+        handle_attribute node, tables
+      when 'CellColumns'
+        handle_cell_columns node, tables
       when 'TblH'
         @in_heading = true
       when 'TblBody'
@@ -101,6 +144,8 @@ class MifTableParser
     @in_heading = false
     @in_row = false
     @in_cell= false
+    @colspan_count = 0
+    @colspan_target = 0
     table_count = tables.size
 
     table_xml.traverse_element do |node|
