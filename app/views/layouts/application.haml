@@ -1,21 +1,20 @@
-- @external_sheet = params[:style]
-- @file = params[:file] || "Index"
 - params[:interleave] ? (params[:wide] ? @ens = 'interleaved_wide' : @ens = 'interleaved') : @ens = ''
 <!DOCTYPE html>
 %html{:lang=>"en-GB"}
   %head
     %title= @title ? @title : 'Miffy'
+    =external_sheet
     %meta{ :content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type" }
-    - if @external_sheet
-      = stylesheet_link_tag @external_sheet, :media => 'screen, projection, print'
+    - if external_sheet
+      = stylesheet_link_tag external_sheet, :media => 'screen, projection, print'
     -else
       -unless params[:wide]
         = stylesheet_link_tag 'screen', :media => 'screen, projection'
       -if page_class == 'application index'
         = stylesheet_link_tag 'index', :media => 'screen, projection'
       -if page_class == 'application convert'
-        = stylesheet_link_tag stylesheet_path(@file, @ens), :media => 'screen, projection'
-        = stylesheet_link_tag stylesheet_path(@file, @ens) + '_print', :media => 'print'
+        = stylesheet_link_tag stylesheet_path(target_file, @ens), :media => 'screen, projection'
+        = stylesheet_link_tag stylesheet_path(target_file, @ens) + '_print', :media => 'print'
       -if page_class == 'application act'
         = stylesheet_link_tag 'act', :media => 'screen, projection'
     %meta{ :name=>"viewport", :content=>"width = 480" }
@@ -40,7 +39,7 @@
               =link_to('Text only version', "convert?file=#{@mif_file.path}&format=text")
               &middot;
               =link_to('Regenerate', "convert?file=#{@mif_file.path}&force=true")
-              - if document_type(@file).include?('clauses')
+              - if document_type(target_file).include?('clauses')
                 - unless params[:style]
                   &middot;
                   =link_to('Alternative stylesheet', "convert?file=#{@mif_file.path}&style=/stylesheets/clauses_demo.css")
