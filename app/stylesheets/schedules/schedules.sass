@@ -105,103 +105,145 @@ body
             text-align: center
             margin: 0 0 1em 0
             
-          .Para_sch
-            +column(30, true)
-            padding: 0.4em 0
+        .Para_sch
+          +column(30, true)
+          padding: 0.4em 0
+          
+          .Para_sch_text
+            +column(28, true)
+            display: block
             
-            .Para_sch_text
-              +column(28, true)
-              display: block
+          .Paragraph_sch_PgfTag
+            float: left
+            
+          .Amendment
+            +prepend(1)
+            +column(29, true)
+            
+            .CenteredHeading
+              +column(29, true)
+              text-align: center
+            
+            .Para
+              +prepend(4)
+              +column(25, true)
               
-            .Paragraph_sch_PgfTag
-              float: left
+              .Para_text
+                display: block
+                +column(23, true)
+            
+            .SubSection
+              +column(26, true)
               
-            .Amendment
-              +prepend(1)
+              .SubSection_PgfTag
+                float: left
+                margin-top: 0.1em
+                margin-bottom: 0.1em
+              
+              .TextContinuation
+                +prepend(2)
+                +column(24, true)
+            
+            .Clause
               +column(29, true)
               
-              .CenteredHeading
+              .ClauseTitle
                 +column(29, true)
-                text-align: center
-              
-              .Para
-                +prepend(4)
-                +column(25, true)
+                font-weight: bold
                 
-                .Para_text
+                .ActClauseTitle_text
+                  +column(27, true)
                   display: block
-                  +column(23, true)
-              
-              .SubSection
-                +column(26, true)
-                
-                .SubSection_PgfTag
-                  float: left
-                  margin-top: 0.1em
-                  margin-bottom: 0.1em
-                
-                .TextContinuation
-                  +prepend(2)
-                  +column(24, true)
-              
-              .Clause
-                +column(29, true)
-                
-                .ClauseTitle
-                  +column(29, true)
-                  font-weight: bold
                   
-                  .ActClauseTitle_text
-                    +column(27, true)
-                    display: block
-                    
-                .ClauseText
-                  +prepend(3)
-                  +column(24, true)
-                
-                  .ClauseText_PgfTag
-                    float: left
-                    
-                  .SubSection
-                    +column(28, true)
-                    margin: 0.2em 0 0.2em -40px
-                    
-                    .SubSection_text
-                      display: block
-                      +column(26, true)
-                    
-            .SubPara_sch
-              +column(30, true)
+              .ClauseText
+                +prepend(3)
+                +column(24, true)
               
-              .SubPara_sch_text
-                display: block
-                +column(25, true)
-                
-              .Amendment
+                .ClauseText_PgfTag
+                  float: left
+                  
                 .SubSection
-                  +prepend(4)
-                  +column(24, true)
+                  +column(28, true)
+                  margin: 0.2em 0 0.2em -40px
                   
                   .SubSection_text
                     display: block
-                    +column(22, true)
-                    
-                .Para
-                  +prepend(3)
-                  +column(21, true)
+                    +column(26, true)
                   
-                  .Para_text
-                    display: block
-                    +column(19, true)
-               
-              .SubSubPara_sch
+          .SubPara_sch
+            +column(30, true)
+            
+            .SubPara_sch_text
+              display: block
+              +column(25, true)
+              
+            .TextContinuation
+              +prepend(4)
+              +column(26, true)
+              
+            .Amendment
+              .Definition
                 +prepend(5)
-                +column(25, true)
+                +column(23, true)
                 
-                .SubSubPara_sch_text
+              .Table
+                +prepend(4)
+                +column(24, true)
+            
+              .SubSection
+                +prepend(4)
+                +column(24, true)
+                
+                .SubSection_text
                   display: block
-                  +column(23, true)
-                    
+                  +column(22, true)
+                  
+              .Para
+                +prepend(3)
+                +column(21, true)
+                
+                .Para_text
+                  display: block
+                  +column(19, true)
+             
             .SubSubPara_sch
-              +prepend(3)
-              +column(27, true)
+              +prepend(5)
+              +column(25, true)
+              
+              .SubSubPara_sch_text
+                display: block
+                +column(23, true)
+                  
+          .SubSubPara_sch
+            +prepend(3)
+            +column(27, true)
+            
+            .SubSubPara_sch_text
+              display: block
+              +column(25, true)
+              
+  .Table    
+    .TableTitle
+      text-align: center
+      
+      .SmallCaps
+        text-transform: uppercase
+        
+    .TableData
+      border-collapse: collapse
+      
+      th
+        font-weight: normal
+        font-style: italic
+        text-align: center
+        border: 1px solid black
+        
+      td
+        border: 1px solid black
+        padding: 0 0.5em
+        
+      td.centered
+        text-align: center
+        
+      td.right
+        text-align: right
