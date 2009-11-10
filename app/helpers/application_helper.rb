@@ -46,6 +46,8 @@ module ApplicationHelper
         else
           "clauses/clauses"
         end
+      when 'Schedules'
+        'schedules/schedules'
       when 'Arrangement'
         "arrangement/arrangement"
       when 'Amendments'
