@@ -10,8 +10,8 @@ module MifParserUtils
   COMPRESS_WHITESPACE_2 = /(^\s*(#|%).+(PgfNumString|\w+_text|PageStart|Number|Xref|Page|Line|STText|Sponsor|AmendmentNumber_PgfTag|Given|Stageheader|Shorttitle))\n/
   COMPRESS_WHITESPACE_3 = /(^\s*(.BillTitle|%a.+\}))\n/
 
-  TOGGLE_SHOW_REGEXP = Regexp.new('%span\.ClauseTitle_text<\n(\s+)([^\n]+)\n(\s+)\#(\d+)\.ClauseText', Regexp::MULTILINE)
-  TOGGLE_SHOW_REGEXP_2 = Regexp.new('%span\.ClauseTitle_text<\n(\s+)([^\n]+)\n(\s+)\#(\d+en)\.ClauseTextWithExplanatoryNote', Regexp::MULTILINE)
+  TOGGLE_SHOW_REGEXP = Regexp.new('(\s+)%span\.ClauseTitle_text<\n(\s+)([^\n]+)\n(\s+)\#(\d+)\.ClauseText', Regexp::MULTILINE)
+  TOGGLE_SHOW_REGEXP_2 = Regexp.new('(\s+)%span\.ClauseTitle_text<\n(\s+)([^\n]+)\n(\s+)\#(\d+en)\.ClauseTextWithExplanatoryNote', Regexp::MULTILINE)
 
   COMPRESS_WHITESPACE_4 = Regexp.new('(%a\{ :name => "[^"]+" \})<>\n(\s+#\d+)', Regexp::MULTILINE)
 
@@ -50,8 +50,8 @@ module MifParserUtils
     haml.gsub!(COMPRESS_WHITESPACE_2, '\1' + "<\n")
     haml.gsub!(COMPRESS_WHITESPACE_3, '\1' + "<\n")
 
-    haml.gsub!(TOGGLE_SHOW_REGEXP, '%img{ :src => "/images/down-arrow.png", :alt=> "", :id => "\4_img"}' + "\n" + '\1%span.ClauseTitle_text<' + "\n" + '\1= link_to_function "\2", "$(\'\4\').toggle();imgswap(\'\4_img\')"' + "\n" + '\3#\4.ClauseText')
-    haml.gsub!(TOGGLE_SHOW_REGEXP_2, '%img{ :src => "/images/down-arrow.png", :alt=> "", :id => "\4_img"}' + "\n" + '\1%span.ClauseTitle_text<' + "\n" + '\1= link_to_function "\2", "$(\'\4\').toggle();imgswap(\'\4_img\')"' + "\n" + '\3#\4.ClauseTextWithExplanatoryNote')
+    haml.gsub!(TOGGLE_SHOW_REGEXP,   '\1= link_to_function \'<img alt="" id="\5_img" src="/images/down-arrow.png">\', "$(\'\5\').toggle();imgswap(\'\5_img\')"' + "" + '\1%span.ClauseTitle_text<' + "\n" + '\2= link_to_function "\3", "$(\'\5\').toggle();imgswap(\'\5_img\')"' + "\n" + '\4#\5.ClauseText')
+    haml.gsub!(TOGGLE_SHOW_REGEXP_2, '\1= link_to_function \'<img alt="" id="\5_img" src="/images/down-arrow.png">\', "$(\'\5\').toggle();imgswap(\'\5_img\')"' + "" + '\1%span.ClauseTitle_text<' + "\n" + '\2= link_to_function "\3", "$(\'\5\').toggle();imgswap(\'\5_img\')"' + "\n" + '\4#\5.ClauseTextWithExplanatoryNote')
 
     haml.gsub!(COMPRESS_WHITESPACE_4, '\1' + "\n" + '\2')
     haml.gsub!(COMPRESS_WHITESPACE_5, '\1\2<>' + "\n" )
