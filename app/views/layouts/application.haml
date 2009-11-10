@@ -1,13 +1,13 @@
-- @external_sheet = params[:style]
 - @file = params[:file] || "Index"
 - params[:interleave] ? (params[:wide] ? @ens = 'interleaved_wide' : @ens = 'interleaved') : @ens = ''
 <!DOCTYPE html>
 %html{:lang=>"en-GB"}
   %head
     %title= @title ? @title : 'Miffy'
+    =external_sheet
     %meta{ :content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type" }
-    - if @external_sheet
-      = stylesheet_link_tag @external_sheet, :media => 'screen, projection, print'
+    - if external_sheet
+      = stylesheet_link_tag external_sheet, :media => 'screen, projection, print'
     -else
       -unless params[:wide]
         = stylesheet_link_tag 'screen', :media => 'screen, projection'
