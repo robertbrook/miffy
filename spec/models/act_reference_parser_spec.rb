@@ -166,4 +166,38 @@ describe ActReferenceParser do
 
   end
 
+  describe 'when parsing finance clauses file' do
+    before(:all) do
+      @parser = ActReferenceParser.new
+      act = mock_model(Act,
+        :legislation_url=> 'http://www.legislation.gov.uk/ukpga/1996/61',
+        :statutelaw_url => 'http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61',
+        :opsi_url => 'http://www.opsi.gov.uk/acts/acts1996/ukpga_19960061_en_1',
+        :title => 'Channel Tunnel Rail Link Act 1996')
+      act_section = mock_model(ActSection,
+              :legislation_url => 'http://www.legislation.gov.uk/ukpga/1996/61/section/56',
+              :statutelaw_url => 'http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61/PartI/56',
+              :title => 'Interpretation',
+              :label => 'Section 56: Interpretation')
+      act_section.stub!(:legislation_uri_for_subsection).and_return 'http://www.legislation.gov.uk/ukpga/1996/61/section/56/1'
+
+      act.stub!(:find_section_by_number).and_return act_section
+      Act.stub!(:find_by_legislation_url).and_return act
+
+      other_act = mock_model(Act,
+        :legislation_url=> 'http://www.legislation.gov.uk/ukpga/1996/61',
+        :statutelaw_url => 'http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61',
+        :opsi_url => 'http://www.opsi.gov.uk/acts/acts1996/ukpga_19960061_en_1',
+        :title => 'Railways Act 2005 (c. 14)')
+      Act.stub!(:find_by_name).and_return other_act
+      other_act.stub!(:find_section_by_number).and_return act_section
+
+      @result = @parser.parse_xml(fixture('finance/2R printed/Clauses_Interpretation_example.xml'))
+      File.open(RAILS_ROOT + '/spec/fixtures/finance/2R printed/Clauses_Interpretation_example.act.xml','w') {|f| f.write @result }
+    end
+
+    it 'should parse' do
+      @result
+    end
+  end
 end
