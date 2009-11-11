@@ -16,6 +16,8 @@ class Act < ActiveRecord::Base
 
   class << self
     def from_name name
+      name = name.squeeze(' ')
+      name.sub!(/\(c\.(\d)/, '(c. \1')
       if act = find_by_name(name)
         act.save if act.opsi_url.blank?
         act
