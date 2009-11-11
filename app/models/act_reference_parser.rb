@@ -145,7 +145,9 @@ class ActReferenceParser
       found_section = link_section(clause, act, sections) {  find_section(act_name, clause) } || found_section
 
       unless found_section
-        add_link(clause, act_name) { "<a #{act_cite_attributes(act, act.title)}>#{act_name}</a>" }
+        add_link(clause, act_name) do
+          "<a #{act_cite_attributes(act, act.title)}>#{act_name}</a>"
+        end
       end
     end
 

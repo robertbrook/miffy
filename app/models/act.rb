@@ -15,6 +15,30 @@ class Act < ActiveRecord::Base
       :populate_legislation_urls, :populate_act_sections
 
   class << self
+    def get_title name
+      if name[/^(.+)\s\(c\.\s?\d+.+$/]
+        $1
+      else
+        name
+      end
+    end
+
+    def get_number name
+      name[/\(c\.\s?(\d+)/, 1]
+    end
+
+    def get_legislation_from_name name
+      get_legislation(get_title(name), get_number(name))
+    end
+
+    def get_legislation title, number=nil
+      if number
+        Legislation::UK.find(title, number)
+      else
+        Legislation::UK.find(title)
+      end
+    end
+
     def normalize_name name
       name = name.squeeze(' ')
       name.sub!(/\(c\.(\d)/, '(c. \1')
@@ -29,6 +53,14 @@ class Act < ActiveRecord::Base
       elsif act = find_by_title(name)
         act.save if act.opsi_url.blank?
         act
+      elsif legislation = get_legislation_from_name(name)
+        act = find_by_legislation_url(legislation.legislation_uri)
+        if act
+          act
+        else
+          logger.info "creating from name: #{name}"
+          create! :name => name
+        end
       else
         logger.info "creating from name: #{name}"
         create! :name => name
@@ -62,28 +94,18 @@ class Act < ActiveRecord::Base
   end
 
   def populate_number
-    if number.blank? && name[/\(c\.\s?(\d+)/]
-      self.number = $1
-    end
+    self.number = Act.get_number(name) if number.blank?
   end
 
   def populate_title
-    if title.blank?
-      if name[/^(.+)\s\(c\.\s?\d+.+$/]
-        self.title = $1
-      else
-        self.title = name
-      end
-    end
+    self.title = Act.get_title(name) if title.blank?
   end
 
   def get_legislation
     if @legislation
       @legislation
-    elsif number?
-      @legislation = Legislation::UK.find(title, number)
     else
-      @legislation = Legislation::UK.find(title)
+      @legislation = Act.get_legislation title, number
     end
   end
 
