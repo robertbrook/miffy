@@ -57,10 +57,12 @@ class Act < ActiveRecord::Base
   end
 
   def populate_title
-    if title.blank? && name[/^(.+)\s\(c\.\s?\d+.+$/]
-      self.title = $1
-    else
-      self.title = name
+    if title.blank?
+      if name[/^(.+)\s\(c\.\s?\d+.+$/]
+        self.title = $1
+      else
+        self.title = name
+      end
     end
   end
 
@@ -144,32 +146,40 @@ class Act < ActiveRecord::Base
     end
   end
 
-  def populate_legislation_urls_via_opsi
-    # return
-    search_url = "http://search.opsi.gov.uk/search?q=#{URI.escape(name)}&output=xml_no_dtd&client=opsisearch_semaphore&site=opsi_collection"
+  def opsi_search_url name
+    "http://search.opsi.gov.uk/search?q=#{URI.escape(name)}&output=xml_no_dtd&client=opsisearch_semaphore&site=opsi_collection"
+  end
+
+  def search_opsi
     begin
-      puts search_url
-      doc = Hpricot.XML open(search_url)
+      doc = Hpricot.XML open(opsi_search_url(name))
+    rescue Exception => e
+      warn e.class.name
+      warn 'error retrieving: ' + opsi_search_url(name)
+      warn e.to_s
+      warn e.backtrace.join("\n")
+    end
+  end
+
+  def populate_legislation_urls_via_opsi
+    if doc = search_opsi
       url = nil
-
-      if doc
-        (doc/'R/T').each do |result|
-          unless url
-            term = result.inner_text.gsub(/<[^>]+>/,'').strip
-            url = result.at('../U/text()').to_s if(name == term || term.starts_with?(title))
-          end
+      (doc/'R/T').each do |result|
+        unless url
+          term = result.inner_text.gsub(/<[^>]+>/,'').strip
+          url = result.at('../U/text()').to_s if(name == term || term[/^#{title}/i] )
         end
+      end
 
+      if url
         self.opsi_url = url
         if opsi_url[/ukpga/]
           self.legislation_url = "http://www.legislation.gov.uk/ukpga/#{year}/#{number}"
         end
         populate_act_sections_from_opsi_url
+      else
+        warn "cannot find an opsi url for '#{name}' / '#{title}': #{opsi_search_url(name)}"
       end
-    rescue Exception => e
-      warn 'error retrieving: ' + search_url
-      warn e.class.name
-      warn e.to_s
     end
   end
 

@@ -1,6 +1,16 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
   
+  def external_sheet
+    params[:style]
+  end
+  
+  def target_file
+    params[:file] || "Index"
+    # - @file = params[:file] || "Index"
+    
+  end
+  
   def document_type file_name, ens=''
     mif_file = MifFile.find_by_path(file_name)
 
