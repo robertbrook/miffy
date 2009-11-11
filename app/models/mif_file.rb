@@ -8,6 +8,10 @@ class MifFile < ActiveRecord::Base
   validates_presence_of :path, :name
 
   before_validation_on_create :set_name
+  
+  def escaped_path
+    URI.escape(self.path)
+  end
 
   class << self
     def bill_to_paths paths
@@ -31,6 +35,8 @@ class MifFile < ActiveRecord::Base
       end
       bills
     end
+    
+    
 
     def load paths
       bills = bill_to_paths paths
