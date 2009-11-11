@@ -42,8 +42,14 @@ class ActCitation
   end
 
   def act_abbreviation
-    if previous_text && previous_text[/“(the\s+.+\s+Act)”\s+means/]
-      $1
+    if previous_text
+      if previous_text[/“(the\s+.+\s+Act)”\s+means/]
+        $1
+      elsif previous_text[/“([A-Z]+\s\d\d\d\d)”\s+means/]
+        $1
+      else
+        nil
+      end
     else
       nil
     end

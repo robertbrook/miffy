@@ -222,6 +222,7 @@ class MifFile < ActiveRecord::Base
       # File.open('/Users/x/example.xml', 'w+') {|f| f.write(xml) }
       set_html_page_title(xml)
       xml = ActReferenceParser.new.parse_xml(xml)
+      # File.open('/Users/x/example.xml', 'w+') {|f| f.write(xml) }
       result = MifToHtmlParser.new.parse_xml xml, :clauses_file => clauses_file,
           :format => :haml, :body_only => true,
           :interleave_notes => options[:interleave_notes]

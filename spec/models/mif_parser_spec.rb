@@ -530,4 +530,17 @@ describe MifParser do
     end
   end
 
+  describe 'when parsing clauses MIF XML file containing Interpretation into xml' do
+    before(:all) do
+      @parser = MifParser.new
+      @result = @parser.parse_xml(fixture('finance/2R printed/Clauses_Interpretation_example.mif.xml'))
+      File.open(RAILS_ROOT + '/spec/fixtures/finance/2R printed/Clauses_Interpretation_example.xml','w') {|f| f.write @result }
+    end
+
+    it 'should have Interpretation outside of paragraph element' do
+      @result.should have_tag('AbbreviatedActName', :text=>'ALDA 1979')
+    end
+
+  end
+
 end
