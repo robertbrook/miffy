@@ -6,9 +6,7 @@ module ApplicationHelper
   end
   
   def target_file
-    params[:file] || "Index"
-    # - @file = params[:file] || "Index"
-    
+    params[:file] || "Index"    
   end
   
   def document_type file_name, ens=''
