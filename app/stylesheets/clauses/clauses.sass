@@ -44,12 +44,14 @@ body
         text-align: center
         padding: 2em 0
 
-        .Abt1, .Abt3
+        .Abt1, .Abt2, .Abt3
           +column(30, true)
 
+        .Abt1
+          margin-bottom: 2.5em
+
         .Abt2
-          +column(30, true)
-          font-size: 2.5em
+          font-size: 2.7em
           letter-spacing: 0.3em
           font-weight: bold
           padding: 0.4em 0
@@ -61,7 +63,10 @@ body
 
       .WordsOfEnactment
         +column(30, true)
-        padding-bottom: 1.5em
+        
+        .Bpara
+          +column(30, true)
+          margin-bottom: 2.5em
 
         .Dropcap
           font-size: 2.4em
@@ -79,6 +84,10 @@ body
       border-top: 2px solid black
       margin: 1px 0 2em 0
       clear: both
+    
+    
+      p
+        margin-bottom: 0.1em
       
       .Part
         +column(30, true)
@@ -108,17 +117,17 @@ body
           
       .Chapter
         +column(30, true)
-
+          
         .CNum_PgfTag
           +column(30, true)
           text-align: center
-
+          
           .PgfNumString
             +column(30, true)
             font-weight: bold
             text-transform: uppercase
             float: left
-
+        
             .PgfNumString_0
               +column(30, true)
               text-align: center
@@ -149,15 +158,18 @@ body
         .explanatory_note
           +column(30, true)
           clear: both
-
+          
         .ClauseTitle
           font-weight: bold
+          
+          .ClauseTitle_PgfTag
+            margin-bottom: 0.5em
           
           .PgfNumString_1
             width: auto
             padding-right: 0
             margin-right: 0.5em
-
+            
         .ClauseText
           +prepend(2)
           +column(28, true)
@@ -172,7 +184,11 @@ body
           
           .SubSection
             +column(28, true)
-
+            margin-bottom: 0.4em
+            
+            .PgfNumString
+              margin-left: -40px
+              
             .SubSection_text
               +column(26, true)
 
@@ -191,7 +207,7 @@ body
               +prepend(2)
               +column(25, true)
               padding-top: 1em
-          
+            
             .Definition
               +prepend(3)
               +column(25, true)
@@ -236,16 +252,20 @@ body
                   +column(21, true)
                   
             .Amendment
-              +column(25, true)
-              +prepend(3)
+              +column(26, true)
+              +prepend(2)
+              
+              .Clause
+                .ClauseTitle_PgfTag
+                  margin-bottom: 0.2em
               
               .Definition
                 +prepend(1)
                 +column(24, true)
-
+                
                 .DefinitionList
                   +column(24, true)
-
+                  
                   .DefinitionListItem
                     +prepend(1)
                     +column(23, true)
@@ -261,7 +281,7 @@ body
               .Para
                 +column(25, true)
                 padding-left: 0
-        
+              
                 .Paragraph_PgfTag
                   margin-left: 0
                   +column(25, true)
@@ -297,7 +317,7 @@ body
                 .Para_sch_text
                   display: block
                   +column(23, true)
-            
+              
               .SubPara_sch
                 +column(23, true)
                 
@@ -308,7 +328,7 @@ body
                 .SubPara_sch_text
                   +column(19, true)
                   display: block
-            
+              
                 .SubSubPara_sch
                   +prepend(4)
                   +column(19, true)
@@ -321,10 +341,7 @@ body
                 .TextContinuation
                   +prepend(4)
                   +column(19, true)
-                  
-                  p.SubParagraphCont_sch_PgfTag
-                    margin: 0
-            
+              
               .Table
                 +column(25, true)
                 
@@ -335,6 +352,7 @@ body
                     text-transform: uppercase
                     
                 .TableData
+                  margin-top: 1em
                   border-collapse: collapse
                   
                   th

@@ -11,11 +11,18 @@ class Act < ActiveRecord::Base
   validates_presence_of :name
   validates_uniqueness_of :legislation_url, :allow_nil => true
 
-  before_validation :populate_year, :populate_number, :populate_title,
+  before_validation :normalize_name, :populate_year, :populate_number, :populate_title,
       :populate_legislation_urls, :populate_act_sections
 
   class << self
+    def normalize_name name
+      name = name.squeeze(' ')
+      name.sub!(/\(c\.(\d)/, '(c. \1')
+      name
+    end
+
     def from_name name
+      name = normalize_name(name) if name
       if act = find_by_name(name)
         act.save if act.opsi_url.blank?
         act
@@ -42,6 +49,10 @@ class Act < ActiveRecord::Base
 
     File.open(template,'w+') {|f| f.write(haml) }
     template
+  end
+
+  def normalize_name
+    self.name = Act.normalize_name(name) if name
   end
 
   def populate_year
