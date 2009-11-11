@@ -29,12 +29,12 @@
             = link_to_unless_current("Miffy: Index", { :action => "index" })
             - if @show_interleave_link
               &middot;
-              = link_to('Show explanatory notes: Page layout', "convert?file=#{@mif_file.path}&interleave=true")
+              = link_to('Page ENs', "convert?file=#{@mif_file.path}&interleave=true")
               &middot;
-              = link_to('Show explanatory notes: Wide layout', "convert?file=#{@mif_file.path}&interleave=true&wide=true")
+              = link_to('Wide ENs', "convert?file=#{@mif_file.path}&interleave=true&wide=true")
             - elsif @show_uninterleave_link
               &middot;
-              = link_to('Hide explanatory notes', "convert?file=#{@mif_file.path}")
+              = link_to('Hide ENs', "convert?file=#{@mif_file.path}")
             - if page_class == 'application convert'
               &middot;
               =link_to('Text output', "convert?file=#{@mif_file.path}&format=text")
