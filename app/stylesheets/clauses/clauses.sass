@@ -19,6 +19,7 @@ body
       
     .PgfNumString
       float: left
+      display: block
 
       .PgfNumString_0
         +column(1, true)
@@ -178,18 +179,29 @@ body
             +prepend(1)
             +column(27, true)
             
+            .SubParagraph_PgfTag
+              width: 100%
+              float: left
+            
             .Para_text
               display: block
               +column(25, true)
           
           .Amendment 
             +column(28, true)
-            border: 2px solid green
             
             .SubSection
               +prepend(2)
-              +column(24, true)
-              border: 2px dashed crimson
+              +column(26, true)
+              
+              .SubSection_text
+                +column(26, true)
+              
+              .Para
+                +column(23, true)
+                
+                .Para_text
+                  +column(23, true)
               
             .CenteredHeading
               text-align: center
@@ -222,106 +234,184 @@ body
                   float: left
                   display: block 
                   
+                .SubSection
+                  +column(26, true)
+                  +pull(1)
+                  
           .SubSection
             +column(28, true)
             margin-bottom: 0.4em
-            border: 4px double silver
-            
+              
             .PgfNumString
               +pull(2)
               
             .SubSection_text
-              +column(26, true)
+              +column(28, true)
             
             .FrameData
               +column(26, true)
               padding-bottom: 1em
               
               .Formula
-                +column(26, true)
+                text-align: center
+                +prepend(1)
+                +column(25, true)
                 display: block
-              
-            p.SubSection_PgfTag
-              +column(28, true)
-              
+            
             .TextContinuation
-              +prepend(2)
-              +column(25, true)
+              +column(28, true)
               padding-top: 1em
+            
+            .List
+              +prepend(2)
+              +column(26, true)
             
             .Definition
               +prepend(2)
               +column(26, true)
               
+              .TextContinuation
+                +column(26, true)
+              
+              .Definition_text
+                display: block
+                text-indent: -1em
+                +column(26, true)
+              
               .DefinitionList
                 +column(26, true)
+              
+                .TextContinuation
+                  +pull(4)
+                  +column(28, true)
+                  padding-top: 1em
               
                 .DefinitionListItem
                   +prepend(2)
                   +column(24, true)
+      
+            .SubSection_PgfTag
+              float: left
+              display: block
+              width: 100%
               
             .Para
               +prepend(3)
               +column(25, true)
-              border: 1px solid orange
               
               .Para_text
-                +column(24, true)
-                border: 1px solid silver
+                +column(25, true)
               
               .SubPara
                 +prepend(3)
-                +column(20, true)
+                +column(22, true)
                 
                 .SubPara_text
                   display: block
                   +column(18, true)
                   
               .TextContinuation
-                +prepend(3)
-                +column(23, true)
+                +column(25, true)
             
               .Amendment
                 +column(23, true)
                 +prepend(2)
-                border: 2px dashed blue
                 
+                .Definition
+                  +pull(1)
+                  +column(23, true)
+                  
+                  .Definition_text
+                    +column(23, true)
+                            
                 .Para
                   +column(21, true)
               
                   .Para_text
                     +column(21, true)
+                    
+                .SubPara_sch
+                  +column(23, true)
+                  
+                  .SubSubPara_sch
+                    +column(20, true)
+                    
+                  .SubPara_sch_text
+                    display: block
+              
+                .SubSubPara_sch
+                  +prepend(3)
+                  +column(20, true)
+                
+                .SubSection
+                  +column(23, true)
+                  
+                  .SubSection_text
+                    +column(23, true)
+
+                  .Para
+                    +column(20, true)
+
+                    .Para_text
+                      +column(20, true)
+                      
+                  .TextContinuation
+                    +column(23, true)
                   
             .Amendment
               +column(26, true)
               +prepend(2)
-              border: 2px solid orange
-              background-color: yellow
+            
+              .ClauseText                
+                .SubSection
+                  +pull(4)
+                  +column(26, true)
               
               .SubSubPara_sch
                 +prepend(3)
                 +column(23, true)
-                border: 1px solid silver
               
               .CrossHeadingSch
                 +pull(2)
                 
+                .Para_sch
+                  +push(2)
+                  +column(26, true)
+                  
+                  .Para_sch_text
+                    +column(26, true)
+                
               .Clause
                 +column(26, true)
-                border: 1px solid black
+                
                 .ClauseTitle_PgfTag
                   margin-bottom: 0.2em
+                  
+                .SubSection
+                  +pull(3)
+              
+                  .List
+                    +prepend(2)
+                    +column(24, true)
+                    
+                    .ListItem
+                      +column(24, true)
               
               .Definition
                 +prepend(1)
-                +column(24, true)
+                +column(25, true)
+                
+                .Definition_text
+                  text-indent: -1em
+                  display: block
+                  +column(25, true)
                 
                 .DefinitionList
-                  +column(24, true)
+                  +column(25, true)
                   
                   .DefinitionListItem
                     +prepend(1)
-                    +column(23, true)
+                    +column(24, true)
               
               .CrossHeadingSch
                 float: left
@@ -333,40 +423,83 @@ body
               
               .Para
                 +prepend(2)
-                border: 1px solid purple
                 +column(24, true)
-              
-                .Paragraph_PgfTag
+                  
+                .Para_text
                   +column(24, true)
                 
               .SubSection
                 +column(26, true)
                 +pull(2)
-                border: 1px dashed crimson
+                
+                .FrameData
+                  +column(26, true)
+                  padding-bottom: 1em
+
+                  .Formula
+                    text-align: center
+                    +prepend(1)
+                    +column(25, true)
+                    display: block
                 
                 .Para
                   +prepend(3)
-                  +column(20, true)
+                  +column(23, true)
                   
-                  .Paragraph_PgfTag
+                  .Para_text
+                    +column(23, true)
+                    display: block
+                    
+                  .SubPara
                     +column(20, true)
                     
-                    .Para_text
-                      +column(17, true)
-                      display: block
+                    .Table
+                      +column(19, true)
+                    
+                    .SubSubPara
+                      +prepend(2)
+                      +column(18, true)
+                      
+                      .TextContinuation
+                        +prepend(1)
+                        +column(17, true)
+            
+                .TextContinuation
+                  +column(26, true)
                   
                 .Definition
-                  +prepend(3)
-                  +column(22, true)
-                  
-                .TextContinuation
                   +prepend(2)
                   +column(24, true)
+                  
+                  .Definition_text
+                    display: block
+                    +column(24, true)
+                    text-indent :-1em
+                    
+                  .DefinitionList
+                    +prepend(2)
+                    +column(22, true)
+                    
+                    .TextContinuation
+                      +prepend(4)
+                      +column(20, true)
+                    
+                    .DefinitionListItem
+                      +column(20, true)
+                      
+                      .TextContinuation
+                        +prepend(6)
+                        +column(20, true)
+                      
+                      .DefinitionList
+                        +column(18, true)
+                        
+                        .DefinitionListItem
+                          +column(17, true)
               
               .Para_sch
                 +column(26, true)
                 prepend(1)
-                border: 1px dashed green
                   
                 .Para_sch_text
                   display: block
@@ -381,23 +514,30 @@ body
                   .SubSubPara_sch
                     +column(22, true)
                     
+                    .TextContinuation
+                      +pull(4)
+                      +column(22, true)
+                    
                     .SubSubPara_sch_text
                       +column(21, true)
                       
                     .SubSubSubPara_sch
                       +prepend(3)
                       +column(19, true)
-                      border: 1px solid silver
+            
+                  .Definition
+                    +prepend(3)
+                    +column(23, true)
+
+                    .Definition_text
+                      display: block
+                      +column(23, true)
+                      text-indent :-1em
                       
                   .TextContinuation
                     padding-top: 0
                     +pull(2)
-                    +column(23, true)
-                    background-color: cyan
-                
-                .Definition
-                  +prepend(5)
-                  +column(18, true)
+                    +column(24, true)
                 
                 .SubPara_sch_text
                   +column(19, true)
