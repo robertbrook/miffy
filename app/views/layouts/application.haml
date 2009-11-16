@@ -7,6 +7,7 @@
     - if external_sheet
       = stylesheet_link_tag external_sheet, :media => 'screen, projection, print'
     -else
+      = stylesheet_link_tag 'ie', :media => 'screen, projection'
       -unless params[:wide]
         = stylesheet_link_tag 'screen', :media => 'screen, projection'
       -if page_class == 'application index'
@@ -17,7 +18,6 @@
       -if page_class == 'application act'
         = stylesheet_link_tag 'act', :media => 'screen, projection'
     %meta{ :name=>"viewport", :content=>"width = 480" }
-    = stylesheet_link_tag 'ie', :media => 'screen, projection'
     = javascript_include_tag "prototype", "application", :cache => true   
     - if page_class == 'application convert'      
       <link href="convert?file=#{@mif_file.escaped_path}&format=text" rel="alternate" title="Text output" type="text/plain" />
@@ -26,7 +26,7 @@
       #page_container
         #page_header
           #navigation
-            = link_to_unless_current("Miffy: Index", { :action => "index" })
+            = link_to_unless_current("Index", { :action => "index" })
             - if @show_interleave_link
               &middot;
               = link_to('Page ENs', "convert?file=#{@mif_file.path}&interleave=true")
@@ -43,10 +43,10 @@
               - if document_type(target_file).include?('clauses')
                 - unless params[:style]
                   &middot;
-                  =link_to('Alternative stylesheet', "convert?file=#{@mif_file.path}&style=/stylesheets/clauses_demo.css")
+                  =link_to('Alternate style', "convert?file=#{@mif_file.path}&style=/stylesheets/clauses_demo.css")
                 - else
                   &middot;
-                  =link_to('Standard view', "convert?file=#{@mif_file.path}")
+                  =link_to('Standard style', "convert?file=#{@mif_file.path}")
         #container= yield
         #page_footer
           <a href="http://github.com/robertbrook/miffy">Source code</a> ~ <a href="http://www.parliament.uk/site_information/parliamentary_copyright.cfm" rel="rights copyright usage">Parliamentary Copyright</a>
