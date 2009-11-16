@@ -196,8 +196,15 @@ describe ActReferenceParser do
       File.open(RAILS_ROOT + '/spec/fixtures/finance/2R printed/Clauses_Interpretation_example.act.xml','w') {|f| f.write @result }
     end
 
-    it 'should parse' do
-      @result
+    describe 'when parsing act with citation interpretation section' do
+      it 'should make act abbreviation a link' do
+        @result.should have_tag('a', :text => 'ALDA 1979')
+      end
+    end
+    describe 'when parsing act without citation interpretation section' do
+      it 'should make another act abbreviation a link' do
+        @result.should have_tag('a', :text => 'CTTA 1984')
+      end
     end
   end
 end

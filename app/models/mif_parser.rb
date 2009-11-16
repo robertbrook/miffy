@@ -30,7 +30,23 @@ class AmendmentReference
 end
 
 class ActCitation
-  attr_accessor :act_name, :previous_text, :citation_attributes
+  attr_accessor :act_name, :previous_text, :citation_attributes, :chapter
+
+  class << self
+    def find_in_text text
+      citation = nil
+      if text.include?('” means the ') && !text.include?('<Citation')
+        if text[/(“[^”]+” means the )(.+ (\d\d\d\d)) (\(c. ?\d+\)),/]
+          citation = ActCitation.new
+          citation.previous_text = $1
+          citation.act_name = $2
+          citation.citation_attributes = %Q|Year="#{$3}" Chapter="#{$4}"|
+          citation.chapter = $4
+        end
+      end
+      citation
+    end
+  end
 
   def citation_attributes= attributes
     @chapter = attributes[/Chapter="(.+)"/] ? $1.sub('\x11','') : nil
@@ -587,6 +603,8 @@ class MifParser
 
       if wrap_text_in_element
         prefix = (@in_amendment && text_tag.starts_with?('Clause')) ? 'Act' : ''
+        citation = ActCitation.find_in_text(text)
+        @citations << citation if citation
         last_line += "<#{prefix}#{text_tag}_text>#{text}</#{prefix}#{text_tag}_text>"
       else
         last_line += text

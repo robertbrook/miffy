@@ -537,10 +537,35 @@ describe MifParser do
       File.open(RAILS_ROOT + '/spec/fixtures/finance/2R printed/Clauses_Interpretation_example.xml','w') {|f| f.write @result }
     end
 
-    it 'should have Interpretation outside of paragraph element' do
-      @result.should have_tag('AbbreviatedActName', :text=>'ALDA 1979')
+    describe 'when parsing act with citation' do
+      it 'should create AbbreviatedActName' do
+        @result.should have_tag('AbbreviatedActName', :text=>'ALDA 1979')
+      end
     end
+    describe 'when parsing act without citation' do
+      it 'should create AbbreviatedActName' do
+        @result.should have_tag('ActAbbreviation') do
+          with_tag('AbbreviatedActName', :text=>'CTTA 1984')
+        end
+      end
 
+      it 'should create AbbreviatedActName a second time' do
+        @result.should have_tag('ActAbbreviation') do
+          with_tag('AbbreviatedActName', :text=>'ITA 2007')
+        end
+      end
+
+      it 'should create ActAbbreviation/Citation' do
+        @result.should have_tag('ActAbbreviation') do
+          with_tag('Citation[Year="1984"][Chapter="(c. 51)"]', :text=>'Capital Transfer Tax Act 1984 (c. 51)')
+        end
+      end
+      it 'should create ActAbbreviation/Citation a second time' do
+        @result.should have_tag('ActAbbreviation') do
+          with_tag('Citation[Year="2007"][Chapter="(c. 3)"]', :text=>'Income Tax Act 2007 (c. 3)')
+        end
+      end
+    end
   end
 
 end
