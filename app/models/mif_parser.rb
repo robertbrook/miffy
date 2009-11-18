@@ -64,6 +64,8 @@ class ActCitation
         $1
       elsif previous_text[/“([A-Z]+\s\d\d\d\d)”\s+means/]
         $1
+      elsif previous_text[/“([A-Z]+)”\s+means/]
+        $1
       else
         nil
       end
