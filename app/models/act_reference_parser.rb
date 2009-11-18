@@ -186,6 +186,7 @@ class ActReferenceParser
     def add_links clause, abbreviations
       acts = []
       sections = []
+
       abbreviations.keys.each do |name|
         if clause.inner_html[/#{name}/] && (act = abbreviations[name])
           acts << act
