@@ -163,7 +163,6 @@ describe ActReferenceParser do
         end
       end
     end
-
   end
 
   describe 'when parsing finance clauses file' do
@@ -204,6 +203,12 @@ describe ActReferenceParser do
     describe 'when parsing act without citation interpretation section' do
       it 'should make another act abbreviation a link' do
         @result.should have_tag('a', :text => 'CTTA 1984')
+      end
+    end
+
+    describe 'when parsing act abbreviation without year' do
+      it 'should make another act abbreviation a link' do
+        @result.should have_tag('a', :text => 'ICTA')
       end
     end
   end
