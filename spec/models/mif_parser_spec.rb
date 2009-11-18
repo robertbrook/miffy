@@ -543,6 +543,13 @@ describe MifParser do
       end
     end
     describe 'when parsing act without citation' do
+      it 'should behave this way' do
+        @result.should have_tag('Definition_PgfTag[id="4321559"]') do
+          with_tag('Definition_text') do
+            with_tag('Citation[Year="1984"][Chapter="(c. 51)"]', :text => 'Capital Transfer Tax Act 1984 (c. 51)')
+          end
+        end
+      end
       it 'should create AbbreviatedActName' do
         @result.should have_tag('ActAbbreviation') do
           with_tag('AbbreviatedActName', :text=>'CTTA 1984')

@@ -18,7 +18,7 @@
 <Definition_PgfTag id="4321550"><PgfNumString></PgfNumString><Definition_text><ParaLineStart LineNum="7"></ParaLineStart>“CRCA 2005” means the <Citation id="1116370" Show="Yes" Year="2005" Chapter="(c.\x11 11)">Commissioners for Revenue and Customs Act <ParaLineStart LineNum="8"></ParaLineStart>2005 (c. 11)</Citation>,</Definition_text></Definition_PgfTag>
 </Definition>
 <Definition id="1117208">
-<Definition_PgfTag id="4321559"><PgfNumString></PgfNumString><Definition_text><ParaLineStart LineNum="9"></ParaLineStart>“CTTA 1984” means the Capital Transfer Tax Act 1984 (c. 51),</Definition_text></Definition_PgfTag>
+<Definition_PgfTag id="4321559"><PgfNumString></PgfNumString><Definition_text><ParaLineStart LineNum="9"></ParaLineStart>“CTTA 1984” means the <Citation Year="1984" Chapter="(c. 51)">Capital Transfer Tax Act 1984 (c. 51)</Citation>,</Definition_text></Definition_PgfTag>
 </Definition>
 <Definition id="1117074">
 <Definition_PgfTag id="4321569"><PgfNumString></PgfNumString><Definition_text><ParaLineStart LineNum="10"></ParaLineStart>“HODA 1979” means the <Citation id="1117096" Show="Yes" Year="1979" Chapter="(c.\x11 5)">Hydrocarbon Oil Duties Act 1979 (c. 5)</Citation>,</Definition_text></Definition_PgfTag>
@@ -30,7 +30,7 @@
 <Definition_PgfTag id="4321589"><PgfNumString></PgfNumString><Definition_text><ParaLineStart LineNum="12"></ParaLineStart>“IHTA 1984” means the <Citation id="1116422" Show="Yes" Year="1984" Chapter="(c.\x11 51)">Inheritance Tax Act 1984 (c. 51)</Citation>,</Definition_text></Definition_PgfTag>
 </Definition>
 <Definition id="1116429">
-<Definition_PgfTag id="4321593"><PgfNumString></PgfNumString><Definition_text><ParaLineStart LineNum="13"></ParaLineStart>“ITA 2007” means the Income Tax Act 2007 (c. 3),</Definition_text></Definition_PgfTag>
+<Definition_PgfTag id="4321593"><PgfNumString></PgfNumString><Definition_text><ParaLineStart LineNum="13"></ParaLineStart>“ITA 2007” means the <Citation Year="2007" Chapter="(c. 3)">Income Tax Act 2007 (c. 3)</Citation>,</Definition_text></Definition_PgfTag>
 </Definition>
 <Definition id="1116455">
 <Definition_PgfTag id="4321600"><PgfNumString></PgfNumString><Definition_text><ParaLineStart LineNum="14"></ParaLineStart>“ITEPA 2003” means the <Citation id="1116474" Show="Yes" Year="2003" Chapter="(c.\x11 1)">Income Tax (Earnings and Pensions) Act 2003<ParaLineStart LineNum="15"></ParaLineStart> (c. 1)</Citation>,</Definition_text></Definition_PgfTag>

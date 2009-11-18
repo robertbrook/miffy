@@ -42,6 +42,7 @@ class ActCitation
           citation.act_name = $2
           citation.citation_attributes = %Q|Year="#{$3}" Chapter="#{$4}"|
           citation.chapter = $4
+          text.sub!("#{$2} #{$4}", "<Citation #{citation.citation_attributes}>#{$2} #{$4}</Citation>")
         end
       end
       citation
