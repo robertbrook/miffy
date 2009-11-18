@@ -20,17 +20,15 @@ body
   
 #page_footer
   margin-top: 2em
-  
+
 .PageStart
-  float: right
-  text-align: right
-  font-size: 0.8em
-  display: inline
+  display: none
   
 .Bold
   font-weight: bold
   
 .BillData
+  +column(30, true)
   text-align: left
   
   .BillTitle
@@ -43,18 +41,18 @@ body
     float: left
   
   .Clauses
-    column(30, true)
+    +column(30, true)
     float: left
     clear: both
     
     .Prelim
       float: left
-      column(30, true)
+      +column(30, true)
       padding-top: 2em
       clear: both
     
       .ABillTo
-        column(30, true)
+        +column(30, true)
         width: 100%
         text-align: center
         font-weight: bold
@@ -73,19 +71,60 @@ body
         float: left
         clear: both
       
+        .Bpara
+          margin: 1em 0
+          
         .SmallCaps
           padding-right: 0.5em
+          
+    .CrossHeading
+      +column(30, true)
+      clear: both
+      margin: 1em 0 0 0
+      
+      .CrossHeadingTitle
+        +column(30, true)
+        clear: both
+        font-weight: bold
+     
+    .Part
+      +column(30, true)
+      clear: both
+      
+      .PNum_PgfTag, .PartTitle
+        font-weight: bold
+        font-size: 1.05em
+    
+    .TextContinuation
+      display: block
+      margin-left: 2em
         
     .Clause
-      column(30, true)
+      +column(30, true)
       padding-top: 0.75em
       clear: both
+      
+      .TableTitle
+        font-weight: bold
+        text-align: center
+        clear: both
+        font-size: 0.9em
+        
+      .Table
+        float: left
+        clear: both
+        
+        table
+          border-collapse: collapse
+          
+          td, th
+            border: 1px solid black
       
       .ClauseText
         float: left
         margin-left: 1em
         
-        ._ClauseTitle_PgfTag
+        ._ClauseTitle_PgfTag, .ClauseText_PgfTag
           float: left
           margin-left: 1em
           display: block
@@ -94,14 +133,17 @@ body
           float: left
           margin-left: 2em
           display: block
+          clear: both
           
           .Para_text
             float: left
             display: block
         
-        .SubPara
+        .SubParagraph_PgfTag
           float: left
+          margin-left: 2em
           display: block
+          clear: both
           
           .SubPara_text
             float: left
@@ -112,7 +154,12 @@ body
         
         .SubSection
           float: left
+          display: block
+          clear: both
           margin-left: 1em
+          
+          .SubSection_PgfTag
+            float: left 
           
           .SubSection_text
             float: left
