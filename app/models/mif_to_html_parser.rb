@@ -95,7 +95,7 @@ class MifToHtmlParser
     Clauses ClausesToBeConsidered Clauses_ar
     Committee CommitteeShorttitle ChapterTitle
     Cover CoverHeading
-    CrossHeading CrossHeadingSch CrossHeadingTitle
+    CrossHeading CrossHeadingSch CrossHeadingTitle CrossHeadingTitle_ar
     Date
     Definition DefinitionListItem
     Footer
@@ -110,10 +110,12 @@ class MifToHtmlParser
     OrderHeading
     OrderPreamble OrderText
     Order_Committee Order_House Order_Motion
-    Part PartSch PartTitle
+    Part Part_ar PartSch PartTitle PartTitle_ar
     Prelim
     Report Resolution ResolutionHead
     ResolutionPreamble ResolutionText Rubric
+    Schedule_ar ScheduleNumber_ar
+    ScheduleTitle_ar
     Schedules SchedulesTitle
     Schedule_Committee SchedulesTitle_ar Schedules_ar
     ScheduleTitle Schedule
@@ -150,10 +152,13 @@ class MifToHtmlParser
       Letter Line Line_text List_text
       Move_text
       NoteTxt Notehead Number Number_text
-      Page Page_text Para_sch_text Para_text PgfNumString Proposer_name
+      Page Page_text Para_sch_text Para_text PartNumber_ar PartNumber_ar_text
+      PgfNumString Proposer_name
       ResolutionDate ResolutionHead_text ResolutionPara_text
       ResolutionSubPara_text ResolutionText_text
       Roman Roman_text
+      ScheduleNumber_ar_text
+      ScheduleTitle_ar_text
       STCommons STHouse STLords STText SmallCaps
       Superscript Superscript_text SmallCaps_text
       SubSection_text
