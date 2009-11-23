@@ -90,7 +90,7 @@ class MifToHtmlParser
   DIV = %w[ABillTo Abt1 Abt2 Abt3 Abt4
     Amendment Amendment_Number Amendment_Text Amendments_Commons Arrangement
     AsAm
-    BillData BillTitle Bpara
+    BillData BillReference BillTitle Bpara
     CenteredHeading Chapter
     ClauseText ClauseTitle Clause_Committee
     Clauses ClausesToBeConsidered Clauses_ar
