@@ -150,7 +150,7 @@ class ExplanatoryNotesParser
   end
 
   def is_clause_start line
-    if line =~ /^Clause \d+\S*(: .*)?$/
+    if line =~ /^Clause \d+\S*\ {0,1}(: .*)?$/
       if @page_line_count == 1
         @xml << "\n \n"
       end
@@ -182,7 +182,7 @@ class ExplanatoryNotesParser
       end
       @xml << last_line
     end
-    if line =~ /^Clause \d+[^\s\.*]$/
+    if line =~ /^Clause \d+\ {0,1}[^\s\.*]$/
       if @page_line_count == 1
         @xml << "\n \n"
       end
