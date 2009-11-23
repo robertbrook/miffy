@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
 
     en_paths = []
     en_paths << (RAILS_ROOT + '/spec/fixtures/ChannelTunnel/ChannelTunnelENs.pdf')
+    en_paths << (RAILS_ROOT + '/spec/fixtures/DigitalEconomy/ens/DigitalEconomy Bill.pdf')
 
     @mif_files = MifFile.load(paths)
     @en_files = ExplanatoryNotesFile.load(en_paths)
