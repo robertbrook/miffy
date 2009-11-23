@@ -21,6 +21,7 @@ module MifParserUtils
 
   COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_COMMA  = Regexp.new('(\s+)(%a\{)([^\n]+)(\}\n)(\s+)([^\n]+)(\n)(\s+)(, )', Regexp::MULTILINE)
   COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_COMMA_2  = Regexp.new('((\s+)(%a\#([^\n]+)\.Citation\{)([^\n]+)(\}\n)(\s+)([^\n]+)(\n)(\s+)(, ?))', Regexp::MULTILINE)
+  COLLAPSE_SPACE_BETWEEN_SPAN_AND_COMMA  = Regexp.new('((\s+)(%span\.Citation\n)(\s+)([^\n]+)(\n)(\s+)(, ?))', Regexp::MULTILINE)
   COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_SEMICOLON = Regexp.new('(\s+)(%a\{)([^\n]+)(\}\n)(\s+)([^\n]+)(\n)(\s+)(;)', Regexp::MULTILINE)
 
   def format_haml haml, clauses_file_name=nil
@@ -46,6 +47,15 @@ module MifParserUtils
     matches.each do |match|
       text = match[0].to_s
       to = %Q|#{match[1]}=%Q{<a id="#{match[3]}" class="Citation" #{match[4].gsub(' => ','=').gsub(', :',' ').sub(' :',' ').strip}>#{match[7]}</a>,}\n#{match[9]}|
+      haml.gsub!(text, to)
+    end
+    matches.clear
+    haml.scan(COLLAPSE_SPACE_BETWEEN_SPAN_AND_COMMA) do |match|
+      matches << match
+    end
+    matches.each do |match|
+      text = match[0].to_s
+      to = %Q|#{match[1]}=%Q{<span class="Citation">#{match[4]}</span>,}\n#{match[6]}|
       haml.gsub!(text, to)
     end
 

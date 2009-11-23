@@ -192,6 +192,16 @@ describe MifParserUtils do
                   |
     end
 
+    it 'should expand citation span followed by comma' do
+      text = %Q|
+                  %span.Citation
+                    Capital Transfer Tax Act 1984 (c. 51)
+                  ,|
+      @utils.format_haml(text).should == %Q|
+                  =%Q{<span class="Citation">Capital Transfer Tax Act 1984 (c. 51)</span>,}
+                  |
+    end
+
     it 'should expand anchor followed by semicolon' do
       text = %Q|
         %a{ :href => "http://www.opsi.gov.uk/acts/acts1996/ukpga_19960061_en_2#pt1-pb6-l1g21", :title => "subsections (2) to (5)", :rel => "cite", :resource => "http://www.legislation.gov.uk/ukpga/1996/61/section/21/2" }
