@@ -352,6 +352,7 @@ class MifParser
   end
 
   def dont_add_text_around_child_text? tag
+    # test_tag = tag.gsub('.','_')
     tag[/^(Bold|Italic|Citation|ListItem|List|Xref|Sbscript)$/]
   end
 
