@@ -113,6 +113,8 @@ module MifParserUtils
         '-'
       when 'EmSpace'
         ' '
+      when 'EnSpace'
+        ' '
       when 'Pound'
         '£'
       when 'EmDash'
