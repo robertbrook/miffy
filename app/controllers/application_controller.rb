@@ -14,6 +14,8 @@ class ApplicationController < ActionController::Base
     paths << (RAILS_ROOT + '/spec/fixtures/finance/2R printed/Clauses.mif')
     paths << (RAILS_ROOT + '/spec/fixtures/finance/2R printed/Schedules.mif')
 
+    paths += Dir.glob(RAILS_ROOT + '/spec/fixtures/DigitalEconomy/*.mif')
+
     en_paths = []
     en_paths << (RAILS_ROOT + '/spec/fixtures/ChannelTunnel/ChannelTunnelENs.pdf')
 
