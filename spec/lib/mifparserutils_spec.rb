@@ -172,7 +172,37 @@ describe MifParserUtils do
         the words|
     end
 
-    it 'should expand anchor followed by comma' do
+    it 'should expand citation anchor followed by comma' do
+      text = %Q|
+                  %a#1116344.Citation{ :href => "http://www.statutelaw.gov.uk/documents/1979/2/ukpga/c2", :title => "Customs and Excise Management Act 1979 (c. 2)" }
+                    Customs and Excise Management Act 1979 (c. 2)
+                  , etc|
+      @utils.format_haml(text).should == %Q|
+                  =%Q{<a id="1116344" class="Citation" href="http://www.statutelaw.gov.uk/documents/1979/2/ukpga/c2" title="Customs and Excise Management Act 1979 (c. 2)">Customs and Excise Management Act 1979 (c. 2)</a>,}
+                  etc|
+    end
+
+    it 'should expand citation anchor followed by comma 2' do
+      text = %Q|
+                  %a#1116971.Citation{ :href => "http://www.statutelaw.gov.uk/documents/1979/7/ukpga/c7", :title => "Tobacco Products Duty Act 1979 (c. 7)" }
+                    Tobacco Products Duty Act 1979 (c. 7)
+                  ,|
+      @utils.format_haml(text).should == %Q|
+                  =%Q{<a id="1116971" class="Citation" href="http://www.statutelaw.gov.uk/documents/1979/7/ukpga/c7" title="Tobacco Products Duty Act 1979 (c. 7)">Tobacco Products Duty Act 1979 (c. 7)</a>,}
+                  |
+    end
+
+    it 'should expand citation span followed by comma' do
+      text = %Q|
+                  %span.Citation
+                    Capital Transfer Tax Act 1984 (c. 51)
+                  ,|
+      @utils.format_haml(text).should == %Q|
+                  =%Q{<span class="Citation">Capital Transfer Tax Act 1984 (c. 51)</span>,}
+                  |
+    end
+
+    it 'should expand anchor followed by semicolon' do
       text = %Q|
         %a{ :href => "http://www.opsi.gov.uk/acts/acts1996/ukpga_19960061_en_2#pt1-pb6-l1g21", :title => "subsections (2) to (5)", :rel => "cite", :resource => "http://www.legislation.gov.uk/ukpga/1996/61/section/21/2" }
           subsections (2) to (5)
