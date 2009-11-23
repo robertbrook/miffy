@@ -21,7 +21,7 @@ body
         +column(1, true)
 
       .PgfNumString_1
-        +append(1)
+        +append(0.5)
         +column(1)
 
       .PgfNumString_2
@@ -167,9 +167,15 @@ body
           +prepend(2)
           +column(28, true)
           
+          .PgfNumString
+            +pull(1.5)
+          
           .Para
             +prepend(1)
             +column(27, true)
+            
+            .PgfNumString
+              +pull(2.5)
             
             .SubParagraph_PgfTag
               width: 100%
@@ -182,9 +188,15 @@ body
           .Amendment 
             +column(28, true)
             
+            .PgfNumString
+              margin-left: 0
+            
             .SubSection
               +prepend(2)
               +column(26, true)
+              
+              .PgfNumString
+                +pull(2)
               
               .SubSection_text
                 +column(26, true)
@@ -233,9 +245,6 @@ body
           .SubSection
             +column(28, true)
             margin-bottom: 0.4em
-              
-            .PgfNumString
-              +pull(2)
               
             .SubSection_text
               +column(28, true)
@@ -353,6 +362,9 @@ body
             .Amendment
               +column(26, true)
               +prepend(2)
+              
+              .PgfNumString
+                +pull(2)
             
               .ClauseText                
                 .SubSection
@@ -416,13 +428,16 @@ body
               .Para
                 +prepend(2)
                 +column(24, true)
-                  
+                
                 .Para_text
                   +column(24, true)
                 
               .SubSection
                 +column(26, true)
                 +pull(2)
+                
+                .PgfNumString
+                  +pull(2)
                 
                 .FrameData
                   +column(26, true)
@@ -497,25 +512,25 @@ body
                   display: block
                   +column(24, true)
               
-                .SubPara_sch
-                  +column(26, true)
+              .SubPara_sch
+                +column(26, true)
+                
+                .SubPara_sch_text
+                  +column(23, true)
                   
-                  .SubPara_sch_text
-                    +column(23, true)
-                    
-                  .SubSubPara_sch
+                .SubSubPara_sch
+                  +column(22, true)
+                  
+                  .TextContinuation
+                    +pull(4)
                     +column(22, true)
+                  
+                  .SubSubPara_sch_text
+                    +column(21, true)
                     
-                    .TextContinuation
-                      +pull(4)
-                      +column(22, true)
-                    
-                    .SubSubPara_sch_text
-                      +column(21, true)
-                      
-                    .SubSubSubPara_sch
-                      +prepend(3)
-                      +column(19, true)
+                  .SubSubSubPara_sch
+                    +prepend(3)
+                    +column(19, true)
             
                   .Definition
                     +prepend(3)
