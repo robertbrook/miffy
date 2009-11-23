@@ -13,10 +13,10 @@ class ExplanatoryNote < ActiveRecord::Base
       lines = token.split("\n")
       result = []
 
-      if lines.first[/^\s*Clause (\d+|\d+:.+)\s*$/]
+      if lines.first[/^\s*Clause (\d+|\d+\ {0,1}:.+)\s*$/]
         result << '<span class="NoteClauseTitle">Clause ' + $1 + '</span>'
         make_paragraph result, lines, adj=1
-      elsif lines.size > 1 && lines[1][/^\s*Clause (\d+|\d+:.+)\s*$/]
+      elsif lines.size > 1 && lines[1][/^\s*Clause (\d+|\d+\ {0,1}:.+)\s*$/]
         result = result << '<span class="NoteClauseTitle">Clause ' + lines[0] + lines[1] + '</span>'
         make_paragraph result, lines, adj=2
       elsif lines.first[/^\s*Schedule (\d+|\d+:.+)\s*$/]
