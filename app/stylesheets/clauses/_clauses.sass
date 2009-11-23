@@ -191,6 +191,12 @@ body
             .PgfNumString
               margin-left: 0
             
+            .CrossHeading
+              +pull(4)
+            
+              .Clause
+                +push(4)
+            
             .SubSection
               +prepend(2)
               +column(26, true)
@@ -405,8 +411,11 @@ body
                       +column(24, true)
               
               .Definition
-                +prepend(1)
+                +prepend(3)
                 +column(25, true)
+                
+                .PgfNumString
+                  +prepend(2)
                 
                 .Definition_text
                   text-indent: -1em
@@ -573,7 +582,7 @@ body
                   +column(19, true)
               
               .Table
-                +column(25, true)
+                +column(23, true)
                 
                 .TableTitle
                   text-align: center
