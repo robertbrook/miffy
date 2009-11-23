@@ -8,7 +8,7 @@ class MifFile < ActiveRecord::Base
   validates_presence_of :path, :name
 
   before_validation_on_create :set_name
-  
+
   def escaped_path
     URI.escape(self.path)
   end
@@ -35,8 +35,8 @@ class MifFile < ActiveRecord::Base
       end
       bills
     end
-    
-    
+
+
 
     def load paths
       bills = bill_to_paths paths
@@ -228,7 +228,7 @@ class MifFile < ActiveRecord::Base
       # File.open('/Users/x/example.xml', 'w+') {|f| f.write(xml) }
       set_html_page_title(xml)
       xml = ActReferenceParser.new.parse_xml(xml)
-      # File.open('/Users/x/example.xml', 'w+') {|f| f.write(xml) }
+      # File.open('/Users/x/example.act.xml', 'w+') {|f| f.write(xml) }
       result = MifToHtmlParser.new.parse_xml xml, :clauses_file => clauses_file,
           :format => :haml, :body_only => true,
           :interleave_notes => options[:interleave_notes]
