@@ -90,7 +90,7 @@ class MifToHtmlParser
   DIV = %w[ABillTo Abt1 Abt2 Abt3 Abt4
     Amendment Amendment_Number Amendment_Text Amendments_Commons Arrangement
     AsAm
-    BillData BillReference BillTitle Bpara
+    BillData BillTitle Bpara
     CenteredHeading Chapter
     ClauseText ClauseTitle Clause_Committee
     Clauses ClausesToBeConsidered Clauses_ar
@@ -145,7 +145,8 @@ class MifToHtmlParser
   SPAN = %w[Amendment_Text_text
       Bold Bold_text
       ActClauseTitle_text
-      ClauseTitle_text ScheduleTitle_text
+      BillReference
+      ClauseTitle_text
       Date_text Day Definition_text Dropcap
       Xref
       Enact Sbscript
@@ -161,7 +162,7 @@ class MifToHtmlParser
       ResolutionSubPara_text ResolutionText_text
       Roman Roman_text
       ScheduleNumber_ar ScheduleNumber_ar_text
-      ScheduleTitle_ar ScheduleTitle_ar_text
+      ScheduleTitle_ar ScheduleTitle_ar_text ScheduleTitle_text
       STCommons STHouse STLords STText SmallCaps
       Superscript Superscript_text SmallCaps_text
       SubSection_text
