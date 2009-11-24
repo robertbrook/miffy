@@ -10,6 +10,9 @@ class MifToHtmlParser
 
   # e.g. parser.parse_xml_file("pbc0930106a.mif.xml")
   def parse_xml_file xml_file, options
+    unless options.has_key?(:clauses_file)
+      options.merge!({:clauses_file => File.dirname(xml_file)+'/Clauses.mif' })
+    end
     parse_xml(IO.read(xml_file), options)
   end
 
@@ -89,15 +92,18 @@ class MifToHtmlParser
 
   DIV = %w[ABillTo Abt1 Abt2 Abt3 Abt4
     Amendment Amendment_Number Amendment_Text Amendments_Commons Arrangement
+    AsAm
     BillData BillTitle Bpara
     CenteredHeading Chapter
     ClauseText ClauseTitle Clause_Committee
     Clauses ClausesToBeConsidered Clauses_ar
     Committee CommitteeShorttitle ChapterTitle
     Cover CoverHeading
-    CrossHeading CrossHeadingSch CrossHeadingTitle
+    CrossHeading CrossHeadingSch CrossHeadingTitle CrossHeadingTitle_ar
     Date
     Definition DefinitionListItem
+    Enda Endb
+    Endorse
     Footer
     Given
     Head HeadAmd HeadConsider HeadNotice Head_thin
@@ -110,10 +116,11 @@ class MifToHtmlParser
     OrderHeading
     OrderPreamble OrderText
     Order_Committee Order_House Order_Motion
-    Part PartSch PartTitle
+    Part Part_ar PartSch PartTitle
     Prelim
     Report Resolution ResolutionHead
     ResolutionPreamble ResolutionText Rubric
+    Schedule_ar
     Schedules SchedulesTitle
     Schedule_Committee SchedulesTitle_ar Schedules_ar
     ScheduleTitle Schedule
@@ -141,7 +148,8 @@ class MifToHtmlParser
   SPAN = %w[Amendment_Text_text
       Bold Bold_text
       ActClauseTitle_text
-      ClauseTitle_text ScheduleTitle_text
+      BillReference
+      ClauseTitle_text
       Date_text Day Definition_text Dropcap
       Xref
       Enact Sbscript
@@ -150,10 +158,14 @@ class MifToHtmlParser
       Letter Line Line_text List_text
       Move_text
       NoteTxt Notehead Number Number_text
-      Page Page_text Para_sch_text Para_text PgfNumString Proposer_name
+      Page Page_text Para_sch_text Para_text PartNumber_ar PartNumber_ar_text
+      PartTitle_ar
+      PgfNumString Proposer_name
       ResolutionDate ResolutionHead_text ResolutionPara_text
       ResolutionSubPara_text ResolutionText_text
       Roman Roman_text
+      ScheduleNumber_ar ScheduleNumber_ar_text
+      ScheduleTitle_ar ScheduleTitle_ar_text ScheduleTitle_text
       STCommons STHouse STLords STText SmallCaps
       Superscript Superscript_text SmallCaps_text
       SubSection_text
@@ -448,8 +460,8 @@ class MifToHtmlParser
 
     end_tag = @html.pop
     last_line = @html.pop
-    clause_file = Dir.glob(RAILS_ROOT + '/spec/fixtures/Clauses.mif')
-    add %Q|<a href="convert?file=#{clause_file}#clause_#{@clause_ref}">|
+
+    add %Q|<a href="convert?file=#{@clauses_file}#clause_#{@clause_ref}">|
     add last_line
     add "</a>"
     add end_tag
@@ -476,6 +488,19 @@ class MifToHtmlParser
     if text.nil?
       raise 'text should not be null'
     else
+      if text.include?('Act')
+        acts = ActResolver.new(text).mention_attributes
+        unless acts.empty?
+          acts.each do |act|
+            name = "#{act[:name]} #{act[:year]}"
+            act = Act.from_name name
+            if act
+              url = act.statutelaw_url ? act.statutelaw_url : act.opsi_url
+              text.gsub!(name, %Q|<a href="#{url}" class="Citation">#{name}</a>|)
+            end
+          end
+        end
+      end
       @html << text
     end
   end

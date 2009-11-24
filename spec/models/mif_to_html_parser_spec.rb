@@ -4,7 +4,11 @@ require 'action_controller'
 require 'action_controller/assertions/selector_assertions'
 include ActionController::Assertions::SelectorAssertions
 
-describe MifParser do
+describe MifToHtmlParser do
+
+  before(:all) do
+    Act.stub!(:from_name).and_return nil
+  end
 
   def parser url=nil, other_url=nil
     parser = MifToHtmlParser.new

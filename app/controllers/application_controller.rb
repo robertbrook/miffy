@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
 
   def index
-    paths = Dir.glob(RAILS_ROOT + '/spec/fixtures/*.mif')
+    paths = Dir.glob(RAILS_ROOT + '/spec/fixtures/*.mif').select {|x| !x[/Book.mif$/]}
     paths << (RAILS_ROOT + '/spec/fixtures/Finance_Clauses.xml')
     paths << (RAILS_ROOT + '/spec/fixtures/ChannelTunnel/ChannelTunnelClauses.mif')
     paths << (RAILS_ROOT + '/spec/fixtures/ChannelTunnel/ChannelTunnelLordsClauses.mif')
@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     paths << (RAILS_ROOT + '/spec/fixtures/finance/2R printed/Clauses.mif')
     paths << (RAILS_ROOT + '/spec/fixtures/finance/2R printed/Schedules.mif')
 
-    paths += Dir.glob(RAILS_ROOT + '/spec/fixtures/DigitalEconomy/*.mif')
+    paths += Dir.glob(RAILS_ROOT + '/spec/fixtures/DigitalEconomy/*.mif').select {|x| !x[/Book.mif$/]}
 
     en_paths = []
     en_paths << (RAILS_ROOT + '/spec/fixtures/ChannelTunnel/ChannelTunnelENs.pdf')
@@ -39,7 +39,7 @@ class ApplicationController < ActionController::Base
       if mif_file
         respond_to do |format|
           format.html do
-            options = {:interleave_notes=>params[:interleave], :force=>params[:force]}
+            options = {:interleave_notes => params[:interleave], :force => params[:force]}
             template = mif_file.convert_to_haml(options)
             @mif_file = mif_file
             @title = mif_file.html_page_title

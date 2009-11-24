@@ -303,7 +303,8 @@ class MifParser
   end
 
   MOVE_OUTSIDE = %w[Amendment Amendment.Number Amendment.Text
-      Chapter Clause Clause.ar ClauseText ClauseTitle Clauses.ar Committee CoverPara
+      Chapter Clause Clause.ar ClauseText ClauseTitle Clauses.ar
+      Committee CoverPara
       Definition DefinitionList DefinitionListItem
       InternalReference
       List ListItem Longtitle.text
@@ -312,10 +313,10 @@ class MifParser
       OrderDate OrderHeading
       OrderPara OrderSubPara OrderSubSubPara
       OrderHousePara OrderHouseSubPara OrderHouseSubSubPara
-      Para Para.sch Part PartSch
+      Para Para.sch Part Part.ar PartSch
       Resolution ResolutionHead ResolutionPara ResolutionSubPara ResolutionText
       RunIntoPara
-      Schedule
+      Schedule Schedule.ar
       SubPara SubSubPara
       SubPara.sch SubSubPara.sch SubSubSubPara.sch SubSubSubSubPara.sch
       SubSection
@@ -351,6 +352,7 @@ class MifParser
   end
 
   def dont_add_text_around_child_text? tag
+    # test_tag = tag.gsub('.','_')
     tag[/^(Bold|Italic|Citation|ListItem|List|Xref|Sbscript)$/]
   end
 

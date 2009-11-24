@@ -41,3 +41,11 @@ Rails::Initializer.run do |config|
 end
 
 # require 'mifparserutils'
+
+USE_ONIGURUMA = false unless defined? USE_ONIGURUMA
+
+module Miffy
+  def self.use_oniguruma
+    USE_ONIGURUMA
+  end
+end
