@@ -489,6 +489,8 @@ class MifToHtmlParser
       raise 'text should not be null'
     else
       @html << text
+      # acts = ActResolver.new(text).mention_attributes
+      # @html << acts.inspect unless acts.empty?
     end
   end
 
