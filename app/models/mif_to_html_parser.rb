@@ -10,6 +10,9 @@ class MifToHtmlParser
 
   # e.g. parser.parse_xml_file("pbc0930106a.mif.xml")
   def parse_xml_file xml_file, options
+    unless options.has_key?(:clauses_file)
+      options.merge!({:clauses_file => File.dirname(xml_file)+'/Clauses.mif' })
+    end
     parse_xml(IO.read(xml_file), options)
   end
 
@@ -457,8 +460,8 @@ class MifToHtmlParser
 
     end_tag = @html.pop
     last_line = @html.pop
-    clause_file = Dir.glob(RAILS_ROOT + '/spec/fixtures/Clauses.mif')
-    add %Q|<a href="convert?file=#{clause_file}#clause_#{@clause_ref}">|
+
+    add %Q|<a href="convert?file=#{@clauses_file}#clause_#{@clause_ref}">|
     add last_line
     add "</a>"
     add end_tag

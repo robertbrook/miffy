@@ -39,7 +39,7 @@ class ApplicationController < ActionController::Base
       if mif_file
         respond_to do |format|
           format.html do
-            options = {:interleave_notes=>params[:interleave], :force=>params[:force]}
+            options = {:interleave_notes => params[:interleave], :force => params[:force]}
             template = mif_file.convert_to_haml(options)
             @mif_file = mif_file
             @title = mif_file.html_page_title
