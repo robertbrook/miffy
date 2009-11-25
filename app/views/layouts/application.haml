@@ -20,7 +20,7 @@
         = stylesheet_link_tag 'act', :media => 'screen, projection'
     = javascript_include_tag "prototype", "application", :cache => true 
     - if page_class.include? 'convert'      
-      %link{ :href=>"convert?file=#{@mif_file.escaped_path}&format=text", :rel=>"alternate", :title=>"Text output", :type=>"text/plain"
+      %link{ :href=>"convert?file=" + @mif_file.escaped_path + "&format=text", :rel=>"alternate", :title=>"Text output", :type=>"text/plain" }
   %body{:class => page_class, :id => "miffy-parliament-uk"}
     #outer_container
       #page_container
@@ -50,4 +50,5 @@
                   =link_to('Standard style', "convert?file=#{@mif_file.path}")
         #container= yield
         #page_footer
+          =link_to("Code", "http://github.com/robertbrook/miffy")
           <a href="http://github.com/robertbrook/miffy">Code</a> &middot; <a href="http://github.com/robertbrook/miffy/issues">Issues</a> &middot; <a href="http://www.parliament.uk/site_information/parliamentary_copyright.cfm" rel="rights copyright usage">Copyright</a>
