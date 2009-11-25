@@ -225,10 +225,10 @@ class MifFile < ActiveRecord::Base
 
     def do_convert_to_haml options
       xml = convert_to_xml
-      # File.open('/Users/x/example.xml', 'w+') {|f| f.write(xml) }
+      File.open("#{RAILS_ROOT}/tmp/example.xml", 'w+') {|f| f.write(xml) } if RAILS_ENV == 'development'
       set_html_page_title(xml)
       xml = ActReferenceParser.new.parse_xml(xml)
-      # File.open('/Users/x/example.act.xml', 'w+') {|f| f.write(xml) }
+      File.open("#{RAILS_ROOT}/tmp/example.act.xml", 'w+') {|f| f.write(xml) } if RAILS_ENV == 'development'
 
       options = {:clauses_file => clauses_file,
           :format => :haml, :body_only => true,
