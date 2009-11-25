@@ -201,7 +201,8 @@ class Act < ActiveRecord::Base
       (doc/'R/T').each do |result|
         unless url
           term = result.inner_text.gsub(/<[^>]+>/,'').strip
-          url = result.at('../U/text()').to_s if(name == term || term[/^#{title}/i] )
+          title_re = title.gsub('(','\(').gsub(')','\)')
+          url = result.at('../U/text()').to_s if(name == term || term[/^#{title_re}/i] )
         end
       end
 
