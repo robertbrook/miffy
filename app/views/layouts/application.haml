@@ -26,7 +26,7 @@
       #page_container
         #page_header
           #navigation
-            = link_to_unless_current("Index", { :action => "index" })
+            = link_to_unless_current("<strong>Miffy</strong> Index", { :action => "index" })
             - if @show_interleave_link
               &middot;
               = link_to('Page ENs', "convert?file=#{@mif_file.path}&interleave=true")
@@ -37,7 +37,7 @@
               = link_to('Hide ENs', "convert?file=#{@mif_file.path}")
             - if page_class == 'application convert'
               &middot;
-              =link_to('Text output', "convert?file=#{@mif_file.path}&format=text")
+              =link_to('Text', "convert?file=#{@mif_file.path}&format=text")
               &middot;
               =link_to('Regenerate', "convert?file=#{@mif_file.path}&force=true")
               - if document_type(target_file).include?('clauses')
@@ -49,4 +49,4 @@
                   =link_to('Standard style', "convert?file=#{@mif_file.path}")
         #container= yield
         #page_footer
-          <a href="http://github.com/robertbrook/miffy">Source code</a> ~ <a href="http://www.parliament.uk/site_information/parliamentary_copyright.cfm" rel="rights copyright usage">Parliamentary Copyright</a>
+          <a href="http://github.com/robertbrook/miffy">Code</a> &middot; <a href="http://github.com/robertbrook/miffy/issues">Issues</a> &middot; <a href="http://www.parliament.uk/site_information/parliamentary_copyright.cfm" rel="rights copyright usage">Copyright</a>
