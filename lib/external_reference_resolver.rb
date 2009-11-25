@@ -5,17 +5,16 @@ class ExternalReferenceResolver
   attr_accessor  :text, :scanner
 
   OPTIONAL_COMMA = '(?:,(?!(?:\sAND|\sand)?\s(?:THE|the)))?' # optional comma, but not ', the' or ', and the'
-  TITLE_CASE_WORD = /
-    (?:[A-Z][a-z\-]+            # titlecase letter followed by at least one lower case letter, or hyphen
+
+  TITLE_CASE_WORD = /(?:[A-Z][a-z\-]+ # titlecase letter followed by at least one lower case letter, or hyphen
     #{OPTIONAL_COMMA}
-    '?[s]?                      # optional apostrophe and s
+    '?[s]?                            # optional apostrophe and s
     )
     /x
 
-  CAPS_WORD = /
-    (?:[A-Z]+                   # at least one capital letter
-    #{OPTIONAL_COMMA}           # not followed by the word UNDER
-    '?S?                        # optional apostrophe and s
+  CAPS_WORD = /(?:[A-Z]+              # at least one capital letter
+    #{OPTIONAL_COMMA}                 # not followed by the word UNDER
+    '?S?                              # optional apostrophe and s
     (?!\sUNDER\s))
     /x
 
@@ -67,6 +66,7 @@ class ExternalReferenceResolver
       found = self.scanner.scan_until(any_positive_pattern)
       break if not found
       reference = self.scanner.matched
+
       unless match_patterns(negative_patterns, reference)
         if (reference_data = get_match reference)
           yield reference_data

@@ -10,4 +10,5 @@
       %tr
         - act.attributes.to_a.sort_by{|x| x[0]}.each do |attribute|
           - unless attribute[0].to_s[/_at|id/]
-            %td= h attribute[1].to_s
+            - value = attribute[1].to_s
+            %td= link_to_if(value[/http/], h(value).sub('http://',''), value)

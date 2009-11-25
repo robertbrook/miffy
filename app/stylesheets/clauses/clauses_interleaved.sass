@@ -6,28 +6,39 @@
 .ClauseTextWithExplanatoryNote
   +column(50, true)
 
-.explanatory_note 
-  +push(5)
-  +column(14)
-  .en_header
-    font-weight: bold
-    display: block
-    margin-bottom: 1em
+
+#container
+  .Clauses
+    .explanatory_note 
+      +push(5)
+      +column(14)
+      .en_header
+        font-weight: bold
+        display: block
+        margin-bottom: 1em
     
-  .explanatory_note_text
-    font-size: 95%
-    float: right
-    border: 1px dotted crimson
-    background-color: lightyellow
-    padding: 1em
-    +column(13)
+      .explanatory_note_text
+        font-size: 95%
+        float: right
+        border: 1px dotted crimson
+        background-color: lightyellow
+        padding: 1em
+        +column(13)
     
-    ul
-      clear: both
-      float: left
+        p
+          margin-bottom: 0.8em
+          display: block
+          float: left
+          clear: both
     
-  .NoteClauseTitle
-    display: none
+        ul
+          margin-top: 0.2em
+          margin-bottom: 0.8em
+          clear: both
+          float: left
+    
+      .NoteClauseTitle
+        display: none
 
 .PgfNumString
   float: left
