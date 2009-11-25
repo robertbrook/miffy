@@ -253,6 +253,7 @@ class MifToHtmlParser
   end
 
   def find_bill_url bill_name
+    bill_name = bill_name.chomp(' [HL]')
     @bill = Bill.from_name bill_name
     @bill.parliament_url
   end
