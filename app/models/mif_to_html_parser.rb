@@ -488,19 +488,6 @@ class MifToHtmlParser
     if text.nil?
       raise 'text should not be null'
     else
-      if text.include?('Act')
-        acts = ActResolver.new(text).mention_attributes
-        unless acts.empty?
-          acts.each do |act|
-            name = "#{act[:name]} #{act[:year]}"
-            act = Act.from_name name
-            if act
-              url = act.statutelaw_url ? act.statutelaw_url : act.opsi_url
-              text.gsub!(name, %Q|<a href="#{url}" class="Citation">#{name}</a>|)
-            end
-          end
-        end
-      end
       @html << text
     end
   end

@@ -18,19 +18,57 @@ class ActReferenceParser
   def parse_xml xml, options={}
     doc = Hpricot.XML xml
 
-    act_abbreviations = (doc/'/Document/BillData/Interpretation/ActAbbreviation')
-    handle_abbreviated_act_references(act_abbreviations, doc) unless act_abbreviations.empty?
+    act_abbreviations = (doc/'//Interpretation/ActAbbreviation')
+    clauses = (doc/'ClauseText')
+    handle_abbreviated_act_references(act_abbreviations, clauses) unless act_abbreviations.empty?
 
-    act_citations = (doc/'/Document/BillData/Clauses/Clause/ClauseText//Citation')
-    handle_act_citation_references(act_citations, doc) unless act_citations.empty?
+    act_citations = (doc/'//Clause/ClauseText//Citation')
+    handle_act_citation_references(act_citations) unless act_citations.empty?
 
-    no_references = (act_abbreviations.empty? && act_citations.empty?)
+    clauses = (doc/'ClauseText')
+    mentions = clauses.collect {|clause| handle_raw_act_mentions(clause) }.include?(true)
+
+    no_references = (act_abbreviations.empty? && act_citations.empty? && !mentions)
     no_references ? xml : doc.to_s
   end
 
   private
 
-    def handle_act_citation_references act_citations, doc
+    def handle_raw_act_mentions clause
+      mentions = false
+      if clause.inner_html.include?('Act')
+        text = clause.inner_html
+        acts = ActResolver.new(text).mention_attributes
+        unless acts.empty?
+          [acts.first].each do |mention|
+            text = clause.inner_html
+            preceding_text = text[0..(mention[:start_position]-1)]
+            following_text = text[mention[:end_position]..text.length]
+
+            if preceding_text[/title="$/]
+              # ignore
+            elsif following_text[/^\s?<(\/Citation|ParaLineStart)/]
+              # ignore
+            else
+              name = "#{mention[:name]} #{mention[:year]}"
+              act = Act.from_name name
+              if act
+                url = act.statutelaw_url ? act.statutelaw_url : act.opsi_url
+                if url
+                  link = %Q|<a href="#{url}" rel="cite">#{name}</a>|
+                  new_text = "#{preceding_text}#{link}#{following_text}"
+                  clause.inner_html = new_text
+                  mentions = true
+                end
+              end
+            end
+          end
+        end
+      end
+      mentions
+    end
+
+    def handle_act_citation_references act_citations
       act_citations.each do |citation|
         reference, number = find_section_preceeding citation
         if reference
@@ -62,11 +100,10 @@ class ActReferenceParser
       return $1, $2
     end
 
-    def handle_abbreviated_act_references act_abbreviations, doc
+    def handle_abbreviated_act_references act_abbreviations, clauses
       abbreviations = get_abbreviations(act_abbreviations)
-      clauses = (doc/'ClauseText')
       clauses.each do |clause|
-        add_links(clause, abbreviations) if contains_acts?(clause)
+        add_links_to_abbreviations(clause, abbreviations) if contains_acts?(clause)
       end
     end
 
@@ -183,7 +220,7 @@ class ActReferenceParser
       insert_subsection_links parts, clause, act, section, SUBSECTIONS_REGEXP, SUBSECTIONS_NUMBER_REGEXP
     end
 
-    def add_links clause, abbreviations
+    def add_links_to_abbreviations clause, abbreviations
       acts = []
       sections = []
 
