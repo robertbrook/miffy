@@ -27,7 +27,7 @@
         #page_header
           #navigation
             %strong Miffy
-            = link_to_unless_current("Index", { :action => "index" })
+            = link_to_unless_current("Index", { :action => "index" }, :title => "Index of files")
             - if @show_interleave_link
               &middot;
               = link_to('Page ENs', "convert?file=#{@mif_file.path}&interleave=true")
@@ -51,4 +51,7 @@
         #container= yield
         #page_footer
           =link_to("Code", "http://github.com/robertbrook/miffy")
-          <a href="http://github.com/robertbrook/miffy">Code</a> &middot; <a href="http://github.com/robertbrook/miffy/issues">Issues</a> &middot; <a href="http://www.parliament.uk/site_information/parliamentary_copyright.cfm" rel="rights copyright usage">Copyright</a>
+          &middot;
+          =link_to("Issues", "http://github.com/robertbrook/miffy/issues")
+          &middot;
+          =link_to("Copyright", "http://www.parliament.uk/site_information/parliamentary_copyright.cfm", :rel=>"rights copyright usage")
