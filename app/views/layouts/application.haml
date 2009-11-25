@@ -18,7 +18,7 @@
       -if page_class.include? 'act'
         = stylesheet_link_tag 'act', :media => 'screen, projection'
     %meta{ :name=>"viewport", :content=>"width = 480" }
-    = javascript_include_tag "prototype", "application", :cache => true   
+    = javascript_include_tag "prototype", "application", :cache => true 
     - if page_class.include? 'convert'      
       <link href="convert?file=#{@mif_file.escaped_path}&format=text" rel="alternate" title="Text output" type="text/plain" />
   %body{:class => page_class, :id => "miffy-parliament-uk"}
@@ -26,7 +26,8 @@
       #page_container
         #page_header
           #navigation
-            = link_to_unless_current("<strong>Miffy</strong> Index", { :action => "index" })
+            %strong Miffy
+            = link_to_unless_current("Index", { :action => "index" })
             - if @show_interleave_link
               &middot;
               = link_to('Page ENs', "convert?file=#{@mif_file.path}&interleave=true")
@@ -39,7 +40,7 @@
               &middot;
               =link_to('Text', "convert?file=#{@mif_file.path}&format=text")
               &middot;
-              =link_to('Regenerate', "convert?file=#{@mif_file.path}&force=true")
+              =link_to('Reload', "convert?file=#{@mif_file.path}&force=true")
               - if document_type(target_file).include?('clauses')
                 - unless params[:style]
                   &middot;
