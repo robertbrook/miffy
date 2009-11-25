@@ -238,7 +238,9 @@ class ActResolver < ExternalReferenceResolver
                   )*?                             # zero or more times - non-greedy
                   (Act|ACT)                       # then the word Act
                   (?![A-Za-z])                    # not followed by a letter, for example s
-                  (,?\s\d\d\d\d)?)                 # then an optional year, preceded by an optional comma
+                  (?!\sof\sthat\syear)              # not followed by a of that year
+                  (,?\s\d\d\d\d)?                 # then an optional year, preceded by an optional comma
+                  (\s+\(c\.\s?(\d+)\))?)          # then an optional chapter
                   /x
 
   NEGATIVE_ACT_PATTERN = /

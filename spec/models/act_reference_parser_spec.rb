@@ -28,12 +28,16 @@ describe ActReferenceParser do
       Act.stub!(:find_by_legislation_url).and_return nil
       Act.stub!(:find_by_name).and_return nil
 
+      act = mock(Act,
+        :statutelaw_url => 'http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61')
+      Act.stub!(:from_name).with('Communications Act 2003').and_return act
+
       @result = @parser.parse_xml(fixture('DigitalEconomy/clauses_section_of_the_act_same_line.xml'))
       File.open(RAILS_ROOT + '/spec/fixtures/DigitalEconomy/clauses_section_of_the_act_same_line.act.xml','w') {|f| f.write @result }
     end
 
     it 'should not mark up part of act name' do
-      @result.should include('Section 3 of the Communications Act 2003')
+      @result.should have_tag('a[rel="cite"]', :text => 'Communications Act 2003')
     end
   end
 
@@ -242,4 +246,5 @@ describe ActReferenceParser do
       end
     end
   end
+
 end

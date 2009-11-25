@@ -15,3 +15,5 @@ spec/fixtures/finance/2R\ printed/Clauses_Sbscript_example.xml
 spec/fixtures/finance/2R\ printed/Clauses_Xref_example.xml
 spec/fixtures/finance/2R\ printed/Clauses_Char_example.xml
 spec/fixtures/finance/2R\ printed/Clauses_Subpara_example.xml
+spec/fixtures/DigitalEconomy/clauses_act_name_on_two_lines.act.xml
+spec/fixtures/DigitalEconomy/clauses_section_of_the_act_same_line.act.xml
