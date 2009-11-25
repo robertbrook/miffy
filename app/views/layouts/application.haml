@@ -10,16 +10,16 @@
       = stylesheet_link_tag 'ie', :media => 'screen, projection'
       -unless params[:wide]
         = stylesheet_link_tag 'screen', :media => 'screen, projection'
-      -if page_class == 'application index'
+      -if page_class.include? 'index'
         = stylesheet_link_tag 'index', :media => 'screen, projection'
-      -if page_class == 'application convert'
+      -if page_class.include? 'convert'
         = stylesheet_link_tag stylesheet_path(target_file, @ens), :media => 'screen, projection'
         = stylesheet_link_tag stylesheet_path(target_file, @ens) + '_print', :media => 'print'
-      -if page_class == 'application act'
+      -if page_class.include? 'act'
         = stylesheet_link_tag 'act', :media => 'screen, projection'
     %meta{ :name=>"viewport", :content=>"width = 480" }
     = javascript_include_tag "prototype", "application", :cache => true   
-    - if page_class == 'application convert'      
+    - if page_class.include? 'convert'      
       <link href="convert?file=#{@mif_file.escaped_path}&format=text" rel="alternate" title="Text output" type="text/plain" />
   %body{:class => page_class, :id => "miffy-parliament-uk"}
     #outer_container
