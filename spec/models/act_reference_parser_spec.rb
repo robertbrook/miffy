@@ -7,7 +7,37 @@ include ActionController::Assertions::SelectorAssertions
 
 describe ActReferenceParser do
 
-  describe 'when parsing XML file' do
+  describe 'when parsing act name split across two lines' do
+    before(:all) do
+      @parser = ActReferenceParser.new
+      Act.stub!(:find_by_legislation_url).and_return nil
+      Act.stub!(:find_by_name).and_return nil
+
+      @result = @parser.parse_xml(fixture('DigitalEconomy/clauses_act_name_on_two_lines.xml'))
+      File.open(RAILS_ROOT + '/spec/fixtures/DigitalEconomy/clauses_act_name_on_two_lines.act.xml','w') {|f| f.write @result }
+    end
+
+    it 'should not mark up part of act name' do
+      @result.should include('<ParaLineStart LineNum="11"></ParaLineStart>Recordings Act 1984')
+    end
+  end
+
+  describe 'when parsing section of the act on same line' do
+    before(:all) do
+      @parser = ActReferenceParser.new
+      Act.stub!(:find_by_legislation_url).and_return nil
+      Act.stub!(:find_by_name).and_return nil
+
+      @result = @parser.parse_xml(fixture('DigitalEconomy/clauses_section_of_the_act_same_line.xml'))
+      File.open(RAILS_ROOT + '/spec/fixtures/DigitalEconomy/clauses_section_of_the_act_same_line.act.xml','w') {|f| f.write @result }
+    end
+
+    it 'should not mark up part of act name' do
+      @result.should include('Section 3 of the Communications Act 2003')
+    end
+  end
+
+  describe 'when parsing ChannelTunnelClauses file' do
     before(:all) do
       @parser = ActReferenceParser.new
       act = mock_model(Act,
