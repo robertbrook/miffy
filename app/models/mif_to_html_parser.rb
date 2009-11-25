@@ -318,7 +318,7 @@ class MifToHtmlParser
     end
     clause_id = node['HardReference'].to_s.strip.gsub("&",'_')
 
-    @in_amendment = (node.parent.name == 'Amendment')
+    @in_amendment = (node.parent.name == 'Amendment') || (node.parent.parent.name == 'Amendment')
 
     unless @clause_number.blank? || clause_id.blank?
       clause_name = "clause#{@clause_number}"
