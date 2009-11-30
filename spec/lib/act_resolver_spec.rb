@@ -1036,11 +1036,12 @@ describe ActResolver, " when asked for Act mention attributes" do
 
   it 'should return a hash of title, year, start position and end position for each reference' do
     @resolver.stub!(:name_and_year).and_return(["name", 1974])
-    @resolver.mention_attributes.should == [{:name => "name",
-                                             :text => "name",
-                                             :year => 1974,
-                                             :start_position => 0,
-                                             :end_position => 5}]
+    mention = @resolver.mention_attributes.first
+    mention.name.should == "name"
+    mention.text.should == "name"
+    mention.year.should == 1974
+    mention.start_position.should == 0
+    mention.end_position.should == 5
   end
 
 end

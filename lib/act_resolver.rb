@@ -313,13 +313,23 @@ class ActResolver < ExternalReferenceResolver
     act_mentions = []
     each_reference do |reference, start_position, end_position|
       name, year = name_and_year(reference)
-      act_mentions << {:name => name.gsub(/#{MARKUP}/,''),
+      act_mentions << ActMention.new( {:name => name.gsub(/#{MARKUP}/,''),
                        :text => name,
                        :year => year,
                        :start_position => start_position,
-                       :end_position => end_position}
+                       :end_position => end_position} )
     end
     act_mentions
   end
 
+end
+
+class ActMention
+  attr_accessor :name, :text, :year, :start_position, :end_position
+
+  def initialize attributes
+    attributes.each do |attribute, value|
+      self.send("#{attribute}=".to_sym, value)
+    end
+  end
 end
