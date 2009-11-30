@@ -8,9 +8,9 @@
       %tr
         %th{:style => 'width: 5px'}
           number
-        %th{:style => 'width: 200px'}
+        %th{:style => ''}
           title
-        %th{:style => 'width: 200px'}
+        %th{:style => ''}
           legislation_url
           %br
           statutelaw_url
@@ -21,9 +21,9 @@
         %tr
           %td{:style => 'width: 5px; vertical-align: top'}
             = section.number
-          %td{:style => 'width: 200px; vertical-align: top'}
+          %td{:style => '; vertical-align: top'}
             = section.title
-          %td{:style => 'width: 200px; vertical-align: top'}
+          %td{:style => '; vertical-align: top'}
             = link_to_url section.legislation_url
             %br
             = link_to_url section.statutelaw_url

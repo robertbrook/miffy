@@ -2,7 +2,7 @@
   %thead
     - act = @acts.first
     %tr
-      %th{:style => 'width: 200px'}
+      %th{:style => ''}
         name
         %br
         title
@@ -12,7 +12,7 @@
         year
         %br
         sections
-      %th{:style => 'width: 200px'}
+      %th{:style => ''}
         legislation_url
         %br
         statutelaw_url
@@ -21,7 +21,7 @@
   %tbody
     - @acts.each do |act|
       %tr
-        %td{:style => 'width: 200px; vertical-align: top'}
+        %td{:style => '; vertical-align: top'}
           = act.name
           %br
           = act.title
@@ -31,7 +31,7 @@
           = act.year
           %br
           = link_to act.act_sections.size, act
-        %td{:style => 'width: 200px; vertical-align: top'}
+        %td{:style => '; vertical-align: top'}
           = link_to_url act.legislation_url
           %br
           = link_to_url act.statutelaw_url

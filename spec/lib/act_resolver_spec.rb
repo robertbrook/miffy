@@ -1012,6 +1012,14 @@ describe ActResolver, ' when matching acts' do
   it 'should not match "the Finance Act of that year" ' do
     should_not_match("the Finance Act of that year")
   end
+
+  it 'should match "Video <ParaLineStart LineNum="11"></ParaLineStart>Recordings Act 1984;"' do
+    expect_match('Video <ParaLineStart LineNum="11"></ParaLineStart>Recordings Act 1984')
+  end
+
+  it 'should match "Video <ParaLineStart LineNum="11"/>Recordings Act 1984;"' do
+    expect_match('Video <ParaLineStart LineNum="11"/>Recordings Act 1984')
+  end
 end
 
 describe ActResolver, " when asked for Act mention attributes" do
@@ -1029,6 +1037,7 @@ describe ActResolver, " when asked for Act mention attributes" do
   it 'should return a hash of title, year, start position and end position for each reference' do
     @resolver.stub!(:name_and_year).and_return(["name", 1974])
     @resolver.mention_attributes.should == [{:name => "name",
+                                             :text => "name",
                                              :year => 1974,
                                              :start_position => 0,
                                              :end_position => 5}]

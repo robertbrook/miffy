@@ -2,7 +2,6 @@ class ActResolver < ExternalReferenceResolver
 
   NUMBER = 'No\.\s\d+'
   ARTICLE = 'The|This|An|That'
-
   PREFIXES = /(?:            # a non-stored group made up of one of
                 \A(?:Draft\s)? # the start of the string
                 |
@@ -217,6 +216,8 @@ class ActResolver < ExternalReferenceResolver
                       Department's
                     )/ix
 
+  MARKUP = /(<[^>]+><[^>]+>)|(<[^>]+>)/
+
   ACT_PATTERN = /#{PREFIXES}                      # prefixes matched but not kept
                  #{NEGATIVE_STARTS}               # any of these means no match
                  (((#{TITLE_CASE_WORD}            # start of the Act - a titlecase word
@@ -225,7 +226,8 @@ class ActResolver < ExternalReferenceResolver
                  (\s|-))                          # space or hyphen
                  (                                # then
                    (\((?=.*\)))?                  # optional open bracket (that has to be closed somewhere)
-                     (#{TITLE_CASE_WORD}           # titlecase word
+                   (#{MARKUP})?                   # optional markup
+                     (#{TITLE_CASE_WORD}          # titlecase word
                        |
                       #{CAPS_WORD}
                        |                          # or
@@ -243,8 +245,7 @@ class ActResolver < ExternalReferenceResolver
                   (\s+\(c\.\s?(\d+)\))?)          # then an optional chapter
                   /x
 
-  NEGATIVE_ACT_PATTERN = /
-      ((#{ARTICLE})\sAct
+  NEGATIVE_ACT_PATTERN = /((#{ARTICLE})\sAct
         |
         \s(#{CONJUNCTION_IN_MATCH})\sAct
         |
@@ -312,7 +313,8 @@ class ActResolver < ExternalReferenceResolver
     act_mentions = []
     each_reference do |reference, start_position, end_position|
       name, year = name_and_year(reference)
-      act_mentions << {:name => name,
+      act_mentions << {:name => name.gsub(/#{MARKUP}/,''),
+                       :text => name,
                        :year => year,
                        :start_position => start_position,
                        :end_position => end_position}

@@ -12,6 +12,7 @@ describe ActReferenceParser do
       @parser = ActReferenceParser.new
       Act.stub!(:find_by_legislation_url).and_return nil
       Act.stub!(:find_by_name).and_return nil
+      Act.stub!(:from_name).with('Video Recordings Act 1984').and_return mock(Act, :statutelaw_url => 'http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61')
 
       @result = @parser.parse_xml(fixture('DigitalEconomy/clauses_act_name_on_two_lines.xml'))
       File.open(RAILS_ROOT + '/spec/fixtures/DigitalEconomy/clauses_act_name_on_two_lines.act.xml','w') {|f| f.write @result }
@@ -19,6 +20,10 @@ describe ActReferenceParser do
 
     it 'should not mark up part of act name' do
       @result.should include('<ParaLineStart LineNum="11"></ParaLineStart>Recordings Act 1984')
+    end
+
+    it 'should make full act name an anchor link' do
+      @result.should include('<a href="http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61" rel="cite">Video <ParaLineStart LineNum="11"></ParaLineStart>Recordings Act 1984</a>')
     end
   end
 

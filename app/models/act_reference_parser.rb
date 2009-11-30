@@ -25,7 +25,7 @@ class ActReferenceParser
     act_citations = (doc/'//Clause/ClauseText//Citation')
     handle_act_citation_references(act_citations) unless act_citations.empty?
 
-    clauses = (doc/'ClauseText')
+    clauses = (doc/'ClauseText') + (doc/'LongTitle')
     mentions = clauses.collect {|clause| handle_raw_act_mentions(clause) }.include?(true)
 
     no_references = (act_abbreviations.empty? && act_citations.empty? && !mentions)
@@ -39,6 +39,7 @@ class ActReferenceParser
       if clause.inner_html.include?('Act')
         text = clause.inner_html
         acts = ActResolver.new(text).mention_attributes
+
         unless acts.empty?
           [acts.first].each do |mention|
             text = clause.inner_html
@@ -52,10 +53,11 @@ class ActReferenceParser
             else
               name = "#{mention[:name]} #{mention[:year]}"
               act = Act.from_name name
+
               if act
                 url = act.statutelaw_url ? act.statutelaw_url : act.opsi_url
                 if url
-                  link = %Q|<a href="#{url}" rel="cite">#{name}</a>|
+                  link = %Q|<a href="#{url}" rel="cite">#{mention[:text]} #{mention[:year]}</a>|
                   new_text = "#{preceding_text}#{link}#{following_text}"
                   clause.inner_html = new_text
                   mentions = true
