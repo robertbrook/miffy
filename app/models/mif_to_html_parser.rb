@@ -406,6 +406,13 @@ class MifToHtmlParser
       add '</a>'
       add %Q|</span>|
       @clause_anchor_start = nil
+    elsif @schedule_anchor_start
+      add %Q|<span class="#{css_class(node)}">|
+      add @schedule_anchor_start
+      node_children_to_html(node)
+      add '</a>'
+      add %Q|</span>|
+      @schedule_anchor_start = nil
     else
       add_html_element 'span', node
       if node.at('/text()').to_s.empty?
