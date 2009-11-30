@@ -65,7 +65,13 @@ module ApplicationHelper
           "clauses/clauses"
         end
       when 'Schedules'
-        'schedules/schedules'
+        if ens == 'interleaved'
+          "schedules/schedules_interleaved"
+        elsif ens == 'interleaved_wide'
+          "schedules/schedules_interleaved_wide"
+        else
+          "schedules/schedules"
+        end
       when 'Arrangement'
         "arrangement/arrangement"
       when 'Amendments'

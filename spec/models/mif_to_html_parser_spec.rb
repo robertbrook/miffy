@@ -217,4 +217,37 @@ Parliament assembled, and by the authority of the same, as follows:—')
                   %a{ :name => "clause1-page1-line12" }<>')
     end
   end
+
+  describe 'when parsing Schedules MIF XML file to html' do
+    before(:all) do
+      @result = parser.parse_xml(fixture('DigitalEconomy/example/Schedules_example.xml'), :format => :html)
+    end
+    
+    it 'should create html' do
+      @result.should have_tag('html')
+      @result.should have_tag('div[class="Schedules"][id="1061327"]') do
+        with_tag('div[class="SchedulesTitle"][id="1061360"]')
+        with_tag('div[class="Schedule"][id="1059032"]') do
+          with_tag('p[class="ScheduleNumber_PgfTag"][id="1061375"]') do
+            with_tag('span[class="PgfNumString"]') do
+              with_tag('span[class=PgfNumString_0]', :text => 'Schedule 1')
+            end
+          end
+          with_tag('div[class="SectionReference"][id="1059060"]')
+          with_tag('div[class="ScheduleTitle"][id="1059046"]')
+          with_tag('div[class="ScheduleText"][id="1059046t"]') do
+            with_tag('div[class="Para_sch"][id="1059118"]')
+          end
+        end
+      end
+    end
+
+    it 'should put anchor before span' do
+      @result.should have_tag('p[class="SubSubParagraph_sch_PgfTag"][id="1202341"]') do
+        with_tag('a[name="page53-line1"]')
+        with_tag('span[class="SubSubPara_sch_text"]', :text => 'after “Act” insert—')
+      end
+    end
+  end
+  
 end

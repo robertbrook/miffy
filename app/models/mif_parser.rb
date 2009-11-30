@@ -133,6 +133,7 @@ class MifParser
     @pages = get_pages doc
     @variable_list = get_variables doc
     @citations = []
+    @is_schedules_file = false
   end
 
   def make_xml doc
@@ -369,6 +370,8 @@ class MifParser
 
   def handle_etag element
     @e_tag = clean(element)
+    @is_schedules_file = true if @e_tag == 'SchedulesTitle'
+    @schedule_id = get_uid(element) if @is_schedules_file && @e_tag == 'ScheduleTitle'
     @in_amendment = true if (@e_tag == 'Amendment')
     add_paraline_start if @e_tag[/^(Bpara|Stageheader|Shorttitle|Given|CommitteeShorttitle)$/]
 
@@ -441,6 +444,9 @@ class MifParser
 
   def handle_element_tag_end element, tag
     @in_amendment = false if (tag == 'Amendment')
+    if tag == 'Schedule' && @is_schedules_file
+      add "\n</ScheduleText>"
+    end
 
     if @suffix && @suffix != ' ['
       add_to_last_line @suffix
@@ -465,6 +471,9 @@ class MifParser
       @opened_in_paragraph.delete(tag)
       add "</#{tag}>"
       add "\n" unless tag[/(Day|STHouse|STLords|STText|ClauseTitle|Para|OrderPreamble)/]
+      if tag == 'ScheduleTitle' && @is_schedules_file
+        add %Q|<ScheduleText id="#{@schedule_id}t">\n|
+      end
     end
 
   end

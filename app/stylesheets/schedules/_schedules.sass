@@ -1,0 +1,255 @@
+@import blueprint
+
+body
+  #container
+  
+    .BillData
+      +column(30, true)
+      float: left
+      
+    .BillTitle
+      font-size: 1.8em
+      +column(30, true)
+      text-align: center
+      padding: 1.25em 0 2.5em 0
+      border-bottom: 1px solid black
+      clear: both
+      
+    .PgfNumString
+      float: left
+
+      .PgfNumString_0
+        +column(1, true)
+
+      .PgfNumString_1
+        +append(1)
+        +column(1)
+
+      .PgfNumString_2
+        +append(1)
+        +column(1, true)
+    
+    .Schedules
+      +column(30, true)
+      
+      .SchedulesTitle
+        +column(30, true)
+        text-align: center
+        text-transform: uppercase
+        font-size: 1.4em
+        letter-spacing: 0.3em
+        padding: 0.5em 0 3em 0
+        
+      .Schedule
+        +column(30, true)
+        text-align: left
+        
+        .ScheduleNumber_PgfTag
+          +column(30, true)
+          font-size: 1.1em
+          text-transform: uppercase
+          margin-bottom: 0.1em
+          
+          .PgfNumString
+            +column(30, true)
+            
+            .PgfNumString_0
+              +column(30, true)
+              text-align: center
+              
+          .ScheduleNumber
+            float: left
+            
+        .SectionReference
+          +column(30, true)
+          text-align: right
+          font-size: 0.8em
+          
+        .ScheduleTitle
+          +column(30, true)
+          font-size: 0.95em
+          text-align: center
+          text-transform: uppercase
+          
+        .ScheduleText
+          +column(30, true)
+          
+        .CrossHeadingSch
+          float: left
+          +column(30, true)
+          
+          .CrossHeadingTitle
+            text-align: left
+            font-style: italic
+            padding: 0.4em 0
+          
+        .PartSch
+          +column(30, true)
+          
+          .PartNumber_sch_PgfTag
+            +column(30, true)
+            font-size: 1.1em
+            text-transform: uppercase
+            margin: 1.1em 0 1em 0
+            
+            .PgfNumString_0
+              +column(30, true)
+              text-align: center
+
+            .PartNumber
+              float: left
+              
+          .PartTitle
+            +column(30, true)
+            font-size: 0.95em
+            text-transform: uppercase
+            text-align: center
+            margin: 0 0 1em 0
+            
+        .Para_sch
+          +column(30, true)
+          padding: 0.4em 0
+          
+          .Para_sch_text
+            +column(28, true)
+            display: block
+            
+          .Paragraph_sch_PgfTag
+            float: left
+            
+          .Amendment
+            +prepend(1)
+            +column(29, true)
+            
+            .CenteredHeading
+              +column(29, true)
+              text-align: center
+            
+            .Para
+              +prepend(4)
+              +column(25, true)
+              
+              .Para_text
+                display: block
+                +column(23, true)
+            
+            .SubSection
+              +column(26, true)
+              
+              .SubSection_PgfTag
+                float: left
+                margin-top: 0.1em
+                margin-bottom: 0.1em
+              
+              .TextContinuation
+                +prepend(2)
+                +column(24, true)
+            
+            .Clause
+              +column(29, true)
+              
+              .ClauseTitle
+                +column(29, true)
+                font-weight: bold
+                
+                .ActClauseTitle_text
+                  +column(27, true)
+                  display: block
+                  
+              .ClauseText
+                +prepend(3)
+                +column(24, true)
+              
+                .ClauseText_PgfTag
+                  float: left
+                  
+                .SubSection
+                  +column(28, true)
+                  margin: 0.2em 0 0.2em -40px
+                  
+                  .SubSection_text
+                    display: block
+                    +column(26, true)
+                  
+          .SubPara_sch
+            +column(30, true)
+            
+            .SubPara_sch_text
+              display: block
+              +column(25, true)
+              
+            .TextContinuation
+              +prepend(4)
+              +column(26, true)
+              
+            .Amendment
+              .Definition
+                +prepend(5)
+                +column(23, true)
+                
+                .Definition_PgfTag
+                  float: left
+                  margin-bottom: 0
+                
+              .Table
+                +prepend(4)
+                +column(24, true)
+            
+              .SubSection
+                +prepend(4)
+                +column(24, true)
+                
+                .SubSection_text
+                  display: block
+                  +column(22, true)
+                  
+              .Para
+                +prepend(3)
+                +column(21, true)
+                
+                .Para_text
+                  display: block
+                  +column(19, true)
+             
+            .SubSubPara_sch
+              +prepend(5)
+              +column(25, true)
+              
+              .SubSubPara_sch_text
+                display: block
+                +column(23, true)
+                  
+          .SubSubPara_sch
+            +prepend(3)
+            +column(27, true)
+            
+            .SubSubPara_sch_text
+              display: block
+              +column(25, true)
+              
+  .Table    
+    .TableTitle
+      text-align: center
+      
+      .SmallCaps
+        text-transform: uppercase
+        
+    .TableData
+      border-collapse: collapse
+      
+      th
+        font-weight: normal
+        font-style: italic
+        text-align: center
+        border: 1px solid black
+        
+      td
+        border: 1px solid black
+        padding: 0 0.5em
+        
+      td.centered
+        text-align: center
+        
+      td.right
+        text-align: right
+        

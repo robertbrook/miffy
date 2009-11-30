@@ -190,6 +190,7 @@ class MifToHtmlParser
 
   def doc_to_html(doc)
     @in_clauses = false
+    @in_schedules = false
     @in_paragraph = false
     @in_amendment = false
     @in_hyperlink = false
@@ -307,9 +308,18 @@ class MifToHtmlParser
     @in_clauses = true
     add_html_element 'div', node
   end
+  
+  def handle_schedules node
+    @in_schedules = true
+    add_html_element 'div', node
+  end
 
-  def find_explanatory_note
+  def find_clause_explanatory_note
     @interleave && (note = @bill.find_note_for_clause_number(@clause_number))
+  end
+
+  def find_schedule_explanatory_note
+    @interleave && (note = @bill.find_note_for_schedule_number(@schedule_number))
   end
 
   def handle_clause node
@@ -324,7 +334,7 @@ class MifToHtmlParser
       clause_name = "clause#{@clause_number}"
       @clause_anchor_start = %Q|<a id="clause_#{clause_id}" name="#{clause_name}" href="##{clause_name}">|
 
-      @explanatory_note = find_explanatory_note unless @in_amendment
+      @explanatory_note = find_clause_explanatory_note unless @in_amendment
 
       add %Q|<div class="#{css_class(node)}" id="#{node['id']}">|
       node_children_to_html(node)
@@ -346,6 +356,44 @@ class MifToHtmlParser
   def handle_clause_text node
     if @explanatory_note && !@in_amendment
       add %Q|<div class="ClauseTextWithExplanatoryNote" id="#{node['id']}en">|
+    end
+    add_html_element 'div', node
+  end
+  
+  def handle_schedule node
+    if node.at('ScheduleNumber_PgfTag') && @in_schedules
+      @schedule_number = node.at('ScheduleNumber_PgfTag/PgfNumString/PgfNumString_0').inner_text.gsub('Schedule ', '').strip
+    end
+    schedule_id = node.at('ScheduleNumber_PgfTag/PgfNumString/PgfNumString_0').inner_text.strip.gsub(' ', '_')
+
+    @in_amendment = (node.parent.name == 'Amendment') || (node.parent.parent.name == 'Amendment')
+
+    unless @schedule_number.blank? || schedule_id.blank?
+      schedule_name = "schedule#{@schedule_number}"
+      @schedule_anchor_start = %Q|<a id="schedule_#{schedule_id}" name="#{schedule_name}" href="##{schedule_name}">|
+
+      @explanatory_note = find_schedule_explanatory_note unless @in_amendment
+
+      add %Q|<div class="#{css_class(node)}" id="#{node['id']}">|
+      node_children_to_html(node)
+      if @explanatory_note && !@in_amendment
+        add %Q|<div class="explanatory_note"><div class="explanatory_note_text"><span class="en_header">Explanatory Note:</span>#{@explanatory_note.html_note_text}</div></div>|
+        add "</div>"
+      end
+
+      add "</div>"
+
+      @explanatory_note = nil unless @in_amendment
+    else
+      add_html_element 'div', node
+    end
+
+    @in_amendment = false
+  end
+  
+  def handle_schedule_text node
+    if @explanatory_note && !@in_amendment
+      add %Q|<div class="ScheduleTextWithExplanatoryNote" id="#{node['id']}_en">|
     end
     add_html_element 'div', node
   end
@@ -489,6 +537,7 @@ class MifToHtmlParser
     if text.nil?
       raise 'text should not be null'
     else
+      @html.pop if text.is_a?(String) && text[/^(;|\.|\))/] && @html.last == '&nbsp;'
       @html << text
     end
   end
@@ -505,8 +554,12 @@ class MifToHtmlParser
         handle_page_start node
       when 'Clauses'
         handle_clauses node
+      when 'Schedules'
+        handle_schedules node
       when 'Clause'
         handle_clause node
+      when 'Schedule'
+        handle_schedule node
       when 'Clause_ar'
         handle_clause_ar node
       when 'Clause_ar_text'
@@ -525,6 +578,8 @@ class MifToHtmlParser
         #ignore
       when 'ClauseText'
         handle_clause_text node
+      when 'ScheduleText'
+        handle_schedule_text node
       when DIV_RE
         add_html_element 'div', node
       when SPAN_RE

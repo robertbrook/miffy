@@ -582,4 +582,33 @@ describe MifParser do
     end
   end
 
+  describe 'when parsing schedules MIF XML file into xml' do
+    before(:all) do
+      @parser = MifParser.new
+      @result = @parser.parse_xml(fixture('DigitalEconomy/example/Schedules_example.mif.xml'))
+      File.open(RAILS_ROOT + '/spec/fixtures/DigitalEconomy/example/Schedules_example.xml','w') {|f| f.write @result }
+    end
+    
+    describe 'when parsing schedule' do
+      it 'should create a valid Schedule structure' do
+        @result.should have_tag('Schedules[id="1061327"]') do
+          with_tag('SchedulesTitle[id="1061360"]')
+          with_tag('Schedule[id="1059032"]') do
+            with_tag('ScheduleNumber_PgfTag[id="1061375"]') do
+              with_tag('PgfNumString') do
+                with_tag('PgfNumString_0', :text => 'Schedule 1')
+              end
+            end
+            with_tag('ScheduleTitle[id="1059046"]')
+            with_tag('ScheduleText')
+          end
+        end
+      end
+      
+      it 'should create ScheduleText' do
+        @result.should have_tag('ScheduleText[id="1059046t"]')
+      end
+    end
+  end
+
 end
