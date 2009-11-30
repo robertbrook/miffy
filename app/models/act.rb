@@ -6,7 +6,7 @@ require 'legislation_uk'
 class Act < ActiveRecord::Base
 
   has_many :act_parts, :dependent => :delete_all
-  has_many :act_sections, :dependent => :delete_all
+  has_many :act_sections, :dependent => :delete_all, :order => 'number'
 
   validates_presence_of :name
   validates_uniqueness_of :legislation_url, :allow_nil => true

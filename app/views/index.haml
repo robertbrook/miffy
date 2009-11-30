@@ -1,14 +1,6 @@
 - unless @act_files.empty?
   %table.legislation-files
     %caption Acts
-    %thead
-      %tr
-        %th Name
-        %th Size
-    %tfoot
-      %tr
-        %th Name
-        %th Size
     %tbody
       -@act_files.each do |file|
         %tr.legislation-file
@@ -20,14 +12,6 @@
     - files_by_type = @files_by_bill[key].group_by{|x| x.file_type ? x.file_type : nil}
     %table.mif-files
       %caption= key ? bill_name : 'No bill named'
-      %thead
-        %tr
-          %th Name
-          %th Size
-      %tfoot
-        %tr
-          %th Name
-          %th Size
       %tbody
         - files_by_type.keys.each do |file_type|
           %tr.mif-file-type
@@ -36,6 +20,6 @@
           - files.each do |file|
             %tr.mif-file
               %td.name= link_to file.name, "convert?file=#{file.path.gsub('&', '%26')}"
-              %td.size= number_to_human_size(File.size(file.path))    
+              %td.size= number_to_human_size(File.size(file.path))
 - else
   %p No files available to parse

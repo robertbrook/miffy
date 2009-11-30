@@ -2,13 +2,38 @@
   %thead
     - act = @acts.first
     %tr
-      - act.attributes.to_a.sort_by{|x| x[0]}.each do |attribute|
-        - unless attribute[0].to_s[/_at|id/]
-          %th= h attribute[0].to_s
+      %th{:style => ''}
+        name
+        %br
+        title
+      %th{:style => 'width: 5px'}
+        number
+        %br
+        year
+        %br
+        sections
+      %th{:style => ''}
+        legislation_url
+        %br
+        statutelaw_url
+        %br
+        opsi_url
   %tbody
     - @acts.each do |act|
       %tr
-        - act.attributes.to_a.sort_by{|x| x[0]}.each do |attribute|
-          - unless attribute[0].to_s[/_at|id/]
-            - value = attribute[1].to_s
-            %td= link_to_if(value[/http/], h(value).sub('http://',''), value)
+        %td{:style => '; vertical-align: top'}
+          = act.name
+          %br
+          = act.title
+        %td{:style => 'width: 5px; vertical-align: top'}
+          = act.number
+          %br
+          = act.year
+          %br
+          = link_to act.act_sections.size, act
+        %td{:style => '; vertical-align: top'}
+          = link_to_url act.legislation_url
+          %br
+          = link_to_url act.statutelaw_url
+          %br
+          = link_to_url act.opsi_url
