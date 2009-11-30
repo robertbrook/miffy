@@ -12,7 +12,7 @@ describe Act do
       Act.from_name name
     end
 
-    it 'should put space between (c and digit)' do
+    it 'should put space between (c. and digit) when reading a Chapter reference' do
       name = 'Income Tax (Trading and Other Income) Act  (c.5)'
       normalized = 'Income Tax (Trading and Other Income) Act (c. 5)'
       Act.should_receive(:find_by_name).with(normalized).and_return nil
