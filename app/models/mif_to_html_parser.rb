@@ -489,6 +489,7 @@ class MifToHtmlParser
     if text.nil?
       raise 'text should not be null'
     else
+      @html.pop if text[/^(;|\.|\))/] && @html.last == '&nbsp;'
       @html << text
     end
   end
