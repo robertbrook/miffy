@@ -1,14 +1,22 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
-  
+
+  def link_to_url value
+    if value
+      link_to_if(value[/http/], h(value).sub('http://',''), value)
+    else
+      ''
+    end
+  end
+
   def external_sheet
     params[:style]
   end
-  
+
   def target_file
-    params[:file] || "Index"    
+    params[:file] || "Index"
   end
-  
+
   def document_type file_name, ens=''
     mif_file = MifFile.find_by_path(file_name)
 
@@ -43,7 +51,7 @@ module ApplicationHelper
         end
     end
   end
-  
+
   def stylesheet_path file_name, ens=''
     mif_file = MifFile.find_by_path(file_name)
 

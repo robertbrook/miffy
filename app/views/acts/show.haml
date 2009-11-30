@@ -1,0 +1,31 @@
+- @title = @act.name
+%h1= @title
+
+- section = @sections.first
+- if section
+  %table
+    %thead
+      %tr
+        %th{:style => 'width: 5px'}
+          number
+        %th{:style => 'width: 200px'}
+          title
+        %th{:style => 'width: 200px'}
+          legislation_url
+          %br
+          statutelaw_url
+          %br
+          opsi_url
+    %tbody
+      - @sections.each do |section|
+        %tr
+          %td{:style => 'width: 5px; vertical-align: top'}
+            = section.number
+          %td{:style => 'width: 200px; vertical-align: top'}
+            = section.title
+          %td{:style => 'width: 200px; vertical-align: top'}
+            = link_to_url section.legislation_url
+            %br
+            = link_to_url section.statutelaw_url
+            %br
+            = link_to_url section.opsi_url

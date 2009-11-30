@@ -9,6 +9,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/api/schedule_note/', :controller => "api", :action => 'schedule_note'
 
   map.resources :acts
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
