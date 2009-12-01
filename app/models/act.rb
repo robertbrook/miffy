@@ -70,7 +70,7 @@ class Act < ActiveRecord::Base
   end
 
   def find_section_by_number section_number
-    act_sections.find_by_number section_number
+    act_sections.find_by_section_number section_number
   end
 
   def convert_to_haml
