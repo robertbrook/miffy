@@ -70,7 +70,7 @@ class Act < ActiveRecord::Base
   end
 
   def find_section_by_number section_number
-    act_sections.find_by_number section_number
+    act_sections.find_by_section_number section_number
   end
 
   def convert_to_haml
@@ -143,7 +143,7 @@ class Act < ActiveRecord::Base
         logger.warn "title not present on: #{section.inspect}"
       else
         begin
-          act_sections.build :number => section.number,
+          act_sections.build :number => section.section_number,
               :title => section.title,
               :act_part => act_part,
               :legislation_url => section.legislation_uri,
@@ -160,7 +160,7 @@ class Act < ActiveRecord::Base
   def create_act_section section
     if section
       opsi_uri = section.opsi_uri
-      act_sections.build :number => section.number,
+      act_sections.build :number => section.section_number,
           :title => section.title,
           :legislation_url => section.legislation_uri,
           :opsi_url => opsi_uri,

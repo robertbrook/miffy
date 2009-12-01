@@ -4,7 +4,7 @@ class ActSection < ActiveRecord::Base
   belongs_to :act_part
 
   def label
-    "Section #{number}: #{title}"
+    "Section #{section_number}: #{title}"
   end
 
   def legislation_uri_for_subsection subsection_number
