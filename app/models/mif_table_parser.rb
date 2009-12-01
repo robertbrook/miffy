@@ -17,7 +17,7 @@ class MifTableParser
 
   def handle_tag node, tables
     tag = clean(node)
-    if tag != 'Table' && tag != 'RepealContinue'
+    if tag != 'Table' && tag != 'RepealContinue' && tag != 'RepealsSchedules'
       do_break = true
     else
       tables[@current_table_id] = [start_tag('TableData', node)]
