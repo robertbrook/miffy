@@ -330,7 +330,7 @@ class MifToHtmlParser
 
     @in_amendment = (node.parent.name == 'Amendment') || (node.parent.parent.name == 'Amendment')
 
-    unless @clause_number.blank? || clause_id.blank?
+    unless (@clause_number.blank? || clause_id.blank?) || @in_amendment
       clause_name = "clause#{@clause_number}"
       @clause_anchor_start = %Q|<a id="clause_#{clause_id}" name="#{clause_name}" href="##{clause_name}">|
 
@@ -364,11 +364,13 @@ class MifToHtmlParser
     if node.at('ScheduleNumber_PgfTag') && @in_schedules
       @schedule_number = node.at('ScheduleNumber_PgfTag/PgfNumString/PgfNumString_0').inner_text.gsub('Schedule ', '').strip
     end
-    schedule_id = node.at('ScheduleNumber_PgfTag/PgfNumString/PgfNumString_0').inner_text.strip.gsub(' ', '_')
+    if node['HardReference']
+      schedule_id = node['HardReference'].to_s.strip.gsub("&",'_')
+    end
 
     @in_amendment = (node.parent.name == 'Amendment') || (node.parent.parent.name == 'Amendment')
 
-    unless @schedule_number.blank? || schedule_id.blank?
+    unless (@schedule_number.blank? || schedule_id.blank?) || @in_amendment
       schedule_name = "schedule#{@schedule_number}"
       @schedule_anchor_start = %Q|<a id="schedule_#{schedule_id}" name="#{schedule_name}" href="##{schedule_name}">|
 
