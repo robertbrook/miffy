@@ -414,7 +414,7 @@ describe ActResolver, ' when matching acts' do
   end
 
   it 'should match "Post Office Act 1953" in "Amendments to the Post Office Act 1953"' do
-      should_match_acts("Amendments to the Post Office Act 1953", "Post Office Act 1953")
+    should_match_acts("Amendments to the Post Office Act 1953", "Post Office Act 1953")
   end
 
   it 'should match "Children Act 1989" in "An Introduction to the Children Act 1989"' do
@@ -1020,6 +1020,10 @@ describe ActResolver, ' when matching acts' do
   it 'should match "Video <ParaLineStart LineNum="11"/>Recordings Act 1984;"' do
     expect_match('Video <ParaLineStart LineNum="11"/>Recordings Act 1984')
   end
+
+  it 'should match "Section 3 of the Communications Act 2003"' do
+    expect_match('Section 3 of the Communications Act 2003')
+  end
 end
 
 describe ActResolver, " when asked for Act mention attributes" do
@@ -1034,7 +1038,7 @@ describe ActResolver, " when asked for Act mention attributes" do
     @resolver.mention_attributes
   end
 
-  it 'should return a hash of title, year, start position and end position for each reference' do
+  it 'should return an object with title, year, start position and end position for each reference' do
     @resolver.stub!(:name_and_year).and_return(["name", 1974])
     mention = @resolver.mention_attributes.first
     mention.name.should == "name"
@@ -1042,6 +1046,15 @@ describe ActResolver, " when asked for Act mention attributes" do
     mention.year.should == 1974
     mention.start_position.should == 0
     mention.end_position.should == 5
+    mention.section_number.should == nil
+  end
+
+  it 'should return an object with section number for section reference' do
+    resolver = ActResolver.new('Section 3 of the Communications Act 2003')
+    mention = resolver.mention_attributes.first
+    mention.name.should == 'Communications Act'
+    mention.text.should == 'Section 3 of the Communications Act'
+    mention.section_number.should == '3'
   end
 
 end

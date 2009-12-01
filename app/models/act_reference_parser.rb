@@ -55,13 +55,19 @@ class ActReferenceParser
               act = Act.from_name name
 
               if act
-                url = act.statutelaw_url ? act.statutelaw_url : act.opsi_url
+                if mention.section_number && (section = act.find_section_by_number(mention.section_number))
+                  url = section.statutelaw_url ? section.statutelaw_url : section.opsi_url
+                else
+                  url = act.statutelaw_url ? act.statutelaw_url : act.opsi_url
+                end
+
                 if url
                   link = %Q|<a href="#{url}" rel="cite">#{mention.text} #{mention.year}</a>|
                   new_text = "#{preceding_text}#{link}#{following_text}"
                   clause.inner_html = new_text
                   mentions = true
                 end
+
               end
             end
           end

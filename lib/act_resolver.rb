@@ -218,32 +218,36 @@ class ActResolver < ExternalReferenceResolver
 
   MARKUP = /(<[^>]+><[^>]+>)|(<[^>]+>)/
 
-  ACT_PATTERN = /#{PREFIXES}                      # prefixes matched but not kept
-                 #{NEGATIVE_STARTS}               # any of these means no match
-                 (((#{TITLE_CASE_WORD}            # start of the Act - a titlecase word
-                 |
-                 #{CAPS_WORD})                    # or caps word
-                 (\s|-))                          # space or hyphen
-                 (                                # then
-                   (\((?=.*\)))?                  # optional open bracket (that has to be closed somewhere)
-                   (#{MARKUP})?                   # optional markup
-                     (#{TITLE_CASE_WORD}          # titlecase word
-                       |
-                      #{CAPS_WORD}
-                       |                          # or
-                       (#{CONJUNCTION_IN_MATCH})  # conjunction
-                       |                          # or
-                       #{NUMBER}                  # number
-                      )
-                   \)?                            # optional close bracket
-                   (\s|-)                         # and space or hyphen
-                  )*?                             # zero or more times - non-greedy
-                  (Act|ACT)                       # then the word Act
-                  (?![A-Za-z])                    # not followed by a letter, for example s
-                  (?!\sof\sthat\syear)              # not followed by a of that year
-                  (,?\s\d\d\d\d)?                 # then an optional year, preceded by an optional comma
-                  (\s+\(c\.\s?(\d+)\))?)          # then an optional chapter
-                  /x
+  BASE_ACT_PATTERN = /(
+               ((#{TITLE_CASE_WORD}          # start of the Act - a titlecase word
+                  |#{CAPS_WORD})                # or caps word
+                (\s|-)                       # space or hyphen
+               )
+               (                              # then
+                 (\((?=.*\)))?                # optional open bracket (that has to be closed somewhere)
+                 (#{MARKUP})?                 # optional markup
+                 (#{TITLE_CASE_WORD}          # titlecase word
+                   |
+                   #{CAPS_WORD}
+                   |                          # or
+                   (#{CONJUNCTION_IN_MATCH})  # conjunction
+                   |                          # or
+                   #{NUMBER}                  # number
+                  )
+                 \)?                          # optional close bracket
+                 (\s|-)                       # and space or hyphen
+               )*?                            # zero or more times - non-greedy
+               (Act|ACT)                      # then the word Act
+               (?![A-Za-z])                   # not followed by a letter, for example s
+               (?!\sof\sthat\syear)           # not followed by a of that year
+               (,?\s\d\d\d\d)?                # then an optional year, preceded by an optional comma
+               (\s+\(c\.\s?(\d+)\))?          # then an optional chapter
+             )
+             /x
+
+  ACT_PATTERN = /#{PREFIXES}                  # prefixes matched but not kept
+                 #{NEGATIVE_STARTS}           # any of these means no match
+                 #{BASE_ACT_PATTERN}/x
 
   NEGATIVE_ACT_PATTERN = /((#{ARTICLE})\sAct
         |
@@ -285,12 +289,17 @@ class ActResolver < ExternalReferenceResolver
       ))
       /xi
 
+  BASE_SECTION_PATTERN = /Section\s(\d+)\sof\sthe\s/xi
+
+  SECTION_PATTERN = /(#{BASE_SECTION_PATTERN}#{BASE_ACT_PATTERN})
+  /xi
+
   def screening_pattern
     /(Act|ACT)(?![A-Za-z])/
   end
 
   def positive_pattern_groups
-    [[ACT_PATTERN, 1]]
+    [[SECTION_PATTERN, 1], [ACT_PATTERN, 1]]
   end
 
   def negative_patterns
@@ -313,11 +322,13 @@ class ActResolver < ExternalReferenceResolver
     act_mentions = []
     each_reference do |reference, start_position, end_position|
       name, year = name_and_year(reference)
-      act_mentions << ActMention.new( {:name => name.gsub(/#{MARKUP}/,''),
+      section_number = name[/#{BASE_SECTION_PATTERN}/,1]
+      act_mentions << ActMention.new( {:name => name.gsub(/#{MARKUP}/,'').gsub(/#{BASE_SECTION_PATTERN}/,''),
                        :text => name,
                        :year => year,
                        :start_position => start_position,
-                       :end_position => end_position} )
+                       :end_position => end_position,
+                       :section_number => section_number} )
     end
     act_mentions
   end
@@ -325,7 +336,7 @@ class ActResolver < ExternalReferenceResolver
 end
 
 class ActMention
-  attr_accessor :name, :text, :year, :start_position, :end_position
+  attr_accessor :name, :text, :year, :start_position, :end_position, :section_number
 
   def initialize attributes
     attributes.each do |attribute, value|
