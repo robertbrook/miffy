@@ -62,7 +62,7 @@ class ActReferenceParser
                 end
 
                 if url
-                  link = %Q|<a href="#{url}" rel="cite">#{mention.text} #{mention.year}</a>|
+                  link = %Q|<a href="#{url}" rel="cite">#{mention.text}</a>|
                   new_text = "#{preceding_text}#{link}#{following_text}"
                   clause.inner_html = new_text
                   mentions = true

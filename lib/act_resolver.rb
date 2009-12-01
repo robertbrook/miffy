@@ -289,7 +289,11 @@ class ActResolver < ExternalReferenceResolver
       ))
       /xi
 
-  BASE_SECTION_PATTERN = /Section\s(\d+)\sof\sthe\s/xi
+  BASE_SECTION_PATTERN = /Section\s+
+     (#{MARKUP})?                 # optional markup
+     (\d+[A-Z]*)                  # section number
+     (#{MARKUP})?                 # optional markup
+     \s+of\s+the\s+/xi
 
   SECTION_PATTERN = /(#{BASE_SECTION_PATTERN}#{BASE_ACT_PATTERN})
   /xi
@@ -321,10 +325,11 @@ class ActResolver < ExternalReferenceResolver
   def mention_attributes
     act_mentions = []
     each_reference do |reference, start_position, end_position|
-      name, year = name_and_year(reference)
-      section_number = name[/#{BASE_SECTION_PATTERN}/,1]
+      puts reference if reference.include?('Communications')
+      name, year = name_and_year(reference.gsub(/#{MARKUP}/,''))
+      section_number = name[/#{BASE_SECTION_PATTERN}/,4]
       act_mentions << ActMention.new( {:name => name.gsub(/#{MARKUP}/,'').gsub(/#{BASE_SECTION_PATTERN}/,''),
-                       :text => name,
+                       :text => reference,
                        :year => year,
                        :start_position => start_position,
                        :end_position => end_position,
