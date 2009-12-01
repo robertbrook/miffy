@@ -143,7 +143,7 @@ class Act < ActiveRecord::Base
         logger.warn "title not present on: #{section.inspect}"
       else
         begin
-          act_sections.build :number => section.number,
+          act_sections.build :number => section.section_number,
               :title => section.title,
               :act_part => act_part,
               :legislation_url => section.legislation_uri,
@@ -160,7 +160,7 @@ class Act < ActiveRecord::Base
   def create_act_section section
     if section
       opsi_uri = section.opsi_uri
-      act_sections.build :number => section.number,
+      act_sections.build :number => section.section_number,
           :title => section.title,
           :legislation_url => section.legislation_uri,
           :opsi_url => opsi_uri,
