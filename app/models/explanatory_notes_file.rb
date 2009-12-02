@@ -25,17 +25,17 @@ class ExplanatoryNotesFile < ActiveRecord::Base
     
     clauses = get_clauses(xml)
     clauses.each do |data|
-      NoteByClause.create!(:clause_number => data[0], :note_text => data[1], :bill_id => self.bill_id, :explanatory_notes_file_id => self.id)
+      NoteByClause.create!(:clause_number => data[0], :note_text => data[1], :serial_number => data[2].to_i, :bill_id => self.bill_id, :explanatory_notes_file_id => self.id)
     end
     
     schedules = get_schedules(xml)
     schedules.each do |data|
-      NoteBySchedule.create!(:schedule_number => data[0], :note_text => data[1], :bill_id => self.bill_id, :explanatory_notes_file_id => self.id)
+      NoteBySchedule.create!(:schedule_number => data[0], :note_text => data[1], :serial_number => data[2].to_i, :bill_id => self.bill_id, :explanatory_notes_file_id => self.id)
     end
     
     clause_ranges = get_clause_ranges(xml)
     clause_ranges.each do |data|
-      NoteRangeByClause.create!(:clause_number => data[0], :note_text => data[2], :range_end => data[1], :bill_id => self.bill_id, :explanatory_notes_file_id => self.id)
+      NoteRangeByClause.create!(:clause_number => data[0], :note_text => data[2], :serial_number => data[3].to_i, :range_end => data[1], :bill_id => self.bill_id, :explanatory_notes_file_id => self.id)
     end
   end
 
@@ -43,7 +43,7 @@ class ExplanatoryNotesFile < ActiveRecord::Base
     doc = Hpricot.XML(xml)
     clauses = (doc/'Clause')
     clauses.collect do |node|
-      [node['Number'], node.inner_text]
+      [node['Number'], node.inner_text, node['SerialNumber']]
     end
   end
   
@@ -51,7 +51,7 @@ class ExplanatoryNotesFile < ActiveRecord::Base
     doc = Hpricot.XML(xml)
     clauses = (doc/'Schedule')
     clauses.collect do |node|
-      [node['Number'], node.inner_text]
+      [node['Number'], node.inner_text, node['SerialNumber']]
     end
   end
   
@@ -59,7 +59,7 @@ class ExplanatoryNotesFile < ActiveRecord::Base
     doc = Hpricot.XML(xml)
     clause_ranges = (doc/'ClauseRange')
     clause_ranges.collect do |node|
-      [node['start'], node['end'], node.inner_text]
+      [node['start'], node['end'], node.inner_text, node['SerialNumber']]
     end
   end
   
