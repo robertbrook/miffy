@@ -4,6 +4,7 @@ test
 coverage
 config/database.yml
 .DS_Store
+.dropbox
 doc
 app/views/results
 db/*.sqlite3
