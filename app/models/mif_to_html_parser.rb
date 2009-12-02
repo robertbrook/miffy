@@ -308,7 +308,7 @@ class MifToHtmlParser
     @in_clauses = true
     add_html_element 'div', node
   end
-  
+
   def handle_schedules node
     @in_schedules = true
     add_html_element 'div', node
@@ -347,6 +347,10 @@ class MifToHtmlParser
 
       @explanatory_note = nil unless @in_amendment
     else
+      if @in_amendment && node['Number']
+        amendment_clause_id = "amendment_clause_#{node['Number']}#{node['Letter']}"
+        add %Q|<a name="#{amendment_clause_id}"/>|
+      end
       add_html_element 'div', node
     end
 
@@ -359,7 +363,7 @@ class MifToHtmlParser
     end
     add_html_element 'div', node
   end
-  
+
   def handle_schedule node
     if node.at('ScheduleNumber_PgfTag') && @in_schedules
       @schedule_number = node.at('ScheduleNumber_PgfTag/PgfNumString/PgfNumString_0').inner_text.gsub('Schedule ', '').strip
@@ -392,7 +396,7 @@ class MifToHtmlParser
 
     @in_amendment = false
   end
-  
+
   def handle_schedule_text node
     if @explanatory_note && !@in_amendment
       add %Q|<div class="ScheduleTextWithExplanatoryNote" id="#{node['id']}_en">|
