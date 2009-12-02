@@ -19,7 +19,10 @@
           - files = files_by_type[file_type]
           - files.each do |file|
             %tr.mif-file
-              %td.name= link_to file.name, "convert?file=#{file.path.gsub('&', '%26')}"
+              - if @clickable_file_types.include?("|#{file.file_type}|")
+                %td.name= link_to file.name, "convert?file=#{file.path.gsub('&', '%26')}"
+              -else
+                %td.name= file.name
               %td.size= number_to_human_size(File.size(file.path))
 - else
   %p No files available to parse

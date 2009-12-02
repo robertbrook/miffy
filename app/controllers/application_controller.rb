@@ -20,6 +20,8 @@ class ApplicationController < ActionController::Base
     en_paths << (RAILS_ROOT + '/spec/fixtures/ChannelTunnel/ChannelTunnelENs.pdf')
     en_paths << (RAILS_ROOT + '/spec/fixtures/DigitalEconomy/ens/DigitalEconomy Bill.pdf')
 
+    @clickable_file_types = '|Amendments|Clauses|Schedules|Marshalled List|Tabled Amendments|Tabled Report|Report|Arrangement|'
+
     @mif_files = MifFile.load(paths)
     @en_files = ExplanatoryNotesFile.load(en_paths)
 
