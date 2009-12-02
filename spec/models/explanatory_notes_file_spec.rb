@@ -55,26 +55,28 @@ describe ExplanatoryNotesFile do
       @text2 = 'Clause 471'
       @text3 = 'Schedule 470'
       @text4 = 'Schedule 471'
+      @serial1 = '480'
+      @serial2 = '481'
       @bill_id = 4
       @file_id = 2
-      @clauses = [[@number1,@text1],[@number2,@text2]]
-      @schedules = [[@number1, @text3], [@number2, @text4]]
+      @clauses = [[@number1,@text1,@serial1],[@number2,@text2,@serial2]]
+      @schedules = [[@number1, @text3,@serial1], [@number2, @text4,@serial2]]
       @file.stub!(:id).and_return @file_id
       @file.stub!(:bill_id).and_return @bill_id
     end
 
     describe 'when getting clauses' do
       it 'should return array of clauses' do
-        xml = '<Document><Clause Number="470">Clause 470</Clause>
-        <Clause Number="471">Clause 471</Clause></Document>'
+        xml = '<Document><Clause Number="470" SerialNumber="480">Clause 470</Clause>
+        <Clause Number="471" SerialNumber="481">Clause 471</Clause></Document>'
         @file.get_clauses(xml).should == @clauses
       end
     end
     
     describe 'when getting schedules' do
       it 'should return array of schedules' do
-        xml = '<Document><Schedule Number="470">Schedule 470</Schedule>
-        <Schedule Number="471">Schedule 471</Schedule></Document>'
+        xml = '<Document><Schedule Number="470" SerialNumber="480">Schedule 470</Schedule>
+        <Schedule Number="471" SerialNumber="481">Schedule 471</Schedule></Document>'
         @file.get_schedules(xml).should == @schedules
       end
     end
@@ -99,10 +101,10 @@ describe ExplanatoryNotesFile do
         note2.should_receive(:save!)
         note3.should_receive(:save!)
         note4.should_receive(:save!)
-        NoteByClause.should_receive(:new).with(:note_text => @text1, :explanatory_notes_file_id => @file_id, :bill_id => @bill_id, :clause_number => @number1).and_return note1
-        NoteByClause.should_receive(:new).with(:note_text => @text2, :explanatory_notes_file_id => @file_id, :bill_id => @bill_id, :clause_number => @number2).and_return note2
-        NoteBySchedule.should_receive(:new).with(:note_text => @text3, :explanatory_notes_file_id => @file_id, :bill_id => @bill_id, :schedule_number => @number1).and_return note3
-        NoteBySchedule.should_receive(:new).with(:note_text => @text4, :explanatory_notes_file_id => @file_id, :bill_id => @bill_id, :schedule_number => @number2).and_return note4
+        NoteByClause.should_receive(:new).with(:note_text => @text1, :explanatory_notes_file_id => @file_id, :bill_id => @bill_id, :clause_number => @number1, :serial_number => @serial1.to_i).and_return note1
+        NoteByClause.should_receive(:new).with(:note_text => @text2, :explanatory_notes_file_id => @file_id, :bill_id => @bill_id, :clause_number => @number2, :serial_number => @serial2.to_i).and_return note2
+        NoteBySchedule.should_receive(:new).with(:note_text => @text3, :explanatory_notes_file_id => @file_id, :bill_id => @bill_id, :schedule_number => @number1, :serial_number => @serial1.to_i).and_return note3
+        NoteBySchedule.should_receive(:new).with(:note_text => @text4, :explanatory_notes_file_id => @file_id, :bill_id => @bill_id, :schedule_number => @number2, :serial_number => @serial2.to_i).and_return note4
 
         @file.load_notes
       end
