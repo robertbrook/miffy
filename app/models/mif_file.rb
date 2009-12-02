@@ -104,9 +104,9 @@ class MifFile < ActiveRecord::Base
     end
 
     def get_file_type dir, filename
-      cmd = %Q[cd "#{dir}"; grep -A2 "<BookComponent" '#{filename}']
+      cmd = %Q[cd "#{dir}"; grep -A1 "<PDFBookInfo " '#{filename}']
       values = `#{cmd}`
-      if values.include?('<FileName')
+      unless values == ''
         return "Book File"
       end
       
