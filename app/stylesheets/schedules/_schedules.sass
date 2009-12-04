@@ -17,6 +17,7 @@ body
       
     .PgfNumString
       float: left
+      display: block
 
       .PgfNumString_0
         +column(1, true)
@@ -82,6 +83,7 @@ body
             text-align: left
             font-style: italic
             padding: 0.4em 0
+            text-indent: -1.75em
           
         .PartSch
           +column(30, true)
@@ -114,118 +116,188 @@ body
             +column(28, true)
             display: block
             
-          .Paragraph_sch_PgfTag
-            float: left
-            
           .Amendment
-            +prepend(1)
-            +column(29, true)
-            
-            .CenteredHeading
-              +column(29, true)
-              text-align: center
-            
-            .Para
-              +prepend(4)
-              +column(25, true)
-              
-              .Para_text
-                display: block
-                +column(23, true)
+            +push(2)
+            +column(28, true)
+            margin-bottom: 0.3em
             
             .SubSection
-              +column(26, true)
+              +column(28, true)
               
-              .SubSection_PgfTag
-                float: left
-                margin-top: 0.1em
-                margin-bottom: 0.1em
+              .SubSection_text
+                +column(26, true)
+                
+            .CrossHeadingSch
+              +column(28, true)
               
-              .TextContinuation
-                +prepend(2)
-                +column(24, true)
-            
+              .Para_sch
+                +column(28, true)
+                
+                .Para_sch_text
+                  +column(26, true)
+                
+                .SubPara_sch
+                  +column(28, true)
+                  
+                  .SubPara_sch_text
+                    +column(24, true)
+                    
+                  .SubSubPara_sch
+                    +column(23, true)
+                    margin-bottom: 0.1em
+                    
+                    .SubSubPara_sch_text
+                      +column(21, true)
+              
+            .Schedule
+              +column(28, true)
+              
+              .ScheduleNumber_PgfTag
+                +column(28, true)
+                
+                .PgfNumString
+                  +column(28, true)
+                  
+                  .PgfNumString_0
+                    +column(28, true)
+                    
+              .SectionReference
+                +column(28, true)
+                
+              .ScheduleTitle
+                +column(28, true)
+                
+              .ScheduleText
+                +column(28, true)
+                
+                .CrossHeadingSch
+                  +column(28, true)
+                  
+                  .Para_sch
+                    +column(28, true)
+                    
+                    .SubPara_sch
+                      +column(28, true)
+                      
+                      .SubPara_sch_text
+                        +column(24, true)
+                        
+                      .SubSubPara_sch
+                        +column(23, true)
+                        margin-bottom: 0.1em
+                        
+                        .SubSubPara_sch_text
+                          +column(21, true)
+                
             .Clause
-              +column(29, true)
+              +column(28, true)
               
               .ClauseTitle
-                +column(29, true)
+                +column(28, true)
                 font-weight: bold
+                margin-top: 0.4em
+                margin-bottom: 0.4em
                 
-                .ActClauseTitle_text
-                  +column(27, true)
-                  display: block
-                  
+                .ClauseTitle_PgfTag
+                  margin: 0
+                  padding: 0
+                
+                .PgfNumString
+                  text-indent: -1em
+                
               .ClauseText
-                +prepend(3)
-                +column(24, true)
-              
-                .ClauseText_PgfTag
-                  float: left
-                  
+                +push(1)
+                +column(27, true)
+                margin-bottom: 0.1em
+                
                 .SubSection
-                  +column(28, true)
-                  margin: 0.2em 0 0.2em -40px
+                  +column(27, true)
                   
                   .SubSection_text
-                    display: block
-                    +column(26, true)
-                  
+                    +column(25, true)
+                    
+                  .Para
+                    +push(3)
+                    +column(24, true)
+                    margin-bottom: 0.1em
+                    
+                    .Para_text
+                      +column(22, true)
+          
           .SubPara_sch
             +column(30, true)
             
             .SubPara_sch_text
-              display: block
-              +column(25, true)
-              
-            .TextContinuation
-              +prepend(4)
               +column(26, true)
               
-            .Amendment
-              .Definition
-                +prepend(5)
-                +column(23, true)
-                
-                .Definition_PgfTag
-                  float: left
-                  margin-bottom: 0
-                
-              .Table
-                +prepend(4)
-                +column(24, true)
-            
-              .SubSection
-                +prepend(4)
-                +column(24, true)
-                
-                .SubSection_text
-                  display: block
-                  +column(22, true)
-                  
-              .Para
-                +prepend(3)
-                +column(21, true)
-                
-                .Para_text
-                  display: block
-                  +column(19, true)
-             
             .SubSubPara_sch
-              +prepend(5)
+              +push(5)
               +column(25, true)
+              margin-bottom: 0.1em
               
               .SubSubPara_sch_text
-                display: block
                 +column(23, true)
+                
+              .Amendment
+                +push(0)
+                +column(25, true)
+                margin-bottom: 0.3em
+                
+                .SubSection
+                  +column(25, true)
                   
-          .SubSubPara_sch
-            +prepend(3)
-            +column(27, true)
-            
-            .SubSubPara_sch_text
-              display: block
-              +column(25, true)
+                .Para
+                  +push(4)
+                  +column(21, true)
+                  margin-bottom: 0.1em
+                  
+                  .Para_text
+                    +column(19, true)
+                    
+                .TextContinuation
+                  +push(4)
+                  +column(21, true)
+                  margin-bottom: 0.1em
+                  padding-bottom: 0.1em
+                  
+                  .SubSection_PgfTag
+                    padding: 0
+                    margin: 0
+                
+            .Amendment
+              +push(4)
+              +column(26, true)
+              margin-bottom: 0.3em
+              
+              .Para
+                +push(2)
+                +column(24, true)
+                margin-bottom: 0.1em
+                
+                .Para_text
+                  +column(22, true)
+              
+              .SubPara
+                +push(4)
+                +column(22, true)
+                margin-bottom: 0.1em
+                
+                .SubPara_text
+                  +column(20, true)
+                
+              .SubSection
+                +column(26, true)
+              
+                .SubSection_text
+                  +column(24, true)
+                  
+              .Definition
+                +push(4)
+                +column(22, true)
+                
+                .Definition_text
+                  +column(22, true)
+                  text-indent: -1em
               
   .Table    
     .TableTitle
@@ -234,22 +306,21 @@ body
       .SmallCaps
         text-transform: uppercase
         
-    .TableData
-      border-collapse: collapse
+  .TableData
+    border-collapse: collapse
+    
+    th
+      font-weight: normal
+      font-style: italic
+      text-align: center
+      border: 1px solid black
       
-      th
-        font-weight: normal
-        font-style: italic
-        text-align: center
-        border: 1px solid black
-        
-      td
-        border: 1px solid black
-        padding: 0 0.5em
-        
-      td.centered
-        text-align: center
-        
-      td.right
-        text-align: right
-        
+    td
+      border: 1px solid black
+      padding: 0 0.5em
+      
+    td.centered
+      text-align: center
+      
+    td.right
+      text-align: right

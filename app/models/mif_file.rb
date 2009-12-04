@@ -104,6 +104,12 @@ class MifFile < ActiveRecord::Base
     end
 
     def get_file_type dir, filename
+      cmd = %Q[cd "#{dir}"; grep -A1 "<PDFBookInfo " '#{filename}']
+      values = `#{cmd}`
+      unless values == ''
+        return "Book File"
+      end
+      
       cmd = %Q[cd "#{dir}"; grep -A7 "ETag \\`NoticeOfAmds'" '#{filename}' | grep String]
       values = `#{cmd}`
       if values.downcase.include?('notices of amendments')
@@ -144,7 +150,7 @@ class MifFile < ActiveRecord::Base
       unless values == ''
         return "Clauses"
       end
-
+      
       cmd = %Q[cd "#{dir}"; grep -A2 "<ElementBegin" '#{filename}' | grep "ETag \\`Arrangement'"]
       values = `#{cmd}`
       unless values == ''
@@ -156,7 +162,19 @@ class MifFile < ActiveRecord::Base
       unless values == ""
         return "Schedules"
       end
-
+      
+      cmd = %Q[cd "#{dir}"; grep -A1 "ETag \\`Endorse'" '#{filename}']
+      values = `#{cmd}`
+      unless values == ''
+        return "Endorsement"
+      end
+      
+      cmd = %Q[cd "#{dir}"; grep -A1 "ETag \\`Cover'" '#{filename}']
+      values = `#{cmd}`
+      unless values == ''
+        return "Cover"
+      end
+      
       return "Other"
     end
   end

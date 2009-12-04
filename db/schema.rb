@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091021154339) do
+ActiveRecord::Schema.define(:version => 20091202144534) do
 
   create_table "act_parts", :force => true do |t|
     t.integer  "act_id"
@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(:version => 20091021154339) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "range_end"
+    t.integer  "serial_number"
   end
 
   add_index "explanatory_notes", ["bill_id", "clause_number"], :name => "by_bill_clause", :unique => true

@@ -74,6 +74,7 @@ class ExplanatoryNotesParser
     @blank_row_count = 0
     @page_line_count = 0
     @blank_rows_after_header = 0
+    @serial_number = 1
   end
 
   def handle_page_headers line
@@ -357,7 +358,8 @@ class ExplanatoryNotesParser
       number = $1
     end
 
-    add_section_start('Clause', number)
+    add_section_start('Clause', @serial_number, number)
+    @serial_number += 1
     @xml << last_line if insert_heading
     @in_clause = true
   end
@@ -423,7 +425,8 @@ class ExplanatoryNotesParser
       number = $1
     end
 
-    add_section_start('Schedule', number)
+    add_section_start('Schedule', @serial_number, number)
+    @serial_number += 1
     @in_schedule = true
   end
 
@@ -452,7 +455,8 @@ class ExplanatoryNotesParser
       number = $1
     end
 
-    add_section_start('Chapter', number)
+    add_section_start('Chapter', @serial_number, number)
+    @serial_number += 1
     @in_chapter = true
   end
 
@@ -486,7 +490,8 @@ class ExplanatoryNotesParser
     end
     
     unless @in_schedule
-      add_section_start('Part', number)
+      add_section_start('Part', @serial_number, number)
+      @serial_number += 1
       @in_part = true
     end
   end
@@ -521,14 +526,14 @@ class ExplanatoryNotesParser
     end
   end
 
-  def add_section_start tag, number = ""
+  def add_section_start tag, serial, number = ""
     add_bill_info unless @doc_started
     if number == ""
       num_attr = ""
     else
       num_attr = %Q| Number="#{number}"|
     end
-    add "<#{tag}#{num_attr}>"
+    add %Q|<#{tag}#{num_attr} SerialNumber="#{serial}">|
   end
 
   def add_bill_info
@@ -592,7 +597,8 @@ class ExplanatoryNotesParser
       end
 
       unless @in_clause || @in_schedule || @in_part || @in_chapter || @in_section || @in_clause_range
-        add_section_start('TextSection')
+        add_section_start('TextSection', @serial_number)
+        @serial_number += 1
         @in_section = true
       end
 

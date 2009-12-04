@@ -414,7 +414,7 @@ describe ActResolver, ' when matching acts' do
   end
 
   it 'should match "Post Office Act 1953" in "Amendments to the Post Office Act 1953"' do
-      should_match_acts("Amendments to the Post Office Act 1953", "Post Office Act 1953")
+    should_match_acts("Amendments to the Post Office Act 1953", "Post Office Act 1953")
   end
 
   it 'should match "Children Act 1989" in "An Introduction to the Children Act 1989"' do
@@ -1020,6 +1020,14 @@ describe ActResolver, ' when matching acts' do
   it 'should match "Video <ParaLineStart LineNum="11"/>Recordings Act 1984;"' do
     expect_match('Video <ParaLineStart LineNum="11"/>Recordings Act 1984')
   end
+
+  it 'should match "Section 3 of the Communications Act 2003"' do
+    expect_match('Section 3 of the Communications Act 2003')
+  end
+
+  it 'should match "section <Xref id="1137592" Idref="mf.451j-1112728">124A</Xref> of the Communications Act 2003"' do
+    expect_match('section <Xref id="1137592" Idref="mf.451j-1112728">124A</Xref> of the Communications Act 2003')
+  end
 end
 
 describe ActResolver, " when asked for Act mention attributes" do
@@ -1034,14 +1042,39 @@ describe ActResolver, " when asked for Act mention attributes" do
     @resolver.mention_attributes
   end
 
-  it 'should return a hash of title, year, start position and end position for each reference' do
-    @resolver.stub!(:name_and_year).and_return(["name", 1974])
+  it 'should return an object with title, year, start position and end position for each reference' do
+    @resolver.stub!(:name_and_year).and_return(["An Act", 1974])
     mention = @resolver.mention_attributes.first
-    mention.name.should == "name"
-    mention.text.should == "name"
+    mention.name.should == "An Act"
+    mention.text.should == "An Act"
     mention.year.should == 1974
     mention.start_position.should == 0
     mention.end_position.should == 5
+    mention.section_number.should == nil
+  end
+
+  it 'should return name with markup removed' do
+    resolver = ActResolver.new('section <Xref id="1137592" Idref="mf.451j-1112728">124A</Xref> of the Communications Act 2003')
+    mention = resolver.mention_attributes.first
+    mention.name.should == 'Communications Act'
+    mention.text.should == 'section <Xref id="1137592" Idref="mf.451j-1112728">124A</Xref> of the Communications Act 2003'
+    mention.year.should == '2003'
+  end
+
+  it 'should return an object with section number for section reference' do
+    resolver = ActResolver.new('Section 3 of the Communications Act 2003')
+    mention = resolver.mention_attributes.first
+    mention.name.should == 'Communications Act'
+    mention.text.should == 'Section 3 of the Communications Act 2003'
+    mention.section_number.should == '3'
+  end
+
+  it 'should return an object with alphanumeric section number for section reference' do
+    resolver = ActResolver.new('section 124A  of the Communications Act 2003')
+    mention = resolver.mention_attributes.first
+    mention.name.should == 'Communications Act'
+    mention.text.should == 'section 124A  of the Communications Act 2003'
+    mention.section_number.should == '124A'
   end
 
 end
