@@ -1,0 +1,49 @@
+<Document><BillData><Amendments.Commons id="1038816" Auto="Yes"><PageStart id="996720" PageType="BodyPage" PageNum="1">Page 1</PageStart><Head id="1039522"><HeadAmd id="1039526"><Date id="1039529"><Day id="1039532"><ParaLineStart LineNum="1"></ParaLineStart>Wednesday  </Day><Date.text id="1039539">15th January 2003</Date.text>
+</Date>
+<ParaLineStart LineNum="2"></ParaLineStart><Stageheader id="1039545">Standing Committee E</Stageheader>
+<ParaLineStart LineNum="3"></ParaLineStart><Shorttitle id="1039550">Communications Bill</Shorttitle>
+</HeadAmd>
+</Head>
+<Committee id="1038831"><Clause.Committee id="1039565"><Sponsors id="1039569"><Sponsor id="1039572"><ParaLineStart LineNum="4"></ParaLineStart>Mr Stephen Timms</Sponsor>
+<Sponsor id="1039577"><ParaLineStart LineNum="5"></ParaLineStart>Dr Kim Howells</Sponsor>
+</Sponsors>
+<Amendment.Number id="1039583">
+<AmendmentNumber_PgfTag id="1039585"><PgfNumString><PgfNumString_0>1</PgfNumString_0> </PgfNumString></AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1039618">
+<AmedTextCommitReport_PgfTag id="1039619"><ParaLineStart LineNum="6"></ParaLineStart><AmendmentReference Clause="269" Page="238" Line="10"><Number id="1039588">Clause <Clause_number>269</Clause_number>, </Number>
+<Page id="1039598">page <Page_number>238</Page_number>, </Page>
+<Line id="1039608">line <Line_number>10</Line_number>, </Line>
+</AmendmentReference>leave out ‘subsection (1)’ and insert ‘this sec-<ParaLineStart LineNum="7"></ParaLineStart>tion’.</AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1039632"><Sponsors id="1039636"><Sponsor id="1039639"><ParaLineStart LineNum="8"></ParaLineStart>Mr Stephen Timms</Sponsor>
+<Sponsor id="1039644"><ParaLineStart LineNum="9"></ParaLineStart>Dr Kim Howells</Sponsor>
+</Sponsors>
+<Amendment.Number id="1039650">
+<AmendmentNumber_PgfTag id="1039652"><PgfNumString><PgfNumString_0>2</PgfNumString_0> </PgfNumString></AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1039685">
+<AmedTextCommitReport_PgfTag id="1039688"><ParaLineStart LineNum="10"></ParaLineStart><AmendmentReference Clause="269" Page="238" Line="11"><Number id="1039655">Clause <Clause_number>269</Clause_number>, </Number>
+<Page id="1039665">page <Page_number>238</Page_number>, </Page>
+<Line id="1039675">line <Line_number>11</Line_number>, </Line>
+</AmendmentReference>leave out ‘the’ and insert ‘a’.</AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1039698"><Sponsors id="1039702"><Sponsor id="1039705"><ParaLineStart LineNum="11"></ParaLineStart>Mr Stephen Timms</Sponsor>
+<Sponsor id="1039710"><ParaLineStart LineNum="12"></ParaLineStart>Dr Kim Howells</Sponsor>
+</Sponsors>
+<Amendment.Number id="1039716">
+<AmendmentNumber_PgfTag id="1039718"><PgfNumString><PgfNumString_0>3</PgfNumString_0> </PgfNumString></AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1039751">
+<AmedTextCommitReport_PgfTag id="1039752"><ParaLineStart LineNum="13"></ParaLineStart><AmendmentReference Clause="269" Page="238" Line="14"><Number id="1039721">Clause <Clause_number>269</Clause_number>, </Number>
+<Page id="1039731">page <Page_number>238</Page_number>, </Page>
+<Line id="1039741">line <Line_number>14</Line_number>, </Line>
+</AmendmentReference>leave out ‘that subsection’ and insert ‘this sec-<ParaLineStart LineNum="14"></ParaLineStart>tion’.</AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+</Committee>
+<EndRule id="1039513"></EndRule>
+</Amendments.Commons>
+<Interpretation></Interpretation><Footer></Footer></BillData></Document>
