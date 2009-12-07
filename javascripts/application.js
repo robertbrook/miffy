@@ -4,8 +4,8 @@ function imgswap(img_id)
  {
     if ($(img_id).src.indexOf('down-arrow.png') > 0)
     {
-        $(img_id).src = '/images/right-arrow.png';
+        $(img_id).src = 'images/right-arrow.png';
     } else {
-        $(img_id).src = '/images/down-arrow.png';
+        $(img_id).src = 'images/down-arrow.png';
     }
 }
