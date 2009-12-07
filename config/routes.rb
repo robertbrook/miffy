@@ -1,15 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-
-  map.root :controller => "application"
-
-  map.connect '/convert', :controller => "application", :action => 'convert'
-  map.connect '/act', :controller => "application", :action => 'act'
-  map.connect '/api', :controller => "api", :action => 'index'
-  map.connect '/api/clause_note/', :controller => "api", :action => 'clause_note'
-  map.connect '/api/schedule_note/', :controller => "api", :action => 'schedule_note'
-
-  map.resources :acts
-
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
@@ -28,7 +17,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # Sample resource route with sub-resources:
   #   map.resources :products, :has_many => [ :comments, :sales ], :has_one => :seller
-
+  
   # Sample resource route with more complex sub-resources
   #   map.resources :products do |products|
   #     products.resources :comments
@@ -40,6 +29,9 @@ ActionController::Routing::Routes.draw do |map|
   #     # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
   #     admin.resources :products
   #   end
+
+  # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
+  # map.root :controller => "welcome"
 
   # See how all your routes lay out with "rake routes"
 
