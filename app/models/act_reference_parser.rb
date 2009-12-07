@@ -99,7 +99,11 @@ class ActReferenceParser
     end
 
     def find_section_preceeding node
-      /(section (\d+) of the)$/ =~ node.previous_node.inner_text.strip
+      begin
+        /(section (\d+) of the)$/ =~ node.previous_node.inner_text.strip
+      rescue
+        return nil, nil
+      end
       return $1, $2
     end
 

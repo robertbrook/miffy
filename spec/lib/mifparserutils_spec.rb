@@ -192,6 +192,16 @@ describe MifParserUtils do
                   |
     end
 
+    it 'should expand anchor followed by a semicolon' do
+      text = %Q|
+        %a{ :name => "page67-line7" }
+        %a{ :name => "clause106-page67-line7" }
+        ;|
+      @utils.format_haml(text).should == %Q|
+        =%Q{<a name=\"page67-line7\"></a><a name=\"clause106-page67-line7\"></a>;}
+        |
+    end
+
     it 'should expand citation span followed by comma' do
       text = %Q|
                   %span.Citation

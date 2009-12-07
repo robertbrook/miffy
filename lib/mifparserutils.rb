@@ -24,48 +24,52 @@ module MifParserUtils
   COLLAPSE_SPACE_BETWEEN_SPAN_AND_COMMA  = Regexp.new('((\s+)(%span\.Citation\n)(\s+)([^\n]+)(\n)(\s+)(, ?))', Regexp::MULTILINE)
   COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_SEMICOLON = Regexp.new('(\s+)(%a\{)([^\n]+)(\}\n)(\s+)([^\n]+)(\n)(\s+)(;)', Regexp::MULTILINE)
 
+  def for_each_match pattern, haml
+    matches = []
+    haml.scan(pattern) do |match|
+      matches << match
+    end
+    matches.each do |match|
+      yield match
+    end
+  end
+
+  def make_attr text
+    text.gsub(' => ','=').gsub(', :',' ').sub(' :',' ').strip
+  end
+
   def format_haml haml, clauses_file_name=nil
     haml = haml.gsub(NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX,  '\1\2 <span class="\4_number">\6</span>\8')
     haml.gsub!(NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX_2,  '\1\2 <span class="\4_number">\6</span>' + "\n")
     haml.gsub!(NEED_SPACE_BETWEEN_LABEL_AND_XREF_REGEX, '\1\2 <span class="Xref" id="\4">\6</span>\8\9')
     haml.gsub!(NEED_SPACE_BETWEEN_LABEL_AND_XREF_REGEX_2, '\1\2 <span class="Xref" id="\4">\6</span>\8')
 
-    matches = []
-    haml.scan(COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_COMMA) do |match|
-      matches << match
-    end
-    matches.each do |match|
+    for_each_match(COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_COMMA, haml) do |match|
       text = match.to_s
       to = "#{match[0]}=%Q{<a #{match[2].gsub(' => ','=').gsub(', :',' ').sub(' :',' ').strip}>#{match[5]}</a>,}\n#{match[7]}"
       haml.gsub!(text, to)
     end
 
-    matches.clear
-    haml.scan(COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_COMMA_2) do |match|
-      matches << match
-    end
-    matches.each do |match|
+    for_each_match(COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_COMMA_2, haml) do |match|
       text = match[0].to_s
       to = %Q|#{match[1]}=%Q{<a id="#{match[3]}" class="Citation" #{match[4].gsub(' => ','=').gsub(', :',' ').sub(' :',' ').strip}>#{match[7]}</a>,}\n#{match[9]}|
       haml.gsub!(text, to)
     end
-    matches.clear
-    haml.scan(COLLAPSE_SPACE_BETWEEN_SPAN_AND_COMMA) do |match|
-      matches << match
-    end
-    matches.each do |match|
+
+    for_each_match(COLLAPSE_SPACE_BETWEEN_SPAN_AND_COMMA, haml) do |match|
       text = match[0].to_s
       to = %Q|#{match[1]}=%Q{<span class="Citation">#{match[4]}</span>,}\n#{match[6]}|
       haml.gsub!(text, to)
     end
 
-    matches.clear
-    haml.scan(COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_SEMICOLON) do |match|
-      matches << match
-    end
-    matches.each do |match|
+    for_each_match(COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_SEMICOLON, haml) do |match|
       text = match.to_s
-      to = "#{match[0]}=%Q{<a #{match[2].gsub(' => ','=').gsub(', :',' ').sub(' :',' ').strip}>#{match[5]}</a>;}\n#{match[7]}"
+      second_line = match[5]
+      if second_line[/(%a\{)([^\n]+)(\})/]
+        to = "#{match[0]}=%Q{<a #{make_attr(match[2])}></a><a #{make_attr($2)}></a>;}\n#{match[7]}"
+      else
+        to = "#{match[0]}=%Q{<a #{make_attr(match[2])}>#{second_line}</a>;}\n#{match[7]}"
+      end
       haml.gsub!(text, to)
     end
 
@@ -85,6 +89,7 @@ module MifParserUtils
     end
     haml.gsub!('\&nbsp; ','\ ')
     haml.gsub!(/(\s+)\\.\n/,'\1%span<>' + '\1  \.' + "\n")
+    haml.gsub!(';}<>', ';}')
     haml
   end
 
