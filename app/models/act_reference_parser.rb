@@ -4,25 +4,38 @@ require 'hpricot'
 class ActReferenceParser
 
   class << self
+
+    def internal_id_part node
+      part = nil
+      case node.name
+        when 'Amendment'
+          part = "amendment"
+        when 'SubSection'
+          if (num = node.at('SubSection_PgfTag/PgfNumString'))
+            part = "subsection#{num.inner_text.tr('()','').strip}"
+          end
+        when 'Clause'
+          if (num = node.at('ClauseTitle/ClauseTitle_PgfTag/PgfNumString') )
+            part = "clause#{num.inner_text.tr('()','').strip}"
+          end
+      end
+      part
+    end
+
     def internal_ids doc
       ids = {}
       (doc/'//[@Id]').each do |e|
 
-        id = "#{e.name.to_s.downcase}#{e['Number']}#{e['Letter'] ? e['Letter'] : ''}"
+        if e['Number']
+          id = "#{e.name.to_s.downcase}#{e['Number']}#{e['Letter'] ? e['Letter'] : ''}"
+        elsif part = internal_id_part(e)
+          id = part
+        end
 
         parent = e.parent
         while parent
-          case parent.name
-            when 'Amendment'
-              id = "amendment-#{id}"
-            when 'SubSection'
-              if (num = parent.at('SubSection_PgfTag/PgfNumString'))
-                id = "subsection#{num.inner_text.tr('()','')}-#{id}"
-              end
-            when 'Clause'
-              if (num = parent.at('ClauseTitle/ClauseTitle_PgfTag/PgfNumString') )
-                id = "clause#{num.inner_text.tr('()','')}-#{id}"
-              end
+          if part = internal_id_part(parent)
+            id = "#{part}-#{id}"
           end
           parent = parent.parent
         end
