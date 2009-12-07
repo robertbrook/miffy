@@ -1,0 +1,110 @@
+@import ../partials/base.sass
+@import ../partials/_amendment_docs_shared.sass
+@import blueprint
+
+.Head
+  +column(30, true)
+        
+  .HeadConsider, .HeadAmd
+    float: left
+    +column(30 ,true)
+    clear: both
+      
+    .Date
+      +column(30, true)
+      +date_heading
+        
+    .Stageheader
+      +stage_title
+      +column(30, true)
+      clear: both
+      
+    .CommitteeShorttitle, .Shorttitle
+      +column(30, true)
+      clear: both
+      +bill_title
+            
+    .ClausesToBeConsidered
+      +considered_clauses
+      clear: both
+        
+    .MarshalledOrderNote
+      font-weight: bold
+      +prepend(2)
+      +column(28, true)
+      clear: both
+      text-align: left
+
+      .Notehead
+        text-transform: uppercase
+
+      .NoteTxt
+        +prepend(1)
+        +column(26, true)
+
+    .Resolution
+      +column(30, true)
+      padding: 1em 0 0 0
+      clear: both
+
+      .ResolutionHead
+        +column(30, true)
+        clear: both
+
+      .ResolutionDate
+        +column(30, true)
+        clear: both
+        font-style: italic
+
+      .ResolutionText > p.ResolutionPara > span.ResolutionPara_text
+        column(29, true)
+
+      .ResolutionText
+        +column(30, true)
+        clear: both
+
+        .ResolutionText_text
+          +column(30, true)
+
+        .PgfNumString
+          +prepend(1)
+
+      p.ResolutionPara_PgfTag
+        float: left
+        display: block
+
+      span.ResolutionPara_PgfTag
+        display: block
+        column(26, true)
+
+      .ResolutionSubPara
+        display: block
+        +column(22, true)
+
+      .ResolutionPara
+        +column(26, true)
+      
+      .Motion
+        +column(30, true)
+        clear: both
+
+        .Proposer_name
+          +column(30, true)
+
+        .Text_motion
+          +column(29, true)
+          margin: 0.5em 0
+          +prepend(1)
+
+    .Motion
+      +column(30, true)
+      padding: 0.5em 0
+      clear: both
+      
+      .Proposer_name
+        +column(30, true)
+      
+      .Text_motion
+        column(30, true)
+        +indent
+        float: left

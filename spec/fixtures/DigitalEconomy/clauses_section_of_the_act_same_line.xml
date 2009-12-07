@@ -1,0 +1,36 @@
+
+<Document>
+  <BillData>
+    <BillTitle>Digital Economy Bill [HL]</BillTitle>
+    <Clauses id="1112573">
+      <PageStart id="996720" PageType="BodyPage" PageNum="1">Page 1</PageStart>
+      <Rubric id="1003899" TemplateVersion="4.2.002"></Rubric>
+      <CrossHeading id="1112628">
+        <CrossHeadingTitle id="1113244">
+          <ParaLineStart LineNum="16"></ParaLineStart>General duties of OFCOM</CrossHeadingTitle>
+        <Clause id="1093880" HardReference="j712" TemplateVersion="4.2.002">
+          <ClauseTitle id="1093884">
+            <ClauseTitle_PgfTag id="1113257">
+              <PgfNumString>
+                <PgfNumString_1>1</PgfNumString_1>
+              </PgfNumString>
+              <ClauseTitle_text>
+                <ParaLineStart LineNum="17"></ParaLineStart>General duties of OFCOM</ClauseTitle_text>
+            </ClauseTitle_PgfTag>
+          </ClauseTitle>
+          <ClauseText id="1099624">
+            <SubSection id="1110091">
+              <SubSection_PgfTag id="1113262">
+                <PgfNumString>
+                  <PgfNumString_1>(1)</PgfNumString_1>
+                </PgfNumString>
+                <SubSection_text>
+                  <ParaLineStart LineNum="18"></ParaLineStart>Section 3 of the Communications Act 2003 (general duties of OFCOM) is <ParaLineStart LineNum="19"></ParaLineStart>amended as follows.</SubSection_text>
+              </SubSection_PgfTag>
+            </SubSection>
+          </ClauseText>
+        </Clause>
+      </CrossHeading>
+    </Clauses>
+  </BillData>
+</Document>

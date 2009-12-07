@@ -1,0 +1,57 @@
+- params[:interleave] ? (params[:wide] ? @ens = 'interleaved_wide' : @ens = 'interleaved') : @ens = ''
+<!DOCTYPE html>
+%html{:lang=>"en-GB"}
+  %head
+    %title= @title ? @title : 'Miffy'
+    %meta{ :content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type" }
+    %meta{ :name=>"viewport", :content=>"width = 480" }
+    - if external_sheet
+      = stylesheet_link_tag external_sheet, :media => 'screen, projection, print'
+    -else
+      = stylesheet_link_tag 'ie', :media => 'screen, projection'
+      -unless params[:wide]
+        = stylesheet_link_tag 'screen', :media => 'screen, projection'
+      -if page_class.include? 'index'
+        = stylesheet_link_tag 'index', :media => 'screen, projection'
+      -if page_class.include? 'convert'
+        = stylesheet_link_tag stylesheet_path(target_file, @ens), :media => 'screen, projection'
+        = stylesheet_link_tag stylesheet_path(target_file, @ens) + '_print', :media => 'print'
+      -if page_class.include? 'act'
+        = stylesheet_link_tag 'act', :media => 'screen, projection'
+    = javascript_include_tag "prototype", "application", :cache => true 
+    - if page_class.include? 'convert'      
+      %link{ :href=>"convert?file=" + @mif_file.escaped_path + "&format=text", :rel=>"alternate", :title=>"Text output", :type=>"text/plain" }
+  %body{:class => page_class, :id => "miffy-parliament-uk"}
+    #outer_container
+      #page_container
+        #page_header
+          #navigation
+            MIFFY
+            = link_to_unless_current("Index", { :action => "index" }, :title => "Index of files")
+            - if @show_interleave_link
+              &middot;
+              = link_to('Page ENs', "convert?file=#{@mif_file.path}&interleave=true")
+              &middot;
+              = link_to('Wide ENs', "convert?file=#{@mif_file.path}&interleave=true&wide=true")
+            - elsif @show_uninterleave_link
+              &middot;
+              = link_to('Hide ENs', "convert?file=#{@mif_file.path}")
+            - if page_class == 'application convert'
+              &middot;
+              =link_to('Text', "convert?file=#{@mif_file.path}&format=text")
+              &middot;
+              =link_to('Reload', "convert?file=#{@mif_file.path}&force=true")
+              - if document_type(target_file).include?('clauses')
+                - unless params[:style]
+                  &middot;
+                  =link_to('Alternate style', "convert?file=#{@mif_file.path}&style=/stylesheets/clauses_demo.css")
+                - else
+                  &middot;
+                  =link_to('Standard style', "convert?file=#{@mif_file.path}")
+        #container= yield
+        #page_footer
+          =link_to("Code", "http://github.com/robertbrook/miffy")
+          &middot;
+          =link_to("Issues", "http://github.com/robertbrook/miffy/issues")
+          &middot;
+          =link_to("Copyright", "http://www.parliament.uk/site_information/parliamentary_copyright.cfm", :rel=>"rights copyright usage")

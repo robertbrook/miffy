@@ -1,0 +1,738 @@
+A.link {
+	color: blue;
+	text-decoration: underline;
+}
+A.visited {
+	color: purple;
+	text-decoration: underline;
+}
+A.active {
+	color: red;
+	text-decoration: underline;
+}
+P.Body {
+	display: block;
+	text-align: justify;
+	text-indent: 0.000000pt;
+	margin-top: 0.000000pt;
+	margin-bottom: 0.000000pt;
+	margin-right: 0.000000pt;
+	margin-left: 0.000000pt;
+	font-size: 12.000000pt;
+	font-weight: medium;
+	font-style: Regular;
+	color: #000000;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: none;
+	font-family: "Book Antiqua Parliamentary";
+}
+P.CellBody {
+	display: block;
+	text-align: justify;
+	text-indent: -12.000000pt;
+	margin-top: 1.000000pt;
+	margin-bottom: 0.000000pt;
+	margin-right: 0.000000pt;
+	margin-left: 12.000000pt;
+	font-size: 11.000000pt;
+	font-weight: medium;
+	font-style: Regular;
+	color: #000000;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: none;
+	font-family: "Book Antiqua Parliamentary";
+}
+P.CellHeading {
+	display: block;
+	text-align: center;
+	text-indent: 0.000000pt;
+	margin-top: 0.000000pt;
+	margin-bottom: 0.000000pt;
+	margin-right: 0.000000pt;
+	margin-left: 0.000000pt;
+	font-size: 11.000000pt;
+	font-weight: medium;
+	font-style: Italic;
+	color: #000000;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: none;
+	font-family: "Book Antiqua Parliamentary";
+}
+P.Indented {
+	display: block;
+	text-align: left;
+	text-indent: 0.000000pt;
+	margin-top: 0.000000pt;
+	margin-bottom: 0.000000pt;
+	margin-right: 0.000000pt;
+	margin-left: 14.173187pt;
+	font-size: 12.000000pt;
+	font-weight: medium;
+	font-style: Regular;
+	color: #000000;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: none;
+	font-family: "Book Antiqua Parliamentary";
+}
+P.Mapping-Table-Cell {
+	display: block;
+	text-align: left;
+	text-indent: 0.000000pt;
+	margin-top: 2.000000pt;
+	margin-bottom: 2.000000pt;
+	margin-right: 0.000000pt;
+	margin-left: 0.000000pt;
+	font-size: 12.000000pt;
+	font-weight: medium;
+	font-style: Regular;
+	color: #000000;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: none;
+	font-family: "Times New Roman";
+}
+P.Mapping-Table-Title {
+	display: block;
+	text-align: left;
+	text-indent: 0.000000pt;
+	margin-top: 2.000000pt;
+	margin-bottom: 2.000000pt;
+	margin-right: 0.000000pt;
+	margin-left: 0.000000pt;
+	font-size: 14.000000pt;
+	font-weight: medium;
+	font-style: Regular;
+	color: #000000;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: none;
+	font-family: "Times New Roman";
+}
+H1.TableTitle, H2.TableTitle, H3.TableTitle, H4.TableTitle, H5.TableTitle, H6.TableTitle {
+	display: block;
+	text-align: center;
+	text-indent: 0.000000pt;
+	margin-top: 1.000000pt;
+	margin-bottom: 0.000000pt;
+	margin-right: 0.000000pt;
+	margin-left: 0.000000pt;
+	font-size: 11.000000pt;
+	font-weight: medium;
+	font-style: Regular;
+	color: #000000;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: none;
+	font-family: "Book Antiqua Parliamentary";
+}
+EM.Emphasis {
+	font-style: Italic;
+}
+EM.EquationVariables {
+	font-style: Regular;
+}
+DIV.ABillTo {
+	display: block;
+	font-size: 10.000000pt;
+}
+P.Abt1 {
+	display: block;
+	text-align: center;
+	text-indent: 0.000000pt;
+	margin-top: 0.000000pt;
+	margin-bottom: 11.000000pt;
+	margin-right: 0.000000pt;
+	margin-left: 0.000000pt;
+	font-size: 9.000000pt;
+	font-weight: medium;
+	font-style: Regular;
+	color: #000000;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: uppercase;
+	font-family: "Book Antiqua Parliamentary";
+}
+P.Abt2 {
+	display: block;
+	text-align: center;
+	text-indent: 0.000000pt;
+	margin-top: 0.000000pt;
+	margin-bottom: 0.000000pt;
+	margin-right: 0.000000pt;
+	margin-left: 0.000000pt;
+	font-size: 30.000000pt;
+	font-weight: Bold;
+	font-style: Regular;
+	color: #000000;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: uppercase;
+	font-family: "Book Antiqua Parliamentary";
+}
+DIV.Abt3 {
+	display: block;
+}
+P.Abt4 {
+	display: block;
+	text-align: center;
+	text-indent: 0.000000pt;
+	margin-top: 6.000000pt;
+	margin-bottom: 0.000000pt;
+	margin-right: 0.000000pt;
+	margin-left: 0.000000pt;
+	font-size: 9.000000pt;
+	font-weight: medium;
+	font-style: Regular;
+	color: #000000;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: uppercase;
+	font-family: "Book Antiqua Parliamentary";
+}
+P.ActEnactmentYear {
+	display: block;
+}
+P.ActShortTitle {
+	display: block;
+	text-align: center;
+	text-indent: 0.000000pt;
+	margin-top: 31.000000pt;
+	margin-bottom: 15.000000pt;
+	margin-right: 0.000000pt;
+	margin-left: 0.000000pt;
+	font-size: 24.000000pt;
+	font-weight: medium;
+	font-style: Regular;
+	color: #000000;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: none;
+	font-family: "Book Antiqua Parliamentary";
+}
+P.ActYearChapter {
+	display: block;
+}
+P.Amendment {
+	display: block;
+}
+DIV.Arrangement {
+	display: block;
+}
+DIV.AsAm {
+	display: block;
+}
+DIV.Back {
+	display: block;
+}
+DIV.Bill {
+	display: block;
+}
+SPAN.BillReference {
+}
+SPAN.Bold {
+	font-weight: Bold;
+}
+P.Bpara {
+	display: block;
+}
+P.Caption {
+	display: block;
+}
+P.CenteredHeading {
+	display: block;
+	font-size: 11.000000pt;
+	font-family: "Book Antiqua Parliamentary";
+}
+DIV.Chapter {
+	display: block;
+}
+DIV.Chapter-ar {
+	display: block;
+}
+P.ChapterNumber {
+	display: block;
+}
+P.ChapterNumber-ar {
+	display: block;
+	text-align: center;
+	text-indent: 0.000000pt;
+	margin-top: 12.000000pt;
+	margin-bottom: 12.000000pt;
+	margin-right: 0.000000pt;
+	margin-left: 0.000000pt;
+	font-size: 11.000000pt;
+	font-weight: Bold;
+	font-style: small-caps Regular;
+	color: #000000;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: none;
+	font-family: "Book Antiqua Parliamentary";
+}
+P.ChapterTitle {
+	display: block;
+}
+P.ChapterTitle-ar {
+	display: block;
+	text-align: center;
+	text-indent: 0.000000pt;
+	margin-top: 12.000000pt;
+	margin-bottom: 12.000000pt;
+	margin-right: 0.000000pt;
+	margin-left: 0.000000pt;
+	font-size: 11.000000pt;
+	font-weight: medium;
+	font-style: small-caps Regular;
+	color: #000000;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: none;
+	font-family: "Book Antiqua Parliamentary";
+}
+SPAN.Citation {
+}
+DIV.Clause {
+	display: block;
+}
+P.Clause-ar {
+}
+DIV.Clauses {
+	display: block;
+}
+DIV.Clauses-ar {
+	display: block;
+}
+P.ClauseText {
+	display: block;
+}
+P.ClauseTitle {
+	display: block;
+}
+DIV.Corrigendum {
+	display: block;
+}
+P.CorriHeading {
+}
+P.CorriPara {
+	display: block;
+	text-align: justify;
+	text-indent: 0.000000pt;
+	margin-top: 0.000000pt;
+	margin-bottom: 0.000000pt;
+	margin-right: 0.000000pt;
+	margin-left: 0.000000pt;
+	font-size: 12.000000pt;
+	font-weight: medium;
+	font-style: Regular;
+	color: #000000;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: none;
+	font-family: "Book Antiqua Parliamentary";
+}
+DIV.Cover {
+	display: block;
+}
+P.CoverHeading {
+}
+P.CoverPara {
+	display: block;
+	text-align: justify;
+	text-indent: 0.000000pt;
+	margin-top: 0.000000pt;
+	margin-bottom: 0.000000pt;
+	margin-right: 0.000000pt;
+	margin-left: 0.000000pt;
+	font-size: 12.000000pt;
+	font-weight: medium;
+	font-style: Regular;
+	color: #000000;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: none;
+	font-family: "Book Antiqua Parliamentary";
+}
+DIV.CrossHeading {
+	display: block;
+}
+DIV.CrossHeading-ar {
+	display: block;
+}
+DIV.CrossHeadingSch {
+	display: block;
+}
+P.CrossHeadingTitle {
+	display: block;
+}
+P.CrossHeadingTitle-ar {
+	display: block;
+}
+P.Definition {
+	display: block;
+}
+DIV.DefinitionList {
+	display: block;
+}
+P.DefinitionListItem {
+	display: block;
+}
+SPAN.Draft {
+}
+SPAN.Enact {
+}
+P.Enda {
+	display: block;
+	text-align: center;
+	text-indent: 0.000000pt;
+	margin-top: 0.000000pt;
+	margin-bottom: 11.000000pt;
+	margin-right: 0.000000pt;
+	margin-left: 0.000000pt;
+	font-size: 9.000000pt;
+	font-weight: medium;
+	font-style: Regular;
+	color: #000000;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: uppercase;
+	font-family: "Book Antiqua Parliamentary";
+}
+P.Endb {
+	display: block;
+	text-align: center;
+	text-indent: 0.000000pt;
+	margin-top: 0.000000pt;
+	margin-bottom: 0.000000pt;
+	margin-right: 0.000000pt;
+	margin-left: 0.000000pt;
+	font-size: 30.000000pt;
+	font-weight: Bold;
+	font-style: Regular;
+	color: #000000;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: uppercase;
+	font-family: "Book Antiqua Parliamentary";
+}
+DIV.Endorse {
+	display: block;
+}
+SPAN.Font {
+}
+DIV.Front {
+	display: block;
+}
+SPAN.Graphic {
+}
+DIV.Group {
+	display: block;
+}
+DIV.Group-ar {
+	display: block;
+}
+P.GroupNumber {
+	display: block;
+	text-align: center;
+	text-indent: 0.000000pt;
+	margin-top: 14.000000pt;
+	margin-bottom: 14.000000pt;
+	margin-right: 0.000000pt;
+	margin-left: 0.000000pt;
+	font-size: 13.000000pt;
+	font-weight: Bold;
+	font-style: small-caps Regular;
+	color: #000000;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: none;
+	font-family: "Book Antiqua Parliamentary";
+}
+P.GroupNumber-ar {
+	display: block;
+	text-align: center;
+	text-indent: 0.000000pt;
+	margin-top: 14.000000pt;
+	margin-bottom: 14.000000pt;
+	margin-right: 0.000000pt;
+	margin-left: 0.000000pt;
+	font-size: 13.000000pt;
+	font-weight: Bold;
+	font-style: small-caps Regular;
+	color: #000000;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: none;
+	font-family: "Book Antiqua Parliamentary";
+}
+P.GroupTitle {
+	display: block;
+	text-align: center;
+	text-indent: 0.000000pt;
+	margin-top: 14.000000pt;
+	margin-bottom: 14.000000pt;
+	margin-right: 0.000000pt;
+	margin-left: 0.000000pt;
+	font-size: 13.000000pt;
+	font-weight: medium;
+	font-style: small-caps Regular;
+	color: #000000;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: none;
+	font-family: "Book Antiqua Parliamentary";
+}
+P.GroupTitle-ar {
+	display: block;
+	text-align: center;
+	text-indent: 0.000000pt;
+	margin-top: 14.000000pt;
+	margin-bottom: 14.000000pt;
+	margin-right: 0.000000pt;
+	margin-left: 0.000000pt;
+	font-size: 13.000000pt;
+	font-weight: medium;
+	font-style: small-caps Regular;
+	color: #000000;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: none;
+	font-family: "Book Antiqua Parliamentary";
+}
+P.Heading-ar {
+}
+SPAN.Italic {
+	font-style: Italic;
+}
+SPAN.Jref {
+	color: #0000ff;
+}
+SPAN.Letter {
+}
+DIV.List {
+	display: block;
+}
+P.ListItem {
+	display: block;
+}
+DIV.ListSch {
+	display: block;
+}
+P.ListSchItem {
+	display: block;
+	text-align: justify;
+	text-indent: -12.000000pt;
+	margin-top: 2.000000pt;
+	margin-bottom: 0.000000pt;
+	margin-right: 0.000000pt;
+	margin-left: 72.000000pt;
+	font-size: 11.000000pt;
+	font-weight: medium;
+	font-style: Regular;
+	color: #000000;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: none;
+	font-family: "Book Antiqua Parliamentary";
+}
+SPAN.LongTitle {
+}
+P.Lth {
+	display: block;
+}
+P.Origin {
+	display: block;
+}
+P.Para {
+	display: block;
+}
+P.Para-sch {
+	display: block;
+}
+DIV.Part {
+	display: block;
+}
+DIV.Part-ar {
+	display: block;
+}
+P.PartNumber {
+	display: block;
+}
+P.PartNumber-ar {
+	display: block;
+}
+DIV.PartSch {
+	display: block;
+}
+P.PartTitle {
+	display: block;
+}
+P.PartTitle-ar {
+	display: block;
+}
+P.Preamble {
+	display: block;
+	text-align: justify;
+	text-indent: 0.000000pt;
+	margin-top: 0.000000pt;
+	margin-bottom: 0.000000pt;
+	margin-right: 0.000000pt;
+	margin-left: 0.000000pt;
+	font-size: 11.000000pt;
+	font-weight: medium;
+	font-style: Regular;
+	color: #000000;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: none;
+	font-family: "Book Antiqua Parliamentary";
+}
+DIV.Prelim {
+	display: block;
+}
+SPAN.Roman {
+	font-weight: medium;
+	font-style: Regular;
+}
+P.Rubric {
+	display: block;
+	text-align: center;
+	text-indent: 0.000000pt;
+	margin-top: 0.000000pt;
+	margin-bottom: 0.000000pt;
+	margin-right: 0.000000pt;
+	margin-left: 0.000000pt;
+	font-size: 11.000000pt;
+	font-weight: medium;
+	font-style: Regular;
+	color: #000000;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: none;
+	font-family: "Book Antiqua Parliamentary";
+}
+SPAN.Sbscript {
+}
+DIV.Schedule {
+	display: block;
+}
+P.Schedule-ar {
+}
+P.ScheduleNumber {
+	display: block;
+}
+SPAN.ScheduleNumber-ar {
+}
+DIV.Schedules {
+	display: block;
+}
+DIV.Schedules-ar {
+	display: block;
+}
+DIV.SchedulesTitle {
+	display: block;
+}
+P.SchedulesTitle-ar {
+}
+P.ScheduleTitle {
+	display: block;
+	text-align: center;
+	text-indent: 0.000000pt;
+	margin-top: 12.000000pt;
+	margin-bottom: 12.000000pt;
+	margin-right: 0.000000pt;
+	margin-left: 0.000000pt;
+	font-size: 11.000000pt;
+	font-weight: medium;
+	font-style: small-caps Regular;
+	color: #000000;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: none;
+	font-family: "Book Antiqua Parliamentary";
+}
+SPAN.ScheduleTitle-ar {
+}
+P.SectionReference {
+	display: block;
+	text-align: right;
+	text-indent: 0.000000pt;
+	margin-top: 26.000000pt;
+	margin-bottom: 0.000000pt;
+	margin-right: 0.000000pt;
+	margin-left: 0.000000pt;
+	font-size: 8.000000pt;
+	font-weight: medium;
+	font-style: Regular;
+	color: #000000;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: none;
+	font-family: "Book Antiqua Parliamentary";
+}
+SPAN.SmallCaps {
+	text-transform: none;
+}
+DIV.Split {
+	display: block;
+}
+P.SubPara {
+	display: block;
+}
+P.SubPara-sch {
+	display: block;
+}
+P.SubSection {
+	display: block;
+}
+P.SubSubPara {
+	display: block;
+}
+P.SubSubPara-sch {
+	display: block;
+}
+P.SubSubSubPara-sch {
+	display: block;
+}
+P.SubSubSubSubPara-sch {
+	display: block;
+}
+SPAN.Superscript {
+}
+DIV.Table {
+	display: block;
+	font-size: 2.000000pt;
+}
+P.TableTitle {
+	display: block;
+	text-align: center;
+	text-indent: 0.000000pt;
+	margin-top: 1.000000pt;
+	margin-bottom: 0.000000pt;
+	margin-right: 0.000000pt;
+	margin-left: 0.000000pt;
+	font-size: 11.000000pt;
+	font-weight: medium;
+	font-style: Regular;
+	color: #000000;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-transform: none;
+	font-family: "Book Antiqua Parliamentary";
+}
+P.TextContinuation {
+	display: block;
+}
+DIV.WordsOfEnactment {
+	display: block;
+}
+SPAN.XrefChapter {
+}
+SPAN.XrefDummy {
+	color: #ff0000;
+}
+SPAN.XrefPart {
+}

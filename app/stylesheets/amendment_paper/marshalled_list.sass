@@ -1,0 +1,52 @@
+@import ../partials/base.sass
+@import ../partials/_amendment_docs_shared.sass
+@import blueprint
+
+.Head
+  +column(30, true)
+        
+  .HeadNotice
+    +column(30, true)
+    float: left
+        
+    .NoticeOfAmds
+      +amendments_heading
+        
+    .Given
+      +given_subheading
+      
+    .Date
+      +date_heading
+
+    .Stageheader
+      +stage_title
+
+    .CommitteeShorttitle, .Shorttitle
+      +bill_title
+    
+.Committee
+  +column(30, true)
+  border-top: 1px solid grey
+
+  .Move
+    +prepend(1)
+    float: left
+    margin-bottom: 1em
+
+  .ClauseText
+    +column(28, true)
+    +prepend(2)
+
+    .Paragraph_PgfTag
+      float: left
+
+      .PgfNumString
+        +prepend(2)
+        +append(1)
+        +column(1, true)
+
+    .Para
+      +column(28, true)
+            
+      .Para_text
+        +column(24, true)

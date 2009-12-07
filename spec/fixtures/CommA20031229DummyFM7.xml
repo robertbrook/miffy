@@ -1,0 +1,946 @@
+<Document><BillData><Amendments.Commons id="1020493" Auto="Yes"><PageStart id="996720" PageType="BodyPage" PageNum="1">Page 1</PageStart><Head id="1033398"><HeadNotice id="1033750" Given="given on"><NoticeOfAmds id="1042951"><ParaLineStart LineNum="1"></ParaLineStart>Notices of Amendments</NoticeOfAmds>
+<ParaLineStart LineNum="2"></ParaLineStart><Given id="1045577">given on</Given>
+<Date id="1041467"><Day id="1041470"><ParaLineStart LineNum="3"></ParaLineStart>Monday </Day><Date.text id="1041477">29th December 2003</Date.text>
+</Date>
+<ParaLineStart LineNum="4"></ParaLineStart><Stageheader id="1045600" Stage="Committee" SC="S.C.A.">Standing Committee A</Stageheader>
+<ParaLineStart LineNum="5"></ParaLineStart><Shorttitle id="1045605">Child Trust Funds Bill</Shorttitle>
+</HeadNotice>
+</Head>
+<Committee id="1049366"><Clause.Committee id="1049369" Star="Yes"><Sponsors id="1049372"><Sponsor id="1049375"><ParaLineStart LineNum="6"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1049380"><ParaLineStart LineNum="7"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1049386">
+<AmendmentNumber_PgfTag id="1049388"><ParaLineStart LineNum="8"></ParaLineStart>102</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1049421">
+<AmedTextCommitReport_PgfTag id="1049424"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="9"></ParaLineStart><AmendmentReference Clause="2" Page="1" Line="13"><Number id="1049391">Clause <Clause_number>2</Clause_number>, </Number>
+<Page id="1049401">page <Page_number>1</Page_number>, </Page>
+<Line id="1049411">line <Line_number>13</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out ‘2002’ and insert ‘2003’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1049427" Star="Yes"><Sponsors id="1049430"><Sponsor id="1049433"><ParaLineStart LineNum="10"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1049438"><ParaLineStart LineNum="11"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1049444">
+<AmendmentNumber_PgfTag id="1049446"><ParaLineStart LineNum="12"></ParaLineStart>103</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1049479">
+<AmedTextCommitReport_PgfTag id="1049482"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="13"></ParaLineStart><AmendmentReference Clause="2" Page="1" Line="14"><Number id="1049449">Clause <Clause_number>2</Clause_number>, </Number>
+<Page id="1049459">page <Page_number>1</Page_number>, </Page>
+<Line id="1049469">line <Line_number>14</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out ‘entitled to’ and insert ‘eligible for’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1049485" Star="Yes"><Sponsors id="1049488"><Sponsor id="1049491"><ParaLineStart LineNum="14"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1049496"><ParaLineStart LineNum="15"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+<Sponsor id="1049501"><ParaLineStart LineNum="16"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1049506"><ParaLineStart LineNum="17"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1049512">
+<AmendmentNumber_PgfTag id="1049514"><ParaLineStart LineNum="18"></ParaLineStart>104</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1049547">
+<AmedTextCommitReport_PgfTag id="1049550"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="19"></ParaLineStart><AmendmentReference Clause="2" Page="2" Line="26"><Number id="1049517">Clause <Clause_number>2</Clause_number>, </Number>
+<Page id="1049527">page <Page_number>2</Page_number>, </Page>
+<Line id="1049537">line <Line_number>26</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out subsection (7).</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1049553" Star="Yes"><Sponsors id="1049556"><Sponsor id="1049559"><ParaLineStart LineNum="20"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1049564"><ParaLineStart LineNum="21"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+<Sponsor id="1049569"><ParaLineStart LineNum="22"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1049574"><ParaLineStart LineNum="23"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1049580">
+<AmendmentNumber_PgfTag id="1049582"><ParaLineStart LineNum="24"></ParaLineStart>105</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1049615">
+<AmedTextCommitReport_PgfTag id="1049618"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="25"></ParaLineStart><AmendmentReference Clause="3" Page="2" Line="34"><Number id="1049585">Clause <Clause_number>3</Clause_number>, </Number>
+<Page id="1049595">page <Page_number>2</Page_number>, </Page>
+<Line id="1049605">line <Line_number>34</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out subsection (3).</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1049621" Star="Yes"><Sponsors id="1049624"><Sponsor id="1049627"><ParaLineStart LineNum="26"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1049632"><ParaLineStart LineNum="27"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1049638">
+<AmendmentNumber_PgfTag id="1049640"><ParaLineStart LineNum="28"></ParaLineStart>106</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1049673">
+<AmedTextCommitReport_PgfTag id="1049674"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="29"></ParaLineStart><AmendmentReference Clause="3" Page="2" Line="44"><Number id="1049643">Clause <Clause_number>3</Clause_number>, </Number>
+<Page id="1049653">page <Page_number>2</Page_number>, </Page>
+<Line id="1049663">line <Line_number>44</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out ‘except as permitted’ and insert ‘other than by <ParaLineStart LineNum="30"></ParaLineStart>the child that is beneficially entitled to the investments under it or by a responsible person <ParaLineStart LineNum="31"></ParaLineStart>in circumstances specified’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<PageStart id="1054278" PageType="BodyPage" PageNum="2">Page 2</PageStart><Clause.Committee id="1049679" Star="Yes"><Sponsors id="1049682"><Sponsor id="1049685"><ParaLineStart LineNum="1"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1049690"><ParaLineStart LineNum="2"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1049696">
+<AmendmentNumber_PgfTag id="1049698"><ParaLineStart LineNum="3"></ParaLineStart>107</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1049731">
+<AmedTextCommitReport_PgfTag id="1049734"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="4"></ParaLineStart><AmendmentReference Clause="3" Page="2" Line="44"><Number id="1049701">Clause <Clause_number>3</Clause_number>, </Number>
+<Page id="1049711">page <Page_number>2</Page_number>, </Page>
+<Line id="1049721">line <Line_number>44</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out ‘and’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1049737" Star="Yes"><Sponsors id="1049740"><Sponsor id="1049743"><ParaLineStart LineNum="5"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1049748"><ParaLineStart LineNum="6"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1049754">
+<AmendmentNumber_PgfTag id="1049756"><ParaLineStart LineNum="7"></ParaLineStart>108</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1049789">
+<AmedTextCommitReport_PgfTag id="1049790"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="8"></ParaLineStart><AmendmentReference Clause="3" Page="2" Line="46"><Number id="1049759">Clause <Clause_number>3</Clause_number>, </Number>
+<Page id="1049769">page <Page_number>2</Page_number>, </Page>
+<Line id="1049779">line <Line_number>46</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>at end insert ‘and</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+<Para id="1049793">
+<Paragraph_PgfTag id="1049794"><PgfNumString></PgfNumString><Para_text><ParaLineStart LineNum="9"></ParaLineStart>(f) provide that a responsible person may, at the time of opening an account, <ParaLineStart LineNum="10"></ParaLineStart>inform the account provider that he is a responsible person in Scotland.’.</Para_text></Paragraph_PgfTag>
+</Para></Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1049800" Star="Yes"><Sponsors id="1049803"><Sponsor id="1049806"><ParaLineStart LineNum="11"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1049811"><ParaLineStart LineNum="12"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+<Sponsor id="1049816"><ParaLineStart LineNum="13"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1049821"><ParaLineStart LineNum="14"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1049827">
+<AmendmentNumber_PgfTag id="1049829"><ParaLineStart LineNum="15"></ParaLineStart>109</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1049862">
+<AmedTextCommitReport_PgfTag id="1049865"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="16"></ParaLineStart><AmendmentReference Clause="3" Page="3" Line="1"><Number id="1049832">Clause <Clause_number>3</Clause_number>, </Number>
+<Page id="1049842">page <Page_number>3</Page_number>, </Page>
+<Line id="1049852">line <Line_number>1</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out subsection (5).</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1049868" Star="Yes"><Sponsors id="1049871"><Sponsor id="1049874"><ParaLineStart LineNum="17"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1049879"><ParaLineStart LineNum="18"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+<Sponsor id="1049884"><ParaLineStart LineNum="19"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1049889"><ParaLineStart LineNum="20"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1049895">
+<AmendmentNumber_PgfTag id="1049897"><ParaLineStart LineNum="21"></ParaLineStart>110</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1049930">
+<AmedTextCommitReport_PgfTag id="1049933"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="22"></ParaLineStart><AmendmentReference Clause="3" Page="3" Line="8"><Number id="1049900">Clause <Clause_number>3</Clause_number>, </Number>
+<Page id="1049910">page <Page_number>3</Page_number>, </Page>
+<Line id="1049920">line <Line_number>8</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out ‘18 or, in Scotland,’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1049936" Star="Yes"><Sponsors id="1049939"><Sponsor id="1049942"><ParaLineStart LineNum="23"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1049947"><ParaLineStart LineNum="24"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+<Sponsor id="1049952"><ParaLineStart LineNum="25"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1049957"><ParaLineStart LineNum="26"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1049963">
+<AmendmentNumber_PgfTag id="1049965"><ParaLineStart LineNum="27"></ParaLineStart>111</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1049998">
+<AmedTextCommitReport_PgfTag id="1050001"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="28"></ParaLineStart><AmendmentReference Clause="3" Page="3" Line="9"><Number id="1049968">Clause <Clause_number>3</Clause_number>, </Number>
+<Page id="1049978">page <Page_number>3</Page_number>, </Page>
+<Line id="1049988">line <Line_number>9</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out ‘, in Scotland,’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1050004" Star="Yes"><Sponsors id="1050007"><Sponsor id="1050010"><ParaLineStart LineNum="29"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1050015"><ParaLineStart LineNum="30"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1050021">
+<AmendmentNumber_PgfTag id="1050023"><ParaLineStart LineNum="31"></ParaLineStart>112</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1050056">
+<AmedTextCommitReport_PgfTag id="1050059"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="32"></ParaLineStart><AmendmentReference Clause="4" Page="3" Line="18"><Number id="1050026">Clause <Clause_number>4</Clause_number>, </Number>
+<Page id="1050036">page <Page_number>3</Page_number>, </Page>
+<Line id="1050046">line <Line_number>18</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out subsection (2).</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1050062" Star="Yes"><Sponsors id="1050065"><Sponsor id="1050068"><ParaLineStart LineNum="33"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1050073"><ParaLineStart LineNum="34"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1050079">
+<AmendmentNumber_PgfTag id="1050081"><ParaLineStart LineNum="35"></ParaLineStart>113</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1050114">
+<AmedTextCommitReport_PgfTag id="1050117"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="36"></ParaLineStart><AmendmentReference Clause="4" Page="3" Line="25"><Number id="1050084">Clause <Clause_number>4</Clause_number>, </Number>
+<Page id="1050094">page <Page_number>3</Page_number>, </Page>
+<Line id="1050104">line <Line_number>25</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out subsection (5).</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1050120" Star="Yes"><Sponsors id="1050123"><Sponsor id="1050126"><ParaLineStart LineNum="37"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1050131"><ParaLineStart LineNum="38"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1050137">
+<AmendmentNumber_PgfTag id="1050139"><ParaLineStart LineNum="39"></ParaLineStart>114</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1050172">
+<AmedTextCommitReport_PgfTag id="1050173"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="40"></ParaLineStart><AmendmentReference Clause="5" Page="3" Line="36"><Number id="1050142">Clause <Clause_number>5</Clause_number>, </Number>
+<Page id="1050152">page <Page_number>3</Page_number>, </Page>
+<Line id="1050162">line <Line_number>36</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out from ‘within’ to ‘apply’ in line 36 and insert <ParaLineStart LineNum="41"></ParaLineStart>‘one year beginning with the day on which the voucher is issued’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<PageStart id="1054304" PageType="BodyPage" PageNum="3">Page 3</PageStart><Clause.Committee id="1050178" Star="Yes"><Sponsors id="1050181"><Sponsor id="1050184"><ParaLineStart LineNum="1"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1050189"><ParaLineStart LineNum="2"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1050195">
+<AmendmentNumber_PgfTag id="1050197"><ParaLineStart LineNum="3"></ParaLineStart>115</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1050230">
+<AmedTextCommitReport_PgfTag id="1050233"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="4"></ParaLineStart><AmendmentReference Clause="5" Page="3" Line="40"><Number id="1050200">Clause <Clause_number>5</Clause_number>, </Number>
+<Page id="1050210">page <Page_number>3</Page_number>, </Page>
+<Line id="1050220">line <Line_number>40</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out ‘must’ and insert ‘may’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1050236" Star="Yes"><Sponsors id="1050239"><Sponsor id="1050242"><ParaLineStart LineNum="5"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1050247"><ParaLineStart LineNum="6"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1050253">
+<AmendmentNumber_PgfTag id="1050255"><ParaLineStart LineNum="7"></ParaLineStart>116</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1050288">
+<AmedTextCommitReport_PgfTag id="1050289"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="8"></ParaLineStart><AmendmentReference Clause="5" Page="3" Line="43"><Number id="1050258">Clause <Clause_number>5</Clause_number>, </Number>
+<Page id="1050268">page <Page_number>3</Page_number>, </Page>
+<Line id="1050278">line <Line_number>43</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out ‘in accordance with regulations’ and add <ParaLineStart LineNum="9"></ParaLineStart>‘within four weeks of receipt of the voucher’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1050294" Star="Yes"><Sponsors id="1050297"><Sponsor id="1050300"><ParaLineStart LineNum="10"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1050305"><ParaLineStart LineNum="11"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1050311">
+<AmendmentNumber_PgfTag id="1050313"><ParaLineStart LineNum="12"></ParaLineStart>117</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1050346">
+<AmedTextCommitReport_PgfTag id="1050349"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="13"></ParaLineStart><AmendmentReference Clause="6" Page="4" Line="3"><Number id="1050316">Clause <Clause_number>6</Clause_number>, </Number>
+<Page id="1050326">page <Page_number>4</Page_number>, </Page>
+<Line id="1050336">line <Line_number>3</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>after ‘selected’, insert ‘at random’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1050352" Star="Yes"><Sponsors id="1050355"><Sponsor id="1050358"><ParaLineStart LineNum="14"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1050363"><ParaLineStart LineNum="15"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1050369">
+<AmendmentNumber_PgfTag id="1050371"><ParaLineStart LineNum="16"></ParaLineStart>118</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1050404">
+<AmedTextCommitReport_PgfTag id="1050405"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="17"></ParaLineStart><AmendmentReference Clause="6" Page="4" Line="9"><Number id="1050374">Clause <Clause_number>6</Clause_number>, </Number>
+<Page id="1050384">page <Page_number>4</Page_number>, </Page>
+<Line id="1050394">line <Line_number>9</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out ‘in accordance with regulations’ and insert <ParaLineStart LineNum="18"></ParaLineStart>‘within four weeks of receipt of the application’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1050410" Star="Yes"><Sponsors id="1050413"><Sponsor id="1050416"><ParaLineStart LineNum="19"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1050421"><ParaLineStart LineNum="20"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1050427">
+<AmendmentNumber_PgfTag id="1050429"><ParaLineStart LineNum="21"></ParaLineStart>119</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1050462">
+<AmedTextCommitReport_PgfTag id="1050465"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="22"></ParaLineStart><AmendmentReference Clause="6" Page="4" Line="16"><Number id="1050432">Clause <Clause_number>6</Clause_number>, </Number>
+<Page id="1050442">page <Page_number>4</Page_number>, </Page>
+<Line id="1050452">line <Line_number>16</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out from ‘child’ to end of line 18.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1050468" Star="Yes"><Sponsors id="1050471"><Sponsor id="1050474"><ParaLineStart LineNum="23"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1050479"><ParaLineStart LineNum="24"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+<Sponsor id="1050484"><ParaLineStart LineNum="25"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1050489"><ParaLineStart LineNum="26"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1050495">
+<AmendmentNumber_PgfTag id="1050497"><ParaLineStart LineNum="27"></ParaLineStart>120</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1050530">
+<AmedTextCommitReport_PgfTag id="1050533"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="28"></ParaLineStart><AmendmentReference Clause="6" Page="4" Line="19"><Number id="1050500">Clause <Clause_number>6</Clause_number>, </Number>
+<Page id="1050510">page <Page_number>4</Page_number>, </Page>
+<Line id="1050520">line <Line_number>19</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out subsection (5).</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1050536" Star="Yes"><Sponsors id="1050539"><Sponsor id="1050542"><ParaLineStart LineNum="29"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1050547"><ParaLineStart LineNum="30"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1050553">
+<AmendmentNumber_PgfTag id="1050555"><ParaLineStart LineNum="31"></ParaLineStart>121</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1050588">
+<AmedTextCommitReport_PgfTag id="1050589"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="32"></ParaLineStart><AmendmentReference Clause="7" Page="4" Line="27"><Number id="1050558">Clause <Clause_number>7</Clause_number>, </Number>
+<Page id="1050568">page <Page_number>4</Page_number>, </Page>
+<Line id="1050578">line <Line_number>27</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>at end add ‘provided that no transfer may take place <ParaLineStart LineNum="33"></ParaLineStart>without the agreement of a responsible person’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1050594" Star="Yes"><Sponsors id="1050597"><Sponsor id="1050600"><ParaLineStart LineNum="34"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1050605"><ParaLineStart LineNum="35"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1050611">
+<AmendmentNumber_PgfTag id="1050613"><ParaLineStart LineNum="36"></ParaLineStart>122</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1050646">
+<AmedTextCommitReport_PgfTag id="1050647"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="37"></ParaLineStart><AmendmentReference Clause="8" Page="4" Line="30"><Number id="1050616">Clause <Clause_number>8</Clause_number>, </Number>
+<Page id="1050626">page <Page_number>4</Page_number>, </Page>
+<Line id="1050636">line <Line_number>30</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out ‘such amount’ and insert ‘an amount no less <ParaLineStart LineNum="38"></ParaLineStart>than £250’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<PageStart id="1054330" PageType="BodyPage" PageNum="4">Page 4</PageStart><Clause.Committee id="1050652" Star="Yes"><Sponsors id="1050655"><Sponsor id="1050658"><ParaLineStart LineNum="1"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1050663"><ParaLineStart LineNum="2"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1050669">
+<AmendmentNumber_PgfTag id="1050671"><ParaLineStart LineNum="3"></ParaLineStart>123</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1050704">
+<AmedTextCommitReport_PgfTag id="1050705"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="4"></ParaLineStart><AmendmentReference Clause="9" Page="5" Line="2"><Number id="1050674">Clause <Clause_number>9</Clause_number>, </Number>
+<Page id="1050684">page <Page_number>5</Page_number>, </Page>
+<Line id="1050694">line <Line_number>2</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out ‘such amount’ and insert ‘an amount no less than <ParaLineStart LineNum="5"></ParaLineStart>£250’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1050710" Star="Yes"><Sponsors id="1050713"><Sponsor id="1050716"><ParaLineStart LineNum="6"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1050721"><ParaLineStart LineNum="7"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1050727">
+<AmendmentNumber_PgfTag id="1050729"><ParaLineStart LineNum="8"></ParaLineStart>124</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1050762">
+<AmedTextCommitReport_PgfTag id="1050765"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="9"></ParaLineStart><AmendmentReference Clause="9" Page="5" Line="12"><Number id="1050732">Clause <Clause_number>9</Clause_number>, </Number>
+<Page id="1050742">page <Page_number>5</Page_number>, </Page>
+<Line id="1050752">line <Line_number>12</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out ‘entitled to’ and insert ‘eligible for’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1050768" Star="Yes"><Sponsors id="1050771"><Sponsor id="1050774"><ParaLineStart LineNum="10"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1050779"><ParaLineStart LineNum="11"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1050785">
+<AmendmentNumber_PgfTag id="1050787"><ParaLineStart LineNum="12"></ParaLineStart>125</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1050820">
+<AmedTextCommitReport_PgfTag id="1050823"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="13"></ParaLineStart><AmendmentReference Clause="9" Page="5" Line="13"><Number id="1050790">Clause <Clause_number>9</Clause_number>, </Number>
+<Page id="1050800">page <Page_number>5</Page_number>, </Page>
+<Line id="1050810">line <Line_number>13</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out from ‘date’ to end of line 17.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1050826" Star="Yes"><Sponsors id="1050829"><Sponsor id="1050832"><ParaLineStart LineNum="14"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1050837"><ParaLineStart LineNum="15"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1050843">
+<AmendmentNumber_PgfTag id="1050845"><ParaLineStart LineNum="16"></ParaLineStart>126</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1050878">
+<AmedTextCommitReport_PgfTag id="1050881"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="17"></ParaLineStart><AmendmentReference Clause="9" Page="5" Line="47"><Number id="1050848">Clause <Clause_number>9</Clause_number>, </Number>
+<Page id="1050858">page <Page_number>5</Page_number>, </Page>
+<Line id="1050868">line <Line_number>47</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out ‘2003’ and insert ‘2002’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1050884" Star="Yes"><Sponsors id="1050887"><Sponsor id="1050890"><ParaLineStart LineNum="18"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1050895"><ParaLineStart LineNum="19"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1050901">
+<AmendmentNumber_PgfTag id="1050903"><ParaLineStart LineNum="20"></ParaLineStart>127</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1050936">
+<AmedTextCommitReport_PgfTag id="1050937"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="21"></ParaLineStart><AmendmentReference Clause="10" Page="6" Line="14"><Number id="1050906">Clause <Clause_number>10</Clause_number>, </Number>
+<Page id="1050916">page <Page_number>6</Page_number>, </Page>
+<Line id="1050926">line <Line_number>14</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out from ‘of’ to end of line and insert ‘£50, or <ParaLineStart LineNum="22"></ParaLineStart>£100 for a child to whom section 9 applies’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1050942" Star="Yes"><Sponsors id="1050945"><Sponsor id="1050948"><ParaLineStart LineNum="23"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1050953"><ParaLineStart LineNum="24"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1050959">
+<AmendmentNumber_PgfTag id="1050961"><ParaLineStart LineNum="25"></ParaLineStart>128</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1050994">
+<AmedTextCommitReport_PgfTag id="1050995"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="26"></ParaLineStart><AmendmentReference Clause="10" Page="6" Line="16"><Number id="1050964">Clause <Clause_number>10</Clause_number>, </Number>
+<Page id="1050974">page <Page_number>6</Page_number>, </Page>
+<Line id="1050984">line <Line_number>16</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out from ‘attaining’ to end of line and insert ‘the <ParaLineStart LineNum="27"></ParaLineStart>age of seven’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1051000" Star="Yes"><Sponsors id="1051003"><Sponsor id="1051006"><ParaLineStart LineNum="28"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1051011"><ParaLineStart LineNum="29"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1051017">
+<AmendmentNumber_PgfTag id="1051019"><ParaLineStart LineNum="30"></ParaLineStart>129</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1051052">
+<AmedTextCommitReport_PgfTag id="1051053"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="31"></ParaLineStart><AmendmentReference Clause="10" Page="6" Line="16"><Number id="1051022">Clause <Clause_number>10</Clause_number>, </Number>
+<Page id="1051032">page <Page_number>6</Page_number>, </Page>
+<Line id="1051042">line <Line_number>16</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out from ‘attaining’ to end of line and insert ‘the <ParaLineStart LineNum="32"></ParaLineStart>ages of 5, 11 and 16’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1051058" Star="Yes"><Sponsors id="1051061"><Sponsor id="1051064"><ParaLineStart LineNum="33"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1051069"><ParaLineStart LineNum="34"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1051075">
+<AmendmentNumber_PgfTag id="1051077"><ParaLineStart LineNum="35"></ParaLineStart>130</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1051110">
+<AmedTextCommitReport_PgfTag id="1051111"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="36"></ParaLineStart><AmendmentReference Clause="11" Page="6" Line="29"><Number id="1051080">Clause <Clause_number>11</Clause_number>, </Number>
+<Page id="1051090">page <Page_number>6</Page_number>, </Page>
+<Line id="1051100">line <Line_number>29</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>at end insert ‘provided that a person is shown to have <ParaLineStart LineNum="37"></ParaLineStart>acted fraudulently or negligently’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<PageStart id="1054358" PageType="BodyPage" PageNum="5">Page 5</PageStart><Clause.Committee id="1051116" Star="Yes"><Sponsors id="1051119"><Sponsor id="1051122"><ParaLineStart LineNum="1"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1051127"><ParaLineStart LineNum="2"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1051133">
+<AmendmentNumber_PgfTag id="1051135"><ParaLineStart LineNum="3"></ParaLineStart>131</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1051168">
+<AmedTextCommitReport_PgfTag id="1051171"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="4"></ParaLineStart><AmendmentReference Clause="12" Page="6" Line="34"><Number id="1051138">Clause <Clause_number>12</Clause_number>, </Number>
+<Page id="1051148">page <Page_number>6</Page_number>, </Page>
+<Line id="1051158">line <Line_number>34</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out subsection (1).</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1051174" Star="Yes"><Sponsors id="1051177"><Sponsor id="1051180"><ParaLineStart LineNum="5"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1051185"><ParaLineStart LineNum="6"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1051191">
+<AmendmentNumber_PgfTag id="1051193"><ParaLineStart LineNum="7"></ParaLineStart>132</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1051226">
+<AmedTextCommitReport_PgfTag id="1051229"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="8"></ParaLineStart><AmendmentReference Clause="12" Page="6" Line="36"><Number id="1051196">Clause <Clause_number>12</Clause_number>, </Number>
+<Page id="1051206">page <Page_number>6</Page_number>, </Page>
+<Line id="1051216">line <Line_number>36</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out ‘Regulations may prescribe’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1051232" Star="Yes"><Sponsors id="1051235"><Sponsor id="1051238"><ParaLineStart LineNum="9"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1051243"><ParaLineStart LineNum="10"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1051249">
+<AmendmentNumber_PgfTag id="1051251"><ParaLineStart LineNum="11"></ParaLineStart>133</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1051284">
+<AmedTextCommitReport_PgfTag id="1051285"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="12"></ParaLineStart><AmendmentReference Clause="12" Page="6" Line="37"><Number id="1051254">Clause <Clause_number>12</Clause_number>, </Number>
+<Page id="1051264">page <Page_number>6</Page_number>, </Page>
+<Line id="1051274">line <Line_number>37</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>after ‘year’, insert ‘shall be £1,200, or such greater <ParaLineStart LineNum="13"></ParaLineStart>amount as may be prescribed by regulations’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1051290" Star="Yes"><Sponsors id="1051293"><Sponsor id="1051296"><ParaLineStart LineNum="14"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1051301"><ParaLineStart LineNum="15"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1051307">
+<AmendmentNumber_PgfTag id="1051309"><ParaLineStart LineNum="16"></ParaLineStart>134</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1051342">
+<AmedTextCommitReport_PgfTag id="1051343"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="17"></ParaLineStart><AmendmentReference Clause="12" Page="6" Line="41"><Number id="1051312">Clause <Clause_number>12</Clause_number>, </Number>
+<Page id="1051322">page <Page_number>6</Page_number>, </Page>
+<Line id="1051332">line <Line_number>41</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>after second ‘the’, insert ‘first day of the month that in-<ParaLineStart LineNum="18"></ParaLineStart>cludes the’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1051348" Star="Yes"><Sponsors id="1051351"><Sponsor id="1051354"><ParaLineStart LineNum="19"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1051359"><ParaLineStart LineNum="20"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1051365">
+<AmendmentNumber_PgfTag id="1051367"><ParaLineStart LineNum="21"></ParaLineStart>135</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1051400">
+<AmedTextCommitReport_PgfTag id="1051401"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="22"></ParaLineStart><AmendmentReference Clause="12" Page="6" Line="42"><Number id="1051370">Clause <Clause_number>12</Clause_number>, </Number>
+<Page id="1051380">page <Page_number>6</Page_number>, </Page>
+<Line id="1051390">line <Line_number>42</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out ‘immediately before’ and insert ‘on the first <ParaLineStart LineNum="23"></ParaLineStart>day of the month following that which includes’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1051406" Star="Yes"><Sponsors id="1051409"><Sponsor id="1051412"><ParaLineStart LineNum="24"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1051417"><ParaLineStart LineNum="25"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1051423">
+<AmendmentNumber_PgfTag id="1051425"><ParaLineStart LineNum="26"></ParaLineStart>136</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1051458">
+<AmedTextCommitReport_PgfTag id="1051459"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="27"></ParaLineStart><AmendmentReference Clause="20" Page="10" Line="41"><Number id="1051428">Clause <Clause_number>20</Clause_number>, </Number>
+<Page id="1051438">page <Page_number>10</Page_number>, </Page>
+<Line id="1051448">line <Line_number>41</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>at end insert—</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+<Para id="1051462">
+<Paragraph_PgfTag id="1051463"><PgfNumString></PgfNumString><Para_text><ParaLineStart LineNum="28"></ParaLineStart>‘( ) any person who assigns, or enters any agreement to assign, investments <ParaLineStart LineNum="29"></ParaLineStart>under a child trust fund or who charges on, or enters any agreement to <ParaLineStart LineNum="30"></ParaLineStart>charge, any such investments,’.</Para_text></Paragraph_PgfTag>
+</Para></Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1051469" Star="Yes"><Sponsors id="1051472"><Sponsor id="1051475"><ParaLineStart LineNum="31"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1051480"><ParaLineStart LineNum="32"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1051486">
+<AmendmentNumber_PgfTag id="1051488"><ParaLineStart LineNum="33"></ParaLineStart>137</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1051521">
+<AmedTextCommitReport_PgfTag id="1051525"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="34"></ParaLineStart><AmendmentReference Clause="30" Page="15" Line="15"><Number id="1051491">Clause <Clause_number>30</Clause_number>, </Number>
+<Page id="1051501">page <Page_number>15</Page_number>, </Page>
+<Line id="1051511">line <Line_number>15</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>after ‘Act’, insert ‘except section [<Italic id="1051524">reduction of age of <ParaLineStart LineNum="35"></ParaLineStart>majority in respect of child trust funds</Italic>]’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1051531" Star="Yes"><Sponsors id="1051534"><Sponsor id="1051537"><ParaLineStart LineNum="36"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1051542"><ParaLineStart LineNum="37"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1051548">
+<AmendmentNumber_PgfTag id="1051550"><ParaLineStart LineNum="38"></ParaLineStart>138</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1051583">
+<AmedTextCommitReport_PgfTag id="1051584"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="39"></ParaLineStart><AmendmentReference Clause="30" Page="15" Line="16"><Number id="1051553">Clause <Clause_number>30</Clause_number>, </Number>
+<Page id="1051563">page <Page_number>15</Page_number>, </Page>
+<Line id="1051573">line <Line_number>16</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>at end add—</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+<SubSection id="1051587">
+<SubSection_PgfTag id="1051592"><PgfNumString></PgfNumString><SubSection_text><ParaLineStart LineNum="40"></ParaLineStart>‘(2) Section [<Italic id="1051590">reduction of age of majority in respect of child trust funds</Italic>] extends to <ParaLineStart LineNum="41"></ParaLineStart>Northern Ireland, but does not extend to Scotland.’.</SubSection_text></SubSection_PgfTag>
+</SubSection>
+</Amendment.Text>
+</Clause.Committee>
+<PageStart id="1054389" PageType="BodyPage" PageNum="6">Page 6</PageStart><Clause.Committee id="1051598" Star="Yes"><Sponsors id="1051601"><Sponsor id="1051604"><ParaLineStart LineNum="1"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1051609"><ParaLineStart LineNum="2"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1051615">
+<AmendmentNumber_PgfTag id="1051617"><ParaLineStart LineNum="3"></ParaLineStart>139</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1051650">
+<AmedTextCommitReport_PgfTag id="1051653"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="4"></ParaLineStart><AmendmentReference Clause="1" Page="1" Line="10"><Number id="1051620">Clause <Clause_number>1</Clause_number>, </Number>
+<Page id="1051630">page <Page_number>1</Page_number>, </Page>
+<Line id="1051640">line <Line_number>10</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>at end add ‘and the Department for Work and Pensions’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1051656" Star="Yes"><Sponsors id="1051659"><Sponsor id="1051662"><ParaLineStart LineNum="5"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1051667"><ParaLineStart LineNum="6"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1051673">
+<AmendmentNumber_PgfTag id="1051675"><ParaLineStart LineNum="7"></ParaLineStart>140</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1051708">
+<AmedTextCommitReport_PgfTag id="1051709"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="8"></ParaLineStart><AmendmentReference Clause="1" Page="1" Line="10"><Number id="1051678">Clause <Clause_number>1</Clause_number>, </Number>
+<Page id="1051688">page <Page_number>1</Page_number>, </Page>
+<Line id="1051698">line <Line_number>10</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>at end add—</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+<SubSection id="1051712">
+<SubSection_PgfTag id="1051713"><PgfNumString></PgfNumString><SubSection_text><ParaLineStart LineNum="9"></ParaLineStart>‘(4) This Act (other than this section) shall not come into force until the Treasury has <ParaLineStart LineNum="10"></ParaLineStart>laid before each House of Parliament a report setting out the Treasury’s estimate <ParaLineStart LineNum="11"></ParaLineStart>of the net increase in saving which will result from the provisions of this Act.’.</SubSection_text></SubSection_PgfTag>
+</SubSection>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1051719" Star="Yes"><Sponsors id="1051722"><Sponsor id="1051725"><ParaLineStart LineNum="12"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1051730"><ParaLineStart LineNum="13"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1051736">
+<AmendmentNumber_PgfTag id="1051738"><ParaLineStart LineNum="14"></ParaLineStart>141</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1051771">
+<AmedTextCommitReport_PgfTag id="1051772"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="15"></ParaLineStart><AmendmentReference Clause="1" Page="1" Line="10"><Number id="1051741">Clause <Clause_number>1</Clause_number>, </Number>
+<Page id="1051751">page <Page_number>1</Page_number>, </Page>
+<Line id="1051761">line <Line_number>10</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>at end add—</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+<SubSection id="1051775">
+<SubSection_PgfTag id="1051776"><PgfNumString></PgfNumString><SubSection_text><ParaLineStart LineNum="16"></ParaLineStart>‘(4) This Act (other than this section) shall not come into force until the Treasury and <ParaLineStart LineNum="17"></ParaLineStart>the Department for Work and Pensions have laid before each House of Parliament <ParaLineStart LineNum="18"></ParaLineStart>a joint report on the Government’s policies to improve savings incentives from <ParaLineStart LineNum="19"></ParaLineStart>birth to retirement.’.</SubSection_text></SubSection_PgfTag>
+</SubSection>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1051782" Star="Yes"><Sponsors id="1051785"><Sponsor id="1051788"><ParaLineStart LineNum="20"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1051793"><ParaLineStart LineNum="21"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1051799">
+<AmendmentNumber_PgfTag id="1051801"><ParaLineStart LineNum="22"></ParaLineStart>142</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1051834">
+<AmedTextCommitReport_PgfTag id="1051837"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="23"></ParaLineStart><AmendmentReference Clause="2" Page="1" Line="13"><Number id="1051804">Clause <Clause_number>2</Clause_number>, </Number>
+<Page id="1051814">page <Page_number>1</Page_number>, </Page>
+<Line id="1051824">line <Line_number>13</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out ‘2002’ and insert ‘2010’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1051840" Star="Yes"><Sponsors id="1051843"><Sponsor id="1051846"><ParaLineStart LineNum="24"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1051851"><ParaLineStart LineNum="25"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1051857">
+<AmendmentNumber_PgfTag id="1051859"><ParaLineStart LineNum="26"></ParaLineStart>143</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1051892">
+<AmedTextCommitReport_PgfTag id="1051893"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="27"></ParaLineStart><AmendmentReference Clause="3" Page="2" Line="33"><Number id="1051862">Clause <Clause_number>3</Clause_number>, </Number>
+<Page id="1051872">page <Page_number>2</Page_number>, </Page>
+<Line id="1051882">line <Line_number>33</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>at end insert ‘and it meets risk and transparency criteria <ParaLineStart LineNum="28"></ParaLineStart>set down by the Financial Services Authority’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1051898" Star="Yes"><Sponsors id="1051901"><Sponsor id="1051904"><ParaLineStart LineNum="29"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1051909"><ParaLineStart LineNum="30"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1051915">
+<AmendmentNumber_PgfTag id="1051917"><ParaLineStart LineNum="31"></ParaLineStart>144</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1051950">
+<AmedTextCommitReport_PgfTag id="1051951"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="32"></ParaLineStart><AmendmentReference Clause="3" Page="2" Line="44"><Number id="1051920">Clause <Clause_number>3</Clause_number>, </Number>
+<Page id="1051930">page <Page_number>2</Page_number>, </Page>
+<Line id="1051940">line <Line_number>44</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out ‘as’ and insert ‘from the accounts of children of <ParaLineStart LineNum="33"></ParaLineStart>over 16 years of where the child who holds the account wishes to withdraw an amount <ParaLineStart LineNum="34"></ParaLineStart>from the account and where permission has been secured from a responsible person and <ParaLineStart LineNum="35"></ParaLineStart>as otherwise’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1051956" Star="Yes"><Sponsors id="1051959"><Sponsor id="1051962"><ParaLineStart LineNum="36"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1051967"><ParaLineStart LineNum="37"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1051973">
+<AmendmentNumber_PgfTag id="1051975"><ParaLineStart LineNum="38"></ParaLineStart>145</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1052008">
+<AmedTextCommitReport_PgfTag id="1052012"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="39"></ParaLineStart><AmendmentReference Clause="27" Page="15" Line="12"><Number id="1051978">Clause <Clause_number>27</Clause_number>, </Number>
+<Page id="1051988">page <Page_number>15</Page_number>, </Page>
+<Line id="1051998">line <Line_number>12</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>after ‘section’, insert ‘section [<Italic id="1052011">report on savings effect <ParaLineStart LineNum="40"></ParaLineStart>of child trust funds</Italic>],’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<PageStart id="1054417" PageType="BodyPage" PageNum="7">Page 7</PageStart><Clause.Committee id="1052018" Star="Yes"><Sponsors id="1052021"><Sponsor id="1052024"><ParaLineStart LineNum="1"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1052029"><ParaLineStart LineNum="2"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1052035">
+<AmendmentNumber_PgfTag id="1052037"><ParaLineStart LineNum="3"></ParaLineStart>146</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1052070">
+<AmedTextCommitReport_PgfTag id="1052074"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="4"></ParaLineStart><AmendmentReference Clause="27" Page="15" Line="12"><Number id="1052040">Clause <Clause_number>27</Clause_number>, </Number>
+<Page id="1052050">page <Page_number>15</Page_number>, </Page>
+<Line id="1052060">line <Line_number>12</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>after ‘section’, insert ‘section [<Italic id="1052073">report on savings incen-<ParaLineStart LineNum="5"></ParaLineStart>tives</Italic>],’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1052080" Star="Yes"><Sponsors id="1052083"><Sponsor id="1052086"><ParaLineStart LineNum="6"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1052091"><ParaLineStart LineNum="7"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1052097">
+<AmendmentNumber_PgfTag id="1052099"><ParaLineStart LineNum="8"></ParaLineStart>147</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1052132">
+<AmedTextCommitReport_PgfTag id="1052133"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="9"></ParaLineStart><AmendmentReference Clause="27" Page="15" Line="17"><Number id="1052102">Clause <Clause_number>27</Clause_number>, </Number>
+<Page id="1052112">page <Page_number>15</Page_number>, </Page>
+<Line id="1052122">line <Line_number>17</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>at end add—</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+<SubSection id="1052136">
+<SubSection_PgfTag id="1052137"><PgfNumString></PgfNumString><SubSection_text><ParaLineStart LineNum="10"></ParaLineStart>‘(4) No order may be made under subsection (3) until the report specified in section <ParaLineStart LineNum="11"></ParaLineStart>[<Italic id="1052140">report on savings effect of child trust funds</Italic>] has been laid before Parliament.’.</SubSection_text></SubSection_PgfTag>
+</SubSection>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1052147" Star="Yes"><Sponsors id="1052150"><Sponsor id="1052153"><ParaLineStart LineNum="12"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1052158"><ParaLineStart LineNum="13"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1052164">
+<AmendmentNumber_PgfTag id="1052166"><ParaLineStart LineNum="14"></ParaLineStart>148</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1052199">
+<AmedTextCommitReport_PgfTag id="1052200"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="15"></ParaLineStart><AmendmentReference Clause="27" Page="15" Line="17"><Number id="1052169">Clause <Clause_number>27</Clause_number>, </Number>
+<Page id="1052179">page <Page_number>15</Page_number>, </Page>
+<Line id="1052189">line <Line_number>17</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>at end add—</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+<SubSection id="1052203">
+<SubSection_PgfTag id="1052204"><PgfNumString></PgfNumString><SubSection_text><ParaLineStart LineNum="16"></ParaLineStart>‘(4) No order may be made under subsection (3) until the report specified in section <ParaLineStart LineNum="17"></ParaLineStart>[<Italic id="1052207">report on savings incentives</Italic>] has been laid before Parliament.’.</SubSection_text></SubSection_PgfTag>
+</SubSection>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1052214" Star="Yes"><Sponsors id="1052217"><Sponsor id="1052220"><ParaLineStart LineNum="18"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1052225"><ParaLineStart LineNum="19"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1052231">
+<AmendmentNumber_PgfTag id="1052233"><ParaLineStart LineNum="20"></ParaLineStart>149</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1052266">
+<AmedTextCommitReport_PgfTag id="1052267"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="21"></ParaLineStart><AmendmentReference Clause="6" Page="4" Line="20"><Number id="1052236">Clause <Clause_number>6</Clause_number>, </Number>
+<Page id="1052246">page <Page_number>4</Page_number>, </Page>
+<Line id="1052256">line <Line_number>20</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>at end add—</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+<SubSection id="1052270">
+<SubSection_PgfTag id="1052271"><PgfNumString></PgfNumString><SubSection_text><ParaLineStart LineNum="22"></ParaLineStart>‘(6) Accounts and account providers selected by the Inland Revenue under subsection <ParaLineStart LineNum="23"></ParaLineStart>(1) shall meet lower risk criteria set out from time to time by the Financial <ParaLineStart LineNum="24"></ParaLineStart>Services Authority, designed to reduce the risks of significant capital losses from <ParaLineStart LineNum="25"></ParaLineStart>child trust fund accounts which have been opened or selected by the Inland <ParaLineStart LineNum="26"></ParaLineStart>Revenue.’.</SubSection_text></SubSection_PgfTag>
+</SubSection>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1052277" Star="Yes"><Sponsors id="1052280"><Sponsor id="1052283"><ParaLineStart LineNum="27"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1052288"><ParaLineStart LineNum="28"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1052294">
+<AmendmentNumber_PgfTag id="1052296"><ParaLineStart LineNum="29"></ParaLineStart>150</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1052329">
+<AmedTextCommitReport_PgfTag id="1052330"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="30"></ParaLineStart><AmendmentReference Clause="7" Page="4" Line="27"><Number id="1052299">Clause <Clause_number>7</Clause_number>, </Number>
+<Page id="1052309">page <Page_number>4</Page_number>, </Page>
+<Line id="1052319">line <Line_number>27</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>at end add—</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+<Para id="1052333">
+<Paragraph_PgfTag id="1052334"><PgfNumString></PgfNumString><Para_text><ParaLineStart LineNum="31"></ParaLineStart>‘(c) a child trust fund opened by the Inland Revenue may be transferred from <ParaLineStart LineNum="32"></ParaLineStart>one account provider to another, or moved from a stakeholder child trust <ParaLineStart LineNum="33"></ParaLineStart>fund account to one of the other account descriptions as prescribed by <ParaLineStart LineNum="34"></ParaLineStart>regulations.’.</Para_text></Paragraph_PgfTag>
+</Para></Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1052340" Star="Yes"><Sponsors id="1052343"><Sponsor id="1052346"><ParaLineStart LineNum="35"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1052351"><ParaLineStart LineNum="36"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1052357">
+<AmendmentNumber_PgfTag id="1052359"><ParaLineStart LineNum="37"></ParaLineStart>151</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1052392">
+<AmedTextCommitReport_PgfTag id="1052393"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="38"></ParaLineStart><AmendmentReference Clause="8" Page="4" Line="36"><Number id="1052362">Clause <Clause_number>8</Clause_number>, </Number>
+<Page id="1052372">page <Page_number>4</Page_number>, </Page>
+<Line id="1052382">line <Line_number>36</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>at end add—</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+<SubSection id="1052396">
+<SubSection_PgfTag id="1052397"><PgfNumString></PgfNumString><SubSection_text><ParaLineStart LineNum="39"></ParaLineStart>‘(3) The initial contribution payable for children in care shall be set at four times the <ParaLineStart LineNum="40"></ParaLineStart>prevailing standard initial contribution amount.’.</SubSection_text></SubSection_PgfTag>
+</SubSection>
+</Amendment.Text>
+</Clause.Committee>
+<PageStart id="1054448" PageType="BodyPage" PageNum="8">Page 8</PageStart><Clause.Committee id="1052403" Star="Yes"><Sponsors id="1052406"><Sponsor id="1052409"><ParaLineStart LineNum="1"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1052414"><ParaLineStart LineNum="2"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1052420">
+<AmendmentNumber_PgfTag id="1052422"><ParaLineStart LineNum="3"></ParaLineStart>152</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1052455">
+<AmedTextCommitReport_PgfTag id="1052456"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="4"></ParaLineStart><AmendmentReference Clause="9" Page="6" Line="7"><Number id="1052425">Clause <Clause_number>9</Clause_number>, </Number>
+<Page id="1052435">page <Page_number>6</Page_number>, </Page>
+<Line id="1052445">line <Line_number>7</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>at end add—</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+<SubSection id="1052459">
+<SubSection_PgfTag id="1052460"><PgfNumString></PgfNumString><SubSection_text><ParaLineStart LineNum="5"></ParaLineStart>‘(11) The supplementary contribution shall be fixed at an amount of not less than 100 <ParaLineStart LineNum="6"></ParaLineStart>per cent. of the initial contribution amount.’.</SubSection_text></SubSection_PgfTag>
+</SubSection>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1052466" Star="Yes"><Sponsors id="1052469"><Sponsor id="1052472"><ParaLineStart LineNum="7"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1052477"><ParaLineStart LineNum="8"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1052483">
+<AmendmentNumber_PgfTag id="1052485"><ParaLineStart LineNum="9"></ParaLineStart>153</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1052518">
+<AmedTextCommitReport_PgfTag id="1052519"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="10"></ParaLineStart><AmendmentReference Clause="10" Page="6" Line="16"><Number id="1052488">Clause <Clause_number>10</Clause_number>, </Number>
+<Page id="1052498">page <Page_number>6</Page_number>, </Page>
+<Line id="1052508">line <Line_number>16</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out from ‘attaining’ to end of line 18 and insert <ParaLineStart LineNum="11"></ParaLineStart>‘the ages of 7, 11 and 15, or</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+<Para id="1052522">
+<Paragraph_PgfTag id="1052523"><PgfNumString></PgfNumString><Para_text><ParaLineStart LineNum="12"></ParaLineStart>(b) one-off payments are to be made to disburse the proceeds from <ParaLineStart LineNum="13"></ParaLineStart>Government asset sales.’.</Para_text></Paragraph_PgfTag>
+</Para></Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1052529" Star="Yes"><Sponsors id="1052532"><Sponsor id="1052535"><ParaLineStart LineNum="14"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1052540"><ParaLineStart LineNum="15"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1052546">
+<AmendmentNumber_PgfTag id="1052548"><ParaLineStart LineNum="16"></ParaLineStart>154</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1052571">
+<AmedTextCommitReport_PgfTag id="1052574"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="17"></ParaLineStart><AmendmentReference Page="4" Line="24"><Page id="1052551">Page <Page_number>4</Page_number>, </Page>
+<Line id="1052561">line <Line_number>24</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out Clause 11.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1052577" Star="Yes"><Sponsors id="1052580"><Sponsor id="1052583"><ParaLineStart LineNum="18"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1052588"><ParaLineStart LineNum="19"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1052594">
+<AmendmentNumber_PgfTag id="1052596"><ParaLineStart LineNum="20"></ParaLineStart>155</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1052629">
+<AmedTextCommitReport_PgfTag id="1052630"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="21"></ParaLineStart><AmendmentReference Clause="13" Page="7" Line="26"><Number id="1052599">Clause <Clause_number>13</Clause_number>, </Number>
+<Page id="1052609">page <Page_number>7</Page_number>, </Page>
+<Line id="1052619">line <Line_number>26</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>at end add—</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+<SubSection id="1052633">
+<SubSection_PgfTag id="1052634"><PgfNumString></PgfNumString><SubSection_text><ParaLineStart LineNum="22"></ParaLineStart>‘(6) Before this section comes into force the Treasury shall lay before each House of <ParaLineStart LineNum="23"></ParaLineStart>Parliament a report setting out the additional costs to the Exchequer over the <ParaLineStart LineNum="24"></ParaLineStart>period from 1st April 2004 to 31st March 2022 of relief from income tax and <ParaLineStart LineNum="25"></ParaLineStart>capital gains tax as a consequence of the introduction of child trust fund accounts, <ParaLineStart LineNum="26"></ParaLineStart>together with an assessment of the scope for greater tax avoidance activity.’.</SubSection_text></SubSection_PgfTag>
+</SubSection>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1052640" Star="Yes"><Sponsors id="1052643"><Sponsor id="1052646"><ParaLineStart LineNum="27"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1052651"><ParaLineStart LineNum="28"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1052657">
+<AmendmentNumber_PgfTag id="1052659"><ParaLineStart LineNum="29"></ParaLineStart>156</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1052692">
+<AmedTextCommitReport_PgfTag id="1052695"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="30"></ParaLineStart><AmendmentReference Clause="20" Page="10" Line="36"><Number id="1052662">Clause <Clause_number>20</Clause_number>, </Number>
+<Page id="1052672">page <Page_number>10</Page_number>, </Page>
+<Line id="1052682">line <Line_number>36</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>leave out ‘of £300’ and insert ‘not exceeding £3,000’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1052698" Star="Yes"><Sponsors id="1052701"><Sponsor id="1052704"><ParaLineStart LineNum="31"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1052709"><ParaLineStart LineNum="32"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1052715">
+<AmendmentNumber_PgfTag id="1052717"><ParaLineStart LineNum="33"></ParaLineStart>157</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1052750">
+<AmedTextCommitReport_PgfTag id="1052751"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="34"></ParaLineStart><AmendmentReference Clause="27" Page="15" Line="17"><Number id="1052720">Clause <Clause_number>27</Clause_number>, </Number>
+<Page id="1052730">page <Page_number>15</Page_number>, </Page>
+<Line id="1052740">line <Line_number>17</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>at end add—</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+<SubSection id="1052754">
+<SubSection_PgfTag id="1052755"><PgfNumString></PgfNumString><SubSection_text><ParaLineStart LineNum="35"></ParaLineStart>‘(4) This Act does not come into force until the Treasury has laid before each House <ParaLineStart LineNum="36"></ParaLineStart>of Parliament a document setting out proposals for child trust fund accounts to <ParaLineStart LineNum="37"></ParaLineStart>become, on maturity, tax-advantaged accounts for retirement saving.’.</SubSection_text></SubSection_PgfTag>
+</SubSection>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1052761" Star="Yes"><Sponsors id="1052764"><Sponsor id="1052767"><ParaLineStart LineNum="38"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1052772"><ParaLineStart LineNum="39"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1052778">
+<AmendmentNumber_PgfTag id="1052780"><ParaLineStart LineNum="40"></ParaLineStart>158</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1052813">
+<AmedTextCommitReport_PgfTag id="1052814"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="41"></ParaLineStart><AmendmentReference Clause="13" Page="7" Line="26"><Number id="1052783">Clause <Clause_number>13</Clause_number>, </Number>
+<Page id="1052793">page <Page_number>7</Page_number>, </Page>
+<Line id="1052803">line <Line_number>26</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>at end add—</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+<PageStart id="1054481" PageType="BodyPage" PageNum="9">Page 9</PageStart><SubSection id="1052817">
+<SubSection_PgfTag id="1052818"><PgfNumString></PgfNumString><SubSection_text><ParaLineStart LineNum="1"></ParaLineStart>‘(6) This section shall not come into force until the Treasury has laid before each <ParaLineStart LineNum="2"></ParaLineStart>House of Parliament a report on how the saving gateway proposals will be applied <ParaLineStart LineNum="3"></ParaLineStart>to investments in child trust funds.’.</SubSection_text></SubSection_PgfTag>
+</SubSection>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1052824" Star="Yes"><Sponsors id="1052827"><Sponsor id="1052830"><ParaLineStart LineNum="4"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1052835"><ParaLineStart LineNum="5"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1052841">
+<AmendmentNumber_PgfTag id="1052843"><ParaLineStart LineNum="6"></ParaLineStart>159</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1052876">
+<AmedTextCommitReport_PgfTag id="1052877"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="7"></ParaLineStart><AmendmentReference Clause="27" Page="15" Line="12"><Number id="1052846">Clause <Clause_number>27</Clause_number>, </Number>
+<Page id="1052856">page <Page_number>15</Page_number>, </Page>
+<Line id="1052866">line <Line_number>12</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>after ‘31’, insert ‘and subject to the provisions of sec-<ParaLineStart LineNum="8"></ParaLineStart>tion 13’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1052882" Star="Yes"><Sponsors id="1052885"><Sponsor id="1052888"><ParaLineStart LineNum="9"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1052893"><ParaLineStart LineNum="10"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1052899">
+<AmendmentNumber_PgfTag id="1052901"><ParaLineStart LineNum="11"></ParaLineStart>160</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1052934">
+<AmedTextCommitReport_PgfTag id="1052938"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="12"></ParaLineStart><AmendmentReference Clause="27" Page="15" Line="12"><Number id="1052904">Clause <Clause_number>27</Clause_number>, </Number>
+<Page id="1052914">page <Page_number>15</Page_number>, </Page>
+<Line id="1052924">line <Line_number>12</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>after ‘section’, insert ‘section [<Italic id="1052937">proposals for conver-<ParaLineStart LineNum="13"></ParaLineStart>sion of child trust funds to tax-advantaged accounts for retirement saving</Italic>],’.</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+</Amendment.Text>
+</Clause.Committee>
+<Clause.Committee id="1052944" Star="Yes"><Sponsors id="1052947"><Sponsor id="1052950"><ParaLineStart LineNum="14"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1052955"><ParaLineStart LineNum="15"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1052961">
+<AmendmentNumber_PgfTag id="1052963"><ParaLineStart LineNum="16"></ParaLineStart>161</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Amendment.Text id="1052996">
+<AmedTextCommitReport_PgfTag id="1052997"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><ParaLineStart LineNum="17"></ParaLineStart><AmendmentReference Clause="27" Page="15" Line="17"><Number id="1052966">Clause <Clause_number>27</Clause_number>, </Number>
+<Page id="1052976">page <Page_number>15</Page_number>, </Page>
+<Line id="1052986">line <Line_number>17</Line_number>, </Line>
+</AmendmentReference><Amendment.Text_text>at end add—</Amendment.Text_text></AmedTextCommitReport_PgfTag>
+<SubSection id="1053000">
+<SubSection_PgfTag id="1053001"><PgfNumString></PgfNumString><SubSection_text><ParaLineStart LineNum="18"></ParaLineStart>‘(4) No order may be made under subsection (3) until the report specified in section <ParaLineStart LineNum="19"></ParaLineStart>[<Italic id="1053004">proposals for conversion of child trust funds to tax-advantaged accounts for <ParaLineStart LineNum="20"></ParaLineStart>retirement saving</Italic>] has been laid before Parliament.’.</SubSection_text></SubSection_PgfTag>
+</SubSection>
+</Amendment.Text>
+</Clause.Committee>
+<NewClause.Committee id="1053016" Star="Yes"><ClauseTitle id="1053019">
+<New_C_STitle_PgfTag id="1053021"><PgfNumString></PgfNumString><ClauseTitle_text><ParaLineStart LineNum="21"></ParaLineStart>Reduction of age of majority in respect of child trust funds</ClauseTitle_text></New_C_STitle_PgfTag>
+</ClauseTitle><Sponsors id="1053024"><Sponsor id="1053027"><ParaLineStart LineNum="22"></ParaLineStart>Mr George Osborne</Sponsor>
+<Sponsor id="1053032"><ParaLineStart LineNum="23"></ParaLineStart>Mr Peter Atkinson</Sponsor>
+</Sponsors>
+<Amendment.Number id="1053038">
+<AmendmentNumber_PgfTag id="1053040"><ParaLineStart LineNum="24"></ParaLineStart>nc4</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Move id="1053043">
+<Move_PgfTag id="1053048"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><Move_text><ParaLineStart LineNum="25"></ParaLineStart>To move the following Clause:—</Move_text></Move_PgfTag>
+</Move>
+<ClauseText id="1053051"><SubSection id="1053054">
+<SubSection_PgfTag id="1053055"><PgfNumString><PgfNumString_1>‘(1)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="26"></ParaLineStart>For the purpose of any contract entered into in respect of a child trust fund, the <ParaLineStart LineNum="27"></ParaLineStart>age of majority shall be 16.</SubSection_text></SubSection_PgfTag>
+</SubSection>
+<SubSection id="1053059">
+<SubSection_PgfTag id="1053061"><PgfNumString><PgfNumString_1>(2)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="28"></ParaLineStart>The Family Law Reform Act 1969 (c. 46) is amended as follows.</SubSection_text></SubSection_PgfTag>
+</SubSection>
+<SubSection id="1053064">
+<SubSection_PgfTag id="1053065"><PgfNumString><PgfNumString_1>(3)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="29"></ParaLineStart>After section 1 insert—</SubSection_text></SubSection_PgfTag>
+<Amendment id="1053068"><Clause id="1053071"><ClauseTitle id="1053074">
+<ClauseTitle_PgfTag id="1053076"><PgfNumString></PgfNumString><ActClauseTitle_text><ParaLineStart LineNum="30"></ParaLineStart>“1A Reduction of age of majority in respect of child trust funds</ActClauseTitle_text></ClauseTitle_PgfTag>
+</ClauseTitle><ClauseText id="1053079"><SubSection id="1053082">
+<SubSection_PgfTag id="1053083"><PgfNumString><PgfNumString_1>(1)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="31"></ParaLineStart>For the purposes of any matter specified in subsection (2) which relates <ParaLineStart LineNum="32"></ParaLineStart>to a contract entered into in respect of a child trust fund, a person shall <ParaLineStart LineNum="33"></ParaLineStart>attain full age on attaining the age of sixteen.</SubSection_text></SubSection_PgfTag>
+</SubSection>
+<SubSection id="1053087">
+<SubSection_PgfTag id="1053088"><PgfNumString><PgfNumString_1>(2)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="34"></ParaLineStart>Those matters are—</SubSection_text></SubSection_PgfTag>
+<Para id="1053091">
+<SubSection_PgfTag id="1053093"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="35"></ParaLineStart>any rule of law, and</Para_text></SubSection_PgfTag>
+</Para><Para id="1053096">
+<SubSection_PgfTag id="1053097"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="36"></ParaLineStart>the construction (in the absence of a definition or of any <ParaLineStart LineNum="37"></ParaLineStart>indication of a contrary intention) of the expressions listed in <ParaLineStart LineNum="38"></ParaLineStart>section 1(2) and similar expressions in—</Para_text></SubSection_PgfTag>
+<PageStart id="1054502" PageType="BodyPage" PageNum="10">Page 10</PageStart><SubPara id="1053100">
+<SubSection_PgfTag id="1053101"><PgfNumString><PgfNumString_1>(i)</PgfNumString_1> </PgfNumString><SubPara_text><ParaLineStart LineNum="1"></ParaLineStart>any statutory provision, whether passed or made before, <ParaLineStart LineNum="2"></ParaLineStart>on or after the date on which this section comes into <ParaLineStart LineNum="3"></ParaLineStart>force; and</SubPara_text></SubSection_PgfTag>
+</SubPara><SubPara id="1053105">
+<SubSection_PgfTag id="1053106"><PgfNumString><PgfNumString_1>(ii)</PgfNumString_1> </PgfNumString><SubPara_text><ParaLineStart LineNum="4"></ParaLineStart>any deed, will or other instrument of whatever nature <ParaLineStart LineNum="5"></ParaLineStart>(not being a statutory provision) made on or after that <ParaLineStart LineNum="6"></ParaLineStart>date.</SubPara_text></SubSection_PgfTag>
+</SubPara></Para></SubSection>
+<SubSection id="1053112">
+<SubSection_PgfTag id="1053113"><PgfNumString><PgfNumString_1>(3)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="7"></ParaLineStart>Subsections (6) and (7) of section 1 shall apply to the provisions of this <ParaLineStart LineNum="8"></ParaLineStart>section as they apply to the provisions of that section.</SubSection_text></SubSection_PgfTag>
+</SubSection>
+<SubSection id="1053117">
+<SubSection_PgfTag id="1053118"><PgfNumString><PgfNumString_1>(4)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="9"></ParaLineStart>In this section ‘child trust fund’ has the meaning given by section 1(2) of <ParaLineStart LineNum="10"></ParaLineStart>the Child Trust Funds Act 2004.”</SubSection_text></SubSection_PgfTag>
+</SubSection>
+</ClauseText>
+</Clause>
+</Amendment>
+</SubSection>
+<SubSection id="1053126">
+<SubSection_PgfTag id="1053127"><PgfNumString><PgfNumString_1>(4)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="11"></ParaLineStart>In section 28(4) (extent), after paragraph (a) insert—</SubSection_text></SubSection_PgfTag>
+<Amendment id="1053130"><Para id="1053133">
+<SubSection_PgfTag id="1053139"><PgfNumString></PgfNumString><Para_text><ParaLineStart LineNum="12"></ParaLineStart>“(aa) section 1A extends to Northern Ireland;”.’.</Para_text></SubSection_PgfTag>
+</Para></Amendment>
+</SubSection>
+</ClauseText>
+</NewClause.Committee>
+<NewClause.Committee id="1053152" Star="Yes"><ClauseTitle id="1053155">
+<New_C_STitle_PgfTag id="1053157"><PgfNumString></PgfNumString><ClauseTitle_text><ParaLineStart LineNum="13"></ParaLineStart>Report on savings effect of child trust funds</ClauseTitle_text></New_C_STitle_PgfTag>
+</ClauseTitle><Sponsors id="1053160"><Sponsor id="1053163"><ParaLineStart LineNum="14"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1053168"><ParaLineStart LineNum="15"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1053174">
+<AmendmentNumber_PgfTag id="1053176"><ParaLineStart LineNum="16"></ParaLineStart>nc5</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Move id="1053179">
+<Move_PgfTag id="1053184"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><Move_text><ParaLineStart LineNum="17"></ParaLineStart>To move the following Clause:—</Move_text></Move_PgfTag>
+</Move>
+<ClauseText id="1053187">
+<Text_PgfTag id="1053188"><ParaLineStart LineNum="18"></ParaLineStart>‘The Treasury shall lay before each House of Parliament a report setting out the <ParaLineStart LineNum="19"></ParaLineStart>Treasury’s estimate of the net increase in saving which will result from the <ParaLineStart LineNum="20"></ParaLineStart>provisions of this Act.’.</Text_PgfTag>
+</ClauseText>
+</NewClause.Committee>
+<NewClause.Committee id="1053203" Star="Yes"><ClauseTitle id="1053206">
+<New_C_STitle_PgfTag id="1053208"><PgfNumString></PgfNumString><ClauseTitle_text><ParaLineStart LineNum="21"></ParaLineStart>Report on savings incentives</ClauseTitle_text></New_C_STitle_PgfTag>
+</ClauseTitle><Sponsors id="1053211"><Sponsor id="1053214"><ParaLineStart LineNum="22"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1053219"><ParaLineStart LineNum="23"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1053225">
+<AmendmentNumber_PgfTag id="1053227"><ParaLineStart LineNum="24"></ParaLineStart>nc6</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Move id="1053230">
+<Move_PgfTag id="1053235"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><Move_text><ParaLineStart LineNum="25"></ParaLineStart>To move the following Clause:—</Move_text></Move_PgfTag>
+</Move>
+<ClauseText id="1053238">
+<Text_PgfTag id="1053239"><ParaLineStart LineNum="26"></ParaLineStart>‘The Treasury and the Department for Work and Pensions shall lay before each <ParaLineStart LineNum="27"></ParaLineStart>House of Parliament a joint report on the Government’s policies to improve <ParaLineStart LineNum="28"></ParaLineStart>savings incentives from birth to retirement.’.</Text_PgfTag>
+</ClauseText>
+</NewClause.Committee>
+<NewClause.Committee id="1053249" Star="Yes"><ClauseTitle id="1053252">
+<New_C_STitle_PgfTag id="1053253"><PgfNumString></PgfNumString><ClauseTitle_text><ParaLineStart LineNum="29"></ParaLineStart>Proposals for conversion of child trust funds to tax-advantaged accounts for retirement <ParaLineStart LineNum="30"></ParaLineStart>saving</ClauseTitle_text></New_C_STitle_PgfTag>
+</ClauseTitle><Sponsors id="1053257"><Sponsor id="1053260"><ParaLineStart LineNum="31"></ParaLineStart>Mr David Laws</Sponsor>
+<Sponsor id="1053265"><ParaLineStart LineNum="32"></ParaLineStart>Norman Lamb</Sponsor>
+</Sponsors>
+<Amendment.Number id="1053271">
+<AmendmentNumber_PgfTag id="1053273"><ParaLineStart LineNum="33"></ParaLineStart>nc7</AmendmentNumber_PgfTag>
+</Amendment.Number>
+<Move id="1053276">
+<Move_PgfTag id="1053281"><PgfNumString><PgfNumString_0>*</PgfNumString_0> </PgfNumString><Move_text><ParaLineStart LineNum="34"></ParaLineStart>To move the following Clause:—</Move_text></Move_PgfTag>
+</Move>
+<ClauseText id="1053284">
+<Text_PgfTag id="1053285"><ParaLineStart LineNum="35"></ParaLineStart>‘The Treasury shall lay before each House of Parliament a report setting out <ParaLineStart LineNum="36"></ParaLineStart>proposals for child trust fund accounts to become, on maturity, tax-advantaged <ParaLineStart LineNum="37"></ParaLineStart>accounts for retirement saving.’.</Text_PgfTag>
+</ClauseText>
+</NewClause.Committee>
+
+<MotionText_PgfTag id="1053331"><PageStart id="1054514" PageType="BodyPage" PageNum="11">Page 11</PageStart><ParaLineStart LineNum="1"></ParaLineStart> </MotionText_PgfTag>
+</Committee>
+</Amendments.Commons>
+<Interpretation></Interpretation><Footer></Footer></BillData></Document>
