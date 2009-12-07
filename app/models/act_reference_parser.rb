@@ -31,6 +31,14 @@ class ActReferenceParser
       end
       ids
     end
+
+    def handle_internal_ids doc
+      internal_ids = internal_ids(doc)
+      internal_ids.each do |id, anchor_name|
+        element = doc.at("//[@Id = '#{id}']")
+        element.set_attribute('anchor', anchor_name)
+      end
+    end
   end
 
   def parse_xml_file xml_file, options={}
@@ -57,6 +65,8 @@ class ActReferenceParser
 
     clauses = (doc/'ClauseText') + (doc/'LongTitle')
     mentions = clauses.collect {|clause| handle_raw_act_mentions(clause) }.include?(true)
+
+    ActReferenceParser.handle_internal_ids(doc)
 
     no_references = (act_abbreviations.empty? && act_citations.empty? && !mentions)
     no_references ? xml : doc.to_s

@@ -22,6 +22,15 @@ describe ActReferenceParser do
       ids["mf.109j-1112598"].should == 'clause42-amendment-clause116A'
       ids["mf.102j-1118009"].should == 'clause38-subsection6-amendment-subsection5A'
     end
+
+    it 'should add anchor attribute' do
+      doc = Hpricot.XML fixture('DigitalEconomy/clauses_with_xref_ids.xml')
+      ActReferenceParser.handle_internal_ids(doc)
+      xml = doc.to_s
+      xml.should have_tag('Clause[anchor="clause4-amendment-clause124A"]')
+      xml.should have_tag('Clause[anchor="clause42-amendment-clause116A"]')
+      xml.should have_tag('SubSection[anchor="clause38-subsection6-amendment-subsection5A"]')
+    end
   end
 
   describe 'when parsing act name split across two lines' do
