@@ -3,6 +3,36 @@ require 'hpricot'
 
 class ActReferenceParser
 
+  class << self
+    def internal_ids doc
+      ids = {}
+      (doc/'//[@Id]').each do |e|
+
+        id = "#{e.name.to_s.downcase}#{e['Number']}#{e['Letter'] ? e['Letter'] : ''}"
+
+        parent = e.parent
+        while parent
+          case parent.name
+            when 'Amendment'
+              id = "amendment-#{id}"
+            when 'SubSection'
+              if (num = parent.at('SubSection_PgfTag/PgfNumString'))
+                id = "subsection#{num.inner_text.tr('()','')}-#{id}"
+              end
+            when 'Clause'
+              if (num = parent.at('ClauseTitle/ClauseTitle_PgfTag/PgfNumString') )
+                id = "clause#{num.inner_text.tr('()','')}-#{id}"
+              end
+          end
+          parent = parent.parent
+        end
+
+        ids[e['Id']] = id
+      end
+      ids
+    end
+  end
+
   def parse_xml_file xml_file, options={}
     parse_xml(IO.read(xml_file), options)
   end

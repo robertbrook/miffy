@@ -1,0 +1,72 @@
+<Document>
+  <BillData>
+    <BillTitle>Digital Economy Bill [HL]</BillTitle>
+    <Clauses id="1112573">
+      <PageStart id="1237436" PageType="BodyPage" PageNum="46">Page 46</PageStart>
+      <CrossHeading id="1112662" Quote="None">
+        <CrossHeadingTitle id="1154105"><ParaLineStart LineNum="1"></ParaLineStart>Online infringement of copyright</CrossHeadingTitle>
+        <Clause id="1154114" HardReference="j154" TemplateVersion="4.2.002">
+          <ClauseTitle id="1154118">
+            <ClauseTitle_PgfTag id="1154120">
+              <PgfNumString><PgfNumString_1>4</PgfNumString_1></PgfNumString>
+            </ClauseTitle_PgfTag>
+          </ClauseTitle>
+          <ClauseText id="1154123">
+            <Amendment id="1131648">
+              <CrossHeading id="1112701">
+                <CrossHeadingTitle id="1127918"><ParaLineStart LineNum="4"></ParaLineStart>“Online infringement of copyright: obligations of internet service providers</CrossHeadingTitle>
+                <Clause id="1112728" Id="mf.451j-1112728" Number="124" Letter="A"></Clause>
+              </CrossHeading>
+            </Amendment>
+          </ClauseText>
+        </Clause>
+      </CrossHeading>
+      <CrossHeading id="1113067">
+        <CrossHeadingTitle id="1237446">
+          <ParaLineStart LineNum="1"></ParaLineStart>Copyright and performers’ property rights: licensing and penalties</CrossHeadingTitle>
+        <Clause id="1237455" HardReference="j901" TemplateVersion="4.2.002">
+          <ClauseTitle id="1237459">
+            <ClauseTitle_PgfTag id="1237461">
+              <PgfNumString><PgfNumString_1>42</PgfNumString_1></PgfNumString>
+            </ClauseTitle_PgfTag>
+          </ClauseTitle>
+          <ClauseText id="1237464">
+            <SubSection id="1237467">
+              <Amendment id="1112570">
+                <CrossHeading id="1112579">
+                  <CrossHeadingTitle id="1237788"><ParaLineStart LineNum="5"></ParaLineStart>“Additional licensing and regulation</CrossHeadingTitle>
+                  <Clause id="1112598" Id="mf.109j-1112598" Number="116" Letter="A"></Clause>
+                </CrossHeading>
+              </Amendment>
+            </SubSection>
+          </ClauseText>
+        </Clause>
+      </CrossHeading>
+      <CrossHeading id="1113010">
+        <CrossHeadingTitle id="1236713"><ParaLineStart LineNum="32"></ParaLineStart>Access to electromagnetic spectrum</CrossHeadingTitle>
+        <Clause id="1236722" HardReference="j201" TemplateVersion="4.2.002">
+          <ClauseTitle id="1113889">
+            <ClauseTitle_PgfTag id="1236727">
+              <PgfNumString><PgfNumString_1>38</PgfNumString_1></PgfNumString>
+            </ClauseTitle_PgfTag>
+          </ClauseTitle>
+          <ClauseText id="1236730">
+            <SubSection id="1116810">
+              <SubSection_PgfTag id="1236809">
+                <PgfNumString><PgfNumString_1>(6)</PgfNumString_1></PgfNumString>
+              </SubSection_PgfTag>
+              <Amendment id="1116814">
+                <SubSection id="1118009" Id="mf.102j-1118009" Number="5" Letter="A" Quote="Double"></SubSection>
+              </Amendment>
+            </SubSection>
+          </ClauseText>
+        </Clause>
+      </CrossHeading>
+    </Clauses>
+    <Interpretation></Interpretation>
+    <Footer>
+      <BillPrintNumber>HL Bill 1</BillPrintNumber>
+      <BillSessionNumber>54/5</BillSessionNumber>
+    </Footer>
+  </BillData>
+</Document>
