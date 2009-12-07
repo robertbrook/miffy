@@ -1,4 +1,4 @@
-<Document><ENData><BillInfo><Title>Channel Tunnel Rail Link (Supplementary Provisions) Bill</Title><Version>4</Version></BillInfo><TextSection> 
+<Document><ENData><BillInfo><Title>Channel Tunnel Rail Link (Supplementary Provisions) Bill</Title><Version>4</Version></BillInfo><TextSection SerialNumber="1"> 
                 CHANNEL TUNNEL RAIL LINK 
              (SUPPLEMENTARY PROVISIONS) BILL 
  
@@ -58,7 +58,7 @@
      COMMENTARY ON CLAUSES 
  
      Powers of Secretary of State 
-</TextSection><Clause Number="1">     Clause 1 
+</TextSection><Clause Number="1" SerialNumber="2">     Clause 1 
 7.   Under section 6(1) of the Railways Act 2005 (&#8220;the 2005 Act&#8221;) the Secretary of State 
      has the power to &#8220;provide, or agree to provide, financial assistance to any person &#8211; 
  
@@ -84,7 +84,7 @@
       these powers applied to the CTRL that there might be an adverse impact on any value 
       generated from a sale of the business without the Bill. 
  
-</Clause><Clause Number="2">      Access contracts 
+</Clause><Clause Number="2" SerialNumber="3">      Access contracts 
       Clause 2 
 10.   Clause 2 aims to delineate more clearly the exclusion that the CTRL has from 
       regulation by the ORR. Under the 1996 Act, the CTRL is generally excluded from 
@@ -104,7 +104,7 @@
       regulation by the ORR under the 1993 Act. Accordingly, clause 2 repeals section 
       17(3) of the 1996 Act, and makes a consequential amendment to section 17(2). 
  
-</Clause><Clause Number="3">      Duties of Office of Rail Regulation 
+</Clause><Clause Number="3" SerialNumber="4">      Duties of Office of Rail Regulation 
       Clause 3 
 12.   Clause 3 of the Bill makes some changes to the duties of the ORR in relation to the 
       CTRL. In sections 21(1) and (2) of the 1996 Act, the ORR was given specific duties 
@@ -116,7 +116,7 @@
       in subsection (2) of section 21 is no longer applicable with the completion of the 
       construction project and there are consequential amendments to the rest of the section. 
  
-</Clause><Clause Number="4">      Power of Office of Rail Regulation to charge fees 
+</Clause><Clause Number="4" SerialNumber="5">      Power of Office of Rail Regulation to charge fees 
       Clause 4 
 14.   In addition to the duty that the ORR has under section 21(1) of the 1996 Act, it also 
       has regulatory functions in relation to the CTRL under the Railways Infrastructure 
@@ -139,7 +139,7 @@
       any amount outstanding after the due date and for refunds of any amounts found after 
       payment to have been overcharged. 
  
-</Clause><Clause Number="5">      Meaning of Development Agreement 
+</Clause><Clause Number="5" SerialNumber="6">      Meaning of Development Agreement 
       Clause 5 
 17.   The fifth provision within the Bill amends the definition of &#8220;development agreement&#8221; 
       in section 56(1) of the 1996 Act. 
