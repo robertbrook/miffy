@@ -1,0 +1,215 @@
+@import partials/base.sass
+@import blueprint
+
+body
+  font-family:  Verdana, Arial, Helvetica, sans-serif
+  text-align: center
+  font-size: 0.9em
+
+#container
+  +container
+  padding-top: 2em
+
+#header, #footer
+  +column(!blueprint_grid_columns)
+  
+#page_header, #page_footer
+  margin: 1em
+  background: silver
+  padding: 2%
+  
+#page_footer
+  margin-top: 2em
+
+.PageStart
+  display: none
+  
+.Bold
+  font-weight: bold
+  
+.BillData
+  +column(30, true)
+  text-align: left
+  
+  .BillTitle
+    font-size: 1.2em
+    font-weight: bold
+    text-align: center
+  
+  .PgfNumString
+    padding-right: 0.5em
+    display: block
+    float: left
+  
+  .Clauses
+    +column(30, true)
+    float: left
+    clear: both
+    
+    .Prelim
+      float: left
+      +column(30, true)
+      padding-top: 2em
+      clear: both
+    
+      .ABillTo
+        +column(30, true)
+        width: 100%
+        text-align: center
+        font-weight: bold
+        float: left
+        font-size: 1.1em
+      
+        .Abt3
+          display: inline
+        
+        .Abt1, .Abt2, .Abt4
+          display: inline
+          padding-right: 0.5em
+      
+      .LongTitle, .WordsOfEnactment
+        padding-top: 1em
+        float: left
+        clear: both
+      
+        .Bpara
+          margin: 1em 0
+          
+        .SmallCaps
+          padding-right: 0.5em
+          
+    .CrossHeading
+      +column(30, true)
+      clear: both
+      margin: 1em 0 0 0
+      
+      .CrossHeadingTitle
+        +column(30, true)
+        clear: both
+        font-weight: bold
+     
+    .Part
+      +column(30, true)
+      clear: both
+      
+      .PNum_PgfTag, .PartTitle
+        font-weight: bold
+        font-size: 1.05em
+    
+    .TextContinuation
+      display: block
+      margin-left: 2em
+        
+    .Clause
+      +column(30, true)
+      padding-top: 0.75em
+      clear: both
+      
+      .TableTitle
+        font-weight: bold
+        text-align: center
+        clear: both
+        font-size: 0.9em
+        
+      .Table
+        float: left
+        clear: both
+        
+        table
+          border-collapse: collapse
+          
+          td, th
+            border: 1px solid black
+      
+      .ClauseText
+        float: left
+        margin-left: 1em
+        
+        ._ClauseTitle_PgfTag, .ClauseText_PgfTag
+          float: left
+          margin-left: 1em
+          display: block
+        
+        .Para
+          float: left
+          margin-left: 2em
+          display: block
+          clear: both
+          
+          .Para_text
+            float: left
+            display: block
+        
+        .SubParagraph_PgfTag
+          float: left
+          margin-left: 2em
+          display: block
+          clear: both
+          
+          .SubPara_text
+            float: left
+            display: block
+        
+        .SubSection_PgfTag
+          float: left
+        
+        .SubSection
+          float: left
+          display: block
+          clear: both
+          margin-left: 1em
+          
+          .SubSection_PgfTag
+            float: left 
+          
+          .SubSection_text
+            float: left
+            display: block
+            
+          ._SubParagraph_PgfTag
+            float: left
+            margin-left: -1em
+          
+        ._SubParagraph_PgfTag
+          float: left
+          margin-left: 2em
+      
+      .ClauseTextWithExplanatoryNote
+        float: left
+        
+        .ClauseText
+          width: 55%
+          float: left
+        
+        .explanatory_note
+          font-size: 95%
+          width: 35%
+          float: right
+          border: 1px dotted crimson
+          background-color: lightyellow
+          padding: 1em
+          
+          .explanatory_note_text
+            float: left
+          
+          .NoteClauseTitle
+            display: none
+            
+          .en_header
+            font-weight: bold
+            display: block
+            margin-bottom: 1em
+  .Footer
+    +column(30, true)
+    clear: both
+    padding: 2em 0 0 0
+    text-align: left
+    color: grey
+
+    .BillPrintNumber
+      +column(10, true)
+
+    .BillSessionNumber
+      +prepend(10)
+      +column(10, true)
+      text-align: right

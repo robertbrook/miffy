@@ -1,0 +1,104 @@
+@import ../partials/base_interleaved_wide.sass
+@import ../partials/_bill_docs_shared.sass
+@import blueprint
+@import _clauses.sass
+
++blueprint-typography
++blueprint-utilities
+
+pre
+  text-align: left
+
+a
+  text-decoration: none
+
+#container
+  text-align: center 
+  +container
+  width: 950px
+  
+  hr, .OrderCrossHeading, .OrderHousePara_PgfTag, table
+    float: left
+  
+  .Italic
+    font-style: italic
+
+  .Bold
+    font-weight: bold
+    
+  .PageStart
+    font-weight: bold
+    float: right
+    text-align: right
+    +span(30)
+    border-top: thin dotted black
+    clear: both
+    padding: 1em 0 0
+    margin: 1em 0 0
+
+  .PageStart.first
+    border: 0
+    padding: 0
+    margin: 0 
+
+.ClauseTextWithExplanatoryNote
+  float: left
+  width: 950px
+
+#container
+  .Clauses
+    .explanatory_note
+      float: left
+      margin-left: 40px
+      width: 300px
+  
+      .explanatory_note_text
+        font-size: 95%
+        float: right
+        border: 1px dotted crimson
+        background-color: lightyellow
+        padding: 1em
+        width: 285px
+    
+        .en_header
+          font-weight: bold
+          display: block
+          margin-bottom: 1em
+    
+        p
+          margin-bottom: 0.8em
+          display: block
+          float: left
+          clear: both
+
+        ul
+          margin-top: 0.2em
+          margin-bottom: 0.8em
+          clear: both
+          float: left
+   
+      .NoteClauseTitle
+        display: none
+
+.PgfNumString
+  float: left
+
+  .PgfNumString_0
+    +column(1, true)
+
+  .PgfNumString_1
+    +append(1)
+    +column(1)
+
+  .PgfNumString_2
+    +append(1)
+    +column(1, true)
+    
+body.convert div#container, body.act div#container
+  border: thin solid lightgray
+  padding: 3%
+  margin-top: 1%
+  margin-bottom: 1%
+  background: #FFFEFB
+  +drop-shadow
+  min-height = !blueprint_container_size * 1.4142

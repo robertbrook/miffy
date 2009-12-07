@@ -1,0 +1,32 @@
+<Document>
+  <BillData>
+    <BillTitle>Digital Economy Bill [HL]</BillTitle>
+    <Clauses id="1112573">
+      <PageStart id="996720" PageType="BodyPage" PageNum="1">Page 1</PageStart>
+      <Rubric id="1003899" TemplateVersion="4.2.002"></Rubric>
+      <Prelim id="1112587">
+        <ABillTo id="1003906" TemplateVersion="4.2.002">
+          <Abt1 id="1003909">
+            <ParaLineStart LineNum="1"></ParaLineStart>A</Abt1>
+          <Abt2 id="1003917">
+            <ParaLineStart LineNum="2"></ParaLineStart>Bill</Abt2>
+          <Abt3 id="1003924"></Abt3>
+          <Abt4 id="1003929">
+            <ParaLineStart LineNum="3"></ParaLineStart>To</Abt4>
+        </ABillTo>
+        <LongTitle id="1003732" TemplateVersion="4.2.002">
+          <ParaLineStart LineNum="4"></ParaLineStart>
+          <Bpara id="1003762">
+            <Letter id="1003816">M</Letter>
+ake provision about the functions of the Office of Communications; to make <ParaLineStart LineNum="5"></ParaLineStart>provision about the online infringement of copyright, about licensing of <ParaLineStart LineNum="6"></ParaLineStart>copyright and performers’ rights and about penalties for infringement; to <ParaLineStart LineNum="7"></ParaLineStart>make provision about internet domain registries; to make provision about the <ParaLineStart LineNum="8"></ParaLineStart>functions of the Channel Four Television Corporation; to make provision <ParaLineStart LineNum="9"></ParaLineStart>about the regulation of television and radio services; to make provision about <ParaLineStart LineNum="10"></ParaLineStart>the regulation of the use of the electromagnetic spectrum; to amend the Video <ParaLineStart LineNum="11"></ParaLineStart>Recordings Act 1984; to make provision about public lending right in relation <ParaLineStart LineNum="12"></ParaLineStart>to electronic publications; and for connected purposes.<Enact id="1004229"> </Enact>
+          </Bpara>
+        </LongTitle>
+      </Prelim>
+    </Clauses>
+    <Interpretation></Interpretation>
+    <Footer>
+      <BillPrintNumber>HL Bill 1</BillPrintNumber>
+      <BillSessionNumber>54/5</BillSessionNumber>
+    </Footer>
+  </BillData>
+</Document>

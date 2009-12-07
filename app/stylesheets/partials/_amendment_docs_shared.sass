@@ -1,0 +1,427 @@
+@import partials/base.sass
+@import blueprint
+
+.BillData
+  +column(30, true)
+
+.Amendments_Commons
+  +column(30)
+  text-align: left
+  margin: 0 0 2em 0
+  
+  .PgfNumString
+    float: left
+    text-align: right
+
+    .PgfNumString_0
+      +column(1, true)
+      text-align: left
+
+    .PgfNumString_1
+      +append(1)
+      +column(1)
+
+    .PgfNumString_2
+      +append(1)
+      +column(1, true)
+
+.Table
+  +prepend(2)
+  +column(26)
+  +append(2)
+
+  table
+    border-collapse: collapse
+
+  td
+    vertical-align: top
+    border-top: 1px solid black
+    border-left: 1px solid black
+
+  th
+    font-weight: normal
+    font-style: italic
+    text-align: center
+    border-left: 1px solid black
+    border-bottom: 1px solid black
+    border-top: 0
+
+  td.first, th.first
+    border-left: 0
+
+  td.first
+    padding-left: 0.5em
+
+.Committee
+  +column(30, true)
+  border-top: 1px solid grey
+  clear: both
+
+  .Amendment_Text > p.SubPara_sch > .SubParagraphCont_sch_PgfTag,
+  .Amendment_Text > p.SubParagraphCont_sch_PgfTag,
+  .Amendment_Text > p.Paragraph_sch_PgfTag,
+  .Amendment_Text > .Para
+    +prepend(2)
+
+  .Amendment_Text > p.SubPara_sch > .SubSubParagraph_sch_PgfTag
+    +prepend(6)
+
+  .Heading_text
+    +column(30, true)
+    +heading_text
+
+  .Clause_Committee, .Schedule_Committee, .NewClause_Committee, .NewSchedule_Committee, .Title_Committee
+    +column(30, true)
+    text-align: left
+    border-bottom: 1px solid grey
+    padding: 1em 0
+    clear: both
+
+    .ClauseTitle
+      +clause_title
+
+    ul.Sponsors
+      +column(30, true)
+      list-style: none
+      margin: 0
+      padding: 0.5em 0
+
+    .Definition
+      display: block
+      +prepend(1)
+
+    .Amendment_Number
+      column(30, true)
+      float: left
+
+      .AmendmentNumber_PgfTag
+        +prepend(28)
+        +column(2, true)
+        font-weight: bold
+        text-align: right
+        margin-bottom: 0
+        text-transform: uppercase
+
+    .Amendment_Text
+      column(30, true)
+      float: left
+
+      .AmedTextCommitReport_PgfTag
+        +prepend(1)
+        +column(29, true)
+        padding-top: 2px
+
+        .Number_number, .Schedule_number, .Clause_number, .Page_number, .Line_number
+          font-weight: bold
+
+      div.SubSection
+        +prepend(2)
+        +column(28, true)
+
+        p.SubSection_PgfTag
+          +column(28, true)
+          margin: 0
+          padding: 0
+
+          .SubSection_text
+            +column(24, true)
+
+        .Para
+          +column(27, true)
+
+          p.Paragraph_PgfTag
+            float: left
+            margin: 0
+            padding: 0
+
+            .PgfNumString
+              +prepend(3)
+
+            .Para_text
+              +column(19)
+
+        .Amendment
+          +column(25, true)
+
+          .Para
+            +column(25, true)
+
+            p._Paragraph_PgfTag
+              +column(23, true)
+              +prepend(2)
+
+              .Para_text
+                +column(21, true)
+
+      .Para_sch
+        column(28, true)
+        +prepend(2)
+        float: left
+        margin-top: 3px
+        margin-bottom: 3px
+
+        p.Paragraph_sch_PgfTag
+          margin: 0
+          padding: 0
+
+        .Para_sch_text
+          +column(26, true)
+
+        .SubPara_sch
+          +column(26, true)
+          float: left
+
+          .SubParagraphCont_sch_PgfTag
+            +column(26, true)
+
+            .Subpara_sch_text
+              +column(22, true)
+
+          .Definition
+            +column(25, true)
+
+          .SubParagraph_sch_PgfTag
+            display: block
+            +column(26, true)
+
+            .Subpara_sch_text
+              +column(22, true)
+
+          .SubSubParagraph_sch_PgfTag
+            display: block
+            +prepend(5)
+            +column(21, true)
+
+            .SubSubPara_sch
+              +column(19, true)
+
+              .SubSubPara_sch_text
+                +column(19, true)
+
+          .Subpara_sch_text 
+            +column(23, true)
+
+            .PgfNumString
+              prepend(1)
+
+            .SubSubPara_sch
+              +column(18, true)
+              float: left
+              display: block
+
+        .SubParagraphCont_sch_PgfTag
+          +column(28, true)
+          float: left
+
+      p.SubPara_sch
+        +column(28, true)
+        float: left
+        margin: 0
+        padding: 0
+
+        .SubParagraphCont_sch_PgfTag
+          +column(26, true)
+          display: block
+
+          .SubPara_sch_text
+            +column(22, true)
+            display: block
+
+        .SubSubParagraph_sch_PgfTag
+          +column(26, true)
+
+          .SubSubPara_sch
+            +column(21, true)
+            display: block
+
+            .SubSubPara_sch_text
+              +column(21, true)
+
+      .SubParagraphCont_sch_PgfTag
+        +column(28, true)
+
+        .SubPara_sch
+          +column(24, true)
+
+          .Subpara_sch_text
+            +column(24, true)  
+
+      .Paragraph_sch_PgfTag
+        +column(28, true)
+
+        .Para_sch_text
+          +column(24, true)
+
+        .Amendment_Text_text
+          +column(24, true)
+
+    .Move
+      +prepend(1)
+      +column(29, true)
+      float: left
+      margin-bottom: 1em
+      clear: both
+
+
+  .Clause_Committee, .Schedule_Committee  
+    .Para
+      +column(28, true)
+
+      .Paragraph_PgfTag
+        float: left
+
+        .Para_text
+          +column(24, true)
+
+  .NewClause_Committee, .NewSchedule_Committee
+    +column(30, true)
+    text-align: left
+    border-bottom: 1px solid grey
+    padding: 1em 0
+
+    p.New_C_STitle_PgfTag, p.ScheduleTitle_PgfTag
+      float: left
+      padding: 0
+      margin: 0
+
+    .ClauseText
+      +column(28, true)
+      +prepend(2)
+
+      .SubSection
+        +column(28, true)
+
+        p.SubSection_PgfTag, p.SubSection1_PgfTag
+          +column(28, true)
+          padding: 0
+          margin: 0
+
+          .SubSection_text
+            +column(25, true)
+
+        .Para
+          +prepend(2)
+          +column(26, true)
+
+          p.Paragraph_PgfTag
+            float: left
+            margin: 0
+            padding: 0
+
+            .PgfNumString
+              +prepend(1)
+
+            .Para_text
+              +column(23, true)
+
+  .CrossHeadingSch 
+    +column(30, true)
+
+    .CrossHeadingTitle
+      +column(29 ,true)
+      +prepend(1)
+      font-style: italic
+
+    .Para_sch
+      +column(28, true)
+      +prepend(2)
+
+      p.Paragraph_sch_PgfTag
+        float: left
+        margin: 0
+        padding: 0
+
+        .Para_sch_text
+          +column(25, true)
+
+      p.SubSubParagraph_sch_PgfTag
+        float: left
+        margin: 0
+        padding: 0
+
+        .PgfNumString
+          +prepend(3)
+
+        .SubSubPara_sch
+          +column(23, true)
+
+    .SubSubPara_sch
+      +column(22, true)
+
+  .TextContinuation
+    +prepend(2)
+    +column(25, true)
+
+.Order_House
+  +column(30, true)
+  padding: 0.5em 0 0 0
+  border-bottom: 1px solid black
+
+  .OrderDate
+    +column(30, true)
+
+    .OrderHeading_PgfTag
+      +column(30, true)
+      text-align: center
+
+      .OrderDate_text
+        text-transform: uppercase
+
+  .OrderPreamble
+    +column(30, true)
+
+  .OrderText
+    +column(30, true)
+
+    .OrderCrossHeading
+      +column(30, true)
+
+      .CrossHeadingTitle
+        +column(29 ,true)
+        +prepend(1)
+        font-style: italic
+
+    p.OrderHousePara_PgfTag
+      +column(29, true)
+      +prepend(1)
+
+      .OrderPara
+        +column(25, true)
+
+        .OrderPara_text
+          +column(25, true)
+
+
+.Order_Motion
+  +column(30, true)
+  padding: 0.5em 0 0 0
+  border-bottom: 1px solid black
+
+  .OrderHeading
+    +column(30, true)
+    text-align: center
+
+    .OrderHeading_text
+      text-transform: uppercase
+
+  .OrderAmendmentText
+    +column(30, true)
+
+.Order_Committee
+  +column(30, true)
+  padding: 0.5em 0 0 0
+  border-bottom: 1px solid black
+
+  .OrderDate
+    +column(30, true)
+
+    .OrderHeading_PgfTag
+      +column(30, true)
+      text-align: center
+
+      .OrderDate_text
+        text-transform: uppercase
+
+  .ResolutionPreamble
+    +indent
+    +column(30, true)

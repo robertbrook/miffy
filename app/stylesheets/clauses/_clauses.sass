@@ -1,0 +1,832 @@
+@import blueprint
+
+body    
+  #container
+  
+    .BillData
+      +column(30, true)
+      float: left
+      
+    .BillTitle
+      font-size: 1.8em
+      +column(30, true)
+      text-align: center
+      padding: 1.25em 0 2.5em 0
+      border-bottom: 1px solid black
+      clear: both
+      
+    .PgfNumString
+      float: left
+      display: block
+
+      .PgfNumString_0
+        +column(1, true)
+
+      .PgfNumString_1
+        +append(0.5)
+        +column(1)
+
+      .PgfNumString_2
+        +append(1)
+        +column(1, true)
+
+    .Head
+      +column(30, true)
+
+    .Prelim
+      float: left
+
+      .ABillTo
+        float: left
+        text-transform: uppercase
+        +column(30, true)
+        text-align: center
+        padding: 2em 0
+
+        .Abt1, .Abt2, .Abt3
+          +column(30, true)
+
+        .Abt1
+          margin-bottom: 2.5em
+
+        .Abt2
+          font-size: 2.7em
+          letter-spacing: 0.3em
+          font-weight: bold
+          padding: 0.4em 0
+
+      .LongTitle
+        +column(30, true)
+        padding: 0 0 2em 0
+        font-size: 1.1em
+
+      .WordsOfEnactment
+        +column(30, true)
+        
+        .Bpara
+          +column(30, true)
+          margin-bottom: 2.5em
+
+        .Dropcap
+          font-size: 2.4em
+          float: left
+          margin-top: -0.25em
+
+        .SmallCaps
+          float: left
+          text-transform: uppercase
+          margin-right: 0.3em
+
+    .Clauses
+      +column(30, true)
+      text-align: left
+      border-top: 2px solid black
+      margin: 1px 0 2em 0
+      clear: both
+    
+    
+      p
+        margin-bottom: 0
+        padding-bottom: 0
+        float: left
+      
+      .Part
+        +column(30, true)
+        
+        .PNum_PgfTag
+          +column(30, true)
+          text-align: center
+          
+          .PgfNumString
+            +column(30, true)
+            font-weight: bold
+            text-transform: uppercase
+            float: left
+            
+            .PgfNumString_0
+              +column(30, true)
+              text-align: center
+            
+          .PartNumber
+            float: left
+      
+        .PartTitle
+          +column(30, true)
+          text-align: center
+          text-transform: uppercase
+          padding: 0 0 1em 0
+          
+      .Chapter
+        +column(30, true)
+          
+        .CNum_PgfTag
+          +column(30, true)
+          text-align: center
+          
+          .PgfNumString
+            +column(30, true)
+            font-weight: bold
+            text-transform: uppercase
+            float: left
+        
+            .PgfNumString_0
+              +column(30, true)
+              text-align: center
+            
+        .ChapterTitle
+          +column(30, true)
+          text-align: center
+          text-transform: uppercase
+          padding: 0 0 1em 0
+          
+      .CrossHeading
+        +column(30, true)
+        clear: both
+          
+        .CrossHeadingTitle
+          font-style: italic
+          text-align: center
+          padding: 0 0 1em 0
+          +column(30, true)
+      
+      .Rubric
+        +column(30, true)
+        text-align: center
+
+      .Clause
+        +column(30, true)
+        clear: both
+          
+        .ClauseTitle
+          font-weight: bold
+          
+          img
+            border: 0
+          
+          .ClauseTitle_PgfTag
+            margin-bottom: 0.5em
+          
+          .PgfNumString_1
+            width: auto
+            padding-right: 0
+            margin-right: 0.5em
+            
+        .ClauseText
+          +push(2)
+          +column(28, true)
+          
+          .Definition
+            +column(28, true)
+            margin-bottom: 0.4em
+            
+            .Definition_text
+              +push(1)
+              text-indent: -1em
+              margin-bottom: 0
+          
+          .PgfNumString
+            +pull(1.5)
+          
+          .TextContinuation
+            +column(28, true)
+            
+            .Amendment
+              margin-bottom: 0.2em
+              
+              .Para
+                +column(28, true)
+                margin-bottom: 0.2em
+                
+                .Para_text
+                  +column(24, true)
+          
+          .Para
+            push(1)
+            +column(27, true)
+            margin-bottom: 0.2em
+            
+            .PgfNumString
+              +prepend(2)
+            
+            .SubParagraph_PgfTag
+              width: 100%
+              float: left
+            
+            .Para_text
+              display: block
+              pull(1)
+              +column(25, true)
+          
+          .Amendment 
+            +push(1)
+            +column(27, true)
+            margin-bottom: 0.2em
+            
+            .PgfNumString
+              margin-left: 0
+            
+            .SubSection
+              +push(1)
+              +column(26, true)
+              margin-bottom: 0.4em
+              
+              .PgfNumString
+                +pull(2)
+              
+              .SubSection_text
+                +column(26, true)
+                margin-bottom: 0
+              
+              .Para
+                +push(1)
+                +column(25, true)
+                margin-bottom: 0.2em
+                
+                .Para_text
+                  +column(23, true)
+                
+            .CenteredHeading
+              text-align: center
+              
+            .Clause
+              +column(27, true)
+              
+              .ClauseTitle
+                +column(27, true)
+                
+                .PgfNumString
+                  text-indent: -1em 
+                  margin-right: 1em
+                
+                .ClauseTitle_PgfTag
+                  +column(27, true)
+                
+              .ClauseText
+                +column(25, true)
+                margin-bottom: 0.4em
+                
+                ._Paragraph_PgfTag
+                  +column(23, true)
+                  +push(1)
+                  
+                  .Para_text
+                    +column(22, true)
+                    
+                p._SubSection_PgfTag
+                  float: left
+                  
+                p._SubParagraph_PgfTag
+                  +column(24, true)
+                  +push(3)
+                  
+                  .SubPara_text
+                    +column(22, true)
+                    margin-bottom: 0
+                    
+                span.Para
+                  float: left
+                  display: block 
+                  
+                .SubSection
+                  +column(24, true)
+                  margin-bottom: 0.4em
+                  
+                  .SubSection_text
+                    +column(24, true)
+                    margin-bottom: 0
+                    
+                  .Para
+                    +push(3)
+                    +column(21, true)
+                    margin-bottom: 0.2em
+                    
+                    .Para_text
+                      +column(21, true)
+                    
+                    .PgfNumString
+                      +pull(4)
+                      
+                    .SubParagraph_PgfTag
+                      float: left
+                      
+                      .PgfNumString
+                        +pull(1)
+                        float: left
+                        
+                      .SubPara
+                        +push(1)
+                        +column(17, true)
+                        margin-bottom: 0.2em
+                      
+                  .Definition
+                    +column(22, true)
+                    margin-bottom: 0.4em
+                    
+                    .DefinitionList 
+                      +column(22, true)
+                      margin-bottom: 0
+                      
+                      .DefinitionListItem
+                        +push(3)
+                        +column(19, true)
+                        margin-bottom: 0.4em
+                        
+                        .DefinitionList1_PgfTag
+                          +column(19, true)
+                  
+          .SubSection
+            +column(28, true)
+            margin-bottom: 0.4em
+              
+            .SubSection_text
+              +column(28, true)
+              margin-bottom: 0
+            
+            .FrameData
+              +column(26, true)
+              padding-bottom: 1em
+              
+              .Formula
+                text-align: center
+                +push(1)
+                +column(25, true)
+                display: block
+            
+            .TextContinuation
+              +column(28, true)
+              padding-top: 0.4em
+            
+            .List
+              +push(2)
+              +column(26, true)
+            
+            .Definition
+              +push(2)
+              +column(26, true)
+              margin-bottom: 0.4em
+              
+              .TextContinuation
+                +column(26, true)
+              
+              .Definition_text
+                +push(0)
+                display: block
+                text-indent: -1em
+                +column(26, true)
+                margin-bottom: 0
+              
+              .DefinitionList
+                +column(26, true)
+                margin-bottom: 0
+              
+                .TextContinuation
+                  +column(28, true)
+                  padding-top: 0.4em
+              
+                .DefinitionListItem
+                  +push(2)
+                  +column(24, true)
+                  margin-bottom: 0.4em
+                  
+                  .DefinitionList2_PgfTag
+                    +column(18, true)
+            
+            .SubSection_PgfTag
+              float: left
+              display: block
+              width: 100%
+              
+            .Para
+              push(1)
+              +column(28, true)
+              margin-bottom: 0.2em
+              
+              .PgfNumString
+                pull(3.5)
+              
+              .Para_text
+                +column(26, true)
+              
+              .SubPara
+                +push(3)
+                +column(22, true)
+                margin-bottom: 0.2em
+                
+                .SubPara_text
+                  display: block
+                  +column(18, true)
+                  margin-bottom: 0
+                  
+              .TextContinuation
+                +column(25, true)
+            
+              .Amendment
+                +push(2)
+                +column(26, true)
+                margin-bottom: 0.2em
+                
+                .Definition
+                  pull(1)
+                  +column(23, true)
+                  margin-bottom: 0.4em
+                  
+                  .DefinitionList 
+                    +column(23, true)
+                    margin-bottom: 0
+                    
+                    .DefinitionListItem
+                      +column(22, true)
+                      margin-bottom: 0.4em
+                      
+                      .PgfNumString
+                        +pull(2)
+                  
+                  .Definition_text
+                    +column(23, true)
+                    margin-bottom: 0
+                            
+                .Para
+                  +column(21, true)
+                  margin-bottom: 0.2em
+                    
+                  .Para_text
+                    +column(21, true)
+                    
+                .SubPara_sch
+                  +column(26, true)
+                  
+                  .SubSubPara_sch
+                    +push(5)
+                    +column(21, true)
+                    margin-bottom: 0.2em
+                    
+                    .SubPara_sch_text
+                      display: block
+                      float: left
+                      margin-bottom: 0
+                
+                .SubSubPara_sch
+                  +push(1)
+                  +column(25, true)
+                  margin-bottom: 0.2em
+                  
+                  .PgfNumString
+                    +pull(0.5)
+                  
+                  .SubSubPara_sch_text
+                    +push(0.5)
+                    +column(21, true)
+                    margin-bottom: 0
+                
+                .SubSection
+                  +push(1)
+                  +column(25, true)
+                  margin-bottom: 0.4em
+                  
+                  .PgfNumString
+                    +pull(3)
+                  
+                  .SubSection_text
+                    +push(1)
+                    +column(23, true)
+                    margin-bottom: 0
+
+                  .Para
+                    +column(20, true)
+                    margin-bottom: 0.2em
+                    
+                    .Para_text
+                      +column(20, true)
+                      
+                  .TextContinuation
+                    +column(23, true)
+                  
+            .Amendment
+              +push(0)
+              +column(28, true)
+              margin-bottom: 0.2em
+              
+              .SubSubPara_sch
+                +push(3)
+                margin-bottom: 0.2em
+                
+                .SubSubPara_sch_text
+                  float: left
+                  display: block
+                  margin-bottom: 0
+              
+              .SubPara
+                +push(4)
+                +column(23, true)
+                margin-bottom: 0.2em
+                
+                .SubPara_text
+                  +column(20, true)
+                  margin-bottom: 0
+              
+              .ClauseText                
+                .SubSection
+                  +column(26, true)
+                  margin-bottom: 0.4em
+                  
+                .SubSection_text
+                  +column(25, true)
+                  margin-bottom: 0
+              
+              .SubSubPara_sch
+                +column(23, true)
+                margin-bottom: 0.2em
+              
+              .CrossHeadingSch
+                
+                .Para_sch
+                  +push(2)
+                  +column(26, true)
+                  
+                  .Para_sch_text
+                    +column(24, true)
+                    
+                  .SubPara_sch
+                    +column(26, true)
+                
+              .Clause
+                +column(28, true)
+                
+                .ClauseText
+                  +column(26, true)
+                  margin-bottom: 0.4em
+                  
+                  .Para
+                    +column(22, true)
+                    margin-bottom: 0.2em
+                    
+                    .Para_text
+                      +column(22, true)
+                  
+                .ClauseTitle_PgfTag
+                  margin-bottom: 0.2em
+                  
+                .SubSection
+                  +push(1)
+                  +column(25, true)
+                  margin-bottom: 0.4em
+                  
+                  .Para
+                    +column(22, true)
+                    margin-bottom: 0.2em
+                  
+                    .SubPara
+                      +push(1)
+                      +column(20, true)
+                      margin-bottom: 0.2em
+                      
+                      .SubPara_text
+                        +column(17, true)
+                        margin-bottom: 0
+                      
+                  .List
+                    +push(2)
+                    +column(24, true)
+                    
+                    .ListItem
+                      +column(24, true)
+                  
+                  .Definition
+                    +push(2)
+                    +column(23, true)
+                    margin-bottom: 0.4em
+
+                    .Definition_text
+                      text-indent: -1em
+                      display: block
+                      +column(23, true)
+                      margin-bottom: 0
+
+                    .DefinitionList
+                      +column(21, true)
+                      margin-bottom: 0
+
+                      .DefinitionListItem
+                        +push(1)
+                        +column(20, true)
+                        margin-bottom: 0.4em
+              
+              .Definition
+                +push(3)
+                +column(25, true)
+                margin-bottom: 0.4em
+                       
+                .Definition_text
+                  text-indent: -1em
+                  display: block
+                  +column(25, true)
+                  margin-bottom: 0
+                
+                .DefinitionList
+                  +column(25, true)
+                  margin-bottom: 0.4em
+                  
+                  .DefinitionListItem
+                    +push(1)
+                    +column(24, true)
+                    margin-bottom: 0.4em
+              
+              .CrossHeadingSch
+                float: left
+                +column(27, true)
+              
+              .CrossHeading
+                float: left
+                +column(28, true)
+              
+              .CrossHeadingTitle
+                padding-top: 1em
+                text-align: center
+                +column(28, true)
+              
+              .Para
+                +push(4)
+                +column(24, true)
+                margin-bottom: 0.2em
+                
+                .PgfNumString
+                  +pull(4)
+                
+                .Para_text
+                  +column(24, true)
+                
+              .SubSection
+                +push(2)
+                +column(26, true)
+                margin-bottom: 0.4em
+                
+                .FrameData
+                  +column(26, true)
+                  padding-bottom: 1em
+
+                  .Formula
+                    text-align: center
+                    +push(1)
+                    +column(25, true)
+                    display: block
+                
+                .Para
+                  +push(3)
+                  +column(23, true)
+                  margin-bottom: 0.2em
+                  
+                  .PgfNumString
+                    +pull(4)
+                  
+                  .Para_text
+                    +column(23, true)
+                    display: block
+                    
+                  .SubPara
+                    +column(19, true)
+                    margin-bottom: 0.2em
+                    
+                    .Table
+                      +column(19, true)
+                    
+                    .SubSubPara
+                      +push(2)
+                      +column(18, true)
+                      
+                      .TextContinuation
+                        +push(1)
+                        +column(17, true)
+            
+                .TextContinuation
+                  +column(26, true)
+                  
+                .Definition
+                  +push(2)
+                  +column(24, true)
+                  margin-bottom: 0.4em
+                  
+                  .Definition_text
+                    display: block
+                    +column(24, true)
+                    text-indent :-1em
+                    margin-bottom: 0
+                    
+                  .DefinitionList
+                    +push(2)
+                    +column(22, true)
+                    margin-bottom: 0
+                    
+                    .TextContinuation
+                      +push(4)
+                      +column(20, true)
+                    
+                    .DefinitionListItem
+                      +column(21, true)
+                      margin-bottom: 0.4em
+                      
+                      .TextContinuation
+                        +push(6)
+                        +column(20, true)
+                      
+                      .DefinitionList
+                        +column(19, true)
+                        margin-bottom: 0
+                        
+                        .DefinitionListItem
+                          +column(18, true)
+                          margin-bottom: 0.4em
+              
+              .Para_sch
+                +column(28, true)
+                push(1)
+                  
+                .Para_sch_text
+                  display: block
+                  +column(24, true)
+                  
+                .SubPara_sch
+                  +column(28, true)
+              
+              .SubPara_sch
+                +column(26, true)
+                
+                .SubPara_sch_text
+                  +column(23, true)
+                  
+                .SubSubPara_sch
+                  +column(22, true)
+                  margin-bottom: 0.2em
+                  
+                  .TextContinuation
+                    +column(22, true)
+                  
+                  .SubSubPara_sch_text
+                    +column(21, true)
+                    margin-bottom: 0
+                    
+                  .SubSubSubPara_sch
+                    +push(3)
+                    +column(19, true)
+            
+                  .Definition
+                    +push(3)
+                    +column(23, true)
+                    margin-bottom: 0.4em
+                    
+                    .Definition_text
+                      display: block
+                      +column(23, true)
+                      text-indent :-1em
+                      margin-bottom: 0
+                      
+                  .TextContinuation
+                    padding-top: 0
+                    +column(24, true)
+                
+                .SubPara_sch_text
+                  +column(19, true)
+                  display: block
+              
+                .SubSubPara_sch
+                  +push(4)
+                  +column(19, true)
+                  display: block
+                  margin-bottom: 0.2em
+                  
+                  .SubSubPara_sch_text
+                    +column(17, true)
+                    display: block
+                    margin-bottom: 0
+                  
+                .TextContinuation
+                  +push(4)
+                  +column(19, true)
+              
+              .Table
+                +column(23, true)
+                
+                .TableTitle
+                  text-align: center
+                  
+                  .SmallCaps
+                    text-transform: uppercase
+                  
+              .TableData
+                margin-top: 1em
+                border-collapse: collapse
+                
+                th
+                  font-weight: normal
+                  font-style: italic
+                  text-align: center
+                  border: 1px solid black
+                  
+                td
+                  border: 1px solid black
+                  padding: 0 0.5em
+                  
+                td.centered
+                  text-align: center
+                  
+                td.right
+                  text-align: right

@@ -1,0 +1,92 @@
+@import partials/base.sass
+@import partials/_amendment_docs_shared.sass
+@import blueprint
+
+body
+  font-family: Verdana, Arial, Helvetica, serif
+
+#container
+  text-align: left
+  font-size: 0.8em
+
+#Legislation
+  +column(30, true)
+
+.PrimaryPrelims
+  +column(30, true)
+  
+  h1.Title
+    +column(30, true)
+    font-size: 1.5em
+    padding: 0.5em 0
+    text-align: center
+  
+  .Number
+    +column(30, true)
+    text-transform: uppercase
+    font-weight: bold
+    text-align: center
+    margin: 0 0 1em 0
+    
+  .LongTitle
+    +column(30, true)
+    text-align: left
+
+  .DateOfEnactment
+    +column(30, true)
+    text-align: right
+
+.P1group
+  +column(30, true)
+  
+  .P1
+    +column(30, true)
+    margin: 1em 0
+    
+    .P1Title
+      +column(30, true)
+      
+      .TitleNum
+        +column(2)
+        +append(1)
+        font-weight: bold
+      
+      .Title
+        +column(27, true)
+        font-weight: bold
+        text-indent: -1.5em
+        
+    .P1para
+      +column(30)
+      
+      .P2
+        +column(30, true)
+        margin: 0.25em 0
+        
+        .Pnumber
+          +prepend(1)
+          +column(2)
+          
+        .P2Para
+          +column(27, true)
+          
+          .Text
+            +column(27, true)
+            
+          .P3
+            +column(27, true)
+            margin: 0.25em 0
+            
+            .Pnumber
+              +prepend(1)
+              +column(2)
+            
+            .P3Para
+              +column(24, true)
+                
+              .Text
+                +column(24, true)
+
+    .P1para > .Text
+      +prepend(3)
+      +column(27, true)
