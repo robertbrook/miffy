@@ -1,0 +1,474 @@
+
+
+Digital Economy Bill [HL]
+
+Page 52
+Schedules
+
+Schedule 1
+Section 41
+Classification of video games etc: supplementary provision
+
+
+1 The Video Recordings Act 1984 is amended as follows.
+
+
+2 (1) Section 4 (authority to determine suitability of video works for classification)
+is amended as follows.
+
+&nbsp; (2) In subsection (1)(b)—
+
+(a) in sub-paragraph (i), after “issue” insert “or revocation”, and
+
+(b) in sub-paragraph (ii), after “issuing” insert “and revoking”.
+
+&nbsp; (3) After that subsection insert—
+
+
+“(1C) The arrangements made under this section may require a person
+requesting a classification certificate for a video work to agree to
+comply with a code of practice, which may, in particular, include
+provision relating to the labelling of video recordings.”
+
+&nbsp; (4) After subsection (3) insert—
+
+
+“(3A) The Secretary of State must not make a designation under this
+section unless satisfied that adequate arrangements will be made for
+taking account of public opinion in the United Kingdom.”
+
+&nbsp; (5) For subsection (5) substitute—
+
+
+“(5) No fee is recoverable by, or in accordance with arrangements made
+by, the designated authority in connection with a determination in
+respect of a video work or the issue of a classification certificate
+unless the designated authority has consulted the Secretary of State
+about such fees.”
+
+&nbsp; (6) Omit subsection (6).
+
+&nbsp; (7) After that subsection insert—
+
+
+“(6A) When making arrangements under this section, the designated
+authority must have regard to any guidance issued by the Secretary
+of State.
+
+(6B) The Secretary of State may not issue guidance about the matters to be
+taken into account when determining the suitability of a video work
+for the issue of a classification certificate or a classification certificate
+of a particular description.”
+
+&nbsp; (8) In subsection (8)—
+Page 53
+
+(a) after “Act” insert—
+
+
+“(a) ”, and
+
+(b) at the end insert “, and
+
+
+
+(b) references to the designated authority, in relation to a
+classification certificate, are references to the person
+or persons designated under this section when the
+certificate is issued,
+
+(but see also section 4ZA(2)).”
+
+3 In section 7 (classification certificates), at the end insert—
+
+
+“(3) For the purposes of this Act, a video work is not a video work in
+respect of which a classification certificate has been issued if every
+classification certificate issued in respect of the video work has been
+revoked.”
+
+4 After that section insert—
+
+
+
+“7A Classification certificates for particular video recordings
+
+
+(1) A classification certificate issued in respect of a video work may be
+issued so as to have effect only for the purposes of a video recording
+that is described in the certificate (whether by reference to its
+contents, to the manner in which it is, or is to be, supplied or
+otherwise).
+
+(2) For the purposes of this Act, a video recording contains a video work
+in respect of which a classification certificate has been issued if (and
+only if) a classification certificate that has been issued in respect of
+the video work has effect for the purposes of the video recording.”
+
+5 In section 8 (requirements as to labelling etc), omit subsections (2) and (3).
+
+
+6 (1) Section 11 (supplying video recording of classified work in breach of
+classification) is amended as follows.
+
+&nbsp; (2) In subsection (1)—
+
+(a) for “containing” substitute “, or no video recording described in the
+certificate, that contains”,
+
+(b) for “a video recording containing that work” substitute “such a video
+recording”,
+
+(c) after “unless” insert—
+
+
+“(a) the video work is an exempted work, or
+
+(b) ”.
+
+&nbsp; (3) In subsection (2), after paragraph (b) (but before “or”) insert—
+
+
+“(ba) that the accused believed on reasonable grounds that the
+video work concerned or, if the video recording contained
+more than one work to which the charge relates, each of those
+works was an exempted work,”.
+
+
+7 (1) Section 12 (certain video recordings only to be supplied licensed sex shops)
+is amended as follows.
+
+&nbsp; (2) In subsections (1) and (3)—
+
+(a) for “containing” substitute “, or no video recording described in the
+certificate, that contains”, and
+Page 54
+
+(b) for “a video recording containing the work” substitute “such a video
+recording”.
+
+&nbsp; (3) In subsection (6)—
+
+(a) for “containing” substitute “, or no video recording described in the
+certificate, that contains”, and
+
+(b) for “a video recording containing that work” substitute “such a video
+recording”.
+
+
+8 (1) Section 13 (supplying video recording not complying with requirements as
+to labels etc) is amended as follows.
+
+&nbsp; (2) In subsection (1), after “unless” insert—
+
+
+“(a) the video work is an exempted work, or
+
+(b) ”.
+
+&nbsp; (3) In subsection (2), before paragraph (a) insert—
+
+
+“(za) believed on reasonable grounds that the video work
+concerned or, if the video recording contained more than one
+work to which the charge relates, each of those works was an
+exempted work,”.
+
+
+9 (1) Section 14 (supplying video recording containing false indication as to
+classification) is amended as follows.
+
+&nbsp; (2) In subsection (1), after “unless” insert—
+
+
+“(a) the video work is an exempted work, or
+
+(b) ”.
+
+&nbsp; (3) In subsection (2)(a), after sub-paragraph (i) (but before “or”) insert—
+
+
+“(ia) that the video work concerned or, if the video
+recording contained more than one work to which the
+charge relates, each of those works was an exempted
+work,”.
+
+&nbsp; (4) In subsection (3)—
+
+(a) after “unless” insert—
+
+
+“(a) the video work is an exempted work, or
+
+(b) ”.
+
+&nbsp; (5) In subsection (4)(a), before sub-paragraph (i) insert—
+
+
+“(ai) that the video work concerned or, if the video
+recording contained more than one work to which the
+charge relates, each of those works was an exempted
+work,”.
+
+
+10 (1) Section 22 (other interpretation) is amended as follows.
+
+&nbsp; (2) In subsection (1), at the end insert—
+
+
+““video games authority” and “video works authority” have the
+meaning given in section 4ZA.”
+
+&nbsp; (3) In subsection (2), after “Act” insert “(and subject to regulations under
+subsection (2A))”.
+Page 55
+
+&nbsp; (4) After subsection (2) insert—
+
+
+“(2A) The Secretary of State may by regulations make provision about the
+circumstances in which, for the purposes of this Act, a video
+recording does or does not contain a video work.”
+
+11 After section 22 insert—
+
+
+
+“22A Regulations
+
+
+(1) Regulations under this Act are to be made by statutory instrument.
+
+(2) Every power of the Secretary of State to make regulations under this
+Act includes—
+
+(a) power to make different provision for different purposes,
+and
+
+(b) power to make transitional or saving provision.
+
+(3) A statutory instrument containing regulations under section 2A or 3
+may not be made unless a draft of the instrument has been laid
+before, and approved by a resolution of, each House of Parliament.
+
+(4) Any other statutory instrument containing regulations under this
+Act is subject to annulment in pursuance of a resolution of either
+House of Parliament.”
+
+12 Until such time as section 2A of the Video Recordings Act 1984 comes into
+force, section 22A(3) of that Act has effect as if the words “2A or” were
+omitted.
+
+Schedule 2
+Section 42
+Licensing of copyright and performers’ property rights
+
+
+Part 1
+Regulation of licensing bodies
+
+1 In the Copyright, Designs and Patents Act 1988 before Schedule 1 insert—
+
+
+“Schedule A1
+Section 116D
+Regulation of licensing bodies
+
+
+Code of practice
+
+
+1 (1) The Secretary of State may by regulations require a licensing body
+to adopt a code of practice which complies with requirements set
+out in the regulations.
+
+&nbsp; (2) The regulations may in particular make provision requiring a code
+of practice to include—
+
+(a) provision relating to any matter to which regulations
+under section 116A or 116B may relate;
+
+(b) provision for a person to be appointed to represent the
+interests of persons dealing with the body in any capacity.
+Page 56
+
+&nbsp; (3) The regulations may provide that in the case of a licensing body
+that fails to adopt a code of practice in accordance with the
+regulations, a code of practice approved by the Secretary of State
+or by a person designated under the regulations by the Secretary
+of State has effect as a code of practice adopted by the body.
+
+
+2 (1) The powers conferred by paragraph 1 are exercisable only so as to
+make provision applying in relation to a licensing body—
+
+(a) for the purposes of provision made under section 116A or
+116B as it applies to that body, or
+
+(b) where it appears to the Secretary of State that the body’s
+system of self-regulation is failing to protect the interests of
+copyright owners, licensees, prospective licensees or the
+public.
+
+&nbsp; (2) The Secretary of State may by regulations make provision as to—
+
+(a) procedures to be followed before such provision applies in
+relation to a licensing body;
+
+(b) where such provision applies by virtue of sub-paragraph
+(1)(b), procedures to be followed before such provision
+ceases to apply in relation to a licensing body.
+
+Enforcement
+
+
+3 (1) The Secretary of State may by regulations provide for the
+consequences of a failure by a licensing body or other person to
+comply with—
+
+(a) a code of practice which has effect under this Schedule in
+relation to the person,
+
+(b) an authorisation given to the person under section 116A or
+116B, or
+
+(c) a requirement imposed under this Schedule.
+
+&nbsp; (2) The regulations may in particular provide for the imposition of
+financial penalties.
+
+&nbsp; (3) The regulations may include provision—
+
+(a) for determining whether there has been a failure to comply
+with anything mentioned in sub-paragraph (1);
+
+(b) for determining any penalty that may be imposed in
+respect of the failure;
+
+(c) for an appeal to the Copyright Tribunal against the
+imposition of any such penalty.
+
+&nbsp; (4) The regulations may provide for a determination within sub-
+paragraph (3)(a) or (b) to be made by the Secretary of State or by a
+person designated by the Secretary of State under the regulations.
+
+&nbsp; (5) The regulations may make provision for requiring a person to give
+the person by whom a determination within sub-paragraph (3)(a)falls to be made (the “adjudicator”) any information that the
+adjudicator reasonably requires for the purpose of making that
+determination.
+Page 57
+
+Fees
+
+
+4 (1) The Secretary of State may by regulations require a licensing body
+to which regulations under any other provision of this Schedule
+apply to pay fees to the Secretary of State.
+
+&nbsp; (2) The aggregate amount of fees payable under the regulations must
+not be more than the cost to the Secretary of State of administering
+the operation of regulations under this Schedule.”
+
+Part 2
+Performers’ property rights
+
+2 In Schedule 2A to the Copyright, Designs and Patents Act 1988 (licensing of
+performers’ property rights) after paragraph 1 insert—
+
+
+“Additional licensing and regulation
+
+
+1A (1) The Secretary of State may by regulations provide for authorising
+a licensing body or other person to do, or to grant licences to do,
+an act to which section 182A, 182B, 182C or 182CA applies
+where—
+
+(a) the performer’s consent would otherwise be required
+under that section, but
+
+(b) the right to authorise or prohibit the act is an orphan right.
+
+&nbsp; (2) An authorisation or licence under the regulations in favour of any
+person must not preclude any authorisation or licence in favour of
+another person.
+
+&nbsp; (3) The regulations may provide for the treatment of royalties or other
+sums paid in respect of an authorisation or licence, including—
+
+(a) the deduction of administrative costs;
+
+(b) the period for which sums must be held for the owner of a
+performer’s property rights;
+
+(c) the treatment of sums after that period (as bona vacantia or
+otherwise).
+
+&nbsp; (4) The regulations may provide for determining the rights and
+obligations of any person if a right ceases to be an orphan right.
+
+&nbsp; (5) The regulations may provide for the Secretary of State to
+determine whether any requirement of the regulations for a
+person’s becoming or remaining authorised has been met or
+ceased to be met.
+
+&nbsp; (6) In this Part references to a right as or as ceasing to be an orphan
+right are to be read in accordance with regulations made by the
+Secretary of State.
+
+&nbsp; (7) Regulations under sub-paragraph (6) may operate by reference to
+guidance published from time to time by any person.
+
+
+1B (1) The Secretary of State may by regulations provide for authorising
+a licensing body to grant performers’ property right licences
+(within the meaning of paragraph 1) in relation to a performer’s Page 58
+property rights where the rights owner is not the body or a person
+on whose behalf the body acts.
+
+&nbsp; (2) The regulations may not authorise the grant of a licence—
+
+(a) in respect of an unpublished recording, or
+
+(b) in respect of rights excluded by notice given by the rights
+owner in accordance with the regulations.
+
+&nbsp; (3) Sub-paragraphs (2) to (5) of paragraph 1A apply to regulations
+under this paragraph (but sub-paragraphs (3)(b) and (c) and (4)apply only in relation to orphan rights).
+
+1C Schedule A1 applies for the purposes of paragraphs 1A and 1B as
+it applies for the purposes of sections 116A and 116B, as if
+references to copyright were references to performers’ property
+rights.
+
+
+1D (1) The powers conferred by paragraphs 1A and 1B include in
+particular power—
+
+(a) to make incidental, supplementary or consequential
+provision;
+
+(b) to make different provision for different purposes;
+
+(c) to make provision amending this Part;
+
+(d) to extend or restrict the jurisdiction of the Copyright
+Tribunal.
+
+&nbsp; (2) The power to make regulations under paragraphs 1A and 1B is
+exercisable by statutory instrument.
+
+&nbsp; (3) A statutory instrument containing such regulations is subject to
+annulment in pursuance of a resolution of either House of
+Parliament, but that is subject to sub-paragraph (4).
+
+&nbsp; (4) Where the regulations amend this Part, a statutory instrument
+containing them may not be made unless a draft of the instrument
+has been laid before and approved by a resolution of each House
+of Parliament.”
+
+Schedule 3
+Section 46
+Repeals
+Short title and chapterExtent of repealPublic Lending Right Act 1979 (c. 10)In section 5(2), the word “and” at the end of the definition of “the register”.Video Recordings Act 1984 (c. 39)Section 2(1)(c) (and the word “or” before it).Section 4(6).Section 8(2) and (3).In section 22(1), the word “and” at the end of the definition of “business”.Broadcasting Act 1990 (c. 42)Section 14(7).In section 106(1A), the word “or” at the end of paragraph (c). Broadcasting Act 1990 (c. 42)—cont.Section 183A(7)(a) and (b).Section 184.Communications Act 2003 (c. 21)In section 218(7), the words after paragraph (b). Section 221. Section 224(3).In section 314(1)(a), the words from “but” to “that case”. In Schedule 15, paragraph 63 and the preceding heading.
+HL Bill 154/5
