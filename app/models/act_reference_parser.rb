@@ -18,6 +18,10 @@ class ActReferenceParser
           if (num = node.at('ClauseTitle/ClauseTitle_PgfTag/PgfNumString') )
             part = "clause#{num.inner_text.tr('()','').strip}"
           end
+        when 'Para'
+          if (num = node.at('Paragraph_PgfTag/PgfNumString') )
+            part = "#{num.inner_text.tr('()','').strip}"
+          end
       end
       part
     end
