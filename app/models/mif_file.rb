@@ -36,8 +36,6 @@ class MifFile < ActiveRecord::Base
       bills
     end
 
-
-
     def load paths
       bills = bill_to_paths paths
 
@@ -51,6 +49,9 @@ class MifFile < ActiveRecord::Base
         end
 
         bill_name = bills[path]
+        if file_type == 'Endorsement'
+          set_bill_version(filedir, filename, bill_name)
+        end
         if path.include?('Finance_Clauses.xml')
           bill_name = 'Finance Bill 2009'
           file_type = 'Clauses'
@@ -101,6 +102,41 @@ class MifFile < ActiveRecord::Base
         title += " #{$1}"
       end
       title
+    end
+
+    def set_bill_version(dir, filename, bill_name)
+      cmd = %Q[cd #{dir};  grep -A30 "<String \\`to be Printed'>" #{filename} | grep "<String"]
+      values = `#{cmd}`
+      values = values.split("\r\n")
+      values.each do |value|
+        value = value.strip!.gsub!("<String \`","").gsub!("'>","")
+      end
+      values.reverse!.pop
+      printed_date = values.reverse!.join.gsub(", ","")
+      
+      cmd = %Q[cd #{dir};  grep -A1 "<AttrName \\`PrintNumber'>" #{filename} | grep "<AttrValue"]
+      values = `#{cmd}`
+      bill_number = values.gsub("<AttrValue \`", '').gsub("'>", "").gsub("HL ", "").gsub("Bill ", "").strip
+      
+      cmd = %Q[cd #{dir};  grep -A1 "<AttrName \\`SessionNumber'>" #{filename} | grep "<AttrValue"]
+      values = `cmd`
+      session_number = values.gsub("<AttrValue \`", '').gsub("'>", "")      
+      
+      cmd = %Q[cd #{dir};  grep -A1 "<AttrName \\`House'>" #{filename} | grep "<AttrValue"]
+      values = `#{cmd}`
+      house = values.gsub("<AttrValue \`", '').gsub("'>", "").strip
+      
+      bill_name = bill_name.chomp(' [HL]')
+      if bill_name[/Bill$/] or bill_name[/Bill \d\d\d\d$/]
+        bill = Bill.from_name bill_name
+        version = Version.create!(
+          :printed_date => printed_date,
+          :bill_number => bill_number,
+          :session_number => session_number,
+          :house => house,
+          :bill_id => bill.id
+        )
+      end
     end
 
     def get_file_type dir, filename
