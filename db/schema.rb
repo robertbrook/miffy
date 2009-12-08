@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091207174359) do
+ActiveRecord::Schema.define(:version => 20091208123746) do
 
   create_table "act_parts", :force => true do |t|
     t.integer  "act_id"
@@ -125,6 +125,9 @@ ActiveRecord::Schema.define(:version => 20091207174359) do
     t.datetime "updated_at"
     t.string   "html_page_title"
     t.string   "file_type"
+    t.string   "bill_number"
+    t.string   "session_number"
+    t.date     "printed_date"
   end
 
   add_index "mif_files", ["bill_id"], :name => "index_mif_files_on_bill_id"

@@ -46,6 +46,7 @@ class MifFile < ActiveRecord::Base
           filename = parts.pop
           filedir = parts.join("/")
           file_type = get_file_type(filedir, filename)
+          file.set_date_or_bill_number(filedir, filename)
         end
 
         bill_name = bills[path]
@@ -86,16 +87,7 @@ class MifFile < ActiveRecord::Base
       cmd = %Q[cd "#{dir}"; grep -A2 "AttrName \\`CopyrightYear'" '#{filename}' | grep AttrValue]
       values = `#{cmd}`
       if values == ''
-        cmd = %Q[cd "#{dir}"; grep -A8 "ETag \\`Date.text'" '#{filename}' | grep String]
-        values += `#{cmd}`
-      end
-      if values == ''
-        cmd = %Q[cd "#{dir}"; grep -A8 "ETag \\`Day'" '#{filename}' | grep String]
-        values += `#{cmd}`
-      end
-      if values == ''
-        cmd = %Q[cd "#{dir}"; grep -A8 "ETag \\`Date'" '#{filename}' | grep String]
-        values += `#{cmd}`
+        values = get_date(dir, filename)
       end
       year = ""
       if values[/.*(\d\d\d\d).*/]
@@ -105,7 +97,7 @@ class MifFile < ActiveRecord::Base
     end
 
     def set_bill_version(dir, filename, bill_name)
-      cmd = %Q[cd #{dir};  grep -A30 "<String \\`to be Printed'>" #{filename} | grep "<String"]
+      cmd = %Q[cd "#{dir}";  grep -A30 "<String \\`to be Printed'>" '#{filename}' | grep "<String"]
       values = `#{cmd}`
       values = values.split("\r\n")
       values.each do |value|
@@ -114,15 +106,10 @@ class MifFile < ActiveRecord::Base
       values.reverse!.pop
       printed_date = values.reverse!.join.gsub(", ","")
       
-      cmd = %Q[cd #{dir};  grep -A1 "<AttrName \\`PrintNumber'>" #{filename} | grep "<AttrValue"]
-      values = `#{cmd}`
-      bill_number = values.gsub("<AttrValue \`", '').gsub("'>", "").gsub("HL ", "").gsub("Bill ", "").strip
+      bill_number = MifFile.get_print_number(dir, filename)      
+      session_number = MifFile.get_session_number(dir, filename)
       
-      cmd = %Q[cd #{dir};  grep -A1 "<AttrName \\`SessionNumber'>" #{filename} | grep "<AttrValue"]
-      values = `cmd`
-      session_number = values.gsub("<AttrValue \`", '').gsub("'>", "")      
-      
-      cmd = %Q[cd #{dir};  grep -A1 "<AttrName \\`House'>" #{filename} | grep "<AttrValue"]
+      cmd = %Q[cd "#{dir}";  grep -A1 "<AttrName \\`House'>" '#{filename}' | grep "<AttrValue"]
       values = `#{cmd}`
       house = values.gsub("<AttrValue \`", '').gsub("'>", "").strip
       
@@ -213,11 +200,53 @@ class MifFile < ActiveRecord::Base
       
       return "Other"
     end
+    
+    def get_date dir, filename
+      values = ""
+      cmd = %Q[cd "#{dir}"; grep -A8 "ETag \\`Date.text'" '#{filename}' | grep String]
+      values += `#{cmd}`
+      if values == ''
+        cmd = %Q[cd "#{dir}"; grep -A8 "ETag \\`Day'" '#{filename}' | grep String]
+        values += `#{cmd}`
+      end
+      if values == ''
+        cmd = %Q[cd "#{dir}"; grep -A8 "ETag \\`Date'" '#{filename}' | grep String]
+        values += `#{cmd}`
+      end
+      values
+    end
+
+    def get_print_number dir, filename
+      cmd = %Q[cd "#{dir}";  grep -A1 "<AttrName \\`PrintNumber'>" '#{filename}' | grep "<AttrValue"]
+      values = `#{cmd}`
+      values.gsub("<AttrValue \`", '').gsub("'>", "").gsub("HL ", "").gsub("Bill ", "").strip
+    end
+
+    def get_session_number dir, filename
+      cmd = %Q[cd "#{dir}";  grep -A1 "<AttrName \\`SessionNumber'>" '#{filename}' | grep "<AttrValue"]
+      values = `#{cmd}`
+      values.gsub("<AttrValue \`", '').gsub("'>", "").strip
+    end
+    
   end
 
   def set_file_type text
     self.file_type = text
     self.save
+  end
+  
+  def set_date_or_bill_number dir, filename
+    printed_date = MifFile.get_date(dir, filename)
+    if printed_date == ''
+      session_number = MifFile.get_session_number(dir, filename)
+      print_number = MifFile.get_print_number(dir, filename)
+      self.session_number = session_number unless session_number == ""
+      self.bill_number = print_number unless print_number == ""
+      self.save unless print_number == "" and session_number == ""
+    else
+      self.printed_date = printed_date
+      self.save
+    end
   end
 
   def set_bill_title text
