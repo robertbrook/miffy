@@ -43,6 +43,18 @@
             </Amendment>
           </ClauseText>
         </Clause>
+        <Clause id="1154282" HardReference="j161" TemplateVersion="4.2.002">
+          <ClauseTitle id="1154286">
+            <ClauseTitle_PgfTag id="1154288">
+              <PgfNumString><PgfNumString_1>5</PgfNumString_1></PgfNumString>
+            </ClauseTitle_PgfTag>
+          </ClauseTitle>
+          <ClauseText id="1154291">
+            <ClauseText_PgfTag id="1154295">
+              <ParaLineStart LineNum="15"></ParaLineStart>After section <Xref id="1137592" Idref="mf.451j-1112728">124A</Xref> of the Communications Act 2003 insert—</ClauseText_PgfTag>
+            <Amendment id="1154298"></Amendment>
+          </ClauseText>
+        </Clause>
       </CrossHeading>
       <CrossHeading id="1113067">
         <CrossHeadingTitle id="1237446">

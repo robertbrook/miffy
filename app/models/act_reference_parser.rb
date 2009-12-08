@@ -54,6 +54,10 @@ class ActReferenceParser
       internal_ids.each do |id, anchor_name|
         element = doc.at("//[@Id = '#{id}']")
         element.set_attribute('anchor', anchor_name)
+
+        if (element = doc.at("//[@Idref = '#{id}']") )
+          element.set_attribute('anchor-ref', anchor_name)
+        end
       end
     end
   end
