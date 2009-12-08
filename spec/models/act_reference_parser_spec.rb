@@ -25,13 +25,15 @@ describe ActReferenceParser do
       ids["mf.102j-1118009"].should == 'clause38-subsection6-amendment-subsection5A'
     end
 
-    it 'should add anchor attribute' do
+    it 'should add anchor attributes' do
       doc = Hpricot.XML fixture('DigitalEconomy/clauses_with_xref_ids.xml')
       ActReferenceParser.handle_internal_ids(doc)
       xml = doc.to_s
       xml.should have_tag('Clause[anchor="clause4-amendment-clause124A"]')
       xml.should have_tag('Clause[anchor="clause42-amendment-clause116A"]')
       xml.should have_tag('SubSection[anchor="clause38-subsection6-amendment-subsection5A"]')
+
+      xml.should have_tag('Xref[id="1137592"][Idref="mf.451j-1112728"][anchor-ref="clause4-amendment-clause124A"]')
     end
   end
 
