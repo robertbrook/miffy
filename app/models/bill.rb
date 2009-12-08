@@ -7,6 +7,7 @@ class Bill < ActiveRecord::Base
   has_many :note_by_schedules
   has_many :note_range_by_clauses
   has_many :amendments
+  has_many :versions
 
   validates_presence_of :name
   before_validation :populate_parliament_url

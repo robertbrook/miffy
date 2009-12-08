@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091202144534) do
+ActiveRecord::Schema.define(:version => 20091207174359) do
 
   create_table "act_parts", :force => true do |t|
     t.integer  "act_id"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(:version => 20091202144534) do
   add_index "act_sections", ["legislation_url"], :name => "index_act_sections_on_legislation_url"
 
   create_table "acts", :force => true do |t|
-    t.text     "name"
+    t.string   "name"
     t.text     "title"
     t.integer  "year"
     t.integer  "number"
@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(:version => 20091202144534) do
   end
 
   create_table "bills", :force => true do |t|
-    t.text     "name"
+    t.string   "name"
     t.text     "parliament_url"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -144,6 +144,14 @@ ActiveRecord::Schema.define(:version => 20091202144534) do
 
   create_table "sponsors", :force => true do |t|
     t.string "name"
+  end
+
+  create_table "versions", :force => true do |t|
+    t.date    "printed_date"
+    t.string  "bill_number"
+    t.string  "session_number"
+    t.string  "house"
+    t.integer "bill_id"
   end
 
 end
