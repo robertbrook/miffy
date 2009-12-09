@@ -36,6 +36,33 @@ describe ActReferenceParser do
     end
   end
 
+  describe 'when finding internally referenced ids in schedules' do
+    before(:all) do
+      doc = Hpricot.XML fixture('DigitalEconomy/schedules_with_xref_ids.xml')
+      @ids = ActReferenceParser.internal_ids(doc)
+    end
+    it 'should create hash of Ids' do
+      @ids.size.should == 4
+      @ids.should have_key("mf.sA206j-1066552")
+      @ids.should have_key("mf.sA206j-1066553")
+      @ids.should have_key("mf.sA206j-1088963")
+      @ids.should have_key("mf.s109j-1122371")
+    end
+
+    it 'should create anchor for Para.sch in schedule' do
+      @ids["mf.sA206j-1066553"].should == 'schedule1-2'
+      @ids["mf.sA206j-1088963"].should == 'schedule1-4'
+    end
+
+    it 'should create anchor for SubPara.sch in Para.sch' do
+      @ids["mf.sA206j-1066552"].should == 'schedule1-2-1'
+    end
+
+    it 'should create anchor for Para.sch in amendment' do
+      @ids["mf.s109j-1122371"].should == 'schedule2-1-amendment-scheduleA1-1'
+    end
+  end
+
   describe 'when finding internally referenced ids' do
     it 'should add anchor attributes' do
       doc = Hpricot.XML fixture('DigitalEconomy/clauses_with_xref_ids.xml')
