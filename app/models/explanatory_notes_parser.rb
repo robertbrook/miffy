@@ -64,6 +64,7 @@ class ExplanatoryNotesParser
     @in_part = false
     @in_chapter = false
     @in_schedule = false
+    @in_topic = false
 
     @in_header = false
     @in_footer = false
@@ -155,7 +156,7 @@ class ExplanatoryNotesParser
       if @page_line_count == 1
         @xml << "\n \n"
       end
-      if @in_schedule
+      if @in_schedule && !@in_topic
         return false
       else
         return true
@@ -187,7 +188,7 @@ class ExplanatoryNotesParser
       if @page_line_count == 1
         @xml << "\n \n"
       end
-      if @in_schedule
+      if @in_schedule && !@in_topic
         return false
       else
         return true
@@ -594,6 +595,8 @@ class ExplanatoryNotesParser
           handle_chapter($1) if is_chapter_start(line.strip)
         when /^Clauses (.*) to (.*):/
           handle_clause_range($1, $2)
+        when /^Topic (.*):/
+          @in_topic = true
       end
 
       unless @in_clause || @in_schedule || @in_part || @in_chapter || @in_section || @in_clause_range
