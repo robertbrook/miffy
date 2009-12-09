@@ -157,7 +157,7 @@ describe MifParserUtils do
         , a change is significant if OFCOM
 |
       @utils.format_haml(text).should == %Q|
-        =%Q{<a id=\"1131516\" class=\"Citation\" href=\"#clause2-1-amendment-clause134A-5\">(5)</a>,}
+        =%Q{<a id=\"1131516\" class=\"Xref\" href=\"#clause2-1-amendment-clause134A-5\">(5)</a>,}
         a change is significant if OFCOM
 |
     end
@@ -166,11 +166,42 @@ describe MifParserUtils do
       text = %Q|
         %a#1131516.Xref{ :href => "#clause2-1-amendment-clause134A-5" }
           (5)
-        ) a change is significant if OFCOM
+        ). a change is significant if OFCOM
 |
       @utils.format_haml(text).should == %Q|
-        =%Q{<a id=\"1131516\" class=\"Citation\" href=\"#clause2-1-amendment-clause134A-5\">(5)</a>)}
+        =%Q{<a id=\"1131516\" class=\"Xref\" href=\"#clause2-1-amendment-clause134A-5\">(5)</a>).}
         a change is significant if OFCOM
+|
+    end
+
+    it 'should expand three anchors in a row' do
+      text = %Q|
+        %a#1125123.Citation{ :href => "#clause9-amendment-clause124F-4-a" }
+          (4)(a)
+        ,
+        %a#1125134.Xref{ :href => "#clause9-amendment-clause124F-4-e" }
+          (e)
+        and
+|
+      @utils.format_haml(text).should == %Q|
+        =%Q{<a id=\"1125123\" class=\"Citation\" href=\"#clause9-amendment-clause124F-4-a\">(4)(a)</a>,}
+        %a#1125134.Xref{ :href => "#clause9-amendment-clause124F-4-e" }<
+          (e)
+        and
+|
+    end
+
+    it 'should expand xref followed by ;' do
+      text = %Q|
+        and
+        %a#1125146.Xref{ :href => "#clause9-amendment-clause124F-4-f" }
+          (f)
+        ; and
+|
+      @utils.format_haml(text).should == %Q|
+        and
+        =%Q{<a id=\"1125146\" class=\"Xref\" href=\"#clause9-amendment-clause124F-4-f\">(f)</a>;}
+        and
 |
     end
 
