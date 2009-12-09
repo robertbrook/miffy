@@ -3,8 +3,8 @@ module MifParserUtils
   NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX  = Regexp.new('(\s+)(\S+)\n(\s+)%span\.(\S+)_number\n(\s+)(\S+)\n(\s+)(\]?,)', Regexp::MULTILINE)
   NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX_2  = Regexp.new('(\s+)(\S+)\n(\s+)%span\.(\S+)_number\n(\s+)(\S+)\n', Regexp::MULTILINE)
 
-  NEED_SPACE_BETWEEN_LABEL_AND_XREF_REGEX  = Regexp.new('(\s+)(\S+)\n(\s+)%span#(\S+)\.Xref\n(\s+)(\S+)\n(\s+)(\]?\)|,)(.+)', Regexp::MULTILINE)
-  NEED_SPACE_BETWEEN_LABEL_AND_XREF_REGEX_2  = Regexp.new('(\s+)(\S+)\n(\s+)%span#(\S+)\.Xref\n(\s+)(\S+)\n(\s+)(\]?\)|,)', Regexp::MULTILINE)
+  NEED_SPACE_BETWEEN_LABEL_AND_XREF_REGEX  = Regexp.new('(\s+\S+)\n(\s+)%(span)#(\S+)\.Xref(?:\{ :href => "([^"]+)" \})?\n(\s+)(\S+)\n(\s+)(\]?\)|,.+)', Regexp::MULTILINE)
+  NEED_SPACE_BETWEEN_LABEL_AND_XREF_REGEX_2  = Regexp.new('(\s+\S+)\n(\s+)%(span)#(\S+)\.Xref(?:\{ :href => "([^"]+)" \})?\n(\s+)(\S+)\n(\s+)(\]?\)|,)', Regexp::MULTILINE)
 
   COMPRESS_WHITESPACE = /(Letter|FrameData|Dropcap|SmallCaps|Bold|Italic|\w+_number|PgfNumString_\d|(clause_.+\})|(name.+\})|Abt\d)\n/
   COMPRESS_WHITESPACE_2 = /(^\s*(#|%).+(PgfNumString|\w+_text|PageStart|Number|Xref|Page|Line|STText|Sponsor|AmendmentNumber_PgfTag|Given|Stageheader|Shorttitle))\n/
@@ -20,7 +20,8 @@ module MifParserUtils
   AMEND_REF = Regexp.new('%a.AmendmentReference\{ :href => "([^"]+)" \}<')
 
   COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_COMMA  = Regexp.new('(\s+)(%a\{)([^\n]+)(\}\n)(\s+)([^\n]+)(\n)(\s+)(, )', Regexp::MULTILINE)
-  COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_COMMA_2  = Regexp.new('((\s+)(%a\#([^\n]+)\.Citation\{)([^\n]+)(\}\n)(\s+)([^\n]+)(\n)(\s+)(, ?))', Regexp::MULTILINE)
+  COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_COMMA_2  = Regexp.new('((\s+)(%a\#([^\n]+)\.(Citation|Xref)\{)([^\n]+)(\}\n)(\s+)([^\n]+)(\n)(\s+)(, ?))', Regexp::MULTILINE)
+
   COLLAPSE_SPACE_BETWEEN_SPAN_AND_COMMA  = Regexp.new('((\s+)(%span\.Citation\n)(\s+)([^\n]+)(\n)(\s+)(, ?))', Regexp::MULTILINE)
   COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_SEMICOLON = Regexp.new('(\s+)(%a\{)([^\n]+)(\}\n)(\s+)([^\n]+)(\n)(\s+)(;)', Regexp::MULTILINE)
 
@@ -41,8 +42,9 @@ module MifParserUtils
   def format_haml haml, clauses_file_name=nil
     haml = haml.gsub(NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX,  '\1\2 <span class="\4_number">\6</span>\8')
     haml.gsub!(NEED_SPACE_BETWEEN_LABEL_AND_NUMBER_REGEX_2,  '\1\2 <span class="\4_number">\6</span>' + "\n")
-    haml.gsub!(NEED_SPACE_BETWEEN_LABEL_AND_XREF_REGEX, '\1\2 <span class="Xref" id="\4">\6</span>\8\9')
-    haml.gsub!(NEED_SPACE_BETWEEN_LABEL_AND_XREF_REGEX_2, '\1\2 <span class="Xref" id="\4">\6</span>\8')
+
+    haml.gsub!(NEED_SPACE_BETWEEN_LABEL_AND_XREF_REGEX, '\1 <span class="Xref" id="\4">\7</span>\9')
+    haml.gsub!(NEED_SPACE_BETWEEN_LABEL_AND_XREF_REGEX_2, '\1 <span class="Xref" id="\4">\7</span>\9')
 
     for_each_match(COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_COMMA, haml) do |match|
       text = match.to_s
@@ -52,7 +54,7 @@ module MifParserUtils
 
     for_each_match(COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_COMMA_2, haml) do |match|
       text = match[0].to_s
-      to = %Q|#{match[1]}=%Q{<a id="#{match[3]}" class="Citation" #{match[4].gsub(' => ','=').gsub(', :',' ').sub(' :',' ').strip}>#{match[7]}</a>,}\n#{match[9]}|
+      to = %Q|#{match[1]}=%Q{<a id="#{match[3]}" class="Citation" #{match[5].gsub(' => ','=').gsub(', :',' ').sub(' :',' ').strip}>#{match[8]}</a>,}\n#{match[10]}|
       haml.gsub!(text, to)
     end
 
