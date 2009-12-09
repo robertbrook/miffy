@@ -20,7 +20,8 @@ module MifParserUtils
   AMEND_REF = Regexp.new('%a.AmendmentReference\{ :href => "([^"]+)" \}<')
 
   COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_COMMA  = Regexp.new('(\s+)(%a\{)([^\n]+)(\}\n)(\s+)([^\n]+)(\n)(\s+)(, )', Regexp::MULTILINE)
-  COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_COMMA_2  = Regexp.new('((\s+)(%a\#([^\n]+)\.(Citation|Xref)\{)([^\n]+)(\}\n)(\s+)([^\n]+)(\n)(\s+)((,|\)) ?))', Regexp::MULTILINE)
+  COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_COMMA_2  = Regexp.new('((\s+)(%a\#([^\n]+)\.(Citation|Xref)\{)([^\n]+)(\}\n)(\s+)([^\n]+)(\n)(\s+)((,|\)|;).? ?))', Regexp::MULTILINE)
+  COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_COMMA_3 = Regexp.new('((\s+)(%a\#([^\n]+)\.(Citation|Xref)\{)([^\n]+)(\}\n)(\s+)([^\n]+)(\n)(\s+)((,|\)|;).? ?)\n)', Regexp::MULTILINE)
 
   COLLAPSE_SPACE_BETWEEN_SPAN_AND_COMMA  = Regexp.new('((\s+)(%span\.Citation\n)(\s+)([^\n]+)(\n)(\s+)(, ?))', Regexp::MULTILINE)
   COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_SEMICOLON = Regexp.new('(\s+)(%a\{)([^\n]+)(\}\n)(\s+)([^\n]+)(\n)(\s+)(;)', Regexp::MULTILINE)
@@ -52,9 +53,15 @@ module MifParserUtils
       haml.gsub!(text, to)
     end
 
+    for_each_match(COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_COMMA_3, haml) do |match|
+      text = match[0].to_s
+      to = %Q|#{match[1]}=%Q{<a id="#{match[3]}" class="#{match[4]}" #{match[5].gsub(' => ','=').gsub(', :',' ').sub(' :',' ').strip}>#{match[8]}</a>#{match[11].strip}}\n|
+      haml.gsub!(text, to)
+    end
+
     for_each_match(COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_COMMA_2, haml) do |match|
       text = match[0].to_s
-      to = %Q|#{match[1]}=%Q{<a id="#{match[3]}" class="Citation" #{match[5].gsub(' => ','=').gsub(', :',' ').sub(' :',' ').strip}>#{match[8]}</a>#{match[12]}}\n#{match[10]}|
+      to = %Q|#{match[1]}=%Q{<a id="#{match[3]}" class="#{match[4]}" #{match[5].gsub(' => ','=').gsub(', :',' ').sub(' :',' ').strip}>#{match[8]}</a>#{match[11].strip}}\n#{match[10]}|
       haml.gsub!(text, to)
     end
 
