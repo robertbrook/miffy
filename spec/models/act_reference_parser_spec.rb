@@ -8,30 +8,42 @@ include ActionController::Assertions::SelectorAssertions
 describe ActReferenceParser do
 
   describe 'when finding internally referenced ids' do
-    it 'should create hash of Ids' do
+    before(:all) do
       doc = Hpricot.XML fixture('DigitalEconomy/clauses_with_xref_ids.xml')
-      ids = ActReferenceParser.internal_ids(doc)
-      ids.should have_key("mf.451j-1112728")
-      ids.should have_key("mf.109j-1112598")
-      ids.should have_key("mf.102j-1118009")
+      @ids = ActReferenceParser.internal_ids(doc)
     end
-    it 'should create hash of Ids to ids' do
-      doc = Hpricot.XML fixture('DigitalEconomy/clauses_with_xref_ids.xml')
-      ids = ActReferenceParser.internal_ids(doc)
-      ids["mf.451j-1112728"].should == 'clause4-amendment-clause124A'
-      ids["mf.451j-1137360"].should == 'clause4-amendment-clause124A-subsection2'
-      ids["mf.451j-1136545"].should == 'clause4-amendment-clause124A-subsection5-g'
-      ids["mf.109j-1112598"].should == 'clause42-amendment-clause116A'
-      ids["mf.102j-1118009"].should == 'clause38-subsection6-amendment-subsection5A'
+    it 'should create hash of Ids' do
+      @ids.size.should == 5
+      @ids.should have_key("mf.451j-1112728")
+      @ids.should have_key("mf.109j-1112598")
+      @ids.should have_key("mf.102j-1118009")
+      @ids.should have_key("mf.451j-1137360")
+      @ids.should have_key("mf.451j-1136545")
     end
 
+    it 'should create anchor for clause in amendment' do
+      @ids["mf.451j-1112728"].should == 'clause4-amendment-clause124A'
+      @ids["mf.109j-1112598"].should == 'clause42-amendment-clause116A'
+    end
+    it 'should create anchor for subsection of clause in amendment' do
+      @ids["mf.451j-1137360"].should == 'clause4-amendment-clause124A-2'
+    end
+    it 'should create anchor for paragraph of subsection of clause in amendment' do
+      @ids["mf.451j-1136545"].should == 'clause4-amendment-clause124A-5-g'
+    end
+    it 'should create anchor for subsection in amendment' do
+      @ids["mf.102j-1118009"].should == 'clause38-6-amendment-subsection5A'
+    end
+  end
+
+  describe 'when finding internally referenced ids' do
     it 'should add anchor attributes' do
       doc = Hpricot.XML fixture('DigitalEconomy/clauses_with_xref_ids.xml')
       ActReferenceParser.handle_internal_ids(doc)
       xml = doc.to_s
       xml.should have_tag('Clause[anchor="clause4-amendment-clause124A"]')
       xml.should have_tag('Clause[anchor="clause42-amendment-clause116A"]')
-      xml.should have_tag('SubSection[anchor="clause38-subsection6-amendment-subsection5A"]')
+      xml.should have_tag('SubSection[anchor="clause38-6-amendment-subsection5A"]')
 
       xml.should have_tag('Xref[id="1137592"][Idref="mf.451j-1112728"][anchor-ref="clause4-amendment-clause124A"]')
     end

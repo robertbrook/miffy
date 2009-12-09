@@ -232,9 +232,6 @@ class MifToHtmlParser
   end
 
   def add_html_element name, node
-    if @in_amendment && node['anchor']
-      add %Q|<a name="#{node['anchor']}"/>|
-    end
     tag = []
     tag << %Q|<#{name} class="#{css_class(node)}"|
     tag << %Q| id="#{node['id']}"| if node['id']
@@ -248,6 +245,9 @@ class MifToHtmlParser
     add tag.join('')
 
     if name != 'hr'
+      if @in_amendment && node['anchor']
+        add %Q|<a name="#{node['anchor']}"/>|
+      end
       node_children_to_html(node)
       add "</#{name}>"
     end

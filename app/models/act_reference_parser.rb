@@ -5,6 +5,10 @@ class ActReferenceParser
 
   class << self
 
+    def inner_text node
+      node.inner_text.tr('()“','').strip
+    end
+
     def internal_id_part node
       part = nil
       case node.name
@@ -12,15 +16,15 @@ class ActReferenceParser
           part = "amendment"
         when 'SubSection'
           if (num = node.at('SubSection_PgfTag/PgfNumString'))
-            part = "subsection#{num.inner_text.tr('()','').strip}"
+            part = "#{inner_text(num)}"
           end
         when 'Clause'
           if (num = node.at('ClauseTitle/ClauseTitle_PgfTag/PgfNumString') )
-            part = "clause#{num.inner_text.tr('()','').strip}"
+            part = "clause#{inner_text(num)}"
           end
         when 'Para'
           if (num = node.at('Paragraph_PgfTag/PgfNumString') )
-            part = "#{num.inner_text.tr('()','').strip}"
+            part = "#{inner_text(num)}"
           end
       end
       part

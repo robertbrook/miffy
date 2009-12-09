@@ -1,3 +1,4 @@
+
 %table
   %thead
     - act = @acts.first
@@ -20,7 +21,8 @@
         opsi_url
   %tbody
     - @acts.each do |act|
-      %tr
+      - odd = @acts.index(act).odd?
+      %tr{:style => odd ? 'background-color: silver;' : ''}
         %td{:style => '; vertical-align: top'}
           = act.name
           %br

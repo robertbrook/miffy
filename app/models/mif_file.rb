@@ -105,14 +105,14 @@ class MifFile < ActiveRecord::Base
       end
       values.reverse!.pop
       printed_date = values.reverse!.join.gsub(", ","")
-      
-      bill_number = MifFile.get_print_number(dir, filename)      
+
+      bill_number = MifFile.get_print_number(dir, filename)
       session_number = MifFile.get_session_number(dir, filename)
-      
+
       cmd = %Q[cd "#{dir}";  grep -A1 "<AttrName \\`House'>" '#{filename}' | grep "<AttrValue"]
       values = `#{cmd}`
       house = values.gsub("<AttrValue \`", '').gsub("'>", "").strip
-      
+
       bill_name = bill_name.chomp(' [HL]')
       if bill_name[/Bill$/] or bill_name[/Bill \d\d\d\d$/]
         bill = Bill.from_name bill_name
@@ -132,7 +132,7 @@ class MifFile < ActiveRecord::Base
       unless values == ''
         return "Book File"
       end
-      
+
       cmd = %Q[cd "#{dir}"; grep -A7 "ETag \\`NoticeOfAmds'" '#{filename}' | grep String]
       values = `#{cmd}`
       if values.downcase.include?('notices of amendments')
@@ -173,7 +173,7 @@ class MifFile < ActiveRecord::Base
       unless values == ''
         return "Clauses"
       end
-      
+
       cmd = %Q[cd "#{dir}"; grep -A2 "<ElementBegin" '#{filename}' | grep "ETag \\`Arrangement'"]
       values = `#{cmd}`
       unless values == ''
@@ -185,22 +185,22 @@ class MifFile < ActiveRecord::Base
       unless values == ""
         return "Schedules"
       end
-      
+
       cmd = %Q[cd "#{dir}"; grep -A1 "ETag \\`Endorse'" '#{filename}']
       values = `#{cmd}`
       unless values == ''
         return "Endorsement"
       end
-      
+
       cmd = %Q[cd "#{dir}"; grep -A1 "ETag \\`Cover'" '#{filename}']
       values = `#{cmd}`
       unless values == ''
         return "Cover"
       end
-      
+
       return "Other"
     end
-    
+
     def get_date dir, filename
       values = ""
       cmd = %Q[cd "#{dir}"; grep -A8 "ETag \\`Date.text'" '#{filename}' | grep String]
@@ -227,14 +227,14 @@ class MifFile < ActiveRecord::Base
       values = `#{cmd}`
       values.gsub("<AttrValue \`", '').gsub("'>", "").strip
     end
-    
+
   end
 
   def set_file_type text
     self.file_type = text
     self.save
   end
-  
+
   def set_date_or_bill_number dir, filename
     printed_date = MifFile.get_date(dir, filename)
     if printed_date == ''
@@ -307,6 +307,8 @@ class MifFile < ActiveRecord::Base
     end
 
     def do_convert_to_haml options
+      haml_file_name = haml_template(options)
+      File.delete(haml_file_name) if File.exists?(haml_file_name)
       xml = convert_to_xml
       File.open("#{RAILS_ROOT}/tmp/example.xml", 'w+') {|f| f.write(xml) } if RAILS_ENV == 'development'
       set_html_page_title(xml)
@@ -322,7 +324,7 @@ class MifFile < ActiveRecord::Base
 
       result = MifToHtmlParser.new.parse_xml xml, options
 
-      File.open(haml_template(options), 'w+') {|f| f.write(result) }
+      File.open(haml_file_name, 'w+') {|f| f.write(result) }
     end
 
     def results_dir
