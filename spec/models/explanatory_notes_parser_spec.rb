@@ -197,4 +197,22 @@ describe ExplanatoryNotesParser do
     end
   end
   
+  describe 'when parsing the Explanatory Notes for the Digital Economy Bill' do
+    before(:all) do
+      @parser = ExplanatoryNotesParser.new
+      @result = @parser.parse(RAILS_ROOT + '/spec/fixtures/DigitalEconomy/ens/DigitalEconomy Bill.pdf')
+      File.open(RAILS_ROOT + '/spec/fixtures/DigitalEconomy/ens/DigitalEconomyBill.xml','w') {|f| f.write @result }
+    end
+    
+    it 'should create the expected number of Clauses' do
+      doc = Hpricot.XML @result
+      (doc/'Clause').count.should == 45
+    end
+    
+    it 'should create the expected number of Schedules' do
+      doc = Hpricot.XML @result
+      (doc/'Schedule').count.should == 2
+    end
+  end
+  
 end
