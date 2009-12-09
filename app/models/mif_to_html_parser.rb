@@ -151,7 +151,6 @@ class MifToHtmlParser
       BillReference
       ClauseTitle_text
       Date_text Day Definition_text Dropcap
-      Xref
       Enact Sbscript
       FrameData Formula
       Italic
@@ -246,6 +245,9 @@ class MifToHtmlParser
     add tag.join('')
 
     if name != 'hr'
+      if @in_amendment && node['anchor']
+        add %Q|<a name="#{node['anchor']}"/>|
+      end
       node_children_to_html(node)
       add "</#{name}>"
     end
@@ -264,8 +266,25 @@ class MifToHtmlParser
     act.statutelaw_url ? act.statutelaw_url : act.opsi_url
   end
 
-  def add_link_element node, div=false
+  def add_xref_link node
+    if node['anchor-ref']
+      id = get_id_attr node
+      add %Q|<a#{id} class="#{node.name}" href="##{node['anchor-ref']}">|
+      @in_hyperlink = true
+      node_children_to_html(node)
+      @in_hyperlink = false
+      add "</a>"
+    else
+      add_html_element 'span', node
+    end
+  end
+
+  def get_id_attr node
     id = node['id'] ? %Q| id="#{node['id']}"| : ''
+  end
+
+  def add_link_element node, div=false
+    id = get_id_attr node
     item = node.inner_text
     url = case item
       when /Act/
@@ -328,7 +347,12 @@ class MifToHtmlParser
     end
     clause_id = node['HardReference'].to_s.strip.gsub("&",'_')
 
-    @in_amendment = (node.parent.name == 'Amendment') || (node.parent.parent.name == 'Amendment')
+    @in_amendment = false
+    parent = node.parent
+    while !@in_amendment && parent
+      @in_amendment = true if parent.name == 'Amendment'
+      parent = parent.parent
+    end
 
     unless (@clause_number.blank? || clause_id.blank?) || @in_amendment
       clause_name = "clause#{@clause_number}"
@@ -347,10 +371,6 @@ class MifToHtmlParser
 
       @explanatory_note = nil unless @in_amendment
     else
-      if @in_amendment && node['Number']
-        amendment_clause_id = "amendment_clause_#{node['Number']}#{node['Letter']}"
-        add %Q|<a name="#{amendment_clause_id}"/>|
-      end
       add_html_element 'div', node
     end
 
@@ -559,6 +579,8 @@ class MifToHtmlParser
     case node.name.gsub('.','_')
       when 'Citation'
         add_link_element node
+      when 'Xref'
+        add_xref_link node
       when /BillTitle|Shorttitle/
         add_link_element node, true
       when 'ParaLineStart'

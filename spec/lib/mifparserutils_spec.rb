@@ -150,6 +150,30 @@ describe MifParserUtils do
                   In subsection <span class="Xref" id="4312126">(10)</span>,|
     end
 
+    it 'should expand xref anchor if followed by comma' do
+      text = %Q|
+        %a#1131516.Xref{ :href => "#clause2-1-amendment-clause134A-5" }
+          (5)
+        , a change is significant if OFCOM
+|
+      @utils.format_haml(text).should == %Q|
+        =%Q{<a id=\"1131516\" class=\"Citation\" href=\"#clause2-1-amendment-clause134A-5\">(5)</a>,}
+        a change is significant if OFCOM
+|
+    end
+
+    it 'should expand xref anchor if followed by ")"' do
+      text = %Q|
+        %a#1131516.Xref{ :href => "#clause2-1-amendment-clause134A-5" }
+          (5)
+        ) a change is significant if OFCOM
+|
+      @utils.format_haml(text).should == %Q|
+        =%Q{<a id=\"1131516\" class=\"Citation\" href=\"#clause2-1-amendment-clause134A-5\">(5)</a>)}
+        a change is significant if OFCOM
+|
+    end
+
     it 'should expand clause number span' do
       text = %Q|
             %span#1485163.Number

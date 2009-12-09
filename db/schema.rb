@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091207174359) do
+ActiveRecord::Schema.define(:version => 20091208123746) do
 
   create_table "act_parts", :force => true do |t|
     t.integer  "act_id"
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(:version => 20091207174359) do
 
   create_table "act_sections", :force => true do |t|
     t.integer  "act_id"
-    t.integer  "number"
     t.string   "title"
     t.string   "opsi_url"
     t.string   "legislation_url"
@@ -35,11 +34,13 @@ ActiveRecord::Schema.define(:version => 20091207174359) do
     t.datetime "updated_at"
     t.string   "statutelaw_url"
     t.integer  "act_part_id"
+    t.string   "section_number"
   end
 
   add_index "act_sections", ["act_id"], :name => "index_act_sections_on_act_id"
   add_index "act_sections", ["act_part_id"], :name => "index_act_sections_on_act_part_id"
   add_index "act_sections", ["legislation_url"], :name => "index_act_sections_on_legislation_url"
+  add_index "act_sections", ["section_number"], :name => "index_act_sections_on_section_number"
 
   create_table "acts", :force => true do |t|
     t.text     "name"
@@ -108,8 +109,6 @@ ActiveRecord::Schema.define(:version => 20091207174359) do
     t.string   "name"
     t.integer  "bill_id"
     t.string   "path"
-    t.text     "beginning_text"
-    t.text     "ending_text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -125,6 +124,9 @@ ActiveRecord::Schema.define(:version => 20091207174359) do
     t.datetime "updated_at"
     t.string   "html_page_title"
     t.string   "file_type"
+    t.string   "bill_number"
+    t.string   "session_number"
+    t.date     "printed_date"
   end
 
   add_index "mif_files", ["bill_id"], :name => "index_mif_files_on_bill_id"
