@@ -32,6 +32,18 @@ describe MifTableParser do
 
 
   TABLE = "
+<TblCatalog>
+  <TblFormat>
+    <TblTag>`Table'</TblTag>
+    <TblTRuling>`'</TblTRuling>
+    <TblLRuling>`'</TblLRuling>
+    <TblBRuling>`'</TblBRuling>
+    <TblRRuling>'`</TblRRuling>
+    <TblHFRowRuling>`'</TblHFRowRuling>
+    <TblColumnRuling>`'</TblColumnRuling>
+    <TblBodyRowRuling>`'</TblBodyRowRuling>
+  </TblFormat>
+</TblCatalog>
 <Tbls><Tbl>
   <TblID>21</TblID>
   <TblTag>`Table'</TblTag>

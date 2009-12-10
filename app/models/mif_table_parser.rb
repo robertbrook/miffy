@@ -10,9 +10,6 @@ class MifTableParser
     table_formats.each do |format|
       handle_format format
     end
-    #puts "****"
-    #puts @format_info.inspect
-    #puts "****"
     
     tables = (doc/'Tbls/Tbl')
     tables.inject({}) do |hash, table|
@@ -33,7 +30,9 @@ class MifTableParser
     row_border    = clean(node.at('TblBodyRowRuling/text()'))
     
     col_x = node.at('TblXColumnNum/text()')
-    col_x_border_left = clean(node.at('TblXColumnRuling/text()'))
+    if node.at('TblXColumnRuling/text()')
+      col_x_border_left = clean(node.at('TblXColumnRuling/text()'))
+    end
     
     @format_info.merge!({
         "#{current_tag}" => {
@@ -59,26 +58,16 @@ class MifTableParser
     if tag != 'Table' && tag != 'RepealContinue' && tag != 'RepealsSchedules'
       do_break = true
     else
-      css_class = ""
-      unless @format_info[@table_tag]["border_top"].empty?
-        css_class += " topborder "
-      end
-      unless @format_info[@table_tag]["border_right"].empty?
-        css_class += " rightborder"
-      end
-      unless @format_info[@table_tag]["border_bottom"].empty?
-        css_class += " bottomborder"
-      end
-      unless @format_info[@table_tag]["border_left"].empty?
-        css_class += " leftborder"
-      end
+      css_class = get_css_class
       
       xml_tag = start_tag('TableData', node)
       
-      if xml_tag.include?('class=')
-        xml_tag.gsub!('">', %Q| #{css_class}">|)
-      else
-        xml_tag.gsub!('>', %Q| class="#{css_class}">|)
+      unless css_class.empty?
+        if xml_tag.include?('class=')
+          xml_tag.gsub!('">', %Q| #{css_class}">|)
+        else
+          xml_tag.gsub!('>', %Q| class="#{css_class}">|)
+        end
       end
       
       tables[@current_table_id] = [xml_tag]
@@ -89,6 +78,7 @@ class MifTableParser
   end
 
   def handle_row node, tables
+    @cell_count = 0
     if @in_row
       if @in_heading
         tables[@current_table_id] << "</CellH></Row>"
@@ -129,12 +119,24 @@ class MifTableParser
     end
     cell_id = node.at('Element/Unique/text()').to_s
     @in_cell = true
-      
-    if @in_heading
-      tables[@current_table_id] << %Q|<CellH id="#{cell_id}"#{first}>|
-    else
-      tables[@current_table_id] << %Q|<Cell id="#{cell_id}"#{first}>|
+    
+    css_class = ""
+    unless @format_info[@table_tag]["col_x_border_left"].empty?
+      if @format_info[@table_tag]["col_x"] == @cell_count.to_s && !@in_heading
+        if first == ""
+          css_class = %Q| class="leftborder"|
+        else
+          first.gsub('"first"', '"first leftborder"')
+        end
+      end
     end
+    
+    if @in_heading
+      tables[@current_table_id] << %Q|<CellH id="#{cell_id}"#{first}#{css_class}>|
+    else
+      tables[@current_table_id] << %Q|<Cell id="#{cell_id}"#{first}#{css_class}>|
+    end
+    @cell_count += 1
   end
   
   def handle_cell_columns node, tables
@@ -204,6 +206,27 @@ class MifTableParser
     end
 
     do_break
+  end
+  
+  def get_css_class
+    css_class = ""
+    if !@format_info[@table_tag]["border_top"].empty? && !@format_info[@table_tag]["border_right"].empty? && !@format_info[@table_tag]["border_bottom"].empty? && !@format_info[@table_tag]["border_left"].empty?
+      css_class = "allborders"
+    else
+      unless @format_info[@table_tag]["border_top"].empty?
+        css_class += " topborder "
+      end
+      unless @format_info[@table_tag]["border_right"].empty?
+        css_class += " rightborder"
+      end
+      unless @format_info[@table_tag]["border_bottom"].empty?
+        css_class += " bottomborder"
+      end
+      unless @format_info[@table_tag]["border_left"].empty?
+        css_class += " leftborder"
+      end
+    end
+    css_class
   end
 
   def handle_table table_xml, tables
