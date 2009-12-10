@@ -5,10 +5,48 @@ class MifTableParser
   include MifParserUtils
 
   def get_tables doc
+    @format_info = {}
+    table_formats = (doc/'TblCatalog/TblFormat')
+    table_formats.each do |format|
+      handle_format format
+    end
+    #puts "****"
+    #puts @format_info.inspect
+    #puts "****"
+    
     tables = (doc/'Tbls/Tbl')
     tables.inject({}) do |hash, table|
       handle_table(table, hash)
     end
+  end
+
+  def handle_format node    
+    current_tag = clean(node.at('TblTag/text()'))
+    
+    border_top    = clean(node.at('TblTRuling/text()'))
+    border_left   = clean(node.at('TblLRuling/text()'))
+    border_bottom = clean(node.at('TblBRuling/text()'))
+    border_right  = clean(node.at('TblRRuling/text()'))
+    
+    hf_separator  = clean(node.at('TblHFRowRuling/text()'))
+    col_border    = clean(node.at('TblColumnRuling/text()'))
+    row_border    = clean(node.at('TblBodyRowRuling/text()'))
+    
+    col_x = node.at('TblXColumnNum/text()')
+    col_x_border_left = clean(node.at('TblXColumnRuling/text()'))
+    
+    @format_info.merge!({
+        "#{current_tag}" => {
+          "border_top" => "#{border_top}", 
+          "border_left" => "#{border_left}",
+          "border_bottom" => "#{border_bottom}",
+          "border_right" => "#{border_right}",
+          "hf_separator" => "#{hf_separator}",
+          "col_border" => "#{col_border}",
+          "row_border" => "#{row_border}",
+          "col_x" => "#{col_x}",
+          "col_x_border_left" => "#{col_x_border_left}"
+        }})
   end
 
   def handle_id node
@@ -17,10 +55,34 @@ class MifTableParser
 
   def handle_tag node, tables
     tag = clean(node)
+    @table_tag = tag
     if tag != 'Table' && tag != 'RepealContinue' && tag != 'RepealsSchedules'
       do_break = true
     else
-      tables[@current_table_id] = [start_tag('TableData', node)]
+      css_class = ""
+      unless @format_info[@table_tag]["border_top"].empty?
+        css_class += " topborder "
+      end
+      unless @format_info[@table_tag]["border_right"].empty?
+        css_class += " rightborder"
+      end
+      unless @format_info[@table_tag]["border_bottom"].empty?
+        css_class += " bottomborder"
+      end
+      unless @format_info[@table_tag]["border_left"].empty?
+        css_class += " leftborder"
+      end
+      
+      xml_tag = start_tag('TableData', node)
+      
+      if xml_tag.include?('class=')
+        xml_tag.gsub!('">', %Q| #{css_class}">|)
+      else
+        xml_tag.gsub!('>', %Q| class="#{css_class}">|)
+      end
+      
+      tables[@current_table_id] = [xml_tag]
+      
       do_break = false
     end
     do_break
@@ -38,7 +100,12 @@ class MifTableParser
     end
     row_id = node.at('Element/Unique/text()').to_s
     @in_row = true
-    tables[@current_table_id] << %Q|<Row id="#{row_id}">|
+    
+    css_class = ""
+    if !@format_info[@table_tag]["hf_separator"].empty? && @in_heading
+      css_class = %Q| class="bottomborder"|
+    end
+    tables[@current_table_id] << %Q|<Row id="#{row_id}"#{css_class}>|
   end
 
   def handle_cell node, tables
@@ -146,6 +213,7 @@ class MifTableParser
     @in_cell= false
     @colspan_count = 0
     @colspan_target = 0
+    @table_tag = ""
     table_count = tables.size
 
     table_xml.traverse_element do |node|
