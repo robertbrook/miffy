@@ -127,7 +127,7 @@ class MifTableParser
       if @format_info[@table_tag]["col_x"] == @cell_count.to_s && !@in_heading
         unless first == ""
           css_class = %Q| class="leftborder"|
-          if @no_of_cols.to_i+colspan-1 != @cell_count
+          if @no_of_cols.to_i-1 != @cell_count+colspan
             css_class = %Q| class="leftborder rightborder"|
           end
         end
@@ -136,7 +136,7 @@ class MifTableParser
     
     unless @format_info[@table_tag]["col_border"].empty?
       puts "**not empty**"
-      puts "#{(@cell_count).to_s} = #{@no_of_cols}?"
+      puts "#{(@cell_count).to_s} = #{@no_of_cols.to_i-1}?"
       if first != ""
         css_class = ' class="rightborder"'
       elsif @cell_count == @no_of_cols.to_i-1
