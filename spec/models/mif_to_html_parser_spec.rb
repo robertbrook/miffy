@@ -218,6 +218,35 @@ Parliament assembled, and by the authority of the same, as follows:—')
     end
   end
 
+  describe 'when parsing a Lords Clauses MIF XML file to html' do
+    before(:all) do
+      @result = parser.parse_xml(fixture('DigitalEconomy/Clauses.xml'), :format => :html)
+    end
+    
+    it 'should create html' do
+      @result.should have_tag('html')
+      @result.should have_tag('div[class="Clauses"][id="1112573"]')
+    end
+    
+    it 'should not create a named anchor inside Prelim section' do
+      @result.should have_tag('div[class="Prelim"][id="1112587"]') do
+        with_tag('div[class="ABillTo"][id="1003906"]') do
+          with_tag('div[class="Abt1"][id="1003909"]') do
+            without_tag('a[name]')
+          end
+        end
+      end
+    end
+    
+    it 'should create a named anchor for page1-line1 inside the first CrossHeading section' do
+      @result.should have_tag('div[class="CrossHeading"][id="1112628"]') do
+        with_tag('div[class="CrossHeadingTitle"][id="1113244"]') do
+          with_tag('a[name="page1-line1"]')
+        end
+      end
+    end
+  end
+
   describe 'when parsing Schedules MIF XML file to html' do
     before(:all) do
       @result = parser.parse_xml(fixture('DigitalEconomy/example/Schedules_example.xml'), :format => :html)

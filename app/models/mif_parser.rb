@@ -134,6 +134,7 @@ class MifParser
     @variable_list = get_variables doc
     @citations = []
     @is_schedules_file = false
+    @in_prelim = false
   end
 
   def make_xml doc
@@ -371,6 +372,7 @@ class MifParser
   def handle_etag element
     @e_tag = clean(element)
     @is_schedules_file = true if @e_tag == 'SchedulesTitle'
+    @in_prelim = true if @e_tag == 'Prelim'
     @schedule_id = get_uid(element) if @is_schedules_file && @e_tag == 'ScheduleTitle'
     @in_amendment = true if (@e_tag == 'Amendment')
     add_paraline_start if @e_tag[/^(Bpara|Stageheader|Shorttitle|Given|CommitteeShorttitle)$/]
@@ -475,7 +477,7 @@ class MifParser
         add %Q|<ScheduleText id="#{@schedule_id}t">\n|
       end
     end
-
+    @in_prelim = false if tag == 'Prelim'
   end
 
   def add text
@@ -501,8 +503,12 @@ class MifParser
   end
 
   def add_paraline_start
-    @line_num += 1
-    para_line_start = %Q|<ParaLineStart LineNum="#{@line_num}"></ParaLineStart>|
+    if get_bill_attribute('House') == 'House of Lords' && @in_prelim
+      para_line_start = "<ParaLineStart />"
+    else
+      @line_num += 1
+      para_line_start = %Q|<ParaLineStart LineNum="#{@line_num}"></ParaLineStart>|
+    end
 
     if @strings.last.blank? && @xml.last[/<(Number|Page) /]
       tag_name = $1
