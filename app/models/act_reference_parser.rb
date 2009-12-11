@@ -11,21 +11,45 @@ class ActReferenceParser
 
     def internal_id_part node
       part = nil
+
       case node.name
         when 'Amendment'
           part = "amendment"
+
         when 'SubSection'
           if (num = node.at('SubSection_PgfTag/PgfNumString'))
             part = "#{inner_text(num)}"
           end
+
         when 'Clause'
           if (num = node.at('ClauseTitle/ClauseTitle_PgfTag/PgfNumString') )
             part = "clause#{inner_text(num)}"
           end
+
         when 'Para'
           if (num = node.at('Paragraph_PgfTag/PgfNumString') )
             part = "#{inner_text(num)}"
           end
+
+        when 'Schedule'
+          if (num = node.at('ScheduleNumber_PgfTag/PgfNumString') )
+            number = inner_text(num)[/[A-Z]+\d+/]
+            number = inner_text(num)[/\d+/] unless number
+            part = "schedule#{number}"
+          end
+
+        when 'Para.sch'
+          if num = node['Major_Number_Only']
+            part = num
+          elsif (num = node.children_of_type('Paragraph.sch_PgfTag').first.at('PgfNumString') )
+            part = inner_text(num)
+          end
+
+        when 'SubPara.sch'
+          if num = node['Minor_Number_Only']
+            part = num
+          end
+
       end
       part
     end
@@ -56,8 +80,13 @@ class ActReferenceParser
     def handle_internal_ids doc
       internal_ids = internal_ids(doc)
       internal_ids.each do |id, anchor_name|
-        element = doc.at("//[@Id = '#{id}']")
-        element.set_attribute('anchor', anchor_name)
+        if (element = doc.at("//[@Id = '#{id}']") )
+          begin
+            element.set_attribute('anchor', anchor_name)
+          rescue
+            raise anchor_name.to_s + ' ' + element.inspect
+          end
+        end
 
         if (element = doc.at("//[@Idref = '#{id}']") )
           element.set_attribute('anchor-ref', anchor_name)

@@ -1,0 +1,226 @@
+<Document>
+  <BillData>
+    <BillTitle>Digital Economy Bill [HL]</BillTitle>
+    <Schedules id="1061327" One="No">
+      <PageStart id="996720" PageType="BodyPage" PageNum="52">Page 52</PageStart>
+      <SchedulesTitle id="1061360">
+        <ParaLineStart LineNum="1"></ParaLineStart>Schedules</SchedulesTitle>
+      <Schedule id="1059032" HardReference="j602As" TemplateVersion="4.2.002">
+        <ScheduleNumber_PgfTag id="1061375">
+          <PgfNumString><PgfNumString_0>Schedule 1</PgfNumString_0></PgfNumString>
+          <ScheduleNumber id="1059039"></ScheduleNumber>
+        </ScheduleNumber_PgfTag>
+        <SectionReference id="1059060">
+          <ParaLineStart LineNum="2"></ParaLineStart>Section 41</SectionReference>
+        <ScheduleTitle id="1059046">
+          <ParaLineStart LineNum="3"></ParaLineStart>Classification of video games etc: supplementary provision</ScheduleTitle>
+        <ScheduleText id="1059046t">
+          <Para.sch id="1059118" Major_Number_Only="1">
+            <Paragraph.sch_PgfTag id="1061396">
+              <PgfNumString><PgfNumString_1>1</PgfNumString_1></PgfNumString>
+              <Para.sch_text><ParaLineStart LineNum="4"></ParaLineStart>The Video Recordings Act 1984 is amended as follows.</Para.sch_text>
+            </Paragraph.sch_PgfTag>
+          </Para.sch>
+          <Para.sch id="1066553" Major_Number_Only="2" Id="mf.sA206j-1066553">
+            <SubPara.sch id="1066588" Id="mf.sA206j-1066552" Minor_Number_Only="1">
+              <SubParagraph.sch_PgfTag id="1066589">
+                <PgfNumString><PgfNumString_1>2</PgfNumString_1><PgfNumString_2>(1)</PgfNumString_2></PgfNumString>
+                <SubPara.sch_text><ParaLineStart LineNum="5"></ParaLineStart>Section 4 (authority to determine suitability of video works for classification) <ParaLineStart LineNum="6"></ParaLineStart>is amended as follows.</SubPara.sch_text>
+              </SubParagraph.sch_PgfTag>
+            </SubPara.sch>
+            <SubPara.sch id="1093087" Minor_Number_Only="2">
+              <SubParagraphCont.sch_PgfTag id="1093088">
+                <PgfNumString><PgfNumString_1></PgfNumString_1><PgfNumString_2>(2)</PgfNumString_2></PgfNumString>
+                <SubPara.sch_text><ParaLineStart LineNum="7"></ParaLineStart>In subsection (1)(b)—</SubPara.sch_text>
+              </SubParagraphCont.sch_PgfTag>
+              <SubSubPara.sch id="1202273">
+                <SubSubParagraph.sch_PgfTag id="1202275">
+                  <PgfNumString><PgfNumString_1>(a)</PgfNumString_1></PgfNumString>
+                  <SubSubPara.sch_text><ParaLineStart LineNum="8"></ParaLineStart>in sub-paragraph (i), after “issue” insert “or revocation”, and</SubSubPara.sch_text>
+                </SubSubParagraph.sch_PgfTag>
+              </SubSubPara.sch>
+              <SubSubPara.sch id="1202280">
+                <SubSubParagraph.sch_PgfTag id="1202283">
+                  <PgfNumString><PgfNumString_1>(b)</PgfNumString_1></PgfNumString>
+                  <SubSubPara.sch_text><ParaLineStart LineNum="9"></ParaLineStart>in sub-paragraph (ii), after “issuing” insert “and revoking”.</SubSubPara.sch_text>
+                </SubSubParagraph.sch_PgfTag>
+              </SubSubPara.sch>
+            </SubPara.sch>
+            <SubPara.sch id="1106193" Minor_Number_Only="3">
+              <SubParagraphCont.sch_PgfTag id="1202286">
+                <PgfNumString><PgfNumString_1></PgfNumString_1><PgfNumString_2>(3)</PgfNumString_2></PgfNumString>
+                <SubPara.sch_text><ParaLineStart LineNum="10"></ParaLineStart>After that subsection insert—</SubPara.sch_text>
+              </SubParagraphCont.sch_PgfTag>
+              <Amendment id="1148305">
+                <SubSection id="1148314" Number="1" Letter="C" Quote="Double">
+                  <SubSection_PgfTag id="1202291">
+                    <PgfNumString><PgfNumString_1>“(1C)</PgfNumString_1></PgfNumString>
+                    <SubSection_text><ParaLineStart LineNum="11"></ParaLineStart>The arrangements made under this section may require a person <ParaLineStart LineNum="12"></ParaLineStart>requesting a classification certificate for a video work to agree to <ParaLineStart LineNum="13"></ParaLineStart>comply with a code of practice, which may, in particular, include <ParaLineStart LineNum="14"></ParaLineStart>provision relating to the labelling of video recordings.”</SubSection_text>
+                  </SubSection_PgfTag>
+                </SubSection>
+              </Amendment>
+            </SubPara.sch>
+            <SubPara.sch id="1066605" Minor_Number_Only="4">
+              <SubParagraphCont.sch_PgfTag id="1202297">
+                <PgfNumString><PgfNumString_1></PgfNumString_1><PgfNumString_2>(4)</PgfNumString_2></PgfNumString>
+                <SubPara.sch_text><ParaLineStart LineNum="15"></ParaLineStart>After subsection (3) insert—</SubPara.sch_text>
+              </SubParagraphCont.sch_PgfTag>
+              <Amendment id="1088495">
+                <SubSection id="1088511" Number="3" Letter="A" Quote="Double">
+                  <SubSection_PgfTag id="1202302">
+                    <PgfNumString><PgfNumString_1>“(3A)</PgfNumString_1></PgfNumString>
+                    <SubSection_text><ParaLineStart LineNum="16"></ParaLineStart>The Secretary of State must not make a designation under this <ParaLineStart LineNum="17"></ParaLineStart>section unless satisfied that adequate arrangements will be made for <ParaLineStart LineNum="18"></ParaLineStart>taking account of public opinion in the United Kingdom.”</SubSection_text>
+                  </SubSection_PgfTag>
+                </SubSection>
+              </Amendment>
+            </SubPara.sch>
+            <SubPara.sch id="1089581" Minor_Number_Only="5">
+              <SubParagraphCont.sch_PgfTag id="1202308">
+                <PgfNumString><PgfNumString_1></PgfNumString_1><PgfNumString_2>(5)</PgfNumString_2></PgfNumString>
+                <SubPara.sch_text><ParaLineStart LineNum="19"></ParaLineStart>For subsection (5) substitute—</SubPara.sch_text>
+              </SubParagraphCont.sch_PgfTag>
+              <Amendment id="1099690">
+                <SubSection id="1099699" Number="5" Quote="Double">
+                  <SubSection_PgfTag id="1202313">
+                    <PgfNumString><PgfNumString_1>“(5)</PgfNumString_1></PgfNumString>
+                    <SubSection_text><ParaLineStart LineNum="20"></ParaLineStart>No fee is recoverable by, or in accordance with arrangements made <ParaLineStart LineNum="21"></ParaLineStart>by, the designated authority in connection with a determination in <ParaLineStart LineNum="22"></ParaLineStart>respect of a video work or the issue of a classification certificate <ParaLineStart LineNum="23"></ParaLineStart>unless the designated authority has consulted the Secretary of State <ParaLineStart LineNum="24"></ParaLineStart>about such fees.”</SubSection_text>
+                  </SubSection_PgfTag>
+                </SubSection>
+              </Amendment>
+            </SubPara.sch>
+            <SubPara.sch id="1090007" Minor_Number_Only="6">
+              <SubParagraphCont.sch_PgfTag id="1202320">
+                <PgfNumString><PgfNumString_1></PgfNumString_1><PgfNumString_2>(6)</PgfNumString_2></PgfNumString>
+                <SubPara.sch_text><ParaLineStart LineNum="25"></ParaLineStart>Omit subsection (6).</SubPara.sch_text>
+              </SubParagraphCont.sch_PgfTag>
+            </SubPara.sch>
+            <SubPara.sch id="1090731" Minor_Number_Only="7">
+              <SubParagraphCont.sch_PgfTag id="1202323">
+                <PgfNumString><PgfNumString_1></PgfNumString_1>PgfNumString_2>(7)</PgfNumString_2></PgfNumString>
+                <SubPara.sch_text><ParaLineStart LineNum="26"></ParaLineStart>After that subsection insert—</SubPara.sch_text>
+              </SubParagraphCont.sch_PgfTag>
+              <Amendment id="1090754">
+                <SubSection id="1090763" Number="6" Letter="A" Quote="Double">
+                  <SubSection_PgfTag id="1202328">
+                    <PgfNumString><PgfNumString_1>“(6A)</PgfNumString_1></PgfNumString>
+                    <SubSection_text><ParaLineStart LineNum="27"></ParaLineStart>When making arrangements under this section, the designated <ParaLineStart LineNum="28"></ParaLineStart>authority must have regard to any guidance issued by the Secretary <ParaLineStart LineNum="29"></ParaLineStart>of State.</SubSection_text>
+                  </SubSection_PgfTag>
+                </SubSection>
+                <SubSection id="1157418" Number="6" Letter="B">
+                  <SubSection_PgfTag id="1202332">
+                    <PgfNumString><PgfNumString_1>(6B)</PgfNumString_1></PgfNumString>
+                    <SubSection_text><ParaLineStart LineNum="30"></ParaLineStart>The Secretary of State may not issue guidance about the matters to be <ParaLineStart LineNum="31"></ParaLineStart>taken into account when determining the suitability of a video work <ParaLineStart LineNum="32"></ParaLineStart>for the issue of a classification certificate or a classification certificate <ParaLineStart LineNum="33"></ParaLineStart>of a particular description.”</SubSection_text>
+                  </SubSection_PgfTag>
+                </SubSection>
+              </Amendment>
+            </SubPara.sch>
+            <SubPara.sch id="1097118" Minor_Number_Only="8">
+              <SubParagraphCont.sch_PgfTag id="1202338">
+                <PgfNumString><PgfNumString_1></PgfNumString_1><PgfNumString_2>(8)</PgfNumString_2></PgfNumString>
+                <SubPara.sch_text><ParaLineStart LineNum="34"></ParaLineStart>In subsection (8)—</SubPara.sch_text>
+              </SubParagraphCont.sch_PgfTag>
+              <PageStart id="1223483" PageType="BodyPage" PageNum="53">Page 53</PageStart>
+              <SubSubPara.sch id="1103619">
+                <SubSubParagraph.sch_PgfTag id="1202341">
+                  <PgfNumString><PgfNumString_1>(a)</PgfNumString_1></PgfNumString>
+                  <SubSubPara.sch_text><ParaLineStart LineNum="1"></ParaLineStart>after “Act” insert—</SubSubPara.sch_text>
+                </SubSubParagraph.sch_PgfTag>
+                <Amendment id="1103922">
+                  <Para id="1103931" Number="a" Quote="Double">
+                    <Paragraph_PgfTag id="1202349">
+                      <PgfNumString><PgfNumString_1>“(a)</PgfNumString_1></PgfNumString>
+                      <Para_text><ParaLineStart LineNum="2"></ParaLineStart>”, and</Para_text>
+                    </Paragraph_PgfTag>
+                  </Para>
+                </Amendment>
+              </SubSubPara.sch>
+              <SubSubPara.sch id="1103632">
+                <SubSubParagraph.sch_PgfTag id="1202352">
+                  <PgfNumString><PgfNumString_1>(b)</PgfNumString_1></PgfNumString>
+                  <SubSubPara.sch_text>
+                    <ParaLineStart LineNum="3"></ParaLineStart>at the end insert “, and</SubSubPara.sch_text>
+                </SubSubParagraph.sch_PgfTag>
+                <Amendment id="1103339">
+                  <SubSection id="1197842" Number="none">
+                    <Para id="1103348" Number="b" Quote="None">
+                      <Paragraph_PgfTag id="1202359">
+                        <PgfNumString><PgfNumString_1>(b)</PgfNumString_1></PgfNumString>
+                        <Para_text><ParaLineStart LineNum="4"></ParaLineStart>references to the designated authority, in relation to a <ParaLineStart LineNum="5"></ParaLineStart>classification certificate, are references to the person <ParaLineStart LineNum="6"></ParaLineStart>or persons designated under this section when the <ParaLineStart LineNum="7"></ParaLineStart>certificate is issued,</Para_text>
+                      </Paragraph_PgfTag>
+                    </Para>
+                    <TextContinuation id="1197942">
+                      <SubSection_PgfTag id="1202369">
+                        <PgfNumString></PgfNumString>
+                        <ParaLineStart LineNum="8"></ParaLineStart>(but see also section 4ZA(2)).”</SubSection_PgfTag>
+                    </TextContinuation>
+                  </SubSection>
+                </Amendment>
+              </SubSubPara.sch>
+            </SubPara.sch>
+          </Para.sch>
+          <Para.sch id="1093093" Major_Number_Only="3">
+            <Paragraph.sch_PgfTag id="1202372">
+              <PgfNumString><PgfNumString_1>3</PgfNumString_1></PgfNumString>
+              <Para.sch_text>
+                <ParaLineStart LineNum="9"></ParaLineStart>In section 7 (classification certificates), at the end insert—</Para.sch_text>
+            </Paragraph.sch_PgfTag>
+            <Amendment id="1093104">
+              <SubSection id="1107157" Number="3" Quote="Double">
+                <SubSection_PgfTag id="1202377">
+                  <PgfNumString><PgfNumString_1>“(3)</PgfNumString_1></PgfNumString>
+                  <SubSection_text><ParaLineStart LineNum="10"></ParaLineStart>For the purposes of this Act, a video work is not a video work in <ParaLineStart LineNum="11"></ParaLineStart>respect of which a classification certificate has been issued if every <ParaLineStart LineNum="12"></ParaLineStart>classification certificate issued in respect of the video work has been <ParaLineStart LineNum="13"></ParaLineStart>revoked.”</SubSection_text>
+                </SubSection_PgfTag>
+              </SubSection>
+            </Amendment>
+          </Para.sch>
+          <Para.sch id="1088963" Id="mf.sA206j-1088963">
+            <Paragraph.sch_PgfTag id="1202383">
+              <PgfNumString><PgfNumString_1>4</PgfNumString_1></PgfNumString>
+              <Para.sch_text><ParaLineStart LineNum="14"></ParaLineStart>After that section insert—</Para.sch_text>
+            </Paragraph.sch_PgfTag>
+          </Para.sch>
+        </ScheduleText>
+      </Schedule>
+      <Schedule id="1223507" HardReference="j901s" TemplateVersion="4.2.002">
+        <ScheduleNumber_PgfTag id="1223512">
+          <PgfNumString><PgfNumString_0>Schedule 2</PgfNumString_0></PgfNumString>
+          <ScheduleNumber id="1140679"></ScheduleNumber>
+        </ScheduleNumber_PgfTag>
+        <SectionReference id="1223515"><ParaLineStart LineNum="22"></ParaLineStart>Section 42</SectionReference>
+        <ScheduleTitle id="1223530"><ParaLineStart LineNum="23"></ParaLineStart>Licensing of copyright and performers’ property rights</ScheduleTitle>
+        <ScheduleText id="1223530t">
+          <PartSch id="1130267">
+            <PartNumber.sch_PgfTag id="1223538">
+              <PgfNumString><PgfNumString_0>Part 1</PgfNumString_0></PgfNumString>
+              <PartNumber id="1130295"></PartNumber>
+            </PartNumber.sch_PgfTag>
+            <PartTitle id="1130312"><ParaLineStart LineNum="24"></ParaLineStart>Regulation of licensing bodies</PartTitle>
+            <Para.sch id="1223545" Major_Number_Only="1">
+              <Paragraph.sch_PgfTag id="1223546">
+                <PgfNumString><PgfNumString_1>1</PgfNumString_1></PgfNumString>
+                <Para.sch_text><ParaLineStart LineNum="25"></ParaLineStart>In the Copyright, Designs and Patents Act 1988 before Schedule 1 insert—</Para.sch_text>
+              </Paragraph.sch_PgfTag>
+              <Amendment id="1061332">
+                <Schedule id="1061341" Number="A" Letter="1" Quote="Double">
+                  <ScheduleNumber_PgfTag id="1223554">
+                    <PgfNumString><PgfNumString_0>“Schedule A1</PgfNumString_0></PgfNumString>
+                    <ScheduleNumber id="1061372"></ScheduleNumber>
+                  </ScheduleNumber_PgfTag>
+                  <SectionReference id="1061432"><ParaLineStart LineNum="26"></ParaLineStart>Section 116D</SectionReference>
+                  <ScheduleTitle id="1061400"><ParaLineStart LineNum="27"></ParaLineStart>Regulation of licensing bodies</ScheduleTitle>
+                  <ScheduleText id="1061400t">
+                    <CrossHeadingSch id="1122359">
+                      <CrossHeadingTitle id="1122363">
+                        <ParaLineStart LineNum="28"></ParaLineStart>Code of practice</CrossHeadingTitle>
+                      <Para.sch id="1122371" Major_Number_Only="1" Id="mf.s109j-1122371"></Para.sch>
+                    </CrossHeadingSch>
+                  </ScheduleText>
+                </Schedule>
+              </Amendment>
+            </Para.sch>
+          </PartSch>
+        </ScheduleText>
+      </Schedule>
+    </Schedules>
+  </BillData>
+</Document>
