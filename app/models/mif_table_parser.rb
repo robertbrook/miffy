@@ -99,9 +99,11 @@ class MifTableParser
   end
 
   def handle_cell node, tables
+    colspan = @colspan_target
     if @colspan_target > 0
       if @colspan_count < @colspan_target
         @colspan_count += 1
+        @cell_count += 1
         return
       else
         @colspan_target = 0
@@ -123,11 +125,24 @@ class MifTableParser
     css_class = ""
     unless @format_info[@table_tag]["col_x_border_left"].empty?
       if @format_info[@table_tag]["col_x"] == @cell_count.to_s && !@in_heading
-        if first == ""
+        unless first == ""
           css_class = %Q| class="leftborder"|
-        else
-          first.gsub('"first"', '"first leftborder"')
+          if @no_of_cols.to_i+colspan-1 != @cell_count
+            css_class = %Q| class="leftborder rightborder"|
+          end
         end
+      end
+    end
+    
+    unless @format_info[@table_tag]["col_border"].empty?
+      puts "**not empty**"
+      puts "#{(@cell_count).to_s} = #{@no_of_cols}?"
+      if first != ""
+        css_class = ' class="rightborder"'
+      elsif @cell_count == @no_of_cols.to_i-1
+        css_class = ' class="leftborder"'
+      else
+        css_class = ' class="leftborder rightborder"'
       end
     end
     
@@ -238,6 +253,7 @@ class MifTableParser
     @colspan_target = 0
     @table_tag = ""
     table_count = tables.size
+    @no_of_cols = table_xml.at('TblNumColumns/text()').to_s
 
     table_xml.traverse_element do |node|
       do_break = handle_node node, tables
