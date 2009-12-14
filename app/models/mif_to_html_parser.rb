@@ -484,7 +484,11 @@ class MifToHtmlParser
     line = node['LineNum'].to_s
     anchor_name = "page#{@page_number}-line#{line}"
 
-    add %Q|<br />| unless first_line
+    if first_line
+      # ignore
+    else
+      add %Q|<br />| 
+    end
 
     para_line_anchor = %Q|<a name="#{anchor_name}"></a>|
     para_line_anchor += %Q|<a name="clause#{@clause_number}-#{anchor_name}"></a>| unless @clause_number.blank?

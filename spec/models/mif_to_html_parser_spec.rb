@@ -220,7 +220,7 @@ Parliament assembled, and by the authority of the same, as follows:—')
 
   describe 'when parsing a Lords Clauses MIF XML file to html' do
     before(:all) do
-      @result = parser.parse_xml(fixture('DigitalEconomy/Clauses.xml'), :format => :html)
+      @result = parser.parse_xml(fixture('DigitalEconomy/Clauses.act.xml'), :format => :html)
     end
     
     it 'should create html' do
