@@ -115,4 +115,21 @@ describe MifTableParser do
 </TableData>'.gsub("\n",'')
     end
   end
+  
+  describe 'when parsing complex tables with Ruling set in TblCatalog and locally' do
+    it 'should create table' do
+      doc = Hpricot.XML fixture('table_examples/complex_tables.xml')
+      tables = MifTableParser.new.get_tables doc
+      tables["19"].to_s.should == '<TableData id="1115874">
+<Row id="1115875" class="bottomborder">
+<CellH id="1115878" class="first bottomborder topborder rightborder">Description of wine or made-wine</CellH>
+<CellH id="1114648" class="allborders">Rates of duty per litre of alcohol in the wine or made-wine</CellH>
+</Row>
+<Row id="1115673">
+<Cell id="1115678" class="first allborders">Wine or made-wine of a strength exceeding 22 per cent</Cell>
+<Cell id="1115679" class="allborders">21.35.</Cell>
+</Row>
+</TableData>'.gsub("\n",'')
+    end
+  end
 end
