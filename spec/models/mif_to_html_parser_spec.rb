@@ -238,6 +238,10 @@ Parliament assembled, and by the authority of the same, as follows:—')
       end
     end
     
+    it 'should create line break when line break is between xrefs' do
+      @result.should include('<a id="1144999" class="Xref" href="#clause13-amendment-clause124J-2-a">(a)</a><br /><a name="page15-line7"></a><a name="clause13-page15-line7"></a>or <a id="1145003" class="Xref" href="#clause13-amendment-clause124J-2-c">(c)</a>')
+    end
+    
     it 'should create a named anchor for page1-line1 inside the first CrossHeading section' do
       @result.should have_tag('div[class="CrossHeading"][id="1112628"]') do
         with_tag('div[class="CrossHeadingTitle"][id="1113244"]') do
