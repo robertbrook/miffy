@@ -589,6 +589,17 @@ describe MifParser do
       File.open(RAILS_ROOT + '/spec/fixtures/DigitalEconomy/Clauses.xml','w') {|f| f.write @result }
     end
   
+    it 'should put page break inside xref before the xref' do
+      @result.should have_tag('SubSection_PgfTag[id="1155884"]') do
+        with_tag('SubSection_text') do
+          with_tag('Xref[id="1120341"][Idref="mf.751j-1120211"]', :text=>'(4)')
+          with_tag('ParaLineStart[LineNum="26"]')
+        end
+      end
+
+      @result.should include('<ParaLineStart LineNum="26"></ParaLineStart><Xref id="1120341" Idref="mf.751j-1120211">(4)</Xref>')
+    end
+
     it 'should not start number lines inside the Prelim section' do
       @result.should have_tag('Prelim[id="1112587"]')
       @result.should have_tag('Prelim[id="1112587"]') do
