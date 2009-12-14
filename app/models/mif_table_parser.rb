@@ -31,21 +31,21 @@ class MifTableParser
     
     col_x = node.at('TblXColumnNum/text()')
     if node.at('TblXColumnRuling/text()')
-      col_x_border_left = clean(node.at('TblXColumnRuling/text()'))
+      col_x_border = clean(node.at('TblXColumnRuling/text()'))
     end
     
     @format_info.merge!({
-        "#{current_tag}" => {
-          "border_top" => "#{border_top}", 
-          "border_left" => "#{border_left}",
-          "border_bottom" => "#{border_bottom}",
-          "border_right" => "#{border_right}",
-          "hf_separator" => "#{hf_separator}",
-          "col_border" => "#{col_border}",
-          "row_border" => "#{row_border}",
-          "col_x" => "#{col_x}",
-          "col_x_border_left" => "#{col_x_border_left}"
-        }})
+      "#{current_tag}" => {
+        "border_top" => "#{border_top}", 
+        "border_left" => "#{border_left}",
+        "border_bottom" => "#{border_bottom}",
+        "border_right" => "#{border_right}",
+        "hf_separator" => "#{hf_separator}",
+        "col_border" => "#{col_border}",
+        "row_border" => "#{row_border}",
+        "col_x" => "#{col_x}",
+        "col_x_border" => "#{col_x_border}"
+      }})
   end
 
   def handle_id node
@@ -99,7 +99,6 @@ class MifTableParser
   end
 
   def handle_cell node, tables
-    colspan = @colspan_target
     if @colspan_target > 0
       if @colspan_count < @colspan_target
         @colspan_count += 1
@@ -108,6 +107,12 @@ class MifTableParser
       else
         @colspan_target = 0
       end
+    end
+    
+    colspan = 1
+    if node.at('CellColumns/text()')
+      colspan = node.at('CellColumns/text()').to_s
+      colspan = colspan.to_i
     end
     
     first = ' class="first"'
@@ -123,23 +128,28 @@ class MifTableParser
     @in_cell = true
     
     css_class = ""
-    unless @format_info[@table_tag]["col_x_border_left"].empty?
-      if @format_info[@table_tag]["col_x"] == @cell_count.to_s && !@in_heading
-        unless first == ""
+    unless @format_info[@table_tag]["col_x_border"].empty?
+      if (@format_info[@table_tag]["col_x"] == @cell_count.to_s && !@in_heading) ||
+        (@format_info[@table_tag]["col_x"].to_i == @cell_count.to_i + (colspan-1) && !@in_heading)
+        if first == ""
           css_class = %Q| class="leftborder"|
-          if @no_of_cols.to_i-1 != @cell_count+colspan
+          if @no_of_cols.to_i+-1 != @cell_count.to_i+(colspan-1)
             css_class = %Q| class="leftborder rightborder"|
+          end
+        else
+          if @no_of_cols.to_i-1 != @cell_count+colspan
+            css_class = %Q| class="rightborder"|
           end
         end
       end
     end
     
     unless @format_info[@table_tag]["col_border"].empty?
-      puts "**not empty**"
-      puts "#{(@cell_count).to_s} = #{@no_of_cols.to_i-1}?"
+      #puts "**column border not empty**"
+      #puts "#{@cell_count+colspan} = #{@no_of_cols.to_i-1}?"
       if first != ""
         css_class = ' class="rightborder"'
-      elsif @cell_count == @no_of_cols.to_i-1
+      elsif @cell_count+colspan == @no_of_cols.to_i-1
         css_class = ' class="leftborder"'
       else
         css_class = ' class="leftborder rightborder"'
