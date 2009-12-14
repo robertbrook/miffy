@@ -381,7 +381,7 @@ ake provision about the functions of the Office of Communications; to make <Para
 <Amendment id="1112692"><Clause id="1154390" Id="mf.151j-1112728" Number="124" Letter="C" Quote="Double"><ClauseTitle id="1154393">
 <ClauseTitle_PgfTag id="1154395"><PgfNumString><PgfNumString_1>“124C</PgfNumString_1> </PgfNumString><ActClauseTitle_text><ParaLineStart LineNum="36"></ParaLineStart> Approval of code about the initial obligations</ActClauseTitle_text></ClauseTitle_PgfTag>
 </ClauseTitle><ClauseText id="1154398"><SubSection id="1138258" Id="mf.151j-1138258">
-<SubSection_PgfTag id="1154404"><PgfNumString><PgfNumString_1>(1)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="37"></ParaLineStart>The obligations of internet service providers under sections <Xref id="1141559" Idref="mf.451j-1112728">124A</Xref> and <Xref id="1141451" Idref="mf.161j-1112728"><ParaLineStart LineNum="38"></ParaLineStart>124B</Xref> are the “initial obligations”.</SubSection_text></SubSection_PgfTag>
+<SubSection_PgfTag id="1154404"><PgfNumString><PgfNumString_1>(1)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="37"></ParaLineStart>The obligations of internet service providers under sections <Xref id="1141559" Idref="mf.451j-1112728">124A</Xref> and <ParaLineStart LineNum="38"></ParaLineStart><Xref id="1141451" Idref="mf.161j-1112728">124B</Xref> are the “initial obligations”.</SubSection_text></SubSection_PgfTag>
 </SubSection>
 <SubSection id="1154411" Id="mf.151j-1112751">
 <SubSection_PgfTag id="1154412"><PgfNumString><PgfNumString_1>(2)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="39"></ParaLineStart>If it appears to OFCOM—</SubSection_text></SubSection_PgfTag>
@@ -424,7 +424,7 @@ ake provision about the functions of the Office of Communications; to make <Para
 <SubSection_PgfTag id="1154485"><PgfNumString><PgfNumString_1>(8)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="30"></ParaLineStart>OFCOM must keep an approved code under review.</SubSection_text></SubSection_PgfTag>
 </SubSection>
 <SubSection id="1116464">
-<SubSection_PgfTag id="1154488"><PgfNumString><PgfNumString_1>(9)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="31"></ParaLineStart>OFCOM may, at any time, for the purpose mentioned in subsection <Xref id="1141578" Idref="mf.151j-1112751"><ParaLineStart LineNum="32"></ParaLineStart>(2)</Xref>—</SubSection_text></SubSection_PgfTag>
+<SubSection_PgfTag id="1154488"><PgfNumString><PgfNumString_1>(9)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="31"></ParaLineStart>OFCOM may, at any time, for the purpose mentioned in subsection <ParaLineStart LineNum="32"></ParaLineStart><Xref id="1141578" Idref="mf.151j-1112751">(2)</Xref>—</SubSection_text></SubSection_PgfTag>
 <Para id="1121421">
 <Paragraph_PgfTag id="1154494"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="33"></ParaLineStart>approve modifications that have been made to an approved <ParaLineStart LineNum="34"></ParaLineStart>code; or</Para_text></Paragraph_PgfTag>
 </Para><Para id="1121428">
@@ -820,7 +820,7 @@ ake provision about the functions of the Office of Communications; to make <Para
 </Para><Para id="1155617">
 <Paragraph_PgfTag id="1155618"><PgfNumString><PgfNumString_1>(d)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="3"></ParaLineStart>that that person is sufficiently independent of internet service <ParaLineStart LineNum="4"></ParaLineStart>providers, copyright owners and OFCOM;</Para_text></Paragraph_PgfTag>
 </Para><Para id="1155622">
-<Paragraph_PgfTag id="1155623"><PgfNumString><PgfNumString_1>(e)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="5"></ParaLineStart>that there are adequate arrangements under the code for the <ParaLineStart LineNum="6"></ParaLineStart>costs of the carrying out by a person mentioned in paragraph <Xref anchor-ref="clause13-amendment-clause124J-2-a" id="1144999" Idref="mf.361j-1131394">(a)</Xref> <ParaLineStart LineNum="7"></ParaLineStart>or <Xref anchor-ref="clause13-amendment-clause124J-2-c" id="1145003" Idref="mf.361j-1144766">(c)</Xref> of functions in relation to the code to be met by internet <ParaLineStart LineNum="8"></ParaLineStart>service providers and copyright owners; and</Para_text></Paragraph_PgfTag>
+<Paragraph_PgfTag id="1155623"><PgfNumString><PgfNumString_1>(e)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="5"></ParaLineStart>that there are adequate arrangements under the code for the <ParaLineStart LineNum="6"></ParaLineStart>costs of the carrying out by a person mentioned in paragraph <Xref id="1144999" Idref="mf.361j-1131394">(a)</Xref> <ParaLineStart LineNum="7"></ParaLineStart>or <Xref id="1145003" Idref="mf.361j-1144766">(c)</Xref> of functions in relation to the code to be met by internet <ParaLineStart LineNum="8"></ParaLineStart>service providers and copyright owners; and</Para_text></Paragraph_PgfTag>
 </Para><Para id="1145148" Id="mf.361j-1145148">
 <Paragraph_PgfTag id="1155636"><PgfNumString><PgfNumString_1>(f)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="9"></ParaLineStart>that provision is made, in accordance with subsection <Xref id="1145454" Idref="mf.361j-1137983">(3)</Xref>, for <ParaLineStart LineNum="10"></ParaLineStart>the appeal to the First-tier Tribunal of determinations of <ParaLineStart LineNum="11"></ParaLineStart>subscriber appeals.</Para_text></Paragraph_PgfTag>
 </Para></SubSection>
@@ -850,7 +850,7 @@ ake provision about the functions of the Office of Communications; to make <Para
 </Para><Para id="1155700">
 <Paragraph_PgfTag id="1155701"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="33"></ParaLineStart>provision requiring a copyright owner to indemnify an internet <ParaLineStart LineNum="34"></ParaLineStart>service provider for any loss or damage resulting from the <ParaLineStart LineNum="35"></ParaLineStart>owner’s infringement or error in relation to the code or the <ParaLineStart LineNum="36"></ParaLineStart>copyright infringement provisions;</Para_text></Paragraph_PgfTag>
 </Para><Para id="1139401">
-<Paragraph_PgfTag id="1155705"><PgfNumString><PgfNumString_1>(c)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="37"></ParaLineStart>provision for the taking of a technical measure to be postponed <ParaLineStart LineNum="38"></ParaLineStart>until a subscriber appeal to a person mentioned in subsection <Xref id="1144849" Idref="mf.361j-1144766"><ParaLineStart LineNum="39"></ParaLineStart>(2)(c)</Xref> or an appeal to the First-tier Tribunal has been <ParaLineStart LineNum="40"></ParaLineStart>determined.</Para_text></Paragraph_PgfTag>
+<Paragraph_PgfTag id="1155705"><PgfNumString><PgfNumString_1>(c)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="37"></ParaLineStart>provision for the taking of a technical measure to be postponed <ParaLineStart LineNum="38"></ParaLineStart>until a subscriber appeal to a person mentioned in subsection <ParaLineStart LineNum="39"></ParaLineStart><Xref id="1144849" Idref="mf.361j-1144766">(2)(c)</Xref> or an appeal to the First-tier Tribunal has been <ParaLineStart LineNum="40"></ParaLineStart>determined.</Para_text></Paragraph_PgfTag>
 </Para></SubSection>
 <SubSection id="1155713">
 <SubSection_PgfTag id="1155714"><PgfNumString><PgfNumString_1>(5)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="41"></ParaLineStart>In this section—</SubSection_text></SubSection_PgfTag>
@@ -909,7 +909,7 @@ ake provision about the functions of the Office of Communications; to make <Para
 <SubSection_PgfTag id="1155877"><PgfNumString><PgfNumString_1>(4)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="22"></ParaLineStart>The Secretary of State may by order amend this section so as to <ParaLineStart LineNum="23"></ParaLineStart>substitute a different maximum penalty for the maximum penalty for <ParaLineStart LineNum="24"></ParaLineStart>the time being specified in subsection <Xref id="1120332" Idref="mf.751j-1119629">(2)</Xref>.</SubSection_text></SubSection_PgfTag>
 </SubSection>
 <SubSection id="1120227">
-<SubSection_PgfTag id="1155884"><PgfNumString><PgfNumString_1>(5)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="25"></ParaLineStart>No order is to be made containing provision authorised by subsection <Xref id="1120341" Idref="mf.751j-1120211"><ParaLineStart LineNum="26"></ParaLineStart>(4)</Xref> unless a draft of the order has been laid before Parliament and <ParaLineStart LineNum="27"></ParaLineStart>approved by a resolution of each House.”</SubSection_text></SubSection_PgfTag>
+<SubSection_PgfTag id="1155884"><PgfNumString><PgfNumString_1>(5)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="25"></ParaLineStart>No order is to be made containing provision authorised by subsection <ParaLineStart LineNum="26"></ParaLineStart><Xref id="1120341" Idref="mf.751j-1120211">(4)</Xref> unless a draft of the order has been laid before Parliament and <ParaLineStart LineNum="27"></ParaLineStart>approved by a resolution of each House.”</SubSection_text></SubSection_PgfTag>
 </SubSection>
 </ClauseText>
 </Clause>
@@ -960,13 +960,13 @@ ake provision about the functions of the Office of Communications; to make <Para
 <Definition_PgfTag id="1156051"><PgfNumString></PgfNumString><Definition_text><ParaLineStart LineNum="12"></ParaLineStart>“apparent infringement”, in relation to a copyright infringement <ParaLineStart LineNum="13"></ParaLineStart>report, means the infringement of copyright that the report <ParaLineStart LineNum="14"></ParaLineStart>states appears to have taken place;</Definition_text></Definition_PgfTag>
 </Definition>
 <Definition id="1131474">
-<Definition_PgfTag id="1156055"><PgfNumString></PgfNumString><Definition_text><ParaLineStart LineNum="15"></ParaLineStart>“copyright infringement list” has the meaning given in section <Xref id="1134885" Idref="mf.161j-1112728"><ParaLineStart LineNum="16"></ParaLineStart>124B</Xref><Xref id="1134896" Idref="mf.161j-1131038">(2)</Xref>;</Definition_text></Definition_PgfTag>
+<Definition_PgfTag id="1156055"><PgfNumString></PgfNumString><Definition_text><ParaLineStart LineNum="15"></ParaLineStart>“copyright infringement list” has the meaning given in section <ParaLineStart LineNum="16"></ParaLineStart><Xref id="1134885" Idref="mf.161j-1112728">124B</Xref><Xref id="1134896" Idref="mf.161j-1131038">(2)</Xref>;</Definition_text></Definition_PgfTag>
 </Definition>
 <Definition id="1130322">
 <Definition_PgfTag id="1156071"><PgfNumString></PgfNumString><Definition_text><ParaLineStart LineNum="17"></ParaLineStart>“copyright infringement provisions” means sections <Xref id="1134604" Idref="mf.451j-1112728">124A</Xref> to <Xref id="1135521" Idref="mf.061j-1112728">124L</Xref> <ParaLineStart LineNum="18"></ParaLineStart>and this section;</Definition_text></Definition_PgfTag>
 </Definition>
 <Definition id="1123531">
-<Definition_PgfTag id="1156075"><PgfNumString></PgfNumString><Definition_text><ParaLineStart LineNum="19"></ParaLineStart>“copyright infringement report” has the meaning given in section <Xref id="1134756" Idref="mf.451j-1112728"><ParaLineStart LineNum="20"></ParaLineStart>124A</Xref><Xref id="1134748" Idref="mf.451j-1128860">(3)</Xref>;</Definition_text></Definition_PgfTag>
+<Definition_PgfTag id="1156075"><PgfNumString></PgfNumString><Definition_text><ParaLineStart LineNum="19"></ParaLineStart>“copyright infringement report” has the meaning given in section <ParaLineStart LineNum="20"></ParaLineStart><Xref id="1134756" Idref="mf.451j-1112728">124A</Xref><Xref id="1134748" Idref="mf.451j-1128860">(3)</Xref>;</Definition_text></Definition_PgfTag>
 </Definition>
 <Definition id="1117581">
 <Definition_PgfTag id="1156085"><PgfNumString></PgfNumString><Definition_text><ParaLineStart LineNum="21"></ParaLineStart>“copyright owner” means—</Definition_text></Definition_PgfTag>
@@ -985,7 +985,7 @@ ake provision about the functions of the Office of Communications; to make <Para
 <Definition_PgfTag id="1156111"><PgfNumString></PgfNumString><Definition_text><ParaLineStart LineNum="30"></ParaLineStart>“initial obligations” has the meaning given in section <Xref id="1134907" Idref="mf.151j-1112728">124C</Xref><Xref id="1134918" Idref="mf.151j-1138258">(1)</Xref>;</Definition_text></Definition_PgfTag>
 </Definition>
 <Definition id="1130286">
-<Definition_PgfTag id="1156114"><PgfNumString></PgfNumString><Definition_text><ParaLineStart LineNum="31"></ParaLineStart>“initial obligations code” has the meaning given in section <Xref id="1134926" Idref="mf.451j-1112728"><ParaLineStart LineNum="32"></ParaLineStart>124A</Xref><Xref id="1135058" Idref="mf.451j-1137360">(2)</Xref>;</Definition_text></Definition_PgfTag>
+<Definition_PgfTag id="1156114"><PgfNumString></PgfNumString><Definition_text><ParaLineStart LineNum="31"></ParaLineStart>“initial obligations code” has the meaning given in section <ParaLineStart LineNum="32"></ParaLineStart><Xref id="1134926" Idref="mf.451j-1112728">124A</Xref><Xref id="1135058" Idref="mf.451j-1137360">(2)</Xref>;</Definition_text></Definition_PgfTag>
 </Definition>
 <Definition id="1117561">
 <Definition_PgfTag id="1156124"><PgfNumString></PgfNumString><Definition_text><ParaLineStart LineNum="33"></ParaLineStart>“internet access service” means an electronic communications <ParaLineStart LineNum="34"></ParaLineStart>service that—</Definition_text></Definition_PgfTag>
@@ -1959,14 +1959,14 @@ ake provision about the functions of the Office of Communications; to make <Para
 <Paragraph_PgfTag id="1235455"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="10"></ParaLineStart>conditions as to the circumstances in which all or part of the <ParaLineStart LineNum="11"></ParaLineStart>amount must be repaid.</Para_text></Paragraph_PgfTag>
 </Para></SubSection>
 <SubSection id="1122805">
-<SubSection_PgfTag id="1235460"><PgfNumString><PgfNumString_1>(8)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="12"></ParaLineStart>Section 287(5) and (6) apply to a condition imposed under subsection <Xref id="1176795" Idref="mf.163j-1175270"><ParaLineStart LineNum="13"></ParaLineStart>(2)</Xref> as they apply to a condition imposed under that section.</SubSection_text></SubSection_PgfTag>
+<SubSection_PgfTag id="1235460"><PgfNumString><PgfNumString_1>(8)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="12"></ParaLineStart>Section 287(5) and (6) apply to a condition imposed under subsection <ParaLineStart LineNum="13"></ParaLineStart><Xref id="1176795" Idref="mf.163j-1175270">(2)</Xref> as they apply to a condition imposed under that section.</SubSection_text></SubSection_PgfTag>
 </SubSection>
 <SubSection id="1176776">
 <SubSection_PgfTag id="1235467"><PgfNumString><PgfNumString_1>(9)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="14"></ParaLineStart>OFCOM must consult the Secretary of State— </SubSection_text></SubSection_PgfTag>
 <Para id="1177327">
 <Paragraph_PgfTag id="1235474"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="15"></ParaLineStart>before publishing criteria in accordance with subsection <Xref id="1172164" Idref="mf.163j-1117735">(3)</Xref>, and</Para_text></Paragraph_PgfTag>
 </Para><Para id="1177339">
-<Paragraph_PgfTag id="1235477"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="16"></ParaLineStart>before determining conditions to be imposed under subsection <Xref id="1172183" Idref="mf.163j-1123600"><ParaLineStart LineNum="17"></ParaLineStart>(4)(e)</Xref> or <Xref id="1172202" Idref="mf.163j-1116438">(7)</Xref>.</Para_text></Paragraph_PgfTag>
+<Paragraph_PgfTag id="1235477"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="16"></ParaLineStart>before determining conditions to be imposed under subsection <ParaLineStart LineNum="17"></ParaLineStart><Xref id="1172183" Idref="mf.163j-1123600">(4)(e)</Xref> or <Xref id="1172202" Idref="mf.163j-1116438">(7)</Xref>.</Para_text></Paragraph_PgfTag>
 </Para></SubSection>
 <SubSection id="1172121">
 <SubSection_PgfTag id="1235488"><PgfNumString><PgfNumString_1>(10)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="18"></ParaLineStart>In this section—</SubSection_text></SubSection_PgfTag>
@@ -2908,11 +2908,11 @@ ake provision about the functions of the Office of Communications; to make <Para
 <SubSection_PgfTag id="1237684"><PgfNumString><PgfNumString_1>(3)</PgfNumString_1> </PgfNumString><SubSection_text><ParaLineStart LineNum="27"></ParaLineStart>In the 1988 Act insert in the appropriate place—</SubSection_text></SubSection_PgfTag>
 <Para id="1134898">
 <Paragraph_PgfTag id="1237687"><PgfNumString><PgfNumString_1>(a)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="28"></ParaLineStart>in section 179 (index of defined expressions in Part 1)—</Para_text></Paragraph_PgfTag>
-<Amendment id="1134902"><Table id="1134905"><TableData id="1237692"><Row id="1134908"><Cell id="1134911" class="first" class="rightborder">“orphan work</Cell><Cell id="1134914" class="leftborder rightborder">section 116A(6)”;</Cell></Row></TableData></Table>
+<Amendment id="1134902"><Table id="1134905"><TableData id="1237692"><Row id="1134908"><Cell id="1134911" class="first rightborder">“orphan work</Cell><Cell id="1134914" class="leftborder">section 116A(6)”;</Cell></Row></TableData></Table>
 </Amendment>
 </Para><Para id="1134631">
 <Paragraph_PgfTag id="1237710"><PgfNumString><PgfNumString_1>(b)</PgfNumString_1> </PgfNumString><Para_text><ParaLineStart LineNum="29"></ParaLineStart>in section 212 (index of defined expressions in Part 2)—</Para_text></Paragraph_PgfTag>
-<Amendment id="1134829"><Table id="1134864"><TableData id="1237715"><Row id="1134872"><Cell id="1134873" class="first" class="rightborder">“orphan right</Cell><Cell id="1134874" class="leftborder rightborder">paragraph 1A(6) of Schedule 2A”.</Cell></Row></TableData></Table>
+<Amendment id="1134829"><Table id="1134864"><TableData id="1237715"><Row id="1134872"><Cell id="1134873" class="first rightborder">“orphan right</Cell><Cell id="1134874" class="leftborder">paragraph 1A(6) of Schedule 2A”.</Cell></Row></TableData></Table>
 </Amendment>
 </Para></SubSection>
 </ClauseText>
