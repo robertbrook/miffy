@@ -582,6 +582,29 @@ describe MifParser do
     end
   end
 
+  describe 'when parsing Lords clauses MIF XML file into xml' do
+    before(:all) do
+      @parser = MifParser.new
+      @result = @parser.parse_xml(fixture('DigitalEconomy/Clauses.mif.xml'))
+      File.open(RAILS_ROOT + '/spec/fixtures/DigitalEconomy/Clauses.xml','w') {|f| f.write @result }
+    end
+  
+    it 'should not start number lines inside the Prelim section' do
+      @result.should have_tag('Prelim[id="1112587"]')
+      @result.should have_tag('Prelim[id="1112587"]') do
+        without_tag('ParaStart[LineNum]')
+      end
+    end
+    
+    it 'should create line number 1 inside the first section of the actual bill text' do
+      @result.should have_tag('CrossHeading[id="1112628"]') do
+        with_tag('CrossHeadingTitle[id="1113244"]', :text => 'General duties of OFCOM') do
+          with_tag('ParaLineStart[LineNum="1"]')
+        end
+      end
+    end
+  end
+
   describe 'when parsing schedules MIF XML file into xml' do
     before(:all) do
       @parser = MifParser.new
