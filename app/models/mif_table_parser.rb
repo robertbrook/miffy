@@ -135,8 +135,8 @@ class MifTableParser
     end
     
     unless @format_info[@table_tag]["col_border"].empty?
-      puts "**not empty**"
-      puts "#{(@cell_count).to_s} = #{@no_of_cols.to_i-1}?"
+      # puts "**not empty**"
+      # puts "#{(@cell_count).to_s} = #{@no_of_cols.to_i-1}?"
       if first != ""
         css_class = ' class="rightborder"'
       elsif @cell_count == @no_of_cols.to_i-1
