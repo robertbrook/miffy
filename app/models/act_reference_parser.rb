@@ -155,13 +155,12 @@ class ActReferenceParser
                   url = act.statutelaw_url ? act.statutelaw_url : act.opsi_url
                 end
 
-                if url
+                if url && !mention.text.include?('<Xref')
                   link = %Q|<a href="#{url}" rel="cite">#{mention.text}</a>|
                   new_text = "#{preceding_text}#{link}#{following_text}"
                   clause.inner_html = new_text
                   mentions = true
                 end
-
               end
             end
           end
@@ -178,7 +177,9 @@ class ActReferenceParser
           act = Act.find_by_name(act_title)
           if act
             clause = citation.parent
-            add_link(clause, "#{reference} #{citation.to_s}") { %Q|<a #{section_cite_attributes(act, number, [])}>#{reference} #{citation.inner_html}</a>| }
+            add_link(clause, "#{reference} #{citation.to_s}") do
+              %Q|<a #{section_cite_attributes(act, number, [])}>#{reference} #{citation.inner_html}</a>|
+            end
           else
             warn "can't find act: #{act_title}"
           end
@@ -276,7 +277,9 @@ class ActReferenceParser
     def link_section clause, act, sections
       reference, section_number = yield
       if section_number
-        add_link(clause, reference) { "<a #{section_cite_attributes(act, section_number, sections)}>#{reference}</a>" }
+        add_link(clause, reference) do
+          "<a #{section_cite_attributes(act, section_number, sections)}>#{reference}</a>"
+        end
         true
       else
         false

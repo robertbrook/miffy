@@ -81,6 +81,23 @@ describe ActReferenceParser do
       @parser = ActReferenceParser.new
       Act.stub!(:find_by_legislation_url).and_return nil
       Act.stub!(:find_by_name).and_return nil
+      act = mock(Act, :statutelaw_url => 'http://www.opsi.gov.uk/acts/acts2003/ukpga_20030021_en_1.htm')
+      act.stub!(:find_section_by_number).and_return nil
+      Act.stub!(:from_name).with('Communications Act 2003').and_return act
+
+      @result = @parser.parse_xml(fixture('DigitalEconomy/clause_with_xref_id_in_section_reference.xml'))
+    end
+
+    it 'should not section link reference containing Xref' do
+      @result.should_not include('<a href="http://www.opsi.gov.uk/acts/acts2003/ukpga_20030021_en_1.htm" rel="cite">section <Xref id="1137592" Idref="mf.451j-1112728">124A</Xref> of the Communications Act 2003</a>')
+    end
+  end
+
+  describe 'when parsing act name split across two lines' do
+    before(:all) do
+      @parser = ActReferenceParser.new
+      Act.stub!(:find_by_legislation_url).and_return nil
+      Act.stub!(:find_by_name).and_return nil
       Act.stub!(:from_name).with('Video Recordings Act 1984').and_return mock(Act, :statutelaw_url => 'http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61')
 
       @result = @parser.parse_xml(fixture('DigitalEconomy/clauses_act_name_on_two_lines.xml'))

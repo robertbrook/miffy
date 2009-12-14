@@ -1,0 +1,28 @@
+<Document>
+  <BillData>
+    <BillTitle>Digital Economy Bill [HL]</BillTitle>
+    <Clauses id="1112573">
+      <PageStart id="1237436" PageType="BodyPage" PageNum="46">Page 46</PageStart>
+      <CrossHeading id="1112662" Quote="None">
+        <CrossHeadingTitle id="1154105"><ParaLineStart LineNum="1"></ParaLineStart>Online infringement of copyright</CrossHeadingTitle>
+        <Clause id="1154282" HardReference="j161" TemplateVersion="4.2.002">
+          <ClauseTitle id="1154286">
+            <ClauseTitle_PgfTag id="1154288">
+              <PgfNumString><PgfNumString_1>5</PgfNumString_1></PgfNumString>
+            </ClauseTitle_PgfTag>
+          </ClauseTitle>
+          <ClauseText id="1154291">
+            <ClauseText_PgfTag id="1154295">
+              <ParaLineStart LineNum="15"></ParaLineStart>After section <Xref id="1137592" Idref="mf.451j-1112728">124A</Xref> of the Communications Act 2003 insert—</ClauseText_PgfTag>
+            <Amendment id="1154298"></Amendment>
+          </ClauseText>
+        </Clause>
+      </CrossHeading>
+    </Clauses>
+    <Interpretation></Interpretation>
+    <Footer>
+      <BillPrintNumber>HL Bill 1</BillPrintNumber>
+      <BillSessionNumber>54/5</BillSessionNumber>
+    </Footer>
+  </BillData>
+</Document>
