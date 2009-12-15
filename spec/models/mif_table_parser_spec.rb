@@ -117,10 +117,13 @@ describe MifTableParser do
   end
   
   describe 'when parsing complex tables with Ruling set in TblCatalog and locally' do
-    it 'should create table' do
+    before(:all) do
       doc = Hpricot.XML fixture('table_examples/complex_tables.xml')
-      tables = MifTableParser.new.get_tables doc
-      tables["19"].to_s.should == '<TableData id="1115874">
+      @tables = MifTableParser.new.get_tables doc
+    end
+    
+    it 'should create table' do
+      @tables["19"].to_s.should == '<TableData id="1115874">
 <Row id="1115875" class="bottomborder">
 <CellH id="1115878" class="first bottomborder topborder rightborder">Description of wine or made-wine</CellH>
 <CellH id="1114648" class="allborders">Rates of duty per litre of alcohol in the wine or made-wine</CellH>
@@ -128,6 +131,29 @@ describe MifTableParser do
 <Row id="1115673">
 <Cell id="1115678" class="first allborders">Wine or made-wine of a strength exceeding 22 per cent</Cell>
 <Cell id="1115679" class="allborders">21.35.</Cell>
+</Row>
+</TableData>'.gsub("\n",'')
+    end
+    
+    it 'should create a border around the table where Ruling set locally' do
+      @tables["24"].to_s.should == '<TableData id="1172510" class="allborders">
+<Row id="1162636" class="bottomborder">
+<CellH id="1162639" class="first rightborder">Months for which licence granted</CellH>
+<CellH id="1162642" class="leftborder rightborder">Category A</CellH>
+<CellH id="1162645" class="leftborder rightborder">Category B1</CellH>
+<CellH id="1162648" class="leftborder rightborder">Category B2</CellH>
+<CellH id="1162651" class="leftborder rightborder">Category B3</CellH>
+<CellH id="1162654" class="leftborder rightborder">Category B4</CellH>
+<CellH id="1162657" class="leftborder">Category C</CellH>
+</Row>
+<Row id="1162658">
+<Cell id="1162661" class="first allborders">1</Cell>
+<Cell id="1162664" class="allborders">455</Cell>
+<Cell id="1162667" class="allborders">230</Cell>
+<Cell id="1162670" class="allborders">180</Cell>
+<Cell id="1162673" class="allborders">180</Cell>
+<Cell id="1162676" class="allborders"> 165</Cell>
+<Cell id="1162679" class="leftborder">70</Cell>
 </Row>
 </TableData>'.gsub("\n",'')
     end

@@ -58,10 +58,10 @@ class MifTableParser
     if tag != 'Table' && tag != 'RepealContinue' && tag != 'RepealsSchedules'
       do_break = true
     else
-      css_class = get_css_class
+      css_class = get_table_css_class(node)
       
       xml_tag = start_tag('TableData', node)
-      
+            
       unless css_class.empty?
         if xml_tag.include?('class=')
           xml_tag.gsub!('">', %Q| #{css_class}">|)
@@ -256,7 +256,7 @@ class MifTableParser
     do_break
   end
   
-  def get_css_class
+  def get_table_css_class node
     css_class = ""
     if !@format_info[@table_tag]["border_top"].empty? && !@format_info[@table_tag]["border_right"].empty? && !@format_info[@table_tag]["border_bottom"].empty? && !@format_info[@table_tag]["border_left"].empty?
       css_class = "allborders"
@@ -273,8 +273,26 @@ class MifTableParser
       unless @format_info[@table_tag]["border_left"].empty?
         css_class += " leftborder"
       end
+      
+      if node.parent.at('TblFormat/TblTRuling/text()') && node.parent.at('TblFormat/TblLRuling/text()') && node.parent.at('TblFormat/TblBRuling/text()') && node.parent.at('TblFormat/TblRRuling/text()')
+        css_class = "allborders"
+      else
+        if node.parent.at('TblFormat/TblTRuling/text()')
+          css_class += " topborder" unless css_class.include?("topborder")
+        end
+        if node.parent.at('TblFormat/TblRRuling/text()')
+          css_class += " rightborder" unless css_class.include?("rightborder")
+        end
+        if node.parent.at('TblFormat/TblBRuling/text()')
+          css_class += " bottomborder" unless css_class.include?("bottomborder")
+        end
+        if node.parent.at('TblFormat/TblLRuling/text()')
+          css_class += " leftborder" unless css_class.include?("leftborder")
+        end
+      end
     end
-    css_class
+    
+    css_class.strip
   end
 
   def handle_table table_xml, tables

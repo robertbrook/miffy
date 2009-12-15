@@ -159,8 +159,6 @@
       </TblColumn>
       <TblAlignment>Right</TblAlignment>
       <TblBlockSize>2</TblBlockSize>
-      <TblBRuling>`Medium'</TblBRuling>
-      <TblTRuling>`Medium'</TblTRuling>
       <TblLastBRuling>Yes</TblLastBRuling>
       <TblTitlePgf1>
         <PgfTag>`TableTitle'</PgfTag>
@@ -364,4 +362,480 @@
       </Row>
     </TblBody>
   </Tbl>
+  
+<Tbl>
+  <TblID>24</TblID>
+  <TblTag>`Table'</TblTag>
+  <TblFormat>
+    <TblColumn>
+      <TblColumnNum>0</TblColumnNum>
+      <TblColumnWidth>6.90551 pc</TblColumnWidth>
+      <TblColumnH>
+        <PgfTag>`CellHeading'</PgfTag>
+      </TblColumnH>
+      <TblColumnBody>
+        <PgfTag>`CellBody'</PgfTag>
+        <Pgf>
+          <PgfNumTabs>2</PgfNumTabs>
+          <TabStop>
+            <TSX>2.0 pc</TSX>
+            <TSType>Right</TSType>
+            <TSLeaderStr>` '</TSLeaderStr>
+          </TabStop>
+          <TabStop>
+            <TSX>3.0 pc</TSX>
+            <TSType>Left</TSType>
+            <TSLeaderStr>` '</TSLeaderStr>
+          </TabStop>
+        </Pgf>
+      </TblColumnBody>
+      <TblColumnF>
+        <PgfTag>`CellHeading'</PgfTag>
+      </TblColumnF>
+    </TblColumn>
+    <TblColumn>
+      <TblColumnNum>1</TblColumnNum>
+      <TblColumnWidth>6.90551 pc</TblColumnWidth>
+      <TblColumnH>
+        <PgfTag>`CellHeading'</PgfTag>
+      </TblColumnH>
+      <TblColumnBody>
+        <PgfTag>`CellBody'</PgfTag>
+        <Pgf>
+          <PgfNumTabs>2</PgfNumTabs>
+          <TabStop>
+            <TSX>2.0 pc</TSX>
+            <TSType>Right</TSType>
+            <TSLeaderStr>` '</TSLeaderStr>
+          </TabStop>
+          <TabStop>
+            <TSX>3.0 pc</TSX>
+            <TSType>Left</TSType>
+            <TSLeaderStr>` '</TSLeaderStr>
+          </TabStop>
+        </Pgf>
+      </TblColumnBody>
+      <TblColumnF>
+        <PgfTag>`CellHeading'</PgfTag>
+      </TblColumnF>
+    </TblColumn>
+    <TblAlignment>Right</TblAlignment>
+    <TblLRuling>`Thin'</TblLRuling>
+    <TblBRuling>`Thin'</TblBRuling>
+    <TblRRuling>`Thin'</TblRRuling>
+    <TblTRuling>`Thin'</TblTRuling>
+  </TblFormat>
+  <TblNumColumns>7</TblNumColumns>
+  <Unique>1172510</Unique>
+  <TblColumnWidth>6.495 pc</TblColumnWidth>
+  <TblColumnWidth>4.49478 pc</TblColumnWidth>
+  <TblColumnWidth>4.49478 pc</TblColumnWidth>
+  <TblColumnWidth>4.49478 pc</TblColumnWidth>
+  <TblColumnWidth>4.49478 pc</TblColumnWidth>
+  <TblColumnWidth>4.49478 pc</TblColumnWidth>
+  <TblColumnWidth>4.49485 pc</TblColumnWidth>
+  <Element>
+    <Unique>1162613</Unique>
+    <ETag>`Tgroup'</ETag>
+    <Attributes/>
+    <Collapsed>No</Collapsed>
+    <SpecialCase>No</SpecialCase>
+    <AttributeDisplay>AllAttributes</AttributeDisplay>
+  </Element>
+  <TblH>
+    <Element>
+      <Unique>1162922</Unique>
+      <ETag>`Thead'</ETag>
+      <Attributes/>
+      <Collapsed>No</Collapsed>
+      <SpecialCase>No</SpecialCase>
+      <AttributeDisplay>AllAttributes</AttributeDisplay>
+    </Element>
+    <Row>
+      <RowMaxHeight>84.0 pc</RowMaxHeight>
+      <RowHeight>5.08332 pc</RowHeight>
+      <Element>
+        <Unique>1162636</Unique>
+        <ETag>`Row'</ETag>
+        <Attributes/>
+        <Collapsed>No</Collapsed>
+        <SpecialCase>No</SpecialCase>
+        <AttributeDisplay>None</AttributeDisplay>
+      </Element>
+      <Cell>
+        <Element>
+          <Unique>1162639</Unique>
+          <ETag>`Entry'</ETag>
+          <Attributes/>
+          <Collapsed>No</Collapsed>
+          <SpecialCase>No</SpecialCase>
+          <AttributeDisplay>None</AttributeDisplay>
+        </Element>
+        <CellContent>
+          <Notes/>
+          <Para>
+            <Unique>1172512</Unique>
+            <PgfTag>`CellHeading'</PgfTag>
+            <ParaLine>
+              <String>`Months for '</String>
+            </ParaLine>
+            <ParaLine>
+              <String>`which licence '</String>
+            </ParaLine>
+            <ParaLine>
+              <String>`granted'</String>
+            </ParaLine>
+          </Para>
+        </CellContent>
+      </Cell>
+      <Cell>
+        <Element>
+          <Unique>1162642</Unique>
+          <ETag>`Entry'</ETag>
+          <Attributes/>
+          <Collapsed>No</Collapsed>
+          <SpecialCase>No</SpecialCase>
+          <AttributeDisplay>None</AttributeDisplay>
+        </Element>
+        <CellContent>
+          <Notes/>
+          <Para>
+            <Unique>1172514</Unique>
+            <PgfTag>`CellHeading'</PgfTag>
+            <ParaLine>
+              <String>`Category '</String>
+            </ParaLine>
+            <ParaLine>
+              <String>`A'</String>
+            </ParaLine>
+          </Para>
+        </CellContent>
+      </Cell>
+      <Cell>
+        <Element>
+          <Unique>1162645</Unique>
+          <ETag>`Entry'</ETag>
+          <Attributes/>
+          <Collapsed>No</Collapsed>
+          <SpecialCase>No</SpecialCase>
+          <AttributeDisplay>None</AttributeDisplay>
+        </Element>
+        <CellContent>
+          <Notes/>
+          <Para>
+            <Unique>1172516</Unique>
+            <PgfTag>`CellHeading'</PgfTag>
+            <ParaLine>
+              <String>`Category '</String>
+            </ParaLine>
+            <ParaLine>
+              <String>`B1'</String>
+            </ParaLine>
+          </Para>
+        </CellContent>
+      </Cell>
+      <Cell>
+        <Element>
+          <Unique>1162648</Unique>
+          <ETag>`Entry'</ETag>
+          <Attributes/>
+          <Collapsed>No</Collapsed>
+          <SpecialCase>No</SpecialCase>
+          <AttributeDisplay>None</AttributeDisplay>
+        </Element>
+        <CellContent>
+          <Notes/>
+          <Para>
+            <Unique>1172518</Unique>
+            <PgfTag>`CellHeading'</PgfTag>
+            <ParaLine>
+              <String>`Category '</String>
+            </ParaLine>
+            <ParaLine>
+              <String>`B2'</String>
+            </ParaLine>
+          </Para>
+        </CellContent>
+      </Cell>
+      <Cell>
+        <Element>
+          <Unique>1162651</Unique>
+          <ETag>`Entry'</ETag>
+          <Attributes/>
+          <Collapsed>No</Collapsed>
+          <SpecialCase>No</SpecialCase>
+          <AttributeDisplay>None</AttributeDisplay>
+        </Element>
+        <CellContent>
+          <Notes/>
+          <Para>
+            <Unique>1172520</Unique>
+            <PgfTag>`CellHeading'</PgfTag>
+            <ParaLine>
+              <String>`Category '</String>
+            </ParaLine>
+            <ParaLine>
+              <String>`B3'</String>
+            </ParaLine>
+          </Para>
+        </CellContent>
+      </Cell>
+      <Cell>
+        <Element>
+          <Unique>1162654</Unique>
+          <ETag>`Entry'</ETag>
+          <Attributes/>
+          <Collapsed>No</Collapsed>
+          <SpecialCase>No</SpecialCase>
+          <AttributeDisplay>None</AttributeDisplay>
+        </Element>
+        <CellContent>
+          <Notes/>
+          <Para>
+            <Unique>1172522</Unique>
+            <PgfTag>`CellHeading'</PgfTag>
+            <ParaLine>
+              <String>`Category '</String>
+            </ParaLine>
+            <ParaLine>
+              <String>`B4'</String>
+            </ParaLine>
+          </Para>
+        </CellContent>
+      </Cell>
+      <Cell>
+        <Element>
+          <Unique>1162657</Unique>
+          <ETag>`Entry'</ETag>
+          <Attributes/>
+          <Collapsed>No</Collapsed>
+          <SpecialCase>No</SpecialCase>
+          <AttributeDisplay>None</AttributeDisplay>
+        </Element>
+        <CellContent>
+          <Notes/>
+          <Para>
+            <Unique>1172524</Unique>
+            <PgfTag>`CellHeading'</PgfTag>
+            <ParaLine>
+              <String>`Category '</String>
+            </ParaLine>
+            <ParaLine>
+              <String>`C'</String>
+            </ParaLine>
+          </Para>
+        </CellContent>
+      </Cell>
+    </Row>
+  </TblH>
+  <TblBody>
+    <Element>
+      <Unique>1162923</Unique>
+      <ETag>`Tbody'</ETag>
+      <Attributes/>
+      <Collapsed>No</Collapsed>
+      <SpecialCase>No</SpecialCase>
+      <AttributeDisplay>None</AttributeDisplay>
+    </Element>
+    <Row>
+      <RowMaxHeight>84.0 pc</RowMaxHeight>
+      <RowHeight>1.75 pc</RowHeight>
+      <Element>
+        <Unique>1162658</Unique>
+        <ETag>`Row'</ETag>
+        <Attributes/>
+        <Collapsed>No</Collapsed>
+        <SpecialCase>No</SpecialCase>
+        <AttributeDisplay>None</AttributeDisplay>
+      </Element>
+      <Cell>
+        <CellLRuling>`Thin'</CellLRuling>
+        <CellBRuling>`Thin'</CellBRuling>
+        <CellRRuling>`Thin'</CellRRuling>
+        <CellTRuling>`Thin'</CellTRuling>
+        <Element>
+          <Unique>1162661</Unique>
+          <ETag>`Entry'</ETag>
+          <Attributes/>
+          <Collapsed>No</Collapsed>
+          <SpecialCase>No</SpecialCase>
+          <AttributeDisplay>None</AttributeDisplay>
+        </Element>
+        <CellContent>
+          <Notes/>
+          <Para>
+            <Unique>1172526</Unique>
+            <PgfTag>`CellBody'</PgfTag>
+            <Pgf>
+              <PgfLIndent>0.0 pc</PgfLIndent>
+            </Pgf>
+            <ParaLine>
+              <String>`1'</String>
+            </ParaLine>
+          </Para>
+        </CellContent>
+      </Cell>
+      <Cell>
+        <CellLRuling>`Thin'</CellLRuling>
+        <CellBRuling>`Thin'</CellBRuling>
+        <CellRRuling>`Thin'</CellRRuling>
+        <CellTRuling>`Thin'</CellTRuling>
+        <Element>
+          <Unique>1162664</Unique>
+          <ETag>`Entry'</ETag>
+          <Attributes/>
+          <Collapsed>No</Collapsed>
+          <SpecialCase>No</SpecialCase>
+          <AttributeDisplay>None</AttributeDisplay>
+        </Element>
+        <CellContent>
+          <Notes/>
+          <Para>
+            <Unique>1172528</Unique>
+            <PgfTag>`CellBody'</PgfTag>
+            <Pgf>
+              <PgfLIndent>0.0 pc</PgfLIndent>
+            </Pgf>
+            <ParaLine>
+              <String>`455'</String>
+            </ParaLine>
+          </Para>
+        </CellContent>
+      </Cell>
+      <Cell>
+        <CellLRuling>`Thin'</CellLRuling>
+        <CellBRuling>`Thin'</CellBRuling>
+        <CellRRuling>`Thin'</CellRRuling>
+        <CellTRuling>`Thin'</CellTRuling>
+        <Element>
+          <Unique>1162667</Unique>
+          <ETag>`Entry'</ETag>
+          <Attributes/>
+          <Collapsed>No</Collapsed>
+          <SpecialCase>No</SpecialCase>
+          <AttributeDisplay>None</AttributeDisplay>
+        </Element>
+        <CellContent>
+          <Notes/>
+          <Para>
+            <Unique>1172530</Unique>
+            <PgfTag>`CellBody'</PgfTag>
+            <Pgf>
+              <PgfLIndent>0.0 pc</PgfLIndent>
+            </Pgf>
+            <ParaLine>
+              <String>`230'</String>
+            </ParaLine>
+          </Para>
+        </CellContent>
+      </Cell>
+      <Cell>
+        <CellLRuling>`Thin'</CellLRuling>
+        <CellBRuling>`Thin'</CellBRuling>
+        <CellRRuling>`Thin'</CellRRuling>
+        <CellTRuling>`Thin'</CellTRuling>
+        <Element>
+          <Unique>1162670</Unique>
+          <ETag>`Entry'</ETag>
+          <Attributes/>
+          <Collapsed>No</Collapsed>
+          <SpecialCase>No</SpecialCase>
+          <AttributeDisplay>None</AttributeDisplay>
+        </Element>
+        <CellContent>
+          <Notes/>
+          <Para>
+            <Unique>1172532</Unique>
+            <PgfTag>`CellBody'</PgfTag>
+            <Pgf>
+              <PgfLIndent>0.0 pc</PgfLIndent>
+            </Pgf>
+            <ParaLine>
+              <String>`180'</String>
+            </ParaLine>
+          </Para>
+        </CellContent>
+      </Cell>
+      <Cell>
+        <CellLRuling>`Thin'</CellLRuling>
+        <CellBRuling>`Thin'</CellBRuling>
+        <CellRRuling>`Thin'</CellRRuling>
+        <CellTRuling>`Thin'</CellTRuling>
+        <Element>
+          <Unique>1162673</Unique>
+          <ETag>`Entry'</ETag>
+          <Attributes/>
+          <Collapsed>No</Collapsed>
+          <SpecialCase>No</SpecialCase>
+          <AttributeDisplay>None</AttributeDisplay>
+        </Element>
+        <CellContent>
+          <Notes/>
+          <Para>
+            <Unique>1172534</Unique>
+            <PgfTag>`CellBody'</PgfTag>
+            <Pgf>
+              <PgfLIndent>0.0 pc</PgfLIndent>
+            </Pgf>
+            <ParaLine>
+              <String>`180'</String>
+            </ParaLine>
+          </Para>
+        </CellContent>
+      </Cell>
+      <Cell>
+        <CellLRuling>`Thin'</CellLRuling>
+        <CellBRuling>`Thin'</CellBRuling>
+        <CellRRuling>`Thin'</CellRRuling>
+        <CellTRuling>`Thin'</CellTRuling>
+        <Element>
+          <Unique>1162676</Unique>
+          <ETag>`Entry'</ETag>
+          <Attributes/>
+          <Collapsed>No</Collapsed>
+          <SpecialCase>No</SpecialCase>
+          <AttributeDisplay>None</AttributeDisplay>
+        </Element>
+        <CellContent>
+          <Notes/>
+          <Para>
+            <Unique>1172536</Unique>
+            <PgfTag>`CellBody'</PgfTag>
+            <Pgf>
+              <PgfLIndent>0.0 pc</PgfLIndent>
+            </Pgf>
+            <ParaLine>
+              <String>` 165'</String>
+            </ParaLine>
+          </Para>
+        </CellContent>
+      </Cell>
+      <Cell>
+        <Element>
+          <Unique>1162679</Unique>
+          <ETag>`Entry'</ETag>
+          <Attributes/>
+          <Collapsed>No</Collapsed>
+          <SpecialCase>No</SpecialCase>
+          <AttributeDisplay>None</AttributeDisplay>
+        </Element>
+        <CellContent>
+          <Notes/>
+          <Para>
+            <Unique>1172538</Unique>
+            <PgfTag>`CellBody'</PgfTag>
+            <Pgf>
+              <PgfLIndent>0.0 pc</PgfLIndent>
+            </Pgf>
+            <ParaLine>
+              <String>`70'</String>
+            </ParaLine>
+          </Para>
+        </CellContent>
+      </Cell>
+    </Row>
+  </TblBody>
+</Tbl>
+
+  
 </Tbls>
