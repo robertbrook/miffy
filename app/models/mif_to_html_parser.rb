@@ -477,22 +477,21 @@ class MifToHtmlParser
     if @html.last && @html.last.strip == ''
       @html.pop
     end
-    if @html.last && @html.last.include?('<')
+    if @html.last && @html.last.include?('<') && @html.last != '</a>'
       first_line = true
     end
 
     line = node['LineNum'].to_s
-    add %Q|<br />| unless first_line
-    
     anchor_name = "page#{@page_number}-line#{line}"
+
+    if first_line
+      # ignore
+    else
+      add %Q|<br />| 
+    end
+
     para_line_anchor = %Q|<a name="#{anchor_name}"></a>|
     para_line_anchor += %Q|<a name="clause#{@clause_number}-#{anchor_name}"></a>| unless @clause_number.blank?
-
-    # if last_line && last_line.include?('ClauseTitle_text')
-      # puts "@in_hyperlink: #{@in_hyperlink}"
-      # puts para_line_anchor
-      # puts last_line
-    # end
 
     unless line.empty?
       if @in_hyperlink

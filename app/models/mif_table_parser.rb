@@ -137,7 +137,7 @@ class MifTableParser
             css_class = %Q| class="leftborder rightborder"|
           end
         else
-          if @no_of_cols.to_i-1 != @cell_count+colspan
+          if @no_of_cols.to_i-1 != @cell_count+(colspan-1)
             css_class = %Q| class="rightborder"|
           end
         end
@@ -150,10 +150,34 @@ class MifTableParser
       elsif @cell_count+colspan == @no_of_cols.to_i-1
         css_class = ' class="leftborder"'
       else
-        css_class = ' class="leftborder rightborder"'
+        if @no_of_cols.to_i-1 != @cell_count+(colspan-1)
+          css_class = %Q| class="rightborder"|
+        end
       end
     end
     
+    #assumes that if a Ruling node is used in this position then it is set to a valid value
+    if node.at('CellTRuling/text()') && node.at('CellRRuling/text()') && node.at('CellBRuling/text()') && node.at('CellLRuling/text()')
+      css_class = %Q| class="allborders"|
+    else
+      if node.at('CellTRuling/text()')
+        css_class.gsub!('class="', 'class="topborder ') unless css_class.include?('topborder')
+      end
+      if node.at('CellRRuling/text()')
+        css_class.gsub!('class="', 'class="rightborder ') unless css_class.include?('rightborder')
+      end
+      if node.at('CellBRuling/text()')
+        css_class.gsub!('class="', 'class="bottomborder ') unless css_class.include?('bottomborder')
+      end
+      if node.at('CellLRuling/text()')
+        css_class.gsub!('class="', 'class="leftborder ') unless css_class.include?('leftborder')
+      end
+    end      
+    
+    if first != "" && css_class != ""
+      first = ""
+      css_class.gsub!('class="', 'class="first ')
+    end
     if @in_heading
       tables[@current_table_id] << %Q|<CellH id="#{cell_id}"#{first}#{css_class}>|
     else

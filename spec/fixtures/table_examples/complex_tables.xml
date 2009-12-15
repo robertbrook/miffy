@@ -1,0 +1,367 @@
+<TblCatalog>
+  <TblFormat>
+    <TblTag>`Table'</TblTag>
+    <TblColumn>
+      <TblColumnNum>0</TblColumnNum>
+      <TblColumnWidth>6.90551 pc</TblColumnWidth>
+      <TblColumnH>
+        <PgfTag>`CellHeading'</PgfTag>
+      </TblColumnH>
+      <TblColumnBody>
+        <PgfTag>`CellBody'</PgfTag>
+        <Pgf>
+          <PgfNumTabs>2</PgfNumTabs>
+          <TabStop>
+            <TSX>2.0 pc</TSX>
+            <TSType>Right</TSType>
+            <TSLeaderStr>` '</TSLeaderStr>
+          </TabStop>
+          <TabStop>
+            <TSX>3.0 pc</TSX>
+            <TSType>Left</TSType>
+            <TSLeaderStr>` '</TSLeaderStr>
+          </TabStop>
+        </Pgf>
+      </TblColumnBody>
+      <TblColumnF>
+        <PgfTag>`CellHeading'</PgfTag>
+      </TblColumnF>
+    </TblColumn>
+    <TblColumn>
+      <TblColumnNum>1</TblColumnNum>
+      <TblColumnWidth>6.90551 pc</TblColumnWidth>
+      <TblColumnH>
+        <PgfTag>`CellHeading'</PgfTag>
+      </TblColumnH>
+      <TblColumnBody>
+        <PgfTag>`CellBody'</PgfTag>
+        <Pgf>
+          <PgfNumTabs>2</PgfNumTabs>
+          <TabStop>
+            <TSX>2.0 pc</TSX>
+            <TSType>Right</TSType>
+            <TSLeaderStr>` '</TSLeaderStr>
+          </TabStop>
+          <TabStop>
+            <TSX>3.0 pc</TSX>
+            <TSType>Left</TSType>
+            <TSLeaderStr>` '</TSLeaderStr>
+          </TabStop>
+        </Pgf>
+      </TblColumnBody>
+      <TblColumnF>
+        <PgfTag>`CellHeading'</PgfTag>
+      </TblColumnF>
+    </TblColumn>
+    <TblCellMargins>6.0 pt 6.0 pt 6.0 pt 4.0 pt</TblCellMargins>
+    <TblLIndent>0.0 pc</TblLIndent>
+    <TblRIndent>0.0 pc</TblRIndent>
+    <TblAlignment>Center</TblAlignment>
+    <TblPlacement>Anywhere</TblPlacement>
+    <TblSpBefore>12.0 pt</TblSpBefore>
+    <TblSpAfter>12.0 pt</TblSpAfter>
+    <TblBlockSize>1</TblBlockSize>
+    <TblHFFill>15</TblHFFill>
+    <TblHFSeparation>0</TblHFSeparation>
+    <TblHFColor>`Black'</TblHFColor>
+    <TblBodyFill>15</TblBodyFill>
+    <TblBodySeparation>0</TblBodySeparation>
+    <TblBodyColor>`Black'</TblBodyColor>
+    <TblShadeByColumn>No</TblShadeByColumn>
+    <TblLocked>No</TblLocked>
+    <TblShadePeriod>2</TblShadePeriod>
+    <TblXFill>15</TblXFill>
+    <TblXSeparation>0</TblXSeparation>
+    <TblXColor>`Black'</TblXColor>
+    <TblAltShadePeriod>2</TblAltShadePeriod>
+    <TblLRuling>`'</TblLRuling>
+    <TblBRuling>`'</TblBRuling>
+    <TblRRuling>`'</TblRRuling>
+    <TblTRuling>`'</TblTRuling>
+    <TblColumnRuling>`Thin'</TblColumnRuling>
+    <TblXColumnRuling>`Thin'</TblXColumnRuling>
+    <TblBodyRowRuling>`'</TblBodyRowRuling>
+    <TblXRowRuling>`'</TblXRowRuling>
+    <TblHFRowRuling>`Thin'</TblHFRowRuling>
+    <TblSeparatorRuling>`Thin'</TblSeparatorRuling>
+    <TblXColumnNum>1</TblXColumnNum>
+    <TblRulingPeriod>4</TblRulingPeriod>
+    <TblLastBRuling>No</TblLastBRuling>
+    <TblTitlePlacement>None</TblTitlePlacement>
+    <TblTitlePgf1>
+      <PgfTag>`TableTitle'</PgfTag>
+    </TblTitlePgf1>
+    <TblTitleGap>6.0 pt</TblTitleGap>
+    <TblInitNumColumns>2</TblInitNumColumns>
+    <TblInitNumHRows>1</TblInitNumHRows>
+    <TblInitNumBodyRows>8</TblInitNumBodyRows>
+    <TblInitNumFRows>0</TblInitNumFRows>
+    <TblNumByColumn>No</TblNumByColumn>
+  </TblFormat>
+</TblCatalog>
+
+<Tbls>
+  <Tbl>
+    <TblID>19</TblID>
+    <TblTag>`Table'</TblTag>
+    <TblFormat>
+      <TblColumn>
+        <TblColumnNum>0</TblColumnNum>
+        <TblColumnWidth>6.90551 pc</TblColumnWidth>
+        <TblColumnH>
+          <PgfTag>`CellHeading'</PgfTag>
+        </TblColumnH>
+        <TblColumnBody>
+          <PgfTag>`CellBody'</PgfTag>
+          <Pgf>
+            <PgfNumTabs>2</PgfNumTabs>
+            <TabStop>
+              <TSX>2.0 pc</TSX>
+              <TSType>Right</TSType>
+              <TSLeaderStr>` '</TSLeaderStr>
+            </TabStop>
+            <TabStop>
+              <TSX>3.0 pc</TSX>
+              <TSType>Left</TSType>
+              <TSLeaderStr>` '</TSLeaderStr>
+            </TabStop>
+          </Pgf>
+        </TblColumnBody>
+        <TblColumnF>
+          <PgfTag>`CellHeading'</PgfTag>
+        </TblColumnF>
+      </TblColumn>
+      <TblColumn>
+        <TblColumnNum>1</TblColumnNum>
+        <TblColumnWidth>6.90551 pc</TblColumnWidth>
+        <TblColumnH>
+          <PgfTag>`CellHeading'</PgfTag>
+        </TblColumnH>
+        <TblColumnBody>
+          <PgfTag>`CellBody'</PgfTag>
+          <Pgf>
+            <PgfNumTabs>2</PgfNumTabs>
+            <TabStop>
+              <TSX>2.0 pc</TSX>
+              <TSType>Right</TSType>
+              <TSLeaderStr>` '</TSLeaderStr>
+            </TabStop>
+            <TabStop>
+              <TSX>3.0 pc</TSX>
+              <TSType>Left</TSType>
+              <TSLeaderStr>` '</TSLeaderStr>
+            </TabStop>
+          </Pgf>
+        </TblColumnBody>
+        <TblColumnF>
+          <PgfTag>`CellHeading'</PgfTag>
+        </TblColumnF>
+      </TblColumn>
+      <TblAlignment>Right</TblAlignment>
+      <TblBlockSize>2</TblBlockSize>
+      <TblBRuling>`Medium'</TblBRuling>
+      <TblTRuling>`Medium'</TblTRuling>
+      <TblLastBRuling>Yes</TblLastBRuling>
+      <TblTitlePgf1>
+        <PgfTag>`TableTitle'</PgfTag>
+        <Pgf>
+          <PgfFont>
+            <FTag>`'</FTag>
+            <FPlatformName>`W.Book Antiqua Parliamentary.R.400'</FPlatformName>
+            <FFamily>`Book Antiqua Parliamentary'</FFamily>
+            <FVar>`Regular'</FVar>
+            <FWeight>`Regular'</FWeight>
+            <FAngle>`Regular'</FAngle>
+            <FEncoding>`FrameRoman'</FEncoding>
+            <FSize>11.0 pt</FSize>
+            <FUnderlining>FNoUnderlining</FUnderlining>
+            <FOverline>No</FOverline>
+            <FStrike>No</FStrike>
+            <FChangeBar>No</FChangeBar>
+            <FOutline>No</FOutline>
+            <FShadow>No</FShadow>
+            <FPairKern>No</FPairKern>
+            <FTsume>No</FTsume>
+            <FCase>FSmallCaps</FCase>
+            <FPosition>FNormal</FPosition>
+            <FDX>0.0%</FDX>
+            <FDY>0.0%</FDY>
+            <FDW>0.0%</FDW>
+            <FStretch>100.0%</FStretch>
+            <FLanguage>UKEnglish</FLanguage>
+            <FLocked>No</FLocked>
+            <FSeparation>0</FSeparation>
+            <FColor>`Black'</FColor>
+          </PgfFont>
+        </Pgf>
+      </TblTitlePgf1>
+    </TblFormat>
+    <TblNumColumns>2</TblNumColumns>
+    <Unique>1115874</Unique>
+    <TblColumnWidth>18.7534 pc</TblColumnWidth>
+    <TblColumnWidth>9.51422 pc</TblColumnWidth>
+    <Element>
+      <Unique>1114641</Unique>
+      <ETag>`Tgroup'</ETag>
+      <Attributes/>
+      <Collapsed>No</Collapsed>
+      <SpecialCase>No</SpecialCase>
+      <AttributeDisplay>None</AttributeDisplay>
+    </Element>
+    <TblH>
+      <Element>
+        <Unique>1114698</Unique>
+        <ETag>`Thead'</ETag>
+        <Attributes/>
+        <Collapsed>No</Collapsed>
+        <SpecialCase>No</SpecialCase>
+        <AttributeDisplay>None</AttributeDisplay>
+      </Element>
+      <Row>
+        <RowWithNext>Yes</RowWithNext>
+        <RowMaxHeight>84.0 pc</RowMaxHeight>
+        <RowHeight>5.08332 pc</RowHeight>
+        <Element>
+          <Unique>1115875</Unique>
+          <ETag>`Row'</ETag>
+          <Attributes/>
+          <Collapsed>No</Collapsed>
+          <SpecialCase>No</SpecialCase>
+          <AttributeDisplay>None</AttributeDisplay>
+        </Element>
+        <Cell>
+          <CellBRuling>`Thin'</CellBRuling>
+          <CellRRuling>`Thin'</CellRRuling>
+          <CellTRuling>`Thin'</CellTRuling>
+          <Element>
+            <Unique>1115878</Unique>
+            <ETag>`Entry'</ETag>
+            <Attributes/>
+            <Collapsed>No</Collapsed>
+            <SpecialCase>No</SpecialCase>
+            <AttributeDisplay>None</AttributeDisplay>
+          </Element>
+          <CellContent>
+            <Notes/>
+            <Para>
+              <Unique>1115877</Unique>
+              <PgfTag>`CellHeading'</PgfTag>
+              <ParaLine>
+                <String>`Description of wine or made-wine'</String>
+              </ParaLine>
+            </Para>
+          </CellContent>
+        </Cell>
+        <Cell>
+          <CellLRuling>`Thin'</CellLRuling>
+          <CellBRuling>`Thin'</CellBRuling>
+          <CellRRuling>`Thin'</CellRRuling>
+          <CellTRuling>`Thin'</CellTRuling>
+          <Element>
+            <Unique>1114648</Unique>
+            <ETag>`Entry'</ETag>
+            <Attributes/>
+            <Collapsed>No</Collapsed>
+            <SpecialCase>No</SpecialCase>
+            <AttributeDisplay>None</AttributeDisplay>
+          </Element>
+          <CellContent>
+            <Notes/>
+            <Para>
+              <Unique>1115880</Unique>
+              <PgfTag>`CellHeading'</PgfTag>
+              <ParaLine>
+                <String>`Rates of duty per litre '</String>
+              </ParaLine>
+              <ParaLine>
+                <String>`of alcohol in the wine '</String>
+              </ParaLine>
+              <ParaLine>
+                <String>`or made-wine'</String>
+              </ParaLine>
+            </Para>
+          </CellContent>
+        </Cell>
+      </Row>
+    </TblH>
+    <TblBody>
+      <Element>
+        <Unique>1114699</Unique>
+        <ETag>`Tbody'</ETag>
+        <Attributes/>
+        <Collapsed>No</Collapsed>
+        <SpecialCase>No</SpecialCase>
+        <AttributeDisplay>None</AttributeDisplay>
+      </Element>
+      <Row>
+        <RowMaxHeight>84.0 pc</RowMaxHeight>
+        <RowHeight>2.74999 pc</RowHeight>
+        <Element>
+          <Unique>1115673</Unique>
+          <ETag>`Row'</ETag>
+          <Attributes/>
+          <Collapsed>No</Collapsed>
+          <SpecialCase>No</SpecialCase>
+          <AttributeDisplay>None</AttributeDisplay>
+        </Element>
+        <Cell>
+          <CellLRuling>`Thin'</CellLRuling>
+          <CellBRuling>`Thin'</CellBRuling>
+          <CellRRuling>`Thin'</CellRRuling>
+          <CellTRuling>`Thin'</CellTRuling>
+          <Element>
+            <Unique>1115678</Unique>
+            <ETag>`Entry'</ETag>
+            <Attributes/>
+            <Collapsed>No</Collapsed>
+            <SpecialCase>No</SpecialCase>
+            <AttributeDisplay>None</AttributeDisplay>
+          </Element>
+          <CellContent>
+            <Notes/>
+            <Para>
+              <Unique>1115882</Unique>
+              <PgfTag>`CellBody'</PgfTag>
+              <Pgf>
+                <PgfLIndent>0.0 pc</PgfLIndent>
+              </Pgf>
+              <ParaLine>
+                <String>`Wine or made-wine of a strength exceeding '</String>
+              </ParaLine>
+              <ParaLine>
+                <String>`22 per cent'</String>
+              </ParaLine>
+            </Para>
+          </CellContent>
+        </Cell>
+        <Cell>
+          <CellLRuling>`Thin'</CellLRuling>
+          <CellBRuling>`Thin'</CellBRuling>
+          <CellRRuling>`Thin'</CellRRuling>
+          <CellTRuling>`Thin'</CellTRuling>
+          <Element>
+            <Unique>1115679</Unique>
+            <ETag>`Entry'</ETag>
+            <Attributes/>
+            <Collapsed>No</Collapsed>
+            <SpecialCase>No</SpecialCase>
+            <AttributeDisplay>None</AttributeDisplay>
+          </Element>
+          <CellContent>
+            <Notes/>
+            <Para>
+              <Unique>1115884</Unique>
+              <PgfTag>`CellBody'</PgfTag>
+              <Pgf>
+                <PgfLIndent>0.0 pc</PgfLIndent>
+              </Pgf>
+              <ParaLine>
+                <String>`21.35.'</String>
+              </ParaLine>
+            </Para>
+          </CellContent>
+        </Cell>
+      </Row>
+    </TblBody>
+  </Tbl>
+</Tbls>

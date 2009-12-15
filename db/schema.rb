@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(:version => 20091208123746) do
   add_index "act_sections", ["section_number"], :name => "index_act_sections_on_section_number"
 
   create_table "acts", :force => true do |t|
-    t.text     "name"
+    t.string   "name"
     t.text     "title"
     t.integer  "year"
     t.integer  "number"
@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(:version => 20091208123746) do
   end
 
   create_table "bills", :force => true do |t|
-    t.text     "name"
+    t.string   "name"
     t.text     "parliament_url"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -515,6 +515,10 @@ class MifParser
       last_line = @xml.pop
       last_line.sub!("<#{tag_name} ", "#{para_line_start}<#{tag_name} ")
       add last_line
+    elsif @strings.last && @strings.last[/(<Xref [^>]+>)$/]
+      line = @strings.pop
+      line.sub!($1,"#{para_line_start}#{$1}")
+      @strings << line
     else
       add_to_last_line para_line_start
     end
