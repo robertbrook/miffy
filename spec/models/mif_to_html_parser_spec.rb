@@ -68,15 +68,15 @@ Parliament assembled, and by the authority of the same, as follows:—')
       end
 
       @result.should have_tag('table[class="TableData"][id="7336058"]') do
-        with_tag('tr[class="Row"][id="6540534"]') do
+        with_tag('tr[id="6540534"]') do
           with_tag('th[id="6540535"]', :text => 'Date')
-          with_tag('th[class="CellH"][id="6540536"]', :text => 'Time')
-          with_tag('th[class="CellH"][id="6540537"]', :text => 'Witness')
+          with_tag('th[id="6540536"]', :text => 'Time')
+          with_tag('th[id="6540537"]', :text => 'Witness')
         end
         with_tag('tr[class="Row"][id="6540538"]') do
           with_tag('td[id="6540539"]', :text => 'Tuesday 2 June')
-          with_tag('td[class="Cell"][id="6540540"]', :text => 'Until no later than 12 noon')
-          with_tag('td[class="Cell"][id="6540541"]', :html => 'Equality and Diversity Forum<br />Equality and Human Rights  Commission<br />Employment Tribunals Service')
+          with_tag('td[id="6540540"]', :text => 'Until no later than 12 noon')
+          with_tag('td[id="6540541"]', :html => 'Equality and Diversity Forum<br />Equality and Human Rights  Commission<br />Employment Tribunals Service')
         end
       end
     end
