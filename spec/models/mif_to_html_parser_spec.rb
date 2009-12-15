@@ -88,10 +88,7 @@ Parliament assembled, and by the authority of the same, as follows:—')
       end
     end
 
-    # it 'should make clause/page/line reference a hyperlink' do
-      # @result.should have_tag('') do
-      # end
-    # end
+    it 'should make clause/page/line reference a hyperlink'
   end
 
   describe 'when parsing longer MIF XML file to html' do
