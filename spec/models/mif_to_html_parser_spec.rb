@@ -60,7 +60,6 @@ Parliament assembled, and by the authority of the same, as follows:—')
       @result = parser.parse_xml(fixture('pbc0850206m.xml'), :format => :html)
     end
     it 'should create html' do
-      # File.open('/Users/x/apps/uk/ex.html','w') {|f| f.write @result }
       @result.should have_tag('html')
       @result.should have_tag('div[class="Resolution"][id="1070180"]') do
         with_tag('div[class="ResolutionHead"][id="1070184"]') do
@@ -89,10 +88,7 @@ Parliament assembled, and by the authority of the same, as follows:—')
       end
     end
 
-    # it 'should make clause/page/line reference a hyperlink' do
-      # @result.should have_tag('') do
-      # end
-    # end
+    it 'should make clause/page/line reference a hyperlink'
   end
 
   describe 'when parsing longer MIF XML file to html' do
