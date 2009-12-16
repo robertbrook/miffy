@@ -24,6 +24,7 @@ class MifToHtmlParser
       generate_html doc, options
     elsif format == :haml
       html = generate_html doc, options
+      html = preprocess html
       File.open("#{RAILS_ROOT}/tmp/example.html", 'w+') {|f| f.write(html) } if RAILS_ENV == 'development'
       generate_haml html, options
     elsif format == :text

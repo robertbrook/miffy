@@ -19,13 +19,6 @@ module MifParserUtils
 
   AMEND_REF = Regexp.new('%a.AmendmentReference\{ :href => "([^"]+)" \}<')
 
-  COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_COMMA  = Regexp.new('(\s+)(%a\{)([^\n]+)(\}\n)(\s+)([^\n]+)(\n)(\s+)(, )', Regexp::MULTILINE)
-  COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_COMMA_2  = Regexp.new('((\s+)(%a\#([^\n]+)\.(Citation|Xref)\{)([^\n]+)(\}\n)(\s+)([^\n]+)(\n)(\s+)((,|\)|;).? ?))', Regexp::MULTILINE)
-  COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_COMMA_3 = Regexp.new('((\s+)(%a\#([^\n]+)\.(Citation|Xref)\{)([^\n]+)(\}\n)(\s+)([^\n]+)(\n)(\s+)((,|\)|;).? ?)\n)', Regexp::MULTILINE)
-
-  COLLAPSE_SPACE_BETWEEN_SPAN_AND_COMMA  = Regexp.new('((\s+)(%span\.Citation\n)(\s+)([^\n]+)(\n)(\s+)(, ?))', Regexp::MULTILINE)
-  COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_SEMICOLON = Regexp.new('(\s+)(%a\{)([^\n]+)(\}\n)(\s+)([^\n]+)(\n)(\s+)(;)', Regexp::MULTILINE)
-
   def for_each_match pattern, text
     matches = []
     text.scan(pattern) do |match|
@@ -36,15 +29,30 @@ module MifParserUtils
     end
   end
 
-  LINK_REGEX = /(\s<a (.+?<\/a>\S+))/
-  SPAN_REGEX = /(\s<span (.+?<\/span>\S+))/
+  LINK_REGEX = /(\s<a (.+?<\/a>\S(;|\.)?(\s|$)))/
+  SPAN_REGEX = /(\s<span (.+?<\/span>\S(;|\.)?(\s|$)))/
   def preprocess text
     for_each_match LINK_REGEX, text do |match|
-      text.sub!(match[0], "&nbsp;<a style='trim_outside_whitespace' #{match[1]}")
+      replace = match[1]
+      if (index = replace.gsub('</a><a','').rindex('<a'))
+        index = replace.rindex('<a')
+        replace = replace[(index + 3)..(replace.size - 1)]
+      end
+      text.sub!(" <a #{replace}", "&nbsp;<a style='trim_outside_whitespace' #{replace}")
     end
     for_each_match SPAN_REGEX, text do |match|
-      text.sub!(match[0], "&nbsp;<span style='trim_outside_whitespace' #{match[1]}")
+      replace = match[1]
+      if (index = replace.rindex('<span'))
+        replace = replace[(index + 6)..(replace.size - 1)]
+      end
+      text.sub!(" <span #{replace}", "&nbsp;<span style='trim_outside_whitespace' #{replace}")
     end
+    text
+  end
+  
+  def postprocess text
+    text.gsub!('&nbsp;<a',' <a')
+    text.gsub!('&nbsp;<span',' <span')
     text
   end
   
@@ -58,41 +66,6 @@ module MifParserUtils
 
     haml.gsub!(NEED_SPACE_BETWEEN_LABEL_AND_XREF_REGEX, '\1 <span class="Xref" id="\4">\7</span>\9')
     haml.gsub!(NEED_SPACE_BETWEEN_LABEL_AND_XREF_REGEX_2, '\1 <span class="Xref" id="\4">\7</span>\9')
-
-    for_each_match(COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_COMMA, haml) do |match|
-      text = match.to_s
-      to = "#{match[0]}=%Q{<a #{match[2].gsub(' => ','=').gsub(', :',' ').sub(' :',' ').strip}>#{match[5]}</a>#{match[8].strip}}\n#{match[7]}"
-      haml.gsub!(text, to)
-    end
-
-    for_each_match(COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_COMMA_3, haml) do |match|
-      text = match[0].to_s
-      to = %Q|#{match[1]}=%Q{<a id="#{match[3]}" class="#{match[4]}" #{match[5].gsub(' => ','=').gsub(', :',' ').sub(' :',' ').strip}>#{match[8]}</a>#{match[11].strip}}\n|
-      haml.gsub!(text, to)
-    end
-
-    for_each_match(COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_COMMA_2, haml) do |match|
-      text = match[0].to_s
-      to = %Q|#{match[1]}=%Q{<a id="#{match[3]}" class="#{match[4]}" #{match[5].gsub(' => ','=').gsub(', :',' ').sub(' :',' ').strip}>#{match[8]}</a>#{match[11].strip}}\n#{match[10]}|
-      haml.gsub!(text, to)
-    end
-
-    for_each_match(COLLAPSE_SPACE_BETWEEN_SPAN_AND_COMMA, haml) do |match|
-      text = match[0].to_s
-      to = %Q|#{match[1]}=%Q{<span class="Citation">#{match[4]}</span>,}\n#{match[6]}|
-      haml.gsub!(text, to)
-    end
-
-    for_each_match(COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_SEMICOLON, haml) do |match|
-      text = match.to_s
-      second_line = match[5]
-      if second_line[/(%a\{)([^\n]+)(\})/]
-        to = "#{match[0]}=%Q{<a #{make_attr(match[2])}></a><a #{make_attr($2)}></a>;}\n#{match[7]}"
-      else
-        to = "#{match[0]}=%Q{<a #{make_attr(match[2])}>#{second_line}</a>;}\n#{match[7]}"
-      end
-      haml.gsub!(text, to)
-    end
 
     haml.gsub!(COMPRESS_WHITESPACE, '\1' + "<>\n")
     haml.gsub!(COMPRESS_WHITESPACE_2, '\1' + "<\n")
@@ -112,6 +85,10 @@ module MifParserUtils
     haml.gsub!(/(\s+)\\.\n/,'\1%span<>' + '\1  \.' + "\n")
     haml.gsub!(';}<>', ';}')
     haml.gsub!(/^(\s+)\.$/,'\1\\.')
+    
+    haml.gsub!(', :style => "trim_outside_whitespace" }', ' }>')
+    haml.gsub!('{ :style => "trim_outside_whitespace" }', '>')
+    haml.gsub!('}><>','}><')
     haml
   end
 

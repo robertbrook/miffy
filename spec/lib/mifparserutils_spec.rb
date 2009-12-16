@@ -21,6 +21,19 @@ describe MifParserUtils do
       expected = "the&nbsp;<a style='trim_outside_whitespace' rel='cite' href='http://www.opsi.gov.uk/RevisedStatutes/Acts/ukpga/1984/cukpga_19840039_en_1'>Video <br />Recordings Act 1984</a>; to make provision about public lending right in relation to&nbsp;<a style='trim_outside_whitespace' rel='cite' href='http://www.opsi.gov.uk/RevisedStatutes/Acts/ukpga/1984/cukpga_19840040_en_1'>Another Recordings Act 1984</a>; "
       @utils.preprocess(text).should == expected
     end
+
+    it 'should preprocess the correct anchor element' do
+      text = %Q|sections <a id="1139029" class="Xref" href="#clause4-amendment-clause124A">124A</a> and <a id="1139041" class="Xref" href="#clause5-amendment-clause124B">124B</a> are in force but for which <br /><a name="page9-line9"></a><a name="clause7-page9-line9"></a>there is no approved initial obligations code under section <a id="1138942" class="Xref" href="#clause6-amendment-clause124C">124C</a>, <br />|
+      expected = %Q|sections <a id="1139029" class="Xref" href="#clause4-amendment-clause124A">124A</a> and <a id="1139041" class="Xref" href="#clause5-amendment-clause124B">124B</a> are in force but for which <br /><a name="page9-line9"></a><a name="clause7-page9-line9"></a>there is no approved initial obligations code under section&nbsp;<a style='trim_outside_whitespace' id="1138942" class="Xref" href="#clause6-amendment-clause124C">124C</a>, <br />|
+      @utils.preprocess(text).should == expected
+    end
+
+    it 'should preprocess the correct span element' do
+      text = %Q|sections <span id="1139029" class="Xref">124A</span> and <span id="1139041" class="Xref">124B</span> are in force but for which <br /><span name="page9-line9"></span><span name="clause7-page9-line9"></span>there is no approved initial obligations code under section <span id="1138942" class="Xref">124C</span>, <br />|
+      expected = %Q|sections <span id="1139029" class="Xref">124A</span> and <span id="1139041" class="Xref">124B</span> are in force but for which <br /><span name="page9-line9"></span><span name="clause7-page9-line9"></span>there is no approved initial obligations code under section&nbsp;<span style='trim_outside_whitespace' id="1138942" class="Xref">124C</span>, <br />|
+      @utils.preprocess(text).should == expected
+    end
+
     it 'should preprocess first span element' do
       text = "the <span class='Xref'>Video <br />Recordings Act 1984</span>; to make provision about public lending right in relation"
       expected = "the&nbsp;<span style='trim_outside_whitespace' class='Xref'>Video <br />Recordings Act 1984</span>; to make provision about public lending right in relation"
@@ -32,16 +45,44 @@ describe MifParserUtils do
       expected = "the&nbsp;<span style='trim_outside_whitespace' class='Xref'>Video <br />Recordings Act 1984</span>; to make provision about public lending right in relation to&nbsp;<span style='trim_outside_whitespace' class='Xref'>Another Recordings Act 1984</span>; "
       @utils.preprocess(text).should == expected
     end
+    
+    it 'should not crunch whitespace after element if word is after element' do
+      text =     'the <a href="http://www.opsi.gov.uk/acts/acts2003/ukpga_20030021_en_1.htm" rel="cite">Communications Act 2003</a> (electronic'
+      @utils.preprocess(text).should == text
+    end
+
+    it 'should not crunch whitespace after element if word is after element' do
+      text =     'the <a href="http://www.opsi.gov.uk/acts/acts2003/ukpga_20030021_en_1.htm" rel="cite">Communications Act 2003</a> (electronic <br /><a name="page2-line27"></a><a name="clause2-page2-line27"></a>communications'
+      @utils.preprocess(text).should == text
+    end
   end
     
   describe 'when postprocessing haml' do
-    it 'should postprocess first anchor element' do
+
+    it 'should trim outside whitespace when trim_outside_whitespace style on anchor element' do
+      haml =     '%a{ :href => "http://www.opsi.gov.uk/RevisedStatutes/Acts/ukpga/1984/cukpga_19840039_en_1", :rel => "cite", :style => "trim_outside_whitespace" }'
+      expected = '%a{ :href => "http://www.opsi.gov.uk/RevisedStatutes/Acts/ukpga/1984/cukpga_19840039_en_1", :rel => "cite" }><'
+      @utils.format_haml("#{haml}\n").should == "#{expected}\n"
     end
   end
   
+  describe 'when postprocessing html' do
+    it 'should replace &nbsp; before anchor with " "' do
+      html = "the regulation of the use of the electromagnetic spectrum; to amend the&nbsp;<a href='http://www.opsi.gov.uk/RevisedStatutes/Acts/ukpga/1984/cukpga_19840039_en_1' rel='cite'>Video"
+      expected = "the regulation of the use of the electromagnetic spectrum; to amend the <a href='http://www.opsi.gov.uk/RevisedStatutes/Acts/ukpga/1984/cukpga_19840039_en_1' rel='cite'>Video"
+      @utils.postprocess(html).should == expected
+    end
+    it 'should replace &nbsp; before span with " "' do
+      html = "the regulation of the use of the electromagnetic spectrum; to amend the&nbsp;<span class='Xref'>Video"
+      expected = "the regulation of the use of the electromagnetic spectrum; to amend the <span class='Xref'>Video"
+      @utils.postprocess(html).should == expected
+    end
+  end
+  
+
   describe 'when formatting certain spans' do
-    def check span, ending
-      @utils.format_haml("#{span}\n").should == "#{span}#{ending}\n"
+    def check haml, ending
+      @utils.format_haml("#{haml}\n").should == "#{haml}#{ending}\n"
     end
 
     it 'should close whitespace following span' do
@@ -181,57 +222,45 @@ describe MifParserUtils do
     end
 
     it 'should expand xref anchor if followed by comma' do
-      text = %Q|
-        %a#1131516.Xref{ :href => "#clause2-1-amendment-clause134A-5" }
-          (5)
-        , a change is significant if OFCOM
-|
-      @utils.format_haml(text).should == %Q|
-        =%Q{<a id=\"1131516\" class=\"Xref\" href=\"#clause2-1-amendment-clause134A-5\">(5)</a>,}
-        a change is significant if OFCOM
+      html = %Q|to <a id="1131516" class="Xref" href="#clause2-1-amendment-clause134A-5">(5)</a>, a change is significant if OFCOM|
+      haml = generate_haml(html)
+      @utils.format_haml(haml).should == %Q|to&nbsp;
+%a#1131516.Xref{ :href => "#clause2-1-amendment-clause134A-5" }><
+  (5)
+, a change is significant if OFCOM
 |
     end
 
     it 'should expand xref anchor if followed by ")"' do
-      text = %Q|
-        %a#1131516.Xref{ :href => "#clause2-1-amendment-clause134A-5" }
-          (5)
-        ). a change is significant if OFCOM
-|
-      @utils.format_haml(text).should == %Q|
-        =%Q{<a id=\"1131516\" class=\"Xref\" href=\"#clause2-1-amendment-clause134A-5\">(5)</a>).}
-        a change is significant if OFCOM
+      html = %Q|
+      <a id="1131516" class="Xref" href="#clause2-1-amendment-clause134A-5">(5)</a>). a change is significant if OFCOM|
+      haml = generate_haml(html)
+      @utils.format_haml(haml).should == %Q|\\&nbsp;
+%a#1131516.Xref{ :href => "#clause2-1-amendment-clause134A-5" }><
+  (5)
+). a change is significant if OFCOM
 |
     end
 
     it 'should expand three anchors in a row' do
-      text = %Q|
-        %a#1125123.Citation{ :href => "#clause9-amendment-clause124F-4-a" }
-          (4)(a)
-        ,
-        %a#1125134.Xref{ :href => "#clause9-amendment-clause124F-4-e" }
-          (e)
-        and
-|
-      @utils.format_haml(text).should == %Q|
-        =%Q{<a id=\"1125123\" class=\"Citation\" href=\"#clause9-amendment-clause124F-4-a\">(4)(a)</a>,}
-        %a#1125134.Xref{ :href => "#clause9-amendment-clause124F-4-e" }<
-          (e)
-        and
-|
+      html = 'in <a id="1125123" class="Citation" href="#clause9-amendment-clause124F-4-a">(4)(a)</a>,  <a id="1125134" class="Xref" href="#clause9-amendment-clause124F-4-e">(e)</a> and'
+      haml = generate_haml(html)
+      @utils.format_haml(haml).should == %Q|in&nbsp;
+%a#1125123.Citation{ :href => "#clause9-amendment-clause124F-4-a" }><
+  (4)(a)
+,
+%a#1125134.Xref{ :href => "#clause9-amendment-clause124F-4-e" }<
+  (e)
+and\n|
     end
 
     it 'should expand xref followed by ;' do
-      text = %Q|
-        and
-        %a#1125146.Xref{ :href => "#clause9-amendment-clause124F-4-f" }
-          (f)
-        ; and
-|
-      @utils.format_haml(text).should == %Q|
-        and
-        =%Q{<a id=\"1125146\" class=\"Xref\" href=\"#clause9-amendment-clause124F-4-f\">(f)</a>;}
-        and
+      html = %Q|and <a id="1125146" class="Xref" href="#clause9-amendment-clause124F-4-f">(f)</a>; and|
+      haml = generate_haml(html)
+      @utils.format_haml(haml).should == %Q|and&nbsp;
+%a#1125146.Xref{ :href => "#clause9-amendment-clause124F-4-f" }><
+  (f)
+; and
 |
     end
 
@@ -247,64 +276,70 @@ describe MifParserUtils do
               Clause <span class="Clause_number">1</span>,|
     end
 
+    def generate_haml html
+      html = @utils.preprocess(html)
+      html_file = Tempfile.new("#{Time.now.to_i.to_s}.html", "#{RAILS_ROOT}/tmp")
+      html_file.write html
+      html_file.close
+      cmd = "html2haml #{html_file.path}"
+      haml = `#{cmd}`
+      html_file.delete
+      haml
+    end
+    
     it 'should expand anchor followed by comma' do
-      text = %Q|
-        %a{ :href => "http://www.opsi.gov.uk/acts/acts1996/ukpga_19960061_en_2#pt1-pb5-l1g17", :title => "subsection (2)", :rel => "cite", :resource => "http://www.legislation.gov.uk/ukpga/1996/61/section/17/2" }
-          subsection (2)
-        , the words|
-      @utils.format_haml(text).should == %Q|
-        =%Q{<a href="http://www.opsi.gov.uk/acts/acts1996/ukpga_19960061_en_2#pt1-pb5-l1g17" title="subsection (2)" rel="cite" resource="http://www.legislation.gov.uk/ukpga/1996/61/section/17/2">subsection (2)</a>,}
-        the words|
+      html = 'in <a href="http://www.opsi.gov.uk/acts/acts1996/ukpga_19960061_en_2#pt1-pb5-l1g17" title="subsection (2)" rel="cite" resource="http://www.legislation.gov.uk/ukpga/1996/61/section/17/2">subsection (2)</a>, the words'
+      haml = generate_haml(html)
+      @utils.format_haml(haml).should == %Q|in&nbsp;
+%a{ :href => "http://www.opsi.gov.uk/acts/acts1996/ukpga_19960061_en_2#pt1-pb5-l1g17", :title => "subsection (2)", :rel => "cite", :resource => "http://www.legislation.gov.uk/ukpga/1996/61/section/17/2" }><
+  subsection (2)
+, the words\n|
     end
 
     it 'should expand citation anchor followed by comma' do
-      text = %Q|
-                  %a#1116344.Citation{ :href => "http://www.statutelaw.gov.uk/documents/1979/2/ukpga/c2", :title => "Customs and Excise Management Act 1979 (c. 2)" }
-                    Customs and Excise Management Act 1979 (c. 2)
-                  , etc|
-      @utils.format_haml(text).should == %Q|
-                  =%Q{<a id="1116344" class="Citation" href="http://www.statutelaw.gov.uk/documents/1979/2/ukpga/c2" title="Customs and Excise Management Act 1979 (c. 2)">Customs and Excise Management Act 1979 (c. 2)</a>,}
-                  etc|
-    end
-
-    it 'should expand citation anchor followed by comma 2' do
-      text = %Q|
-                  %a#1116971.Citation{ :href => "http://www.statutelaw.gov.uk/documents/1979/7/ukpga/c7", :title => "Tobacco Products Duty Act 1979 (c. 7)" }
-                    Tobacco Products Duty Act 1979 (c. 7)
-                  ,|
-      @utils.format_haml(text).should == %Q|
-                  =%Q{<a id="1116971" class="Citation" href="http://www.statutelaw.gov.uk/documents/1979/7/ukpga/c7" title="Tobacco Products Duty Act 1979 (c. 7)">Tobacco Products Duty Act 1979 (c. 7)</a>,}
-                  |
+      html = %Q|
+      <a id="1116344" class="Citation" href="http://www.statutelaw.gov.uk/documents/1979/2/ukpga/c2" title="Customs and Excise Management Act 1979 (c. 2)">Customs and Excise Management Act 1979 (c. 2)</a>, etc|
+      haml = generate_haml(html)
+      @utils.format_haml(haml).should == %Q|\\&nbsp;
+%a#1116344.Citation{ :href => "http://www.statutelaw.gov.uk/documents/1979/2/ukpga/c2", :title => "Customs and Excise Management Act 1979 (c. 2)" }><
+  Customs and Excise Management Act 1979 (c. 2)
+, etc
+|
     end
 
     it 'should expand anchor followed by a semicolon' do
-      text = %Q|
-        %a{ :name => "page67-line7" }
-        %a{ :name => "clause106-page67-line7" }
-        ;|
-      @utils.format_haml(text).should == %Q|
-        =%Q{<a name=\"page67-line7\"></a><a name=\"clause106-page67-line7\"></a>;}
-        |
+      html = %Q|
+      <a name="page67-line7"></a><a name="clause106-page67-line7"></a>;
+|
+      haml = generate_haml(html)
+      @utils.format_haml(haml).should == %Q|\\&nbsp;
+%a{ :name => "page67-line7" }><
+%a{ :name => "clause106-page67-line7" }<>
+;
+|
     end
 
     it 'should expand citation span followed by comma' do
-      text = %Q|
-                  %span.Citation
-                    Capital Transfer Tax Act 1984 (c. 51)
-                  ,|
-      @utils.format_haml(text).should == %Q|
-                  =%Q{<span class="Citation">Capital Transfer Tax Act 1984 (c. 51)</span>,}
-                  |
+      html = %Q|
+      <span class="Citation">Capital Transfer Tax Act 1984 (c. 51)</span>, |
+      haml = generate_haml(html)
+      @utils.format_haml(haml).should == %Q|\\&nbsp;
+%span.Citation>
+  Capital Transfer Tax Act 1984 (c. 51)
+,
+|
     end
 
     it 'should expand anchor followed by semicolon' do
-      text = %Q|
-        %a{ :href => "http://www.opsi.gov.uk/acts/acts1996/ukpga_19960061_en_2#pt1-pb6-l1g21", :title => "subsections (2) to (5)", :rel => "cite", :resource => "http://www.legislation.gov.uk/ukpga/1996/61/section/21/2" }
-          subsections (2) to (5)
-        ;|
-      @utils.format_haml(text).strip.should == %Q|
-        =%Q{<a href="http://www.opsi.gov.uk/acts/acts1996/ukpga_19960061_en_2#pt1-pb6-l1g21" title="subsections (2) to (5)" rel="cite" resource="http://www.legislation.gov.uk/ukpga/1996/61/section/21/2">subsections (2) to (5)</a>;}
-        |.strip
+      html = %Q|
+      <a href="http://www.opsi.gov.uk/acts/acts1996/ukpga_19960061_en_2#pt1-pb6-l1g21" title="subsections (2) to (5)" rel="cite" resource="http://www.legislation.gov.uk/ukpga/1996/61/section/21/2">subsections (2) to (5)</a>;
+|
+      haml = generate_haml(html)
+      @utils.format_haml(haml).should == %Q|\\&nbsp;
+%a{ :href => "http://www.opsi.gov.uk/acts/acts1996/ukpga_19960061_en_2#pt1-pb6-l1g21", :title => "subsections (2) to (5)", :rel => "cite", :resource => "http://www.legislation.gov.uk/ukpga/1996/61/section/21/2" }><
+  subsections (2) to (5)
+;
+|
     end
 
     it 'should expand clause number with square brackets span' do
