@@ -9,6 +9,36 @@ describe MifParserUtils do
     @utils = MifParserUtilsExample.new
   end
 
+  describe 'when preprocessing html' do
+    it 'should preprocess first anchor element' do
+      text = "the <a rel='cite' href='http://www.opsi.gov.uk/RevisedStatutes/Acts/ukpga/1984/cukpga_19840039_en_1'>Video <br />Recordings Act 1984</a>; to make provision about public lending right in relation"
+      expected = "the&nbsp;<a style='trim_outside_whitespace' rel='cite' href='http://www.opsi.gov.uk/RevisedStatutes/Acts/ukpga/1984/cukpga_19840039_en_1'>Video <br />Recordings Act 1984</a>; to make provision about public lending right in relation"
+      @utils.preprocess(text).should == expected
+    end
+
+    it 'should preprocess second anchor element' do
+      text = "the <a rel='cite' href='http://www.opsi.gov.uk/RevisedStatutes/Acts/ukpga/1984/cukpga_19840039_en_1'>Video <br />Recordings Act 1984</a>; to make provision about public lending right in relation to <a rel='cite' href='http://www.opsi.gov.uk/RevisedStatutes/Acts/ukpga/1984/cukpga_19840040_en_1'>Another Recordings Act 1984</a>; "
+      expected = "the&nbsp;<a style='trim_outside_whitespace' rel='cite' href='http://www.opsi.gov.uk/RevisedStatutes/Acts/ukpga/1984/cukpga_19840039_en_1'>Video <br />Recordings Act 1984</a>; to make provision about public lending right in relation to&nbsp;<a style='trim_outside_whitespace' rel='cite' href='http://www.opsi.gov.uk/RevisedStatutes/Acts/ukpga/1984/cukpga_19840040_en_1'>Another Recordings Act 1984</a>; "
+      @utils.preprocess(text).should == expected
+    end
+    it 'should preprocess first span element' do
+      text = "the <span class='Xref'>Video <br />Recordings Act 1984</span>; to make provision about public lending right in relation"
+      expected = "the&nbsp;<span style='trim_outside_whitespace' class='Xref'>Video <br />Recordings Act 1984</span>; to make provision about public lending right in relation"
+      @utils.preprocess(text).should == expected
+    end
+
+    it 'should preprocess second span element' do
+      text = "the <span class='Xref'>Video <br />Recordings Act 1984</span>; to make provision about public lending right in relation to <span class='Xref'>Another Recordings Act 1984</span>; "
+      expected = "the&nbsp;<span style='trim_outside_whitespace' class='Xref'>Video <br />Recordings Act 1984</span>; to make provision about public lending right in relation to&nbsp;<span style='trim_outside_whitespace' class='Xref'>Another Recordings Act 1984</span>; "
+      @utils.preprocess(text).should == expected
+    end
+  end
+    
+  describe 'when postprocessing haml' do
+    it 'should postprocess first anchor element' do
+    end
+  end
+  
   describe 'when formatting certain spans' do
     def check span, ending
       @utils.format_haml("#{span}\n").should == "#{span}#{ending}\n"

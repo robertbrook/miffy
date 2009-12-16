@@ -26,9 +26,9 @@ module MifParserUtils
   COLLAPSE_SPACE_BETWEEN_SPAN_AND_COMMA  = Regexp.new('((\s+)(%span\.Citation\n)(\s+)([^\n]+)(\n)(\s+)(, ?))', Regexp::MULTILINE)
   COLLAPSE_SPACE_BETWEEN_ANCHOR_AND_SEMICOLON = Regexp.new('(\s+)(%a\{)([^\n]+)(\}\n)(\s+)([^\n]+)(\n)(\s+)(;)', Regexp::MULTILINE)
 
-  def for_each_match pattern, haml
+  def for_each_match pattern, text
     matches = []
-    haml.scan(pattern) do |match|
+    text.scan(pattern) do |match|
       matches << match
     end
     matches.each do |match|
@@ -36,6 +36,18 @@ module MifParserUtils
     end
   end
 
+  LINK_REGEX = /(\s<a (.+?<\/a>\S+))/
+  SPAN_REGEX = /(\s<span (.+?<\/span>\S+))/
+  def preprocess text
+    for_each_match LINK_REGEX, text do |match|
+      text.sub!(match[0], "&nbsp;<a style='trim_outside_whitespace' #{match[1]}")
+    end
+    for_each_match SPAN_REGEX, text do |match|
+      text.sub!(match[0], "&nbsp;<span style='trim_outside_whitespace' #{match[1]}")
+    end
+    text
+  end
+  
   def make_attr text
     text.gsub(' => ','=').gsub(', :',' ').sub(' :',' ').strip
   end
