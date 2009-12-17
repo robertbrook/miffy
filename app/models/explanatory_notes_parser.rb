@@ -48,6 +48,7 @@ class ExplanatoryNotesParser
       handle_txt_line(line)
     end
     do_cleanup
+    @xml << ["<BackCover>#{@back_cover}</BackCover>"]
     @xml << ['</ENData></Document>']
     @xml.join('')
   end
@@ -56,6 +57,7 @@ class ExplanatoryNotesParser
     @doc_started = false
 
     @bill_title = ""
+    @full_bill_title = ""
     @bill_version = ""
 
     @in_section = false
@@ -71,6 +73,7 @@ class ExplanatoryNotesParser
     @in_toc = false
     
     @in_cover_page = false
+    @back_cover = ""
     
     @blank_row_count = 0
     @page_line_count = 0
@@ -129,6 +132,11 @@ class ExplanatoryNotesParser
     title = title.gsub('These notes relate to the ', '')
     if title =~ /(.* Bill)/
       @bill_title = $1
+    end
+    if title =~ /(.* Bill .*\])/
+      @full_bill_title = $1
+    else
+      @full_bill_title = @bill_title
     end
   end
 
@@ -350,6 +358,10 @@ class ExplanatoryNotesParser
       end
       add "</Clause>"
     end
+    if @in_schedule
+      add "</Schedule>"
+      @in_schedule = false
+    end
     if @in_clause_range
       add "</ClauseRange>"
       @in_clause_range = false
@@ -544,20 +556,20 @@ class ExplanatoryNotesParser
     end
   end
 
-  def check_for_cover_page line
-    #if the current line matches the bill name, we've hit the cover
-    if @bill_title.upcase == line.strip
+  def check_for_cover_page line 
+    #if the current line matches the bill name, we've hit the cover (back page)
+    if @full_bill_title.upcase == line.strip
       @in_cover_page = true
     elsif @bill_title.upcase.include?(line.strip) && line.strip != "" 
       #check for a 2 line title
       last_line = @xml.pop
       if @bill_title.upcase.include?(last_line.strip) && last_line.strip != ""
-        if last_line.strip + ' ' + line.strip == @bill_title.upcase
+        if last_line.strip + ' ' + line.strip == @full_bill_title.upcase
           @in_cover_page = true
         elsif @bill_title.upcase.include?(last_line.strip) && last_line.strip != ""
           #check for a 3 line title
           last_line2 = @xml.pop
-          if last_line2.strip + ' ' + last_line.strip + ' ' + line.strip == @bill_title.upcase
+          if last_line2.strip + ' ' + last_line.strip + ' ' + line.strip == @full_bill_title.upcase
             @in_cover_page = true
           else
             @xml << last_line2
@@ -613,6 +625,9 @@ class ExplanatoryNotesParser
       text = strip_control_chars(text)
       
       add "#{text}\n" unless @blank_row_count > 1 || @in_cover_page
+      if @in_cover_page
+        @back_cover << "#{text}\n"
+      end
       @page_line_count += 1
     end
   end
