@@ -43,7 +43,9 @@
               &middot;
               =link_to('Text', "convert?file=#{@mif_file.path}&format=text")
               &middot;
-              =link_to('Reload', "convert?file=#{@mif_file.path}&force=true")
+              -queryparams = "&interleave=true" if params[:interleave]
+              -queryparams = "&interleave=true&wide=true" if params[:interleave] && params[:wide]
+              =link_to('Reload', "convert?file=#{@mif_file.path}#{queryparams}&force=true")
               - if document_type(target_file).include?('clauses')
                 - unless params[:style]
                   &middot;
