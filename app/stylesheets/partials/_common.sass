@@ -1,0 +1,136 @@
+@import blueprint
+
+= indent
+  text-indent: 20px
+
+= drop-shadow
+  -webkit-box-shadow: 10px 10px 20px #aaa
+  -moz-box-shadow: 10px 10px 20px #aaa
+
+= amendments_heading
+  padding: 2px 0 0 0
+  font-size: 1.7em
+  font-weight: bold
+  column(30)
+  text-align: center
+  text-transform: uppercase
+
+= given_subheading
+  font-size: 1.4em
+  font-weight: bold
+  column(30)
+  text-align: center
+
+= date_heading
+  padding: 2px 0 0 0
+  font-size: 1.6em
+  font-weight: bold
+  column(30)
+  text-align: center
+
+= stage_title
+  font-size: 1.6em
+  padding: 0.4em 0 0 0
+  margin-bottom: 1.7em
+  font-weight: bold
+  text-transform: uppercase
+  border-bottom: 1px solid 
+  text-align: center
+
+= bill_title
+  text-transform: uppercase
+  font-size: 1.45em
+  font-weight: bold
+  border-bottom: 1px solid grey
+  text-align: center
+
+= clause_title
+  font-style: italic
+  text-indent: -8px
+  +prepend(2)
+  +column(28)
+
+= heading_text
+  font-style: italic
+  text-transform: uppercase
+  padding: 2em 0 0 0
+  text-align: center
+
+= considered_clauses
+  font-size: 1em
+  font-weight: bold
+  padding-bottom: 1.8em
+  border-bottom: 1px solid grey
+  text-align: center
+  +column(30)
+  
+#header, #footer
+  +column(!blueprint_grid_columns)
+
+#page_header
+  margin: 1em
+
+  #disclaimer
+    padding: 1em 0
+    font-family: Verdana, Arial, sans-serif
+
+  #navigation
+    font-family: Verdana, Arial, sans-serif
+
+#page_footer
+  margin: 1.5em 0 1em
+
+body.convert div#container, body.act div#container
+  border: thin solid lightgray
+  padding: 3%
+  margin-top: 1%
+  margin-bottom: 1%
+  background: #FFFEFB
+  +drop-shadow
+  min-height = !blueprint_container_size * 1.
+  
+.Table
+  +column(23, true)
+  margin: 0.5em 0
+  
+  .TableTitle
+    text-align: center
+    
+    .SmallCaps
+      text-transform: uppercase
+                
+.topborder
+  border-top: 1px solid black
+
+.leftborder
+  border-left: 1px solid black
+
+.rightborder
+  border-right: 1px solid black
+
+.bottomborder
+  border-bottom: 1px solid black
+
+.allborders
+  border: 1px solid black
+
+table.TableData
+  border-collapse: collapse
+
+  tr
+    vertical-align: top
+
+  th
+    font-weight: normal
+    font-style: italic
+    text-align: center
+
+  td
+    padding: 0.2em 0.5em
+    vertical-align: top
+
+  td.centered
+    text-align: center
+
+  td.right
+    text-align: right
