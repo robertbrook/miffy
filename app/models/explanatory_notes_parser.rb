@@ -104,9 +104,9 @@ class ExplanatoryNotesParser
   def handle_page_footers line
     if line.strip =~ /^(\d+)$/
       @in_footer = true
-    elsif line.strip =~ /Bill-#{@bill_version}-EN .* (\d*\/\d*)/
+    elsif line.strip =~ /Bill-#{@bill_version}.*EN .* (\d*\/\d*)/
       @in_footer = true
-    elsif line.strip =~ /HL Bill-#{@bill_version}-EN .* (\d*\/\d*)/
+    elsif line.strip =~ /HL Bill-#{@bill_version}.*EN .* (\d*\/\d*)/
       @in_footer = true
     else
       @in_footer = false
