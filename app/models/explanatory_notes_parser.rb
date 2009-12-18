@@ -48,7 +48,6 @@ class ExplanatoryNotesParser
       handle_txt_line(line)
     end
     do_cleanup
-    @xml << ["<BackCover>#{@back_cover}</BackCover>"]
     @xml << ['</ENData></Document>']
     @xml.join('')
   end
@@ -72,18 +71,20 @@ class ExplanatoryNotesParser
     @in_footer = false
     @in_toc = false
     
-    @in_cover_page = false
-    @back_cover = ""
-    
     @blank_row_count = 0
     @page_line_count = 0
     @blank_rows_after_header = 0
     @serial_number = 1
+    @page_number = 1
   end
 
   def handle_page_headers line
     if line.strip[0..23] == 'These notes refer to the' || line.strip[0..24] == 'These notes relate to the'
       @in_header = true
+      last_line = @xml.pop
+      @xml << last_line
+      add %Q|<PageStart PageNumber="#{@page_number}"/>| unless last_line =~ /<PageStart PageNumber/
+      @page_number += 1
       set_bill_title(line.strip) if @bill_title == ""
     end
 
@@ -170,7 +171,7 @@ class ExplanatoryNotesParser
         return true
       end
       last_line = @xml.pop
-      if last_line.strip == ""
+      if last_line.strip == "" || last_line =~ /<PageStart/
         @xml << last_line
         return true
       end
@@ -212,7 +213,7 @@ class ExplanatoryNotesParser
         return true
       end
       last_line = @xml.pop
-      if last_line.strip == ""
+      if last_line.strip == "" || last_line =~ /<PageStart/
         prev_line = @xml.pop
         @xml << prev_line
         @xml << last_line
@@ -252,7 +253,7 @@ class ExplanatoryNotesParser
         return true
       end
       last_line = @xml.pop
-      if last_line.strip == ""
+      if last_line.strip == "" || last_line =~ /<PageStart/
         @xml << last_line
         return true
       end
@@ -280,7 +281,7 @@ class ExplanatoryNotesParser
         return true
       end
       last_line = @xml.pop
-      if last_line.strip == ""
+      if last_line.strip == "" || last_line =~ /<PageStart/
         prev_line = @xml.pop
         @xml << prev_line
         @xml << last_line
@@ -556,29 +557,46 @@ class ExplanatoryNotesParser
     end
   end
 
-  def check_for_cover_page line 
-    #if the current line matches the bill name, we've hit the cover (back page)
-    if @full_bill_title.upcase == line.strip
-      @in_cover_page = true
-    elsif @bill_title.upcase.include?(line.strip) && line.strip != "" 
-      #check for a 2 line title
+  def check_for_text_section line
+    if (line.strip == line.strip.upcase && line =~ /[a-zA-Z]$/ && 
+        line.strip.upcase &&
+        line.strip.upcase != "EXPLANATORY NOTES" &&
+        line.strip.upcase != "LONDON: THE STATIONERY OFFICE" &&
+        line.strip.upcase != @full_bill_title.upcase &&
+        @page_number !=1) ||
+        (line.strip.upcase == @full_bill_title.upcase && @page_number > 2)
+      
       last_line = @xml.pop
-      if @bill_title.upcase.include?(last_line.strip) && last_line.strip != ""
-        if last_line.strip + ' ' + line.strip == @full_bill_title.upcase
-          @in_cover_page = true
-        elsif @bill_title.upcase.include?(last_line.strip) && last_line.strip != ""
-          #check for a 3 line title
-          last_line2 = @xml.pop
-          if last_line2.strip + ' ' + last_line.strip + ' ' + line.strip == @full_bill_title.upcase
-            @in_cover_page = true
-          else
-            @xml << last_line2
-            @xml << last_line
-          end
+      @xml << last_line
+      
+      if last_line.strip == ""
+        if @in_section
+          add "</TextSection>"
         end
-      else
-        @xml << last_line
-      end    
+        if @in_clause
+          add "</Clause>"
+          @in_clause = false
+        end
+        if @in_schedule
+          add "</Schedule>"
+          @in_schedule = false
+        end
+        if @in_clause_range
+          add "</ClauseRange>"
+          @in_clause_range = false
+        end
+        if @in_chapter
+          add "</Chapter>"
+          @in_chapter = false
+        end
+        if @in_part
+          add "</Part>"
+          @in_part = false
+        end
+        add_section_start('TextSection', @serial_number)
+        @serial_number += 1
+        @in_section = true
+      end
     end
   end
 
@@ -610,24 +628,19 @@ class ExplanatoryNotesParser
         when /^Topic (.*):/
           @in_topic = true
       end
-
+      
+      check_for_text_section(line)
+      
       unless @in_clause || @in_schedule || @in_part || @in_chapter || @in_section || @in_clause_range
         add_section_start('TextSection', @serial_number)
         @serial_number += 1
         @in_section = true
       end
 
-      if @in_clause || @in_schedule || @in_clause_range
-        check_for_cover_page(line)
-      end
-
       text = HTMLEntities.new.encode(line, :decimal)
       text = strip_control_chars(text)
       
-      add "#{text}\n" unless @blank_row_count > 1 || @in_cover_page
-      if @in_cover_page
-        @back_cover << "#{text}\n"
-      end
+      add "#{text}\n" unless @blank_row_count > 1
       @page_line_count += 1
     end
   end
