@@ -1,4 +1,4 @@
-- params[:interleave] ? (params[:wide] ? @ens = 'interleaved_wide' : @ens = 'interleaved') : @ens = ''
+- params[:interleave] ? (params[:wide] ? @ens = 'interleaved_wide' : (params[:inline] ? @ens = 'interleaved_inline' : @ens = 'interleaved')) : @ens = ''
 <!DOCTYPE html>
 %html{:lang=>"en-GB"}
   %head
@@ -36,6 +36,8 @@
               = link_to('Page ENs', "convert?file=#{@mif_file.path}&interleave=true")
               &middot;
               = link_to('Wide ENs', "convert?file=#{@mif_file.path}&interleave=true&wide=true")
+              &middot;
+              = link_to('Inline ENs', "convert?file=#{@mif_file.path}&interleave=true&inline=true")
             - elsif @show_uninterleave_link
               &middot;
               = link_to('Hide ENs', "convert?file=#{@mif_file.path}")
@@ -44,6 +46,7 @@
               =link_to('Text', "convert?file=#{@mif_file.path}&format=text")
               &middot;
               -queryparams = "&interleave=true" if params[:interleave]
+              -queryparams = "&interleave=true&inline=true" if params[:interleave] && params[:inline]
               -queryparams = "&interleave=true&wide=true" if params[:interleave] && params[:wide]
               =link_to('Reload', "convert?file=#{@mif_file.path}#{queryparams}&force=true")
               - if document_type(target_file).include?('clauses')

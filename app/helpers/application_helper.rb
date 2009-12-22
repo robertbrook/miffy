@@ -61,6 +61,8 @@ module ApplicationHelper
           "clauses/clauses_interleaved"
         elsif ens == 'interleaved_wide'
           "clauses/clauses_interleaved_wide"
+        elsif ens == 'interleaved_inline'
+          "clauses/clauses_interleaved_inline"
         else
           "clauses/clauses"
         end
@@ -69,6 +71,8 @@ module ApplicationHelper
           "schedules/schedules_interleaved"
         elsif ens == 'interleaved_wide'
           "schedules/schedules_interleaved_wide"
+        elsif ens == 'interleaved_inline'
+          "schedules/schedules_interleaved_inline"
         else
           "schedules/schedules"
         end

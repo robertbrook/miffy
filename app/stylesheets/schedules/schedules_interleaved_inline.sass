@@ -1,18 +1,22 @@
-@import ../partials/base_interleaved.sass
+@import ../partials/base.sass
 @import ../partials/_bill_docs_shared.sass
 @import blueprint
 @import ../partials/_screen.sass
-@import _clauses.sass
-
-.ClauseTextWithExplanatoryNote
-  +column(50, true)
-
+@import _schedules.sass
 
 #container
-  .Clauses
+  width= !blueprint_container_size
+  
+  .ScheduleTextWithExplanatoryNote
+    +column(30, true)
+
+  .Schedules
     .explanatory_note 
-      +push(5)
-      +column(14)
+      +column(30, true)
+      margin-left: 20px
+      clear: both
+      margin-bottom: 1em
+      
       .en_header
         font-weight: bold
         display: block
@@ -24,7 +28,7 @@
         border: 1px dotted crimson
         background-color: lightyellow
         padding: 1em
-        +column(13)
+        +column(28, true)
     
         p
           margin-bottom: 0.8em
@@ -38,19 +42,5 @@
           clear: both
           float: left
     
-      .NoteClauseTitle
+      .NoteScheduleTitle
         display: none
-
-.PgfNumString
-  float: left
-
-  .PgfNumString_0
-    +column(1, true)
-
-  .PgfNumString_1
-    +append(1)
-    +column(2)
-
-  .PgfNumString_2
-    +append(1)
-    +column(1, true)

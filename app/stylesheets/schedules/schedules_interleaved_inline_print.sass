@@ -1,4 +1,4 @@
-@import schedules_interleaved.sass
+@import schedules_interleaved_inline.sass
 @import ../partials/_print.sass
 
 .ScheduleTextWithExplanatoryNote
@@ -10,8 +10,6 @@
       .ScheduleTextWithExplanatoryNote
         .explanatory_note
           padding: 0
-          margin-left: 10px
-          +column(12)
-          
+        
           .explanatory_note_text
-            +column(10)
+            border: 1px dashed gray

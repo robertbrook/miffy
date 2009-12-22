@@ -1,0 +1,16 @@
+@import clauses_interleaved_inline.sass
+@import ../partials/_print.sass
+
+.ClauseTextWithExplanatoryNote
+  font-size: 9pt
+
+#container
+  .Clauses
+    .Clause
+      .ClauseTextWithExplanatoryNote
+        .explanatory_note
+          +push(1)
+          padding: 0
+        
+          .explanatory_note_text
+            border: 1px dashed gray
