@@ -9,7 +9,7 @@
 	url = git://github.com/dchelimsky/rspec.git
 [submodule "vendor/plugins/resource_controller"]
 	path = vendor/plugins/resource_controller
-	url = git://github.com/giraffesoft/resource_controller.git
+	url = git://github.com/jamesgolick/resource_controller.git
 [submodule "vendor/plugins/legislation_uk"]
 	path = vendor/plugins/legislation_uk
 	url = git://github.com/robmckinnon/legislation-uk.git
