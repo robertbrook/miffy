@@ -1,10 +1,10 @@
-<Document><ENData><BillInfo><Title>Digital Economy Bill</Title><Version>1</Version></BillInfo><TextSection SerialNumber="1"> 
+<Document><ENData><PageStart PageNumber="1"/><BillInfo><Title>Digital Economy Bill</Title><Version>1</Version></BillInfo><TextSection SerialNumber="1"> 
                    DIGITAL ECONOMY BILL [HL] 
                                    &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212; 
  
                           EXPLANATORY NOTES 
  
-INTRODUCTION 
+</TextSection><TextSection SerialNumber="2">INTRODUCTION 
  
 1.       These Explanatory Notes relate to the Digital Economy Bill [HL] as introduced in the 
 House of Lords on 19th November 2009. They have been prepared by the Department for 
@@ -16,7 +16,7 @@ and have not been endorsed by Parliament.
 meant to be, a comprehensive description of the Bill. So where a clause or part of a clause 
 does not seem to require any explanation or comment, none is given. 
  
-BACKGROUND 
+</TextSection><TextSection SerialNumber="3">BACKGROUND 
  
 3.      The communications sector is one of the three largest economic sectors in the UK 
 economy, accounting for around 8% of GDP. In recent times, this sector has undergone 
@@ -29,7 +29,7 @@ White Paper, entitled Digital Britain: Final Report (Cm 7650) in June 2009. The 
 Paper made a number of recommendations. The Digital Economy Bill takes forward those 
 that require legislation. 
  
-STRUCTURE OF THE BILL 
+</TextSection><TextSection SerialNumber="4">STRUCTURE OF THE BILL 
  
 5.      The Bill comprises 49 clauses and three Schedules and covers eleven topics. 
  
@@ -40,7 +40,7 @@ regard, when performing their functions, to the need to:
      &#8226; Promote investment in electronic communications networks; 
  
 HL Bill 1&#8213;EN                                   1                                           54/5 
- 
+<PageStart PageNumber="2"/> 
     &#8226; Promote investment in content that contributes to the fulfilment of specified public 
       service objectives; and 
  
@@ -82,7 +82,8 @@ date.
  
 14.     Topic 8 is access to electromagnetic spectrum. Clauses 38 and 39 enable the 
 reallocation of spectrum currently used by mobile network operators. 
-15.    Topic 9 is video recordings. Clauses 40 and 41 and Schedule 1 implement changes to 
+ 
+<PageStart PageNumber="3"/>15.    Topic 9 is video recordings. Clauses 40 and 41 and Schedule 1 implement changes to 
 video games classification as recommended in Safer Children in a Digital World: Byron 
 Review1, extending the range of video games that are subject to requirements to be age-rated 
 and supplied only in accordance with the rating. 
@@ -102,7 +103,7 @@ Clauses 42 and 43 and Schedule 2 amend the law on copyright licensing by:
 1979 and the Copyright, Designs and Patents Act 1988 to allow inclusion of non-print formats 
 (audio-books and e-books) in the public lending right payment regime. 
  
-TERRITORIAL EXTENT AND APPLICATION 
+</TextSection><TextSection SerialNumber="5">TERRITORIAL EXTENT AND APPLICATION 
  
 18.        The Bill extends to all of the United Kingdom. 
  
@@ -120,7 +121,8 @@ Parliament, if there are amendments relating to such matters which trigger the C
 consent of the Scottish Parliament will be sought for them. 
  
     Published in 2008, available at: http://www.dcsf.gov.uk/byronreview/ 
-COMMENTARY ON CLAUSES 
+ 
+<PageStart PageNumber="4"/>COMMENTARY ON CLAUSES 
  
 Topic 1: General duties of OFCOM 
 Background 
@@ -131,7 +133,7 @@ relevant markets, where appropriate by promoting competition. Relevant markets a
 any of the services, facilities, apparatus or directories in relation to which OFCOM have 
 functions. 
  
-</TextSection><Clause Number="1" SerialNumber="2">Clause 1: General duties of OFCOM 
+</TextSection><Clause Number="1" SerialNumber="6">Clause 1: General duties of OFCOM 
 23.     This clause amends section 3 of the 2003 Act. It inserts a new subsection (1A) which 
 provides that when performing their duties under subsection (1) OFCOM must have particular 
 regard, in all cases, to the need to: 
@@ -150,7 +152,7 @@ may sometimes be necessary for OFCOM to promote investment that is not efficient
 example, investment in public service content may not always be efficient as this 
 content serves a public policy as well as an economic objective. 
  
-</Clause><Clause Number="2 " SerialNumber="3">Clause 2 : OFCOM reports on infrastructure, internet domain names etc. 
+</Clause><Clause Number="2 " SerialNumber="7">Clause 2 : OFCOM reports on infrastructure, internet domain names etc. 
 25.     This clause inserts three new sections into the 2003 Act which will require OFCOM to 
 report to the Secretary of State on the state of the UK&#8217;s communications infrastructure and 
 services. 
@@ -163,7 +165,8 @@ brought to the attention of the Secretary of State, they should write a further 
  
 27.     New section 134B sets out the subject matter to be covered by the reports. The initial 
 report and the biennial reports will consist of a survey of: 
-    &#8226; The different types of electronic communications network and service in the UK; 
+ 
+<PageStart PageNumber="5"/>    &#8226; The different types of electronic communications network and service in the UK; 
  
     &#8226; Geographic and population coverage of those networks and services; 
  
@@ -203,10 +206,11 @@ means, in particular, that a demand for information must be proportionate to the
 the information is to be put. Penalties for contravention of the information requirements may 
 be imposed under section 139. 
  
-</Clause><Clause Number="3" SerialNumber="4">Clause 3: OFCOM reports on media content 
+</Clause><Clause Number="3" SerialNumber="8">Clause 3: OFCOM reports on media content 
 32.     Section 264 of the 2003 Act requires OFCOM to report at least every five years on the 
 fulfilment of the public service remit for television by public service broadcasters, namely the 
-BBC, Channel 4, S4C and providers of Channel 3 and Channel 5. The public service remit 
+ 
+<PageStart PageNumber="6"/>BBC, Channel 4, S4C and providers of Channel 3 and Channel 5. The public service remit 
 involves the provision of a balanced diversity of high quality content, which meets the needs 
 and interests of different audiences in the United Kingdom. Paragraphs (b) to (j) of section 
 264(6) of the 2003 Act provide detailed public service objectives underpinning this remit. 
@@ -249,7 +253,8 @@ measures would be used against serious repeat infringers only. Technical measure
 likely to include bandwidth capping or shaping that would make it difficult for subscribers to 
 continue file-sharing, but other measures may also be considered. If appropriate, temporary 
 suspension of broadband connections could be considered. 
-37.     OFCOM would be subject to an obligation to prepare a code setting out the procedural 
+ 
+<PageStart PageNumber="7"/>37.     OFCOM would be subject to an obligation to prepare a code setting out the procedural 
 mechanisms to give effect to the technical obligations of ISPs. The technical measures were 
 described more fully in the consultation document issued on 16th June 2009, as supplemented 
 by the government statement published on 25th August 20092. 
@@ -288,7 +293,8 @@ of notification and court action are outlined below:
 3 An equitable remedy taking its name from the order made in the case of Norwich Pharmacal Co. v Commissioners of Customs and Excise [1974] AC 133. A Norwich 
 Pharmacal order requires a respondent to disclose certain documents or information to the applicant. The respondent must be a party who is involved or mixed up in a 
 wrongdoing, whether innocently or not, and is unlikely to be a party to the potential proceedings. 
-    &#8226; Copyright owners send &#8220;final warning&#8221; letters direct to infringers asking them to stop 
+ 
+<PageStart PageNumber="8"/>    &#8226; Copyright owners send &#8220;final warning&#8221; letters direct to infringers asking them to stop 
        online copyright infringement and giving them a clear warning of likely court action if 
        the warning is ignored; and 
  
@@ -318,7 +324,7 @@ reporting infringement of copyright would be the same as well.
 Part 1 or Part 7 of the Copyright Designs and Patents Act 1988 for the purpose of preventing 
 or reducing on-line copyright infringement. 
  
-</Clause><Clause Number="4" SerialNumber="5">Clause 4: Obligation to notify subscribers of reported infringements 
+</Clause><Clause Number="4" SerialNumber="9">Clause 4: Obligation to notify subscribers of reported infringements 
 44.     The section of the 2003 Act that is inserted by this clause (section 124A) sets out an 
 obligation for ISPs to notify subscribers of copyright infringement reports (&#8220;CIRs&#8221;) received 
 about them from copyright owners. It describes what CIRs and notifications to subscribers 
@@ -331,7 +337,8 @@ download a copy of that material and in doing so capture information about the s
 including the IP address along with a date and time stamp. However, at present they do not 
 have the ability to match this information to the broadband subscriber to whom that IP 
 address was allocated at that precise time. This information is only held by the subscriber&#8217;s 
-ISP. Therefore, the copyright owner relies on the ISP&#8217;s ability to match the IP address to the 
+ 
+<PageStart PageNumber="9"/>ISP. Therefore, the copyright owner relies on the ISP&#8217;s ability to match the IP address to the 
 name and address of the subscriber concerned. 
  
 46.     However, the ISP is unable to pass this information on to the copyright owner without 
@@ -348,7 +355,7 @@ that information about the apparent infringement may be kept and disclosed to th
 owner in certain circumstances. Further apparent infringements using the subscriber&#8217;s account 
 may result in additional notifications. 
  
-</Clause><Clause Number="5" SerialNumber="6">Clause 5: Obligation to provide infringement lists to copyright owners 
+</Clause><Clause Number="5" SerialNumber="10">Clause 5: Obligation to provide infringement lists to copyright owners 
 48.     ISPs will have to keep a record of the number of CIRs linked to each subscriber along 
 with a record of which copyright owner sent the report. Under section 124B of the 2003 Act, 
 inserted by clause 5, an ISP may be required to provide a copyright owner with relevant parts 
@@ -373,9 +380,10 @@ the most CIRs, it would not include any personal information about subscriber 93
 to get this personal data, the copyright owner would need a court order. However, the list 
 would allow the copyright owner to identify subscriber 936 as someone against whom legal 
 action may be appropriate. 
-
  
-</Clause><Clause Number="6" SerialNumber="7">Clause 6: Approval of code about the initial obligations 
+<PageStart PageNumber="10"/>
+ 
+</Clause><Clause Number="6" SerialNumber="11">Clause 6: Approval of code about the initial obligations 
 51.     The obligations provided for in new sections 124A and 124B would not have effect 
 until there was a complementary code in force that had been approved or made by OFCOM. 
  
@@ -418,9 +426,10 @@ Secretary of State would need to consent to the approval.
 57.    Before approving a code, OFCOM would be expected to carry out consultation. Under 
 sections 124C and 124E (which is inserted by clause 8), OFCOM would also need to satisfy 
 themselves that the code was objectively justifiable, proportionate and transparent. 
-
  
-</Clause><Clause Number="7" SerialNumber="8">Clause 7: Initial obligations code by OFCOM in the absence of an approved code 
+<PageStart PageNumber="11"/>
+ 
+</Clause><Clause Number="7" SerialNumber="12">Clause 7: Initial obligations code by OFCOM in the absence of an approved code 
 58.     Clause 7 inserts new section 124D in the 2003 Act. The new section provides for the 
 making by OFCOM of a code regulating the initial obligations if there is no industry code. 
 The government hopes industry can devise a satisfactory code which OFCOM approves. 
@@ -429,7 +438,7 @@ order. It is possible that stakeholders may be able to reach agreement on parts 
 which OFCOM can then consider, and, if appropriate, include as part of OFCOM&#8217;s code. 
 Again, the consent of the Secretary of State would be required for the making of the code. 
  
-</Clause><Clause Number="8" SerialNumber="9">Clause 8: Contents of the initial obligations code 
+</Clause><Clause Number="8" SerialNumber="13">Clause 8: Contents of the initial obligations code 
 59.    Clause 8 inserts new section 124E in the 2003 Act. This sets out what the code 
 underpinning the initial obligations (whether an industry code or OFCOM&#8217;s own code) must 
 contain. The reason for including the underpinning material in a code, rather than directly in 
@@ -443,7 +452,7 @@ that OFCOM or a body set up by OFCOM to administer the code may employ in the ev
 a failure to comply with the code. And it must also specify the rights of subscribers to 
 challenge actions under the legislation by the ISPs and copyright owners. 
  
-</Clause><Clause Number="9" SerialNumber="10">Clause 9: Progress reports 
+</Clause><Clause Number="9" SerialNumber="14">Clause 9: Progress reports 
 61.    Clause 9 inserts new section 124F in the 2003 Act. Section 124F places an obligation 
 on OFCOM to prepare full reports (every 12 months) and interim reports (every 3 months) 
 about the infringement of copyright by subscribers to internet access services. Each report 
@@ -460,11 +469,12 @@ which copyright owners are making CIRs and following up with legal action agains
 subscribers. They are intended to be a source of information that the Secretary of State can 
 draw on when taking decisions about whether to impose additional obligations on ISPs. 
  
-</Clause><Clause Number="10" SerialNumber="11">Clause 10: Obligations to limit internet access: assessment and preparation 
+</Clause><Clause Number="10" SerialNumber="15">Clause 10: Obligations to limit internet access: assessment and preparation 
 63.    New section 124G of the 2003 Act, inserted by clause 10, confers a power on the 
 Secretary of State to direct OFCOM to assess whether ISPs should be obliged to take 
 technical measures against certain subscribers, or direct OFCOM to take steps to prepare for 
-technical obligations. In particular, OFCOM may be required to carry out a consultation or 
+ 
+<PageStart PageNumber="12"/>technical obligations. In particular, OFCOM may be required to carry out a consultation or 
 assess the likely efficacy of different kinds of technical measure, and to report back to the 
 Secretary of State. Technology used for the purposes of online infringement of copyright is 
 changing fast and it is not possible at this stage to know which technical measures would be 
@@ -478,7 +488,7 @@ introduce further obligations, should that prove appropriate.
 65.    OFCOM would be required to set out supporting provision in a technical obligations 
 code under section 124I (which is inserted by clause 12). 
  
-</Clause><Clause Number="11" SerialNumber="12">Clause 11: Obligations to limit internet access 
+</Clause><Clause Number="11" SerialNumber="16">Clause 11: Obligations to limit internet access 
 66.    New section 124H of the 2003 Act is inserted by clause 11 and gives the Secretary of 
 State power to order ISPs to impose technical measures on internet access service subscribers 
 meeting certain criteria. 
@@ -489,7 +499,7 @@ subscriber&#8217;s alleged infringements are included in a copyright infringemen
 initial obligations. So a technical measure would be applied if a subscriber had been linked to 
 a number of CIRs sufficient to place them on a serious infringers list. 
  
-</Clause><Clause Number="12" SerialNumber="13">Clause 12: Code by OFCOM about obligations to limit internet access 
+</Clause><Clause Number="12" SerialNumber="17">Clause 12: Code by OFCOM about obligations to limit internet access 
 68.     If the Secretary of State makes an order under section 124H requiring ISPs to take 
 technical measures against subscribers, OFCOM will be under an obligation to adopt (by 
 order) a code underpinning the technical obligations. This is provided for in new section 124I 
@@ -499,7 +509,7 @@ of the 2003 Act, inserted by clause 12.
 technical obligations. It also provides that the Secretary of State&#8217;s approval of the code is 
 required before it can be made. 
  
-</Clause><Clause Number="13" SerialNumber="14">Clause 13: Contents of code about obligations to limit internet access 
+</Clause><Clause Number="13" SerialNumber="18">Clause 13: Contents of code about obligations to limit internet access 
 70.    Clause 13 inserts new section 124J in the 2003 Act. Section 124J sets out a list of 
 matters which are to be included in the technical obligations code. Thus the code must, for 
 example, include provision in relation to enforcement. The code would have to provide 
@@ -507,7 +517,8 @@ subscribers with a right to challenge the imposition of a technical measure. Als
 code, if there was a legal challenge by a subscriber, the taking of the measure could be 
 postponed until the person hearing the challenge or (on appeal) the First- tier Tribunal had 
 resolved the appeal. 
-71.    The code could provide for OFCOM to set up bodies in charge of administering the 
+ 
+<PageStart PageNumber="13"/>71.    The code could provide for OFCOM to set up bodies in charge of administering the 
 code and hearing appeals from subscribers. 
  
 72.    The government envisages that the code would also set out the process by which a 
@@ -516,7 +527,7 @@ subscriber facing such a measure. It would also address how any costs might be a
 and set out the dispute mechanism in the event of disagreement between an ISP and a 
 copyright owner. 
  
-</Clause><Clause Number="14" SerialNumber="15">Clause 14: Enforcement of obligations 
+</Clause><Clause Number="14" SerialNumber="19">Clause 14: Enforcement of obligations 
 73.     Clause 14 inserts new section 124K in the 2003 Act. Section 124K sets out the 
 penalties which may be imposed on an ISP for the contravention of their initial obligations or 
 obligations to impose technical measures, or of the obligation to provide assistance to 
@@ -526,7 +537,7 @@ OFCOM under section 124G.
 State has a power to increase this amount by order. The order would be subject to the 
 affirmative resolution Parliamentary procedure. 
  
-</Clause><Clause Number="15" SerialNumber="16">Clause 15: Sharing of costs 
+</Clause><Clause Number="15" SerialNumber="20">Clause 15: Sharing of costs 
 75.    The initial obligations and any later technical obligations will give rise to costs. These 
 will include the cost to ISPs of processing copyright infringement reports and issuing 
 subscriber notifications, the costs to ISPs associated with the imposition of any technical 
@@ -546,11 +557,12 @@ online infringement of copyright through commercial agreements.
 independent person determining appeals or the First-tier Tribunal should be funded by 
 industry, so that a subscriber does not face significant costs in making an appeal. 
  
-</Clause><Clause Number="17" SerialNumber="17">Clause 17: Power to amend copyright provisions 
+</Clause><Clause Number="17" SerialNumber="21">Clause 17: Power to amend copyright provisions 
 78.    Clause 17 inserts a new section 302A into the Copyright Designs and Patents Act 
 1988 (&#8220;the 1988 Act&#8221;). It enables the Secretary of State to make provision by order to amend 
 Part 1 or Part 7 of the 1988 Act for the purpose of preventing or reducing on-line copyright 
-infringement. The power may only be exercised if it appears to the Secretary of State 
+ 
+<PageStart PageNumber="14"/>infringement. The power may only be exercised if it appears to the Secretary of State 
 appropriate to do so having regard to technological developments that have occurred or are 
 likely to occur. 
  
@@ -591,7 +603,8 @@ Background
 83.    The Bill gives powers to the Secretary of State to intervene in the operation of domain 
 name registries. Such registries allocate internet domain names to end users. Internet domain 
 names (such as www.google.co.uk) underpin the addressing system for the internet. 
-84.     The Bill confers powers exercisable in circumstances where there has been misuse of 
+ 
+<PageStart PageNumber="15"/>84.     The Bill confers powers exercisable in circumstances where there has been misuse of 
 domain names, or the use of unfair practices by registries, registrars and end-users of domain 
 names, or where registries have failed adequately to deal with complaints. The powers are 
 only exercisable where those failures have adversely affected or are likely adversely to affect 
@@ -604,7 +617,7 @@ Companies Act 2006 or limited liability partnerships.
 to court to intervene in relation to a registry&#8217;s constitution in order to secure that the registry 
 remedies specified serious failures (and any consequences of them). 
  
-</Clause><Clause Number="18" SerialNumber="18">Clause 18: Powers in relation to internet domain registries 
+</Clause><Clause Number="18" SerialNumber="22">Clause 18: Powers in relation to internet domain registries 
 86.     This clause amends the Communications Act 2003 (&#8220;the 2003 Act&#8221;) by inserting a 
 new section 124N. The section applies where the Secretary of State wishes to use the new 
 powers set out in clauses 19 and 20 and is satisfied that there has been a serious failure of a 
@@ -634,7 +647,8 @@ name).
  
 89.     The section provides that such a failure will be serious where it has adversely affected 
 or is likely adversely to affect the reputation or availability of electronic communications 
-networks or services provided in the UK, or the interests of consumers or the public in the 
+ 
+<PageStart PageNumber="16"/>networks or services provided in the UK, or the interests of consumers or the public in the 
 UK. 
  
 90.     Where the section applies, the Secretary of State must notify the registry specifying 
@@ -647,7 +661,7 @@ clause 2(1)) before exercising his powers.
 91.    New section 124N defines internet domain registry and other terms used in these 
 provisions. 
  
-</Clause><Clause Number="19" SerialNumber="19">Clause 19: Appointment of manager of internet domain registry 
+</Clause><Clause Number="19" SerialNumber="23">Clause 19: Appointment of manager of internet domain registry 
 92.    This clause amends the 2003 Act by inserting new sections 124O and 124P. If the 
 Secretary of State has served a notice under new section 124N, the period allowed for making 
 representations has expired and the Secretary of State is satisfied that the registry has not 
@@ -677,12 +691,13 @@ amount to contempt.
  
 95.    Section 124P(8) applies all the provisions to limited liability partnerships as if the 
 references to a director were to a member of the limited liability partnership. 
-96.     Subsection (2) of clause 19 inserts a reference to an order under section 124O into 
+ 
+<PageStart PageNumber="17"/>96.     Subsection (2) of clause 19 inserts a reference to an order under section 124O into 
 section 192(1)(d) of the 2003 Act. The effect of this is that the registry has a right of appeal 
 on both the facts and the law to the Competition Appeal Tribunal (and thence to the Court of 
 Appeal on a point of law) in respect of a decision to appoint a manager. 
  
-</Clause><Clause Number="20" SerialNumber="20">Clause 20: Application to court to alter constitution of internet domain registry 
+</Clause><Clause Number="20" SerialNumber="24">Clause 20: Application to court to alter constitution of internet domain registry 
 97.     This clause amends the 2003 Act by inserting a new section 124Q. This gives the 
 Secretary of State the power to apply to the court for an order to alter the constitution of a 
 registry and to limit the registry&#8217;s ability to amend its constitution itself without the leave of 
@@ -706,7 +721,7 @@ extend the functions of C4C in relation to media content. The Bill achieves this
 introducing new C4C functions via a new section 198A of the Communications Act 2003 
 (&#8220;the 2003 Act&#8221;). 
  
-</Clause><Clause Number="21" SerialNumber="21">Clause 21: Functions of C4C in relation to media content 
+</Clause><Clause Number="21" SerialNumber="25">Clause 21: Functions of C4C in relation to media content 
 99.     This clause will require C4C to participate in the making of a broad range of high- 
 quality content that appeals to the tastes and interests of a culturally diverse society, and 
 broadcast or distribute such content on a range of different delivery platforms. This content 
@@ -717,7 +732,8 @@ avoidance of doubt, these new duties on C4C to make content do not disapply the 
 Channel 4&#8217;s regulatory regime, referred to in section 295 of the 2003 Act, requiring C4C not 
 to be involved, except to such extent as OFCOM may allow, in the making of programmes to 
 be broadcast on Channel 4. 
-100. The clause also makes provision as to the wider aims C4C must pursue in performing 
+ 
+<PageStart PageNumber="18"/>100. The clause also makes provision as to the wider aims C4C must pursue in performing 
 their duties, drawing on the core public purposes that C4C identified in their March 2008 
 report Next on 44. C4C must support new talent and innovation, support and stimulate well- 
 informed debate, promote alternative views and perspectives and help to inspire change in 
@@ -732,7 +748,7 @@ desirability of:
  
        &#8226; Promoting access to and awareness of services provided in digital form. 
  
-</Clause><Clause Number="22" SerialNumber="22">Clause 22: Monitoring and enforcing C4C&#8217;s media content duties 
+</Clause><Clause Number="22" SerialNumber="26">Clause 22: Monitoring and enforcing C4C&#8217;s media content duties 
 102. This clause contains provision for monitoring and enforcing the delivery of C4C&#8217;s 
 new functions, through new sections 198B, 198C and 198D of the 2003 Act. This 
 complements, and is in part modelled on, the existing accountability framework for the 
@@ -757,7 +773,8 @@ think fit.
 performance of C4C&#8217;s new duties, which may well include the making and broadcasting of 
  
     Available at: http://www.channel4.com/about4/next_on4.html 
-programmes on television, at the same time as their reviews of the fulfilment of the public 
+ 
+<PageStart PageNumber="19"/>programmes on television, at the same time as their reviews of the fulfilment of the public 
 service remit under section 264 of the 2003 Act. 
  
 107. New section 198D introduces enforcement powers for OFCOM in relation to the 
@@ -795,12 +812,13 @@ period. Clauses 23 to 29 make amendments to provisions contained in the Broadcas
 introduce additional flexibility into the licence processes for the commercially funded public 
 service television broadcasters. 
  
-</Clause><Clause Number="23" SerialNumber="23">Clause 23: Determination of Channel 3 licence areas 
+</Clause><Clause Number="23" SerialNumber="27">Clause 23: Determination of Channel 3 licence areas 
 110. Section 14(2) of the 1990 Act requires OFCOM to structure the Channel 3 licence 
 map on a regional basis. However, section 14(7) of the 1990 Act provides a caveat 
 preventing OFCOM from constructing a licence area from either the whole of England or the 
 whole of Scotland. 
-111. This clause repeals section 14(7) of the 1990 Act to remove that restriction. At the 
+ 
+<PageStart PageNumber="20"/>111. This clause repeals section 14(7) of the 1990 Act to remove that restriction. At the 
 same time, it inserts new section 14(7A), which provides that there must always be at least 
 one licence area wholly contained within Scotland. Section 287 of the 2003 Act will still 
 allow OFCOM to insert conditions in a licence to require the holder of a nationwide licence to 
@@ -816,7 +834,7 @@ OFCOM the power not to renew a licence if the area to which it relates is or wil
 entirely by another Channel 3 licence or licences which OFCOM have renewed or propose to 
 renew. 
  
-</Clause><Clause Number="24" SerialNumber="24">Clause 24: Initial expiry date for Channel 3 and 5 and public teletext licences 
+</Clause><Clause Number="24" SerialNumber="28">Clause 24: Initial expiry date for Channel 3 and 5 and public teletext licences 
 114. Section 224(2) of the 2003 Act provides the Secretary of State with the power, by 
 order, to postpone the initial expiry date of licences to provide Channel 3 services, the licence 
 to provide Channel 5, and the licence to provide the public teletext service. This clause 
@@ -828,7 +846,7 @@ exercising the power to postpone the initial expiry date if digital switchover i
 before 1st July 2013. The clause repeals section 224(3) and therefore gives the Secretary of 
 State more flexibility to extend the duration of licences where appropriate. 
  
-</Clause><Clause Number="26" SerialNumber="25">Clause 26: Report by OFCOM on public teletext service 
+</Clause><Clause Number="26" SerialNumber="29">Clause 26: Report by OFCOM on public teletext service 
 116. Section 218(1) of the 2003 Act currently places a duty on OFCOM to do all they can 
 to secure the provision of a national teletext service. 
  
@@ -838,11 +856,12 @@ assessments that OFCOM must include in the report. OFCOM must submit this report
 Secretary of State, and prepare and submit further reports when asked to do so by the 
 Secretary of State. 
  
-</Clause><Clause Number="27" SerialNumber="26">Clause 27: Power to remove OFCOM&#8217;s duty to secure provision of public teletext 
+</Clause><Clause Number="27" SerialNumber="30">Clause 27: Power to remove OFCOM&#8217;s duty to secure provision of public teletext 
 service 
 118. Clause 27 will remove OFCOM&#8217;s duty to do all that they can to licence someone to 
 provide the public teletext service and replace it with a power to do so. 
-119. This change will come into force on a day appointed by the Secretary of State by 
+ 
+<PageStart PageNumber="21"/>119. This change will come into force on a day appointed by the Secretary of State by 
 means of a statutory instrument, which must be approved by Parliament before it can take 
 effect. The Secretary of State may only make this order if he is satisfied that it would be in the 
 public interest, and that either condition A or B stipulated in clause 27 has been met. 
@@ -853,7 +872,7 @@ inviting applications for the licence to provide the public teletext service, re
 applications by the closing date or considers that it could not award the licence to any of the 
 applicants. 
  
-</Clause><Clause Number="28" SerialNumber="27">Clause 28: Appointed providers of regional or local news 
+</Clause><Clause Number="28" SerialNumber="31">Clause 28: Appointed providers of regional or local news 
 120. This clause inserts a new section 287A in the 2003 Act which confers a new function 
 on OFCOM of appointing and funding providers of regional or local news (or both). The new 
 section allows OFCOM to set criteria and conditions for the provision of this type of news 
@@ -882,9 +901,10 @@ benefits to society in connection with the provision of news. For example, this 
 commitments to media skills and training. OFCOM must consult the Secretary of State 
 before setting conditions in connection with the appointment of, or the making of payments 
 to, news providers. 
-
  
-</Clause><Clause Number="29" SerialNumber="28">Clause 29: Broadcasting of programmes in Gaelic 
+<PageStart PageNumber="22"/>
+ 
+</Clause><Clause Number="29" SerialNumber="32">Clause 29: Broadcasting of programmes in Gaelic 
 125. This clause repeals section 184 of the 1990 Act, which contains requirements for 
 certain Channel 3 licensees in Scotland (currently STV) to show Gaelic language 
 programmes. 
@@ -921,10 +941,11 @@ particularly powers to:
  
   A multiplex consists of a number of digital services, such as radio stations, bundled together and 
 transmitted digitally on a single frequency in a given transmission area. 
-128. The Bill reduces regulatory burdens by enabling local stations to share premises and 
+ 
+<PageStart PageNumber="23"/>128. The Bill reduces regulatory burdens by enabling local stations to share premises and 
 administrative costs within an area approved by OFCOM. 
  
-</Clause><Clause Number="30" SerialNumber="29">Clause 30: Digital switchover 
+</Clause><Clause Number="30" SerialNumber="33">Clause 30: Digital switchover 
 129. Clause 30 allows the Secretary of State to give notice to OFCOM of a date by which 
 digital switchover must occur for services specified in the notice. In making a decision to 
 nominate a switchover date, the Secretary of State must take account of any reports by the 
@@ -944,7 +965,7 @@ licence-holder consents.
  
 133.   OFCOM may not vary a licence period so that it ends after the switchover date. 
  
-</Clause><Clause Number="31" SerialNumber="30">Clause 31: Renewal of national radio licences 
+</Clause><Clause Number="31" SerialNumber="34">Clause 31: Renewal of national radio licences 
 134. Clause 31 allows the further renewal of national analogue licences for a period of up 
 to seven years. All of these licences have already been granted a renewal of 12 years under 
 the powers in section 103A of the Broadcasting Act 1990 (&#8220;the 1990 Act&#8221;). 
@@ -964,10 +985,11 @@ relevant date, as defined in the existing section 103A(11) of the 1990 Act. Norm
 OFCOM must determine the relevant date at least one year in advance. Clause 31(3) allows 
 OFCOM to set a relevant date of less than one year after the date of determination where they 
 consider that the relevant date falls no more than 15 months after the day on which clause 31 
-comes into force. However, OFCOM must determine the relevant date as soon as practicable 
+ 
+<PageStart PageNumber="24"/>comes into force. However, OFCOM must determine the relevant date as soon as practicable 
 following commencement of clause 31. 
  
-</Clause><Clause Number="32" SerialNumber="31">Clause 32: Renewal and variation of local radio licences 
+</Clause><Clause Number="32" SerialNumber="35">Clause 32: Renewal and variation of local radio licences 
 138. Clause 32 allows OFCOM to renew a local analogue licence for a period of up to 
 seven years, provided it has already been renewed under section 104A of the 1990 Act or is 
 granted on or after the date on which clause 32 comes into force. 
@@ -1006,7 +1028,8 @@ licence holder is required to do all the licence holder can to ensure that a loc
 programme service is broadcast on a local radio multiplex service. The purpose of allowing 
 such a condition to be replaced with a national digital services condition is so that holders of 
 approved licences that have not yet been renewed under section 104AA but that wish to 
-provide a digital service on a national multiplex, rather than on a local multiplex, are not, as a 
+ 
+<PageStart PageNumber="25"/>provide a digital service on a national multiplex, rather than on a local multiplex, are not, as a 
 result, in breach of their local digital services condition. 
  
 145. Before OFCOM vary a licence under this provision, they must be satisfied that the 
@@ -1021,7 +1044,7 @@ date of determination where they consider that the relevant date falls no more t
 after the day on which clause 32 comes into force. However, OFCOM must determine the 
 relevant date as soon as practicable following commencement of clause 32. 
  
-</Clause><Clause Number="33" SerialNumber="32">Clause 33: Variation of licence period following renewal 
+</Clause><Clause Number="33" SerialNumber="36">Clause 33: Variation of licence period following renewal 
 147. This clause adds section 105A to the 1990 Act and allows the Secretary of State to 
 reduce the duration of a licence renewed under section 103B or 104AA. This power only 
 applies where the Secretary of State has not nominated a digital switchover date or has 
@@ -1041,7 +1064,7 @@ after the termination date set by the Secretary of State.
 151. The Secretary of State must consider, before 31st December 2013, whether to exercise 
 the powers contained in section 105A. 
  
-</Clause><Clause Number="34" SerialNumber="33">Clause 34: Content and character of local sound broadcasting services 
+</Clause><Clause Number="34" SerialNumber="37">Clause 34: Content and character of local sound broadcasting services 
 152. This clause allows OFCOM to amend the conditions of a local licence to allow local 
 programming to be made outside of the licensed area and gives greater discretion to OFCOM 
 to determine the appropriate level of locally-made content. 
@@ -1049,10 +1072,11 @@ to determine the appropriate level of locally-made content.
 153. OFCOM may agree to a departure from the character of a service provided under a 
 local licence if programmes will continue to be made within an area approved by them. 
 OFCOM must consult prior to approving an area or withdrawing their approval. The 
-consultation requirement can be satisfied by OFCOM publishing a document before clause 34 
+ 
+<PageStart PageNumber="26"/>consultation requirement can be satisfied by OFCOM publishing a document before clause 34 
 comes into force. 
  
-</Clause><Clause Number="35" SerialNumber="34">Clause 35: Local radio multiplex services: frequency and licensed area 
+</Clause><Clause Number="35" SerialNumber="38">Clause 35: Local radio multiplex services: frequency and licensed area 
 154. This clause inserts section 54A into the Broadcasting Act 1996 (&#8220;the 1996 Act&#8221;). It 
 allows OFCOM to vary the frequency, or extend or reduce the coverage area, of a local radio 
 multiplex licence. 
@@ -1064,7 +1088,7 @@ consult on the proposal before granting the application, and they may only grant
 they consider that the variation will not unacceptably narrow the range of local DAB 
 programmes in the area for which the local radio multiplex is provided. 
  
-</Clause><Clause Number="36" SerialNumber="35">Clause 36: Renewal of radio multiplex licences 
+</Clause><Clause Number="36" SerialNumber="39">Clause 36: Renewal of radio multiplex licences 
 156. Clause 36 contains a power to amend Part 2 of the 1996 Act (and, in particular, section 
 58) by regulations for the purpose of making further provision about the renewal of radio 
 multiplex licences. In particular, regulations made under this power may make provision 
@@ -1076,7 +1100,7 @@ further conditions that may be included in a renewed licence.
 157. The power, which is exercisable until 31st December 2015, is subject to the 
 affirmative procedure, requiring approval by both Houses of Parliament. 
  
-</Clause><Clause Number="37" SerialNumber="36">Topic 7: Regulation of television and radio services 
+</Clause><Clause Number="37" SerialNumber="40">Topic 7: Regulation of television and radio services 
 Clause 37: Application of regulatory regimes to broadcasters 
 158. Section 263(4) of the Communications Act 2003 (&#8220;the 2003 Act&#8221;) gives the Secretary 
 of State the power to cease to include certain obligations in the licence of any service. 
@@ -1088,7 +1112,8 @@ changes. The clause provides for the Secretary of State to alter the conditions 
 service provision that OFCOM must include in Channel 3 and 5 licences, and then to change 
 the conditions back at a later date. The Secretary of State may only make these alterations by 
 affirmative order, which would require approval by Parliament before it could take effect. 
-Topic 8: Access to electromagnetic spectrum 
+ 
+<PageStart PageNumber="27"/>Topic 8: Access to electromagnetic spectrum 
 Background 
 160. Availability of next generation mobile broadband services requires the availability of 
 spectrum. There are suitable blocks of spectrum either ready for allocation, or about to 
@@ -1130,7 +1155,8 @@ amending to implement some of the recommendations of the Independent Spectrum Br
     http://www.culture.gov.uk/reference_library/publications/6147.aspx 
  
     http://www.culture.gov.uk/what_we_do/broadcasting/6216.aspx 
-165. The proposals put forward by the Independent Spectrum Broker require the 
+ 
+<PageStart PageNumber="28"/>165. The proposals put forward by the Independent Spectrum Broker require the 
 application in certain cases of annual licence fees, including what is known as Administered 
 Incentive Pricing, to spectrum that has been auctioned, including spectrum that has been 
 relinquished by operators to conform to the spectrum caps referred to below and spectrum 
@@ -1152,7 +1178,7 @@ telegraphy licence condition may be disproportionate or insufficiently flexible 
 conditions which are proposed pursuant to a direction under section 5 of the 2006 Act to 
 allow the timely reform of the spectrum. 
  
-</Clause><Clause Number="38" SerialNumber="37">Clause 38: Payment for licences 
+</Clause><Clause Number="38" SerialNumber="41">Clause 38: Payment for licences 
 168. Subsections (1) to (3) of this clause allow OFCOM to make regulations under section 
 12(1)(b) of the 2006 Act which apply charges payable during the term of the licence to 
 specified cases of wireless telegraphy licences allocated by auction. Section 12(5) of the 2006 
@@ -1171,10 +1197,11 @@ operator who relinquished it, on the basis that they bought this at auction in 2
 also be additional payments between operators arising from the auction of other relinquished 
 spectrum. 
  
-</Clause><Clause Number="39" SerialNumber="38">Clause 39: Enforcement of licence terms etc 
+</Clause><Clause Number="39" SerialNumber="42">Clause 39: Enforcement of licence terms etc 
 171. This clause inserts a new section 43A into the 2006 Act giving OFCOM power to 
 impose financial penalties for contravention of certain licence provisions, terms or limitations 
-to which section 43A applies by virtue of a licence provision. A provision applying section 
+ 
+<PageStart PageNumber="29"/>to which section 43A applies by virtue of a licence provision. A provision applying section 
 43A can only be included in a licence if it appears to OFCOM that a direction of the Secretary 
 of State made under section 5 of the 2006 Act requires OFCOM to include a particular 
 provision, term or limitation in the licence. 
@@ -1211,11 +1238,12 @@ on a voluntary basis by the Pan-European Games Information (PEGI) system. PEGI
 classifications of 12 and over are administered throughout Europe by a UK body, the Video 
 Standards Council (VSC). 
  
-</Clause><Clause Number="40" SerialNumber="39">Clause 40: Classification of video games, etc 
+</Clause><Clause Number="40" SerialNumber="43">Clause 40: Classification of video games, etc 
 177. The Bill will extend the statutory classification requirement to video games that are 
 only suitable for viewing by persons aged 12 years and above. This extension of the 
 classification requirement to a wider age bracket for video games will implement Professor 
-Tanya Byron&#8217;s recommendation set out in her independent review entitled Safer Children in a 
+ 
+<PageStart PageNumber="30"/>Tanya Byron&#8217;s recommendation set out in her independent review entitled Safer Children in a 
 Digital World 9and it follows in the wake of a UK-wide public consultation on the future 
 structure of the video game classification system. 
  
@@ -1256,9 +1284,10 @@ supplies under the Act.
  
   PEGI age related logos, content descriptors and the guidelines for completing the ratings questionnaire can be 
 downloaded from the opening page of VSC website http://www.videostandards.org.uk 
-
  
-</Clause><Clause Number="41" SerialNumber="40">Clause 41: Designated authority for video games 
+<PageStart PageNumber="31"/>
+ 
+</Clause><Clause Number="41" SerialNumber="44">Clause 41: Designated authority for video games 
 182. This clause inserts a new section 4ZA into the 1984 Act and allows the Secretary of 
 State to designate two different authorities under section 4 of the Act. So, a person (or 
 persons) may be designated to make arrangements with respect to video games (&#8220;the video 
@@ -1300,9 +1329,10 @@ video works authority as to the suitability of all or part of the video work inc
 game. The video games authority must consult the video works authority with respect to the 
 appropriateness of the arrangements that it makes for taking account of such matters. It must 
 also have regard to any guidance issued by the Secretary of State. 
-
  
-</Clause><Schedule Number="1" SerialNumber="41">Schedule 1: Classification of video games etc &#8211; supplementary provision 
+<PageStart PageNumber="32"/>
+ 
+</Clause><Schedule Number="1" SerialNumber="45">Schedule 1: Classification of video games etc &#8211; supplementary provision 
 187. Schedule 1 makes further amendments of the 1984 Act. 
  
 188. Section 4 of the 1984 Act makes provision about the arrangements to be made by the 
@@ -1343,7 +1373,8 @@ classification certificate can only be relied on for the supply of the video wor
 platform and not for its supply more generally. 
  
      http://www.videostandards.org.uk 
-194. The offences set out in the 1984 Act at sections 11 (supplying a video recording of 
+ 
+<PageStart PageNumber="33"/>194. The offences set out in the 1984 Act at sections 11 (supplying a video recording of 
 classified work in breach of classification), 13 (supplying a video recording not complying 
 with requirements as to labels, etc) and 14 (supplying a video recording containing false 
 information as to classification) are amended to provide that an offence is not committed 
@@ -1368,7 +1399,7 @@ This would allow provision to be made to take account of new formats, such as wh
 game contains a whole film within it or a film contains a game within it. 
  
 Topic 10: Copyright and performers&#8217; property rights: licensing and penalties 
-<Clause Number="42" SerialNumber="42">Clause 42: Extension and regulation of licensing of copyright and performers&#8217; rights 
+</Schedule><Clause Number="42" SerialNumber="46">Clause 42: Extension and regulation of licensing of copyright and performers&#8217; rights 
 196. This clause introduces powers for the Secretary of State to make regulations 
 authorising the use of orphan works (defined in regulations) and extended licensing as well as 
 the regulation of licensing bodies. Currently, some uses of a work without the consent of the 
@@ -1387,7 +1418,8 @@ rights clearance simpler for those seeking to use works.
 198. Any licensing body authorised to operate extended licensing, or to license orphan 
 works, or that is failing to self-regulate, will be subject to obligations to adopt a code of 
 practice. 
-199. The clause introduces four new sections into the Copyright, Designs and Patent Act 
+ 
+<PageStart PageNumber="34"/>199. The clause introduces four new sections into the Copyright, Designs and Patent Act 
 1988 (&#8220;the 1988 Act&#8221;): 
  
        &#8226; Section 116A enables the Secretary of State to make regulations which will provide for 
@@ -1414,7 +1446,7 @@ practice.
           regulations under the provisions inserted by the clause, including provision about 
           parliamentary procedure for making regulations. 
  
-</Clause><Clause Number="43" SerialNumber="43">Clause 43: Increase of penalties relating to infringing articles or illicit recordings 
+</Clause><Clause Number="43" SerialNumber="47">Clause 43: Increase of penalties relating to infringing articles or illicit recordings 
 200. The Gowers Review of intellectual property12 recommended that the penalties for 
 online copyright infringement under section 107 of the 1988 Act should be matched with 
 those that apply for physical infringement, by increasing the maximum prison sentence. 
@@ -1425,10 +1457,11 @@ increases the maximum fine that may be imposed for these offences to &#163;50,00
 increases the maximum fine on summary conviction for making, importing, distributing or 
  
      Gowers review of Intellectual Property, 6 December 2006 
-making available an illicit recording under section 198(5) or 198(5A) from the statutory 
+ 
+<PageStart PageNumber="35"/>making available an illicit recording under section 198(5) or 198(5A) from the statutory 
 maximum to &#163;50,000. 
  
-</Clause></Schedule><Schedule Number="2" SerialNumber="44">Schedule 2: Licensing of copyright and performers&#8217; property rights 
+</Clause><Schedule Number="2" SerialNumber="48">Schedule 2: Licensing of copyright and performers&#8217; property rights 
 201. The Schedule makes supplementary amendments to the Copyright, Designs and 
 Patents Act 1988 (&#8220;the 1988 Act&#8221;) in connection with clause 42. 
  
@@ -1467,7 +1500,8 @@ formats other than print. It does this by:
  
     &#8226; Protecting public libraries who lend the books from liability for breach of copyright or 
        breach of rights in performances. 
-207. The clause does not extend PLR to works that are available for loan from public 
+ 
+<PageStart PageNumber="36"/>207. The clause does not extend PLR to works that are available for loan from public 
 libraries but that do not consist mainly of written or spoken words or still pictures. For 
 example, films, music recordings and computer games are not covered. Neither does the 
 clause extend PLR to digital files downloaded outside library premises. 
@@ -1494,7 +1528,7 @@ of rights holders&#8217; protection under the PLR scheme, and support innovation
 the creative industries. The government hopes that it will also increase non-print lending by 
 encouraging authors to enter the non-print market. 
  
-<Clause Number="44" SerialNumber="45">Clause 44: Public lending right 
+</Schedule><Clause Number="44" SerialNumber="49">Clause 44: Public lending right 
 211. This clause amends the definition of &#8220;book&#8221; in the Public Lending Right Act 1979. 
 The 1979 Act pre-dated the advent of most audio and e-books and consequently use of the 
 word &#8220;books&#8221; within it is interpreted as being limited to books in printed format. This clause 
@@ -1511,7 +1545,8 @@ international standard book number (&#8220;ISBN&#8221;).
 (whether in print or audio or e-book form) available to a member of the public for use away 
 from the library for a limited period of time. The exception is where the book is 
 communicated by means of electronic transmission to a place other than the library, for 
-example where the library makes digital files available for remote downloading. In practice 
+ 
+<PageStart PageNumber="37"/>example where the library makes digital files available for remote downloading. In practice 
 this exception is likely to apply to e-books for which a licensing agreement exists between the 
 library and author or publisher under which incremental payment is made based on usage, 
 rather than on individual units purchased on a once-and-for-all basis. 
@@ -1535,7 +1570,7 @@ libraries from liability under that Act when they lend works that are eligible f
 result of the changes, libraries will generally no longer need to make agreements with authors 
 before lending out their e-books and audio-books. 
  
-</Clause><Clause Number="45" SerialNumber="46">General clauses 
+</Clause><Clause Number="45" SerialNumber="50">General clauses 
 Clause 45: Power to make consequential provision etc. 
 216. This clause gives the Secretary of State the power to make incidental, supplementary, 
 consequential, transitional, transitory or saving provision in connection with the amendments 
@@ -1544,20 +1579,21 @@ already been identified and are included in the Bill. This power allows any furt
 amendments to be made, where necessary, in order to give proper effect to the provisions 
 made by the Bill. 
  
-</Clause><Clause Number="46" SerialNumber="47">Clause 46: Repeals 
+</Clause><Clause Number="46" SerialNumber="51">Clause 46: Repeals 
 217. This clause introduces Schedule 3 which contains repeals of provisions of the Public 
 Lending Right Act 1979 (c.10), Video Recordings Act 1984 (c.39), Broadcasting Act 1990 
 (c.42) and Communications Act 2003 (c.21). 
  
-</Clause><Clause Number="47" SerialNumber="48">Clause 47: Extent 
+</Clause><Clause Number="47" SerialNumber="52">Clause 47: Extent 
 218. This clause provides that the Bill extends to England and Wales, Scotland and 
 Northern Ireland. Subsection (2) provides that any amendments made by this Bill to the Acts 
 listed in subsection (2) may be extended to any of the Channel Islands or the Isle of Man 
 under relevant extending powers in those Acts. Subsection (4) permits amendments made by 
-this Bill to Part 1 of the Copyright, Designs and Patents Act 1988 to be extended to any 
+ 
+<PageStart PageNumber="38"/>this Bill to Part 1 of the Copyright, Designs and Patents Act 1988 to be extended to any 
 British overseas territory under section 157(2) of that Act. 
  
-FINANCIAL EFFECTS AND PUBLIC SECTOR MANPOWER 
+</Clause><TextSection SerialNumber="53">FINANCIAL EFFECTS AND PUBLIC SECTOR MANPOWER 
  
 219. There are two areas where there are potential effects on public expenditure and public 
 service manpower: public lending right and effects on OFCOM. 
@@ -1574,7 +1610,7 @@ source of funding additional to the existing funding cap. Further information ab
 funding can be found in The Government&#8217;s response to the consultation on &#8220;Sustainable 
 independent and impartial news in the Nations, locally and in the regions&#8221; 13. 
  
-SUMMARY OF IMPACT ASSESSMENT 
+</TextSection><TextSection SerialNumber="54">SUMMARY OF IMPACT ASSESSMENT 
  
 222.       A package of impact assessments has been published. This includes: 
  
@@ -1591,7 +1627,8 @@ Paper Office of the House of Lords. In addition, the full impact assessment is a
 BIS website: http://www.bis.gov.uk/digitaleconomybill 
  
      http://www.culture.gov.uk/reference_library/publications/6431.aspx 
-224. The Bill brings forward a number of specific policy proposals, decisions and 
+ 
+<PageStart PageNumber="39"/>224. The Bill brings forward a number of specific policy proposals, decisions and 
 recommendations across several substantive policy areas. The rationale for these different 
 proposals, and the respective costs and benefits of these measures, are summarised in the 
 overarching impact assessment, and discussed in detail in the individual impact assessments. 
@@ -1632,7 +1669,8 @@ There is not an aggregated cost/benefit analysis.
        greater protection in terms of reduced exposure to risk of financial loss and less 
        distress associated with mistakenly accessing a (fake) site similar to the one they were 
        intending to access, and the availability of better delineated disputes procedure; 
-    &#8226; By allowing flexibility around licence obligations, the provisions on public service 
+ 
+<PageStart PageNumber="40"/>    &#8226; By allowing flexibility around licence obligations, the provisions on public service 
        broadcasting should ensure that the costs of licences reflect their true market value. 
        This should allow licence holders to make cost savings based on short term variations 
        to public service obligations; 
@@ -1652,11 +1690,11 @@ There is not an aggregated cost/benefit analysis.
     &#8226; Provisions on public lending right could bring benefits to rights holders in non-print 
        books of up to &#163;750,000 in additional payments. 
  
-CARBON ASSESSMENT 
+</TextSection><TextSection SerialNumber="55">CARBON ASSESSMENT 
  
 227.   The Bill will not have a significant impact on the environment or carbon emissions. 
  
-COMPATIBILITY WITH THE EUROPEAN CONVENTION ON HUMAN RIGHTS 
+</TextSection><TextSection SerialNumber="56">COMPATIBILITY WITH THE EUROPEAN CONVENTION ON HUMAN RIGHTS 
  
 228. Section 19 of the Human Rights Act 1998 requires the Minister in charge of a Bill in 
 either House of Parliament to make a statement about the compatibility of the provisions of 
@@ -1671,7 +1709,8 @@ Convention rights.&#8221;
 the European Convention on Human Rights and other international human rights obligations. 
 Only those clauses which raise potential compatibility issues are discussed below. In relation 
 to the remainder of the clauses, there are no rights potentially engaged. 
-Topic 1: General duties of OFCOM 
+ 
+<PageStart PageNumber="41"/>Topic 1: General duties of OFCOM 
 Power for OFCOM to require information from network providers (clause 2) 
 231. Article 8 of the Convention is potentially engaged but that would depend on the 
 circumstances and use of the power. It is possible that some of the information which will be 
@@ -1715,7 +1754,8 @@ possession of property. The rights are engaged because affecting the ability of 
 access the internet at a given speed or, potentially, at all will tend to affect their ability to 
 communicate with others by on-line methods (by email, and through instant messaging and 
 contributions to internet discussions). This would tend to affect their private and family life in 
-the widest sense, but also Article 10 rights to freedom of expression and freedom of 
+ 
+<PageStart PageNumber="42"/>the widest sense, but also Article 10 rights to freedom of expression and freedom of 
 information. 
  
 236. However, such interference does not render the provisions incompatible with the 
@@ -1759,7 +1799,8 @@ is compatible with the Convention rights. Before exercising the power the Secret
 has a duty to consult. A further safeguard is that any order made using the power is subject to 
 the affirmative resolution procedure. These safeguards are intended to help ensure that the 
 power will only be exercised when necessary and in a proportionate way and only after a fair 
-and transparent process has been followed. A further safeguard is that the power specifically 
+ 
+<PageStart PageNumber="43"/>and transparent process has been followed. A further safeguard is that the power specifically 
 does not allow the Secretary of State to create or modify any criminal offence. 
  
 Topic 3: Power in relation to domain name registries (clauses 18 &#8211; 20) 
@@ -1798,7 +1839,8 @@ limited by the provision that the sole purpose of the appointment is to secure t
 rectifies the relevant failure or to remedy the consequences of the failure, and (b) that the 
 decision is appealable on both the facts and the law to Competition Appeal tribunal (and 
 thereafter to the Court of Appeal on a point of law). 
-Topic 7: Regulation of television and radio services 
+ 
+<PageStart PageNumber="44"/>Topic 7: Regulation of television and radio services 
 Power for the Secretary of State to re-impose conditions under the regulatory regime for 
 Channel 3 and Channel 5 licence holders (clause 37) 
 244. The Secretary of State currently has the power under section 263 of the 
@@ -1838,7 +1880,8 @@ the field of mobile broadband, and ensuring that those who use spectrum are prop
 regulated. Safeguards against the disproportionate exercise of this power include a ceiling on 
 the amount of the penalty, the requirement that the amount be appropriate and proportionate 
 and the duty of OFCOM to give reasons regarding the imposition of a penalty. 
-Topic 9: Provisions in relation to video games classification (clauses 40 and 41 and 
+ 
+<PageStart PageNumber="45"/>Topic 9: Provisions in relation to video games classification (clauses 40 and 41 and 
 Schedule 1) 
 Classification of video games 
 249. The authority designated under the Video Recordings Act 1984 (&#8220;the 1984 Act&#8221;) is 
@@ -1882,7 +1925,8 @@ Enforcement of classification provisions
 252. Section 17 of the 1984 Act sets out powers of entry, search and seizure. Judicial 
 authorisation governs the use of those powers. A justice of the peace must authorise a 
 constable to enter and search premises and he can only do so if he is satisfied that there are 
-reasonable grounds for suspecting that an offence under the Act is being committed, and that 
+ 
+<PageStart PageNumber="46"/>reasonable grounds for suspecting that an offence under the Act is being committed, and that 
 there is evidence that the offence is or has been committed on those premises. A constable 
 may only seize property in these circumstances if he has reasonable grounds to believe that 
 that property may be required as evidence in relation to criminal proceedings under the Act. 
@@ -1926,7 +1970,8 @@ work or right. Secondly, the Secretary of State may by regulations made under se
 116A(3) of and paragraph 1A(3) of Schedule 2A to the 1988 Act provide for the treatment of 
 royalties collected, including holding money for the owner of the orphan work or right should 
 they subsequently be identified allowing compensation for use which they have not 
-authorised. Finally, the Secretary of State has powers under section 116A(4) of and paragraph 
+ 
+<PageStart PageNumber="47"/>authorised. Finally, the Secretary of State has powers under section 116A(4) of and paragraph 
 1A(4) of Schedule 2A to the 1988 Act to determine through regulations the rights and 
 obligations in respect of an orphan work or right if the owner of rights in the work is 
 subsequently identified. It is in the public interest that orphan works and rights should be 
@@ -1970,7 +2015,8 @@ Compatibility with the Convention will depend on the circumstances and use of th
  
 259. The imposition of regulatory requirements on a licensing body so that it is not able to 
 continue with its licensing activities unless it complies with that regulation may be a 
-determination of civil rights and obligations within the meaning of Article 6. Similarly, where 
+ 
+<PageStart PageNumber="48"/>determination of civil rights and obligations within the meaning of Article 6. Similarly, where 
 a licensing body has been authorised to license the use of orphan works or rights, or to carry 
 on extended licensing, the removal of that authorisation and the rights attaching to it may be a 
 determination of civil rights and obligations. The requirements of Article 6 are met because a 
@@ -2014,7 +2060,8 @@ payments. The amendment will mean that the scheme can include audio-books and e-
 and their authors, producers and narrators. Interference with copyright holders&#8217; rights, and 
 rights in performances, will potentially occur, because the owners of those rights in relation to 
 works newly included in the scheme will no longer be able to prohibit or licence the lending 
-of such works by public libraries. Article 1 of the First Protocol will not be engaged until any 
+ 
+<PageStart PageNumber="49"/>of such works by public libraries. Article 1 of the First Protocol will not be engaged until any 
 amendments to the scheme are made under the expanded power. 
  
 264. The government considers that when the amendments are made, there will be no 
@@ -2026,7 +2073,7 @@ increasing demand for the lending of books in formats other than printed and bou
 performance rights owners will be compensated for the loss of the power to contract 
 individually with public libraries, as they will receive remuneration on a &#8220;rate per loan&#8221; basis. 
  
-COMMENCEMENT 
+</TextSection><TextSection SerialNumber="57">COMMENCEMENT 
  
 265. Clause 48 provides that most provisions of the Act will come into force at the end of 
 two months after the Act is passed. 
@@ -2053,7 +2100,8 @@ appoint by statutory instrument:
     &#8226; Clauses 40 and 41 and Schedule 1: relating to video recordings; and 
  
     &#8226; Clause 44: relating to public lending right. 
-ABBREVIATIONS 
+ 
+<PageStart PageNumber="50"/>ABBREVIATIONS 
  
 2G               Second Generation Mobile services &#8211; see also GSM 
  
@@ -2096,7 +2144,8 @@ OFCOM            The Office for Communications
 PEGI             Pan-European Game Information &#8211; an age rating system for video games 
  
 PLR              Public Lending Right 
-S4C              Sianel Pedwar Cymru 
+ 
+<PageStart PageNumber="51"/>S4C              Sianel Pedwar Cymru 
  
 SME              Small and Medium Enterprises 
  
@@ -2104,10 +2153,11 @@ STV              Scottish television (Grampian TV and Scottish TV)
  
 UMTS             Universal Mobile Telecommunications System &#8211; a 3G mobile technology 
  
-            DIGITAL ECONOMY BILL [HL] 
+</TextSection><TextSection SerialNumber="58">            DIGITAL ECONOMY BILL [HL] 
  
                   EXPLANATORY NOTES 
-                             Ordered to be Printed, 
+ 
+<PageStart PageNumber="52"/>                             Ordered to be Printed, 
                              19th November 2009 
  
                    &#169; Parliamentary copyright House of Lords 2009 
@@ -2124,4 +2174,4 @@ Applications for reproduction should be made in writing to the Information Polic
  
 HL Bill 1&#8212;EN                                                                     54/5 
  
-</Clause></Schedule></ENData></Document>
+</TextSection></ENData></Document>

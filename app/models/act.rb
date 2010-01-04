@@ -32,7 +32,6 @@ class Act < ActiveRecord::Base
     end
 
     def get_legislation title, number=nil
-      return nil # while legislation.gov.uk is down
       if number
         Legislation::UK.find(title, number)
       else
@@ -209,7 +208,7 @@ class Act < ActiveRecord::Base
       if url
         self.opsi_url = url
         if opsi_url[/ukpga/]
-          # self.legislation_url = "http://www.legislation.gov.uk/ukpga/#{year}/#{number}"
+          self.legislation_url = "http://www.legislation.gov.uk/ukpga/#{year}/#{number}"
         end
         populate_act_sections_from_opsi_url
       else
@@ -228,9 +227,9 @@ class Act < ActiveRecord::Base
           base = opsi_url[/^(.+\/)[^\/]+$/,1]
           section_title = span.next_sibling.inner_text
 
-          act_sections.build :number => section_number, :title => section_title,
-              :opsi_url => "#{base}#{path}"
-              # :legislation_url => "#{legislation_url}/section/#{section_number}"
+          act_sections.build :section_number => section_number, :title => section_title,
+              :opsi_url => "#{base}#{path}",
+              :legislation_url => "#{legislation_url}/section/#{section_number}"
         else
           warn "cannot find opsi url for section #{section_number} of #{name}"
         end
