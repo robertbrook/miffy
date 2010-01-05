@@ -63,8 +63,8 @@ class Act < ActiveRecord::Base
           create! :name => name
         end
       else
-        warn "unable to find by name: #{name}"
-        nil
+        warn "creating from name: #{name}"
+        create! :name => name
       end
     end
   end
