@@ -71,8 +71,8 @@ module MifParserUtils
     haml.gsub!(COMPRESS_WHITESPACE_2, '\1' + "<\n")
     haml.gsub!(COMPRESS_WHITESPACE_3, '\1' + "<\n")
 
-    haml.gsub!(TOGGLE_SHOW_REGEXP,   '\1= link_to_function \'<img alt="" id="\5_img" src="/images/down-arrow.png">\', "$(\'\5\').toggle();imgswap(\'\5_img\')"' + "" + '\1%span.ClauseTitle_text<' + "\n" + '\2= link_to_function "\3", "$(\'\5\').toggle();imgswap(\'\5_img\')"' + "\n" + '\4#\5.ClauseText')
-    haml.gsub!(TOGGLE_SHOW_REGEXP_2, '\1= link_to_function \'<img alt="" id="\5_img" src="/images/down-arrow.png">\', "$(\'\5\').toggle();imgswap(\'\5_img\')"' + "" + '\1%span.ClauseTitle_text<' + "\n" + '\2= link_to_function "\3", "$(\'\5\').toggle();imgswap(\'\5_img\')"' + "\n" + '\4#\5.ClauseTextWithExplanatoryNote')
+    haml.gsub!(TOGGLE_SHOW_REGEXP,   '\1= link_to_function \'<img alt="" id="\5_img" src="/images/down-arrow.png">\', "$(\'#\5\').toggle();imgswap(\'\5_img\')"' + "" + '\1%span.ClauseTitle_text<' + "\n" + '\2= link_to_function "\3", "$(\'#\5\').toggle();imgswap(\'\5_img\')"' + "\n" + '\4#\5.ClauseText')
+    haml.gsub!(TOGGLE_SHOW_REGEXP_2, '\1= link_to_function \'<img alt="" id="\5_img" src="/images/down-arrow.png">\', "$(\'#\5\').toggle();imgswap(\'\5_img\')"' + "" + '\1%span.ClauseTitle_text<' + "\n" + '\2= link_to_function "\3", "$(\'#\5\').toggle();imgswap(\'\5_img\')"' + "\n" + '\4#\5.ClauseTextWithExplanatoryNote')
 
     haml.gsub!(COMPRESS_WHITESPACE_4, '\1' + "\n" + '\2')
     haml.gsub!(COMPRESS_WHITESPACE_5, '\1\2<>' + "\n" )

@@ -126,9 +126,9 @@ describe MifParserUtils do
       #1112590.ClauseText
 |
       @utils.format_haml(text).should == %Q|
-          = link_to_function '<img alt="" id="1112590_img" src="/images/down-arrow.png">', "$('1112590').toggle();imgswap('1112590_img')"
+          = link_to_function '<img alt="" id="1112590_img" src="/images/down-arrow.png">', "$('#1112590').toggle();imgswap('1112590_img')"
           %span.ClauseTitle_text<
-            = link_to_function "Reports on implementation of Law Commission proposals", "$('1112590').toggle();imgswap('1112590_img')"
+            = link_to_function "Reports on implementation of Law Commission proposals", "$('#1112590').toggle();imgswap('1112590_img')"
       #1112590.ClauseText
 |
     end
@@ -140,9 +140,9 @@ describe MifParserUtils do
       #1112590en.ClauseTextWithExplanatoryNote
 |
       @utils.format_haml(text).should == %Q|
-          = link_to_function '<img alt="" id="1112590en_img" src="/images/down-arrow.png">', "$('1112590en').toggle();imgswap('1112590en_img')"
+          = link_to_function '<img alt="" id="1112590en_img" src="/images/down-arrow.png">', "$('#1112590en').toggle();imgswap('1112590en_img')"
           %span.ClauseTitle_text<
-            = link_to_function "Reports on implementation of Law Commission proposals", "$('1112590en').toggle();imgswap('1112590en_img')"
+            = link_to_function "Reports on implementation of Law Commission proposals", "$('#1112590en').toggle();imgswap('1112590en_img')"
       #1112590en.ClauseTextWithExplanatoryNote
 |
     end

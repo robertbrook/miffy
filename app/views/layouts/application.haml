@@ -18,7 +18,7 @@
         = stylesheet_link_tag stylesheet_path(target_file, @ens) + '_print', :media => 'print'
       -if page_class.include? 'act'
         = stylesheet_link_tag 'act', :media => 'screen, projection'
-    = javascript_include_tag "prototype", "application", :cache => true 
+    = javascript_include_tag "jquery", "imgswap", "tooltip", :cache => true 
     - if page_class.include? 'convert'      
       %link{ :href=>"convert?file=" + @mif_file.escaped_path + "&format=text", :rel=>"alternate", :title=>"Text output", :type=>"text/plain" }
   %body{:class => page_class, :id => "miffy-parliament-uk"}
