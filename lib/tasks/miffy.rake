@@ -10,5 +10,5 @@ namespace :miffy do
     puts "clearing #{count} act#{count == 1 ? '' : 's'} from db"
     Act.find_each { |act| act.destroy }
   end
-
+  
 end
