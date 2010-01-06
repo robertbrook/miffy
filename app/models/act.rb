@@ -34,8 +34,10 @@ class Act < ActiveRecord::Base
     def get_legislation title, number=nil
       return nil # while legislation.gov.uk is down
       if number
+        puts "calling Legislation API with title and number - searching for #{title} / #{number}"
         Legislation::UK.find(title, number)
       else
+        puts "calling Legislation API with title - searching for #{title}"
         Legislation::UK.find(title)
       end
     end
