@@ -325,7 +325,7 @@ class ActResolver < ExternalReferenceResolver
   def mention_attributes
     act_mentions = []
     each_reference do |reference, start_position, end_position|
-      puts reference if reference.include?('Communications')
+      puts reference if reference.include?('Communications') unless RAILS_ENV == "test"
       name, year = name_and_year(reference.gsub(/#{MARKUP}/,''))
       section_number = name[/#{BASE_SECTION_PATTERN}/,4]
       act_mentions << ActMention.new( {:name => name.gsub(/#{MARKUP}/,'').gsub(/#{BASE_SECTION_PATTERN}/,''),

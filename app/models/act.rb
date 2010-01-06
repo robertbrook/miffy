@@ -34,10 +34,10 @@ class Act < ActiveRecord::Base
     def get_legislation title, number=nil
       #return nil # while legislation.gov.uk is down
       if number
-        puts "calling Legislation API with title and number - searching for #{title} / #{number}"
+        puts "calling Legislation API with title and number - searching for #{title} / #{number}" unless RAILS_ENV == "test"
         Legislation::UK.find(title, number)
       else
-        puts "calling Legislation API with title - searching for #{title}"
+        puts "calling Legislation API with title - searching for #{title}" unless RAILS_ENV == "test"
         Legislation::UK.find(title)
       end
     end
@@ -61,11 +61,11 @@ class Act < ActiveRecord::Base
         if act
           act
         else
-          warn "creating from name: #{name}"
+          warn "creating from name: #{name}" unless RAILS_ENV == "test"
           create! :name => name
         end
       else
-        warn "creating from name: #{name}"
+        warn "creating from name: #{name}" unless RAILS_ENV == "test"
         create! :name => name
       end
     end
