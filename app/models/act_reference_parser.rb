@@ -149,6 +149,7 @@ class ActReferenceParser
             else
               name = "#{mention.name} #{mention.year}"
               act = Act.from_name name
+              title = ""
 
               if act
                 if mention.section_number && (section = act.find_section_by_number(mention.section_number))
@@ -156,9 +157,17 @@ class ActReferenceParser
                 else
                   url = act.statutelaw_url ? act.statutelaw_url : act.opsi_url
                 end
+                
+                if section
+                  title = section.label
+                  title = section.statutelaw_url ? title = "#{title} on the UK Statute Law Database website" : title = "#{title} on the Office of Public Sector Information website"
+                else
+                  title = act.title
+                  title = act.statutelaw_url ? title = "#{title} on the UK Statute Law Database website" : title = "#{title} on the Office of Public Sector Information website"
+                end
 
                 if url && !mention.text.include?('<Xref')
-                  link = %Q|<a href="#{url}" rel="cite">#{mention.text}</a>|
+                  link = %Q|<a href="#{url}" rel="cite" title="#{title}">#{mention.text}</a>|
                   new_text = "#{preceding_text}#{link}#{following_text}"
                   clause.inner_html = new_text
                   mentions = true

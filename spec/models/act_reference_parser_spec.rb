@@ -84,6 +84,7 @@ describe ActReferenceParser do
       act = mock(Act, :statutelaw_url => 'http://www.opsi.gov.uk/acts/acts2003/ukpga_20030021_en_1.htm')
       act.stub!(:find_section_by_number).and_return nil
       Act.stub!(:from_name).with('Communications Act 2003').and_return act
+      act.stub!(:title).and_return('Communications Act 2003')
 
       @result = @parser.parse_xml(fixture('DigitalEconomy/clause_with_xref_id_in_section_reference.xml'))
     end
@@ -98,7 +99,7 @@ describe ActReferenceParser do
       @parser = ActReferenceParser.new
       Act.stub!(:find_by_legislation_url).and_return nil
       Act.stub!(:find_by_name).and_return nil
-      Act.stub!(:from_name).with('Video Recordings Act 1984').and_return mock(Act, :statutelaw_url => 'http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61')
+      Act.stub!(:from_name).with('Video Recordings Act 1984').and_return mock(Act, :statutelaw_url => 'http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61', :title => 'Video Recordings Act 1984')
 
       @result = @parser.parse_xml(fixture('DigitalEconomy/clauses_act_name_on_two_lines.xml'))
       File.open(RAILS_ROOT + '/spec/fixtures/DigitalEconomy/clauses_act_name_on_two_lines.act.xml','w') {|f| f.write @result }
@@ -109,7 +110,7 @@ describe ActReferenceParser do
     end
 
     it 'should make full act name an anchor link' do
-      @result.should include('<a href="http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61" rel="cite">Video <ParaLineStart LineNum="11"></ParaLineStart>Recordings Act 1984</a>')
+      @result.should include('<a href="http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61" title="Video Recordings Act 1984 on the UK Statute Law Database website" rel="cite">Video <ParaLineStart LineNum="11"></ParaLineStart>Recordings Act 1984</a>')
     end
   end
 
@@ -122,7 +123,7 @@ describe ActReferenceParser do
       @section_url = 'http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61/3'
 
       section = mock(ActSection,
-        :statutelaw_url => @section_url)
+        :statutelaw_url => @section_url, :label => 'Section 3: General duties of OFCOM')
       act = mock(Act,
         :statutelaw_url => 'http://www.statutelaw.gov.uk/documents/1996/61/ukpga/c61')
       act.stub!(:find_section_by_number).and_return section
@@ -133,7 +134,7 @@ describe ActReferenceParser do
     end
 
     it 'should not mark up part of act name' do
-      @result.should have_tag('a[rel="cite"][href="' + @section_url + '"]', :text => 'Section 3 of the Communications Act 2003')
+      @result.should have_tag('a[rel="cite"][href="' + @section_url + '"]', :text => 'Section 3 of the Communications Act 2003', :title => 'Section 3: General duties of OFCOM on the UK Statute Law Database website')
     end
   end
 
