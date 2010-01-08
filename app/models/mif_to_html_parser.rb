@@ -270,7 +270,10 @@ class MifToHtmlParser
   def add_xref_link node
     if node['anchor-ref']
       id = get_id_attr node
-      add %Q|<a#{id} class="#{node.name}" href="##{node['anchor-ref']}">|
+      
+      title = parse_xref_link_title(node['anchor-ref'])
+      
+      add %Q|<a#{id} class="#{node.name}" href="##{node['anchor-ref']}" title="#{title}">|
       @in_hyperlink = true
       node_children_to_html(node)
       @in_hyperlink = false
@@ -278,6 +281,26 @@ class MifToHtmlParser
     else
       add_html_element 'span', node
     end
+  end
+  
+  def parse_xref_link_title(anchor_ref)
+    link = ""
+    parts = anchor_ref.split("-")
+    for index in 0...parts.size
+      case parts[index]
+        when /^clause(.*)/
+          link += "Clause #{$1} "
+        when /^schedule(.*)/
+          link += "Schedule #{$1} "
+        when /^amendment/
+          link += ", Amendment "
+        when /^(\d+.*)$/
+          link += "Subsection #{$1} "
+        when /^(\D+)/
+          link += "paragraph #{$1} "
+      end
+    end
+    link.gsub(' ,', ',').strip()
   end
 
   def get_id_attr node
