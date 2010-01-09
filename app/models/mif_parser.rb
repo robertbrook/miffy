@@ -125,6 +125,35 @@ class MifParser
       xml
     end
   end
+  
+  def parse_toc_xml xml
+    contents_xml = ""
+    doc = Hpricot.XML xml
+    bill_title = (doc/'BillData/BillTitle/text()').to_s
+    contents_xml = "<TOC><Title>#{bill_title}</Title><Introduction />"
+    (doc/'BillData/Clauses').each do |clauses|
+      clauses.traverse_element do |element|
+        case element.name
+          when 'Clause'
+            number = (element/'ClauseTitle/ClauseTitle_PgfTag/PgfNumString/PgfNumString_1/text()')
+            title  = (element/'ClauseTitle/ClauseTitle_PgfTag/ClauseTitle_text/text()').to_s
+            unless title.blank?
+              contents_xml += "<Clause>#{number.first.to_s}. #{title}</Clause>"
+            end
+          when 'CrossHeading'
+            unless element.parent.name == "Amendment"
+              title = (element/'CrossHeadingTitle/text()')
+              contents_xml += "<CrossHeading>#{title.first.to_s}</CrossHeading>"
+            end
+          when 'Part'
+            number = (element/'PNum_PgfTag/PgfNumString/PgfNumString_0/text()').to_s
+            title  = (element/'PartTitle/text()').to_s
+            contents_xml += "<Part>#{number}: #{title}</Part>"
+        end
+      end
+    end
+    contents_xml += "</TOC>"
+  end
 
   def initialize_doc_state doc
     @bill_attributes = get_bill_attributes doc

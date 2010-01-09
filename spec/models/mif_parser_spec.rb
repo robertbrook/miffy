@@ -105,6 +105,17 @@ describe MifParser do
     end
   end
 
+  describe 'when parsing Clauses XML as TOC xml' do
+    before(:all) do
+      @parser = MifParser.new
+      @result = @parser.parse_toc_xml(fixture('Clauses.xml'))
+    end
+    
+    it 'should create XML' do
+      @result.should == "<TOC><Title>Law Commission Bill [HL]</Title><Introduction /><Clause>1. Reports on implementation of Law Commission proposals</Clause><Clause>2. Protocol about the Law Commission’s work</Clause><Clause>3. Commencement and short title</Clause></TOC>"
+    end
+  end
+
   describe 'when parsing Clauses MIF XML file' do
     before(:all) do
       @parser = MifParser.new
