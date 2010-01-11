@@ -148,7 +148,7 @@ class MifParser
           when 'Part'
             number = (element/'PNum_PgfTag/PgfNumString/PgfNumString_0/text()').to_s
             title  = (element/'PartTitle/text()').to_s
-            contents_xml += %Q|<Part number="#{number}">#{number}: #{title}</Part>|
+            contents_xml += %Q|<Part number="#{number.gsub('Part', '').strip}">#{number}: #{title}</Part>|
         end
       end
     end

@@ -105,19 +105,50 @@ describe MifParser do
     end
   end
 
-  describe 'when parsing Clauses XML as TOC xml' do
+  describe 'when parsing Clauses XML to TOC xml' do
     before(:all) do
       @parser = MifParser.new
       @result = @parser.parse_toc_xml(fixture('Clauses.xml'))
     end
     
-    it 'should create XML' do
+    it 'should create XML with expected Clauses' do
       @result.should have_tag('TOC') do
         with_tag('Title', :text => 'Law Commission Bill [HL]')
         with_tag('Clause[number="1"]', :text => '1. Reports on implementation of Law Commission proposals')
         with_tag('Clause[number="2"]', :text => "2. Protocol about the Law Commission’s work")
         with_tag('Clause[number="3"]', :text => "3. Commencement and short title")
       end
+    end
+  end
+
+  describe 'when parsing Clauses XML to TOC xml' do
+    before(:all) do
+      @parser = MifParser.new
+      @result = @parser.parse_toc_xml(fixture('finance/2R printed/Clauses.xml'))
+    end
+    
+    it 'should create XML with expected Parts' do
+      @result.should have_tag('TOC') do
+        with_tag('Part[number="1"]', :text => "Part 1: Charges, rates, allowances, reliefs etc")
+        with_tag('Part[number="2"]', :text => "Part 2: Income tax, corporation tax and capital gains tax - general")
+        with_tag('Part[number="3"]', :text => "Part 3: Capital allowances")
+        with_tag('Part[number="4"]', :text => "Part 4: Pensions")
+        with_tag('Part[number="5"]', :text => "Part 5: Stamp taxes")
+        with_tag('Part[number="6"]', :text => "Part 6: Oil")
+        with_tag('Part[number="7"]', :text => "Part 7: Administration")
+        with_tag('Part[number="8"]', :text => "Part 8: Miscellaneous")
+        with_tag('Part[number="9"]', :text => "Part 9: Final provisions")
+      end
+    end
+    
+    it 'should create XML with CrossHeadings' do
+      doc = Hpricot.XML @result
+      crossheadings = (doc/'CrossHeading/text()')
+      crossheadings[0].to_s.should == "Income tax"
+      crossheadings[1].to_s.should == "Corporation tax"
+      crossheadings[2].to_s.should == "Capital gains tax"
+      crossheadings[3].to_s.should == "Inheritance tax"
+      crossheadings[4].to_s.should == "Alcohol and tobacco"
     end
   end
 
