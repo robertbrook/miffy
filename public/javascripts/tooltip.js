@@ -12,23 +12,27 @@
 
 this.tooltip = function(){	
 	/* CONFIG */		
-		xOffset = 35;
-		yOffset = 15;		
+		xOffset = 32;
+		yOffset = 20;		
 		// these 2 variable determine popup's distance from the cursor
 		// you might want to adjust to get the right result		
 	/* END CONFIG */		
-	$("a.tooltip").hover(function(e){											  
-		this.t = this.title;
-		this.title = "";									  
-		$("body").append("<p id='tooltip'>"+ this.t +"</p>");
-		$("#tooltip")
-		  .css("position", "absolute")
-			.css("top",(e.pageY - xOffset) + "px")
-			.css("left",(e.pageX + yOffset) + "px")
-			.css("background", "white")
-			.css("border", "1px solid black")
-			.css("padding", "2px")
-			.fadeIn("fast");		
+	$("#container a").hover(function(e){
+		if(this.title != '' && this.title != 'undefined') {
+			this.t = this.title;
+			this.title = "";									  
+			$("body").append("<p id='tooltip'>"+ this.t +"</p>");
+			$("#tooltip")
+				.css("top",(e.pageY - xOffset) + "px")
+				.css("left",(e.pageX + yOffset) + "px")
+				.css("border", "1px solid black")
+				.css("position", "absolute")
+				.css("font-family", "Verdana, Arial, sans-serif")
+				.css("background", "white")
+				.css("padding", "0.2em")
+				.css("font-size", "0.8em")
+				.fadeIn("fast");
+			}
     },
 	function(){
 		this.title = this.t;		
