@@ -135,10 +135,10 @@ class MifParser
       clauses.traverse_element do |element|
         case element.name
           when 'Clause'
-            number = (element/'ClauseTitle/ClauseTitle_PgfTag/PgfNumString/PgfNumString_1/text()')
+            number = (element/'ClauseTitle/ClauseTitle_PgfTag/PgfNumString/PgfNumString_1/text()').first.to_s
             title  = (element/'ClauseTitle/ClauseTitle_PgfTag/ClauseTitle_text/text()').to_s
             unless title.blank?
-              contents_xml += "<Clause>#{number.first.to_s}. #{title}</Clause>"
+              contents_xml += %Q|<Clause number="#{number}">#{number}. #{title}</Clause>|
             end
           when 'CrossHeading'
             unless element.parent.name == "Amendment"
@@ -148,7 +148,7 @@ class MifParser
           when 'Part'
             number = (element/'PNum_PgfTag/PgfNumString/PgfNumString_0/text()').to_s
             title  = (element/'PartTitle/text()').to_s
-            contents_xml += "<Part>#{number}: #{title}</Part>"
+            contents_xml += %Q|<Part number="#{number}">#{number}: #{title}</Part>|
         end
       end
     end

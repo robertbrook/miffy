@@ -112,7 +112,12 @@ describe MifParser do
     end
     
     it 'should create XML' do
-      @result.should == "<TOC><Title>Law Commission Bill [HL]</Title><Introduction /><Clause>1. Reports on implementation of Law Commission proposals</Clause><Clause>2. Protocol about the Law Commission’s work</Clause><Clause>3. Commencement and short title</Clause></TOC>"
+      @result.should have_tag('TOC') do
+        with_tag('Title', :text => 'Law Commission Bill [HL]')
+        with_tag('Clause[number="1"]', :text => '1. Reports on implementation of Law Commission proposals')
+        with_tag('Clause[number="2"]', :text => "2. Protocol about the Law Commission’s work")
+        with_tag('Clause[number="3"]', :text => "3. Commencement and short title")
+      end
     end
   end
 
