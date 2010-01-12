@@ -10,7 +10,7 @@ class Effect < ActiveRecord::Base
   class << self
     def load_from_csv_file path
       
-      first_line = File.open(path).readline
+      first_line = File.open("#{path}").readline
       parts = first_line.split(',')
       if !(parts[0].strip == "Date" &&
          parts[1].strip == "Affected Legislation (Act)" &&
@@ -24,7 +24,7 @@ class Effect < ActiveRecord::Base
         raise "error: unexpected csv header format for effects"
       end
       
-      FasterCSV.foreach(path, {:headers => true}) do |row|
+      FasterCSV.foreach("#{path}", {:headers => true}) do |row|
         bill = Bill.find_by_name(row["Affecting Legislation (Year and Chapter or Number)"])
         if bill
           Effect.create(
