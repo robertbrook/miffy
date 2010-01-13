@@ -29,10 +29,10 @@ class Effect < ActiveRecord::Base
         if bill
           Effect.create(
             :bill_id => bill.id,
-            :affected_legislation => row["Affected Legislation (Act)"],
-            :affected_provision => row["Affected Provision"],
-            :type_of_effect => row["Type of Effect"],
-            :affecting_provision => row["Affecting Provision "]
+            :bill_provision => row["Affecting Provision "],
+            :affected_act => row["Affected Legislation (Act)"],
+            :affected_act_provision => row["Affected Provision"],
+            :type_of_effect => row["Type of Effect"]
           )
         end
       end    
