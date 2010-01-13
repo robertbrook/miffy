@@ -37,13 +37,15 @@ class Effect < ActiveRecord::Base
           end
           
           while !reference_to_bill.blank? && html_ref
-            Effect.create(
-              :bill_id => bill.id,
-              :bill_provision => html_ref,
-              :affected_act => row["Affected Legislation (Act)"],
-              :affected_act_provision => row["Affected Provision"],
-              :type_of_effect => row["Type of Effect"]
-            )
+            unless Effect.find_by_bill_id_and_bill_provision_and_affected_act_and_affected_act_provision_and_type_of_effect(bill.id, html_ref, row["Affected Legislation (Act)"], row["Affected Provision"], row["Type of Effect"])
+              Effect.create(
+                :bill_id => bill.id,
+                :bill_provision => html_ref,
+                :affected_act => row["Affected Legislation (Act)"],
+                :affected_act_provision => row["Affected Provision"],
+                :type_of_effect => row["Type of Effect"]
+              )
+            end
             reference_to_bill.gsub!(reference_parsed, '').strip
             unless reference_to_bill.blank?
               response = parse_bill_provision_reference(reference_to_bill)
