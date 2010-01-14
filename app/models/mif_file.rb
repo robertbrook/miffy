@@ -288,7 +288,11 @@ class MifFile < ActiveRecord::Base
   def has_explanatory_notes?
     bill && bill.has_explanatory_notes?
   end
-
+  
+  def has_effects?
+    bill && bill.has_effects?
+  end
+  
   def haml_template_exists? options={}
     File.exist?(haml_template(options)) && html_page_title
   end

@@ -54,6 +54,10 @@ class Bill < ActiveRecord::Base
   def has_explanatory_notes?
     !note_by_clauses.empty? || !note_by_schedules.empty?
   end
+  
+  def has_effects?
+    !effects.empty?
+  end
 
   protected
     def populate_parliament_url
