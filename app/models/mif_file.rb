@@ -321,7 +321,8 @@ class MifFile < ActiveRecord::Base
 
       options = {:clauses_file => clauses_file,
           :format => :haml, :body_only => true,
-          :interleave_notes => options[:interleave_notes]}
+          :interleave_notes => options[:interleave_notes],
+          :effects => options[:effects]}
       unless options[:clauses_file]
         options.merge!({:clauses_file => File.dirname(path)+'/Clauses.mif' })
       end
