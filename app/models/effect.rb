@@ -8,7 +8,7 @@ class Effect < ActiveRecord::Base
   validates_presence_of :bill_id
   
   class << self
-    def load_from_csv_file path
+    def load path
       
       first_line = File.open("#{path}").readline
       parts = first_line.split(',')
