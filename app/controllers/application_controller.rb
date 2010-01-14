@@ -24,6 +24,7 @@ class ApplicationController < ActionController::Base
 
     @mif_files = MifFile.load(paths)
     @en_files = ExplanatoryNotesFile.load(en_paths)
+    Effect.load(RAILS_ROOT + '/spec/fixtures/DigitalEconomy/effects/Digital Economy Bill Table of Effects.csv')
 
     @bill_names = @mif_files.collect(&:bill).collect{|x| x ? x.name : ''}.uniq.sort
     @files_by_bill = @mif_files.group_by{|x| x.bill ? x.bill.name : nil}
