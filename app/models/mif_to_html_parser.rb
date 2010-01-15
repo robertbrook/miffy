@@ -270,16 +270,7 @@ class MifToHtmlParser
       add %Q|<a name="#{node_ref}" />|
     end
     if @effects
-      effect_html = ''
-      if node_ref && @bill && @bill.has_effects?
-        effects = Effect.find_all_by_bill_id_and_bill_provision(@bill.id, node_ref)
-        if effects
-          effects.each do |effect|
-            effect_html += %Q|<div class="effect">Affects #{effect.affected_act} at #{effect.affected_act_provision} (#{effect.type_of_effect})</div>|
-          end
-          add effect_html unless effect_html == ''
-        end
-      end
+      render_effects(node_ref)
     end
     
     if name != 'hr'
@@ -291,6 +282,31 @@ class MifToHtmlParser
     end
 
     @in_para_line = false unless @last_css_class[/^(Bold|Italic|SmallCaps)$/]
+  end
+
+  def render_effects(node_ref)
+    effect_html = ''
+    if node_ref && @bill && @bill.has_effects?
+      effects = Effect.find_all_by_bill_id_and_bill_provision(@bill.id, node_ref)
+      if effects
+        effects.each do |effect|
+          effect_type = ''
+          case effect.type_of_effect
+            when /inserted/
+              effect_type = 'insertion'
+            when /amended/
+              effect_type = 'amendment'
+            when /substituted/
+              effect_type = 'substitution'
+            when /repealed/
+              effect_type = 'repeal'
+          end
+          effect_type = " #{effect_type}" unless effect_type.blank?
+          effect_html += %Q|<div class="effect#{effect_type}">affects #{effect.affected_act} at #{effect.affected_act_provision} (#{effect.type_of_effect})</div>|
+        end
+        add effect_html unless effect_html == ''
+      end
+    end
   end
 
   def find_bill_url bill_name
@@ -424,16 +440,7 @@ class MifToHtmlParser
 
       add %Q|<div class="#{css_class(node)}" id="#{node['id']}">|
       if @effects
-        effect_html = ''
-        if @parent_href_name && @bill && @bill.has_effects?
-          effects = Effect.find_all_by_bill_id_and_bill_provision(@bill.id, @parent_href_name)
-          if effects
-            effects.each do |effect|
-              effect_html += %Q|<div class="effect">Affects #{effect.affected_act} at #{effect.affected_act_provision} (#{effect.type_of_effect})</div>|
-            end
-            add effect_html unless effect_html == ''
-          end
-        end
+        render_effects(@parent_href_name)
       end
       node_children_to_html(node)
       if @explanatory_note && !@in_amendment
@@ -477,16 +484,7 @@ class MifToHtmlParser
 
       add %Q|<div class="#{css_class(node)}" id="#{node['id']}">|
       if @effects
-        effect_html = ''
-        if @parent_href_name && @bill && @bill.has_effects?
-          effects = Effect.find_all_by_bill_id_and_bill_provision(@bill.id, @parent_href_name)
-          if effects
-            effects.each do |effect|
-              effect_html += %Q|<div class="effect">Affects #{effect.affected_act} at #{effect.affected_act_provision} (#{effect.type_of_effect})</div>|
-            end
-            add effect_html unless effect_html == ''
-          end
-        end
+        render_effects(@parent_href_name)
       end
       node_children_to_html(node)
       if @explanatory_note && !@in_amendment
