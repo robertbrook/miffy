@@ -57,6 +57,7 @@ class MifToHtmlParser
 
   def generate_html doc, options
     @interleave = options[:interleave_notes]
+    @effects = options[:effects]
 
     if options[:body_only]
       @html = []
@@ -232,6 +233,15 @@ class MifToHtmlParser
     add_trailing_para_line_anchor
   end
 
+  def check_for_amendment_ancestor(node)
+    current_node = node
+    while current_node.parent && current_node.parent.name != 'BillData'
+      return true if current_node.parent.name == 'Amendment'
+      current_node = current_node.parent
+    end
+    return false
+  end
+  
   def add_html_element name, node
     tag = []
     tag << %Q|<#{name} class="#{css_class(node)}"|
@@ -245,6 +255,24 @@ class MifToHtmlParser
 
     add tag.join('')
 
+    #@in_amendment = (node.parent.name == 'Amendment' || node.parent.parent.name == 'Amendment')
+    @in_amendment = check_for_amendment_ancestor(node)
+
+    node_ref = nil
+    if !@in_amendment && css_class(node) == 'SubSection'
+      @subsection_number = (node/'PgfNumString/PgfNumString_1/text()').first.to_s.gsub("(","").gsub(")","").strip
+      node_ref = "#{@parent_href_name}-#{@subsection_number}"
+      add %Q|<a name="#{node_ref}" />|
+    end
+    if !@in_amendment && css_class(node) == 'Para'
+      @para_ref = (node/'PgfNumString/PgfNumString_1/text()').first.to_s.gsub("(","").gsub(")","").strip
+      node_ref = "#{@parent_href_name}-#{@subsection_number}-#{@para_ref}"
+      add %Q|<a name="#{node_ref}" />|
+    end
+    if @effects
+      render_effects(node_ref)
+    end
+    
     if name != 'hr'
       if @in_amendment && node['anchor']
         add %Q|<a name="#{node['anchor']}"/>|
@@ -254,6 +282,31 @@ class MifToHtmlParser
     end
 
     @in_para_line = false unless @last_css_class[/^(Bold|Italic|SmallCaps)$/]
+  end
+
+  def render_effects(node_ref)
+    effect_html = ''
+    if node_ref && @bill && @bill.has_effects?
+      effects = Effect.find_all_by_bill_id_and_bill_provision(@bill.id, node_ref)
+      if effects
+        effects.each do |effect|
+          effect_type = ''
+          case effect.type_of_effect
+            when /inserted/
+              effect_type = 'insertion'
+            when /amended/
+              effect_type = 'amendment'
+            when /substituted/
+              effect_type = 'substitution'
+            when /repealed/
+              effect_type = 'repeal'
+          end
+          effect_type = " #{effect_type}" unless effect_type.blank?
+          effect_html += %Q|<div class="effect#{effect_type}">affects #{effect.affected_act} at #{effect.affected_act_provision} (#{effect.type_of_effect})</div>|
+        end
+        add effect_html unless effect_html == ''
+      end
+    end
   end
 
   def find_bill_url bill_name
@@ -380,11 +433,15 @@ class MifToHtmlParser
 
     unless (@clause_number.blank? || clause_id.blank?) || @in_amendment
       clause_name = "clause#{@clause_number}"
+      @parent_href_name = clause_name
       @clause_anchor_start = %Q|<a id="clause_#{clause_id}" name="#{clause_name}" href="##{clause_name}">|
 
       @explanatory_note = find_clause_explanatory_note unless @in_amendment
 
       add %Q|<div class="#{css_class(node)}" id="#{node['id']}">|
+      if @effects
+        render_effects(@parent_href_name)
+      end
       node_children_to_html(node)
       if @explanatory_note && !@in_amendment
         add %Q|<div class="explanatory_note"><div class="explanatory_note_text"><span class="en_header">Explanatory Note:</span>#{@explanatory_note.html_note_text}</div></div>|
@@ -420,11 +477,15 @@ class MifToHtmlParser
 
     unless (@schedule_number.blank? || schedule_id.blank?) || @in_amendment
       schedule_name = "schedule#{@schedule_number}"
+      @parent_href_name = schedule_name
       @schedule_anchor_start = %Q|<a id="schedule_#{schedule_id}" name="#{schedule_name}" href="##{schedule_name}">|
 
       @explanatory_note = find_schedule_explanatory_note unless @in_amendment
 
       add %Q|<div class="#{css_class(node)}" id="#{node['id']}">|
+      if @effects
+        render_effects(@parent_href_name)
+      end
       node_children_to_html(node)
       if @explanatory_note && !@in_amendment
         add %Q|<div class="explanatory_note"><div class="explanatory_note_text"><span class="en_header">Explanatory Note:</span>#{@explanatory_note.html_note_text}</div></div>|

@@ -24,6 +24,7 @@ class ApplicationController < ActionController::Base
 
     @mif_files = MifFile.load(paths)
     @en_files = ExplanatoryNotesFile.load(en_paths)
+    Effect.load(RAILS_ROOT + '/spec/fixtures/DigitalEconomy/effects/Digital Economy Bill Table of Effects.csv')
 
     @bill_names = @mif_files.collect(&:bill).collect{|x| x ? x.name : ''}.uniq.sort
     @files_by_bill = @mif_files.group_by{|x| x.bill ? x.bill.name : nil}
@@ -41,11 +42,11 @@ class ApplicationController < ActionController::Base
       if mif_file
         respond_to do |format|
           format.html do
-            options = {:interleave_notes => params[:interleave], :force => params[:force]}
+            options = {:interleave_notes => params[:interleave], :force => params[:force], :effects => params[:effects]}
             template = mif_file.convert_to_haml(options)
             @mif_file = mif_file
             @title = mif_file.html_page_title
-            @show_interleave_link = mif_file.has_explanatory_notes? && !params[:interleave]
+            @show_interleave_link = mif_file.has_explanatory_notes? && !params[:interleave] && !params[:effects]
             @show_uninterleave_link = mif_file.has_explanatory_notes? && params[:interleave]
             render :template => template
           end

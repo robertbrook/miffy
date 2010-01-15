@@ -8,7 +8,7 @@ class Effect < ActiveRecord::Base
   validates_presence_of :bill_id
   
   class << self
-    def load_from_csv_file path
+    def load path
       
       first_line = File.open("#{path}").readline
       parts = first_line.split(',')
@@ -27,16 +27,55 @@ class Effect < ActiveRecord::Base
       FasterCSV.foreach("#{path}", {:headers => true}) do |row|
         bill = Bill.find_by_name(row["Affecting Legislation (Year and Chapter or Number)"])
         if bill
-          Effect.create(
-            :bill_id => bill.id,
-            :bill_provision => row["Affecting Provision "],
-            :affected_act => row["Affected Legislation (Act)"],
-            :affected_act_provision => row["Affected Provision"],
-            :type_of_effect => row["Type of Effect"]
-          )
+          reference_to_bill = row["Affecting Provision "]
+          response = parse_bill_provision_reference(reference_to_bill)
+          reference_parsed = response[1]
+          html_ref = response[0]
+          
+          unless html_ref
+            warn "unable to handle reference to bill: #{reference_to_bill} in effects file" unless RAILS_ENV == 'test'
+          end
+          
+          while !reference_to_bill.blank? && html_ref
+            unless Effect.find_by_bill_id_and_bill_provision_and_affected_act_and_affected_act_provision_and_type_of_effect(bill.id, html_ref, row["Affected Legislation (Act)"], row["Affected Provision"], row["Type of Effect"])
+              Effect.create(
+                :bill_id => bill.id,
+                :bill_provision => html_ref,
+                :affected_act => row["Affected Legislation (Act)"],
+                :affected_act_provision => row["Affected Provision"],
+                :type_of_effect => row["Type of Effect"]
+              )
+            end
+            reference_to_bill.gsub!(reference_parsed, '').strip
+            unless reference_to_bill.blank?
+              response = parse_bill_provision_reference(reference_to_bill)
+              reference_parsed = response[1]
+              html_ref = response[0]
+            end
+          end
         end
       end    
     end
+    
+    def parse_bill_provision_reference reference
+      parsed_ref = nil
+      found_ref = ""
+      
+      if reference =~ /(^s. 0*(\d+)(?:\(0*(\d+)\))?(?:\((\w+)\))?)/
+        parsed_ref = "clause#{$2}"
+        parsed_ref += "-#{$3}" if $3
+        parsed_ref += "-#{$4}" if $4
+        found_ref = $1
+      elsif reference =~ /(Sch. 0*(\d)(?: para. 0*(\d+))?(?:\(0*(\d+)\))?(?:\(0*(\w+)\))?)/
+        parsed_ref = "schedule#{$2}"
+        parsed_ref += "-#{$3}" if $3
+        parsed_ref += "-#{$4}" if $4
+        parsed_ref += "-#{$5}" if $5
+        found_ref = $1
+      end
+      [parsed_ref, found_ref]
+    end
+    
   end
   
 end

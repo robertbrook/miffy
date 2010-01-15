@@ -87,7 +87,7 @@ body.convert div#container, body.act div#container
   margin-bottom: 1%
   background: #FFFEFB
   +drop-shadow
-  min-height = !blueprint_container_size * 1.
+  min-height = !blueprint_container_size * 1.42
   
 .Table
   +column(23, true)
@@ -134,3 +134,26 @@ table.TableData
 
   td.right
     text-align: right
+    
+div.effect
+  font-size: 0.7em
+  font-family: Verdana, Helvetica, Arial, sans-serif
+  background-color: #ECE7DF
+  width: auto
+  float: right
+  padding: 0.2em 0.5em
+  border: 1px solid darkgray
+  clear: right
+  margin: 0.2em 0
+
+div.effect.insertion
+  background-color: #E4D7B4
+
+div.effect.amendment
+  background-color: #A8C7DA
+
+div.effect.substitution
+  background-color: #B5E4B4
+
+div.effect.repeal
+  background-color: #F6C268
