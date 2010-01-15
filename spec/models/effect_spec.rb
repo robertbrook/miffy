@@ -24,5 +24,5 @@ describe Effect do
       end
     end
   end
-  
+    
 end

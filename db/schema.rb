@@ -89,11 +89,11 @@ ActiveRecord::Schema.define(:version => 20100105145545) do
 
   create_table "effects", :force => true do |t|
     t.integer "bill_id"
-    t.string  "affected_legislation"
-    t.string  "affected_provision"
+    t.string  "bill_provision"
+    t.string  "affected_act"
+    t.string  "affected_act_provision"
     t.string  "type_of_effect"
-    t.string  "affecting_legislation"
-    t.string  "affecting_provision"
+    t.date    "effect_date"
   end
 
   create_table "explanatory_notes", :force => true do |t|
