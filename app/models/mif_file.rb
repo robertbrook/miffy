@@ -339,8 +339,8 @@ class MifFile < ActiveRecord::Base
     end
 
     def haml_template options
-      en_suffix = options[:interleave_notes] ? '_interleave' : ''
-      "#{results_dir}/#{path.gsub('/','_').gsub('.','_')}#{en_suffix}.haml"
+      option_suffix = options[:interleave_notes] ? '_interleave' : options[:effects] ? '_effects' : ''
+      "#{results_dir}/#{path.gsub('/','_').gsub('.','_')}#{option_suffix}.haml"
     end
 
     class Helper
