@@ -40,13 +40,13 @@
               = link_to('Inline ENs', "convert?file=#{@mif_file.path}&interleave=true&inline=true")
               &middot;
               -unless params[:effects]
-                = link_to('Show effects on Acts', "convert?file=#{@mif_file.path}&effects=true")
+                = link_to('Show effects', "convert?file=#{@mif_file.path}&effects=true")
             - elsif @show_uninterleave_link
               &middot;
               = link_to('Hide ENs', "convert?file=#{@mif_file.path}")
             -elsif params[:effects]
               &middot;
-              = link_to('Hide effects on Acts', "convert?file=#{@mif_file.path}")
+              = link_to('Hide effects', "convert?file=#{@mif_file.path}")
             - if page_class == 'application convert'
               &middot;
               =link_to('Text', "convert?file=#{@mif_file.path}&format=text")
