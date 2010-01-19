@@ -140,4 +140,88 @@ describe TocToEpubParser do
       end
     end
   end
+  
+  describe 'when asked to generate contents html from a clauses file' do
+    before(:all) do
+      parser = TocToEpubParser.new
+      @result = parser.create_contents_html(fixture('DigitalEconomy/contents.xml'))
+    end
+    
+    it 'should set a valid doctype' do
+      @result.should =~ /<\!DOCTYPE html PUBLIC \"-\/\/W3C\/\/DTD XHTML 1\.1\/\/EN\" \"http:\/\/www\.w3\.org\/TR\/xhtml11\/DTD\/xhtml11\.dtd\"\>/
+    end
+    
+    it 'should use the correct html namespace' do
+      @result.should =~ /\<html xmlns=\"http:\/\/www\.w3\.org\/1999\/xhtml\"\>/
+    end
+    
+    it 'should generate a valid head section with a title' do
+      @result.should have_tag('head') do
+        with_tag('title', :text => 'Digital Economy Bill [HL]')
+        with_tag('link', :rel => 'stylesheet', :type => 'text/css', :href => 'css/clauses.css')
+      end
+    end
+    
+    it 'should create a body element containing a div with an id "table-of-contents"' do
+      @result.should have_tag('html') do
+        with_tag('body') do
+          with_tag('div[id="table-of-contents"]')
+        end
+      end
+    end
+    
+    it 'should create an H1 element for the title' do
+      @result.should have_tag('body') do
+        with_tag('h1', :text => 'Digital Economy Bill [HL]')
+      end
+    end
+    
+    it 'should create an H2 element with the text "Table of Contents"' do
+      @result.should have_tag('body') do
+        with_tag('h2', :text => 'Table of Contents')
+      end
+    end
+    
+    it 'should create an anchor element for the introduction' do
+      @result.should have_tag('body') do
+        with_tag('a[class="intro"]', :href => 'introduction.html', :text => 'Introduction')
+      end
+    end
+    
+    it 'should create an H3 element for every Part element in the xml' do
+      parser = TocToEpubParser.new
+      xml = '<TOC><Title>Finance Bill</Title><Introduction/><Part number="1">Part 1: Charges, rates, allowances, reliefs etc</Part><CrossHeading>Income tax</CrossHeading><Clause number="1">1. Charge and main rates for 2008-09</Clause><Clause number="2">2. Personal allowances for those aged 65 and over</Clause></TOC>'
+      result = parser.create_contents_html(xml)
+      result.should have_tag('body') do
+        with_tag('h3', :text => 'Part 1: Charges, rates, allowances, reliefs etc')
+      end
+    end
+    
+    it 'should create an H4 element for every CrossHeading element in the xml' do
+      @result.should have_tag('body') do
+        with_tag('h4', :text => 'General duties of OFCOM')
+        with_tag('h4', :text => 'Online infringement of copyright')
+        with_tag('h4', :text => 'Powers in relation to internet domain registries')
+        with_tag('h4', :text => 'Channel Four Television Corporation')
+        with_tag('h4', :text => 'Independent television services')
+        with_tag('h4', :text => 'Independent radio services')
+        with_tag('h4', :text => 'Regulation of television and radio services')
+        with_tag('h4', :text => 'Video recordings')
+        with_tag('h4', :text => "Copyright and performers' property rights: licensing and penalties")
+        with_tag('h4', :text => 'Public lending right')
+        with_tag('h4', :text => 'General')
+      end
+    end
+    
+    it 'should create an anchor elemnt for every Clause element in the xml' do
+      @result.should have_tag('body') do
+        with_tag('a[href="clause1.html"]', :text => 'Clause 1. General duties of OFCOM')
+        with_tag('a[href="clause2.html"]', :text => 'Clause 2. OFCOM reports on infrastructure, internet domain names etc')
+        with_tag('a[href="clause3.html"]', :text => 'Clause 3. OFCOM reports on media content')
+        with_tag('a[href="clause4.html"]', :text => 'Clause 4. Obligation to notify subscribers of reported infringements')
+        with_tag('a[href="clause49.html"]', :text => 'Clause 49. Short title')
+      end
+    end
+  end
+  
 end
