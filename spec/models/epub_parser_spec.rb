@@ -224,4 +224,32 @@ describe EpubParser do
     end
   end
   
+  describe 'when asked to generate html for individual clauses' do
+    before(:all) do
+      @parser = EpubParser.new
+      @mif_xml = fixture('DigitalEconomy/Clauses.xml')
+    end
+    
+    it 'should return html when generating the introduction' do
+      result = @parser.create_html_page(@mif_xml, ["Clauses/Rubric", "Clauses/Prelim"])
+      result.should have_tag('html') do
+        with_tag('div[class="BillData"]') do
+          with_tag('div[class="BillTitle"]')
+          with_tag('div[class="Rubric"]')
+          with_tag('div[class="Prelim"]')
+        end
+      end
+    end
+    
+    it 'should return html when generating clause 1' do
+      result = @parser.create_html_page(@mif_xml, ["//Clause[@id='1093880']"])
+      result.should have_tag('html') do
+        with_tag('div[id="1093880"]', :class => "Clause") do
+          with_tag('div[class="ClauseTitle"]')
+          with_tag('div[class="SubSection"]')
+        end
+      end
+    end
+  end
+  
 end

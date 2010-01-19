@@ -122,6 +122,26 @@ class EpubParser
     html.to_s
   end
   
+  def create_html_page(xml, sections)
+    doc = Hpricot.XML(xml)
+    section_xml = []
+    section_xml << "<Document><BillData>"
+    section_xml << "<BillTitle>#{(doc/'BillData/BillTitle/text()').to_s}</BillTitle>"
+  
+    sections.each do |section|
+      if section[0..1] == "//"
+        section_xml << (doc/"#{section[2..-1]}").to_s
+      else
+        section_xml << (doc/"BillData/#{section}").to_s
+      end
+    end
+  
+    section_xml << "</BillData></Document>"
+    
+    mif_parser = MifToHtmlParser.new
+    mif_parser.parse_xml(section_xml.to_s, {:format => :html})
+  end
+  
   def cleanup_text text
     text.gsub!("&#xE2;&#x80;&#x99;","'")
     text.gsub!("&#xE2;&#x80;&#x9C;",'"')
