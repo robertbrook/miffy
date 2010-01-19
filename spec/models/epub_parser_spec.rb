@@ -4,11 +4,11 @@ require 'action_controller'
 require 'action_controller/assertions/selector_assertions'
 include ActionController::Assertions::SelectorAssertions
 
-describe TocToEpubParser do
+describe EpubParser do
   
   describe 'when asked to determine the file type' do
     before(:all) do
-      @parser = TocToEpubParser.new
+      @parser = EpubParser.new
     end
     
     it 'should return "clauses" when passed xml from a Clause toc file' do
@@ -32,7 +32,7 @@ describe TocToEpubParser do
   
   describe 'when asked to generate opf from a clauses file' do
     before(:all) do
-      parser = TocToEpubParser.new
+      parser = EpubParser.new
       @result = parser.create_opf(fixture('DigitalEconomy/contents.xml'))
     end
 
@@ -82,7 +82,7 @@ describe TocToEpubParser do
   
   describe 'when asked to generate ncx from a clauses file' do
     before(:all) do
-      parser = TocToEpubParser.new
+      parser = EpubParser.new
       @result = parser.create_ncx(fixture('DigitalEconomy/contents.xml'))
     end
     
@@ -143,7 +143,7 @@ describe TocToEpubParser do
   
   describe 'when asked to generate contents html from a clauses file' do
     before(:all) do
-      parser = TocToEpubParser.new
+      parser = EpubParser.new
       @result = parser.create_contents_html(fixture('DigitalEconomy/contents.xml'))
     end
     
@@ -189,7 +189,7 @@ describe TocToEpubParser do
     end
     
     it 'should create an H3 element for every Part element in the xml' do
-      parser = TocToEpubParser.new
+      parser = EpubParser.new
       xml = '<TOC><Title>Finance Bill</Title><Introduction/><Part number="1">Part 1: Charges, rates, allowances, reliefs etc</Part><CrossHeading>Income tax</CrossHeading><Clause number="1">1. Charge and main rates for 2008-09</Clause><Clause number="2">2. Personal allowances for those aged 65 and over</Clause></TOC>'
       result = parser.create_contents_html(xml)
       result.should have_tag('body') do

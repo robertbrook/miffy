@@ -1,4 +1,4 @@
-class TocToEpubParser
+class EpubParser
   
   def toc_file_type doc
     if !(doc/'TOC/Clause').to_s.blank?
