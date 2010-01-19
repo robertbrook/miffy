@@ -105,7 +105,7 @@ describe MifParser do
     end
   end
 
-  describe 'when parsing Clauses XML to TOC xml' do
+  describe 'when parsing simple Clauses XML to TOC xml' do
     before(:all) do
       @parser = MifParser.new
       @result = @parser.parse_toc_xml(fixture('Clauses.xml'))
@@ -120,8 +120,8 @@ describe MifParser do
       end
     end
   end
-
-  describe 'when parsing Clauses XML to TOC xml' do
+  
+  describe 'when parsing complex Clauses XML to TOC xml' do
     before(:all) do
       @parser = MifParser.new
       @result = @parser.parse_toc_xml(fixture('finance/2R printed/Clauses.xml'))
