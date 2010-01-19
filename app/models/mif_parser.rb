@@ -137,8 +137,9 @@ class MifParser
           when 'Clause'
             number = (element/'ClauseTitle/ClauseTitle_PgfTag/PgfNumString/PgfNumString_1/text()').first.to_s
             title  = (element/'ClauseTitle/ClauseTitle_PgfTag/ClauseTitle_text/text()').to_s
+            clause_id = element.attributes['id']
             unless title.blank?
-              contents_xml += %Q|<Clause number="#{number}">#{number}. #{title}</Clause>|
+              contents_xml += %Q|<Clause number="#{number}" clause_id="#{clause_id}">#{number}. #{title}</Clause>|
             end
           when 'CrossHeading'
             unless element.parent.name == "Amendment"
