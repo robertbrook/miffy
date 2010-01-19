@@ -79,4 +79,65 @@ describe TocToEpubParser do
       end
     end
   end
+  
+  describe 'when asked to generate ncx from a clauses file' do
+    before(:all) do
+      parser = TocToEpubParser.new
+      @result = parser.create_ncx(fixture('DigitalEconomy/contents.xml'))
+    end
+    
+    it 'should should create xml with correct namespace and metadata' do
+      resultdoc = Hpricot.XML(@result)
+      ncx_section = (resultdoc/'ncx').to_s
+      metadata_section = (resultdoc/'ncx/head').to_s
+      
+      ncx_section.should =~ /\<ncx xml:lang=\"en\" version=\"2005-1\" xmlns=\"http:\/\/www\.daisy\.org\/z3986\/2005\/ncx\/\" xmlns:calibre=\"http:\/\/calibre\.kovidgoyal\.net\/2009\/metadata\"\>/
+      
+      metadata_section.should =~ /\<meta name=\"dtb:uid\"/
+      metadata_section.should =~ /\<meta name=\"dtb:depth\" content=\"1\" \/>/
+      metadata_section.should =~ /\<meta name=\"dtb:totalPageCount\" content=\"0\" \/>/
+      metadata_section.should =~ /\<meta name=\"dtb:maxPageNumber\" content=\"0\" \/\>/
+    end
+    
+    it 'should set the docTitle' do
+      @result.should have_tag('docTitle') do
+        with_tag('text', :text => 'Digital Economy Bill [HL]')
+      end
+    end
+    
+    it 'should create a navMap structure with a navPoint for each clause' do
+      @result.should have_tag('navMap') do
+        with_tag('navPoint[id="navPoint-1"]', :playOrder => '1') do
+          with_tag('navLabel') do
+            with_tag('text', :text => 'Clause 1. General duties of OFCOM')
+          end
+          with_tag('content[src="clause1.html"]')
+        end
+        with_tag('navPoint[id="navPoint-2"]', :playOrder => '2') do
+          with_tag('navLabel') do
+            with_tag('text', :text => 'Clause 2. OFCOM reports on infrastructure, internet domain names etc')
+          end
+          with_tag('content[src="clause2.html"]')
+        end
+        with_tag('navPoint[id="navPoint-3"]', :playOrder => '3') do
+          with_tag('navLabel') do
+            with_tag('text', :text => 'Clause 3. OFCOM reports on media content')
+          end
+          with_tag('content[src="clause3.html"]')
+        end
+        with_tag('navPoint[id="navPoint-4"]', :playOrder => '4') do
+          with_tag('navLabel') do
+            with_tag('text', :text => 'Clause 4. Obligation to notify subscribers of reported infringements')
+          end
+          with_tag('content[src="clause4.html"]')
+        end
+        with_tag('navPoint[id="navPoint-49"]', :playOrder => '49') do
+          with_tag('navLabel') do
+            with_tag('text', :text => 'Clause 49. Short title')
+          end
+          with_tag('content[src="clause49.html"]')
+        end
+      end
+    end
+  end
 end
