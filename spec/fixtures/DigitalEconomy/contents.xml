@@ -3,64 +3,64 @@
   <Title>Digital Economy Bill [HL]</Title>
   <Introduction/>
   <CrossHeading>General duties of OFCOM</CrossHeading>
-  <Clause number="1">1. General duties of OFCOM</Clause>
-  <Clause number="2">2. OFCOM reports on infrastructure, internet domain names etc</Clause>
-  <Clause number="3">3. OFCOM reports on media content</Clause>
+  <Clause number="1" clause_id="1093880">1. General duties of OFCOM</Clause>
+  <Clause number="2" clause_id="1132755">2. OFCOM reports on infrastructure, internet domain names etc</Clause>
+  <Clause number="3" clause_id="1153959">3. OFCOM reports on media content</Clause>
   <CrossHeading>Online infringement of copyright</CrossHeading>
-  <Clause number="4">4. Obligation to notify subscribers of reported infringements</Clause>
-  <Clause number="5">5. Obligation to provide infringement lists to copyright owners</Clause>
-  <Clause number="6">6. Approval of code about the initial obligations</Clause>
-  <Clause number="7">7. Initial obligations code by OFCOM in the absence of an approved code</Clause>
-  <Clause number="8">8. Contents of initial obligations code</Clause>
-  <Clause number="9">9. Progress reports</Clause>
-  <Clause number="10">10. Obligations to limit internet access: assessment and preparation</Clause>
-  <Clause number="11">11. Obligations to limit internet access</Clause>
-  <Clause number="12">12. Code by OFCOM about obligations to limit internet access</Clause>
-  <Clause number="13">13. Contents of code about obligations to limit internet access</Clause>
-  <Clause number="14">14. Enforcement of obligations</Clause>
-  <Clause number="15">15. Sharing of costs</Clause>
-  <Clause number="16">16. Interpretation and consequential provision</Clause>
-  <Clause number="17">17. Power to amend copyright provisions</Clause>
+  <Clause number="4" clause_id="1154114">4. Obligation to notify subscribers of reported infringements</Clause>
+  <Clause number="5" clause_id="1154282">5. Obligation to provide infringement lists to copyright owners</Clause>
+  <Clause number="6" clause_id="1154372">6. Approval of code about the initial obligations</Clause>
+  <Clause number="7" clause_id="1154564">7. Initial obligations code by OFCOM in the absence of an approved code</Clause>
+  <Clause number="8" clause_id="1154738">8. Contents of initial obligations code</Clause>
+  <Clause number="9" clause_id="1155017">9. Progress reports</Clause>
+  <Clause number="10" clause_id="1155179">10. Obligations to limit internet access: assessment and preparation</Clause>
+  <Clause number="11" clause_id="1155291">11. Obligations to limit internet access</Clause>
+  <Clause number="12" clause_id="1155376">12. Code by OFCOM about obligations to limit internet access</Clause>
+  <Clause number="13" clause_id="1155520">13. Contents of code about obligations to limit internet access</Clause>
+  <Clause number="14" clause_id="1155809">14. Enforcement of obligations</Clause>
+  <Clause number="15" clause_id="1155920">15. Sharing of costs</Clause>
+  <Clause number="16" clause_id="1156012">16. Interpretation and consequential provision</Clause>
+  <Clause number="17" clause_id="1156286">17. Power to amend copyright provisions</Clause>
   <CrossHeading>Powers in relation to internet domain registries</CrossHeading>
-  <Clause number="18">18. Powers in relation to internet domain registries</Clause>
-  <Clause number="19">19. Appointment of manager of internet domain registry</Clause>
-  <Clause number="20">20. Application to court to alter constitution of internet domain registry</Clause>
+  <Clause number="18" clause_id="1156430">18. Powers in relation to internet domain registries</Clause>
+  <Clause number="19" clause_id="1228551">19. Appointment of manager of internet domain registry</Clause>
+  <Clause number="20" clause_id="1233967">20. Application to court to alter constitution of internet domain registry</Clause>
   <CrossHeading>Channel Four Television Corporation</CrossHeading>
-  <Clause number="21">21. Functions of C4C in relation to media content</Clause>
-  <Clause number="22">22. Monitoring and enforcing C4C&#xE2;&#x80;&#x99;s media content duties</Clause>
+  <Clause number="21" clause_id="1234083">21. Functions of C4C in relation to media content</Clause>
+  <Clause number="22" clause_id="1234398">22. Monitoring and enforcing C4C&#xE2;&#x80;&#x99;s media content duties</Clause>
   <CrossHeading>Independent television services</CrossHeading>
-  <Clause number="23">23. Determination of Channel 3 licence areas</Clause>
-  <Clause number="24">24. Initial expiry date for Channel 3 and 5 and public teletext licences</Clause>
-  <Clause number="25">25. Initial expiry date: consequential provision</Clause>
-  <Clause number="26">26. Report by OFCOM on public teletext service</Clause>
-  <Clause number="27">27. Power to remove OFCOM&#xE2;&#x80;&#x99;s duty to secure provision of public teletext service</Clause>
-  <Clause number="28">28. Appointed providers of regional or local news</Clause>
-  <Clause number="29">29. Broadcasting of programmes in Gaelic</Clause>
+  <Clause number="23" clause_id="1234704">23. Determination of Channel 3 licence areas</Clause>
+  <Clause number="24" clause_id="1234864">24. Initial expiry date for Channel 3 and 5 and public teletext licences</Clause>
+  <Clause number="25" clause_id="1234923">25. Initial expiry date: consequential provision</Clause>
+  <Clause number="26" clause_id="1235118">26. Report by OFCOM on public teletext service</Clause>
+  <Clause number="27" clause_id="1235204">27. Power to remove OFCOM&#xE2;&#x80;&#x99;s duty to secure provision of public teletext service</Clause>
+  <Clause number="28" clause_id="1235345">28. Appointed providers of regional or local news</Clause>
+  <Clause number="29" clause_id="1235598">29. Broadcasting of programmes in Gaelic</Clause>
   <CrossHeading>Independent radio services</CrossHeading>
-  <Clause number="30">30. Digital switchover</Clause>
-  <Clause number="31">31. Renewal of national radio licences</Clause>
-  <Clause number="32">32. Renewal and variation of local radio licences</Clause>
-  <Clause number="33">33. Variation of licence period following renewal</Clause>
-  <Clause number="34">34. Content and character of local sound broadcasting services</Clause>
-  <Clause number="35">35. Local radio multiplex services: frequency and licensed area</Clause>
-  <Clause number="36">36. Renewal of radio multiplex licences</Clause>
+  <Clause number="30" clause_id="1235637">30. Digital switchover</Clause>
+  <Clause number="31" clause_id="1235776">31. Renewal of national radio licences</Clause>
+  <Clause number="32" clause_id="1235875">32. Renewal and variation of local radio licences</Clause>
+  <Clause number="33" clause_id="1236189">33. Variation of licence period following renewal</Clause>
+  <Clause number="34" clause_id="1236313">34. Content and character of local sound broadcasting services</Clause>
+  <Clause number="35" clause_id="1236442">35. Local radio multiplex services: frequency and licensed area</Clause>
+  <Clause number="36" clause_id="1236543">36. Renewal of radio multiplex licences</Clause>
   <CrossHeading>Regulation of television and radio services</CrossHeading>
-  <Clause number="37">37. Application of regulatory regimes to broadcasters</Clause>
+  <Clause number="37" clause_id="1236670">37. Application of regulatory regimes to broadcasters</Clause>
   <CrossHeading>Access to electromagnetic spectrum</CrossHeading>
-  <Clause number="38">38. Payment for licences</Clause>
-  <Clause number="39">39. Enforcement of licence terms etc</Clause>
+  <Clause number="38" clause_id="1236722">38. Payment for licences</Clause>
+  <Clause number="39" clause_id="1236884">39. Enforcement of licence terms etc</Clause>
   <CrossHeading>Video recordings</CrossHeading>
-  <Clause number="40">40. Classification of video games etc</Clause>
-  <Clause number="41">41. Designated authority for video games etc</Clause>
+  <Clause number="40" clause_id="1237017">40. Classification of video games etc</Clause>
+  <Clause number="41" clause_id="1237246">41. Designated authority for video games etc</Clause>
   <CrossHeading>Copyright and performers&#xE2;&#x80;&#x99; property rights: licensing and penalties</CrossHeading>
-  <Clause number="42">42. Extension and regulation of licensing of copyright and performers&#xE2;&#x80;&#x99; rights</Clause>
-  <Clause number="43">43.  Increase of penalties relating to infringing articles or illicit recordings</Clause>
+  <Clause number="42" clause_id="1237455">42. Extension and regulation of licensing of copyright and performers&#xE2;&#x80;&#x99; rights</Clause>
+  <Clause number="43" clause_id="1237800">43.  Increase of penalties relating to infringing articles or illicit recordings</Clause>
   <CrossHeading>Public lending right</CrossHeading>
-  <Clause number="44">44. Public lending right</Clause>
+  <Clause number="44" clause_id="1237843">44. Public lending right</Clause>
   <CrossHeading>General</CrossHeading>
-  <Clause number="45">45. Power to make consequential provision etc</Clause>
-  <Clause number="46">46. Repeals</Clause>
-  <Clause number="47">47. Extent</Clause>
-  <Clause number="48">48. Commencement</Clause>
-  <Clause number="49">49. Short title</Clause>
+  <Clause number="45" clause_id="1238052">45. Power to make consequential provision etc</Clause>
+  <Clause number="46" clause_id="1238137">46. Repeals</Clause>
+  <Clause number="47" clause_id="1238170">47. Extent</Clause>
+  <Clause number="48" clause_id="1238256">48. Commencement</Clause>
+  <Clause number="49" clause_id="1238611">49. Short title</Clause>
 </TOC>
