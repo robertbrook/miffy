@@ -107,31 +107,31 @@ describe EpubParser do
     
     it 'should create a navMap structure with a navPoint for each clause' do
       @result.should have_tag('navMap') do
-        with_tag('navPoint[id="navPoint-1"]', :playOrder => '1') do
+        with_tag('navPoint[id="navPoint-3"]', :playOrder => '3') do
           with_tag('navLabel') do
             with_tag('text', :text => 'Clause 1. General duties of OFCOM')
           end
           with_tag('content[src="clause1.html"]')
         end
-        with_tag('navPoint[id="navPoint-2"]', :playOrder => '2') do
+        with_tag('navPoint[id="navPoint-4"]', :playOrder => '4') do
           with_tag('navLabel') do
             with_tag('text', :text => 'Clause 2. OFCOM reports on infrastructure, internet domain names etc')
           end
           with_tag('content[src="clause2.html"]')
         end
-        with_tag('navPoint[id="navPoint-3"]', :playOrder => '3') do
+        with_tag('navPoint[id="navPoint-5"]', :playOrder => '5') do
           with_tag('navLabel') do
             with_tag('text', :text => 'Clause 3. OFCOM reports on media content')
           end
           with_tag('content[src="clause3.html"]')
         end
-        with_tag('navPoint[id="navPoint-4"]', :playOrder => '4') do
+        with_tag('navPoint[id="navPoint-6"]', :playOrder => '6') do
           with_tag('navLabel') do
             with_tag('text', :text => 'Clause 4. Obligation to notify subscribers of reported infringements')
           end
           with_tag('content[src="clause4.html"]')
         end
-        with_tag('navPoint[id="navPoint-49"]', :playOrder => '49') do
+        with_tag('navPoint[id="navPoint-51"]', :playOrder => '51') do
           with_tag('navLabel') do
             with_tag('text', :text => 'Clause 49. Short title')
           end

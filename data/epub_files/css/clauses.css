@@ -1,0 +1,74 @@
+.BillTitle {
+  text-align: center;
+  margin-bottom: 2em;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+p.ClauseTitle_PgfTag::before
+{
+  content: "Clause ";
+}
+
+p.ClauseTitle_PgfTag .PgfNumString_1::after
+{
+  content: ": ";
+}
+
+.Amendment p.ClauseTitle_PgfTag::before,
+.Amendment p.ClauseTitle_PgfTag .PgfNumString_1::after
+{ 
+  content: "";
+}
+
+.ABillTo {
+  font-weight: bold;
+}
+
+.Abt1, .Abt2, .Abt3, .Abt4 {
+  display: inline;
+}
+
+.LongTitle {
+  margin: 1em 0;
+}
+
+.Letter, .Dropcap {
+  font-weight: bold;
+}
+
+.ClauseTitle {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.Amendment {
+  margin-left: 0.5em;
+}
+
+.Amendment .ClauseTitle {
+  font-size: 1em;
+}
+.ClauseText,
+.Para,
+.SubPara,
+.DefinitionListItem {
+  margin-left: 1em;
+}
+
+.CrossHeadingTitle {
+  font-style: italic;
+  text-align: center;
+  padding-top: 1em;
+}
+
+.PageStart,
+br {
+  display: none;
+}
+
+#table-of-contents a {
+  display: block;
+  margin-left: 1em;
+  margin-bottom: 0.2em;
+}
