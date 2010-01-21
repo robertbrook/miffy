@@ -54,12 +54,14 @@ p.ClauseTitle_PgfTag .PgfNumString_1::after
 .SubPara,
 .DefinitionListItem {
   margin-left: 1em;
+  margin-top: 0.2em;
 }
 
 .CrossHeadingTitle {
   font-style: italic;
   text-align: center;
   padding-top: 1em;
+  margin-bottom: 0.2em;
 }
 
 .PageStart,
@@ -71,4 +73,12 @@ br {
   display: block;
   margin-left: 1em;
   margin-bottom: 0.2em;
+}
+
+.LongTitle br {
+  display: none;
+}
+
+.WordsOfEnactment .Bpara br {
+  display: none;
 }

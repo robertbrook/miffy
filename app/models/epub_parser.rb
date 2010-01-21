@@ -64,33 +64,33 @@ class EpubParser
     opf = []
     if toc_file_type(doc) == 'clauses'
       opf << '<?xml version="1.0" encoding="UTF-8"?>'
-      opf << '<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="UKParliamentBills">'
+      opf << '<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="UKParliamentBills">' + "\n"
       
-      opf << '<metadata xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dc="http://purl.org/dc/elements/1.1/">'
-      opf << '<dc:language>en</dc:language>'
-      opf << '<dc:title>' + cleanup_text((doc/'TOC/Title/text()').to_s) + '</dc:title>'
-      opf << '<dc:creator>UK Parliament</dc:creator>'
-      opf << '<dc:publisher>UK Parliament</dc:publisher>'
-      opf << '<dc:rights>This Bill has been published subject to Parliamentary Copyright</dc:rights>'
-      opf << '</metadata>'
+      opf << '  <metadata xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dc="http://purl.org/dc/elements/1.1/">' + "\n"
+      opf << '    <dc:language>en</dc:language>' + "\n"
+      opf << '    <dc:title>' + cleanup_text((doc/'TOC/Title/text()').to_s) + '</dc:title>' + "\n"
+      opf << '    <dc:creator>UK Parliament</dc:creator>' + "\n"
+      opf << '    <dc:publisher>UK Parliament</dc:publisher>' + "\n"
+      opf << '    <dc:rights>This Bill has been published subject to Parliamentary Copyright</dc:rights>' + "\n"
+      opf << '  </metadata>' + "\n"
       
-      opf << '<manifest>'
-      opf << '<item id="clause-css" href="css/clauses.css" media-type="text/css" />'
-      opf << '<item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml" />'
-      opf << '<item id="contents" href="contents.html" media-type="application/xhtml+xml"/>'
-      opf << '<item id="intro" href="introduction.html" media-type="application/xhtml+xml"/>' unless (doc/'TOC/Introduction').to_s.blank?
+      opf << '  <manifest>' + "\n"
+      opf << '    <item id="clause-css" href="css/clauses.css" media-type="text/css" />' + "\n"
+      opf << '    <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml" />' + "\n"
+      opf << '    <item id="contents" href="contents.html" media-type="application/xhtml+xml"/>' + "\n"
+      opf << '    <item id="intro" href="introduction.html" media-type="application/xhtml+xml"/>' + "\n" unless (doc/'TOC/Introduction').to_s.blank?
       (doc/'TOC/Clause').each do |clause|
-        opf << '<item id="clause' + clause.attributes['number'] + '" href="clause' + clause.attributes['number'] + '.html" media-type="application/xhtml+xml" />'
+        opf << '    <item id="clause' + clause.attributes['number'] + '" href="clause' + clause.attributes['number'] + '.html" media-type="application/xhtml+xml" />' + "\n"
       end
-      opf << '</manifest>'
+      opf << '  </manifest>' + "\n"
       
-      opf << '<spine toc="ncx">'
-      opf << '<itemref idref="contents" />'
-      opf << '<itemref idref="intro" />' unless (doc/'TOC/Introduction').to_s.blank?
+      opf << '  <spine toc="ncx">' + "\n"
+      opf << '    <itemref idref="contents" />' + "\n"
+      opf << '    <itemref idref="intro" />' + "\n" unless (doc/'TOC/Introduction').to_s.blank?
       (doc/'TOC/Clause').each do |clause|
-        opf << '<itemref idref="clause' + clause.attributes['number'] + '" />'
+        opf << 'qq<itemref idref="clause' + clause.attributes['number'] + '" />' + "\n"
       end
-      opf << '</spine>'
+      opf << '  </spine>' + "\n"
       
       opf << '</package>'
     end
@@ -106,14 +106,14 @@ class EpubParser
 
       ncx << '<head>'
       uuid = `uuidgen`.strip
-      ncx << %Q|<meta name="dtb:uid" content="#{uuid}"/>|
-      ncx << '<meta name="dtb:depth" content="1"/>'
-      ncx << '<meta name="dtb:totalPageCount" content="0"/>'
-      ncx << '<meta name="dtb:maxPageNumber" content="0"/>'
-      ncx<< '</head>'
+      ncx << %Q|  <meta name="dtb:uid" content="#{uuid}"/>\n|
+      ncx << '  <meta name="dtb:depth" content="1"/>' + "\n"
+      ncx << '  <meta name="dtb:totalPageCount" content="0"/>' + "\n"
+      ncx << '  <meta name="dtb:maxPageNumber" content="0"/>' + "\n"
+      ncx<< '</head>' + "\n"
 
       ncx << '<docTitle>'
-      ncx << '<text>' + cleanup_text((doc/'TOC/Title/text()').to_s) + '</text>'
+      ncx << '  <text>' + cleanup_text((doc/'TOC/Title/text()').to_s) + '</text>' + "\n"
       ncx << '</docTitle>'
 
       ncx << '<navMap>'
@@ -157,32 +157,32 @@ class EpubParser
       html << '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">'
       html << '<html xmlns="http://www.w3.org/1999/xhtml">'
       
-      html << '<head>'
-      html << %Q|<title>#{cleanup_text((doc/'TOC/Title/text()').to_s)}</title>|
-      html << '<link rel="stylesheet" type="text/css" href="css/clauses.css" />'
+      html << '<head>' + "\n"
+      html << %Q| <title>#{cleanup_text((doc/'TOC/Title/text()').to_s)}</title>\n|
+      html << ' <link rel="stylesheet" type="text/css" href="css/clauses.css" />' + "\n"
       html << '</head>'
       
       html << '<body>'
-      html << '<div id="table-of-contents">'
+      html << ' <div id="table-of-contents">' + "\n"
       
-      html << %Q|<h1>#{cleanup_text((doc/'TOC/Title/text()').to_s)}</h1>|
-      html << %Q|<h2>Table of Contents</h2>|
+      html << %Q|   <h1>#{cleanup_text((doc/'TOC/Title/text()').to_s)}</h1>\n|
+      html << %Q|   <h2>Table of Contents</h2>\n|
       
       (doc/'TOC/').each do |node|
         case node.name
           when /Introduction/
-            html << %Q|<a href="introduction.html" class="intro">Introduction</a>|
+            html << %Q|   <a href="introduction.html" class="intro">Introduction</a><br />\n|
           when /Part/
-            html << %Q|<h3>#{cleanup_text((node/'text()').to_s)}</h3>|
+            html << %Q|   <h3>#{cleanup_text((node/'text()').to_s)}</h3>\n|
           when /CrossHeading/
-            html << %Q|<h4>#{cleanup_text((node/'text()').to_s)}</h4>|
+            html << %Q|   <h4>#{cleanup_text((node/'text()').to_s)}</h4>\n|
           when /Clause/
             clause_number = node.attributes['number']
-            html << %Q|<a href="clause#{clause_number}.html">Clause #{cleanup_text((node/'text()').to_s)}</a>|
+            html << %Q|   <a href="clause#{clause_number}.html">Clause #{cleanup_text((node/'text()').to_s)}</a><br />\n|
         end
       end
       
-      html << '</div>'
+      html << ' </div>'
       html << '</body>'
       
       html << '</html>'
@@ -214,8 +214,8 @@ class EpubParser
     html << '<html xmlns="http://www.w3.org/1999/xhtml">'
     
     html << '<head>'
-    html << %Q|<title>#{(doc/'BillData/BillTitle/text()').to_s}</title>|
-    html << '<link rel="stylesheet" type="text/css" href="css/clauses.css" />'
+    html << %Q| <title>#{(doc/'BillData/BillTitle/text()').to_s}</title>\n|
+    html << ' <link rel="stylesheet" type="text/css" href="css/clauses.css" />' + "\n"
     html << '</head>'
     html << '<body>'
     html << mif_parser.parse_xml(section_xml.to_s, {:format => :html, :body_only => true})
