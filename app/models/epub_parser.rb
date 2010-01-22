@@ -190,7 +190,7 @@ class EpubParser
     html.to_s
   end
   
-  def create_html_page(xml, sections)
+  def create_html_page(xml, sections, delete_br = true)
     doc = Hpricot.XML(xml)
     section_xml = []
     section_xml << "<Document><BillData>"
@@ -221,7 +221,9 @@ class EpubParser
     html << mif_parser.parse_xml(section_xml.to_s, {:format => :html, :body_only => true})
     html << '</body>'
     html << '</html>'
-    html.to_s
+    html = html.to_s
+    html.gsub!('<br />', '') if delete_br
+    html
   end
   
   def cleanup_text text

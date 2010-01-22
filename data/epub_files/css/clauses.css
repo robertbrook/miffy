@@ -75,10 +75,6 @@ br {
   margin-bottom: 0.2em;
 }
 
-.LongTitle br {
-  display: none;
-}
-
-.WordsOfEnactment .Bpara br {
-  display: none;
+#table-of-contents br {
+	display: none;
 }
