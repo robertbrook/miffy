@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+  
+  def serve_epub
+    send_file "#{RAILS_ROOT}/public/Digital-Economy-Bill-HL.epub", :content_type => 'application/epub+zip'
+  end
 end
