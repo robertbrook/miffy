@@ -18,7 +18,8 @@ class ApplicationController < ActionController::Base
     end
     if File.exists?(file)
       send_file "#{file}", :content_type => 'application/epub+zip'
+    else
+      render :file => "#{RAILS_ROOT}/public/404.html", :layout => false, :status => 404
     end
-    render :file => "#{RAILS_ROOT}/public/404.html", :layout => false, :status => 404
   end
 end
