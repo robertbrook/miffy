@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     unless filename
       render :status => 404
     else
-      file = RAILS_ROOT + "/public/epub/#{filename}.epub"
+      file = RAILS_ROOT + "/public/#{filename}.epub"
       unless File.exists?(file)
         render :file => "#{RAILS_ROOT}/public/404.html", :layout => false, :status => 404
       else
