@@ -11,16 +11,14 @@ class ApplicationController < ActionController::Base
   def serve_epub
     #send_file "#{RAILS_ROOT}/public/Digital-Economy-Bill-HL.epub", :content_type => 'application/epub+zip'
     filename = params[:filename]
-    puts filename
-    unless filename
-      render :status => 404
-    else
+    if filename
       file = RAILS_ROOT + "/public/#{filename}.epub"
-      unless File.exists?(file)
-        render :file => "#{RAILS_ROOT}/public/404.html", :layout => false, :status => 404
-      else
-        send_file "#{file}", :content_type => 'application/epub+zip'
-      end
+    else
+      file = ""
     end
+    if File.exists?(file)
+      send_file "#{file}", :content_type => 'application/epub+zip'
+    end
+    render :file => "#{RAILS_ROOT}/public/404.html", :layout => false, :status => 404
   end
 end
